@@ -1,0 +1,7 @@
+<mat-form-field class="w-full max-w-xs">
+  <mat-label>distance unit</mat-label>
+  <mat-select [ngModel]="unit()" (ngModelChange)="onUnitChange($event)">
+    <mat-option value="km">kilometers</mat-option>
+    <mat-option value="mi">miles</mat-option>
+  </mat-select>
+</mat-form-field>

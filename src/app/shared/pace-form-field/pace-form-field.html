@@ -1,0 +1,28 @@
+<app-horizontal-line-with-text [text]="'Pace'" />
+
+<div class="flex gap-2">
+  <mat-form-field appearance="outline" class="w-[100px]">
+    <input
+      matInput
+      type="number"
+      min="0"
+      [(ngModel)]="value.minutes"
+      name="paceMinutes"
+      (ngModelChange)="onPaceChange()"
+    />
+    <span matTextSuffix>min</span>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="w-[100px]">
+    <input
+      matInput
+      type="number"
+      min="0"
+      max="59"
+      [(ngModel)]="value.seconds"
+      name="paceSeconds"
+      (ngModelChange)="onPaceChange()"
+    />
+    <span matTextSuffix>sec</span>
+  </mat-form-field>
+</div>

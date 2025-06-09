@@ -1,0 +1,19 @@
+<app-horizontal-line-with-text
+  *ngIf="showHorizontalLine"
+  [text]="'Distance'"
+></app-horizontal-line-with-text>
+
+<div class="flex">
+  <mat-form-field appearance="outline" class="w-[120px]">
+    <input
+      matInput
+      type="number"
+      min="0"
+      step="0.01"
+      [(ngModel)]="value"
+      name="distance"
+      (ngModelChange)="onDistanceChange()"
+    />
+    <span matTextSuffix>{{suffix()}}</span>
+  </mat-form-field>
+</div>
