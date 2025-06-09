@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { GuiConfigService } from '../../core/services/gui-config.service';
+import { SelectOnFocus } from '../directives/select-on-focus';
 import { HorizontalLineWithText } from '../horizontal-line-with-text/horizontal-line-with-text';
 
 @Component({
@@ -14,6 +15,7 @@ import { HorizontalLineWithText } from '../horizontal-line-with-text/horizontal-
     MatInputModule,
     FormsModule,
     CommonModule,
+    SelectOnFocus,
   ],
   templateUrl: './distance-form-field.html',
   styleUrl: './distance-form-field.scss',

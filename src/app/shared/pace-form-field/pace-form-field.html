@@ -9,6 +9,7 @@
       [(ngModel)]="value.minutes"
       name="paceMinutes"
       (ngModelChange)="onPaceChange()"
+      selectOnFocus
     />
     <span matTextSuffix>min</span>
   </mat-form-field>
@@ -22,6 +23,7 @@
       [(ngModel)]="value.seconds"
       name="paceSeconds"
       (ngModelChange)="onPaceChange()"
+      selectOnFocus
     />
     <span matTextSuffix>sec</span>
   </mat-form-field>

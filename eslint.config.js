@@ -15,6 +15,7 @@ module.exports = tseslint.config(
     processor: angular.processInlineTemplates,
     rules: {
       "@angular-eslint/component-class-suffix": "off",
+      "@angular-eslint/directive-class-suffix": "off",
       "@typescript-eslint/no-inferrable-types": "off",
       "@angular-eslint/directive-selector": [
         "error",
