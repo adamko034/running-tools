@@ -27,6 +27,7 @@ export class PaceFormField {
   @Output() paceChange = new EventEmitter<Pace>();
 
   onPaceChange() {
+    this.value.validate();
     this.paceChange.emit(this.value);
   }
 }

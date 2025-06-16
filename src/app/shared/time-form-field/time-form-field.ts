@@ -27,6 +27,7 @@ export class TimeFormField {
   @Output() timeChange = new EventEmitter<Time>();
 
   onTimeChange() {
+    this.value.validate();
     this.timeChange.emit(this.value);
   }
 }

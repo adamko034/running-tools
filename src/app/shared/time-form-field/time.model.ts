@@ -1,8 +1,8 @@
 export class Time {
   constructor(
-    private hours: number = 0,
-    private minutes: number = 55,
-    private seconds: number = 0,
+    public hours: number = 0,
+    public minutes: number = 55,
+    public seconds: number = 0,
   ) {}
 
   static default(): Time {
@@ -11,6 +11,32 @@ export class Time {
 
   static of(hours: number, minutes: number, seconds: number) {
     return new Time(hours, minutes, seconds);
+  }
+
+  validate() {
+    if (this.seconds > 59) {
+      this.minutes += 1;
+      this.seconds = 0;
+    }
+
+    if (this.minutes > 59) {
+      this.minutes = 0;
+      this.hours += 1;
+    }
+
+    if (this.seconds < 0 && this.minutes > 0) {
+      this.minutes -= 1;
+      this.seconds = 59;
+    }
+
+    if (this.minutes < 0 && this.hours > 0) {
+      this.hours -= 1;
+      this.minutes = 59;
+    }
+
+    if (this.seconds < 0 && this.minutes == 0) {
+      this.seconds = 1;
+    }
   }
 
   totalMinutes(): number {

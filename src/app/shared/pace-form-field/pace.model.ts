@@ -8,6 +8,22 @@ export class Pace {
     return new Pace();
   }
 
+  validate() {
+    if (this.seconds > 59) {
+      this.seconds = 0;
+      this.minutes += 1;
+    }
+
+    if (this.seconds < 0 && this.minutes > 0) {
+      this.minutes -= 1;
+      this.seconds = 59;
+    }
+
+    if (this.seconds < 0 && this.minutes == 0) {
+      this.seconds = 1;
+    }
+  }
+
   calculate(time: Time, distance: number) {
     const totalMinutes = time.totalMinutes();
 
