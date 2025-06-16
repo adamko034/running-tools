@@ -18,4 +18,11 @@
   ></app-time-form-field>
 
   <app-pace-form-field [value]="pace" (paceChange)="onPaceChange($event)" />
+
+  <div
+    *ngIf="summary"
+    class="mt-6 p-4 bg-green-100 text-green-900 rounded-lg shadow-md text-xl font-semibold flex justify-center items-center space-x-3 select-none"
+  >
+    {{ summary }}
+  </div>
 </div>

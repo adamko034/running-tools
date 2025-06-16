@@ -1,7 +1,8 @@
 import { computed, effect, Injectable, Signal, signal } from '@angular/core';
+import { DistanceUnit } from '../models/distance-unit.enum';
 
 export interface GuiConfig {
-  distanceUnit: 'km' | 'mi';
+  distanceUnit: DistanceUnit;
 }
 
 const STORAGE_KEY = 'running-tools';
@@ -12,7 +13,7 @@ const STORAGE_KEY = 'running-tools';
 export class GuiConfigService {
   private readonly guiConfigSignal = signal<GuiConfig>(this.loadConfig());
 
-  get distanceUnit(): Signal<'km' | 'mi'> {
+  get distanceUnit(): Signal<DistanceUnit> {
     return computed(() => this.guiConfigSignal().distanceUnit);
   }
 
@@ -35,13 +36,15 @@ export class GuiConfigService {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(this.guiConfigSignal()));
   }
 
-  private getDefaultUnitFromLocale(): 'km' | 'mi' {
+  private getDefaultUnitFromLocale(): DistanceUnit {
     const locale = Intl.DateTimeFormat().resolvedOptions().locale;
     const milesLocales = ['en-US', 'en-GB', 'my', 'lr'];
-    return milesLocales.some((code) => locale.startsWith(code)) ? 'mi' : 'km';
+    return milesLocales.some((code) => locale.startsWith(code))
+      ? DistanceUnit.MI
+      : DistanceUnit.KM;
   }
 
-  setDistanceUnit(unit: 'km' | 'mi'): void {
+  setDistanceUnit(unit: DistanceUnit): void {
     this.guiConfigSignal.set({ ...this.guiConfigSignal(), distanceUnit: unit });
   }
 }

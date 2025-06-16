@@ -3,6 +3,7 @@ import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
+import { DistanceUnit } from '../../core/models/distance-unit.enum';
 import { GuiConfigService } from '../../core/services/gui-config.service';
 
 @Component({
@@ -16,7 +17,7 @@ export class UnitSelector {
 
   unit = this.guiConfigService.distanceUnit;
 
-  onUnitChange(newValue: 'km' | 'mi') {
+  onUnitChange(newValue: DistanceUnit) {
     this.guiConfigService.setDistanceUnit(newValue);
   }
 }

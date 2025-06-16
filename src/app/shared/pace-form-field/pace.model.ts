@@ -27,4 +27,23 @@ export class Pace {
 
     return 0;
   }
+
+  calculateTime(distance: number): Time {
+    const totalSeconds = this.totalSeconds() * distance;
+
+    const hours = Math.floor(totalSeconds / 3600);
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+    const seconds = Math.round(totalSeconds % 60);
+
+    return Time.of(hours, minutes, seconds);
+  }
+
+  public format(unit: string): string {
+    const pad = (v: number) => String(v).padStart(2, '0');
+    return `${this.minutes}:${pad(this.seconds)}/${unit}`;
+  }
+
+  private totalSeconds(): number {
+    return this.minutes * 60 + this.seconds;
+  }
 }
