@@ -20,4 +20,16 @@ export const routes: Routes = [
       },
     ],
   },
+  {
+    path: 'personal',
+    children: [
+      {
+        path: 'vo2max-calculator',
+        loadComponent: () =>
+          import('./tools/personal/vo2max-calculator/vo2max-calculator').then(
+            (m) => m.Vo2maxCalculator,
+          ),
+      },
+    ],
+  },
 ];

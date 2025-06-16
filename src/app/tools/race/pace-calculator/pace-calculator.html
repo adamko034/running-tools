@@ -1,28 +1,21 @@
-<div class="space-y-6">
-  <!-- Title -->
-  <div>
-    <h1 class="text-3xl font-bold">Pace Calculator</h1>
-    <p class="text-gray-600">
-      Adjust time, distance, or pace to recalculate the others.
-    </p>
-  </div>
-
-  <app-distance-form-field
-    [value]="distance"
-    (distanceChange)="onDistanceChange($event)"
-  ></app-distance-form-field>
-
-  <app-time-form-field
-    [value]="time"
-    (timeChange)="onTimeChange($event)"
-  ></app-time-form-field>
-
-  <app-pace-form-field [value]="pace" (paceChange)="onPaceChange($event)" />
-
-  <div
-    *ngIf="summary"
-    class="mt-6 p-4 bg-green-100 text-green-900 rounded-lg shadow-md text-xl font-semibold flex justify-center items-center space-x-3 select-none"
+<app-tool-view>
+  <ng-container tool-title>Pace Calculator</ng-container>
+  <ng-container tool-description
+    >Adjust time, distance, or pace to recalculate the others.</ng-container
   >
-    {{ summary }}
-  </div>
-</div>
+  <ng-container tool-content>
+    <app-distance-form-field
+      [value]="distance"
+      (distanceChange)="onDistanceChange($event)"
+    ></app-distance-form-field>
+
+    <app-time-form-field
+      [value]="time"
+      (timeChange)="onTimeChange($event)"
+    ></app-time-form-field>
+
+    <app-pace-form-field [value]="pace" (paceChange)="onPaceChange($event)" />
+  </ng-container>
+
+  <ng-container tool-summary> {{summary}} </ng-container>
+</app-tool-view>

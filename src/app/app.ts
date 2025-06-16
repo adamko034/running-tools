@@ -26,7 +26,7 @@ export class App {
     {
       title: 'personal',
       links: [
-        { text: 'VO₂max', link: 'personal/vo2-max-calculator' },
+        { text: 'VO₂max', link: 'personal/vo2max-calculator' },
         { text: 'BMI', link: 'personal/bmi-calculator' },
       ],
     },

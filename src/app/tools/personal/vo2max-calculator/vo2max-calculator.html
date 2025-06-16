@@ -1,0 +1,18 @@
+<app-tool-view>
+  <ng-container tool-title>VO₂max Calculator</ng-container>
+  <ng-container tool-description
+    >Enter your race distance and finish time to estimate your aerobic
+    fitness.</ng-container
+  >
+  <ng-container tool-content>
+    <app-distance-form-field
+      [value]="distance"
+      (distanceChange)="onDistanceChange($event)"
+    />
+    <app-time-form-field [value]="time" (timeChange)="onTimeChange($event)" />
+  </ng-container>
+
+  <ng-container tool-summary>
+    Your estimated VO₂max is {{vo2max}}
+  </ng-container>
+</app-tool-view>

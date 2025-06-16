@@ -9,6 +9,7 @@ import { PaceFormField } from '../../../shared/pace-form-field/pace-form-field';
 import { Pace } from '../../../shared/pace-form-field/pace.model';
 import { TimeFormField } from '../../../shared/time-form-field/time-form-field';
 import { Time } from '../../../shared/time-form-field/time.model';
+import { ToolView } from '../../../shared/views/tool-view/tool-view';
 
 @Component({
   selector: 'app-pace-calculator',
@@ -20,6 +21,7 @@ import { Time } from '../../../shared/time-form-field/time.model';
     DistanceFormField,
     TimeFormField,
     PaceFormField,
+    ToolView,
   ],
   templateUrl: './pace-calculator.html',
   styleUrl: './pace-calculator.scss',

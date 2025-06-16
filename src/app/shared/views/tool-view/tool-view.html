@@ -1,0 +1,20 @@
+<div class="space-y-6">
+  <!-- Title -->
+  <div>
+    <h1 class="text-3xl font-bold">
+      <ng-content select="[tool-title]"></ng-content>
+    </h1>
+    <p class="text-gray-600">
+      <ng-content select="[tool-description]"></ng-content>
+    </p>
+  </div>
+
+  <ng-content select="[tool-content]"></ng-content>
+
+  <div
+    *ngIf="showSummary"
+    class="mt-6 p-4 bg-green-100 text-green-900 rounded-lg shadow-md text-xl font-semibold flex justify-center items-center space-x-3 select-none"
+  >
+    <ng-content select="[tool-summary]"></ng-content>
+  </div>
+</div>
