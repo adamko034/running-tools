@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { DistanceUnit } from '../../core/models/distance-unit.enum';
-import { GuiConfigService } from '../../core/services/gui-config.service';
+import { StoreService } from '../../core/store/store.service';
 
 @Component({
   selector: 'app-unit-selector',
@@ -13,11 +13,10 @@ import { GuiConfigService } from '../../core/services/gui-config.service';
   styleUrl: './unit-selector.scss',
 })
 export class UnitSelector {
-  private guiConfigService = inject(GuiConfigService);
-
-  unit = this.guiConfigService.distanceUnit;
+  private store = inject(StoreService);
+  unit = this.store.distanceUnit;
 
   onUnitChange(newValue: DistanceUnit) {
-    this.guiConfigService.setDistanceUnit(newValue);
+    this.store.updateDistanceUnit(newValue);
   }
 }

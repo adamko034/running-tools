@@ -5,11 +5,8 @@
     fitness.</ng-container
   >
   <ng-container tool-content>
-    <app-distance-form-field
-      [value]="distance"
-      (distanceChange)="onDistanceChange($event)"
-    />
-    <app-time-form-field [value]="time" (timeChange)="onTimeChange($event)" />
+    <app-distance-form-field />
+    <app-time-form-field />
   </ng-container>
 
   <ng-container tool-summary>

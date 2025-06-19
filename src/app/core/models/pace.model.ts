@@ -1,11 +1,22 @@
-import { Time } from '../time-form-field/time.model';
+import { Time } from './time.model';
 
 export class Pace {
-  minutes = 0;
-  seconds = 0;
+  private constructor(
+    public minutes: number,
+    public seconds: number,
+  ) {}
 
-  static default(): Pace {
-    return new Pace();
+  static calculate(time: Time, distance: number) {
+    const totalMinutes = time.totalMinutes();
+    const pace = totalMinutes / distance;
+    const minutes = Math.floor(pace);
+    const seconds = Math.round((pace - minutes) * 60);
+
+    return Pace.of(minutes, seconds);
+  }
+
+  static of(minutes: number, seconds: number) {
+    return new Pace(minutes, seconds);
   }
 
   validate() {
@@ -21,16 +32,6 @@ export class Pace {
 
     if (this.seconds < 0 && this.minutes == 0) {
       this.seconds = 1;
-    }
-  }
-
-  calculate(time: Time, distance: number) {
-    const totalMinutes = time.totalMinutes();
-
-    if (distance > 0 && totalMinutes > 0) {
-      const pace = totalMinutes / distance;
-      this.minutes = Math.floor(pace);
-      this.seconds = Math.round((pace - this.minutes) * 60);
     }
   }
 
@@ -59,7 +60,7 @@ export class Pace {
     return `${this.minutes}:${pad(this.seconds)}/${unit}`;
   }
 
-  private totalSeconds(): number {
+  public totalSeconds(): number {
     return this.minutes * 60 + this.seconds;
   }
 }

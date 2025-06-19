@@ -10,9 +10,9 @@
       type="number"
       min="0"
       step="0.1"
-      [(ngModel)]="value"
+      [(ngModel)]="distance"
       name="distance"
-      (ngModelChange)="onDistanceChange()"
+      (ngModelChange)="updateStore()"
       selectOnFocus
     />
     <span matTextSuffix>{{unit()}}</span>

@@ -39,7 +39,7 @@ export class Time {
     }
   }
 
-  totalMinutes(): number {
+  public totalMinutes(): number {
     return this.hours * 60 + this.minutes + this.seconds / 60;
   }
 

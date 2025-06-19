@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, effect, inject } from '@angular/core';
+import { StoreService } from '../../../core/store/store.service';
 import { DistanceFormField } from '../../../shared/distance-form-field/distance-form-field';
 import { TimeFormField } from '../../../shared/time-form-field/time-form-field';
-import { Time } from '../../../shared/time-form-field/time.model';
 import { ToolView } from '../../../shared/views/tool-view/tool-view';
 
 @Component({
@@ -11,27 +11,19 @@ import { ToolView } from '../../../shared/views/tool-view/tool-view';
   styleUrl: './vo2max-calculator.scss',
 })
 export class Vo2maxCalculator {
-  distance: number = 10;
-  time: Time = Time.default();
-
   vo2max: number = 0;
 
+  private store = inject(StoreService);
+  private time = this.store.time;
+  private distance = this.store.distance;
+
   constructor() {
-    this.calculate();
+    effect(() => this.calculateVo2Max());
   }
 
-  onTimeChange(newTime: Time) {
-    this.time = newTime;
-    this.calculate();
-  }
-  onDistanceChange(newDistance: number) {
-    this.distance = newDistance;
-    this.calculate();
-  }
-
-  private calculate() {
-    const totalMinutes = this.time.totalMinutes();
-    const velocity = (this.distance * 1000) / totalMinutes;
+  private calculateVo2Max() {
+    const totalMinutes = this.time().totalMinutes();
+    const velocity = (this.distance() * 1000) / totalMinutes;
 
     const vo2 = 0.182258 * velocity + 0.000104 * velocity * velocity - 4.6;
 
