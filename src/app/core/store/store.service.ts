@@ -44,6 +44,7 @@ export class StoreService {
   constructor() {
     this._store = signal<Store>(this.loadStore());
     effect(() => {
+      console.log('store change');
       this.calculatePace();
       this.saveStore();
     });
@@ -69,8 +70,6 @@ export class StoreService {
   private calculatePace() {
     const { time, distance, pace: currentPace } = this._store();
     const newPace = Pace.calculate(time, distance);
-
-    console.log(time, distance, currentPace, newPace);
 
     if (currentPace.totalSeconds() != newPace.totalSeconds()) {
       this._store.update((current) => ({ ...current, pace: newPace }));

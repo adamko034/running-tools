@@ -1,0 +1,30 @@
+<app-tool-view>
+  <ng-container tool-title>Finish Time Predictor</ng-container>
+  <ng-container tool-description
+    >Estimate your finish times for popular race distances based on a recent
+    run.</ng-container
+  >
+  <ng-container tool-content>
+    <app-distance-form-field />
+    <app-time-form-field />
+  </ng-container>
+
+  <ng-container tool-summary>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      @for (raceTime of raceTimes(); track raceTime.label) { @if (raceTime.time)
+      {
+      <app-green-box>
+        <div class="flex flex-col flex-1">
+          <div class="text-sm text-gray-500">{{ raceTime.label }}</div>
+          <div class="text-xl font-bold text-gray-900">
+            {{ raceTime.time.format() }}
+          </div>
+          <div class="text-sm text-gray-500 mt-1">
+            {{raceTime.pace.format(distanceUnit())}}
+          </div>
+        </div>
+      </app-green-box>
+      } }
+    </div>
+  </ng-container>
+</app-tool-view>

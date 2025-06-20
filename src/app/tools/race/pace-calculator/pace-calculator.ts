@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { DistanceFormField } from '../../../shared/distance-form-field/distance-form-field';
+import { GreenBox } from '../../../shared/green-box/green-box';
 import { PaceFormField } from '../../../shared/pace-form-field/pace-form-field';
 import { TimeFormField } from '../../../shared/time-form-field/time-form-field';
 import { ToolView } from '../../../shared/views/tool-view/tool-view';
@@ -20,6 +21,7 @@ import { StoreService } from './../../../core/store/store.service';
     TimeFormField,
     PaceFormField,
     ToolView,
+    GreenBox,
   ],
   templateUrl: './pace-calculator.html',
   styleUrl: './pace-calculator.scss',

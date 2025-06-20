@@ -19,16 +19,12 @@ export class App {
       title: 'race',
       links: [
         { text: 'pace / time / distance', link: 'race/pace-calculator' },
-        { text: 'race times', link: 'race/race-times-table' },
-        { text: 'race time estimation', link: 'race/race-time-estimation' },
+        { text: 'finish time predictor', link: 'race/finish-time-predictor' },
       ],
     },
     {
       title: 'personal',
-      links: [
-        { text: 'VO₂max', link: 'personal/vo2max-calculator' },
-        { text: 'BMI', link: 'personal/bmi-calculator' },
-      ],
+      links: [{ text: 'VO₂max', link: 'personal/vo2max-calculator' }],
     },
     {
       title: 'units',

@@ -18,6 +18,13 @@ export const routes: Routes = [
             (m) => m.PaceCalculator,
           ),
       },
+      {
+        path: 'finish-time-predictor',
+        loadComponent: () =>
+          import(
+            './tools/race/finish-time-predictor/finish-time-predictor'
+          ).then((m) => m.FinishTimePredictor),
+      },
     ],
   },
   {

@@ -11,10 +11,7 @@
 
   <ng-content select="[tool-content]"></ng-content>
 
-  <div
-    *ngIf="showSummary"
-    class="mt-6 p-4 bg-green-100 text-green-900 rounded-lg shadow-md text-xl font-semibold flex justify-center items-center space-x-3 select-none"
-  >
+  <div *ngIf="showSummary" class="mt-6">
     <ng-content select="[tool-summary]"></ng-content>
   </div>
 </div>
