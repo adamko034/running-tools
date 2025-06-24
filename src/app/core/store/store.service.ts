@@ -8,6 +8,7 @@ import {
   WritableSignal,
 } from '@angular/core';
 import { DistanceUnit } from '../models/distance-unit.enum';
+import { Distance } from '../models/distance.model';
 import { Pace } from '../models/pace.model';
 import { Time } from '../models/time.model';
 import { LocalStorageService } from './../services/local-storage.service';
@@ -29,7 +30,7 @@ export class StoreService {
     return computed(() => this._store().distanceUnit);
   }
 
-  get distance(): Signal<number> {
+  get distance(): Signal<Distance> {
     return computed(() => this._store().distance);
   }
 
@@ -51,10 +52,13 @@ export class StoreService {
   }
 
   public updateDistanceUnit(newUnit: DistanceUnit) {
-    this._store.set({ ...this._store(), distanceUnit: newUnit });
+    const distance = this._store().distance;
+    distance.unit = newUnit;
+
+    this._store.set({ ...this._store(), distance, distanceUnit: newUnit });
   }
 
-  public updateDistance(distance: number) {
+  public updateDistance(distance: Distance) {
     this._store.set({ ...this._store(), distance });
   }
 
@@ -69,7 +73,7 @@ export class StoreService {
 
   private calculatePace() {
     const { time, distance, pace: currentPace } = this._store();
-    const newPace = Pace.calculate(time, distance);
+    const newPace = Pace.calculate(time, distance.value);
 
     if (currentPace.totalSeconds() != newPace.totalSeconds()) {
       this._store.update((current) => ({ ...current, pace: newPace }));
@@ -79,7 +83,7 @@ export class StoreService {
   private saveStore() {
     const { distance, distanceUnit, time } = this._store();
     this.localStorageService.save({
-      distance,
+      distance: distance.value,
       distanceUnit,
       timeHours: time.hours,
       timeMinutes: time.minutes,
@@ -95,19 +99,24 @@ export class StoreService {
       return initialStore;
     }
 
-    const time = Time.of(
-      stored.timeHours || 0,
-      stored.timeMinutes || 55,
-      stored.timeSeconds || 0,
+    const distance = Distance.ofValueUnit(
+      stored.distance || initialStore.distance.value,
+      stored.distanceUnit || initialStore.distanceUnit,
     );
-    return { ...initialStore, ...stored, time };
+
+    const time = Time.of(
+      stored.timeHours || initialStore.time.hours,
+      stored.timeMinutes || initialStore.time.minutes,
+      stored.timeSeconds || initialStore.time.seconds,
+    );
+    return { ...initialStore, ...stored, time, distance };
   }
 
   private initialValues(): Store {
-    const time = Time.default();
-    const distance = 10;
+    const time = Time.of(0, 55, 0);
     const distanceUnit = this.getDistanceUnitFromLocal();
-    const pace = Pace.calculate(time, distance);
+    const distance = Distance.ofValueUnit(10, distanceUnit);
+    const pace = Pace.calculate(time, distance.value);
 
     return {
       distance,

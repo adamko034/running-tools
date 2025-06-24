@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, effect, inject } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -8,6 +8,7 @@ import { GreenBox } from '../../../shared/green-box/green-box';
 import { PaceFormField } from '../../../shared/pace-form-field/pace-form-field';
 import { TimeFormField } from '../../../shared/time-form-field/time-form-field';
 import { ToolView } from '../../../shared/views/tool-view/tool-view';
+import { Store } from './../../../core/store/store.model';
 import { StoreService } from './../../../core/store/store.service';
 
 @Component({
@@ -28,20 +29,15 @@ import { StoreService } from './../../../core/store/store.service';
   standalone: true,
 })
 export class PaceCalculator {
-  summary = '';
-
   private storeService = inject(StoreService);
-  private store = this.storeService.store;
 
-  constructor() {
-    effect(() => this.setSummary());
-  }
+  summary = computed(() => this.getSummary(this.storeService.store()));
 
-  private setSummary() {
-    const { distance, distanceUnit, time, pace } = this.store();
+  private getSummary(store: Store) {
+    const { distance, distanceUnit, time, pace } = store;
     const timeFormatted = time.format();
     const paceFormatted = pace.format(distanceUnit);
 
-    this.summary = `${distance} ${distanceUnit} • ${timeFormatted} • ${paceFormatted}`;
+    return `${distance.value} ${distanceUnit} • ${timeFormatted} • ${paceFormatted}`;
   }
 }

@@ -1,29 +1,24 @@
+import { DataCatalogDistance } from './data-catalog-distance.model';
+
 export class DataCatalog {
-  static milesFactor: number = 0.621371;
-  static distances = {
-    fourHundredM: {
-      label: '400m',
-      distance: 0.4,
-    },
-    oneK: {
-      label: '1000m',
-      distance: 1,
-    },
-    fiveK: {
-      label: '5K',
-      distance: 5,
-    },
-    tenK: {
-      label: '10K',
-      distance: 10,
-    },
-    halfMarathon: {
-      label: 'half-marathon',
-      distance: 21.097,
-    },
-    marathon: {
-      label: 'marathon',
-      distance: 42.195,
-    },
+  static readonly distances: Record<DistanceKey, DataCatalogDistance> = {
+    fourHundredM: DataCatalogDistance.ofKm(0.4, '400m'),
+    oneK: DataCatalogDistance.ofKm(1, '1000m'),
+    fiveK: DataCatalogDistance.ofKm(5, '5K'),
+    tenK: DataCatalogDistance.ofKm(10, '10K'),
+    halfMarathon: DataCatalogDistance.ofKm(21.097, 'half-marathon'),
+    marathon: DataCatalogDistance.ofKm(42.195, 'marathon'),
   };
+
+  static readonly distancesKeys: DistanceKey[] = Object.keys(
+    this.distances,
+  ) as DistanceKey[];
 }
+
+type DistanceKey =
+  | 'fourHundredM'
+  | 'oneK'
+  | 'fiveK'
+  | 'tenK'
+  | 'halfMarathon'
+  | 'marathon';

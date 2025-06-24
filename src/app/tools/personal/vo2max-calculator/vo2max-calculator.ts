@@ -1,4 +1,5 @@
-import { Component, effect, inject } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
+import { Time } from '../../../core/models/time.model';
 import { StoreService } from '../../../core/store/store.service';
 import { DistanceFormField } from '../../../shared/distance-form-field/distance-form-field';
 import { GreenBox } from '../../../shared/green-box/green-box';
@@ -12,19 +13,18 @@ import { ToolView } from '../../../shared/views/tool-view/tool-view';
   styleUrl: './vo2max-calculator.scss',
 })
 export class Vo2maxCalculator {
-  vo2max: number = 0;
-
   private store = inject(StoreService);
-  private time = this.store.time;
-  private distance = this.store.distance;
 
-  constructor() {
-    effect(() => this.calculateVo2Max());
-  }
+  vo2Max = computed(() => {
+    const time = this.store.time();
+    const distance = this.store.distance();
 
-  private calculateVo2Max() {
-    const totalMinutes = this.time().totalMinutes();
-    const velocity = (this.distance() * 1000) / totalMinutes;
+    return this.calculateVo2Max(time, distance.value);
+  });
+
+  private calculateVo2Max(time: Time, distance: number) {
+    const totalMinutes = time.totalMinutes();
+    const velocity = (distance * 1000) / totalMinutes;
 
     const vo2 = 0.182258 * velocity + 0.000104 * velocity * velocity - 4.6;
 
@@ -34,7 +34,6 @@ export class Vo2maxCalculator {
       0.2989558 * Math.exp(-0.1932605 * totalMinutes);
 
     const vo2max = vo2 / adj;
-
-    this.vo2max = Math.round(vo2max * 10) / 10;
+    return Math.round(vo2max * 10) / 10;
   }
 }

@@ -1,3 +1,4 @@
+import { Distance } from './distance.model';
 import { Time } from './time.model';
 
 export class Pace {
@@ -45,8 +46,8 @@ export class Pace {
     return 0;
   }
 
-  calculateTime(distance: number): Time {
-    const totalSeconds = this.totalSeconds() * distance;
+  calculateTime(distance: Distance): Time {
+    const totalSeconds = this.totalSeconds() * distance.value;
 
     const hours = Math.floor(totalSeconds / 3600);
     const minutes = Math.floor((totalSeconds % 3600) / 60);

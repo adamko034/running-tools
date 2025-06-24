@@ -3,6 +3,7 @@ import { MatCardModule } from '@angular/material/card';
 import { DataCatalog } from '../../../core/business/data-catalog';
 import { DataCatalogDistance } from '../../../core/business/data-catalog-distance.model';
 import { DistanceUnit } from '../../../core/models/distance-unit.enum';
+import { Distance } from '../../../core/models/distance.model';
 import { Time } from '../../../core/models/time.model';
 import { StoreService } from '../../../core/store/store.service';
 import { DistanceFormField } from '../../../shared/distance-form-field/distance-form-field';
@@ -76,22 +77,19 @@ export class FinishTimePredictor {
   private createRaceTime(
     target: DataCatalogDistance,
     knownTime: Time,
-    knownDistance: number,
+    knownDistance: Distance,
     unit: DistanceUnit,
   ): FinishTime {
-    const targetDistance =
-      unit === DistanceUnit.KM
-        ? target.distance
-        : target.distance * DataCatalog.milesFactor;
+    const targetDistance = target.getValueOfUnit(unit);
     const time = this.predictFinishTime(
       knownTime,
-      knownDistance,
+      knownDistance.value,
       targetDistance,
     );
 
     return {
       label: target.label,
-      pace: time.pace(target.distance),
+      pace: time.pace(targetDistance),
       time,
     };
   }

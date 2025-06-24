@@ -10,9 +10,9 @@
       type="number"
       min="0"
       step="0.1"
-      [(ngModel)]="distance"
+      [ngModel]="distance.value"
       name="distance"
-      (ngModelChange)="updateStore()"
+      (ngModelChange)="setDistance($event)"
       selectOnFocus
     />
     <span matTextSuffix>{{unit()}}</span>
@@ -29,10 +29,9 @@
 </div>
 
 <mat-menu #distanceMenu="matMenu">
-  <button mat-menu-item (click)="setDistance(0.4)">400m</button>
-  <button mat-menu-item (click)="setDistance(1)">1000m</button>
-  <button mat-menu-item (click)="setDistance(5)">5K</button>
-  <button mat-menu-item (click)="setDistance(10)">10K</button>
-  <button mat-menu-item (click)="setDistance(21.097)">half-marathon</button>
-  <button mat-menu-item (click)="setDistance(42.195)">marathon</button>
+  @for (distanceKey of distancesKeys; track $index) {
+  <button mat-menu-item (click)="setRaceDistance(distances[distanceKey].km)">
+    {{distances[distanceKey].label}}
+  </button>
+  }
 </mat-menu>

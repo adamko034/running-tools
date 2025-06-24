@@ -5,6 +5,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
+import { DataCatalog } from '../../core/business/data-catalog';
+import { DistanceUnit } from '../../core/models/distance-unit.enum';
 import { StoreService } from '../../core/store/store.service';
 import { SelectOnFocus } from '../directives/select-on-focus';
 import { HorizontalLineWithText } from '../horizontal-line-with-text/horizontal-line-with-text';
@@ -31,19 +33,20 @@ export class DistanceFormField {
   unit = this.store.distanceUnit;
   distance = this.store.distance();
 
-  setDistance(kmValue: number) {
-    const currentUnit = this.unit();
-    const converted =
-      currentUnit === 'mi' ? this.convertKmToMi(kmValue) : kmValue;
-    this.distance = Math.round(converted * 1000) / 1000;
-    this.updateStore();
-  }
+  distancesKeys = DataCatalog.distancesKeys;
+  distances = DataCatalog.distances;
 
-  updateStore() {
+  setDistance(value: number) {
+    this.distance.value = value;
     this.store.updateDistance(this.distance);
   }
 
-  private convertKmToMi(km: number): number {
-    return km * 0.621371;
+  setRaceDistance(kmValue: number) {
+    this.distance.value = kmValue;
+    if (this.unit() === DistanceUnit.MI) {
+      this.distance.convert(DistanceUnit.MI);
+    }
+
+    this.store.updateDistance(this.distance);
   }
 }

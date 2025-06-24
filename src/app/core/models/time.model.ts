@@ -2,14 +2,10 @@ import { Pace } from './pace.model';
 
 export class Time {
   constructor(
-    public hours: number = 0,
-    public minutes: number = 55,
-    public seconds: number = 0,
+    public hours: number,
+    public minutes: number,
+    public seconds: number,
   ) {}
-
-  static default(): Time {
-    return new Time();
-  }
 
   static of(hours: number, minutes: number, seconds: number) {
     return new Time(hours, minutes, seconds);
@@ -64,7 +60,7 @@ export class Time {
       : `${this.minutes}:${pad(this.seconds)}`;
   }
 
-  public pace(disance: number): Pace {
-    return Pace.calculate(this, disance);
+  public pace(distance: number): Pace {
+    return Pace.calculate(this, distance);
   }
 }
