@@ -37,6 +37,13 @@ export const routes: Routes = [
             (m) => m.Vo2maxCalculator,
           ),
       },
+      {
+        path: 'burned-calories-estimator',
+        loadComponent: () =>
+          import(
+            './tools/personal/calories-burned-calculator/calories-burned-calculator'
+          ).then((m) => m.CaloriesBurnedCalculator),
+      },
     ],
   },
 ];

@@ -1,0 +1,20 @@
+<app-horizontal-line-with-text
+  *ngIf="showHorizontalLine"
+  [text]="'Weight'"
+></app-horizontal-line-with-text>
+
+<div class="flex">
+  <mat-form-field appearance="outline" class="w-[120px]">
+    <input
+      matInput
+      type="number"
+      min="20"
+      step="0.1"
+      [ngModel]="weight.value"
+      name="weight"
+      (ngModelChange)="setWeight($event)"
+      selectOnFocus
+    />
+    <span matTextSuffix>{{unit()}}</span>
+  </mat-form-field>
+</div>

@@ -24,7 +24,10 @@ export class App {
     },
     {
       title: 'personal',
-      links: [{ text: 'VO₂max', link: 'personal/vo2max-calculator' }],
+      links: [
+        { text: 'burned calories', link: 'personal/burned-calories-estimator' },
+        { text: 'VO₂max', link: 'personal/vo2max-calculator' },
+      ],
     },
     {
       title: 'units',

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { DistanceUnit } from '../models/distance-unit.enum';
+import { WeightUnit } from '../models/weight-unit.enum';
 
 export interface Config {
   distance: number;
@@ -7,6 +8,8 @@ export interface Config {
   timeHours: number;
   timeMinutes: number;
   timeSeconds: number;
+  weight: number;
+  weightUnit: WeightUnit;
 }
 
 @Injectable({
@@ -29,6 +32,8 @@ export class LocalStorageService {
         timeHours: parsed.timeHours,
         timeMinutes: parsed.timeMinutes,
         timeSeconds: parsed.timeSeconds,
+        weight: parsed.weight,
+        weightUnit: parsed.weightUnit,
       };
     }
 

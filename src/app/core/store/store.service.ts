@@ -11,6 +11,8 @@ import { DistanceUnit } from '../models/distance-unit.enum';
 import { Distance } from '../models/distance.model';
 import { Pace } from '../models/pace.model';
 import { Time } from '../models/time.model';
+import { WeightUnit } from '../models/weight-unit.enum';
+import { Weight } from '../models/weight.model';
 import { LocalStorageService } from './../services/local-storage.service';
 import { Store } from './store.model';
 
@@ -42,6 +44,14 @@ export class StoreService {
     return computed(() => this._store().pace);
   }
 
+  get weight(): Signal<Weight> {
+    return computed(() => this._store().weight);
+  }
+
+  get weightUnit(): Signal<WeightUnit> {
+    return computed(() => this._store().weightUnit);
+  }
+
   constructor() {
     this._store = signal<Store>(this.loadStore());
     effect(() => {
@@ -71,6 +81,21 @@ export class StoreService {
     this._store.update((current) => ({ ...current, time }));
   }
 
+  public updateWeight(weight: Weight) {
+    this._store.update((current) => ({ ...current, weight }));
+  }
+
+  public updateWeightUnit(newUnit: WeightUnit) {
+    const weight = this._store().weight;
+    weight.unit = newUnit;
+
+    this._store.update((current) => ({
+      ...current,
+      weight,
+      weightUnit: newUnit,
+    }));
+  }
+
   private calculatePace() {
     const { time, distance, pace: currentPace } = this._store();
     const newPace = Pace.calculate(time, distance.value);
@@ -81,19 +106,23 @@ export class StoreService {
   }
 
   private saveStore() {
-    const { distance, distanceUnit, time } = this._store();
+    const { distance, distanceUnit, time, weight, weightUnit } = this._store();
     this.localStorageService.save({
       distance: distance.value,
       distanceUnit,
       timeHours: time.hours,
       timeMinutes: time.minutes,
       timeSeconds: time.seconds,
+      weight: weight.value,
+      weightUnit: weightUnit,
     });
   }
 
   private loadStore(): Store {
     const stored = this.localStorageService.load();
     const initialStore = this.initialValues();
+
+    console.log(stored);
 
     if (!stored) {
       return initialStore;
@@ -109,7 +138,15 @@ export class StoreService {
       stored.timeMinutes || initialStore.time.minutes,
       stored.timeSeconds || initialStore.time.seconds,
     );
-    return { ...initialStore, ...stored, time, distance };
+
+    const weight = Weight.of(
+      stored.weight || initialStore.weight.value,
+      stored.weightUnit || initialStore.weightUnit,
+    );
+
+    const weightUnit = stored.weightUnit || initialStore.weightUnit;
+
+    return { ...initialStore, ...stored, time, distance, weight, weightUnit };
   }
 
   private initialValues(): Store {
@@ -117,12 +154,17 @@ export class StoreService {
     const distanceUnit = this.getDistanceUnitFromLocal();
     const distance = Distance.ofValueUnit(10, distanceUnit);
     const pace = Pace.calculate(time, distance.value);
+    const weightUnit =
+      distanceUnit == DistanceUnit.KM ? WeightUnit.KG : WeightUnit.LB;
+    const weight = Weight.of(80, weightUnit);
 
     return {
       distance,
       distanceUnit,
       time,
       pace,
+      weight,
+      weightUnit,
     };
   }
 
