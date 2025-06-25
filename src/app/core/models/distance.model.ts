@@ -11,10 +11,12 @@ export class Distance {
     return new Distance(value, unit);
   }
 
-  public convert(newUnit: DistanceUnit) {
-    if (newUnit != this.unit) {
-      this.value = MathUtils.convertKmMi(this.value, newUnit);
-      this.unit = newUnit;
+  public convertAndSetKmValue(kmValue: number) {
+    if (this.unit === DistanceUnit.MI) {
+      this.value = MathUtils.convertToMi(kmValue);
+      return;
     }
+
+    this.value = kmValue;
   }
 }

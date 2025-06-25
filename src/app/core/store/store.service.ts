@@ -15,7 +15,7 @@ import { WeightUnit } from '../models/weight-unit.enum';
 import { Weight } from '../models/weight.model';
 import { LocalStorageService } from './../services/local-storage.service';
 import { Store } from './store.model';
-import { Units } from './units.model';
+import { Units } from './units.enum';
 
 @Injectable({
   providedIn: 'root',
@@ -30,7 +30,7 @@ export class StoreService {
   }
 
   get distanceUnit(): Signal<DistanceUnit> {
-    return computed(() => this._store().units.distance);
+    return computed(() => this.getDistanceUnit(this._store().units));
   }
 
   get distance(): Signal<Distance> {
@@ -50,7 +50,11 @@ export class StoreService {
   }
 
   get weightUnit(): Signal<WeightUnit> {
-    return computed(() => this._store().units.weight);
+    return computed(() => this.getWeightUnit(this._store().units));
+  }
+
+  get units(): Signal<Units> {
+    return computed(() => this._store().units);
   }
 
   constructor() {
@@ -59,17 +63,19 @@ export class StoreService {
       console.log('store change');
       this.calculatePace();
       this.saveStore();
+
+      console.log(this._store());
     });
   }
 
-  public updateUnits(units: Units) {
+  public updateUnits(newUnits: Units) {
     const distance = this._store().distance;
-    distance.unit = units.distance;
+    distance.unit = this.getDistanceUnit(newUnits);
 
     const weight = this._store().weight;
-    weight.unit = units.weight;
+    weight.unit = this.getWeightUnit(newUnits);
 
-    this._store.set({ ...this._store(), distance, units, weight });
+    this._store.set({ ...this._store(), distance, units: newUnits, weight });
   }
 
   public updateDistance(distance: Distance) {
@@ -89,17 +95,6 @@ export class StoreService {
     this._store.update((current) => ({ ...current, weight }));
   }
 
-  public updateWeightUnit(newUnit: WeightUnit) {
-    const weight = this._store().weight;
-    weight.unit = newUnit;
-
-    this._store.update((current) => ({
-      ...current,
-      weight,
-      weightUnit: newUnit,
-    }));
-  }
-
   private calculatePace() {
     const { time, distance, pace: currentPace } = this._store();
     const newPace = Pace.calculate(time, distance.value);
@@ -113,12 +108,11 @@ export class StoreService {
     const { distance, units, time, weight } = this._store();
     this.localStorageService.save({
       distance: distance.value,
-      distanceUnit: units.distance,
+      units,
       timeHours: time.hours,
       timeMinutes: time.minutes,
       timeSeconds: time.seconds,
       weight: weight.value,
-      weightUnit: units.weight,
     });
   }
 
@@ -130,9 +124,10 @@ export class StoreService {
       return initialStore;
     }
 
+    const units = stored.units || initialStore.units;
     const distance = Distance.ofValueUnit(
       stored.distance || initialStore.distance.value,
-      stored.distanceUnit || initialStore.units.distance,
+      this.getDistanceUnit(units),
     );
 
     const time = Time.of(
@@ -143,13 +138,8 @@ export class StoreService {
 
     const weight = Weight.of(
       stored.weight || initialStore.weight.value,
-      stored.weightUnit || initialStore.units.weight,
+      this.getWeightUnit(units),
     );
-
-    const units = {
-      distance: stored.distanceUnit || initialStore.units.distance,
-      weight: stored.weightUnit || initialStore.units.weight,
-    };
 
     return { ...initialStore, ...stored, time, distance, weight, units };
   }
@@ -168,7 +158,7 @@ export class StoreService {
       time,
       pace,
       weight,
-      units: { distance: distanceUnit, weight: weightUnit },
+      units: distanceUnit === DistanceUnit.KM ? Units.EU : Units.EN,
     };
   }
 
@@ -178,5 +168,13 @@ export class StoreService {
     return milesLocales.some((code) => locale.startsWith(code))
       ? DistanceUnit.MI
       : DistanceUnit.KM;
+  }
+
+  private getDistanceUnit(units: Units): DistanceUnit {
+    return units === Units.EU ? DistanceUnit.KM : DistanceUnit.MI;
+  }
+
+  private getWeightUnit(units: Units): WeightUnit {
+    return units === Units.EU ? WeightUnit.KG : WeightUnit.LB;
   }
 }

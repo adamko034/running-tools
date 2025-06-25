@@ -6,7 +6,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
 import { DataCatalog } from '../../core/business/data-catalog';
-import { DistanceUnit } from '../../core/models/distance-unit.enum';
 import { StoreService } from '../../core/store/store.service';
 import { SelectOnFocus } from '../directives/select-on-focus';
 import { HorizontalLineWithText } from '../horizontal-line-with-text/horizontal-line-with-text';
@@ -30,7 +29,6 @@ export class DistanceFormField {
   @Input() showHorizontalLine = true;
 
   private store = inject(StoreService);
-  unit = this.store.distanceUnit;
   distance = this.store.distance();
 
   distancesKeys = DataCatalog.distancesKeys;
@@ -42,11 +40,7 @@ export class DistanceFormField {
   }
 
   setRaceDistance(kmValue: number) {
-    this.distance.value = kmValue;
-    if (this.unit() === DistanceUnit.MI) {
-      this.distance.convert(DistanceUnit.MI);
-    }
-
+    this.distance.convertAndSetKmValue(kmValue);
     this.store.updateDistance(this.distance);
   }
 }

@@ -2,7 +2,7 @@ import { Distance } from '../models/distance.model';
 import { Pace } from '../models/pace.model';
 import { Time } from '../models/time.model';
 import { Weight } from '../models/weight.model';
-import { Units } from './units.model';
+import { Units } from './units.enum';
 
 export interface Store {
   units: Units;

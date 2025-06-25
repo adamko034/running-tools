@@ -1,6 +1,6 @@
 <mat-form-field class="w-full max-w-xs">
   <mat-label>select units</mat-label>
-  <mat-select [ngModel]="value()" (ngModelChange)="onUnitChange($event)">
+  <mat-select [ngModel]="units()" (ngModelChange)="onUnitChange($event)">
     <mat-option value="eu">km / kg</mat-option>
     <mat-option value="en">mi / lb</mat-option>
   </mat-select>
