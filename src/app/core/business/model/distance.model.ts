@@ -1,8 +1,9 @@
-import { MathUtils } from '../utils/math.utils';
-import { Cloneable } from './clonable.interface';
-import { DistanceUnit } from './distance-unit.enum';
+import { MathUtils } from '../../utils/math.utils';
+import { DistanceUnit } from './enums/distance-unit.enum';
+import { Cloneable } from './interfaces/clonable.interface';
+import { Formatable } from './interfaces/formatable.interface';
 
-export class Distance implements Cloneable<Distance> {
+export class Distance implements Cloneable<Distance>, Formatable {
   private constructor(
     public value: number,
     public unit: DistanceUnit,
@@ -10,6 +11,10 @@ export class Distance implements Cloneable<Distance> {
 
   static of(value: number, unit: DistanceUnit) {
     return new Distance(value, unit);
+  }
+
+  static ofKm(value: number) {
+    return this.of(value, DistanceUnit.KM);
   }
 
   public totalMeters(): number {
@@ -32,5 +37,16 @@ export class Distance implements Cloneable<Distance> {
       overrides?.value || this.value,
       overrides?.unit || this.unit,
     );
+  }
+
+  public format(): string {
+    return `${this.value} ${this.unit}`;
+  }
+
+  public convert(unit: DistanceUnit) {
+    if (unit !== this.unit) {
+      this.unit = unit;
+      this.value = MathUtils.convertKmMi(this.value, unit);
+    }
   }
 }

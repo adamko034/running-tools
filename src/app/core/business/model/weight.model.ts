@@ -1,8 +1,9 @@
-import { MathUtils } from '../utils/math.utils';
-import { Cloneable } from './clonable.interface';
-import { WeightUnit } from './weight-unit.enum';
+import { MathUtils } from '../../utils/math.utils';
+import { WeightUnit } from './enums/weight-unit.enum';
+import { Cloneable } from './interfaces/clonable.interface';
+import { Formatable } from './interfaces/formatable.interface';
 
-export class Weight implements Cloneable<Weight> {
+export class Weight implements Cloneable<Weight>, Formatable {
   private constructor(
     public value: number,
     public unit: WeightUnit,
@@ -23,5 +24,9 @@ export class Weight implements Cloneable<Weight> {
       this.value = MathUtils.convertKgLb(this.value, newUnit);
       this.unit = newUnit;
     }
+  }
+
+  public format(): string {
+    return 'TO DO';
   }
 }

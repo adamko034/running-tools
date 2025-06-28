@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Distance } from '../../models/distance.model';
-import { Time } from '../../models/time.model';
 import { MathUtils } from '../../utils/math.utils';
+import { Distance } from '../model/distance.model';
+import { Time } from '../model/time.model';
 
 @Injectable({
   providedIn: 'root',

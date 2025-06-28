@@ -1,5 +1,5 @@
-import { DistanceUnit } from '../models/distance-unit.enum';
-import { WeightUnit } from '../models/weight-unit.enum';
+import { DistanceUnit } from '../business/model/enums/distance-unit.enum';
+import { WeightUnit } from '../business/model/enums/weight-unit.enum';
 
 export class MathUtils {
   private static readonly conversion = {

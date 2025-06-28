@@ -1,10 +1,11 @@
-import { MathUtils } from '../utils/math.utils';
-import { Cloneable } from './clonable.interface';
+import { MathUtils } from '../../utils/math.utils';
 import { Distance } from './distance.model';
+import { Cloneable } from './interfaces/clonable.interface';
+import { Formatable } from './interfaces/formatable.interface';
 import { Pace } from './pace.model';
 import { Speed } from './speed.model';
 
-export class Time implements Cloneable<Time> {
+export class Time implements Cloneable<Time>, Formatable {
   constructor(
     public hours: number,
     public minutes: number,

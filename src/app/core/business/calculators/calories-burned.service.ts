@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { DistanceUnit } from '../../models/distance-unit.enum';
-import { Distance } from '../../models/distance.model';
-import { Speed } from '../../models/speed.model';
-import { Time } from '../../models/time.model';
-import { Weight } from '../../models/weight.model';
 import { MathUtils } from '../../utils/math.utils';
+import { Distance } from '../model/distance.model';
+import { DistanceUnit } from '../model/enums/distance-unit.enum';
+import { Speed } from '../model/speed.model';
+import { Time } from '../model/time.model';
+import { Weight } from '../model/weight.model';
 
 @Injectable({
   providedIn: 'root',

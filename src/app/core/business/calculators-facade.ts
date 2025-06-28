@@ -1,12 +1,12 @@
 import { inject, Injectable } from '@angular/core';
-import { Distance } from '../models/distance.model';
-import { Time } from '../models/time.model';
-import { Weight } from '../models/weight.model';
 import { CaloriesBurnedService } from './calculators/calories-burned.service';
 import { FinishTimeService } from './calculators/finish-time.service';
 import { Vo2MaxService } from './calculators/vo2max.service';
 import { DataCatalogDistance } from './catalog/data-catalog-distance.model';
+import { Distance } from './model/distance.model';
 import { FinishTime } from './model/finish-time.model';
+import { Time } from './model/time.model';
+import { Weight } from './model/weight.model';
 
 @Injectable({
   providedIn: 'root',

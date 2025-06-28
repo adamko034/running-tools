@@ -1,10 +1,11 @@
-import { MathUtils } from '../utils/math.utils';
-import { Cloneable } from './clonable.interface';
-import { DistanceUnit } from './distance-unit.enum';
+import { MathUtils } from '../../utils/math.utils';
 import { Distance } from './distance.model';
+import { DistanceUnit } from './enums/distance-unit.enum';
+import { Cloneable } from './interfaces/clonable.interface';
+import { Formatable } from './interfaces/formatable.interface';
 import { Time } from './time.model';
 
-export class Pace implements Cloneable<Pace> {
+export class Pace implements Cloneable<Pace>, Formatable {
   private constructor(
     public minutes: number,
     public seconds: number,

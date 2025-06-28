@@ -7,12 +7,12 @@ import {
   signal,
   WritableSignal,
 } from '@angular/core';
-import { DistanceUnit } from '../models/distance-unit.enum';
-import { Distance } from '../models/distance.model';
-import { Pace } from '../models/pace.model';
-import { Time } from '../models/time.model';
-import { WeightUnit } from '../models/weight-unit.enum';
-import { Weight } from '../models/weight.model';
+import { Distance } from '../business/model/distance.model';
+import { DistanceUnit } from '../business/model/enums/distance-unit.enum';
+import { WeightUnit } from '../business/model/enums/weight-unit.enum';
+import { Pace } from '../business/model/pace.model';
+import { Time } from '../business/model/time.model';
+import { Weight } from '../business/model/weight.model';
 import { LocalStorageService } from './../services/local-storage.service';
 import { Store } from './store.model';
 import { Units } from './units.enum';

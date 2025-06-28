@@ -1,5 +1,5 @@
-import { Pace } from '../../../core/models/pace.model';
-import { Time } from '../../../core/models/time.model';
+import { Pace } from './pace.model';
+import { Time } from './time.model';
 
 export interface FinishTime {
   label: string;

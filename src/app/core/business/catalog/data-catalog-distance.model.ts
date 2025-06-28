@@ -1,18 +1,12 @@
-import { DistanceUnit } from '../../models/distance-unit.enum';
-import { MathUtils } from '../../utils/math.utils';
+import { Distance } from '../model/distance.model';
 
 export class DataCatalogDistance {
   private constructor(
-    public km: number,
-    public mi: number,
+    public distance: Distance,
     public label: string,
   ) {}
 
   static ofKm(km: number, label: string) {
-    return new DataCatalogDistance(km, MathUtils.convertToMi(km), label);
-  }
-
-  public getValueOfUnit(unit: DistanceUnit): number {
-    return unit === DistanceUnit.KM ? this.km : this.mi;
+    return new DataCatalogDistance(Distance.ofKm(km), label);
   }
 }

@@ -3,7 +3,7 @@ import { Component, effect, inject, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { Time } from '../../core/models/time.model';
+import { Time } from '../../core/business/model/time.model';
 import { StoreService } from '../../core/store/store.service';
 import { SelectOnFocus } from '../directives/select-on-focus';
 import { HorizontalLineWithText } from '../horizontal-line-with-text/horizontal-line-with-text';

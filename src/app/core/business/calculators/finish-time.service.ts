@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Distance } from '../../models/distance.model';
-import { Time } from '../../models/time.model';
 import { DataCatalogDistance } from '../catalog/data-catalog-distance.model';
+import { Distance } from '../model/distance.model';
+import { Time } from '../model/time.model';
 
 @Injectable({
   providedIn: 'root',
@@ -12,16 +12,16 @@ export class FinishTimeService {
     knownDistance: Distance,
     knownTime: Time,
   ) {
-    const targetDistance = target.getValueOfUnit(knownDistance.unit);
+    target.distance.convert(knownDistance.unit);
     const time = this.predictFinishTime(
-      targetDistance,
+      target.distance.value,
       knownDistance.value,
       knownTime,
     );
 
     return {
       label: target.label,
-      pace: time.toPace(Distance.of(targetDistance, knownDistance.unit)),
+      pace: time.toPace(target.distance),
       time,
     };
   }

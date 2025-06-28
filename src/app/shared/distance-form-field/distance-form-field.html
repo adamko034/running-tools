@@ -30,7 +30,10 @@
 
 <mat-menu #distanceMenu="matMenu">
   @for (distanceKey of distancesKeys; track $index) {
-  <button mat-menu-item (click)="setRaceDistance(distances[distanceKey].km)">
+  <button
+    mat-menu-item
+    (click)="setRaceDistance(distances[distanceKey].distance.value)"
+  >
     {{distances[distanceKey].label}}
   </button>
   }
