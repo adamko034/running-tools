@@ -1,16 +1,13 @@
 import { Component, computed, inject, Signal } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
-import { DataCatalog } from '../../../core/business/data-catalog';
-import { DataCatalogDistance } from '../../../core/business/data-catalog-distance.model';
-import { DistanceUnit } from '../../../core/models/distance-unit.enum';
-import { Distance } from '../../../core/models/distance.model';
-import { Time } from '../../../core/models/time.model';
+import { CalculatorsFacade } from '../../../core/business/calculators-facade';
+import { DataCatalog } from '../../../core/business/catalog/data-catalog';
+import { FinishTime } from '../../../core/business/model/finish-time.model';
 import { StoreService } from '../../../core/store/store.service';
 import { DistanceFormField } from '../../../shared/distance-form-field/distance-form-field';
 import { GreenBox } from '../../../shared/green-box/green-box';
 import { TimeFormField } from '../../../shared/time-form-field/time-form-field';
 import { ToolView } from '../../../shared/views/tool-view/tool-view';
-import { FinishTime } from './finish-time.model';
 
 @Component({
   selector: 'app-finish-time-predictor',
@@ -27,84 +24,43 @@ import { FinishTime } from './finish-time.model';
 })
 export class FinishTimePredictor {
   private store = inject(StoreService);
+  private calculators = inject(CalculatorsFacade);
 
-  public distanceUnit = this.store.distanceUnit;
   public raceTimes: Signal<FinishTime[]> = computed(() => {
     const knownTime = this.store.time();
     const knownDistance = this.store.distance();
-    const unit = this.store.distanceUnit();
 
     return [
-      this.createRaceTime(
+      this.calculators.finishTime(
         DataCatalog.distances.fourHundredM,
-        knownTime,
         knownDistance,
-        unit,
+        knownTime,
       ),
-      this.createRaceTime(
+      this.calculators.finishTime(
         DataCatalog.distances.oneK,
-        knownTime,
         knownDistance,
-        unit,
+        knownTime,
       ),
-      this.createRaceTime(
+      this.calculators.finishTime(
         DataCatalog.distances.fiveK,
-        knownTime,
         knownDistance,
-        unit,
+        knownTime,
       ),
-      this.createRaceTime(
+      this.calculators.finishTime(
         DataCatalog.distances.tenK,
-        knownTime,
         knownDistance,
-        unit,
+        knownTime,
       ),
-      this.createRaceTime(
+      this.calculators.finishTime(
         DataCatalog.distances.halfMarathon,
-        knownTime,
         knownDistance,
-        unit,
+        knownTime,
       ),
-      this.createRaceTime(
+      this.calculators.finishTime(
         DataCatalog.distances.marathon,
-        knownTime,
         knownDistance,
-        unit,
+        knownTime,
       ),
     ];
   });
-
-  private createRaceTime(
-    target: DataCatalogDistance,
-    knownTime: Time,
-    knownDistance: Distance,
-    unit: DistanceUnit,
-  ): FinishTime {
-    const targetDistance = target.getValueOfUnit(unit);
-    const time = this.predictFinishTime(
-      knownTime,
-      knownDistance.value,
-      targetDistance,
-    );
-
-    return {
-      label: target.label,
-      pace: time.pace(targetDistance),
-      time,
-    };
-  }
-
-  private predictFinishTime(
-    knownTime: Time,
-    knownDistance: number,
-    targetDistance: number,
-  ): Time {
-    const totalSeconds = knownTime.totalSeconds();
-
-    const exponent = 1.06;
-    const targetTotalSeconds =
-      totalSeconds * Math.pow(targetDistance / knownDistance, exponent);
-
-    return Time.ofSeconds(targetTotalSeconds);
-  }
 }

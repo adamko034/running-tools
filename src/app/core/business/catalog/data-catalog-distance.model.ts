@@ -1,5 +1,5 @@
-import { DistanceUnit } from '../models/distance-unit.enum';
-import { MathUtils } from '../utils/math.utils';
+import { DistanceUnit } from '../../models/distance-unit.enum';
+import { MathUtils } from '../../utils/math.utils';
 
 export class DataCatalogDistance {
   private constructor(

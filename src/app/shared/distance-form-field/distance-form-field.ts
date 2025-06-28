@@ -5,7 +5,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
-import { DataCatalog } from '../../core/business/data-catalog';
+import { DataCatalog } from '../../core/business/catalog/data-catalog';
 import { StoreService } from '../../core/store/store.service';
 import { SelectOnFocus } from '../directives/select-on-focus';
 import { HorizontalLineWithText } from '../horizontal-line-with-text/horizontal-line-with-text';
@@ -29,18 +29,18 @@ export class DistanceFormField {
   @Input() showHorizontalLine = true;
 
   private store = inject(StoreService);
-  distance = this.store.distance();
+  distance = this.store.distance;
 
   distancesKeys = DataCatalog.distancesKeys;
   distances = DataCatalog.distances;
 
   setDistance(value: number) {
-    this.distance.value = value;
-    this.store.updateDistance(this.distance);
+    this.distance().value = value;
+    this.store.updateDistance(this.distance());
   }
 
   setRaceDistance(kmValue: number) {
-    this.distance.convertAndSetKmValue(kmValue);
-    this.store.updateDistance(this.distance);
+    this.distance().convertAndSetKmValue(kmValue);
+    this.store.updateDistance(this.distance());
   }
 }

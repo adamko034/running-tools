@@ -1,6 +1,10 @@
+import { MathUtils } from '../utils/math.utils';
+import { Cloneable } from './clonable.interface';
+import { Distance } from './distance.model';
 import { Pace } from './pace.model';
+import { Speed } from './speed.model';
 
-export class Time {
+export class Time implements Cloneable<Time> {
   constructor(
     public hours: number,
     public minutes: number,
@@ -17,6 +21,14 @@ export class Time {
     const s = Math.round(totalSeconds % 60);
 
     return Time.of(h, m, s);
+  }
+
+  clone(overrides?: Partial<Time> | undefined): Time {
+    return Time.of(
+      overrides?.hours || this.hours,
+      overrides?.minutes || this.minutes,
+      overrides?.seconds || this.seconds,
+    );
   }
 
   validate() {
@@ -53,6 +65,10 @@ export class Time {
     return this.hours * 60 * 60 + this.minutes * 60 + this.seconds;
   }
 
+  public totalHours(): number {
+    return this.totalMinutes() / 60;
+  }
+
   public format(): string {
     const pad = (v: number) => String(v).padStart(2, '0');
     return this.hours > 0
@@ -60,7 +76,14 @@ export class Time {
       : `${this.minutes}:${pad(this.seconds)}`;
   }
 
-  public pace(distance: number): Pace {
+  public toSpeed(distance: Distance): Speed {
+    const hours = this.totalSeconds() / 3600;
+    const speed = hours === 0 ? 0 : distance.value / hours;
+
+    return Speed.of(MathUtils.roundThousand(speed), distance.unit);
+  }
+
+  public toPace(distance: Distance): Pace {
     return Pace.calculate(this, distance);
   }
 }

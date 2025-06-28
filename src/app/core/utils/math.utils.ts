@@ -11,8 +11,16 @@ export class MathUtils {
     },
   };
 
+  static roundTen(value: number): number {
+    return Math.round(value * 10) / 10;
+  }
+
   static roundThousand(value: number): number {
     return Math.round(value * 1000) / 1000;
+  }
+
+  static roundInteger(value: number): number {
+    return Math.round(value);
   }
 
   static convertToMi(km: number): number {

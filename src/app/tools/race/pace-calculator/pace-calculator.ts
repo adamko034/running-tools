@@ -36,7 +36,7 @@ export class PaceCalculator {
   private getSummary(store: Store) {
     const { distance, time, pace } = store;
     const timeFormatted = time.format();
-    const paceFormatted = pace.format(distance.unit);
+    const paceFormatted = pace.format();
 
     return `${distance.value} ${distance.unit} • ${timeFormatted} • ${paceFormatted}`;
   }

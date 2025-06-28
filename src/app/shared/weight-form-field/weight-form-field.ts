@@ -24,11 +24,10 @@ export class WeightFormField {
   @Input() showHorizontalLine = true;
 
   private store = inject(StoreService);
-  weight = this.store.weight();
-  unit = this.store.weightUnit;
+  weight = this.store.weight;
 
   setWeight(value: number) {
-    this.weight.value = value;
-    this.store.updateWeight(this.weight);
+    this.weight().value = value;
+    this.store.updateWeight(this.weight());
   }
 }

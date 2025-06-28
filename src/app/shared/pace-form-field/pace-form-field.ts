@@ -1,9 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component, effect, inject, Input } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { Pace } from '../../core/models/pace.model';
 import { StoreService } from '../../core/store/store.service';
 import { SelectOnFocus } from '../directives/select-on-focus';
 import { HorizontalLineWithText } from '../horizontal-line-with-text/horizontal-line-with-text';
@@ -25,22 +24,9 @@ export class PaceFormField {
   @Input() showHorizontalLine = true;
 
   private store = inject(StoreService);
-  private pace = this.store.pace;
-
-  public minutes = this.pace().minutes;
-  public seconds = this.pace().seconds;
-
-  constructor() {
-    effect(() => {
-      const newPace = this.pace();
-      this.minutes = newPace.minutes;
-      this.seconds = newPace.seconds;
-    });
-  }
+  pace = this.store.pace;
 
   onPaceChange() {
-    const newPace = Pace.of(this.minutes, this.seconds);
-
-    this.store.updatePace(newPace);
+    this.store.updatePace(this.pace());
   }
 }

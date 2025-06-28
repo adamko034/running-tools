@@ -10,12 +10,12 @@
       type="number"
       min="0"
       step="0.1"
-      [ngModel]="distance.value"
+      [ngModel]="distance().value"
       name="distance"
       (ngModelChange)="setDistance($event)"
       selectOnFocus
     />
-    <span matTextSuffix>{{distance.unit}}</span>
+    <span matTextSuffix>{{distance().unit}}</span>
     <button
       class="mx-2"
       mat-icon-button

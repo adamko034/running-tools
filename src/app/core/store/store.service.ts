@@ -29,10 +29,6 @@ export class StoreService {
     return computed(() => this._store());
   }
 
-  get distanceUnit(): Signal<DistanceUnit> {
-    return computed(() => this.getDistanceUnit(this._store().units));
-  }
-
   get distance(): Signal<Distance> {
     return computed(() => this._store().distance);
   }
@@ -47,10 +43,6 @@ export class StoreService {
 
   get weight(): Signal<Weight> {
     return computed(() => this._store().weight);
-  }
-
-  get weightUnit(): Signal<WeightUnit> {
-    return computed(() => this.getWeightUnit(this._store().units));
   }
 
   get units(): Signal<Units> {
@@ -75,29 +67,37 @@ export class StoreService {
     const weight = this._store().weight;
     weight.unit = this.getWeightUnit(newUnits);
 
-    this._store.set({ ...this._store(), distance, units: newUnits, weight });
+    this._store.set({
+      ...this._store(),
+      distance: distance.clone(),
+      units: newUnits,
+      weight: weight.clone(),
+    });
   }
 
   public updateDistance(distance: Distance) {
-    this._store.set({ ...this._store(), distance });
+    this._store.update((current) => ({
+      ...current,
+      distance: distance.clone(),
+    }));
   }
 
   public updateTime(time: Time) {
-    this._store.set({ ...this._store(), time });
+    this._store.set({ ...this._store(), time: time.clone() });
   }
 
   public updatePace(newPace: Pace) {
-    const time = newPace.calculateTime(this._store().distance);
+    const time = newPace.toTime(this._store().distance);
     this._store.update((current) => ({ ...current, time }));
   }
 
   public updateWeight(weight: Weight) {
-    this._store.update((current) => ({ ...current, weight }));
+    this._store.update((current) => ({ ...current, weight: weight.clone() }));
   }
 
   private calculatePace() {
     const { time, distance, pace: currentPace } = this._store();
-    const newPace = Pace.calculate(time, distance.value);
+    const newPace = Pace.calculate(time, distance);
 
     if (currentPace.totalSeconds() != newPace.totalSeconds()) {
       this._store.update((current) => ({ ...current, pace: newPace }));
@@ -125,7 +125,7 @@ export class StoreService {
     }
 
     const units = stored.units || initialStore.units;
-    const distance = Distance.ofValueUnit(
+    const distance = Distance.of(
       stored.distance || initialStore.distance.value,
       this.getDistanceUnit(units),
     );
@@ -141,14 +141,14 @@ export class StoreService {
       this.getWeightUnit(units),
     );
 
-    return { ...initialStore, ...stored, time, distance, weight, units };
+    return { ...initialStore, time, distance, weight, units };
   }
 
   private initialValues(): Store {
     const time = Time.of(0, 55, 0);
     const distanceUnit = this.getDistanceUnitFromLocal();
-    const distance = Distance.ofValueUnit(10, distanceUnit);
-    const pace = Pace.calculate(time, distance.value);
+    const distance = Distance.of(10, distanceUnit);
+    const pace = Pace.calculate(time, distance);
     const weightUnit =
       distanceUnit == DistanceUnit.KM ? WeightUnit.KG : WeightUnit.LB;
     const weight = Weight.of(80, weightUnit);

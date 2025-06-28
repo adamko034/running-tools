@@ -6,8 +6,10 @@
   >
   <ng-container tool-content>
     <app-distance-form-field />
-    <app-pace-form-field />
+    <app-time-form-field />
     <app-weight-form-field />
   </ng-container>
-  <ng-container tool-summary></ng-container>
+  <ng-container tool-summary>
+    <app-green-box>{{summary()}}</app-green-box>
+  </ng-container>
 </app-tool-view>

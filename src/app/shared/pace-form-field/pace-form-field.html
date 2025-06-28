@@ -6,7 +6,7 @@
       matInput
       type="number"
       min="0"
-      [(ngModel)]="minutes"
+      [(ngModel)]="pace().minutes"
       name="paceMinutes"
       (ngModelChange)="onPaceChange()"
       selectOnFocus
@@ -18,7 +18,7 @@
     <input
       matInput
       type="number"
-      [(ngModel)]="seconds"
+      [(ngModel)]="pace().seconds"
       name="paceSeconds"
       (ngModelChange)="onPaceChange()"
       selectOnFocus
