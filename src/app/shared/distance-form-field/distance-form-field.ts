@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, Input } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
@@ -8,12 +8,11 @@ import { MatMenuModule } from '@angular/material/menu';
 import { DataCatalog } from '../../core/business/catalog/data-catalog';
 import { StoreService } from '../../core/store/store.service';
 import { SelectOnFocus } from '../directives/select-on-focus';
-import { HorizontalLineWithText } from '../horizontal-line-with-text/horizontal-line-with-text';
+import { FormField } from '../form-field/form-field';
 
 @Component({
   selector: 'app-distance-form-field',
   imports: [
-    HorizontalLineWithText,
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
@@ -21,13 +20,12 @@ import { HorizontalLineWithText } from '../horizontal-line-with-text/horizontal-
     SelectOnFocus,
     MatIconModule,
     MatMenuModule,
+    FormField,
   ],
   templateUrl: './distance-form-field.html',
   styleUrl: './distance-form-field.scss',
 })
 export class DistanceFormField {
-  @Input() showHorizontalLine = true;
-
   private store = inject(StoreService);
   distance = this.store.distance;
 

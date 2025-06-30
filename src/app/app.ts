@@ -29,15 +29,15 @@ export class App {
         { text: 'VO₂max', link: 'personal/vo2max-calculator' },
       ],
     },
-    // {
-    //   title: 'units',
-    //   links: [
-    //     { text: 'pace / speed', link: 'units/pace-speed-converter' },
-    //     {
-    //       text: 'kilometers / miles',
-    //       link: 'units/kilometers-miles-converter',
-    //     },
-    //   ],
-    // },
+    {
+      title: 'units',
+      links: [
+        { text: 'pace / speed', link: 'units/pace-to-speed' },
+        // {
+        //   text: 'kilometers / miles',
+        //   link: 'units/kilometers-miles-converter',
+        // },
+      ],
+    },
   ];
 }

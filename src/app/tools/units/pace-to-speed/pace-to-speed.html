@@ -1,0 +1,15 @@
+<app-tool-view>
+  <ng-container tool-title>Pace to Speed Conversion</ng-container>
+  <ng-container tool-description
+    >Calculate equivalent speed and pace for your workouts.</ng-container
+  >
+  <ng-container tool-content>
+    <app-pace-form-field />
+    <app-speed-form-field />
+  </ng-container>
+  <ng-container tool-summary>
+    <app-green-box>
+      Pace: {{pace().format()}} • Speed: {{speed().format()}}
+    </app-green-box>
+  </ng-container>
+</app-tool-view>

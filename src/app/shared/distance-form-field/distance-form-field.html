@@ -1,40 +1,37 @@
-<app-horizontal-line-with-text
-  *ngIf="showHorizontalLine"
-  [text]="'Distance'"
-></app-horizontal-line-with-text>
+<app-form-field [horizontalLineText]="'Distance'">
+  <div class="flex">
+    <mat-form-field appearance="outline" class="w-[160px]">
+      <input
+        matInput
+        type="number"
+        min="0"
+        step="0.1"
+        [ngModel]="distance().value"
+        name="distance"
+        (ngModelChange)="setDistance($event)"
+        selectOnFocus
+      />
+      <span matTextSuffix>{{distance().unit}}</span>
+      <button
+        class="mx-2"
+        mat-icon-button
+        matSuffix
+        [matMenuTriggerFor]="distanceMenu"
+        aria-label="Select common distances"
+      >
+        <mat-icon>more_vert</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
 
-<div class="flex">
-  <mat-form-field appearance="outline" class="w-[160px]">
-    <input
-      matInput
-      type="number"
-      min="0"
-      step="0.1"
-      [ngModel]="distance().value"
-      name="distance"
-      (ngModelChange)="setDistance($event)"
-      selectOnFocus
-    />
-    <span matTextSuffix>{{distance().unit}}</span>
+  <mat-menu #distanceMenu="matMenu">
+    @for (distanceKey of distancesKeys; track $index) {
     <button
-      class="mx-2"
-      mat-icon-button
-      matSuffix
-      [matMenuTriggerFor]="distanceMenu"
-      aria-label="Select common distances"
+      mat-menu-item
+      (click)="setRaceDistance(distances[distanceKey].distance.value)"
     >
-      <mat-icon>more_vert</mat-icon>
+      {{distances[distanceKey].label}}
     </button>
-  </mat-form-field>
-</div>
-
-<mat-menu #distanceMenu="matMenu">
-  @for (distanceKey of distancesKeys; track $index) {
-  <button
-    mat-menu-item
-    (click)="setRaceDistance(distances[distanceKey].distance.value)"
-  >
-    {{distances[distanceKey].label}}
-  </button>
-  }
-</mat-menu>
+    }
+  </mat-menu>
+</app-form-field>

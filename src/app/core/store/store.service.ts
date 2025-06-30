@@ -87,6 +87,7 @@ export class StoreService {
   }
 
   public updatePace(newPace: Pace) {
+    console.log('store, updating pace current: ', this._store().pace.format());
     const time = newPace.toTime(this._store().distance);
     this._store.update((current) => ({ ...current, time }));
   }
@@ -96,10 +97,15 @@ export class StoreService {
   }
 
   private calculatePace() {
+    console.log(
+      'store, calculating new pace current: ',
+      this._store().pace.format(),
+    );
     const { time, distance, pace: currentPace } = this._store();
     const newPace = Pace.calculate(time, distance);
 
-    if (currentPace.totalSeconds() != newPace.totalSeconds()) {
+    if (!currentPace.isTheSameAs(newPace)) {
+      console.log('store, new pace');
       this._store.update((current) => ({ ...current, pace: newPace }));
     }
   }

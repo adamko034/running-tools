@@ -1,40 +1,40 @@
-<app-horizontal-line-with-text [text]="'Time'" />
+<app-form-field [horizontalLineText]="'Time'">
+  <div class="flex gap-2">
+    <mat-form-field appearance="outline" class="w-[100px]">
+      <input
+        matInput
+        type="number"
+        min="0"
+        [(ngModel)]="hours"
+        name="hours"
+        (ngModelChange)="onTimeChange()"
+        selectOnFocus
+      />
+      <span matTextSuffix>h</span>
+    </mat-form-field>
 
-<div class="flex gap-2">
-  <mat-form-field appearance="outline" class="w-[100px]">
-    <input
-      matInput
-      type="number"
-      min="0"
-      [(ngModel)]="hours"
-      name="hours"
-      (ngModelChange)="onTimeChange()"
-      selectOnFocus
-    />
-    <span matTextSuffix>h</span>
-  </mat-form-field>
+    <mat-form-field appearance="outline" class="w-[100px]">
+      <input
+        matInput
+        type="number"
+        [(ngModel)]="minutes"
+        name="minutes"
+        (ngModelChange)="onTimeChange()"
+        selectOnFocus
+      />
+      <span matTextSuffix>min</span>
+    </mat-form-field>
 
-  <mat-form-field appearance="outline" class="w-[100px]">
-    <input
-      matInput
-      type="number"
-      [(ngModel)]="minutes"
-      name="minutes"
-      (ngModelChange)="onTimeChange()"
-      selectOnFocus
-    />
-    <span matTextSuffix>min</span>
-  </mat-form-field>
-
-  <mat-form-field appearance="outline" class="w-[100px]">
-    <input
-      matInput
-      type="number"
-      [(ngModel)]="seconds"
-      name="seconds"
-      (ngModelChange)="onTimeChange()"
-      selectOnFocus
-    />
-    <span matTextSuffix>sec</span>
-  </mat-form-field>
-</div>
+    <mat-form-field appearance="outline" class="w-[100px]">
+      <input
+        matInput
+        type="number"
+        [(ngModel)]="seconds"
+        name="seconds"
+        (ngModelChange)="onTimeChange()"
+        selectOnFocus
+      />
+      <span matTextSuffix>sec</span>
+    </mat-form-field>
+  </div>
+</app-form-field>

@@ -1,32 +1,36 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, Input } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { Pace } from '../../core/business/model/pace.model';
 import { StoreService } from '../../core/store/store.service';
 import { SelectOnFocus } from '../directives/select-on-focus';
-import { HorizontalLineWithText } from '../horizontal-line-with-text/horizontal-line-with-text';
+import { FormField } from '../form-field/form-field';
 
 @Component({
   selector: 'app-pace-form-field',
   imports: [
-    HorizontalLineWithText,
     FormsModule,
     CommonModule,
     MatFormFieldModule,
     MatInputModule,
     SelectOnFocus,
+    FormField,
   ],
   templateUrl: './pace-form-field.html',
   styleUrl: './pace-form-field.scss',
 })
 export class PaceFormField {
-  @Input() showHorizontalLine = true;
-
   private store = inject(StoreService);
-  pace = this.store.pace;
+  pace = computed(() => this.store.pace());
 
-  onPaceChange() {
-    this.store.updatePace(this.pace());
+  onPaceChange(value: number, minOrSec: 'min' | 'sec') {
+    const newPace = Pace.of(
+      minOrSec === 'min' ? value : this.pace().minutes,
+      minOrSec === 'sec' ? value : this.pace().seconds,
+      this.pace().unit,
+    );
+    this.store.updatePace(newPace);
   }
 }

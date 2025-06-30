@@ -2,10 +2,12 @@ import { MathUtils } from '../../utils/math.utils';
 import { Distance } from './distance.model';
 import { DistanceUnit } from './enums/distance-unit.enum';
 import { Cloneable } from './interfaces/clonable.interface';
+import { Comparable } from './interfaces/comparable.interface';
 import { Formatable } from './interfaces/formatable.interface';
+import { Speed } from './speed.model';
 import { Time } from './time.model';
 
-export class Pace implements Cloneable<Pace>, Formatable {
+export class Pace implements Cloneable<Pace>, Formatable, Comparable<Pace> {
   private constructor(
     public minutes: number,
     public seconds: number,
@@ -67,16 +69,22 @@ export class Pace implements Cloneable<Pace>, Formatable {
     return Time.of(hours, minutes, seconds);
   }
 
-  public format(): string {
+  format(): string {
     const pad = (v: number) => String(v).padStart(2, '0');
     return `${this.minutes}:${pad(this.seconds)}/${this.unit}`;
   }
 
-  public totalSeconds(): number {
+  totalSeconds(): number {
     return this.minutes * 60 + this.seconds;
   }
 
-  public toSpeed(): number {
-    return MathUtils.roundThousand(3600 / this.totalSeconds());
+  toSpeed(): Speed {
+    return Speed.of(MathUtils.roundTen(3600 / this.totalSeconds()), this.unit);
+  }
+
+  isTheSameAs(other: Pace): boolean {
+    return (
+      this.totalSeconds() == other.totalSeconds() && this.unit == other.unit
+    );
   }
 }

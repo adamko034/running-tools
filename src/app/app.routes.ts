@@ -46,4 +46,16 @@ export const routes: Routes = [
       },
     ],
   },
+  {
+    path: 'units',
+    children: [
+      {
+        path: 'pace-to-speed',
+        loadComponent: () =>
+          import('./tools/units/pace-to-speed/pace-to-speed').then(
+            (m) => m.PaceToSpeed,
+          ),
+      },
+    ],
+  },
 ];

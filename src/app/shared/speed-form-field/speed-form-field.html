@@ -1,0 +1,17 @@
+<app-form-field [horizontalLineText]="'Speed'">
+  <div class="flex gap-2">
+    <mat-form-field appearance="outline" class="w-[130px]">
+      <input
+        matInput
+        type="number"
+        min="0"
+        step="0.5"
+        [ngModel]="speed().value"
+        name="speed"
+        (ngModelChange)="onSpeedChange($event)"
+        selectOnFocus
+      />
+      <span matTextSuffix>{{speed().unitsFormat()}}</span>
+    </mat-form-field>
+  </div>
+</app-form-field>
