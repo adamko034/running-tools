@@ -3,13 +3,13 @@ import { Component, effect, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { Time } from '../../../core/business/model/time.model';
-import { StoreService } from '../../../core/store/store.service';
-import { SelectOnFocus } from '../../directives/select-on-focus';
-import { FormField } from '../form-field/form-field';
+import { Time } from '../../../../core/business/model/time.model';
+import { StoreService } from '../../../../core/store/store.service';
+import { SelectOnFocus } from '../../../directives/select-on-focus';
+import { FormField } from '../../form-field/form-field';
 
 @Component({
-  selector: 'app-time-form-field',
+  selector: 'app-time-store-form-field',
   imports: [
     MatFormFieldModule,
     MatInputModule,
@@ -18,10 +18,10 @@ import { FormField } from '../form-field/form-field';
     SelectOnFocus,
     FormField,
   ],
-  templateUrl: './time-form-field.html',
-  styleUrl: './time-form-field.scss',
+  templateUrl: './time-store-form-field.html',
+  styleUrl: './time-store-form-field.scss',
 })
-export class TimeFormField {
+export class TimeStoreFormField {
   private store = inject(StoreService);
   private time = this.store.time;
 

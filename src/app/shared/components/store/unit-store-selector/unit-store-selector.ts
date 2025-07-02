@@ -3,16 +3,16 @@ import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
-import { StoreService } from '../../../core/store/store.service';
-import { Units } from '../../../core/store/units.enum';
+import { StoreService } from '../../../../core/store/store.service';
+import { Units } from '../../../../core/store/units.enum';
 
 @Component({
-  selector: 'app-unit-selector',
+  selector: 'app-unit-store-selector',
   imports: [CommonModule, FormsModule, MatFormFieldModule, MatSelectModule],
-  templateUrl: './unit-selector.html',
-  styleUrl: './unit-selector.scss',
+  templateUrl: './unit-store-selector.html',
+  styleUrl: './unit-store-selector.scss',
 })
-export class UnitSelector {
+export class UnitStoreSelector {
   private store = inject(StoreService);
   units = this.store.units;
 

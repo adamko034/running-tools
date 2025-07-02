@@ -1,19 +1,20 @@
 import { Component, computed, inject } from '@angular/core';
 import { CalculatorsFacade } from '../../../core/business/calculators-facade';
 import { StoreService } from '../../../core/store/store.service';
-import { DistanceFormField } from '../../../shared/components/distance-form-field/distance-form-field';
 import { GreenBox } from '../../../shared/components/green-box/green-box';
-import { TimeFormField } from '../../../shared/components/time-form-field/time-form-field';
-import { WeightFormField } from '../../../shared/components/weight-form-field/weight-form-field';
+import { DistanceStoreFormField } from '../../../shared/components/store/distance-store-form-field/distance-store-form-field';
+import { WeightStoreFormField } from '../../../shared/components/store/weight-store-form-field/weight-store-form-field';
+
+import { TimeStoreFormField } from '../../../shared/components/store/time-store-form-field/time-store-form-field';
 import { ToolView } from './../../../shared/views/tool-view/tool-view';
 
 @Component({
   selector: 'app-calories-burned-calculator',
   imports: [
     ToolView,
-    DistanceFormField,
-    WeightFormField,
-    TimeFormField,
+    DistanceStoreFormField,
+    WeightStoreFormField,
+    TimeStoreFormField,
     GreenBox,
   ],
   templateUrl: './calories-burned-calculator.html',

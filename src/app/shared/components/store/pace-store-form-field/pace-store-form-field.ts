@@ -3,13 +3,13 @@ import { Component, computed, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { Pace } from '../../../core/business/model/pace.model';
-import { StoreService } from '../../../core/store/store.service';
-import { SelectOnFocus } from '../../directives/select-on-focus';
-import { FormField } from '../form-field/form-field';
+import { Pace } from '../../../../core/business/model/pace.model';
+import { StoreService } from '../../../../core/store/store.service';
+import { SelectOnFocus } from '../../../directives/select-on-focus';
+import { FormField } from '../../form-field/form-field';
 
 @Component({
-  selector: 'app-pace-form-field',
+  selector: 'app-pace-store-form-field',
   imports: [
     FormsModule,
     CommonModule,
@@ -18,10 +18,10 @@ import { FormField } from '../form-field/form-field';
     SelectOnFocus,
     FormField,
   ],
-  templateUrl: './pace-form-field.html',
-  styleUrl: './pace-form-field.scss',
+  templateUrl: './pace-store-form-field.html',
+  styleUrl: './pace-store-form-field.scss',
 })
-export class PaceFormField {
+export class PaceStoreFormField {
   private store = inject(StoreService);
   pace = computed(() => this.store.pace());
 

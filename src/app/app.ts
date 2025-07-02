@@ -3,11 +3,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { RouterModule } from '@angular/router';
 import { Navigation } from './core/navigation/navigation.model';
-import { UnitSelector } from './shared/components/unit-selector/unit-selector';
+import { UnitStoreSelector } from './shared/components/store/unit-store-selector/unit-store-selector';
 
 @Component({
   selector: 'app-root',
-  imports: [MatListModule, MatIconModule, RouterModule, UnitSelector],
+  imports: [MatListModule, MatIconModule, RouterModule, UnitStoreSelector],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
