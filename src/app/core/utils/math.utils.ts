@@ -39,7 +39,7 @@ export class MathUtils {
 
   static convertKgLb(value: number, toUnit: WeightUnit): number {
     return toUnit == WeightUnit.LB
-      ? this.roundThousand(value * this.conversion.factors.kgToLb)
-      : this.roundThousand(value * this.conversion.factors.lbToKg);
+      ? this.roundTen(value * this.conversion.factors.kgToLb)
+      : this.roundTen(value * this.conversion.factors.lbToKg);
   }
 }

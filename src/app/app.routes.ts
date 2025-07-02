@@ -56,6 +56,20 @@ export const routes: Routes = [
             (m) => m.PaceToSpeed,
           ),
       },
+      {
+        path: 'kilometers-to-miles',
+        loadComponent: () =>
+          import(
+            './tools/units/distance-unit-converter/distance-unit-converter'
+          ).then((m) => m.DistanceUnitConverter),
+      },
+      {
+        path: 'kilograms-to-pounds',
+        loadComponent: () =>
+          import(
+            './tools/units/weight-unit-converter/weight-unit-converter'
+          ).then((m) => m.WeightUnitConverter),
+      },
     ],
   },
 ];

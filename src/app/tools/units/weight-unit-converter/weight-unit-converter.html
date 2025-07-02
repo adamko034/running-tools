@@ -1,0 +1,29 @@
+<app-tool-view>
+  <ng-container tool-title>Weight Units Converter</ng-container>
+  <ng-container tool-description
+    >Quickly convert weights between kilograms and pounds.</ng-container
+  >
+  <ng-container tool-content>
+    <app-number-form-field
+      [horizontalLineText]="'Kilograms'"
+      [name]="'weightUnitConverterKilograms'"
+      [step]="0.1"
+      [suffix]="kgWeight.unit"
+      [value]="kgWeight.value"
+      (valueChange)="onKilogramsChange($event)"
+    ></app-number-form-field>
+    <app-number-form-field
+      [horizontalLineText]="'Pounds'"
+      [name]="'weightUnitConverterPounds'"
+      [step]="0.1"
+      [suffix]="lbWeight.unit"
+      [value]="lbWeight.value"
+      (valueChange)="onPoundsChange($event)"
+    ></app-number-form-field>
+  </ng-container>
+  <ng-container tool-summary>
+    <app-green-box>
+      Kilograms: {{kgWeight.format()}} • Pounds: {{lbWeight.format()}}
+    </app-green-box>
+  </ng-container>
+</app-tool-view>

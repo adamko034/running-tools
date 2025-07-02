@@ -1,0 +1,37 @@
+<app-tool-view>
+  <ng-container tool-title> Distance Units Converter </ng-container>
+  <ng-container tool-description
+    >Quickly convert distances between miles and kilometers to plan your
+    training or races.</ng-container
+  >
+  <ng-container tool-content>
+    <app-select-race-distance
+      [value]="selectedKmDistance"
+      (distanceSelected)="onKmDistanceSelected($event)"
+    ></app-select-race-distance>
+    <app-number-form-field
+      [horizontalLineText]="'Kilometers'"
+      [name]="'distanceKilometers'"
+      [step]="0.001"
+      [suffix]="kmDistance.unit"
+      [value]="kmDistance.value"
+      (valueChange)="onKmDistanceChange($event)"
+    >
+    </app-number-form-field>
+
+    <app-number-form-field
+      [horizontalLineText]="'Miles'"
+      [name]="'distanceMiles'"
+      [step]="0.001"
+      [suffix]="miDistance.unit"
+      [value]="miDistance.value"
+      (valueChange)="onMiDistanceChange($event)"
+    >
+    </app-number-form-field>
+  </ng-container>
+  <ng-container tool-summary>
+    <app-green-box>
+      Kilometers: {{kmDistance.format()}} • Miles: {{miDistance.format()}}
+    </app-green-box>
+  </ng-container>
+</app-tool-view>

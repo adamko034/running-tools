@@ -33,10 +33,14 @@ export class App {
       title: 'units',
       links: [
         { text: 'pace / speed', link: 'units/pace-to-speed' },
-        // {
-        //   text: 'kilometers / miles',
-        //   link: 'units/kilometers-miles-converter',
-        // },
+        {
+          text: 'kilometers / miles',
+          link: 'units/kilometers-to-miles',
+        },
+        {
+          text: 'kilograms / pounds',
+          link: 'units/kilograms-to-pounds',
+        },
       ],
     },
   ];

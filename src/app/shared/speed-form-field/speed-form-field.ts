@@ -1,31 +1,20 @@
-import { Component, computed, inject } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Speed } from '../../core/business/model/speed.model';
-import { StoreService } from '../../core/store/store.service';
-import { SelectOnFocus } from '../directives/select-on-focus';
-import { FormField } from '../form-field/form-field';
+import { NumberFormField } from '../number-form-field/number-form-field';
 
 @Component({
   selector: 'app-speed-form-field',
-  imports: [
-    MatFormFieldModule,
-    FormsModule,
-    MatInputModule,
-    SelectOnFocus,
-    FormField,
-  ],
+  imports: [NumberFormField],
   templateUrl: './speed-form-field.html',
   styleUrl: './speed-form-field.scss',
 })
 export class SpeedFormField {
-  private store = inject(StoreService);
+  @Input() speed!: Speed;
 
-  speed = computed(() => this.store.pace().toSpeed());
+  @Output() speedChange = new EventEmitter<Speed>();
 
   onSpeedChange(newValue: number) {
-    const newSpeed = Speed.of(newValue, this.speed().units);
-    this.store.updatePace(newSpeed.toPace());
+    this.speed.value = newValue;
+    this.speedChange.emit(this.speed);
   }
 }

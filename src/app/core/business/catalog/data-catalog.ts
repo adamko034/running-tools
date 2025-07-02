@@ -9,7 +9,7 @@ export class DataCatalog {
     halfMarathon: DataCatalogDistance.ofKm(21.097, 'half-marathon'),
     marathon: DataCatalogDistance.ofKm(42.195, 'marathon'),
   };
-  static calorieFactor = 1.036; // average for running
+  static calorieFactor = 0.0175; // average for running
 
   static readonly distancesKeys: DistanceKey[] = Object.keys(
     this.distances,

@@ -38,7 +38,7 @@ export class StoreService {
   }
 
   get pace(): Signal<Pace> {
-    return computed(() => this._store().pace);
+    return computed(() => this._store().pace.clone());
   }
 
   get weight(): Signal<Weight> {

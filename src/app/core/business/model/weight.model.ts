@@ -8,8 +8,15 @@ export class Weight implements Cloneable<Weight>, Formatable {
     public value: number,
     public unit: WeightUnit,
   ) {}
+
   static of(value: number, unit: WeightUnit) {
     return new Weight(value, unit);
+  }
+
+  get kgValue(): number {
+    return this.unit === WeightUnit.KG
+      ? this.value
+      : MathUtils.convertKgLb(this.value, WeightUnit.KG);
   }
 
   clone(overrides?: Partial<Weight> | undefined): Weight {
@@ -26,7 +33,17 @@ export class Weight implements Cloneable<Weight>, Formatable {
     }
   }
 
+  public cloneAndConvert(newUnit: WeightUnit) {
+    const cloned = this.clone();
+    cloned.convert(newUnit);
+    return cloned;
+  }
+
+  public setValueAndConvert(newValue: number) {
+    this.value = MathUtils.convertKgLb(newValue, this.unit);
+  }
+
   public format(): string {
-    return 'TO DO';
+    return `${this.value} ${this.unit}`;
   }
 }

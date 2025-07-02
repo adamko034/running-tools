@@ -1,0 +1,18 @@
+<app-form-field [horizontalLineText]="horizontalLineText">
+  <div class="flex gap-x-2">
+    <mat-form-field appearance="outline" class="w-[130px]">
+      <input
+        matInput
+        type="number"
+        [min]="min"
+        [step]="step"
+        [ngModel]="value"
+        [name]="name"
+        (ngModelChange)="onChange($event)"
+        selectOnFocus
+      />
+      <span *ngIf="suffix" matTextSuffix>{{suffix}}</span>
+    </mat-form-field>
+    <ng-content></ng-content>
+  </div>
+</app-form-field>

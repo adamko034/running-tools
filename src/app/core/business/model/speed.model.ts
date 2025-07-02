@@ -1,3 +1,4 @@
+import { MathUtils } from '../../utils/math.utils';
 import { DistanceUnit } from './enums/distance-unit.enum';
 import { Formatable } from './interfaces/formatable.interface';
 import { Pace } from './pace.model';
@@ -12,7 +13,7 @@ export class Speed implements Formatable {
     return new Speed(value, units);
   }
 
-  public toPace(): Pace {
+  toPace(): Pace {
     const hoursPerUnit = 1 / this.value;
     const secondsPerUnit = hoursPerUnit * 3600;
 
@@ -21,13 +22,28 @@ export class Speed implements Formatable {
     return Pace.of(minutes, seconds, this.units);
   }
 
-  public format(): string {
+  format(): string {
     return this.units === DistanceUnit.KM
       ? `${this.value} km/h`
       : `${this.value} mph`;
   }
 
-  public unitsFormat(): string {
+  unitsFormat(): string {
     return this.units === DistanceUnit.KM ? 'km/h' : 'mph';
+  }
+
+  convert(unit: DistanceUnit) {
+    if (this.units === unit) {
+      return;
+    }
+
+    this.units = unit;
+    this.value = MathUtils.convertKmMi(this.value, unit);
+  }
+
+  valueOfUnit(unit: DistanceUnit): number {
+    return this.units === unit
+      ? this.value
+      : MathUtils.convertKmMi(this.value, unit);
   }
 }

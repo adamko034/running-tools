@@ -49,4 +49,17 @@ export class Distance implements Cloneable<Distance>, Formatable {
       this.value = MathUtils.convertKmMi(this.value, unit);
     }
   }
+
+  public cloneAndConvert(unit: DistanceUnit): Distance {
+    if (unit !== this.unit) {
+      const newValue = MathUtils.convertKmMi(this.value, unit);
+      return this.clone({ value: newValue, unit });
+    }
+
+    return this;
+  }
+
+  public setValueAndConvert(newValue: number) {
+    this.value = MathUtils.convertKmMi(newValue, this.unit);
+  }
 }
