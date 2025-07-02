@@ -3,7 +3,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { Pace } from '../../core/business/model/pace.model';
+import { Pace } from '../../../core/business/model/pace.model';
 import { FormField } from '../form-field/form-field';
 
 @Component({

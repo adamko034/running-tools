@@ -2,9 +2,9 @@ import { Component, inject } from '@angular/core';
 import { Distance } from '../../../core/business/model/distance.model';
 import { DistanceUnit } from '../../../core/business/model/enums/distance-unit.enum';
 import { StoreService } from '../../../core/store/store.service';
-import { GreenBox } from '../../../shared/green-box/green-box';
-import { NumberFormField } from '../../../shared/number-form-field/number-form-field';
-import { SelectRaceDistance } from '../../../shared/select-race-distance/select-race-distance';
+import { GreenBox } from '../../../shared/components/green-box/green-box';
+import { NumberFormField } from '../../../shared/components/number-form-field/number-form-field';
+import { SelectRaceDistance } from '../../../shared/components/select-race-distance/select-race-distance';
 import { ToolView } from '../../../shared/views/tool-view/tool-view';
 
 @Component({

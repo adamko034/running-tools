@@ -1,11 +1,10 @@
 import { Component, computed, inject } from '@angular/core';
 import { CalculatorsFacade } from '../../../core/business/calculators-facade';
 import { StoreService } from '../../../core/store/store.service';
-import { DistanceFormField } from '../../../shared/distance-form-field/distance-form-field';
-import { GreenBox } from '../../../shared/green-box/green-box';
-import { TimeFormField } from '../../../shared/time-form-field/time-form-field';
+import { DistanceFormField } from '../../../shared/components/distance-form-field/distance-form-field';
+import { GreenBox } from '../../../shared/components/green-box/green-box';
+import { TimeFormField } from '../../../shared/components/time-form-field/time-form-field';
 import { ToolView } from '../../../shared/views/tool-view/tool-view';
-
 @Component({
   selector: 'app-vo2max-calculator',
   imports: [ToolView, DistanceFormField, TimeFormField, GreenBox],

@@ -3,8 +3,8 @@ import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { StoreService } from '../../core/store/store.service';
-import { SelectOnFocus } from '../directives/select-on-focus';
+import { StoreService } from '../../../core/store/store.service';
+import { SelectOnFocus } from '../../directives/select-on-focus';
 import { FormField } from '../form-field/form-field';
 
 @Component({

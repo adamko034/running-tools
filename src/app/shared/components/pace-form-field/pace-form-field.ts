@@ -3,9 +3,9 @@ import { Component, computed, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { Pace } from '../../core/business/model/pace.model';
-import { StoreService } from '../../core/store/store.service';
-import { SelectOnFocus } from '../directives/select-on-focus';
+import { Pace } from '../../../core/business/model/pace.model';
+import { StoreService } from '../../../core/store/store.service';
+import { SelectOnFocus } from '../../directives/select-on-focus';
 import { FormField } from '../form-field/form-field';
 
 @Component({

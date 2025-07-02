@@ -2,9 +2,9 @@ import { Component, effect, inject } from '@angular/core';
 import { Pace } from '../../../core/business/model/pace.model';
 import { Speed } from '../../../core/business/model/speed.model';
 import { StoreService } from '../../../core/store/store.service';
-import { GreenBox } from '../../../shared/green-box/green-box';
-import { PaceInputsFormField } from '../../../shared/pace-inputs-form-field/pace-inputs-form-field';
-import { SpeedFormField } from '../../../shared/speed-form-field/speed-form-field';
+import { GreenBox } from '../../../shared/components/green-box/green-box';
+import { PaceInputsFormField } from '../../../shared/components/pace-inputs-form-field/pace-inputs-form-field';
+import { SpeedFormField } from '../../../shared/components/speed-form-field/speed-form-field';
 import { ToolView } from '../../../shared/views/tool-view/tool-view';
 
 @Component({

@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Speed } from '../../core/business/model/speed.model';
+import { Speed } from '../../../core/business/model/speed.model';
 import { NumberFormField } from '../number-form-field/number-form-field';
 
 @Component({

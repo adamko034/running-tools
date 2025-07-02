@@ -5,9 +5,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
-import { DataCatalog } from '../../core/business/catalog/data-catalog';
-import { StoreService } from '../../core/store/store.service';
-import { SelectOnFocus } from '../directives/select-on-focus';
+import { DataCatalog } from '../../../core/business/catalog/data-catalog';
+import { StoreService } from '../../../core/store/store.service';
+import { SelectOnFocus } from '../../directives/select-on-focus';
 import { FormField } from '../form-field/form-field';
 
 @Component({
