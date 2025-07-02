@@ -1,14 +1,13 @@
 import { MathUtils } from '../../utils/math.utils';
 import { DistanceUnit } from './enums/distance-unit.enum';
-import { Formatable } from './interfaces/formatable.interface';
+import { BusinessModel } from './interfaces/business-model.interface';
 import { Pace } from './pace.model';
 
-export class Speed implements Formatable {
+export class Speed implements BusinessModel<Speed, DistanceUnit> {
   private constructor(
     public value: number,
     public units: DistanceUnit,
   ) {}
-
   static of(value: number, units: DistanceUnit) {
     return new Speed(value, units);
   }
@@ -45,5 +44,31 @@ export class Speed implements Formatable {
     return this.units === unit
       ? this.value
       : MathUtils.convertKmMi(this.value, unit);
+  }
+
+  clone(overrides?: Partial<Speed> | undefined): Speed {
+    return Speed.of(
+      overrides?.value || this.value,
+      overrides?.units || this.units,
+    );
+  }
+
+  cloneAndConvert(unit: DistanceUnit): Speed {
+    if (this.units !== unit) {
+      const newValue = MathUtils.convertKmMi(this.value, unit);
+      return Speed.of(newValue, unit);
+    }
+
+    return this.clone();
+  }
+
+  isTheSameAs(other: Speed): boolean {
+    return this.value === other.value && this.units === other.units;
+  }
+
+  validate(): void {
+    if (this.value <= 0) {
+      this.value = 0.01;
+    }
   }
 }

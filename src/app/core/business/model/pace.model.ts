@@ -1,13 +1,11 @@
 import { MathUtils } from '../../utils/math.utils';
 import { Distance } from './distance.model';
 import { DistanceUnit } from './enums/distance-unit.enum';
-import { Cloneable } from './interfaces/clonable.interface';
-import { Comparable } from './interfaces/comparable.interface';
-import { Formatable } from './interfaces/formatable.interface';
+import { BusinessModel } from './interfaces/business-model.interface';
 import { Speed } from './speed.model';
 import { Time } from './time.model';
 
-export class Pace implements Cloneable<Pace>, Formatable, Comparable<Pace> {
+export class Pace implements BusinessModel<Pace, DistanceUnit> {
   private constructor(
     public minutes: number,
     public seconds: number,
@@ -25,6 +23,18 @@ export class Pace implements Cloneable<Pace>, Formatable, Comparable<Pace> {
 
   static of(minutes: number, seconds: number, unit: DistanceUnit) {
     return new Pace(minutes, seconds, unit);
+  }
+
+  static ofTotalMinutes(totalMinutes: number, unit: DistanceUnit): Pace {
+    let minutes = Math.floor(totalMinutes);
+    let seconds = Math.round((totalMinutes - minutes) * 60);
+
+    if (seconds === 60) {
+      minutes += 1;
+      seconds = 0;
+    }
+
+    return Pace.of(minutes, seconds, unit);
   }
 
   clone(overrides?: Partial<Pace>): Pace {
@@ -78,6 +88,10 @@ export class Pace implements Cloneable<Pace>, Formatable, Comparable<Pace> {
     return this.minutes * 60 + this.seconds;
   }
 
+  totalMinutes(): number {
+    return MathUtils.roundTen(this.minutes + this.seconds / 60);
+  }
+
   toSpeed(): Speed {
     return Speed.of(MathUtils.roundTen(3600 / this.totalSeconds()), this.unit);
   }
@@ -86,5 +100,29 @@ export class Pace implements Cloneable<Pace>, Formatable, Comparable<Pace> {
     return (
       this.totalSeconds() == other.totalSeconds() && this.unit == other.unit
     );
+  }
+
+  cloneAndConvert(unit: DistanceUnit): Pace {
+    if (unit !== this.unit) {
+      const newTotalMinutes = MathUtils.convertKmMi(
+        this.totalMinutes(),
+        this.unit,
+      );
+      return Pace.ofTotalMinutes(newTotalMinutes, unit);
+    }
+
+    return this.clone();
+  }
+
+  convert(unit: DistanceUnit): void {
+    if (unit !== this.unit) {
+      const newTotalMinutes = MathUtils.convertKmMi(
+        this.totalMinutes(),
+        this.unit,
+      );
+      const newPace = Pace.ofTotalMinutes(newTotalMinutes, unit);
+      this.minutes = newPace.minutes;
+      this.seconds = newPace.seconds;
+    }
   }
 }

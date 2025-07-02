@@ -1,14 +1,12 @@
 import { MathUtils } from '../../utils/math.utils';
 import { DistanceUnit } from './enums/distance-unit.enum';
-import { Cloneable } from './interfaces/clonable.interface';
-import { Formatable } from './interfaces/formatable.interface';
+import { BusinessModel } from './interfaces/business-model.interface';
 
-export class Distance implements Cloneable<Distance>, Formatable {
+export class Distance implements BusinessModel<Distance, DistanceUnit> {
   private constructor(
     public value: number,
     public unit: DistanceUnit,
   ) {}
-
   static of(value: number, unit: DistanceUnit) {
     return new Distance(value, unit);
   }
@@ -32,25 +30,29 @@ export class Distance implements Cloneable<Distance>, Formatable {
     this.value = kmValue;
   }
 
-  public clone(overrides?: Partial<Distance>) {
+  public setValueAndConvert(newValue: number) {
+    this.value = MathUtils.convertKmMi(newValue, this.unit);
+  }
+
+  clone(overrides?: Partial<Distance>) {
     return Distance.of(
       overrides?.value || this.value,
       overrides?.unit || this.unit,
     );
   }
 
-  public format(): string {
+  format(): string {
     return `${this.value} ${this.unit}`;
   }
 
-  public convert(unit: DistanceUnit) {
+  convert(unit: DistanceUnit) {
     if (unit !== this.unit) {
       this.unit = unit;
       this.value = MathUtils.convertKmMi(this.value, unit);
     }
   }
 
-  public cloneAndConvert(unit: DistanceUnit): Distance {
+  cloneAndConvert(unit: DistanceUnit): Distance {
     if (unit !== this.unit) {
       const newValue = MathUtils.convertKmMi(this.value, unit);
       return this.clone({ value: newValue, unit });
@@ -59,7 +61,13 @@ export class Distance implements Cloneable<Distance>, Formatable {
     return this;
   }
 
-  public setValueAndConvert(newValue: number) {
-    this.value = MathUtils.convertKmMi(newValue, this.unit);
+  isTheSameAs(other: Distance): boolean {
+    return other.value == this.value && other.unit === this.unit;
+  }
+
+  validate() {
+    if (this.value <= 0) {
+      this.value = 0.01;
+    }
   }
 }

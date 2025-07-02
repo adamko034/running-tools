@@ -1,17 +1,15 @@
 import { MathUtils } from '../../utils/math.utils';
 import { Distance } from './distance.model';
-import { Cloneable } from './interfaces/clonable.interface';
-import { Formatable } from './interfaces/formatable.interface';
+import { BusinessModel } from './interfaces/business-model.interface';
 import { Pace } from './pace.model';
 import { Speed } from './speed.model';
 
-export class Time implements Cloneable<Time>, Formatable {
+export class Time implements BusinessModel<Time, undefined> {
   constructor(
     public hours: number,
     public minutes: number,
     public seconds: number,
   ) {}
-
   static of(hours: number, minutes: number, seconds: number) {
     return new Time(hours, minutes, seconds);
   }
@@ -86,5 +84,17 @@ export class Time implements Cloneable<Time>, Formatable {
 
   public toPace(distance: Distance): Pace {
     return Pace.calculate(this, distance);
+  }
+
+  cloneAndConvert(): Time {
+    return this.clone();
+  }
+
+  convert(): void {
+    return;
+  }
+
+  isTheSameAs(other: Time): boolean {
+    return this.totalSeconds() === other.totalSeconds();
   }
 }

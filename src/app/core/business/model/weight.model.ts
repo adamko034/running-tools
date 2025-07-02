@@ -1,9 +1,8 @@
 import { MathUtils } from '../../utils/math.utils';
 import { WeightUnit } from './enums/weight-unit.enum';
-import { Cloneable } from './interfaces/clonable.interface';
-import { Formatable } from './interfaces/formatable.interface';
+import { BusinessModel } from './interfaces/business-model.interface';
 
-export class Weight implements Cloneable<Weight>, Formatable {
+export class Weight implements BusinessModel<Weight, WeightUnit> {
   private constructor(
     public value: number,
     public unit: WeightUnit,
@@ -45,5 +44,15 @@ export class Weight implements Cloneable<Weight>, Formatable {
 
   public format(): string {
     return `${this.value} ${this.unit}`;
+  }
+
+  isTheSameAs(other: Weight): boolean {
+    return this.value === other.value && this.unit === other.unit;
+  }
+
+  validate(): void {
+    if (this.value <= 0) {
+      this.value = 0.1;
+    }
   }
 }
