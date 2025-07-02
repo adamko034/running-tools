@@ -3,11 +3,11 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { Pace } from '../../../core/business/model/pace.model';
-import { FormField } from '../form-field/form-field';
+import { Pace } from '../../../../core/business/model/pace.model';
+import { FormField } from '../../ui/form-field/form-field';
 
 @Component({
-  selector: 'app-pace-inputs-form-field',
+  selector: 'app-pace-pure-form-field',
   imports: [
     FormField,
     FormsModule,
@@ -15,10 +15,9 @@ import { FormField } from '../form-field/form-field';
     MatFormFieldModule,
     MatInputModule,
   ],
-  templateUrl: './pace-inputs-form-field.html',
-  styleUrl: './pace-inputs-form-field.scss',
+  templateUrl: './pace-pure-form-field.html',
 })
-export class PaceInputsFormField {
+export class PacePureFormField {
   @Input() pace!: Pace;
 
   @Output() paceChange = new EventEmitter<Pace>();

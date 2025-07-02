@@ -8,7 +8,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { DataCatalog } from '../../../../core/business/catalog/data-catalog';
 import { StoreService } from '../../../../core/store/store.service';
 import { SelectOnFocus } from '../../../directives/select-on-focus';
-import { FormField } from '../../form-field/form-field';
+import { FormField } from '../../ui/form-field/form-field';
 
 @Component({
   selector: 'app-distance-store-form-field',

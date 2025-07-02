@@ -4,9 +4,9 @@ import { CalculatorsFacade } from '../../../core/business/calculators-facade';
 import { DataCatalog } from '../../../core/business/catalog/data-catalog';
 import { FinishTime } from '../../../core/business/model/finish-time.model';
 import { StoreService } from '../../../core/store/store.service';
-import { GreenBox } from '../../../shared/components/green-box/green-box';
 import { DistanceStoreFormField } from '../../../shared/components/store/distance-store-form-field/distance-store-form-field';
 import { TimeStoreFormField } from '../../../shared/components/store/time-store-form-field/time-store-form-field';
+import { GreenBox } from '../../../shared/components/ui/green-box/green-box';
 import { ToolView } from '../../../shared/views/tool-view/tool-view';
 
 @Component({

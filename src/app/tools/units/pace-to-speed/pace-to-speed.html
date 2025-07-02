@@ -4,11 +4,11 @@
     >Calculate equivalent speed and pace for your workouts.</ng-container
   >
   <ng-container tool-content>
-    <app-pace-inputs-form-field
+    <app-pace-pure-form-field
       [pace]="pace"
       (paceChange)="onPaceChange($event)"
     />
-    <app-speed-form-field
+    <app-speed-pure-form-field
       [speed]="speed"
       (speedChange)="onSpeedChange($event)"
     />

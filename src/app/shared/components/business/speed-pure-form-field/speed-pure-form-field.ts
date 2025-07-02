@@ -1,14 +1,13 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Speed } from '../../../core/business/model/speed.model';
-import { NumberFormField } from '../number-form-field/number-form-field';
+import { Speed } from '../../../../core/business/model/speed.model';
+import { NumberFormField } from '../../ui/number-form-field/number-form-field';
 
 @Component({
-  selector: 'app-speed-form-field',
+  selector: 'app-speed-pure-form-field',
   imports: [NumberFormField],
-  templateUrl: './speed-form-field.html',
-  styleUrl: './speed-form-field.scss',
+  templateUrl: './speed-pure-form-field.html',
 })
-export class SpeedFormField {
+export class SpeedPureFormField {
   @Input() speed!: Speed;
 
   @Output() speedChange = new EventEmitter<Speed>();

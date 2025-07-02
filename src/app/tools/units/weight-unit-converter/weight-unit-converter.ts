@@ -1,8 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { WeightUnit } from '../../../core/business/model/enums/weight-unit.enum';
 import { StoreService } from '../../../core/store/store.service';
-import { GreenBox } from '../../../shared/components/green-box/green-box';
-import { NumberFormField } from '../../../shared/components/number-form-field/number-form-field';
+import { GreenBox } from '../../../shared/components/ui/green-box/green-box';
+import { NumberFormField } from '../../../shared/components/ui/number-form-field/number-form-field';
 import { ToolView } from '../../../shared/views/tool-view/tool-view';
 
 @Component({

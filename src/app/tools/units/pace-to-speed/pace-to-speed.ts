@@ -2,14 +2,14 @@ import { Component, effect, inject } from '@angular/core';
 import { Pace } from '../../../core/business/model/pace.model';
 import { Speed } from '../../../core/business/model/speed.model';
 import { StoreService } from '../../../core/store/store.service';
-import { GreenBox } from '../../../shared/components/green-box/green-box';
-import { PaceInputsFormField } from '../../../shared/components/pace-inputs-form-field/pace-inputs-form-field';
-import { SpeedFormField } from '../../../shared/components/speed-form-field/speed-form-field';
+import { PacePureFormField } from '../../../shared/components/business/pace-pure-form-field/pace-pure-form-field';
+import { SpeedPureFormField } from '../../../shared/components/business/speed-pure-form-field/speed-pure-form-field';
+import { GreenBox } from '../../../shared/components/ui/green-box/green-box';
 import { ToolView } from '../../../shared/views/tool-view/tool-view';
 
 @Component({
   selector: 'app-pace-to-speed',
-  imports: [ToolView, GreenBox, PaceInputsFormField, SpeedFormField],
+  imports: [ToolView, GreenBox, PacePureFormField, SpeedPureFormField],
   templateUrl: './pace-to-speed.html',
   styleUrl: './pace-to-speed.scss',
 })

@@ -5,7 +5,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { StoreService } from '../../../../core/store/store.service';
 import { SelectOnFocus } from '../../../directives/select-on-focus';
-import { FormField } from '../../form-field/form-field';
+import { FormField } from '../../ui/form-field/form-field';
 
 @Component({
   selector: 'app-weight-store-form-field',
