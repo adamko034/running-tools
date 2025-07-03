@@ -1,24 +1,79 @@
-# RunningTools
+# 🏃‍♂️ Running Tools - Free Running Calculator & Performance Tools
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.1.
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-runner--toolkit.web.app-blue)](https://runner-toolkit.web.app/)
+[![Angular](https://img.shields.io/badge/Angular-18+-red)](https://angular.io/)
+[![Firebase](https://img.shields.io/badge/Firebase-Hosting-orange)](https://firebase.google.com/)
+[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
-## Development server
+A comprehensive collection of free running calculator tools designed for runners, marathoners, and fitness enthusiasts. Calculate pace, speed, distance, finish times, VO2 max, and calories burned with precision.
 
-To start a local development server, run:
+## 🌟 Live Demo
+
+**Visit the app:** [https://runner-toolkit.web.app/](https://runner-toolkit.web.app/)
+
+## 🚀 Features
+
+### 🏃‍♂️ Race Tools
+- **Pace Calculator** - Calculate pace from distance and time
+- **Finish Time Predictor** - Predict race finish times based on current performance
+- **Speed Calculator** - Convert between pace and speed units
+
+### 💪 Personal Performance
+- **VO2 Max Calculator** - Estimate your maximum oxygen uptake
+- **Calories Burned Calculator** - Calculate calories burned during runs
+
+### 🔧 Unit Converters
+- **Distance Unit Converter** - Convert between miles, kilometers, meters
+- **Pace to Speed Converter** - Convert between pace and speed
+- **Weight Unit Converter** - Convert between kg, lbs, stones
+
+## 🛠️ Built With
+
+- **Angular 18+** - Modern web framework
+- **TypeScript** - Type-safe JavaScript
+- **Angular Material** - UI component library
+- **SCSS** - Advanced CSS preprocessing
+- **Firebase Hosting** - Fast, secure hosting
+- **PWA** - Progressive Web App capabilities
+
+## 🏃‍♀️ Perfect For
+
+- **Runners** preparing for races
+- **Marathoners** planning training
+- **Fitness enthusiasts** tracking performance
+- **Coaches** calculating training paces
+- **Athletes** monitoring progress
+
+## 🔧 Development
+
+### Prerequisites
+- Node.js (v18 or higher)
+- npm or yarn
+- Angular CLI
+
+### Installation
+
+```bash
+git clone https://github.com/adamko034/running-tools.git
+cd running-tools
+npm install
+```
+
+### Development Server
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Navigate to `http://localhost:4200/` for local development.
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### Build
 
 ```bash
-ng generate component component-name
+ng build
 ```
+
+The build artifacts will be stored in the `dist/` directory.
 
 For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
 
