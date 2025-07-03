@@ -100,7 +100,6 @@
     }
   }
 </style>
-
 <main class="content flex justify-center w-full p-4">
   <div class="flex justify-center w-full max-w-[600px] p-4 mr-4">
     <div class="w-full">
@@ -111,10 +110,17 @@
   <aside class="flex w-64">
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div>
-      <div class="units">
-        <app-unit-store-selector />
+      <div class="flex justify-center items-center">
+        <span class="font-semibold mr-2 text-xl">Runner</span>
+        <img
+          src="icons/icon-48x48.png"
+          alt="Runner Toolkit Logo"
+          class="w-[48px]"
+        />
+        <span class="font-semibold text-xl">Toolkit</span>
       </div>
-      <div class="p-4 overflow-y-auto">
+
+      <div class="pl-4 pr-4 pb-4 pt-2 overflow-y-auto">
         <mat-nav-list class="space-y-2">
           @for (nav of navigation; track $index) {
           <div>
@@ -134,6 +140,10 @@
           </div>
           }
         </mat-nav-list>
+      </div>
+
+      <div class="units">
+        <app-unit-store-selector />
       </div>
     </div>
   </aside>
