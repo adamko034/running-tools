@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+coverage/
+
+# Generated files
+*.generated.ts
+*.generated.js
+
+# Lock files
+package-lock.json
+yarn.lock
+
+# Angular specific
+.angular/
+
+# Firebase
+.firebase/
+
+# OS files
+.DS_Store
+Thumbs.db

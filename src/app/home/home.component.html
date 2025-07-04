@@ -1,0 +1,136 @@
+<div class="max-w-7xl mx-auto px-4 py-8">
+  <!-- Header Section -->
+  <header
+    class="text-center mb-16 px-8 py-12 bg-gradient-to-br from-blue-100 via-blue-200 to-green-100 rounded-2xl text-gray-800 shadow-2xl"
+  >
+    <div class="max-w-4xl mx-auto">
+      <div class="flex items-center justify-center gap-4 mb-6">
+        <div
+          class="flex items-center justify-center w-20 h-20 bg-gradient-to-br from-orange-400 via-pink-400 to-purple-500 rounded-full shadow-2xl ring-4 ring-white ring-opacity-50"
+        >
+          <img
+            src="icons/icon-96x96.png"
+            alt="Runner Toolkit Logo"
+            class="w-18 h-18 rounded-full filter brightness-110 contrast-110"
+          />
+        </div>
+        <h1 class="text-5xl font-bold text-shadow-lg">Runner Toolkit</h1>
+      </div>
+      <div class="mt-6">
+        <p class="text-xl leading-relaxed mb-4 opacity-95">
+          Professional running tools for race planning, performance tracking,
+          and unit conversions.
+        </p>
+        <p class="text-lg leading-relaxed opacity-90 italic">
+          Whether you're training for your first 5K or your next marathon, our
+          calculators will help you
+          <strong class="font-semibold not-italic text-shadow"
+            >run faster</strong
+          >,
+          <strong class="font-semibold not-italic text-shadow"
+            >train smarter</strong
+          >, and
+          <strong class="font-semibold not-italic text-shadow"
+            >reach your goals</strong
+          >.
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Tools Grid -->
+  <section class="mb-16">
+    @for (category of navigation; track $index) {
+      <div class="mb-12">
+        <h2
+          class="text-3xl font-semibold text-gray-900 mb-6 capitalize border-b-3 border-blue-500 pb-2 inline-block"
+        >
+          {{ category.title }}
+        </h2>
+        <div class="flex justify-center">
+          <div
+            class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 max-w-fit"
+          >
+            @for (tool of category.links; track $index) {
+              <mat-card
+                class="cursor-pointer transition-all duration-300 border-2 border-transparent rounded-lg overflow-hidden hover:-translate-y-1 hover:shadow-lg hover:border-blue-500 p-3"
+                [routerLink]="tool.link"
+              >
+                <div class="text-center">
+                  <div
+                    class="flex items-center justify-center w-10 h-10 bg-gradient-to-br from-blue-100 to-green-100 rounded-lg mx-auto mb-2 border border-blue-200"
+                  >
+                    <mat-icon class="text-blue-700 text-lg">{{
+                      tool.icon
+                    }}</mat-icon>
+                  </div>
+                  <h3
+                    class="text-base font-semibold text-gray-900 mb-1 leading-tight"
+                  >
+                    {{ tool.text }}
+                  </h3>
+                  <p class="text-sm text-gray-600 leading-snug mb-2">
+                    {{ tool.description }}
+                  </p>
+                  <button
+                    mat-button
+                    color="primary"
+                    class="text-sm py-1 px-2 min-h-0"
+                  >
+                    <mat-icon class="text-sm mr-1">arrow_forward</mat-icon>
+                    Use
+                  </button>
+                </div>
+              </mat-card>
+            }
+          </div>
+        </div>
+      </div>
+    }
+  </section>
+
+  <!-- Features Section -->
+  <section
+    class="bg-gradient-to-br from-gray-50 to-gray-200 rounded-2xl px-8 py-12 text-center"
+  >
+    <h2 class="text-4xl font-bold text-gray-900 mb-8">
+      Why Choose Runner Toolkit?
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
+      <div class="text-center p-6">
+        <mat-icon class="text-6xl text-blue-700 mb-4">speed</mat-icon>
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">
+          Fast & Accurate
+        </h3>
+        <p class="text-gray-700 leading-relaxed">
+          Instant calculations with precise results for all your running needs
+        </p>
+      </div>
+      <div class="text-center p-6">
+        <mat-icon class="text-6xl text-blue-700 mb-4">phone_android</mat-icon>
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">
+          Mobile Friendly
+        </h3>
+        <p class="text-gray-700 leading-relaxed">
+          Works perfectly on desktop, tablet, and mobile devices
+        </p>
+      </div>
+      <div class="text-center p-6">
+        <mat-icon class="text-6xl text-blue-700 mb-4"
+          >free_cancellation</mat-icon
+        >
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">100% Free</h3>
+        <p class="text-gray-700 leading-relaxed">
+          All tools are completely free to use with no registration required
+        </p>
+      </div>
+      <div class="text-center p-6">
+        <mat-icon class="text-6xl text-blue-700 mb-4">offline_bolt</mat-icon>
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">Works Offline</h3>
+        <p class="text-gray-700 leading-relaxed">
+          Progressive web app that works even without internet connection
+        </p>
+      </div>
+    </div>
+  </section>
+</div>
