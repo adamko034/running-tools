@@ -1,11 +1,11 @@
-# 🏃‍♂️ Running Tools - Free Running Calculator & Performance Tools
+# 🏃‍♂️ Running Tools - Running Calculator & Performance Tools
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-runner--toolkit.web.app-blue)](https://runner-toolkit.web.app/)
 [![Angular](https://img.shields.io/badge/Angular-18+-red)](https://angular.io/)
 [![Firebase](https://img.shields.io/badge/Firebase-Hosting-orange)](https://firebase.google.com/)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
-A comprehensive collection of free running calculator tools designed for runners, marathoners, and fitness enthusiasts. Calculate pace, speed, distance, finish times, VO2 max, and calories burned with precision.
+A comprehensive collection of running calculator tools designed for runners, marathoners, and fitness enthusiasts. Calculate pace, speed, distance, finish times, VO2 max, and calories burned with precision.
 
 ## 🌟 Live Demo
 
@@ -14,15 +14,18 @@ A comprehensive collection of free running calculator tools designed for runners
 ## 🚀 Features
 
 ### 🏃‍♂️ Race Tools
+
 - **Pace Calculator** - Calculate pace from distance and time
 - **Finish Time Predictor** - Predict race finish times based on current performance
 - **Speed Calculator** - Convert between pace and speed units
 
 ### 💪 Personal Performance
+
 - **VO2 Max Calculator** - Estimate your maximum oxygen uptake
 - **Calories Burned Calculator** - Calculate calories burned during runs
 
 ### 🔧 Unit Converters
+
 - **Distance Unit Converter** - Convert between miles, kilometers, meters
 - **Pace to Speed Converter** - Convert between pace and speed
 - **Weight Unit Converter** - Convert between kg, lbs, stones
@@ -47,6 +50,7 @@ A comprehensive collection of free running calculator tools designed for runners
 ## 🔧 Development
 
 ### Prerequisites
+
 - Node.js (v18 or higher)
 - npm or yarn
 - Angular CLI

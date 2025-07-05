@@ -1,7 +1,7 @@
-<div class="max-w-7xl mx-auto px-4 py-8">
+<div class="max-w-7xl mx-auto px-4">
   <!-- Header Section -->
   <header
-    class="text-center mb-16 px-8 py-12 bg-gradient-to-br from-blue-100 via-blue-200 to-green-100 rounded-2xl text-gray-800 shadow-2xl"
+    class="text-center mb-12 px-8 py-12 bg-gradient-to-br from-blue-100 via-blue-200 to-green-100 rounded-2xl text-gray-800 shadow-2xl"
   >
     <div class="max-w-4xl mx-auto">
       <div class="flex items-center justify-center gap-4 mb-6">
@@ -43,7 +43,7 @@
     @for (category of navigation; track $index) {
       <div class="mb-12">
         <h2
-          class="text-3xl font-semibold text-gray-900 mb-6 capitalize border-b-3 border-blue-500 pb-2 inline-block"
+          class="text-3xl pr-6 font-semibold text-gray-900 mb-6 capitalize border-b-3 border-blue-500 pb-2 inline-block"
         >
           {{ category.title }}
         </h2>
@@ -56,7 +56,7 @@
                 class="cursor-pointer transition-all duration-300 border-2 border-transparent rounded-lg overflow-hidden hover:-translate-y-1 hover:shadow-lg hover:border-blue-500 p-3"
                 [routerLink]="tool.link"
               >
-                <div class="text-center">
+                <div class="text-center flex flex-col">
                   <div
                     class="flex items-center justify-center w-10 h-10 bg-gradient-to-br from-blue-100 to-green-100 rounded-lg mx-auto mb-2 border border-blue-200"
                   >
@@ -75,7 +75,7 @@
                   <button
                     mat-button
                     color="primary"
-                    class="text-sm py-1 px-2 min-h-0"
+                    class="text-sm py-1 px-2 min-h-0 self-end justify-self-end"
                   >
                     <mat-icon class="text-sm mr-1">arrow_forward</mat-icon>
                     Use
