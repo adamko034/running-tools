@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
+import { UiService } from '../../../../core/services/ui.service';
 import { HorizontalLineWithText } from '../horizontal-line-with-text/horizontal-line-with-text';
 
 @Component({
@@ -11,4 +12,6 @@ import { HorizontalLineWithText } from '../horizontal-line-with-text/horizontal-
 export class FormField {
   @Input() showHorizontalLine = true;
   @Input() horizontalLineText = '';
+
+  isMobileXs$ = inject(UiService).isMobileXs$;
 }

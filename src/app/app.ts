@@ -1,13 +1,13 @@
-import { BreakpointObserver } from '@angular/cdk/layout';
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { NavigationEnd, Router, RouterModule } from '@angular/router';
-import { filter, map } from 'rxjs/operators';
+import { RouterModule } from '@angular/router';
 import { Navigation } from './core/navigation/navigation.model';
+import { RouterService } from './core/services/router.service';
+import { UiService } from './core/services/ui.service';
 import { UnitStoreSelector } from './shared/components/store/unit-store-selector/unit-store-selector';
 
 @Component({
@@ -25,26 +25,16 @@ import { UnitStoreSelector } from './shared/components/store/unit-store-selector
   styleUrl: './app.scss',
 })
 export class App {
-  protected title = 'running-tools';
-
-  // Observable to track if we're on the home page
   isHomePage$;
   isMobile = false;
 
   constructor(
-    private router: Router,
-    private breakpointObserver: BreakpointObserver
+    private routerService: RouterService,
+    private uiService: UiService
   ) {
-    this.isHomePage$ = this.router.events.pipe(
-      filter(event => event instanceof NavigationEnd),
-      map((event: NavigationEnd) => event.url === '/')
-    );
+    this.isHomePage$ = this.routerService.isHomePage$;
 
-    this.breakpointObserver
-      .observe(['(max-width: 1023px)'])
-      .subscribe(result => {
-        this.isMobile = result.matches;
-      });
+    this.uiService.isMobile$.subscribe(isMobile => (this.isMobile = isMobile));
   }
 
   navigation: Navigation[] = [

@@ -1,4 +1,4 @@
-<div class="w-3/4">
+<div [ngClass]="(isMobileXs$ | async) ? 'w-full' : 'w-3/4'">
   <app-horizontal-line-with-text
     *ngIf="showHorizontalLine"
     [text]="horizontalLineText"
