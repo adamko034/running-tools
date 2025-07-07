@@ -34,43 +34,7 @@
   --pill-accent: var(--bright-blue);
 }
 
-// .main-content {
-//   flex: 1;
-//   max-width: 600px;
-//   padding: 1rem;
-//   // &.full-width {
-//   //   width: 100%;
-//   //   max-width: none;
-//   //   padding: 0;
-//   // }
-
-//   &.with-sidebar {
-//   }
-// }
-
 .divider {
   background: var(--gry-vertical-gradient);
   margin-inline: 0.5rem;
-}
-
-@media screen and (max-width: 650px) {
-  .content {
-    flex-direction: column;
-
-    &:not(.home-layout) {
-      width: max-content;
-    }
-  }
-
-  .main-content.with-sidebar {
-    margin-right: 0;
-    margin-bottom: 1rem;
-  }
-
-  .sidebar .divider {
-    height: 1px;
-    width: 100%;
-    background: var(--red-to-pink-to-purple-horizontal-gradient);
-    margin-block: 1.5rem;
-  }
 }
