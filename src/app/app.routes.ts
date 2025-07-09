@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
+import { languageGuard } from './core/guards/language-guard';
 
-export const routes: Routes = [
+const commonRoutes: Routes = [
   {
     path: '',
     loadComponent: () =>
@@ -69,5 +70,19 @@ export const routes: Routes = [
           ).then(m => m.WeightUnitConverter),
       },
     ],
+  },
+];
+
+export const routes: Routes = [
+  ...commonRoutes,
+  {
+    path: ':locale',
+    canActivate: [languageGuard],
+    children: commonRoutes,
+  },
+  {
+    path: '**',
+    redirectTo: '',
+    pathMatch: 'full',
   },
 ];

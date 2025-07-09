@@ -10,4 +10,5 @@ export interface Store {
   time: Time;
   pace: Pace;
   weight: Weight;
+  lang: string;
 }

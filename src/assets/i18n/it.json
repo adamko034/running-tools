@@ -1,0 +1,89 @@
+{
+  "APP": {
+    "TITLE": "Runner Toolkit",
+    "DESCRIPTION": "Strumenti professionali per la corsa per pianificazione gare, tracciamento prestazioni e conversioni di unità."
+  },
+  "NAV": {
+    "RACE_TOOLS": "Strumenti Gara",
+    "PERSONAL_PERFORMANCE": "Prestazione Personale",
+    "UNIT_CONVERTERS": "Convertitori Unità"
+  },
+  "TOOLS": {
+    "PACE_CALCULATOR": "Calcolatore Ritmo",
+    "PACE_CALCULATOR_DESC": "Calcola ritmo da distanza e tempo",
+    "FINISH_TIME_PREDICTOR": "Predittore Tempo di Arrivo",
+    "FINISH_TIME_PREDICTOR_DESC": "Predici tempi di arrivo basati su prestazione attuale",
+    "CALORIES_BURNED_CALCULATOR": "Calcolatore Calorie Bruciate",
+    "CALORIES_BURNED_CALCULATOR_DESC": "Calcola calorie bruciate durante le tue corse",
+    "VO2MAX_CALCULATOR": "Calcolatore VO₂max",
+    "VO2MAX_CALCULATOR_DESC": "Stima il tuo consumo massimo di ossigeno",
+    "PACE_SPEED_CONVERTER": "Convertitore Ritmo / Velocità",
+    "PACE_SPEED_CONVERTER_DESC": "Converti tra ritmo e velocità",
+    "DISTANCE_CONVERTER": "Convertitore Distanza",
+    "DISTANCE_CONVERTER_DESC": "Converti tra chilometri e miglia",
+    "WEIGHT_CONVERTER": "Convertitore Peso",
+    "WEIGHT_CONVERTER_DESC": "Converti tra chilogrammi e libbre"
+  },
+  "COMMON": {
+    "DISTANCE": "Distanza",
+    "TIME": "Tempo",
+    "PACE": "Ritmo",
+    "SPEED": "Velocità",
+    "WEIGHT": "Peso",
+    "USE": "Usa",
+    "SELECT_UNITS": "seleziona unità",
+    "DISTANCES": "distanze",
+    "KILOMETERS": "Chilometri",
+    "MILES": "Miglia",
+    "KILOGRAMS": "Chilogrammi",
+    "POUNDS": "Libbre"
+  },
+  "UNITS": {
+    "H": "h",
+    "MIN": "min",
+    "SEC": "sec"
+  },
+  "HOME": {
+    "SUBTITLE": "Che tu stia allenandoti per la tua prima 5K o la tua prossima maratona, i nostri calcolatori ti aiuteranno a correre più veloce, allenarti più intelligentemente e raggiungere i tuoi obiettivi.",
+    "WHY_CHOOSE": "Perché scegliere Runner Toolkit?",
+    "FAST_ACCURATE": "Veloce e Preciso",
+    "FAST_ACCURATE_DESC": "Calcoli istantanei con risultati precisi per tutte le tue esigenze di corsa",
+    "MOBILE_FRIENDLY": "Mobile Friendly",
+    "MOBILE_FRIENDLY_DESC": "Funziona perfettamente su desktop, tablet e dispositivi mobili",
+    "FREE": "100% Gratuito",
+    "FREE_DESC": "Tutti gli strumenti sono completamente gratuiti senza registrazione richiesta",
+    "OFFLINE": "Funziona Offline",
+    "OFFLINE_DESC": "Applicazione web progressiva che funziona anche senza connessione internet"
+  },
+  "CALCULATORS": {
+    "CALORIES_BURNED": {
+      "TITLE": "Stimatore Calorie Bruciate",
+      "DESCRIPTION": "Stima quante calorie hai bruciato basandoti sulla tua distanza di corsa, ritmo e peso corporeo."
+    },
+    "VO2MAX": {
+      "TITLE": "Calcolatore VO₂max",
+      "DESCRIPTION": "Inserisci la tua distanza di gara e tempo di arrivo per stimare la tua fitness aerobica.",
+      "RESULT": "Il tuo VO₂max stimato è"
+    },
+    "PACE": {
+      "TITLE": "Calcolatore Ritmo",
+      "DESCRIPTION": "Regola tempo, distanza o ritmo per ricalcolare gli altri."
+    },
+    "FINISH_TIME": {
+      "TITLE": "Predittore Tempo di Arrivo",
+      "DESCRIPTION": "Stima i tuoi tempi di arrivo per distanze di gara popolari basandoti su una corsa recente."
+    },
+    "PACE_SPEED": {
+      "TITLE": "Conversione Ritmo a Velocità",
+      "DESCRIPTION": "Calcola velocità e ritmo equivalenti per i tuoi allenamenti."
+    },
+    "DISTANCE_CONVERTER": {
+      "TITLE": "Convertitore Unità Distanza",
+      "DESCRIPTION": "Converti rapidamente distanze tra miglia e chilometri per pianificare allenamenti o gare."
+    },
+    "WEIGHT_CONVERTER": {
+      "TITLE": "Convertitore Unità Peso",
+      "DESCRIPTION": "Converti rapidamente pesi tra chilogrammi e libbre."
+    }
+  }
+}

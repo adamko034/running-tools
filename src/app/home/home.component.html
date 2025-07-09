@@ -1,10 +1,17 @@
 <div class="max-w-7xl mx-auto px-4">
   <!-- Header Section -->
   <header
-    class="text-center mb-12 px-8 py-12 bg-gradient-to-br from-blue-100 via-blue-200 to-green-100 rounded-2xl text-gray-800 shadow-2xl"
+    class="relative text-center mb-12 px-8 py-12 bg-gradient-to-br from-blue-100 via-blue-200 to-green-100 rounded-2xl text-gray-800 shadow-2xl"
     [class.py-12]="(isMobile$ | async) === false"
     [class.py-6]="isMobile$ | async"
   >
+    <!-- Language Selector - Top Right -->
+    <div class="absolute top-4 right-4">
+      <app-language-store-selector
+        [floatingIcon]="true"
+      ></app-language-store-selector>
+    </div>
+
     <div class="max-w-4xl mx-auto">
       <div class="flex items-center justify-center gap-4 mb-6">
         <div
@@ -46,7 +53,7 @@
 
   <!-- Tools Grid -->
   <section class="mb-16">
-    @for (category of navigation; track $index) {
+    @for (category of navigation$ | async; track $index) {
       <div class="mb-12">
         <h2
           class="text-3xl pr-6 font-semibold text-gray-900 mb-6 capitalize border-b-3 border-blue-500 pb-2 inline-block"

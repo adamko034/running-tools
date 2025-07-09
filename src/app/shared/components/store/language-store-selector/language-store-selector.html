@@ -1,0 +1,30 @@
+<div *ngIf="floatingIcon" class="fixed bottom-4 right-8 z-50">
+  <button
+    mat-fab
+    color="primary"
+    [matMenuTriggerFor]="langMenu"
+    aria-label="Choose language"
+  >
+    <mat-icon>language</mat-icon>
+  </button>
+</div>
+
+<div *ngIf="!floatingIcon">
+  <button
+    mat-mini-fab
+    color="primary"
+    [matMenuTriggerFor]="langMenu"
+    aria-label="Choose language"
+  >
+    <mat-icon>language</mat-icon>
+  </button>
+</div>
+
+<mat-menu #langMenu="matMenu">
+  <button mat-menu-item (click)="onLanguageChange('en')">🇺🇸 English</button>
+  <button mat-menu-item (click)="onLanguageChange('de')">🇩🇪 Deutsch</button>
+  <button mat-menu-item (click)="onLanguageChange('fr')">🇫🇷 Français</button>
+  <button mat-menu-item (click)="onLanguageChange('es')">🇪🇸 Español</button>
+  <button mat-menu-item (click)="onLanguageChange('pl')">🇵🇱 Polski</button>
+  <button mat-menu-item (click)="onLanguageChange('it')">🇮🇹 Italiano</button>
+</mat-menu>

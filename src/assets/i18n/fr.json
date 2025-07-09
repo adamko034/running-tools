@@ -1,0 +1,89 @@
+{
+  "APP": {
+    "TITLE": "Runner Toolkit",
+    "DESCRIPTION": "Outils de course professionnels pour la planification de courses, le suivi de performances et les conversions d'unités."
+  },
+  "NAV": {
+    "RACE_TOOLS": "Outils de Course",
+    "PERSONAL_PERFORMANCE": "Performance Personnelle",
+    "UNIT_CONVERTERS": "Convertisseurs d'Unités"
+  },
+  "TOOLS": {
+    "PACE_CALCULATOR": "Calculateur d'Allure",
+    "PACE_CALCULATOR_DESC": "Calculer l'allure à partir de la distance et du temps",
+    "FINISH_TIME_PREDICTOR": "Prédicteur de Temps de Fin",
+    "FINISH_TIME_PREDICTOR_DESC": "Prédire les temps de fin de course basés sur la performance actuelle",
+    "CALORIES_BURNED_CALCULATOR": "Calculateur de Calories Brûlées",
+    "CALORIES_BURNED_CALCULATOR_DESC": "Calculer les calories brûlées pendant vos courses",
+    "VO2MAX_CALCULATOR": "Calculateur VO₂max",
+    "VO2MAX_CALCULATOR_DESC": "Estimer votre consommation maximale d'oxygène",
+    "PACE_SPEED_CONVERTER": "Convertisseur Allure / Vitesse",
+    "PACE_SPEED_CONVERTER_DESC": "Convertir entre allure et vitesse",
+    "DISTANCE_CONVERTER": "Convertisseur de Distance",
+    "DISTANCE_CONVERTER_DESC": "Convertir entre kilomètres et miles",
+    "WEIGHT_CONVERTER": "Convertisseur de Poids",
+    "WEIGHT_CONVERTER_DESC": "Convertir entre kilogrammes et livres"
+  },
+  "COMMON": {
+    "DISTANCE": "Distance",
+    "TIME": "Temps",
+    "PACE": "Allure",
+    "SPEED": "Vitesse",
+    "WEIGHT": "Poids",
+    "USE": "Utiliser",
+    "SELECT_UNITS": "sélectionner les unités",
+    "DISTANCES": "distances",
+    "KILOMETERS": "Kilomètres",
+    "MILES": "Miles",
+    "KILOGRAMS": "Kilogrammes",
+    "POUNDS": "Livres"
+  },
+  "UNITS": {
+    "H": "h",
+    "MIN": "min",
+    "SEC": "sec"
+  },
+  "HOME": {
+    "SUBTITLE": "Que vous vous entraîniez pour votre premier 5K ou votre prochain marathon, nos calculateurs vous aideront à courir plus vite, vous entraîner plus intelligemment et atteindre vos objectifs.",
+    "WHY_CHOOSE": "Pourquoi choisir Runner Toolkit ?",
+    "FAST_ACCURATE": "Rapide et Précis",
+    "FAST_ACCURATE_DESC": "Calculs instantanés avec des résultats précis pour tous vos besoins de course",
+    "MOBILE_FRIENDLY": "Compatible Mobile",
+    "MOBILE_FRIENDLY_DESC": "Fonctionne parfaitement sur desktop, tablette et appareils mobiles",
+    "FREE": "100% Gratuit",
+    "FREE_DESC": "Tous les outils sont entièrement gratuits sans inscription requise",
+    "OFFLINE": "Fonctionne Hors Ligne",
+    "OFFLINE_DESC": "Application web progressive qui fonctionne même sans connexion internet"
+  },
+  "CALCULATORS": {
+    "CALORIES_BURNED": {
+      "TITLE": "Estimateur de Calories Brûlées",
+      "DESCRIPTION": "Estimez combien de calories vous avez brûlées en fonction de votre distance de course, allure et poids corporel."
+    },
+    "VO2MAX": {
+      "TITLE": "Calculateur VO₂max",
+      "DESCRIPTION": "Entrez votre distance de course et temps de fin pour estimer votre condition aérobie.",
+      "RESULT": "Votre VO₂max estimé est"
+    },
+    "PACE": {
+      "TITLE": "Calculateur d'Allure",
+      "DESCRIPTION": "Ajustez le temps, la distance ou l'allure pour recalculer les autres."
+    },
+    "FINISH_TIME": {
+      "TITLE": "Prédicteur de Temps de Fin",
+      "DESCRIPTION": "Estimez vos temps de fin pour les distances de course populaires basées sur une course récente."
+    },
+    "PACE_SPEED": {
+      "TITLE": "Conversion Allure vers Vitesse",
+      "DESCRIPTION": "Calculez l'équivalent vitesse et allure pour vos entraînements."
+    },
+    "DISTANCE_CONVERTER": {
+      "TITLE": "Convertisseur d'Unités de Distance",
+      "DESCRIPTION": "Convertissez rapidement les distances entre miles et kilomètres pour planifier votre entraînement ou vos courses."
+    },
+    "WEIGHT_CONVERTER": {
+      "TITLE": "Convertisseur d'Unités de Poids",
+      "DESCRIPTION": "Convertissez rapidement les poids entre kilogrammes et livres."
+    }
+  }
+}

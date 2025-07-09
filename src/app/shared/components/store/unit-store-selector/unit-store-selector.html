@@ -1,7 +1,13 @@
-<mat-form-field class="w-full max-w-xs">
-  <mat-label>select units</mat-label>
-  <mat-select [ngModel]="units()" (ngModelChange)="onUnitChange($event)">
-    <mat-option value="eu">km / kg</mat-option>
-    <mat-option value="en">mi / lb</mat-option>
-  </mat-select>
-</mat-form-field>
+<button
+  mat-mini-fab
+  color="primary"
+  [matMenuTriggerFor]="unitsMenu"
+  aria-label="Choose units"
+>
+  <mat-icon>design_services</mat-icon>
+</button>
+
+<mat-menu #unitsMenu="matMenu">
+  <button mat-menu-item (click)="onUnitChange(units.EU)">KM / KG</button>
+  <button mat-menu-item (click)="onUnitChange(units.EN)">MI / LB</button>
+</mat-menu>

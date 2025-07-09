@@ -1,0 +1,89 @@
+{
+  "APP": {
+    "TITLE": "Runner Toolkit",
+    "DESCRIPTION": "Professional running tools for race planning, performance tracking, and unit conversions."
+  },
+  "NAV": {
+    "RACE_TOOLS": "Race Tools",
+    "PERSONAL_PERFORMANCE": "Personal Performance",
+    "UNIT_CONVERTERS": "Unit Converters"
+  },
+  "TOOLS": {
+    "PACE_CALCULATOR": "Pace Calculator",
+    "PACE_CALCULATOR_DESC": "Calculate pace from distance and time",
+    "FINISH_TIME_PREDICTOR": "Finish Time Predictor",
+    "FINISH_TIME_PREDICTOR_DESC": "Predict race finish times based on current performance",
+    "CALORIES_BURNED_CALCULATOR": "Calories Burned Calculator",
+    "CALORIES_BURNED_CALCULATOR_DESC": "Calculate calories burned during your runs",
+    "VO2MAX_CALCULATOR": "VO₂ Max Calculator",
+    "VO2MAX_CALCULATOR_DESC": "Estimate your maximum oxygen uptake",
+    "PACE_SPEED_CONVERTER": "Pace / Speed Converter",
+    "PACE_SPEED_CONVERTER_DESC": "Convert between pace and speed units",
+    "DISTANCE_CONVERTER": "Distance Converter",
+    "DISTANCE_CONVERTER_DESC": "Convert between kilometers and miles",
+    "WEIGHT_CONVERTER": "Weight Converter",
+    "WEIGHT_CONVERTER_DESC": "Convert between kilograms and pounds"
+  },
+  "COMMON": {
+    "DISTANCE": "Distance",
+    "TIME": "Time",
+    "PACE": "Pace",
+    "SPEED": "Speed",
+    "WEIGHT": "Weight",
+    "USE": "Use",
+    "SELECT_UNITS": "Select units",
+    "DISTANCES": "distances",
+    "KILOMETERS": "Kilometers",
+    "MILES": "Miles",
+    "KILOGRAMS": "Kilograms",
+    "POUNDS": "Pounds"
+  },
+  "UNITS": {
+    "H": "h",
+    "MIN": "min",
+    "SEC": "sec"
+  },
+  "HOME": {
+    "SUBTITLE": "Whether you're training for your first 5K or your next marathon, our calculators will help you run faster, train smarter, and reach your goals.",
+    "WHY_CHOOSE": "Why Choose Runner Toolkit?",
+    "FAST_ACCURATE": "Fast & Accurate",
+    "FAST_ACCURATE_DESC": "Get instant, precise calculations for all your running metrics.",
+    "MOBILE_FRIENDLY": "Mobile Friendly",
+    "MOBILE_FRIENDLY_DESC": "Works perfectly on all devices - phone, tablet, or desktop.",
+    "FREE": "Completely Free",
+    "FREE_DESC": "No subscriptions, no ads, no hidden costs - just pure functionality.",
+    "OFFLINE": "Works Offline",
+    "OFFLINE_DESC": "No internet connection required - calculate anytime, anywhere."
+  },
+  "CALCULATORS": {
+    "CALORIES_BURNED": {
+      "TITLE": "Calories Burned Calculator",
+      "DESCRIPTION": "Calculate calories burned during your runs"
+    },
+    "VO2MAX": {
+      "TITLE": "VO₂ Max Calculator",
+      "DESCRIPTION": "Estimate your maximum oxygen uptake",
+      "RESULT": "Your estimated VO₂max is"
+    },
+    "PACE": {
+      "TITLE": "Pace Calculator",
+      "DESCRIPTION": "Adjust time, distance, or pace to recalculate the others."
+    },
+    "FINISH_TIME": {
+      "TITLE": "Finish Time Predictor",
+      "DESCRIPTION": "Estimate your finish times for popular race distances based on a recent run."
+    },
+    "PACE_SPEED": {
+      "TITLE": "Pace to Speed Conversion",
+      "DESCRIPTION": "Calculate equivalent speed and pace for your workouts."
+    },
+    "DISTANCE_CONVERTER": {
+      "TITLE": "Distance Units Converter",
+      "DESCRIPTION": "Quickly convert distances between miles and kilometers to plan your training or races."
+    },
+    "WEIGHT_CONVERTER": {
+      "TITLE": "Weight Units Converter",
+      "DESCRIPTION": "Quickly convert weights between kilograms and pounds."
+    }
+  }
+}

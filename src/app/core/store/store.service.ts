@@ -49,6 +49,10 @@ export class StoreService {
     return computed(() => this._store().units);
   }
 
+  get lang(): Signal<string> {
+    return computed(() => this._store().lang);
+  }
+
   constructor() {
     this._store = signal<Store>(this.loadStore());
     effect(() => {
@@ -76,7 +80,7 @@ export class StoreService {
   }
 
   public updateDistance(distance: Distance) {
-    this._store.update((current) => ({
+    this._store.update(current => ({
       ...current,
       distance: distance.clone(),
     }));
@@ -89,29 +93,33 @@ export class StoreService {
   public updatePace(newPace: Pace) {
     console.log('store, updating pace current: ', this._store().pace.format());
     const time = newPace.toTime(this._store().distance);
-    this._store.update((current) => ({ ...current, time }));
+    this._store.update(current => ({ ...current, time }));
   }
 
   public updateWeight(weight: Weight) {
-    this._store.update((current) => ({ ...current, weight: weight.clone() }));
+    this._store.update(current => ({ ...current, weight: weight.clone() }));
+  }
+
+  public updateLanguage(lang: string) {
+    this._store.update(current => ({ ...current, lang }));
   }
 
   private calculatePace() {
     console.log(
       'store, calculating new pace current: ',
-      this._store().pace.format(),
+      this._store().pace.format()
     );
     const { time, distance, pace: currentPace } = this._store();
     const newPace = Pace.calculate(time, distance);
 
     if (!currentPace.isTheSameAs(newPace)) {
       console.log('store, new pace');
-      this._store.update((current) => ({ ...current, pace: newPace }));
+      this._store.update(current => ({ ...current, pace: newPace }));
     }
   }
 
   private saveStore() {
-    const { distance, units, time, weight } = this._store();
+    const { distance, units, time, weight, lang } = this._store();
     this.localStorageService.save({
       distance: distance.value,
       units,
@@ -119,6 +127,7 @@ export class StoreService {
       timeMinutes: time.minutes,
       timeSeconds: time.seconds,
       weight: weight.value,
+      lang,
     });
   }
 
@@ -133,21 +142,22 @@ export class StoreService {
     const units = stored.units || initialStore.units;
     const distance = Distance.of(
       stored.distance || initialStore.distance.value,
-      this.getDistanceUnit(units),
+      this.getDistanceUnit(units)
     );
 
     const time = Time.of(
       stored.timeHours || initialStore.time.hours,
       stored.timeMinutes || initialStore.time.minutes,
-      stored.timeSeconds || initialStore.time.seconds,
+      stored.timeSeconds || initialStore.time.seconds
     );
 
     const weight = Weight.of(
       stored.weight || initialStore.weight.value,
-      this.getWeightUnit(units),
+      this.getWeightUnit(units)
     );
+    const lang = stored.lang || initialStore.lang;
 
-    return { ...initialStore, time, distance, weight, units };
+    return { ...initialStore, time, distance, weight, units, lang };
   }
 
   private initialValues(): Store {
@@ -165,13 +175,22 @@ export class StoreService {
       pace,
       weight,
       units: distanceUnit === DistanceUnit.KM ? Units.EU : Units.EN,
+      lang: this.getLanguageFromLocal(),
     };
+  }
+
+  public getLanguageFromLocal(): string {
+    const locale = Intl.DateTimeFormat().resolvedOptions().locale;
+    const supportedLanguages = ['en', 'de', 'fr', 'es', 'pl', 'it'];
+    const languageCode = locale.split('-')[0];
+
+    return supportedLanguages.includes(languageCode) ? languageCode : 'en';
   }
 
   private getDistanceUnitFromLocal(): DistanceUnit {
     const locale = Intl.DateTimeFormat().resolvedOptions().locale;
     const milesLocales = ['en-US', 'en-GB', 'my', 'lr'];
-    return milesLocales.some((code) => locale.startsWith(code))
+    return milesLocales.some(code => locale.startsWith(code))
       ? DistanceUnit.MI
       : DistanceUnit.KM;
   }

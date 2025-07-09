@@ -1,0 +1,89 @@
+{
+  "APP": {
+    "TITLE": "Runner Toolkit",
+    "DESCRIPTION": "Profesjonalne narzędzia do biegania dla planowania wyścigów, śledzenia wydajności i konwersji jednostek."
+  },
+  "NAV": {
+    "RACE_TOOLS": "Narzędzia Wyścigowe",
+    "PERSONAL_PERFORMANCE": "Wydajność Osobista",
+    "UNIT_CONVERTERS": "Konwertery Jednostek"
+  },
+  "TOOLS": {
+    "PACE_CALCULATOR": "Kalkulator Tempa",
+    "PACE_CALCULATOR_DESC": "Oblicz tempo na podstawie dystansu i czasu",
+    "FINISH_TIME_PREDICTOR": "Przewidywanie Czasu Mety",
+    "FINISH_TIME_PREDICTOR_DESC": "Przewiduj czasy mety na podstawie obecnej wydajności",
+    "CALORIES_BURNED_CALCULATOR": "Kalkulator Spalonych Kalorii",
+    "CALORIES_BURNED_CALCULATOR_DESC": "Oblicz spalone kalorie podczas twoich biegów",
+    "VO2MAX_CALCULATOR": "Kalkulator VO₂max",
+    "VO2MAX_CALCULATOR_DESC": "Oszacuj swoje maksymalne zużycie tlenu",
+    "PACE_SPEED_CONVERTER": "Konwerter Tempo / Prędkość",
+    "PACE_SPEED_CONVERTER_DESC": "Konwertuj między tempem a prędkością",
+    "DISTANCE_CONVERTER": "Konwerter Dystansu",
+    "DISTANCE_CONVERTER_DESC": "Konwertuj między kilometrami a milami",
+    "WEIGHT_CONVERTER": "Konwerter Wagi",
+    "WEIGHT_CONVERTER_DESC": "Konwertuj między kilogramami a funtami"
+  },
+  "COMMON": {
+    "DISTANCE": "Dystans",
+    "TIME": "Czas",
+    "PACE": "Tempo",
+    "SPEED": "Prędkość",
+    "WEIGHT": "Waga",
+    "USE": "Użyj",
+    "SELECT_UNITS": "wybierz jednostki",
+    "DISTANCES": "dystanse",
+    "KILOMETERS": "Kilometry",
+    "MILES": "Mile",
+    "KILOGRAMS": "Kilogramy",
+    "POUNDS": "Funty"
+  },
+  "UNITS": {
+    "H": "h",
+    "MIN": "min",
+    "SEC": "sek"
+  },
+  "HOME": {
+    "SUBTITLE": "Niezależnie od tego, czy trenujesz do swojego pierwszego 5K czy następnego maratonu, nasze kalkulatory pomogą ci biegać szybciej, trenować mądrzej i osiągać cele.",
+    "WHY_CHOOSE": "Dlaczego wybrać Runner Toolkit?",
+    "FAST_ACCURATE": "Szybki i Dokładny",
+    "FAST_ACCURATE_DESC": "Natychmiastowe obliczenia z precyzyjnymi wynikami dla wszystkich twoich potrzeb biegowych",
+    "MOBILE_FRIENDLY": "Przyjazny Mobilnym",
+    "MOBILE_FRIENDLY_DESC": "Działa perfekcyjnie na komputerach, tabletach i urządzeniach mobilnych",
+    "FREE": "100% Darmowy",
+    "FREE_DESC": "Wszystkie narzędzia są całkowicie darmowe bez wymaganej rejestracji",
+    "OFFLINE": "Działa Offline",
+    "OFFLINE_DESC": "Progresywna aplikacja webowa która działa nawet bez połączenia internetowego"
+  },
+  "CALCULATORS": {
+    "CALORIES_BURNED": {
+      "TITLE": "Oszacowywacz Spalonych Kalorii",
+      "DESCRIPTION": "Oszacuj ile kalorii spaliłeś na podstawie dystansu biegu, tempa i masy ciała."
+    },
+    "VO2MAX": {
+      "TITLE": "Kalkulator VO₂max",
+      "DESCRIPTION": "Wprowadź swój dystans wyścigu i czas mety aby oszacować swoją kondycję tlenową.",
+      "RESULT": "Twój oszacowany VO₂max to"
+    },
+    "PACE": {
+      "TITLE": "Kalkulator Tempa",
+      "DESCRIPTION": "Dostosuj czas, dystans lub tempo aby przeliczyć pozostałe."
+    },
+    "FINISH_TIME": {
+      "TITLE": "Przewidywanie Czasu Mety",
+      "DESCRIPTION": "Oszacuj swoje czasy mety dla popularnych dystansów wyścigowych na podstawie ostatniego biegu."
+    },
+    "PACE_SPEED": {
+      "TITLE": "Konwersja Tempo na Prędkość",
+      "DESCRIPTION": "Oblicz równoważną prędkość i tempo dla twoich treningów."
+    },
+    "DISTANCE_CONVERTER": {
+      "TITLE": "Konwerter Jednostek Dystansu",
+      "DESCRIPTION": "Szybko konwertuj dystanse między milami a kilometrami do planowania treningów lub wyścigów."
+    },
+    "WEIGHT_CONVERTER": {
+      "TITLE": "Konwerter Jednostek Wagi",
+      "DESCRIPTION": "Szybko konwertuj wagę między kilogramami a funtami."
+    }
+  }
+}

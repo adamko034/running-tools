@@ -8,6 +8,7 @@ export interface Config {
   timeMinutes: number;
   timeSeconds: number;
   weight: number;
+  lang: string;
 }
 
 @Injectable({
@@ -31,6 +32,7 @@ export class LocalStorageService {
         timeMinutes: parsed.timeMinutes,
         timeSeconds: parsed.timeSeconds,
         weight: parsed.weight,
+        lang: parsed.lang,
       };
     }
 

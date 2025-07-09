@@ -11,7 +11,13 @@ export class RouterService {
   get isHomePage$() {
     return this.router.events.pipe(
       filter(event => event instanceof NavigationEnd),
-      map((event: NavigationEnd) => event.url === '/')
+      map((event: NavigationEnd) => {
+        const url = (event as NavigationEnd).urlAfterRedirects;
+
+        // Check for root or /xx-xx locale only
+        const localeRegex = /^\/[a-z]{2}-[a-z]{2}\/?$/;
+        return url === '/' || localeRegex.test(url);
+      })
     );
   }
 }
