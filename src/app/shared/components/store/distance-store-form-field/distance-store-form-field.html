@@ -1,4 +1,4 @@
-<app-form-field [horizontalLineText]="'Distance'">
+<app-form-field [horizontalLineText]="'COMMON.DISTANCE' | translate">
   <div class="flex">
     <mat-form-field appearance="outline" class="w-[160px]">
       <input
@@ -11,13 +11,13 @@
         (ngModelChange)="setDistance($event)"
         selectOnFocus
       />
-      <span matTextSuffix>{{distance().unit}}</span>
+      <span matTextSuffix>{{ distance().unit }}</span>
       <button
         class="mx-2"
         mat-icon-button
         matSuffix
         [matMenuTriggerFor]="distanceMenu"
-        aria-label="Select common distances"
+        [attr.aria-label]="'COMMON.DISTANCE_SELECT' | translate"
       >
         <mat-icon>more_vert</mat-icon>
       </button>
@@ -26,12 +26,12 @@
 
   <mat-menu #distanceMenu="matMenu">
     @for (distanceKey of distancesKeys; track $index) {
-    <button
-      mat-menu-item
-      (click)="setRaceDistance(distances[distanceKey].distance.value)"
-    >
-      {{distances[distanceKey].label}}
-    </button>
+      <button
+        mat-menu-item
+        (click)="setRaceDistance(distances[distanceKey].distance.value)"
+      >
+        {{ distances[distanceKey].translationKey | translate }}
+      </button>
     }
   </mat-menu>
 </app-form-field>

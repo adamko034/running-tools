@@ -4,8 +4,5 @@ import { Component } from '@angular/core';
   selector: 'app-green-box',
   imports: [],
   templateUrl: './green-box.html',
-  styleUrl: './green-box.scss'
 })
-export class GreenBox {
-
-}
+export class GreenBox {}

@@ -15,7 +15,6 @@ import { FormField } from '../form-field/form-field';
     CommonModule,
   ],
   templateUrl: './number-form-field.html',
-  styleUrl: './number-form-field.scss',
 })
 export class NumberFormField {
   @Input() horizontalLineText = '';

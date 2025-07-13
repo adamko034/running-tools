@@ -10,17 +10,17 @@ export class FinishTimeService {
   calculate(
     target: DataCatalogDistance,
     knownDistance: Distance,
-    knownTime: Time,
+    knownTime: Time
   ) {
     target.distance.convert(knownDistance.unit);
     const time = this.predictFinishTime(
       target.distance.value,
       knownDistance.value,
-      knownTime,
+      knownTime
     );
 
     return {
-      label: target.label,
+      translationKey: target.translationKey,
       pace: time.toPace(target.distance),
       time,
     };
@@ -29,7 +29,7 @@ export class FinishTimeService {
   private predictFinishTime(
     targetDistance: number,
     knownDistance: number,
-    knownTime: Time,
+    knownTime: Time
   ): Time {
     const totalSeconds = knownTime.totalSeconds();
 

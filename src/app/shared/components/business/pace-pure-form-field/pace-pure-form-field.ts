@@ -3,6 +3,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { TranslateModule } from '@ngx-translate/core';
 import { Pace } from '../../../../core/business/model/pace.model';
 import { FormField } from '../../ui/form-field/form-field';
 
@@ -14,6 +15,7 @@ import { FormField } from '../../ui/form-field/form-field';
     CommonModule,
     MatFormFieldModule,
     MatInputModule,
+    TranslateModule,
   ],
   templateUrl: './pace-pure-form-field.html',
 })

@@ -5,6 +5,7 @@ import { DistanceStoreFormField } from '../../../shared/components/store/distanc
 import { WeightStoreFormField } from '../../../shared/components/store/weight-store-form-field/weight-store-form-field';
 import { GreenBox } from '../../../shared/components/ui/green-box/green-box';
 
+import { TranslateModule } from '@ngx-translate/core';
 import { TimeStoreFormField } from '../../../shared/components/store/time-store-form-field/time-store-form-field';
 import { ToolView } from './../../../shared/views/tool-view/tool-view';
 
@@ -16,20 +17,20 @@ import { ToolView } from './../../../shared/views/tool-view/tool-view';
     WeightStoreFormField,
     TimeStoreFormField,
     GreenBox,
+    TranslateModule,
   ],
   templateUrl: './calories-burned-calculator.html',
-  styleUrl: './calories-burned-calculator.scss',
 })
 export class CaloriesBurnedCalculator {
   private store = inject(StoreService);
   private calculators = inject(CalculatorsFacade);
 
-  summary = computed(() => {
+  calories = computed(() => {
     const distance = this.store.distance();
     const time = this.store.time();
     const weight = this.store.weight();
 
     const calories = this.calculators.caloriesBurned(distance, time, weight);
-    return `You burned approximately ${calories.toFixed(0)} kcal.`;
+    return calories.toFixed(0);
   });
 }

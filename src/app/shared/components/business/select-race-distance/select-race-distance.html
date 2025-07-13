@@ -1,10 +1,10 @@
 <mat-form-field class="w-[160px] max-w-xs">
-  <mat-label>distances</mat-label>
+  <mat-label>{{ 'COMMON.DISTANCE' | translate }}</mat-label>
   <mat-select [ngModel]="value" (ngModelChange)="onDistanceSelected($event)">
     @for (distanceKey of distancesKeys; track $index) {
-    <mat-option [value]="distances[distanceKey].distance.value">
-      {{distances[distanceKey].label}}
-    </mat-option>
+      <mat-option [value]="distances[distanceKey].distance.value">
+        {{ distances[distanceKey].translationKey | translate }}
+      </mat-option>
     }
   </mat-select>
 </mat-form-field>

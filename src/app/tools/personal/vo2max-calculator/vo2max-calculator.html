@@ -1,15 +1,18 @@
 <app-tool-view>
-  <ng-container tool-title>VO₂max Calculator</ng-container>
-  <ng-container tool-description
-    >Enter your race distance and finish time to estimate your aerobic
-    fitness.</ng-container
-  >
+  <ng-container tool-title>{{
+    'TOOLS.VO2MAX_CALCULATOR.TITLE' | translate
+  }}</ng-container>
+  <ng-container tool-description>{{
+    'TOOLS.VO2MAX_CALCULATOR.DESCRIPTION' | translate
+  }}</ng-container>
   <ng-container tool-content>
     <app-distance-store-form-field />
     <app-time-store-form-field />
   </ng-container>
 
   <ng-container tool-summary>
-    <app-green-box> Your estimated VO₂max is {{vo2Max()}} </app-green-box>
+    <app-green-box>{{
+      'TOOLS.VO2MAX_CALCULATOR.SUMMARY' | translate: { vo2Max: vo2Max() }
+    }}</app-green-box>
   </ng-container>
 </app-tool-view>

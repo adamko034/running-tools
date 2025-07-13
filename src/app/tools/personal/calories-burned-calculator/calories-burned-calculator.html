@@ -1,15 +1,19 @@
 <app-tool-view>
-  <ng-container tool-title>Calories Burned Estimator</ng-container>
-  <ng-container tool-description
-    >Estimate how many calories you burned based on your running distance, pace,
-    and body weight.</ng-container
-  >
+  <ng-container tool-title>{{
+    'TOOLS.CALORIES_BURNED_CALCULATOR.TITLE' | translate
+  }}</ng-container>
+  <ng-container tool-description>{{
+    'TOOLS.CALORIES_BURNED_CALCULATOR.DESCRIPTION' | translate
+  }}</ng-container>
   <ng-container tool-content>
     <app-distance-store-form-field />
     <app-time-store-form-field />
     <app-weight-store-form-field />
   </ng-container>
   <ng-container tool-summary>
-    <app-green-box>{{summary()}}</app-green-box>
+    <app-green-box>{{
+      'TOOLS.CALORIES_BURNED_CALCULATOR.SUMMARY'
+        | translate: { calories: calories() }
+    }}</app-green-box>
   </ng-container>
 </app-tool-view>

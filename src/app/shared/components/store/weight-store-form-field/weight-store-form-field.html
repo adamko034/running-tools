@@ -1,4 +1,4 @@
-<app-form-field [horizontalLineText]="'Weight'">
+<app-form-field [horizontalLineText]="'COMMON.WEIGHT' | translate">
   <div class="flex">
     <mat-form-field appearance="outline" class="w-[120px]">
       <input
@@ -11,7 +11,7 @@
         (ngModelChange)="setWeight($event)"
         selectOnFocus
       />
-      <span matTextSuffix>{{weight().unit}}</span>
+      <span matTextSuffix>{{ weight().unit }}</span>
     </mat-form-field>
   </div>
 </app-form-field>

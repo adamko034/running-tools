@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { Observable, map, switchMap, startWith } from 'rxjs';
+import { Observable, map, startWith, switchMap } from 'rxjs';
 import { Navigation } from '../navigation/navigation.model';
 
 @Injectable({
@@ -10,85 +10,95 @@ export class NavigationService {
   constructor(private translateService: TranslateService) {}
 
   getNavigation(): Observable<Navigation[]> {
-    // Use onLangChange to respond to language changes, start with current language
     return this.translateService.onLangChange.pipe(
       startWith({ lang: this.translateService.currentLang }),
       switchMap(() =>
         this.translateService.get([
-          'NAV.RACE_TOOLS',
-          'NAV.PERSONAL_PERFORMANCE',
-          'NAV.UNIT_CONVERTERS',
-          'TOOLS.PACE_CALCULATOR',
-          'TOOLS.PACE_CALCULATOR_DESC',
-          'TOOLS.FINISH_TIME_PREDICTOR',
-          'TOOLS.FINISH_TIME_PREDICTOR_DESC',
-          'TOOLS.CALORIES_BURNED_CALCULATOR',
-          'TOOLS.CALORIES_BURNED_CALCULATOR_DESC',
-          'TOOLS.VO2MAX_CALCULATOR',
-          'TOOLS.VO2MAX_CALCULATOR_DESC',
-          'TOOLS.PACE_SPEED_CONVERTER',
-          'TOOLS.PACE_SPEED_CONVERTER_DESC',
-          'TOOLS.DISTANCE_CONVERTER',
-          'TOOLS.DISTANCE_CONVERTER_DESC',
-          'TOOLS.WEIGHT_CONVERTER',
-          'TOOLS.WEIGHT_CONVERTER_DESC',
+          'NAVIGATION.RACE.TITLE',
+          'NAVIGATION.RACE.PACE_CALCULATOR',
+          'NAVIGATION.RACE.PACE_CALCULATOR_DESC',
+          'NAVIGATION.RACE.FINISH_TIME_PREDICTOR',
+          'NAVIGATION.RACE.FINISH_TIME_PREDICTOR_DESC',
+          'NAVIGATION.PERSONAL.TITLE',
+          'NAVIGATION.PERSONAL.CALORIES_BURNED_CALCULATOR',
+          'NAVIGATION.PERSONAL.CALORIES_BURNED_CALCULATOR_DESC',
+          'NAVIGATION.PERSONAL.VO2MAX_CALCULATOR',
+          'NAVIGATION.PERSONAL.VO2MAX_CALCULATOR_DESC',
+          'NAVIGATION.PERSONAL.PACE_SPEED_CONVERTER',
+          'NAVIGATION.PERSONAL.PACE_SPEED_CONVERTER_DESC',
+          'NAVIGATION.UNITS.TITLE',
+          'NAVIGATION.UNITS.DISTANCE_CONVERTER',
+          'NAVIGATION.UNITS.DISTANCE_CONVERTER_DESC',
+          'NAVIGATION.UNITS.WEIGHT_CONVERTER',
+          'NAVIGATION.UNITS.WEIGHT_CONVERTER_DESC',
+          'NAVIGATION.UNITS.PACE_SPEED_CONVERTER',
+          'NAVIGATION.UNITS.PACE_SPEED_CONVERTER_DESC',
         ])
       ),
       map((translations: any) => [
         {
-          title: translations['NAV.RACE_TOOLS'],
+          title: translations['NAVIGATION.RACE.TITLE'],
           links: [
             {
-              text: translations['TOOLS.PACE_CALCULATOR'],
+              text: translations['NAVIGATION.RACE.PACE_CALCULATOR'],
               link: 'race/pace-calculator',
-              description: translations['TOOLS.PACE_CALCULATOR_DESC'],
+              description: translations['NAVIGATION.RACE.PACE_CALCULATOR_DESC'],
               icon: 'speed',
             },
             {
-              text: translations['TOOLS.FINISH_TIME_PREDICTOR'],
+              text: translations['NAVIGATION.RACE.FINISH_TIME_PREDICTOR'],
               link: 'race/finish-time-predictor',
-              description: translations['TOOLS.FINISH_TIME_PREDICTOR_DESC'],
+              description:
+                translations['NAVIGATION.RACE.FINISH_TIME_PREDICTOR_DESC'],
               icon: 'flag',
             },
           ],
         },
         {
-          title: translations['NAV.PERSONAL_PERFORMANCE'],
+          title: translations['NAVIGATION.PERSONAL.TITLE'],
           links: [
             {
-              text: translations['TOOLS.CALORIES_BURNED_CALCULATOR'],
+              text: translations[
+                'NAVIGATION.PERSONAL.CALORIES_BURNED_CALCULATOR'
+              ],
               link: 'personal/burned-calories-estimator',
               description:
-                translations['TOOLS.CALORIES_BURNED_CALCULATOR_DESC'],
+                translations[
+                  'NAVIGATION.PERSONAL.CALORIES_BURNED_CALCULATOR_DESC'
+                ],
               icon: 'local_fire_department',
             },
             {
-              text: translations['TOOLS.VO2MAX_CALCULATOR'],
+              text: translations['NAVIGATION.PERSONAL.VO2MAX_CALCULATOR'],
               link: 'personal/vo2max-calculator',
-              description: translations['TOOLS.VO2MAX_CALCULATOR_DESC'],
+              description:
+                translations['NAVIGATION.PERSONAL.VO2MAX_CALCULATOR_DESC'],
               icon: 'favorite',
             },
           ],
         },
         {
-          title: translations['NAV.UNIT_CONVERTERS'],
+          title: translations['NAVIGATION.UNITS.TITLE'],
           links: [
             {
-              text: translations['TOOLS.PACE_SPEED_CONVERTER'],
+              text: translations['NAVIGATION.UNITS.PACE_SPEED_CONVERTER'],
               link: 'units/pace-to-speed',
-              description: translations['TOOLS.PACE_SPEED_CONVERTER_DESC'],
+              description:
+                translations['NAVIGATION.UNITS.PACE_SPEED_CONVERTER_DESC'],
               icon: 'swap_horiz',
             },
             {
-              text: translations['TOOLS.DISTANCE_CONVERTER'],
+              text: translations['NAVIGATION.UNITS.DISTANCE_CONVERTER'],
               link: 'units/kilometers-to-miles',
-              description: translations['TOOLS.DISTANCE_CONVERTER_DESC'],
+              description:
+                translations['NAVIGATION.UNITS.DISTANCE_CONVERTER_DESC'],
               icon: 'straighten',
             },
             {
-              text: translations['TOOLS.WEIGHT_CONVERTER'],
+              text: translations['NAVIGATION.UNITS.WEIGHT_CONVERTER'],
               link: 'units/kilograms-to-pounds',
-              description: translations['TOOLS.WEIGHT_CONVERTER_DESC'],
+              description:
+                translations['NAVIGATION.UNITS.WEIGHT_CONVERTER_DESC'],
               icon: 'fitness_center',
             },
           ],

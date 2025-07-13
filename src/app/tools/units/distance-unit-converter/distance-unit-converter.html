@@ -1,16 +1,17 @@
 <app-tool-view>
-  <ng-container tool-title> Distance Units Converter </ng-container>
-  <ng-container tool-description
-    >Quickly convert distances between miles and kilometers to plan your
-    training or races.</ng-container
-  >
+  <ng-container tool-title>
+    {{ 'TOOLS.DISTANCE_UNIT_CONVERTER.TITLE' | translate }}
+  </ng-container>
+  <ng-container tool-description>
+    {{ 'TOOLS.DISTANCE_UNIT_CONVERTER.DESCRIPTION' | translate }}
+  </ng-container>
   <ng-container tool-content>
     <app-select-race-distance
       [value]="selectedKmDistance"
       (distanceSelected)="onKmDistanceSelected($event)"
     ></app-select-race-distance>
     <app-number-form-field
-      [horizontalLineText]="'Kilometers'"
+      [horizontalLineText]="'COMMON.KILOMETERS' | translate"
       [name]="'distanceKilometers'"
       [step]="0.001"
       [suffix]="kmDistance.unit"
@@ -20,7 +21,7 @@
     </app-number-form-field>
 
     <app-number-form-field
-      [horizontalLineText]="'Miles'"
+      [horizontalLineText]="'COMMON.MILES' | translate"
       [name]="'distanceMiles'"
       [step]="0.001"
       [suffix]="miDistance.unit"
@@ -30,8 +31,10 @@
     </app-number-form-field>
   </ng-container>
   <ng-container tool-summary>
-    <app-green-box>
-      Kilometers: {{kmDistance.format()}} • Miles: {{miDistance.format()}}
-    </app-green-box>
+    <app-green-box>{{
+      'TOOLS.DISTANCE_UNIT_CONVERTER.SUMMARY'
+        | translate
+          : { kmDistance: kmDistance.format(), miDistance: miDistance.format() }
+    }}</app-green-box>
   </ng-container>
 </app-tool-view>

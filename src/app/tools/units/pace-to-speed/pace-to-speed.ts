@@ -1,4 +1,5 @@
 import { Component, effect, inject } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { Pace } from '../../../core/business/model/pace.model';
 import { Speed } from '../../../core/business/model/speed.model';
 import { StoreService } from '../../../core/store/store.service';
@@ -9,9 +10,14 @@ import { ToolView } from '../../../shared/views/tool-view/tool-view';
 
 @Component({
   selector: 'app-pace-to-speed',
-  imports: [ToolView, GreenBox, PacePureFormField, SpeedPureFormField],
+  imports: [
+    ToolView,
+    GreenBox,
+    PacePureFormField,
+    SpeedPureFormField,
+    TranslateModule,
+  ],
   templateUrl: './pace-to-speed.html',
-  styleUrl: './pace-to-speed.scss',
 })
 export class PaceToSpeed {
   private store = inject(StoreService);

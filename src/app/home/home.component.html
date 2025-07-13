@@ -1,3 +1,7 @@
+<app-language-store-selector
+  [floatingIcon]="true"
+></app-language-store-selector>
+
 <div class="max-w-7xl mx-auto px-4">
   <!-- Header Section -->
   <header
@@ -5,13 +9,6 @@
     [class.py-12]="(isMobile$ | async) === false"
     [class.py-6]="isMobile$ | async"
   >
-    <!-- Language Selector - Top Right -->
-    <div class="absolute top-4 right-4">
-      <app-language-store-selector
-        [floatingIcon]="true"
-      ></app-language-store-selector>
-    </div>
-
     <div class="max-w-4xl mx-auto">
       <div class="flex items-center justify-center gap-4 mb-6">
         <div
@@ -24,28 +21,22 @@
             class="w-18 h-18 rounded-full filter brightness-110 contrast-110"
           />
         </div>
-        <h1 class="text-5xl font-bold text-shadow-lg">Runner Toolkit</h1>
+        <h1 class="text-5xl font-bold text-shadow-lg">
+          {{ 'APP.TITLE' | translate }}
+        </h1>
       </div>
       <div class="mt-6">
         <p class="text-xl leading-relaxed mb-4 opacity-95">
-          Professional running tools for race planning, performance tracking,
-          and unit conversions.
+          {{ 'APP.DESCRIPTION' | translate }}
         </p>
         <p
           *ngIf="(isMobile$ | async) === false"
           class="text-lg leading-relaxed opacity-90 italic"
         >
-          Whether you're training for your first 5K or your next marathon, our
-          calculators will help you
-          <strong class="font-semibold not-italic text-shadow"
-            >run faster</strong
-          >,
-          <strong class="font-semibold not-italic text-shadow"
-            >train smarter</strong
-          >, and
-          <strong class="font-semibold not-italic text-shadow"
-            >reach your goals</strong
-          >.
+          {{ 'HOME.SUB_DESCRIPTION' | translate }}
+          <strong class="font-semibold not-italic text-shadow">
+            {{ 'HOME.SUB_DESCRIPTION_2' | translate }}</strong
+          >
         </p>
       </div>
     </div>
@@ -69,7 +60,7 @@
                 class="cursor-pointer transition-all duration-300 border-2 border-transparent rounded-lg overflow-hidden hover:-translate-y-1 hover:shadow-lg hover:border-blue-500 p-3"
                 [routerLink]="tool.link"
               >
-                <div class="text-center flex flex-col">
+                <div class="text-center flex flex-col h-full justify-between">
                   <div
                     class="flex items-center justify-center w-10 h-10 bg-gradient-to-br from-blue-100 to-green-100 rounded-lg mx-auto mb-2 border border-blue-200"
                   >
@@ -91,7 +82,7 @@
                     class="text-sm py-1 px-2 min-h-0 self-end justify-self-end"
                   >
                     <mat-icon class="text-sm mr-1">arrow_forward</mat-icon>
-                    Use
+                    {{ 'COMMON.USE' | translate }}
                   </button>
                 </div>
               </mat-card>
@@ -107,43 +98,46 @@
     class="bg-gradient-to-br from-gray-50 to-gray-200 rounded-2xl px-8 py-12 text-center"
   >
     <h2 class="text-4xl font-bold text-gray-900 mb-8">
-      Why Choose Runner Toolkit?
+      {{ 'HOME.WHY_CHOOSE' | translate }}
     </h2>
+
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
-      <div class="text-center p-6">
-        <mat-icon class="text-6xl text-blue-700 mb-4">speed</mat-icon>
-        <h3 class="text-xl font-semibold text-gray-900 mb-2">
-          Fast & Accurate
-        </h3>
-        <p class="text-gray-700 leading-relaxed">
-          Instant calculations with precise results for all your running needs
-        </p>
-      </div>
-      <div class="text-center p-6">
-        <mat-icon class="text-6xl text-blue-700 mb-4">phone_android</mat-icon>
-        <h3 class="text-xl font-semibold text-gray-900 mb-2">
-          Mobile Friendly
-        </h3>
-        <p class="text-gray-700 leading-relaxed">
-          Works perfectly on desktop, tablet, and mobile devices
-        </p>
-      </div>
-      <div class="text-center p-6">
-        <mat-icon class="text-6xl text-blue-700 mb-4"
-          >free_cancellation</mat-icon
-        >
-        <h3 class="text-xl font-semibold text-gray-900 mb-2">100% Free</h3>
-        <p class="text-gray-700 leading-relaxed">
-          All tools are completely free to use with no registration required
-        </p>
-      </div>
-      <div class="text-center p-6">
-        <mat-icon class="text-6xl text-blue-700 mb-4">offline_bolt</mat-icon>
-        <h3 class="text-xl font-semibold text-gray-900 mb-2">Works Offline</h3>
-        <p class="text-gray-700 leading-relaxed">
-          Progressive web app that works even without internet connection
-        </p>
-      </div>
+      <ng-container
+        *ngTemplateOutlet="
+          card;
+          context: { icon: 'speed', titleKey: 'HOME.FAST_ACCURATE' }
+        "
+      ></ng-container>
+      <ng-container
+        *ngTemplateOutlet="
+          card;
+          context: { icon: 'phone_android', titleKey: 'HOME.MOBILE_FRIENDLY' }
+        "
+      ></ng-container>
+      <ng-container
+        *ngTemplateOutlet="
+          card;
+          context: { icon: 'offline_bolt', titleKey: 'HOME.OFFLINE' }
+        "
+      ></ng-container>
+      <ng-container
+        *ngTemplateOutlet="
+          card;
+          context: { icon: 'build', titleKey: 'HOME.CUSTOMIZABLE' }
+        "
+      ></ng-container>
     </div>
   </section>
 </div>
+
+<ng-template #card let-icon="icon" let-titleKey="titleKey">
+  <div class="text-center p-6">
+    <mat-icon class="text-6xl text-blue-700 mb-4">{{ icon }}</mat-icon>
+    <h3 class="text-xl font-semibold text-gray-900 mb-2">
+      {{ titleKey | translate }}
+    </h3>
+    <p class="text-gray-700 leading-relaxed">
+      {{ titleKey + '_DESC' | translate }}
+    </p>
+  </div>
+</ng-template>

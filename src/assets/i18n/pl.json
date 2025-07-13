@@ -1,89 +1,111 @@
 {
   "APP": {
     "TITLE": "Runner Toolkit",
-    "DESCRIPTION": "Profesjonalne narzędzia do biegania dla planowania wyścigów, śledzenia wydajności i konwersji jednostek."
+    "DESCRIPTION": "Narzędzia dla biegaczy do planowania startów, śledzenia wyników i przeliczania jednostek."
   },
-  "NAV": {
-    "RACE_TOOLS": "Narzędzia Wyścigowe",
-    "PERSONAL_PERFORMANCE": "Wydajność Osobista",
-    "UNIT_CONVERTERS": "Konwertery Jednostek"
+  "NAVIGATION": {
+    "RACE": {
+      "TITLE": "Startowe",
+      "FINISH_TIME_PREDICTOR": "Prognoza czasu",
+      "FINISH_TIME_PREDICTOR_DESC": "Szacuj czas ukończenia na podstawie aktualnych wyników",
+      "PACE_CALCULATOR": "Kalkulator tempa",
+      "PACE_CALCULATOR_DESC": "Oblicz tempo na podstawie dystansu i czasu"
+    },
+    "PERSONAL": {
+      "TITLE": "Indywidualne",
+      "CALORIES_BURNED_CALCULATOR": "Spalone kalorie",
+      "CALORIES_BURNED_CALCULATOR_DESC": "Oblicz ilość spalonych kalorii podczas biegu",
+      "VO2MAX_CALCULATOR": "Kalkulator VO₂ Max",
+      "VO2MAX_CALCULATOR_DESC": "Oszacuj maksymalny pobór tlenu (VO₂ Max)"
+    },
+    "UNITS": {
+      "TITLE": "Przeliczniki",
+      "DISTANCE_CONVERTER": "Dystans",
+      "DISTANCE_CONVERTER_DESC": "Przelicz kilometry i mile",
+      "PACE_SPEED_CONVERTER": "Tempo / Prędkość",
+      "PACE_SPEED_CONVERTER_DESC": "Zamień tempo na prędkość i odwrotnie",
+      "WEIGHT_CONVERTER": "Waga",
+      "WEIGHT_CONVERTER_DESC": "Przelicz kilogramy i funty"
+    }
   },
-  "TOOLS": {
-    "PACE_CALCULATOR": "Kalkulator Tempa",
-    "PACE_CALCULATOR_DESC": "Oblicz tempo na podstawie dystansu i czasu",
-    "FINISH_TIME_PREDICTOR": "Przewidywanie Czasu Mety",
-    "FINISH_TIME_PREDICTOR_DESC": "Przewiduj czasy mety na podstawie obecnej wydajności",
-    "CALORIES_BURNED_CALCULATOR": "Kalkulator Spalonych Kalorii",
-    "CALORIES_BURNED_CALCULATOR_DESC": "Oblicz spalone kalorie podczas twoich biegów",
-    "VO2MAX_CALCULATOR": "Kalkulator VO₂max",
-    "VO2MAX_CALCULATOR_DESC": "Oszacuj swoje maksymalne zużycie tlenu",
-    "PACE_SPEED_CONVERTER": "Konwerter Tempo / Prędkość",
-    "PACE_SPEED_CONVERTER_DESC": "Konwertuj między tempem a prędkością",
-    "DISTANCE_CONVERTER": "Konwerter Dystansu",
-    "DISTANCE_CONVERTER_DESC": "Konwertuj między kilometrami a milami",
-    "WEIGHT_CONVERTER": "Konwerter Wagi",
-    "WEIGHT_CONVERTER_DESC": "Konwertuj między kilogramami a funtami"
+
+  "HOME": {
+    "SUB_DESCRIPTION": "Niezależnie czy biegasz dla zdrowia czy trenujesz do zawodów – nasze narzędzia pomogą Ci",
+    "SUB_DESCRIPTION_2": "biegać lepiej, efektywniej i osiągać cele.",
+    "WHY_CHOOSE": "Dlaczego warto wybrać Runner Toolkit?",
+    "FAST_ACCURATE": "Szybko i precyzyjnie",
+    "FAST_ACCURATE_DESC": "Dokładne wyniki i natychmiastowe obliczenia.",
+    "MOBILE_FRIENDLY": "Dostosowane do urządzeń mobilnych",
+    "MOBILE_FRIENDLY_DESC": "Działa na telefonach, tabletach i komputerach.",
+    "FREE": "Całkowicie bezpłatne",
+    "FREE_DESC": "Brak opłat, reklam czy subskrypcji – tylko potrzebne funkcje.",
+    "OFFLINE": "Działa offline",
+    "OFFLINE_DESC": "Nie wymaga połączenia z internetem – dostęp zawsze i wszędzie.",
+    "CUSTOMIZABLE": "Możliwość personalizacji",
+    "CUSTOMIZABLE_DESC": "Dostosuj jednostki i ustawienia według własnych potrzeb."
   },
   "COMMON": {
     "DISTANCE": "Dystans",
+    "DISTANCE_SELECT": "Wybierz dystans biegu",
     "TIME": "Czas",
     "PACE": "Tempo",
     "SPEED": "Prędkość",
     "WEIGHT": "Waga",
     "USE": "Użyj",
-    "SELECT_UNITS": "wybierz jednostki",
-    "DISTANCES": "dystanse",
+    "SELECT_UNITS": "Wybierz jednostki",
     "KILOMETERS": "Kilometry",
     "MILES": "Mile",
     "KILOGRAMS": "Kilogramy",
-    "POUNDS": "Funty"
+    "POUNDS": "Funty",
+    "UNITS": {
+      "SELECT": "Wybierz jednostki"
+    },
+    "DISTANCES": {
+      "400m": "400 m",
+      "1000m": "1000 m",
+      "5K": "5 km",
+      "10K": "10 km",
+      "HALF_MARATHON": "Półmaraton",
+      "MARATHON": "Maraton"
+    },
+    "LANGUAGUE": {
+      "TITLE": "Język",
+      "SELECT": "Wybierz język"
+    }
   },
-  "UNITS": {
-    "H": "h",
-    "MIN": "min",
-    "SEC": "sek"
-  },
-  "HOME": {
-    "SUBTITLE": "Niezależnie od tego, czy trenujesz do swojego pierwszego 5K czy następnego maratonu, nasze kalkulatory pomogą ci biegać szybciej, trenować mądrzej i osiągać cele.",
-    "WHY_CHOOSE": "Dlaczego wybrać Runner Toolkit?",
-    "FAST_ACCURATE": "Szybki i Dokładny",
-    "FAST_ACCURATE_DESC": "Natychmiastowe obliczenia z precyzyjnymi wynikami dla wszystkich twoich potrzeb biegowych",
-    "MOBILE_FRIENDLY": "Przyjazny Mobilnym",
-    "MOBILE_FRIENDLY_DESC": "Działa perfekcyjnie na komputerach, tabletach i urządzeniach mobilnych",
-    "FREE": "100% Darmowy",
-    "FREE_DESC": "Wszystkie narzędzia są całkowicie darmowe bez wymaganej rejestracji",
-    "OFFLINE": "Działa Offline",
-    "OFFLINE_DESC": "Progresywna aplikacja webowa która działa nawet bez połączenia internetowego"
-  },
-  "CALCULATORS": {
-    "CALORIES_BURNED": {
-      "TITLE": "Oszacowywacz Spalonych Kalorii",
-      "DESCRIPTION": "Oszacuj ile kalorii spaliłeś na podstawie dystansu biegu, tempa i masy ciała."
+  "TOOLS": {
+    "CALORIES_BURNED_CALCULATOR": {
+      "TITLE": "Oblicz spalone kalorie",
+      "DESCRIPTION": "Podaj dystans, tempo oraz wagę ciała, aby oszacować spalanie kalorii.",
+      "SUMMARY": "Szacunkowa liczba spalonych kalorii: {{calories}} kcal."
     },
-    "VO2MAX": {
-      "TITLE": "Kalkulator VO₂max",
-      "DESCRIPTION": "Wprowadź swój dystans wyścigu i czas mety aby oszacować swoją kondycję tlenową.",
-      "RESULT": "Twój oszacowany VO₂max to"
+    "VO2MAX_CALCULATOR": {
+      "TITLE": "Oblicz VO₂max",
+      "DESCRIPTION": "Podaj dystans i czas biegu, aby oszacować swoją wydolność tlenową.",
+      "SUMMARY": "Twoje VO₂max wynosi około {{vo2Max}}."
     },
-    "PACE": {
-      "TITLE": "Kalkulator Tempa",
-      "DESCRIPTION": "Dostosuj czas, dystans lub tempo aby przeliczyć pozostałe."
+    "FINISH_TIME_PREDICTOR": {
+      "TITLE": "Prognoza czasu biegu",
+      "DESCRIPTION": "Szacuj czas ukończenia biegu dla różnych dystansów na podstawie ostatniego biegu."
     },
-    "FINISH_TIME": {
-      "TITLE": "Przewidywanie Czasu Mety",
-      "DESCRIPTION": "Oszacuj swoje czasy mety dla popularnych dystansów wyścigowych na podstawie ostatniego biegu."
+    "PACE_CALCULATOR": {
+      "TITLE": "Kalkulator tempa",
+      "DESCRIPTION": "Zmieniaj czas, dystans lub tempo – obliczymy pozostałe wartości."
     },
-    "PACE_SPEED": {
-      "TITLE": "Konwersja Tempo na Prędkość",
-      "DESCRIPTION": "Oblicz równoważną prędkość i tempo dla twoich treningów."
+    "DISTANCE_UNIT_CONVERTER": {
+      "TITLE": "Kilometry i mile",
+      "DESCRIPTION": "Szybko przelicz odległości pomiędzy kilometrami a milami.",
+      "SUMMARY": "Kilometry: {{kmDistance}} • Mile: {{miDistance}}"
     },
-    "DISTANCE_CONVERTER": {
-      "TITLE": "Konwerter Jednostek Dystansu",
-      "DESCRIPTION": "Szybko konwertuj dystanse między milami a kilometrami do planowania treningów lub wyścigów."
+    "PACE_SPEED_UNIT_CONVERTER": {
+      "TITLE": "Tempo i prędkość",
+      "DESCRIPTION": "Oblicz tempo na podstawie prędkości lub odwrotnie.",
+      "SUMMARY": "Tempo: {{pace}} • Prędkość: {{speed}}"
     },
-    "WEIGHT_CONVERTER": {
-      "TITLE": "Konwerter Jednostek Wagi",
-      "DESCRIPTION": "Szybko konwertuj wagę między kilogramami a funtami."
+    "WEIGHT_UNIT_CONVERTER": {
+      "TITLE": "Kilogramy i funty",
+      "DESCRIPTION": "Przelicz wagę między kilogramami a funtami.",
+      "SUMMARY": "Kilogramy: {{kg}} • Funty: {{lb}}"
     }
   }
 }

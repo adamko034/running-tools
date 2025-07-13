@@ -1,4 +1,5 @@
 import { Component, computed, inject } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { CalculatorsFacade } from '../../../core/business/calculators-facade';
 import { StoreService } from '../../../core/store/store.service';
 import { DistanceStoreFormField } from '../../../shared/components/store/distance-store-form-field/distance-store-form-field';
@@ -7,9 +8,14 @@ import { GreenBox } from '../../../shared/components/ui/green-box/green-box';
 import { ToolView } from '../../../shared/views/tool-view/tool-view';
 @Component({
   selector: 'app-vo2max-calculator',
-  imports: [ToolView, DistanceStoreFormField, TimeStoreFormField, GreenBox],
+  imports: [
+    ToolView,
+    DistanceStoreFormField,
+    TimeStoreFormField,
+    GreenBox,
+    TranslateModule,
+  ],
   templateUrl: './vo2max-calculator.html',
-  styleUrl: './vo2max-calculator.scss',
 })
 export class Vo2maxCalculator {
   private store = inject(StoreService);

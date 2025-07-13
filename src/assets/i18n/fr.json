@@ -1,89 +1,111 @@
 {
   "APP": {
     "TITLE": "Runner Toolkit",
-    "DESCRIPTION": "Outils de course professionnels pour la planification de courses, le suivi de performances et les conversions d'unités."
+    "DESCRIPTION": "Des outils pratiques pour planifier vos courses, suivre vos performances et convertir des unités."
   },
-  "NAV": {
-    "RACE_TOOLS": "Outils de Course",
-    "PERSONAL_PERFORMANCE": "Performance Personnelle",
-    "UNIT_CONVERTERS": "Convertisseurs d'Unités"
+  "NAVIGATION": {
+    "RACE": {
+      "TITLE": "Outils de course",
+      "FINISH_TIME_PREDICTOR": "Estimation du temps d'arrivée",
+      "FINISH_TIME_PREDICTOR_DESC": "Estimez votre temps d’arrivée selon vos performances récentes",
+      "PACE_CALCULATOR": "Calculateur d’allure",
+      "PACE_CALCULATOR_DESC": "Calculez l’allure à partir de la distance et du temps"
+    },
+    "PERSONAL": {
+      "TITLE": "Données personnelles",
+      "CALORIES_BURNED_CALCULATOR": "Calories brûlées",
+      "CALORIES_BURNED_CALCULATOR_DESC": "Estimez les calories dépensées lors de votre course",
+      "VO2MAX_CALCULATOR": "Calculateur VO₂ Max",
+      "VO2MAX_CALCULATOR_DESC": "Estimez votre capacité aérobie (VO₂ Max)"
+    },
+    "UNITS": {
+      "TITLE": "Convertisseurs d’unités",
+      "DISTANCE_CONVERTER": "Distance",
+      "DISTANCE_CONVERTER_DESC": "Convertissez rapidement entre kilomètres et miles",
+      "PACE_SPEED_CONVERTER": "Allure / Vitesse",
+      "PACE_SPEED_CONVERTER_DESC": "Convertissez entre l’allure et la vitesse",
+      "WEIGHT_CONVERTER": "Poids",
+      "WEIGHT_CONVERTER_DESC": "Convertissez entre kilogrammes et livres"
+    }
   },
-  "TOOLS": {
-    "PACE_CALCULATOR": "Calculateur d'Allure",
-    "PACE_CALCULATOR_DESC": "Calculer l'allure à partir de la distance et du temps",
-    "FINISH_TIME_PREDICTOR": "Prédicteur de Temps de Fin",
-    "FINISH_TIME_PREDICTOR_DESC": "Prédire les temps de fin de course basés sur la performance actuelle",
-    "CALORIES_BURNED_CALCULATOR": "Calculateur de Calories Brûlées",
-    "CALORIES_BURNED_CALCULATOR_DESC": "Calculer les calories brûlées pendant vos courses",
-    "VO2MAX_CALCULATOR": "Calculateur VO₂max",
-    "VO2MAX_CALCULATOR_DESC": "Estimer votre consommation maximale d'oxygène",
-    "PACE_SPEED_CONVERTER": "Convertisseur Allure / Vitesse",
-    "PACE_SPEED_CONVERTER_DESC": "Convertir entre allure et vitesse",
-    "DISTANCE_CONVERTER": "Convertisseur de Distance",
-    "DISTANCE_CONVERTER_DESC": "Convertir entre kilomètres et miles",
-    "WEIGHT_CONVERTER": "Convertisseur de Poids",
-    "WEIGHT_CONVERTER_DESC": "Convertir entre kilogrammes et livres"
+
+  "HOME": {
+    "SUB_DESCRIPTION": "Que vous prépariez votre premier 5 km ou une prochaine course longue, nos outils vous aideront à",
+    "SUB_DESCRIPTION_2": "courir plus efficacement, vous entraîner intelligemment et atteindre vos objectifs.",
+    "WHY_CHOOSE": "Pourquoi choisir Runner Toolkit ?",
+    "FAST_ACCURATE": "Rapide et précis",
+    "FAST_ACCURATE_DESC": "Obtenez des résultats fiables en quelques secondes.",
+    "MOBILE_FRIENDLY": "Compatible mobile",
+    "MOBILE_FRIENDLY_DESC": "Fonctionne parfaitement sur tous les appareils : smartphone, tablette ou ordinateur.",
+    "FREE": "100 % gratuit",
+    "FREE_DESC": "Aucune publicité, aucun abonnement, aucune mauvaise surprise.",
+    "OFFLINE": "Utilisable hors ligne",
+    "OFFLINE_DESC": "Aucune connexion internet nécessaire — accessible à tout moment.",
+    "CUSTOMIZABLE": "Personnalisable",
+    "CUSTOMIZABLE_DESC": "Adaptez les unités et préférences selon vos besoins."
   },
   "COMMON": {
     "DISTANCE": "Distance",
+    "DISTANCE_SELECT": "Sélectionnez une distance",
     "TIME": "Temps",
     "PACE": "Allure",
     "SPEED": "Vitesse",
     "WEIGHT": "Poids",
     "USE": "Utiliser",
-    "SELECT_UNITS": "sélectionner les unités",
-    "DISTANCES": "distances",
+    "SELECT_UNITS": "Choisir les unités",
     "KILOMETERS": "Kilomètres",
     "MILES": "Miles",
     "KILOGRAMS": "Kilogrammes",
-    "POUNDS": "Livres"
+    "POUNDS": "Livres",
+    "UNITS": {
+      "SELECT": "Choisir les unités"
+    },
+    "DISTANCES": {
+      "400m": "400 m",
+      "1000m": "1000 m",
+      "5K": "5 km",
+      "10K": "10 km",
+      "HALF_MARATHON": "Semi-marathon",
+      "MARATHON": "Marathon"
+    },
+    "LANGUAGUE": {
+      "TITLE": "Langue",
+      "SELECT": "Choisir la langue"
+    }
   },
-  "UNITS": {
-    "H": "h",
-    "MIN": "min",
-    "SEC": "sec"
-  },
-  "HOME": {
-    "SUBTITLE": "Que vous vous entraîniez pour votre premier 5K ou votre prochain marathon, nos calculateurs vous aideront à courir plus vite, vous entraîner plus intelligemment et atteindre vos objectifs.",
-    "WHY_CHOOSE": "Pourquoi choisir Runner Toolkit ?",
-    "FAST_ACCURATE": "Rapide et Précis",
-    "FAST_ACCURATE_DESC": "Calculs instantanés avec des résultats précis pour tous vos besoins de course",
-    "MOBILE_FRIENDLY": "Compatible Mobile",
-    "MOBILE_FRIENDLY_DESC": "Fonctionne parfaitement sur desktop, tablette et appareils mobiles",
-    "FREE": "100% Gratuit",
-    "FREE_DESC": "Tous les outils sont entièrement gratuits sans inscription requise",
-    "OFFLINE": "Fonctionne Hors Ligne",
-    "OFFLINE_DESC": "Application web progressive qui fonctionne même sans connexion internet"
-  },
-  "CALCULATORS": {
-    "CALORIES_BURNED": {
-      "TITLE": "Estimateur de Calories Brûlées",
-      "DESCRIPTION": "Estimez combien de calories vous avez brûlées en fonction de votre distance de course, allure et poids corporel."
+  "TOOLS": {
+    "CALORIES_BURNED_CALCULATOR": {
+      "TITLE": "Estimation des calories brûlées",
+      "DESCRIPTION": "Indiquez votre distance, allure et poids pour estimer les calories brûlées.",
+      "SUMMARY": "Vous avez brûlé environ {{calories}} kcal."
     },
-    "VO2MAX": {
-      "TITLE": "Calculateur VO₂max",
-      "DESCRIPTION": "Entrez votre distance de course et temps de fin pour estimer votre condition aérobie.",
-      "RESULT": "Votre VO₂max estimé est"
+    "VO2MAX_CALCULATOR": {
+      "TITLE": "Calcul du VO₂ Max",
+      "DESCRIPTION": "Renseignez votre distance et temps de course pour estimer votre VO₂ Max.",
+      "SUMMARY": "Votre VO₂ Max estimé est de {{vo2Max}}."
     },
-    "PACE": {
-      "TITLE": "Calculateur d'Allure",
-      "DESCRIPTION": "Ajustez le temps, la distance ou l'allure pour recalculer les autres."
+    "FINISH_TIME_PREDICTOR": {
+      "TITLE": "Estimation du temps d’arrivée",
+      "DESCRIPTION": "Estimez votre temps de course sur différentes distances à partir d’une performance récente."
     },
-    "FINISH_TIME": {
-      "TITLE": "Prédicteur de Temps de Fin",
-      "DESCRIPTION": "Estimez vos temps de fin pour les distances de course populaires basées sur une course récente."
+    "PACE_CALCULATOR": {
+      "TITLE": "Calculateur d’allure",
+      "DESCRIPTION": "Modifiez le temps, la distance ou l’allure pour obtenir les autres valeurs."
     },
-    "PACE_SPEED": {
-      "TITLE": "Conversion Allure vers Vitesse",
-      "DESCRIPTION": "Calculez l'équivalent vitesse et allure pour vos entraînements."
+    "DISTANCE_UNIT_CONVERTER": {
+      "TITLE": "Conversion de distance",
+      "DESCRIPTION": "Convertissez rapidement entre kilomètres et miles.",
+      "SUMMARY": "Kilomètres : {{kmDistance}} • Miles : {{miDistance}}"
     },
-    "DISTANCE_CONVERTER": {
-      "TITLE": "Convertisseur d'Unités de Distance",
-      "DESCRIPTION": "Convertissez rapidement les distances entre miles et kilomètres pour planifier votre entraînement ou vos courses."
+    "PACE_SPEED_UNIT_CONVERTER": {
+      "TITLE": "Conversion allure / vitesse",
+      "DESCRIPTION": "Calculez ou comparez votre allure et votre vitesse.",
+      "SUMMARY": "Allure : {{pace}} • Vitesse : {{speed}}"
     },
-    "WEIGHT_CONVERTER": {
-      "TITLE": "Convertisseur d'Unités de Poids",
-      "DESCRIPTION": "Convertissez rapidement les poids entre kilogrammes et livres."
+    "WEIGHT_UNIT_CONVERTER": {
+      "TITLE": "Conversion de poids",
+      "DESCRIPTION": "Convertissez facilement entre kilogrammes et livres.",
+      "SUMMARY": "Kilogrammes : {{kg}} • Livres : {{lb}}"
     }
   }
 }

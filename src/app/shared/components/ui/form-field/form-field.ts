@@ -7,7 +7,6 @@ import { HorizontalLineWithText } from '../horizontal-line-with-text/horizontal-
   selector: 'app-form-field',
   imports: [HorizontalLineWithText, CommonModule],
   templateUrl: './form-field.html',
-  styleUrl: './form-field.scss',
 })
 export class FormField {
   @Input() showHorizontalLine = true;

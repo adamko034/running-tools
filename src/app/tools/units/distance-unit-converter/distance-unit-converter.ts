@@ -1,4 +1,5 @@
 import { Component, inject } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { Distance } from '../../../core/business/model/distance.model';
 import { DistanceUnit } from '../../../core/business/model/enums/distance-unit.enum';
 import { StoreService } from '../../../core/store/store.service';
@@ -9,9 +10,14 @@ import { ToolView } from '../../../shared/views/tool-view/tool-view';
 
 @Component({
   selector: 'app-distance-unit-converter',
-  imports: [ToolView, GreenBox, NumberFormField, SelectRaceDistance],
+  imports: [
+    ToolView,
+    GreenBox,
+    NumberFormField,
+    SelectRaceDistance,
+    TranslateModule,
+  ],
   templateUrl: './distance-unit-converter.html',
-  styleUrl: './distance-unit-converter.scss',
 })
 export class DistanceUnitConverter {
   private store = inject(StoreService);
@@ -22,7 +28,7 @@ export class DistanceUnitConverter {
 
   onKmDistanceChange(
     newValue: number,
-    fromSelection: boolean | undefined = undefined,
+    fromSelection: boolean | undefined = undefined
   ) {
     this.kmDistance.value = newValue;
     this.miDistance.setValueAndConvert(newValue);
@@ -38,7 +44,7 @@ export class DistanceUnitConverter {
 
   onMiDistanceChange(
     newValue: number,
-    fromSelection: boolean | undefined = undefined,
+    fromSelection: boolean | undefined = undefined
   ) {
     this.miDistance.value = newValue;
     this.kmDistance.setValueAndConvert(newValue);

@@ -1,4 +1,5 @@
 import { Component, inject } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { WeightUnit } from '../../../core/business/model/enums/weight-unit.enum';
 import { StoreService } from '../../../core/store/store.service';
 import { GreenBox } from '../../../shared/components/ui/green-box/green-box';
@@ -7,7 +8,7 @@ import { ToolView } from '../../../shared/views/tool-view/tool-view';
 
 @Component({
   selector: 'app-weight-unit-converter',
-  imports: [ToolView, NumberFormField, GreenBox],
+  imports: [ToolView, NumberFormField, GreenBox, TranslateModule],
   templateUrl: './weight-unit-converter.html',
 })
 export class WeightUnitConverter {

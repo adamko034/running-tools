@@ -1,5 +1,6 @@
 import { Component, computed, inject, Signal } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
+import { TranslateModule } from '@ngx-translate/core';
 import { CalculatorsFacade } from '../../../core/business/calculators-facade';
 import { DataCatalog } from '../../../core/business/catalog/data-catalog';
 import { FinishTime } from '../../../core/business/model/finish-time.model';
@@ -17,9 +18,9 @@ import { ToolView } from '../../../shared/views/tool-view/tool-view';
     TimeStoreFormField,
     MatCardModule,
     GreenBox,
+    TranslateModule,
   ],
   templateUrl: './finish-time-predictor.html',
-  styleUrl: './finish-time-predictor.scss',
   standalone: true,
 })
 export class FinishTimePredictor {
@@ -34,32 +35,32 @@ export class FinishTimePredictor {
       this.calculators.finishTime(
         DataCatalog.distances.fourHundredM,
         knownDistance,
-        knownTime,
+        knownTime
       ),
       this.calculators.finishTime(
         DataCatalog.distances.oneK,
         knownDistance,
-        knownTime,
+        knownTime
       ),
       this.calculators.finishTime(
         DataCatalog.distances.fiveK,
         knownDistance,
-        knownTime,
+        knownTime
       ),
       this.calculators.finishTime(
         DataCatalog.distances.tenK,
         knownDistance,
-        knownTime,
+        knownTime
       ),
       this.calculators.finishTime(
         DataCatalog.distances.halfMarathon,
         knownDistance,
-        knownTime,
+        knownTime
       ),
       this.calculators.finishTime(
         DataCatalog.distances.marathon,
         knownDistance,
-        knownTime,
+        knownTime
       ),
     ];
   });

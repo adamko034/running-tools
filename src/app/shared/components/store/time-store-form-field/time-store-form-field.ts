@@ -3,6 +3,7 @@ import { Component, effect, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { TranslateModule } from '@ngx-translate/core';
 import { Time } from '../../../../core/business/model/time.model';
 import { StoreService } from '../../../../core/store/store.service';
 import { SelectOnFocus } from '../../../directives/select-on-focus';
@@ -17,9 +18,9 @@ import { FormField } from '../../ui/form-field/form-field';
     CommonModule,
     SelectOnFocus,
     FormField,
+    TranslateModule,
   ],
   templateUrl: './time-store-form-field.html',
-  styleUrl: './time-store-form-field.scss',
 })
 export class TimeStoreFormField {
   private store = inject(StoreService);
