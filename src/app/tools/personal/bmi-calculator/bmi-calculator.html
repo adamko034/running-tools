@@ -1,0 +1,87 @@
+<app-tool-view>
+  <ng-container tool-title>{{
+    'TOOLS.BMI_CALCULATOR.TITLE' | translate
+  }}</ng-container>
+  <ng-container tool-description>
+    {{ 'TOOLS.BMI_CALCULATOR.DESCRIPTION' | translate }}
+    <br />
+    <div
+      class="pl-10"
+      [innerHTML]="'TOOLS.BMI_CALCULATOR.DESCRIPTION_2' | translate"
+    ></div>
+  </ng-container>
+  <ng-container tool-content>
+    <div class="flex mb-4">
+      <app-age-store-form-field class="flex-1" />
+      <app-sex-store-form-field class="flex-1" />
+    </div>
+    <div class="flex">
+      <app-height-store-form-field class="flex-1" />
+      <app-weight-store-form-field class="flex-1" />
+    </div>
+  </ng-container>
+  <ng-container tool-summary>
+    <div
+      class="grid md:grid-cols-2 xl:grid-cols-3 gap-6 place-items-center md:place-items-stretch"
+    >
+      <ng-container
+        *ngTemplateOutlet="
+          summary;
+          context: { value: bmi, category: bmiCategory, type: 'BMI' }
+        "
+      ></ng-container>
+
+      <ng-container
+        *ngTemplateOutlet="
+          summary;
+          context: { value: bmiHa, category: bmiHaCategory, type: 'NEW_BMI' }
+        "
+      ></ng-container>
+
+      <ng-container
+        *ngTemplateOutlet="
+          summary;
+          context: {
+            value: ibw.ibw.format(),
+            category: ibw.category,
+            type: 'IBW',
+          }
+        "
+      ></ng-container>
+
+      <ng-container
+        *ngTemplateOutlet="
+          summary;
+          context: { value: fat, category: fatCategory, type: 'BODY_FAT' }
+        "
+      ></ng-container>
+
+      <ng-container
+        *ngTemplateOutlet="
+          summary;
+          context: { value: bmr.bmr, category: bmr.category, type: 'BMR' }
+        "
+      ></ng-container>
+    </div>
+  </ng-container>
+</app-tool-view>
+
+<ng-template #summary let-value="value" let-category="category" let-type="type">
+  <app-result-box
+    [type]="categoryToResultBoxType(category)"
+    class="w-3xs md:w-auto"
+  >
+    <div class="space-y-1">
+      <div class="text-lg font-semibold">
+        {{
+          'TOOLS.BMI_CALCULATOR.' + type + '.SUMMARY' | translate: { value }
+        }}
+      </div>
+      <div class="text-sm opacity-75">
+        {{
+          'TOOLS.BMI_CALCULATOR.' + type + '.CATEGORY.' + category | translate
+        }}
+      </div>
+    </div>
+  </app-result-box>
+</ng-template>

@@ -1,0 +1,6 @@
+export enum BmiCategory {
+  UNDERWEIGHT = 'UNDERWEIGHT',
+  NORMAL = 'NORMAL',
+  OVERWEIGHT = 'OVERWEIGHT',
+  OBESITY = 'OBESE',
+}

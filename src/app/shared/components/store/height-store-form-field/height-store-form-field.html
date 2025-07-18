@@ -1,0 +1,46 @@
+<app-form-field [horizontalLineText]="'COMMON.HEIGHT' | translate">
+  @if (isMetric()) {
+    <div class="flex">
+      <mat-form-field appearance="outline" class="w-[120px]">
+        <input
+          matInput
+          type="number"
+          min="20"
+          step="0.1"
+          [ngModel]="height().value"
+          name="heightStore"
+          (ngModelChange)="onMetricHeightChange($event)"
+          selectOnFocus
+        />
+        <span matTextSuffix>{{ height().unit }}</span>
+      </mat-form-field>
+    </div>
+  } @else {
+    <div class="flex gap-2">
+      <mat-form-field appearance="outline" class="w-[100px]">
+        <input
+          matInput
+          type="number"
+          min="0"
+          [ngModel]="feet"
+          name="heightStoreFeet"
+          (ngModelChange)="onImperialHeightChange($event, 'ft')"
+          selectOnFocus
+        />
+        <span matTextSuffix>ft</span>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="w-[100px]">
+        <input
+          matInput
+          type="number"
+          [ngModel]="inches"
+          name="heightStoreInches"
+          (ngModelChange)="onImperialHeightChange($event, 'in')"
+          selectOnFocus
+        />
+        <span matTextSuffix>in</span>
+      </mat-form-field>
+    </div>
+  }
+</app-form-field>

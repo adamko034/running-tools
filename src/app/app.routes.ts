@@ -43,6 +43,13 @@ const commonRoutes: Routes = [
             './tools/personal/calories-burned-calculator/calories-burned-calculator'
           ).then(m => m.CaloriesBurnedCalculator),
       },
+      {
+        path: 'bmi-calculator',
+        loadComponent: () =>
+          import('./tools/personal/bmi-calculator/bmi-calculator').then(
+            m => m.BmiCalculator
+          ),
+      },
     ],
   },
   {

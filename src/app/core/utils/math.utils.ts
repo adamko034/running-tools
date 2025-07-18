@@ -19,6 +19,10 @@ export class MathUtils {
     return Math.round(value * 1000) / 1000;
   }
 
+  static roundHundred(value: number): number {
+    return Math.round(value * 100) / 100;
+  }
+
   static roundInteger(value: number): number {
     return Math.round(value);
   }

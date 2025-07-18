@@ -1,0 +1,12 @@
+<app-form-field [horizontalLineText]="'COMMON.SEX' | translate">
+  <mat-form-field>
+    <mat-select [ngModel]="sex()" (ngModelChange)="onSexChange($event)">
+      <mat-option [value]="sexValues.F">{{
+        'COMMON.SEX_F' | translate
+      }}</mat-option>
+      <mat-option [value]="sexValues.M">{{
+        'COMMON.SEX_M' | translate
+      }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</app-form-field>

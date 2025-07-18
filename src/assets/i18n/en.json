@@ -13,10 +13,12 @@
     },
     "PERSONAL": {
       "TITLE": "Personal Tools",
-      "CALORIES_BURNED_CALCULATOR": "Calories Burned Calculator",
+      "CALORIES_BURNED_CALCULATOR": "Calories Burned",
       "CALORIES_BURNED_CALCULATOR_DESC": "Calculate calories burned during your runs",
-      "VO2MAX_CALCULATOR": "VO₂ Max Calculator",
-      "VO2MAX_CALCULATOR_DESC": "Estimate your maximum oxygen uptake"
+      "VO2MAX_CALCULATOR": "VO₂ Max",
+      "VO2MAX_CALCULATOR_DESC": "Estimate your maximum oxygen uptake",
+      "BMI_CALCULATOR": "BMI & Body Composition",
+      "BMI_CALCULATOR_DESC": "Calculate your BMI and estimate body fat using advanced methods"
     },
     "UNITS": {
       "TITLE": "Unit Converters",
@@ -45,12 +47,17 @@
     "CUSTOMIZABLE_DESC": "Choose your preferred units and settings for a personalized experience."
   },
   "COMMON": {
+    "AGE": "Age",
+    "SEX": "Sex",
+    "SEX_F": "Female",
+    "SEX_M": "Male",
     "DISTANCE": "Distance",
     "DISTANCE_SELECT": "Select race distane",
     "TIME": "Time",
     "PACE": "Pace",
     "SPEED": "Speed",
     "WEIGHT": "Weight",
+    "HEIGHT": "Height",
     "USE": "Use",
     "SELECT_UNITS": "Select units",
     "KILOMETERS": "Kilometers",
@@ -71,6 +78,12 @@
     "LANGUAGUE": {
       "TITLE": "Language",
       "SELECT": "Select language"
+    },
+    "BMI_CATEGORY": {
+      "UNDER": "Underweight",
+      "NORMAL": "Normal weight",
+      "OVER": "Overweight",
+      "OBESITY": "Obesity"
     }
   },
   "TOOLS": {
@@ -106,6 +119,55 @@
       "TITLE": "Weight Unit Conversion",
       "DESCRIPTION": "Quickly convert weights between kilograms and pounds.",
       "SUMMARY": "Kilograms: {{kg}} • Pounds: {{lb}}"
+    },
+    "BMI_CALCULATOR": {
+      "TITLE": "Body Composition",
+      "DESCRIPTION": "Calculate your BMI and estimate body fat using multiple methods for a more complete view of your body composition. Includes:",
+      "DESCRIPTION_2": "<ul class='list-disc'><li>Standard BMI</li><li>New BMI - height-adjusted BMI</li><li>BMR - calories burned at rest</li><li>Body Fat % - esitimated using Deurenberg formula</li><li>IBW - ideal body weight</ul>",
+      "BMI": {
+        "SUMMARY": "BMI: {{value}}",
+        "CATEGORY": {
+          "UNDERWEIGHT": "Underweight",
+          "NORMAL": "Normal",
+          "OVERWEIGHT": "Overweight",
+          "OBESE": "Obese"
+        }
+      },
+      "NEW_BMI": {
+        "SUMMARY": "New BMI: {{value}}",
+        "CATEGORY": {
+          "UNDERWEIGHT": "Underweight",
+          "NORMAL": "Healthy weight",
+          "OVERWEIGHT": "Slightly overweight",
+          "OBESE": "Obese"
+        }
+      },
+      "BODY_FAT": {
+        "SUMMARY": "Body Fat: {{value}}%",
+        "CATEGORY": {
+          "BELOW_ESSENTIAL": "Dangerously low",
+          "ESSENTIAL": "Mminimum healthy level",
+          "ATHLETE": "Athletic body",
+          "FITNESS": "Fit body",
+          "AVERAGE": "Average",
+          "OBESE": "Obese"
+        }
+      },
+      "BMR": {
+        "SUMMARY": "BMR: {{value}}kcal",
+        "CATEGORY": {
+          "BMR_OK": "Calories burned at rest"
+        }
+      },
+      "IBW": {
+        "SUMMARY": "IBW: {{value}}",
+        "CATEGORY": {
+          "IBW_BAD": "Your weight is far from ideal",
+          "IBW_IMPROVE": "Your weight could be improved",
+          "IBW_OK": "Your weight is acceptable",
+          "IBW_IDEAL": "Your weight is ideal"
+        }
+      }
     }
   }
 }

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Sex } from '../business/model/enums/sex.enum';
 import { Units } from '../store/units.enum';
 
 export interface Config {
@@ -8,7 +9,10 @@ export interface Config {
   timeMinutes: number;
   timeSeconds: number;
   weight: number;
+  height: number;
   lang: string;
+  sex: Sex;
+  age: number;
 }
 
 @Injectable({
@@ -33,6 +37,9 @@ export class LocalStorageService {
         timeSeconds: parsed.timeSeconds,
         weight: parsed.weight,
         lang: parsed.lang,
+        height: parsed.height,
+        sex: parsed.sex,
+        age: parsed.age,
       };
     }
 

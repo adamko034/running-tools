@@ -5,7 +5,7 @@ import { BusinessModel } from './interfaces/business-model.interface';
 export class Weight implements BusinessModel<Weight, WeightUnit> {
   private constructor(
     public value: number,
-    public unit: WeightUnit,
+    public unit: WeightUnit
   ) {}
 
   static of(value: number, unit: WeightUnit) {
@@ -21,7 +21,7 @@ export class Weight implements BusinessModel<Weight, WeightUnit> {
   clone(overrides?: Partial<Weight> | undefined): Weight {
     return Weight.of(
       overrides?.value || this.value,
-      overrides?.unit || this.unit,
+      overrides?.unit || this.unit
     );
   }
 
@@ -43,7 +43,7 @@ export class Weight implements BusinessModel<Weight, WeightUnit> {
   }
 
   public format(): string {
-    return `${this.value} ${this.unit}`;
+    return `${this.value}  ${this.unit}`;
   }
 
   isTheSameAs(other: Weight): boolean {

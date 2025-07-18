@@ -1,0 +1,7 @@
+<app-number-form-field
+  [horizontalLineText]="'COMMON.AGE' | translate"
+  [name]="'ageNumber'"
+  [value]="age()"
+  [step]="1"
+  (valueChange)="onAgeChage($event)"
+/>
