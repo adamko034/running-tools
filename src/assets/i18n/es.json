@@ -86,6 +86,9 @@
       "NORMAL": "Peso normal",
       "OVER": "Sobrepeso",
       "OBESITY": "Obesidad"
+    },
+    "VALIDATION": {
+      "VALUE_INVALID": "El valor no es válido"
     }
   },
   "TOOLS": {

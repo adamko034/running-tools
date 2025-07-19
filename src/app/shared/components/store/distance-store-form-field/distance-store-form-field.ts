@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
@@ -34,15 +34,26 @@ export class DistanceStoreFormField {
   distancesKeys = DataCatalog.distancesKeys;
   distances = DataCatalog.distances;
 
-  setDistance(value: number) {
-    const newDistance = this.distance().clone();
-    newDistance.value = value;
-    newDistance.validate();
+  // Validation state
+  isValid = signal(true);
+  errorMessage = signal('');
 
-    this.store.updateDistance(newDistance);
+  setDistance(value: number) {
+    // Always validate the input
+    this.validateDistance(value);
+
+    if (this.isValid()) {
+      const newDistance = this.distance().clone();
+      newDistance.value = value;
+      this.store.updateDistance(newDistance);
+    }
   }
 
   setRaceDistance(kmValue: number) {
+    // Reset validation state when using preset distances (they're always valid)
+    this.isValid.set(true);
+    this.errorMessage.set('');
+
     this.distance().convertAndSetKmValue(kmValue);
     this.store.updateDistance(this.distance());
   }
@@ -50,15 +61,40 @@ export class DistanceStoreFormField {
   onInput(event: Event) {
     const input = event.target as HTMLInputElement;
     let value = input.value;
-    
+
     // Replace comma with dot for decimal separator
     if (value.includes(',')) {
       value = value.replace(',', '.');
       input.value = value;
-      
-      // Trigger ngModelChange manually since we modified the input value
-      const numericValue = parseFloat(value) || 0;
+    }
+
+    // Validate the input value
+    const numericValue = parseFloat(value) || 0;
+    this.validateDistance(numericValue);
+
+    // Only update store if valid
+    if (this.isValid()) {
       this.setDistance(numericValue);
     }
+  }
+
+  private validateDistance(value: number): boolean {
+    // Handle empty input (value would be 0 from parseFloat)
+    if (value === 0) {
+      this.isValid.set(false);
+      this.errorMessage.set('COMMON.VALIDATION.VALUE_INVALID');
+      return false;
+    }
+
+    // Check if value is a valid number and greater than 0
+    const isValidNumber = !isNaN(value) && isFinite(value);
+    const isPositive = value > 0;
+
+    const valid = isValidNumber && isPositive;
+
+    this.isValid.set(valid);
+    this.errorMessage.set(valid ? '' : 'COMMON.VALIDATION.VALUE_INVALID');
+
+    return valid;
   }
 }

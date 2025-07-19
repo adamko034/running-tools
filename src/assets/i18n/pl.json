@@ -86,6 +86,9 @@
       "NORMAL": "Waga prawidłowa",
       "OVER": "Nadwaga",
       "OBESITY": "Otyłość"
+    },
+    "VALIDATION": {
+      "VALUE_INVALID": "Wartość jest nieprawidłowa"
     }
   },
   "TOOLS": {
