@@ -1,0 +1,58 @@
+<div
+  class="relative overflow-hidden rounded-2xl shadow-2xl border hover:shadow-3xl transition-all duration-300"
+  [ngClass]="getContainerClasses()"
+>
+  <!-- Decorative background elements -->
+  <div
+    class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-white/30 to-transparent rounded-full -translate-y-16 translate-x-16"
+    [ngClass]="{ 'animate-pulse': variant === 'default' }"
+  ></div>
+  <div
+    class="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr to-transparent rounded-full translate-y-12 -translate-x-12"
+    [ngClass]="getAccentClasses()"
+  ></div>
+  <div
+    class="absolute top-1/4 right-1/4 w-1 h-1 rounded-full"
+    [ngClass]="getAccentDotClasses()"
+    *ngIf="variant !== 'card'"
+  ></div>
+
+  <!-- Content -->
+  <div class="relative z-10" [ngClass]="getContentClasses()">
+    <!-- Default and compact variants with enhanced header -->
+    <ng-container *ngIf="variant !== 'card'">
+      <!-- Enhanced Header Section -->
+      <div class="text-center mb-6">
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">
+          <ng-content select="[result-title]"></ng-content>
+        </h3>
+        <p class="text-sm text-gray-600">
+          <ng-content select="[result-subtitle]"></ng-content>
+        </p>
+        
+        <!-- Accent line -->
+        <div class="mt-3 flex items-center justify-center space-x-2">
+          <div class="w-2 h-2 rounded-full" [ngClass]="getPrimaryAccentClasses()"></div>
+          <div class="w-16 h-1 rounded-full" [ngClass]="getGradientClasses()"></div>
+          <div class="w-2 h-2 rounded-full" [ngClass]="getSecondaryAccentClasses()"></div>
+        </div>
+      </div>
+
+      <!-- Value Display -->
+      <div
+        [ngClass]="transparentValue ? '' : 'bg-white/80 backdrop-blur-md rounded-2xl p-4 shadow-xl border border-white/50 hover:bg-white/90 transition-all duration-200'"
+      >
+        <div
+          [ngClass]="transparentValue ? '' : 'text-2xl font-bold text-gray-900 tracking-tight leading-tight text-center'"
+        >
+          <ng-content select="[result-value]"></ng-content>
+        </div>
+      </div>
+    </ng-container>
+
+    <!-- Card variant - flexible content -->
+    <ng-container *ngIf="variant === 'card'">
+      <ng-content></ng-content>
+    </ng-container>
+  </div>
+</div>

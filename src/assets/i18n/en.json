@@ -73,7 +73,9 @@
       "5K": "5K",
       "10K": "10K",
       "HALF_MARATHON": "Half-Marathon",
-      "MARATHON": "Marathon"
+      "HALF_MARATHON_SHORT": "Half",
+      "MARATHON": "Marathon",
+      "MARATHON_SHORT": "Marathon"
     },
     "LANGUAGUE": {
       "TITLE": "Language",
@@ -90,42 +92,56 @@
     "CALORIES_BURNED_CALCULATOR": {
       "TITLE": "Calories Burned Estimator",
       "DESCRIPTION": "Estimate how many calories you burned based on your running distance, pace, and body weight.",
-      "SUMMARY": "You burned approximately {{calories}} kcal."
+      "SUMMARY": "You burned approximately {{calories}} kcal.",
+      "SUMMARY_TITLE": "Calories Burned",
+      "SUMMARY_SUB": "Based on your distance, time and weight."
     },
     "VO2MAX_CALCULATOR": {
       "TITLE": "VO₂max Calculator",
       "DESCRIPTION": "Enter your race distance and finish time to estimate your aerobic fitness.",
-      "SUMMARY": "Your estimated VO₂max is {{vo2Max}}."
+      "SUMMARY": "Your estimated VO₂max is {{vo2Max}}.",
+      "RESULT_TITLE": "VO₂ Max Result",
+      "RESULT_SUBTITLE": "Your estimated maximum oxygen uptake",
+      "UNIT": "ml/kg/min"
     },
     "FINISH_TIME_PREDICTOR": {
       "TITLE": "Finish Time Predictor",
-      "DESCRIPTION": "Estimate your finish times for popular race distances based on a recent run."
+      "DESCRIPTION": "Estimate your finish times for popular race distances based on a recent run.",
+      "SUMMARY": "Predicted Race Times",
+      "SUMMARY_SUB": "Based on your current pace"
     },
     "PACE_CALCULATOR": {
       "TITLE": "Pace Calculator",
-      "DESCRIPTION": "Adjust time, distance, or pace to recalculate the others."
+      "DESCRIPTION": "Adjust time, distance, or pace to recalculate the others.",
+      "SUMMARY": "Your Pace Summary"
     },
     "DISTANCE_UNIT_CONVERTER": {
       "TITLE": "Distance Unit Convertsion",
       "DESCRIPTION": "Quickly convert distances between miles and kilometers to plan your training or races.",
-      "SUMMARY": "Kilometers: {{kmDistance}} • Miles: {{miDistance}}"
+      "SUMMARY": "Kilometers: {{kmDistance}} • Miles: {{miDistance}}",
+      "RESULT_TITLE": "Distance Conversion",
+      "RESULT_SUBTITLE": "Equivalent distances in kilometers and miles"
     },
     "PACE_SPEED_UNIT_CONVERTER": {
       "TITLE": "Pace to Speed Conversion",
       "DESCRIPTION": "Calculate equivalent speed and pace for your workouts.",
-      "SUMMARY": "Pace: {{pace}} • Speed: {{speed}}"
+      "SUMMARY": "Pace: {{pace}} • Speed: {{speed}}",
+      "RESULT_TITLE": "Pace & Speed Conversion",
+      "RESULT_SUBTITLE": "Equivalent pace and speed values"
     },
     "WEIGHT_UNIT_CONVERTER": {
       "TITLE": "Weight Unit Conversion",
       "DESCRIPTION": "Quickly convert weights between kilograms and pounds.",
-      "SUMMARY": "Kilograms: {{kg}} • Pounds: {{lb}}"
+      "SUMMARY": "Kilograms: {{kg}} • Pounds: {{lb}}",
+      "RESULT_TITLE": "Weight Conversion",
+      "RESULT_SUBTITLE": "Equivalent weights in kilograms and pounds"
     },
     "BMI_CALCULATOR": {
       "TITLE": "Body Composition",
       "DESCRIPTION": "Calculate your BMI and estimate body fat using multiple methods for a more complete view of your body composition. Includes:",
-      "DESCRIPTION_2": "<ul class='list-disc'><li>Standard BMI</li><li>New BMI - height-adjusted BMI</li><li>BMR - calories burned at rest</li><li>Body Fat % - esitimated using Deurenberg formula</li><li>IBW - ideal body weight</ul>",
+      "DESCRIPTION_2": "<ul class='list-disc list-inside ml-4 space-y-1'><li>Standard BMI</li><li>New BMI - height-adjusted BMI</li><li>IBW - ideal body weight</li><li>Body Fat % - estimated using Deurenberg formula</li><li>BMR - calories burned at rest</li></ul>",
       "BMI": {
-        "SUMMARY": "BMI: {{value}}",
+        "SUMMARY": "BMI",
         "CATEGORY": {
           "UNDERWEIGHT": "Underweight",
           "NORMAL": "Normal",
@@ -134,7 +150,7 @@
         }
       },
       "NEW_BMI": {
-        "SUMMARY": "New BMI: {{value}}",
+        "SUMMARY": "New BMI",
         "CATEGORY": {
           "UNDERWEIGHT": "Underweight",
           "NORMAL": "Healthy weight",
@@ -143,7 +159,7 @@
         }
       },
       "BODY_FAT": {
-        "SUMMARY": "Body Fat: {{value}}%",
+        "SUMMARY": "Body Fat",
         "CATEGORY": {
           "BELOW_ESSENTIAL": "Dangerously low",
           "ESSENTIAL": "Mminimum healthy level",
@@ -154,13 +170,13 @@
         }
       },
       "BMR": {
-        "SUMMARY": "BMR: {{value}}kcal",
+        "SUMMARY": "BMR",
         "CATEGORY": {
           "BMR_OK": "Calories burned at rest"
         }
       },
       "IBW": {
-        "SUMMARY": "IBW: {{value}}",
+        "SUMMARY": "IBW",
         "CATEGORY": {
           "IBW_BAD": "Your weight is far from ideal",
           "IBW_IMPROVE": "Your weight could be improved",

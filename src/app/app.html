@@ -27,12 +27,11 @@
     <main
       class="min-height-screen flex w-full pb-6"
       [class.justify-center]="!isMobile"
-      [class.p-4]="!isMobile"
     >
       <!-- Main content area -->
       <div
         *ngIf="(isHomePage$ | async) === false"
-        class="max-w-xl flex-1 px-4"
+        class="flex-1 px-4 w-full max-w-4xl min-w-0"
         [class.mr-4]="!isMobile"
       >
         <router-outlet></router-outlet>
@@ -52,7 +51,7 @@
       <!-- Sidebar - only show when not on home page -->
       <aside
         *ngIf="(isHomePage$ | async) === false && !isMobile"
-        class="flex-1 max-w-2xs px-3"
+        class="w-80 flex-shrink-0 px-3"
       >
         <ng-container *ngTemplateOutlet="nav"></ng-container>
       </aside>

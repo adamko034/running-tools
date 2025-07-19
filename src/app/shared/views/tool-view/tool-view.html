@@ -1,17 +1,40 @@
-<div class="space-y-6">
-  <!-- Title -->
-  <div>
-    <h1 class="text-3xl font-bold">
-      <ng-content select="[tool-title]"></ng-content>
-    </h1>
-    <p class="text-gray-600">
-      <ng-content select="[tool-description]"></ng-content>
-    </p>
-  </div>
+<!-- Modern Tool View Layout -->
+<div class="min-h-screen bg-gradient-to-br from-slate-50 via-white to-gray-50">
+  <div class="max-w-4xl mx-auto px-6 py-3">
+    <!-- Header Section -->
+    <header class="text-center">
+      <h1
+        class="text-4xl font-light text-slate-900 mb-4 tracking-tight leading-tight"
+      >
+        <ng-content select="[tool-title]"></ng-content>
+      </h1>
 
-  <ng-content select="[tool-content]"></ng-content>
+      <p
+        class="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed font-light"
+      >
+        <ng-content select="[tool-description]"></ng-content>
+      </p>
 
-  <div *ngIf="showSummary" class="mt-6">
-    <ng-content select="[tool-summary]"></ng-content>
+      <!-- Subtle divider -->
+      <div class="mt-8 flex items-center justify-center">
+        <div
+          class="w-16 h-px bg-gradient-to-r from-transparent via-slate-300 to-transparent"
+        ></div>
+      </div>
+    </header>
+
+    <!-- Content Section -->
+    <main class="mb-12">
+      <div
+        class="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg shadow-slate-900/5 border border-white/50"
+      >
+        <ng-content select="[tool-content]"></ng-content>
+      </div>
+    </main>
+
+    <!-- Summary Section -->
+    <section *ngIf="showSummary" class="mb-8">
+      <ng-content select="[tool-summary]"></ng-content>
+    </section>
   </div>
 </div>

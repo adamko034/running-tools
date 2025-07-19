@@ -6,35 +6,106 @@
     {{ 'TOOLS.DISTANCE_UNIT_CONVERTER.DESCRIPTION' | translate }}
   </ng-container>
   <ng-container tool-content>
-    <app-select-race-distance
-      [value]="selectedKmDistance"
-      (distanceSelected)="onKmDistanceSelected($event)"
-    ></app-select-race-distance>
-    <app-number-form-field
-      [horizontalLineText]="'COMMON.KILOMETERS' | translate"
-      [name]="'distanceKilometers'"
-      [step]="0.001"
-      [suffix]="kmDistance.unit"
-      [value]="kmDistance.value"
-      (valueChange)="onKmDistanceChange($event)"
-    >
-    </app-number-form-field>
+    <!-- Distance Input Fields -->
+    <div class="grid md:grid-cols-2 gap-6 mb-2">
+      <app-number-form-field
+        [horizontalLineText]="'COMMON.KILOMETERS' | translate"
+        [name]="'distanceKilometers'"
+        [step]="0.001"
+        [suffix]="kmDistance.unit"
+        [value]="kmDistance.value"
+        (valueChange)="onKmDistanceChange($event)"
+      >
+      </app-number-form-field>
 
-    <app-number-form-field
-      [horizontalLineText]="'COMMON.MILES' | translate"
-      [name]="'distanceMiles'"
-      [step]="0.001"
-      [suffix]="miDistance.unit"
-      [value]="miDistance.value"
-      (valueChange)="onMiDistanceChange($event)"
-    >
-    </app-number-form-field>
+      <app-number-form-field
+        [horizontalLineText]="'COMMON.MILES' | translate"
+        [name]="'distanceMiles'"
+        [step]="0.001"
+        [suffix]="miDistance.unit"
+        [value]="miDistance.value"
+        (valueChange)="onMiDistanceChange($event)"
+      >
+      </app-number-form-field>
+    </div>
+
+    <!-- Quick Distance Selectors -->
+    <div class="flex flex-wrap gap-2 justify-center">
+      <button
+        (click)="onQuickDistanceSelect(0.4)"
+        [ngClass]="{
+          'bg-blue-100 text-blue-700 border-blue-200': isSelected(0.4),
+          'bg-white text-slate-600 border-slate-200': !isSelected(0.4),
+        }"
+        class="px-3 py-2 text-sm border rounded-lg hover:bg-slate-50 hover:border-slate-300 transition-all duration-200"
+        type="button"
+      >
+        400m
+      </button>
+      <button
+        (click)="onQuickDistanceSelect(1)"
+        [ngClass]="{
+          'bg-blue-100 text-blue-700 border-blue-200': isSelected(1),
+          'bg-white text-slate-600 border-slate-200': !isSelected(1),
+        }"
+        class="px-3 py-2 text-sm border rounded-lg hover:bg-slate-50 hover:border-slate-300 transition-all duration-200"
+        type="button"
+      >
+        1000m
+      </button>
+      <button
+        (click)="onQuickDistanceSelect(5)"
+        [ngClass]="{
+          'bg-blue-100 text-blue-700 border-blue-200': isSelected(5),
+          'bg-white text-slate-600 border-slate-200': !isSelected(5),
+        }"
+        class="px-3 py-2 text-sm border rounded-lg hover:bg-slate-50 hover:border-slate-300 transition-all duration-200"
+        type="button"
+      >
+        5K
+      </button>
+      <button
+        (click)="onQuickDistanceSelect(10)"
+        [ngClass]="{
+          'bg-blue-100 text-blue-700 border-blue-200': isSelected(10),
+          'bg-white text-slate-600 border-slate-200': !isSelected(10),
+        }"
+        class="px-3 py-2 text-sm border rounded-lg hover:bg-slate-50 hover:border-slate-300 transition-all duration-200"
+        type="button"
+      >
+        10K
+      </button>
+      <button
+        (click)="onQuickDistanceSelect(21.0975)"
+        [ngClass]="{
+          'bg-blue-100 text-blue-700 border-blue-200': isSelected(21.0975),
+          'bg-white text-slate-600 border-slate-200': !isSelected(21.0975),
+        }"
+        class="px-3 py-2 text-sm border rounded-lg hover:bg-slate-50 hover:border-slate-300 transition-all duration-200"
+        type="button"
+      >
+        Half Marathon
+      </button>
+      <button
+        (click)="onQuickDistanceSelect(42.195)"
+        [ngClass]="{
+          'bg-blue-100 text-blue-700 border-blue-200': isSelected(42.195),
+          'bg-white text-slate-600 border-slate-200': !isSelected(42.195),
+        }"
+        class="px-3 py-2 text-sm border rounded-lg hover:bg-slate-50 hover:border-slate-300 transition-all duration-200"
+        type="button"
+      >
+        Marathon
+      </button>
+    </div>
   </ng-container>
   <ng-container tool-summary>
-    <app-green-box>{{
-      'TOOLS.DISTANCE_UNIT_CONVERTER.SUMMARY'
-        | translate
-          : { kmDistance: kmDistance.format(), miDistance: miDistance.format() }
-    }}</app-green-box>
+    <app-fancy-result>
+      <div result-title>{{ 'TOOLS.DISTANCE_UNIT_CONVERTER.RESULT_TITLE' | translate }}</div>
+      <div result-subtitle>{{ 'TOOLS.DISTANCE_UNIT_CONVERTER.RESULT_SUBTITLE' | translate }}</div>
+      <div result-value>
+        {{ kmDistance.format() }} ⟷ {{ miDistance.format() }}
+      </div>
+    </app-fancy-result>
   </ng-container>
 </app-tool-view>

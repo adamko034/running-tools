@@ -6,21 +6,22 @@
     'TOOLS.PACE_SPEED_UNIT_CONVERTER.DESCRIPTION' | translate
   }}</ng-container>
   <ng-container tool-content>
-    <app-pace-pure-form-field
-      [pace]="pace"
-      (paceChange)="onPaceChange($event)"
-    />
-    <app-speed-pure-form-field
-      [speed]="speed"
-      (speedChange)="onSpeedChange($event)"
-    />
+    <div class="grid md:grid-cols-2 gap-6">
+      <app-pace-pure-form-field
+        [pace]="pace"
+        (paceChange)="onPaceChange($event)"
+      />
+      <app-speed-pure-form-field
+        [speed]="speed"
+        (speedChange)="onSpeedChange($event)"
+      />
+    </div>
   </ng-container>
   <ng-container tool-summary>
-    <app-green-box>
-      {{
-        'TOOLS.PACE_SPEED_UNIT_CONVERTER.SUMMARY'
-          | translate: { pace: pace.format(), speed: speed.format() }
-      }}
-    </app-green-box>
+    <app-fancy-result>
+      <div result-title>{{ 'TOOLS.PACE_SPEED_UNIT_CONVERTER.RESULT_TITLE' | translate }}</div>
+      <div result-subtitle>{{ 'TOOLS.PACE_SPEED_UNIT_CONVERTER.RESULT_SUBTITLE' | translate }}</div>
+      <div result-value>{{ pace.format() }} ⟷ {{ speed.format() }}</div>
+    </app-fancy-result>
   </ng-container>
 </app-tool-view>

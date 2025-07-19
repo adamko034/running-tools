@@ -4,7 +4,7 @@ import { CalculatorsFacade } from '../../../core/business/calculators-facade';
 import { StoreService } from '../../../core/store/store.service';
 import { DistanceStoreFormField } from '../../../shared/components/store/distance-store-form-field/distance-store-form-field';
 import { TimeStoreFormField } from '../../../shared/components/store/time-store-form-field/time-store-form-field';
-import { GreenBox } from '../../../shared/components/ui/green-box/green-box';
+import { FancyResult } from '../../../shared/components/ui/fancy-result/fancy-result';
 import { ToolView } from '../../../shared/views/tool-view/tool-view';
 @Component({
   selector: 'app-vo2max-calculator',
@@ -12,7 +12,7 @@ import { ToolView } from '../../../shared/views/tool-view/tool-view';
     ToolView,
     DistanceStoreFormField,
     TimeStoreFormField,
-    GreenBox,
+    FancyResult,
     TranslateModule,
   ],
   templateUrl: './vo2max-calculator.html',

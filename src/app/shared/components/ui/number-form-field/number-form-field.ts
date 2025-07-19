@@ -29,4 +29,11 @@ export class NumberFormField {
   onChange(newValue: number) {
     this.valueChange.emit(newValue);
   }
+
+  getPlaceholder(): string {
+    if (this.step >= 1) {
+      return '0';
+    }
+    return '0.0';
+  }
 }

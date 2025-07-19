@@ -1,7 +1,15 @@
-<div [ngClass]="(isMobileXs$ | async) ? 'w-full' : 'w-3/4'">
-  <app-horizontal-line-with-text
-    *ngIf="showHorizontalLine"
-    [text]="horizontalLineText"
-  />
-  <ng-content></ng-content>
+<!-- Compact Form Field Container -->
+<div class="mb-6">
+  <!-- Compact Field Label -->
+  <div *ngIf="showHorizontalLine" class="mb-3">
+    <span class="block text-sm font-medium text-slate-700 mb-1.5 tracking-wide">
+      {{ horizontalLineText }}
+    </span>
+    <div class="w-8 h-px bg-gradient-to-r from-slate-300 to-transparent"></div>
+  </div>
+
+  <!-- Form Content Container -->
+  <div class="relative">
+    <ng-content></ng-content>
+  </div>
 </div>

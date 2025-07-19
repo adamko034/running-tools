@@ -1,46 +1,73 @@
 <app-form-field [horizontalLineText]="'COMMON.HEIGHT' | translate">
   @if (isMetric()) {
-    <div class="flex">
-      <mat-form-field appearance="outline" class="w-[120px]">
-        <input
-          matInput
-          type="number"
-          min="20"
-          step="0.1"
-          [ngModel]="height().value"
-          name="heightStore"
-          (ngModelChange)="onMetricHeightChange($event)"
-          selectOnFocus
-        />
-        <span matTextSuffix>{{ height().unit }}</span>
-      </mat-form-field>
+    <!-- Modern Metric Height Input -->
+    <div class="relative group w-32">
+      <div class="flex items-center bg-white/80 backdrop-blur-sm rounded-xl border border-slate-200/60 shadow-sm hover:shadow-md transition-all duration-200 focus-within:ring-2 focus-within:ring-slate-300/50 focus-within:border-slate-300">
+        
+        <!-- Height Input -->
+        <div class="flex-1 relative">
+          <input
+            type="number"
+            min="20"
+            step="0.1"
+            [ngModel]="height().value"
+            name="heightStore"
+            (ngModelChange)="onMetricHeightChange($event)"
+            selectOnFocus
+            class="w-full px-3 py-2.5 pr-8 bg-transparent border-0 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-0 text-base font-medium text-center"
+            placeholder="0.0"
+          />
+          
+          <!-- Unit Display -->
+          <div class="absolute right-2 top-1/2 -translate-y-1/2 text-slate-500 text-sm font-medium">
+            {{ height().unit }}
+          </div>
+        </div>
+      </div>
     </div>
   } @else {
-    <div class="flex gap-2">
-      <mat-form-field appearance="outline" class="w-[100px]">
-        <input
-          matInput
-          type="number"
-          min="0"
-          [ngModel]="feet"
-          name="heightStoreFeet"
-          (ngModelChange)="onImperialHeightChange($event, 'ft')"
-          selectOnFocus
-        />
-        <span matTextSuffix>ft</span>
-      </mat-form-field>
-
-      <mat-form-field appearance="outline" class="w-[100px]">
-        <input
-          matInput
-          type="number"
-          [ngModel]="inches"
-          name="heightStoreInches"
-          (ngModelChange)="onImperialHeightChange($event, 'in')"
-          selectOnFocus
-        />
-        <span matTextSuffix>in</span>
-      </mat-form-field>
+    <!-- Modern Imperial Height Input -->
+    <div class="relative group w-40">
+      <div class="flex items-center bg-white/80 backdrop-blur-sm rounded-xl border border-slate-200/60 shadow-sm hover:shadow-md transition-all duration-200 focus-within:ring-2 focus-within:ring-slate-300/50 focus-within:border-slate-300">
+        
+        <!-- Feet -->
+        <div class="w-16 relative">
+          <input
+            type="number"
+            min="0"
+            [ngModel]="feet"
+            name="heightStoreFeet"
+            (ngModelChange)="onImperialHeightChange($event, 'ft')"
+            selectOnFocus
+            class="w-full px-2 py-2.5 pb-4 bg-transparent border-0 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-0 text-base font-medium text-center"
+            placeholder="0"
+          />
+          <div class="absolute bottom-0 left-1/2 -translate-x-1/2 text-xs text-slate-500 font-medium">
+            ft
+          </div>
+        </div>
+        
+        <!-- Separator -->
+        <div class="text-slate-400 text-lg font-light px-1">'</div>
+        
+        <!-- Inches -->
+        <div class="w-16 relative">
+          <input
+            type="number"
+            min="0"
+            max="11"
+            [ngModel]="inches"
+            name="heightStoreInches"
+            (ngModelChange)="onImperialHeightChange($event, 'in')"
+            selectOnFocus
+            class="w-full px-2 py-2.5 pb-4 bg-transparent border-0 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-0 text-base font-medium text-center"
+            placeholder="0"
+          />
+          <div class="absolute bottom-0 left-1/2 -translate-x-1/2 text-xs text-slate-500 font-medium">
+            in
+          </div>
+        </div>
+      </div>
     </div>
   }
 </app-form-field>

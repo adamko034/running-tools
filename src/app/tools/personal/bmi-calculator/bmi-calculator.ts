@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, effect, inject } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
 import { TranslateModule } from '@ngx-translate/core';
 import { CalculatorsFacade } from '../../../core/business/calculators-facade';
 import { BmiCategory } from '../../../core/business/model/enums/bmi-category.enum';
@@ -12,7 +13,7 @@ import { AgeStoreFormField } from '../../../shared/components/store/age-store-fo
 import { HeightStoreFormField } from '../../../shared/components/store/height-store-form-field/height-store-form-field';
 import { SexStoreFormField } from '../../../shared/components/store/sex-store-form-field/sex-store-form-field';
 import { WeightStoreFormField } from '../../../shared/components/store/weight-store-form-field/weight-store-form-field';
-import { ResultBox } from '../../../shared/components/ui/result-box/result-box';
+import { FancyResult } from '../../../shared/components/ui/fancy-result/fancy-result';
 import { ResultBoxType } from '../../../shared/components/ui/result-box/result-box-type.enum';
 import { ToolView } from '../../../shared/views/tool-view/tool-view';
 
@@ -25,8 +26,9 @@ import { ToolView } from '../../../shared/views/tool-view/tool-view';
     HeightStoreFormField,
     AgeStoreFormField,
     SexStoreFormField,
-    ResultBox,
+    FancyResult,
     CommonModule,
+    MatIconModule,
   ],
   templateUrl: './bmi-calculator.html',
 })
@@ -92,6 +94,110 @@ export class BmiCalculator {
 
       default:
         return ResultBoxType.COULD_IMPROVE;
+    }
+  }
+
+  getCategoryBadgeClass(category: string): string {
+    switch (this.categoryToResultBoxType(category)) {
+      case ResultBoxType.EXCELLENT:
+        return 'bg-green-200 text-green-900';
+      case ResultBoxType.OK:
+        return 'bg-green-50 text-green-700';
+      case ResultBoxType.INFO:
+        return 'bg-blue-200 text-blue-800';
+      case ResultBoxType.COULD_IMPROVE:
+        return 'bg-amber-100 text-amber-800';
+      case ResultBoxType.BAD:
+        return 'bg-red-100 text-red-800';
+      default:
+        return 'bg-gray-100 text-gray-800';
+    }
+  }
+
+  getValueClass(category: string): string {
+    switch (this.categoryToResultBoxType(category)) {
+      case ResultBoxType.EXCELLENT:
+        return 'text-green-800';
+      case ResultBoxType.OK:
+        return 'text-green-600';
+      case ResultBoxType.INFO:
+        return 'text-blue-700';
+      case ResultBoxType.COULD_IMPROVE:
+        return 'text-amber-700';
+      case ResultBoxType.BAD:
+        return 'text-red-700';
+      default:
+        return 'text-gray-700';
+    }
+  }
+
+  getIcon(category: string): string {
+    switch (this.categoryToResultBoxType(category)) {
+      case ResultBoxType.EXCELLENT:
+        return 'emoji_events';
+      case ResultBoxType.OK:
+        return 'check_circle';
+      case ResultBoxType.INFO:
+        return 'info';
+      case ResultBoxType.COULD_IMPROVE:
+        return 'warning';
+      case ResultBoxType.BAD:
+        return 'error_outline';
+      default:
+        return 'info';
+    }
+  }
+
+  getIconBackgroundClass(category: string): string {
+    switch (this.categoryToResultBoxType(category)) {
+      case ResultBoxType.EXCELLENT:
+        return 'bg-green-200';
+      case ResultBoxType.OK:
+        return 'bg-green-50';
+      case ResultBoxType.INFO:
+        return 'bg-blue-200';
+      case ResultBoxType.COULD_IMPROVE:
+        return 'bg-amber-100';
+      case ResultBoxType.BAD:
+        return 'bg-red-100';
+      default:
+        return 'bg-gray-100';
+    }
+  }
+
+  getIconColorClass(category: string): string {
+    switch (this.categoryToResultBoxType(category)) {
+      case ResultBoxType.EXCELLENT:
+        return 'text-green-700';
+      case ResultBoxType.OK:
+        return 'text-green-500';
+      case ResultBoxType.INFO:
+        return 'text-blue-700';
+      case ResultBoxType.COULD_IMPROVE:
+        return 'text-amber-600';
+      case ResultBoxType.BAD:
+        return 'text-red-600';
+      default:
+        return 'text-gray-500';
+    }
+  }
+
+  getColorScheme(
+    category: string
+  ): 'blue-green' | 'emerald' | 'amber' | 'red' | 'green' {
+    switch (this.categoryToResultBoxType(category)) {
+      case ResultBoxType.EXCELLENT:
+        return 'green';
+      case ResultBoxType.OK:
+        return 'emerald';
+      case ResultBoxType.INFO:
+        return 'blue-green';
+      case ResultBoxType.COULD_IMPROVE:
+        return 'amber';
+      case ResultBoxType.BAD:
+        return 'red';
+      default:
+        return 'blue-green';
     }
   }
 }

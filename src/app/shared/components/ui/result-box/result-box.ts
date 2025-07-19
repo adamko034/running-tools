@@ -9,9 +9,8 @@ import { ResultBoxType } from './result-box-type.enum';
   templateUrl: './result-box.html',
 })
 export class ResultBox {
-  @Input() type: ResultBoxType = ResultBoxType.UNKOWN;
+  @Input() type: ResultBoxType = ResultBoxType.INFO;
   @Input() showIcon = true;
-  @Input() centered = false;
 
   get icon(): string {
     switch (this.type) {
@@ -40,7 +39,7 @@ export class ResultBox {
       case 'excellent':
         return 'bg-green-50 text-green-800 border-green-200';
       case 'info':
-        return 'bg-blue-50 text-blue-800 border-blue-200';
+        return 'bg-blue-100 text-blue-700 border-blue-200';
       default:
         return 'bg-gray-50 text-gray-700 border-gray-200';
     }
@@ -57,7 +56,7 @@ export class ResultBox {
       case 'excellent':
         return 'bg-green-100 text-green-600';
       case 'info':
-        return 'bg-blue-100 text-blue-600';
+        return 'bg-blue-200 text-blue-700';
       default:
         return 'bg-gray-100 text-gray-500';
     }

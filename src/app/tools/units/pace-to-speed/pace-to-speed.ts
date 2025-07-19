@@ -5,14 +5,14 @@ import { Speed } from '../../../core/business/model/speed.model';
 import { StoreService } from '../../../core/store/store.service';
 import { PacePureFormField } from '../../../shared/components/business/pace-pure-form-field/pace-pure-form-field';
 import { SpeedPureFormField } from '../../../shared/components/business/speed-pure-form-field/speed-pure-form-field';
-import { GreenBox } from '../../../shared/components/ui/green-box/green-box';
+import { FancyResult } from '../../../shared/components/ui/fancy-result/fancy-result';
 import { ToolView } from '../../../shared/views/tool-view/tool-view';
 
 @Component({
   selector: 'app-pace-to-speed',
   imports: [
     ToolView,
-    GreenBox,
+    FancyResult,
     PacePureFormField,
     SpeedPureFormField,
     TranslateModule,

@@ -7,7 +7,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { DistanceStoreFormField } from '../../../shared/components/store/distance-store-form-field/distance-store-form-field';
 import { PaceStoreFormField } from '../../../shared/components/store/pace-store-form-field/pace-store-form-field';
 import { TimeStoreFormField } from '../../../shared/components/store/time-store-form-field/time-store-form-field';
-import { GreenBox } from '../../../shared/components/ui/green-box/green-box';
+import { FancyResult } from '../../../shared/components/ui/fancy-result/fancy-result';
 import { ToolView } from '../../../shared/views/tool-view/tool-view';
 import { Store } from './../../../core/store/store.model';
 import { StoreService } from './../../../core/store/store.service';
@@ -23,7 +23,7 @@ import { StoreService } from './../../../core/store/store.service';
     TimeStoreFormField,
     PaceStoreFormField,
     ToolView,
-    GreenBox,
+    FancyResult,
     TranslateModule,
   ],
   templateUrl: './pace-calculator.html',

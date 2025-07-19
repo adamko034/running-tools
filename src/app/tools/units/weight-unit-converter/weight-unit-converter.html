@@ -6,29 +6,30 @@
     'TOOLS.WEIGHT_UNIT_CONVERTER.DESCRIPTION' | translate
   }}</ng-container>
   <ng-container tool-content>
-    <app-number-form-field
-      [horizontalLineText]="'COMMON.KILOGRAMS' | translate"
-      [name]="'weightUnitConverterKilograms'"
-      [step]="0.1"
-      [suffix]="kgWeight.unit"
-      [value]="kgWeight.value"
-      (valueChange)="onKilogramsChange($event)"
-    ></app-number-form-field>
-    <app-number-form-field
-      [horizontalLineText]="'COMMON.POUNDS' | translate"
-      [name]="'weightUnitConverterPounds'"
-      [step]="0.1"
-      [suffix]="lbWeight.unit"
-      [value]="lbWeight.value"
-      (valueChange)="onPoundsChange($event)"
-    ></app-number-form-field>
+    <div class="grid md:grid-cols-2 gap-6">
+      <app-number-form-field
+        [horizontalLineText]="'COMMON.KILOGRAMS' | translate"
+        [name]="'weightUnitConverterKilograms'"
+        [step]="0.1"
+        [suffix]="kgWeight.unit"
+        [value]="kgWeight.value"
+        (valueChange)="onKilogramsChange($event)"
+      ></app-number-form-field>
+      <app-number-form-field
+        [horizontalLineText]="'COMMON.POUNDS' | translate"
+        [name]="'weightUnitConverterPounds'"
+        [step]="0.1"
+        [suffix]="lbWeight.unit"
+        [value]="lbWeight.value"
+        (valueChange)="onPoundsChange($event)"
+      ></app-number-form-field>
+    </div>
   </ng-container>
   <ng-container tool-summary>
-    <app-green-box>
-      {{
-        'TOOLS.WEIGHT_UNIT_CONVERTER.SUMMARY'
-          | translate: { kg: kgWeight.format(), lb: lbWeight.format() }
-      }}
-    </app-green-box>
+    <app-fancy-result>
+      <div result-title>{{ 'TOOLS.WEIGHT_UNIT_CONVERTER.RESULT_TITLE' | translate }}</div>
+      <div result-subtitle>{{ 'TOOLS.WEIGHT_UNIT_CONVERTER.RESULT_SUBTITLE' | translate }}</div>
+      <div result-value>{{ kgWeight.format() }} ⟷ {{ lbWeight.format() }}</div>
+    </app-fancy-result>
   </ng-container>
 </app-tool-view>

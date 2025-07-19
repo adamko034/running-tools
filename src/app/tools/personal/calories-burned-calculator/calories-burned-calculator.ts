@@ -3,7 +3,7 @@ import { CalculatorsFacade } from '../../../core/business/calculators-facade';
 import { StoreService } from '../../../core/store/store.service';
 import { DistanceStoreFormField } from '../../../shared/components/store/distance-store-form-field/distance-store-form-field';
 import { WeightStoreFormField } from '../../../shared/components/store/weight-store-form-field/weight-store-form-field';
-import { GreenBox } from '../../../shared/components/ui/green-box/green-box';
+import { FancyResult } from '../../../shared/components/ui/fancy-result/fancy-result';
 
 import { TranslateModule } from '@ngx-translate/core';
 import { TimeStoreFormField } from '../../../shared/components/store/time-store-form-field/time-store-form-field';
@@ -16,7 +16,7 @@ import { ToolView } from './../../../shared/views/tool-view/tool-view';
     DistanceStoreFormField,
     WeightStoreFormField,
     TimeStoreFormField,
-    GreenBox,
+    FancyResult,
     TranslateModule,
   ],
   templateUrl: './calories-burned-calculator.html',

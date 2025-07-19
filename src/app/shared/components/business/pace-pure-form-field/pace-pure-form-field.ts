@@ -5,6 +5,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { TranslateModule } from '@ngx-translate/core';
 import { Pace } from '../../../../core/business/model/pace.model';
+import { SelectOnFocus } from '../../../directives/select-on-focus';
 import { FormField } from '../../ui/form-field/form-field';
 
 @Component({
@@ -15,6 +16,7 @@ import { FormField } from '../../ui/form-field/form-field';
     CommonModule,
     MatFormFieldModule,
     MatInputModule,
+    SelectOnFocus,
     TranslateModule,
   ],
   templateUrl: './pace-pure-form-field.html',

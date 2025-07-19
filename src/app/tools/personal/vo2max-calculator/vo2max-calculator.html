@@ -6,13 +6,17 @@
     'TOOLS.VO2MAX_CALCULATOR.DESCRIPTION' | translate
   }}</ng-container>
   <ng-container tool-content>
-    <app-distance-store-form-field />
-    <app-time-store-form-field />
+    <div class="grid md:grid-cols-2 gap-6">
+      <app-distance-store-form-field />
+      <app-time-store-form-field />
+    </div>
   </ng-container>
 
   <ng-container tool-summary>
-    <app-green-box>{{
-      'TOOLS.VO2MAX_CALCULATOR.SUMMARY' | translate: { vo2Max: vo2Max() }
-    }}</app-green-box>
+    <app-fancy-result>
+      <div result-title>{{ 'TOOLS.VO2MAX_CALCULATOR.RESULT_TITLE' | translate }}</div>
+      <div result-subtitle>{{ 'TOOLS.VO2MAX_CALCULATOR.RESULT_SUBTITLE' | translate }}</div>
+      <div result-value>{{ vo2Max() }} {{ 'TOOLS.VO2MAX_CALCULATOR.UNIT' | translate }}</div>
+    </app-fancy-result>
   </ng-container>
 </app-tool-view>

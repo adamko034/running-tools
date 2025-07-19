@@ -1,34 +1,94 @@
 <app-form-field [horizontalLineText]="'COMMON.DISTANCE' | translate">
-  <div class="flex">
-    <mat-form-field appearance="outline" class="w-[160px]">
-      <input
-        matInput
-        type="number"
-        min="0"
-        step="0.1"
-        [ngModel]="distance().value"
-        name="distance"
-        (ngModelChange)="setDistance($event)"
-        selectOnFocus
-      />
-      <span matTextSuffix>{{ distance().unit }}</span>
+  <!-- Modern Distance Input -->
+  <div class="relative group w-48">
+    <div
+      class="flex items-center bg-white/80 backdrop-blur-sm rounded-xl border border-slate-200/60 shadow-sm hover:shadow-md transition-all duration-200 focus-within:ring-2 focus-within:ring-slate-300/50 focus-within:border-slate-300"
+    >
+      <!-- Distance Input -->
+      <div class="flex-1 relative">
+        <input
+          type="number"
+          min="0"
+          step="0.1"
+          [ngModel]="distance().value"
+          name="distance"
+          (ngModelChange)="setDistance($event)"
+          selectOnFocus
+          class="w-full px-3 py-2.5 pr-12 bg-transparent border-0 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-0 text-base font-medium"
+          placeholder="0.0"
+        />
+
+        <!-- Unit Display -->
+        <div
+          class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 text-sm font-medium"
+        >
+          {{ distance().unit }}
+        </div>
+      </div>
+
+      <!-- Preset Menu Button -->
+      <div class="flex-shrink-0 border-l border-slate-200/60 pl-3 pr-4">
+        <button
+          [matMenuTriggerFor]="distanceMenu"
+          [attr.aria-label]="'COMMON.DISTANCE_SELECT' | translate"
+          class="p-2 text-slate-400 hover:text-slate-600 hover:bg-slate-50 rounded-lg transition-colors duration-200"
+        >
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Quick distance selectors -->
+    <div class="flex gap-1 mt-2 justify-center">
       <button
-        class="mx-2"
-        mat-icon-button
-        matSuffix
-        [matMenuTriggerFor]="distanceMenu"
-        [attr.aria-label]="'COMMON.DISTANCE_SELECT' | translate"
+        (click)="setRaceDistance(5)"
+        class="px-2 py-1 text-xs text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded transition-colors duration-200"
+        type="button"
       >
-        <mat-icon>more_vert</mat-icon>
+        5K
       </button>
-    </mat-form-field>
+      <button
+        (click)="setRaceDistance(10)"
+        class="px-2 py-1 text-xs text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded transition-colors duration-200"
+        type="button"
+      >
+        10K
+      </button>
+      <button
+        (click)="setRaceDistance(21.0975)"
+        class="px-2 py-1 text-xs text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded transition-colors duration-200"
+        type="button"
+      >
+        {{ 'COMMON.DISTANCES.HALF_MARATHON_SHORT' | translate }}
+      </button>
+      <button
+        (click)="setRaceDistance(42.195)"
+        class="px-2 py-1 text-xs text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded transition-colors duration-200"
+        type="button"
+      >
+        {{ 'COMMON.DISTANCES.MARATHON_SHORT' | translate }}
+      </button>
+    </div>
   </div>
 
-  <mat-menu #distanceMenu="matMenu">
+  <mat-menu #distanceMenu="matMenu" class="mt-2">
     @for (distanceKey of distancesKeys; track $index) {
       <button
         mat-menu-item
         (click)="setRaceDistance(distances[distanceKey].distance.value)"
+        class="text-slate-700 hover:bg-slate-50"
       >
         {{ distances[distanceKey].translationKey | translate }}
       </button>

@@ -6,12 +6,22 @@
     'TOOLS.PACE_CALCULATOR.DESCRIPTION' | translate
   }}</ng-container>
   <ng-container tool-content>
-    <app-distance-store-form-field />
-    <app-time-store-form-field />
-    <app-pace-store-form-field />
+    <!-- Responsive Form Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <app-distance-store-form-field />
+      <app-time-store-form-field />
+      <app-pace-store-form-field />
+    </div>
   </ng-container>
 
   <ng-container tool-summary>
-    <app-green-box> {{ summary() }} </app-green-box>
+    <app-fancy-result>
+      <div result-value>{{ summary() }}</div>
+      <div result-title>{{ 'TOOLS.PACE_CALCULATOR.SUMMARY' | translate }}</div>
+      <div result-subtitle>
+        {{ 'COMMON.DISTANCE' | translate }} • {{ 'COMMON.TIME' | translate }} •
+        {{ 'COMMON.PACE' | translate }}
+      </div>
+    </app-fancy-result>
   </ng-container>
 </app-tool-view>

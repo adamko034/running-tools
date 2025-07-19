@@ -6,14 +6,26 @@
     'TOOLS.CALORIES_BURNED_CALCULATOR.DESCRIPTION' | translate
   }}</ng-container>
   <ng-container tool-content>
-    <app-distance-store-form-field />
-    <app-time-store-form-field />
-    <app-weight-store-form-field />
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <app-distance-store-form-field />
+      <app-time-store-form-field />
+      <app-weight-store-form-field />
+    </div>
   </ng-container>
   <ng-container tool-summary>
-    <app-green-box>{{
-      'TOOLS.CALORIES_BURNED_CALCULATOR.SUMMARY'
-        | translate: { calories: calories() }
-    }}</app-green-box>
+    <app-fancy-result>
+      <div result-value>
+        {{
+          'TOOLS.CALORIES_BURNED_CALCULATOR.SUMMARY'
+            | translate: { calories: calories() }
+        }}
+      </div>
+      <div result-title>
+        {{ 'TOOLS.CALORIES_BURNED_CALCULATOR.SUMMARY_TITLE' | translate }}
+      </div>
+      <div result-subtitle>
+        {{ 'TOOLS.CALORIES_BURNED_CALCULATOR.SUMMARY_SUB' | translate }}
+      </div>
+    </app-fancy-result>
   </ng-container>
 </app-tool-view>

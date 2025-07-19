@@ -1,0 +1,27 @@
+<div class="relative overflow-hidden rounded-xl bg-gradient-to-br from-blue-50 to-green-50 p-5 shadow-lg border border-blue-100 hover:shadow-xl transition-all duration-300 h-full">
+  <!-- Decorative elements -->
+  <div class="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-white/40 to-transparent rounded-full -translate-y-8 translate-x-8"></div>
+  <div class="absolute bottom-0 left-0 w-12 h-12 bg-gradient-to-tr from-blue-200/20 to-transparent rounded-full translate-y-6 -translate-x-6"></div>
+  
+  <!-- Race distance badge -->
+  <div class="absolute top-0 right-0 bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded-bl-lg rounded-tr-lg shadow-md">
+    <ng-content select="[race-distance]"></ng-content>
+  </div>
+  
+  <!-- Content -->
+  <div class="relative z-10 pt-2">
+    <!-- Time -->
+    <div class="text-2xl font-bold text-gray-900 mb-1">
+      <ng-content select="[race-time]"></ng-content>
+    </div>
+    
+    <!-- Pace -->
+    <div class="text-sm text-blue-700 font-medium mb-3 flex items-center">
+      <mat-icon class="text-blue-600 text-sm mr-1">directions_run</mat-icon>
+      <ng-content select="[race-pace]"></ng-content>
+    </div>
+    
+    <!-- Bottom accent -->
+    <div class="w-12 h-0.5 bg-gradient-to-r from-blue-400 to-green-400 rounded-full"></div>
+  </div>
+</div>

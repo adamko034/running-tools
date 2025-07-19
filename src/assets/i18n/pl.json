@@ -66,6 +66,7 @@
       "5K": "5 km",
       "10K": "10 km",
       "HALF_MARATHON": "Półmaraton",
+      "HALF_MARATHON_SHORT": "Połówka",
       "MARATHON": "Maraton"
     },
     "LANGUAGUE": {
@@ -76,7 +77,7 @@
   "TOOLS": {
     "CALORIES_BURNED_CALCULATOR": {
       "TITLE": "Oblicz spalone kalorie",
-      "DESCRIPTION": "Podaj dystans, tempo oraz wagę ciała, aby oszacować spalanie kalorii.",
+      "DESCRIPTION": "Podaj dystans, tempo oraz wagę ciała, aby oszacować spalone kalorie.",
       "SUMMARY": "Szacunkowa liczba spalonych kalorii: {{calories}} kcal."
     },
     "VO2MAX_CALCULATOR": {

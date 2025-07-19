@@ -2,13 +2,13 @@ import { Component, inject } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { WeightUnit } from '../../../core/business/model/enums/weight-unit.enum';
 import { StoreService } from '../../../core/store/store.service';
-import { GreenBox } from '../../../shared/components/ui/green-box/green-box';
+import { FancyResult } from '../../../shared/components/ui/fancy-result/fancy-result';
 import { NumberFormField } from '../../../shared/components/ui/number-form-field/number-form-field';
 import { ToolView } from '../../../shared/views/tool-view/tool-view';
 
 @Component({
   selector: 'app-weight-unit-converter',
-  imports: [ToolView, NumberFormField, GreenBox, TranslateModule],
+  imports: [ToolView, NumberFormField, FancyResult, TranslateModule],
   templateUrl: './weight-unit-converter.html',
 })
 export class WeightUnitConverter {

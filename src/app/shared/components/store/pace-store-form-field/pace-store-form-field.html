@@ -1,28 +1,52 @@
 <app-form-field [horizontalLineText]="'COMMON.PACE' | translate">
-  <div class="flex gap-2">
-    <mat-form-field appearance="outline" class="w-[100px]">
-      <input
-        matInput
-        type="number"
-        min="0"
-        [ngModel]="pace().minutes"
-        name="paceMinutes"
-        (ngModelChange)="onPaceChange($event, 'min')"
-        selectOnFocus
-      />
-      <span matTextSuffix>min</span>
-    </mat-form-field>
+  <!-- Modern Pace Input -->
+  <div class="relative group w-52">
+    <div
+      class="flex items-center bg-white/80 backdrop-blur-sm rounded-xl border border-slate-200/60 shadow-sm hover:shadow-md transition-all duration-200 focus-within:ring-2 focus-within:ring-slate-300/50 focus-within:border-slate-300"
+    >
+      <!-- Minutes -->
+      <div class="w-16 relative">
+        <input
+          type="number"
+          min="0"
+          [ngModel]="pace().minutes"
+          name="paceMinutes"
+          (ngModelChange)="onPaceChange($event, 'min')"
+          selectOnFocus
+          class="w-full px-2 py-2.5 bg-transparent border-0 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-0 text-base font-medium text-center"
+          placeholder="0"
+        />
+      </div>
 
-    <mat-form-field appearance="outline" class="w-[100px]">
-      <input
-        matInput
-        type="number"
-        [ngModel]="pace().seconds"
-        name="paceSeconds"
-        (ngModelChange)="onPaceChange($event, 'sec')"
-        selectOnFocus
-      />
-      <span matTextSuffix>sec</span>
-    </mat-form-field>
+      <!-- Separator -->
+      <div class="text-slate-400 text-lg font-light px-1">:</div>
+
+      <!-- Seconds -->
+      <div class="w-16 relative">
+        <input
+          type="number"
+          min="0"
+          max="59"
+          [ngModel]="pace().seconds"
+          name="paceSeconds"
+          (ngModelChange)="onPaceChange($event, 'sec')"
+          selectOnFocus
+          class="w-full px-2 py-2.5 bg-transparent border-0 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-0 text-base font-medium text-center"
+          placeholder="00"
+        />
+      </div>
+
+      <!-- Unit Display -->
+      <div
+        class="flex-shrink-0 px-3 text-slate-500 text-sm font-medium border-l border-slate-200/60"
+      >
+        /{{ pace().unit }}
+      </div>
+    </div>
+
+    <!-- Format hint -->
+    <div class="text-xs text-slate-400 mt-1 text-center">
+      mm:ss /{{ pace().unit }}
+    </div>
   </div>
 </app-form-field>

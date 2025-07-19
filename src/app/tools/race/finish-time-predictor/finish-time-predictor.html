@@ -6,29 +6,37 @@
     'TOOLS.FINISH_TIME_PREDICTOR.DESCRIPTION' | translate
   }}</ng-container>
   <ng-container tool-content>
-    <app-distance-store-form-field />
-    <app-time-store-form-field />
+    <!-- Responsive Form Grid -->
+    <div class="grid md:grid-cols-2 gap-6">
+      <app-distance-store-form-field />
+      <app-time-store-form-field />
+    </div>
   </ng-container>
 
   <ng-container tool-summary>
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-      @for (raceTime of raceTimes(); track raceTime.translationKey) {
-        @if (raceTime.time) {
-          <app-green-box>
-            <div class="flex flex-col flex-1">
-              <div class="text-sm text-gray-500">
-                {{ raceTime.translationKey | translate }}
-              </div>
-              <div class="text-xl font-bold text-gray-900">
-                {{ raceTime.time.format() }}
-              </div>
-              <div class="text-sm text-gray-500 mt-1">
-                {{ raceTime.pace.format() }}
-              </div>
-            </div>
-          </app-green-box>
-        }
-      }
-    </div>
+    <app-fancy-result [transparentValue]="true">
+      <div result-title>
+        {{ 'TOOLS.FINISH_TIME_PREDICTOR.SUMMARY' | translate }}
+      </div>
+      <div result-subtitle>
+        {{ 'TOOLS.FINISH_TIME_PREDICTOR.SUMMARY_SUB' | translate }}
+      </div>
+      <div result-value>
+        <!-- Race times grid -->
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          @for (raceTime of raceTimes(); track raceTime.translationKey) {
+            @if (raceTime.time) {
+              <app-race-time-card>
+                <div race-distance>
+                  {{ raceTime.translationKey | translate }}
+                </div>
+                <div race-time>{{ raceTime.time.format() }}</div>
+                <div race-pace>{{ raceTime.pace.format() }}</div>
+              </app-race-time-card>
+            }
+          }
+        </div>
+      </div>
+    </app-fancy-result>
   </ng-container>
 </app-tool-view>

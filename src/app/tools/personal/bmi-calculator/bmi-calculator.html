@@ -11,77 +11,120 @@
     ></div>
   </ng-container>
   <ng-container tool-content>
-    <div class="flex mb-4">
-      <app-age-store-form-field class="flex-1" />
-      <app-sex-store-form-field class="flex-1" />
-    </div>
-    <div class="flex">
-      <app-height-store-form-field class="flex-1" />
-      <app-weight-store-form-field class="flex-1" />
+    <!-- Responsive Form Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <app-age-store-form-field />
+      <app-sex-store-form-field />
+      <app-height-store-form-field />
+      <app-weight-store-form-field />
     </div>
   </ng-container>
+
   <ng-container tool-summary>
-    <div
-      class="grid md:grid-cols-2 xl:grid-cols-3 gap-6 place-items-center md:place-items-stretch"
-    >
-      <ng-container
-        *ngTemplateOutlet="
-          summary;
-          context: { value: bmi, category: bmiCategory, type: 'BMI' }
-        "
-      ></ng-container>
+    <app-fancy-result [transparentValue]="true">
+      <div result-title>Your Health Metrics</div>
+      <div result-subtitle>Based on your height, weight, age and sex</div>
+      <div result-value>
+        <!-- Results grid -->
+        <div
+          class="grid md:grid-cols-2 xl:grid-cols-3 gap-6 place-items-center md:place-items-stretch"
+        >
+          <ng-container
+            *ngTemplateOutlet="
+              summary;
+              context: { value: bmi, category: bmiCategory, type: 'BMI' }
+            "
+          ></ng-container>
 
-      <ng-container
-        *ngTemplateOutlet="
-          summary;
-          context: { value: bmiHa, category: bmiHaCategory, type: 'NEW_BMI' }
-        "
-      ></ng-container>
+          <ng-container
+            *ngTemplateOutlet="
+              summary;
+              context: { value: bmiHa, category: bmiHaCategory, type: 'NEW_BMI' }
+            "
+          ></ng-container>
 
-      <ng-container
-        *ngTemplateOutlet="
-          summary;
-          context: {
-            value: ibw.ibw.format(),
-            category: ibw.category,
-            type: 'IBW',
-          }
-        "
-      ></ng-container>
+          <ng-container
+            *ngTemplateOutlet="
+              summary;
+              context: {
+                value: ibw.ibw.format(),
+                category: ibw.category,
+                type: 'IBW',
+              }
+            "
+          ></ng-container>
 
-      <ng-container
-        *ngTemplateOutlet="
-          summary;
-          context: { value: fat, category: fatCategory, type: 'BODY_FAT' }
-        "
-      ></ng-container>
+          <ng-container
+            *ngTemplateOutlet="
+              summary;
+              context: { value: fat, category: fatCategory, type: 'BODY_FAT' }
+            "
+          ></ng-container>
 
-      <ng-container
-        *ngTemplateOutlet="
-          summary;
-          context: { value: bmr.bmr, category: bmr.category, type: 'BMR' }
-        "
-      ></ng-container>
-    </div>
+          <ng-container
+            *ngTemplateOutlet="
+              summary;
+              context: {
+                value: bmr.bmr.toString() + ' kcal',
+                category: bmr.category,
+                type: 'BMR',
+              }
+            "
+          ></ng-container>
+        </div>
+      </div>
+    </app-fancy-result>
   </ng-container>
 </app-tool-view>
 
 <ng-template #summary let-value="value" let-category="category" let-type="type">
-  <app-result-box
-    [type]="categoryToResultBoxType(category)"
-    class="w-3xs md:w-auto"
+  <app-fancy-result
+    variant="card"
+    [colorScheme]="getColorScheme(category)"
+    class="w-full"
   >
-    <div class="space-y-1">
-      <div class="text-lg font-semibold">
-        {{
-          'TOOLS.BMI_CALCULATOR.' + type + '.SUMMARY' | translate: { value }
-        }}
+    <div class="space-y-4">
+      <!-- Row 1: Icon and Value in flexible columns -->
+      <div class="flex items-center gap-3">
+        <!-- Icon column - auto width, left aligned -->
+        <div class="flex-shrink-0">
+          <div
+            class="w-12 h-12 rounded-lg flex items-center justify-center"
+            [ngClass]="getIconBackgroundClass(category)"
+          >
+            <mat-icon class="text-xl" [ngClass]="getIconColorClass(category)">{{
+              getIcon(category)
+            }}</mat-icon>
+          </div>
+        </div>
+
+        <!-- Value column - takes remaining space -->
+        <div class="flex-1 text-left">
+          <div
+            class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1"
+          >
+            {{ 'TOOLS.BMI_CALCULATOR.' + type + '.SUMMARY' | translate }}
+          </div>
+          <div
+            class="text-2xl font-bold leading-none"
+            [ngClass]="getValueClass(category)"
+          >
+            {{ value }}
+          </div>
+        </div>
       </div>
-      <div class="text-sm opacity-75">
-        {{
-          'TOOLS.BMI_CALCULATOR.' + type + '.CATEGORY.' + category | translate
-        }}
+
+      <!-- Row 2: Category badge spanning full width -->
+      <div class="w-full">
+        <div
+          class="text-xs font-bold px-3 py-1.5 rounded-full shadow-sm text-center w-full"
+          [ngClass]="getCategoryBadgeClass(category)"
+        >
+          {{
+            'TOOLS.BMI_CALCULATOR.' + type + '.CATEGORY.' + category | translate
+          }}
+        </div>
       </div>
     </div>
-  </app-result-box>
+  </app-fancy-result>
 </ng-template>
