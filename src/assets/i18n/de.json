@@ -16,7 +16,9 @@
       "CALORIES_BURNED_CALCULATOR": "Kalorienverbrauch",
       "CALORIES_BURNED_CALCULATOR_DESC": "Schätze, wie viele Kalorien du beim Laufen verbrennst",
       "VO2MAX_CALCULATOR": "VO₂max-Rechner",
-      "VO2MAX_CALCULATOR_DESC": "Ermittle deine maximale Sauerstoffaufnahme (VO₂max)"
+      "VO2MAX_CALCULATOR_DESC": "Ermittle deine maximale Sauerstoffaufnahme (VO₂max)",
+      "BMI_CALCULATOR": "BMI & Körperzusammensetzung",
+      "BMI_CALCULATOR_DESC": "Berechne deinen BMI und schätze deinen Körperfettanteil mit fortschrittlichen Methoden"
     },
     "UNITS": {
       "TITLE": "Einheiten umrechnen",
@@ -45,12 +47,17 @@
     "CUSTOMIZABLE_DESC": "Einheiten und Einstellungen nach deinen Vorlieben konfigurieren."
   },
   "COMMON": {
+    "AGE": "Alter",
+    "SEX": "Geschlecht",
+    "SEX_F": "Weiblich",
+    "SEX_M": "Männlich",
     "DISTANCE": "Distanz",
     "DISTANCE_SELECT": "Wähle eine Laufdistanz",
     "TIME": "Zeit",
     "PACE": "Tempo",
     "SPEED": "Geschwindigkeit",
     "WEIGHT": "Gewicht",
+    "HEIGHT": "Größe",
     "USE": "Verwenden",
     "SELECT_UNITS": "Einheiten wählen",
     "KILOMETERS": "Kilometer",
@@ -67,46 +74,118 @@
       "10K": "10 km",
       "HALF_MARATHON": "Halbmarathon",
       "HALF_MARATHON_SHORT": "Halb",
-      "MARATHON": "Marathon"
+      "MARATHON": "Marathon",
+      "MARATHON_SHORT": "Marathon"
     },
     "LANGUAGUE": {
       "TITLE": "Sprache",
       "SELECT": "Sprache wählen"
+    },
+    "BMI_CATEGORY": {
+      "UNDER": "Untergewicht",
+      "NORMAL": "Normalgewicht",
+      "OVER": "Übergewicht",
+      "OBESITY": "Adipositas"
     }
   },
   "TOOLS": {
     "CALORIES_BURNED_CALCULATOR": {
       "TITLE": "Kalorienrechner",
       "DESCRIPTION": "Gib Distanz, Tempo und Körpergewicht ein, um deinen Kalorienverbrauch zu schätzen.",
-      "SUMMARY": "Du hast ungefähr {{calories}} kcal verbrannt."
+      "SUMMARY": "Du hast ungefähr {{calories}} kcal verbrannt.",
+      "SUMMARY_TITLE": "Verbrannte Kalorien",
+      "SUMMARY_SUB": "Basierend auf deiner Distanz, Zeit und Gewicht."
     },
     "VO2MAX_CALCULATOR": {
       "TITLE": "VO₂max berechnen",
       "DESCRIPTION": "Gib eine Wettkampfdistanz und deine Zeit ein, um deine Ausdauerleistung einzuschätzen.",
-      "SUMMARY": "Dein VO₂max liegt bei etwa {{vo2Max}}."
+      "SUMMARY": "Dein VO₂max liegt bei etwa {{vo2Max}}.",
+      "RESULT_TITLE": "VO₂ Max Ergebnis",
+      "RESULT_SUBTITLE": "Deine geschätzte maximale Sauerstoffaufnahme",
+      "UNIT": "ml/kg/min"
     },
     "FINISH_TIME_PREDICTOR": {
       "TITLE": "Zielzeit-Prognose",
-      "DESCRIPTION": "Berechne deine voraussichtliche Zeit für beliebte Distanzen basierend auf einem aktuellen Lauf."
+      "DESCRIPTION": "Berechne deine voraussichtliche Zeit für beliebte Distanzen basierend auf einem aktuellen Lauf.",
+      "SUMMARY": "Prognostizierte Laufzeiten",
+      "SUMMARY_SUB": "Basierend auf deinem aktuellen Tempo"
     },
     "PACE_CALCULATOR": {
       "TITLE": "Tempo-Rechner",
-      "DESCRIPTION": "Passe Zeit, Distanz oder Tempo an – die anderen Werte werden automatisch berechnet."
+      "DESCRIPTION": "Passe Zeit, Distanz oder Tempo an – die anderen Werte werden automatisch berechnet.",
+      "SUMMARY": "Deine Tempo-Zusammenfassung"
     },
     "DISTANCE_UNIT_CONVERTER": {
       "TITLE": "Distanzen umrechnen",
       "DESCRIPTION": "Schnell zwischen Kilometern und Meilen wechseln.",
-      "SUMMARY": "Kilometer: {{kmDistance}} • Meilen: {{miDistance}}"
+      "SUMMARY": "Kilometer: {{kmDistance}} • Meilen: {{miDistance}}",
+      "RESULT_TITLE": "Distanz-Umrechnung",
+      "RESULT_SUBTITLE": "Entsprechende Distanzen in Kilometern und Meilen"
     },
     "PACE_SPEED_UNIT_CONVERTER": {
       "TITLE": "Tempo & Geschwindigkeit",
       "DESCRIPTION": "Rechne Tempo in Geschwindigkeit um oder umgekehrt.",
-      "SUMMARY": "Tempo: {{pace}} • Geschwindigkeit: {{speed}}"
+      "SUMMARY": "Tempo: {{pace}} • Geschwindigkeit: {{speed}}",
+      "RESULT_TITLE": "Tempo & Geschwindigkeits-Umrechnung",
+      "RESULT_SUBTITLE": "Entsprechende Tempo- und Geschwindigkeitswerte"
     },
     "WEIGHT_UNIT_CONVERTER": {
       "TITLE": "Gewicht umrechnen",
       "DESCRIPTION": "Kilogramm und Pfund einfach umrechnen.",
-      "SUMMARY": "Kilogramm: {{kg}} • Pfund: {{lb}}"
+      "SUMMARY": "Kilogramm: {{kg}} • Pfund: {{lb}}",
+      "RESULT_TITLE": "Gewichts-Umrechnung",
+      "RESULT_SUBTITLE": "Entsprechende Gewichte in Kilogramm und Pfund"
+    },
+    "BMI_CALCULATOR": {
+      "TITLE": "Körperzusammensetzung",
+      "DESCRIPTION": "Berechne deinen BMI und schätze deinen Körperfettanteil mit verschiedenen Methoden für eine umfassende Analyse deiner Körperzusammensetzung. Beinhaltet:",
+      "DESCRIPTION_2": "<ul class='list-disc list-inside ml-4 space-y-1'><li>Standard-BMI</li><li>Neuer BMI - größenangepasster BMI</li><li>IBW - ideales Körpergewicht</li><li>Körperfett % - geschätzt mit Deurenberg-Formel</li><li>BMR - Kalorien im Ruhezustand</li></ul>",
+      "RESULT_TITLE": "Deine Gesundheitswerte",
+      "RESULT_SUBTITLE": "Basierend auf deiner Größe, Gewicht, Alter und Geschlecht",
+      "BMI": {
+        "SUMMARY": "BMI",
+        "CATEGORY": {
+          "UNDERWEIGHT": "Untergewicht",
+          "NORMAL": "Normal",
+          "OVERWEIGHT": "Übergewicht",
+          "OBESE": "Adipositas"
+        }
+      },
+      "NEW_BMI": {
+        "SUMMARY": "Neuer BMI",
+        "CATEGORY": {
+          "UNDERWEIGHT": "Untergewicht",
+          "NORMAL": "Gesundes Gewicht",
+          "OVERWEIGHT": "Leichtes Übergewicht",
+          "OBESE": "Adipositas"
+        }
+      },
+      "BODY_FAT": {
+        "SUMMARY": "Körperfett",
+        "CATEGORY": {
+          "BELOW_ESSENTIAL": "Gefährlich niedrig",
+          "ESSENTIAL": "Mindest-Gesundheitslevel",
+          "ATHLETE": "Athletischer Körper",
+          "FITNESS": "Fitter Körper",
+          "AVERAGE": "Durchschnitt",
+          "OBESE": "Adipositas"
+        }
+      },
+      "BMR": {
+        "SUMMARY": "BMR",
+        "CATEGORY": {
+          "BMR_OK": "Kalorien im Ruhezustand"
+        }
+      },
+      "IBW": {
+        "SUMMARY": "IBW",
+        "CATEGORY": {
+          "IBW_BAD": "Dein Gewicht ist weit vom Ideal entfernt",
+          "IBW_IMPROVE": "Dein Gewicht könnte verbessert werden",
+          "IBW_OK": "Dein Gewicht ist akzeptabel",
+          "IBW_IDEAL": "Dein Gewicht ist ideal"
+        }
+      }
     }
   }
 }

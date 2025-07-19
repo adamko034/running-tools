@@ -14,7 +14,7 @@ import { HeightStoreFormField } from '../../../shared/components/store/height-st
 import { SexStoreFormField } from '../../../shared/components/store/sex-store-form-field/sex-store-form-field';
 import { WeightStoreFormField } from '../../../shared/components/store/weight-store-form-field/weight-store-form-field';
 import { FancyResult } from '../../../shared/components/ui/fancy-result/fancy-result';
-import { ResultBoxType } from '../../../shared/components/ui/result-box/result-box-type.enum';
+import { ResultBoxType } from '../../../shared/components/ui/fancy-result/result-box-type.enum';
 import { ToolView } from '../../../shared/views/tool-view/tool-view';
 
 @Component({

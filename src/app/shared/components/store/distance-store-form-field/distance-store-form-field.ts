@@ -35,12 +35,30 @@ export class DistanceStoreFormField {
   distances = DataCatalog.distances;
 
   setDistance(value: number) {
-    this.distance().value = value;
-    this.store.updateDistance(this.distance());
+    const newDistance = this.distance().clone();
+    newDistance.value = value;
+    newDistance.validate();
+
+    this.store.updateDistance(newDistance);
   }
 
   setRaceDistance(kmValue: number) {
     this.distance().convertAndSetKmValue(kmValue);
     this.store.updateDistance(this.distance());
+  }
+
+  onInput(event: Event) {
+    const input = event.target as HTMLInputElement;
+    let value = input.value;
+    
+    // Replace comma with dot for decimal separator
+    if (value.includes(',')) {
+      value = value.replace(',', '.');
+      input.value = value;
+      
+      // Trigger ngModelChange manually since we modified the input value
+      const numericValue = parseFloat(value) || 0;
+      this.setDistance(numericValue);
+    }
   }
 }

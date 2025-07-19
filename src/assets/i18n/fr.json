@@ -16,7 +16,9 @@
       "CALORIES_BURNED_CALCULATOR": "Calories brûlées",
       "CALORIES_BURNED_CALCULATOR_DESC": "Estimez les calories dépensées lors de votre course",
       "VO2MAX_CALCULATOR": "Calculateur VO₂ Max",
-      "VO2MAX_CALCULATOR_DESC": "Estimez votre capacité aérobie (VO₂ Max)"
+      "VO2MAX_CALCULATOR_DESC": "Estimez votre capacité aérobie (VO₂ Max)",
+      "BMI_CALCULATOR": "BMI et Composition Corporelle",
+      "BMI_CALCULATOR_DESC": "Calculez votre BMI et estimez votre masse grasse avec des méthodes avancées"
     },
     "UNITS": {
       "TITLE": "Convertisseurs d’unités",
@@ -45,12 +47,17 @@
     "CUSTOMIZABLE_DESC": "Adaptez les unités et préférences selon vos besoins."
   },
   "COMMON": {
+    "AGE": "Âge",
+    "SEX": "Sexe",
+    "SEX_F": "Femme",
+    "SEX_M": "Homme",
     "DISTANCE": "Distance",
     "DISTANCE_SELECT": "Sélectionnez une distance",
     "TIME": "Temps",
     "PACE": "Allure",
     "SPEED": "Vitesse",
     "WEIGHT": "Poids",
+    "HEIGHT": "Taille",
     "USE": "Utiliser",
     "SELECT_UNITS": "Choisir les unités",
     "KILOMETERS": "Kilomètres",
@@ -66,46 +73,119 @@
       "5K": "5 km",
       "10K": "10 km",
       "HALF_MARATHON": "Semi-marathon",
-      "MARATHON": "Marathon"
+      "HALF_MARATHON_SHORT": "Semi",
+      "MARATHON": "Marathon",
+      "MARATHON_SHORT": "Marathon"
     },
     "LANGUAGUE": {
       "TITLE": "Langue",
       "SELECT": "Choisir la langue"
+    },
+    "BMI_CATEGORY": {
+      "UNDER": "Insuffisance pondérale",
+      "NORMAL": "Poids normal",
+      "OVER": "Surpoids",
+      "OBESITY": "Obésité"
     }
   },
   "TOOLS": {
     "CALORIES_BURNED_CALCULATOR": {
       "TITLE": "Estimation des calories brûlées",
       "DESCRIPTION": "Indiquez votre distance, allure et poids pour estimer les calories brûlées.",
-      "SUMMARY": "Vous avez brûlé environ {{calories}} kcal."
+      "SUMMARY": "Vous avez brûlé environ {{calories}} kcal.",
+      "SUMMARY_TITLE": "Calories Brûlées",
+      "SUMMARY_SUB": "Basé sur votre distance, temps et poids."
     },
     "VO2MAX_CALCULATOR": {
       "TITLE": "Calcul du VO₂ Max",
       "DESCRIPTION": "Renseignez votre distance et temps de course pour estimer votre VO₂ Max.",
-      "SUMMARY": "Votre VO₂ Max estimé est de {{vo2Max}}."
+      "SUMMARY": "Votre VO₂ Max estimé est de {{vo2Max}}.",
+      "RESULT_TITLE": "Résultat VO₂ Max",
+      "RESULT_SUBTITLE": "Votre consommation maximale d'oxygène estimée",
+      "UNIT": "ml/kg/min"
     },
     "FINISH_TIME_PREDICTOR": {
-      "TITLE": "Estimation du temps d’arrivée",
-      "DESCRIPTION": "Estimez votre temps de course sur différentes distances à partir d’une performance récente."
+      "TITLE": "Estimation du temps d'arrivée",
+      "DESCRIPTION": "Estimez votre temps de course sur différentes distances à partir d'une performance récente.",
+      "SUMMARY": "Temps de Course Prédits",
+      "SUMMARY_SUB": "Basé sur votre allure actuelle"
     },
     "PACE_CALCULATOR": {
-      "TITLE": "Calculateur d’allure",
-      "DESCRIPTION": "Modifiez le temps, la distance ou l’allure pour obtenir les autres valeurs."
+      "TITLE": "Calculateur d'allure",
+      "DESCRIPTION": "Modifiez le temps, la distance ou l'allure pour obtenir les autres valeurs.",
+      "SUMMARY": "Résumé de votre Allure"
     },
     "DISTANCE_UNIT_CONVERTER": {
       "TITLE": "Conversion de distance",
       "DESCRIPTION": "Convertissez rapidement entre kilomètres et miles.",
-      "SUMMARY": "Kilomètres : {{kmDistance}} • Miles : {{miDistance}}"
+      "SUMMARY": "Kilomètres : {{kmDistance}} • Miles : {{miDistance}}",
+      "RESULT_TITLE": "Conversion de Distance",
+      "RESULT_SUBTITLE": "Distances équivalentes en kilomètres et miles"
     },
     "PACE_SPEED_UNIT_CONVERTER": {
       "TITLE": "Conversion allure / vitesse",
       "DESCRIPTION": "Calculez ou comparez votre allure et votre vitesse.",
-      "SUMMARY": "Allure : {{pace}} • Vitesse : {{speed}}"
+      "SUMMARY": "Allure : {{pace}} • Vitesse : {{speed}}",
+      "RESULT_TITLE": "Conversion Allure et Vitesse",
+      "RESULT_SUBTITLE": "Valeurs équivalentes d'allure et de vitesse"
     },
     "WEIGHT_UNIT_CONVERTER": {
       "TITLE": "Conversion de poids",
       "DESCRIPTION": "Convertissez facilement entre kilogrammes et livres.",
-      "SUMMARY": "Kilogrammes : {{kg}} • Livres : {{lb}}"
+      "SUMMARY": "Kilogrammes : {{kg}} • Livres : {{lb}}",
+      "RESULT_TITLE": "Conversion de Poids",
+      "RESULT_SUBTITLE": "Poids équivalents en kilogrammes et livres"
+    },
+    "BMI_CALCULATOR": {
+      "TITLE": "Composition Corporelle",
+      "DESCRIPTION": "Calculez votre BMI et estimez votre masse grasse en utilisant plusieurs méthodes pour une vue complète de votre composition corporelle. Inclut :",
+      "DESCRIPTION_2": "<ul class='list-disc list-inside ml-4 space-y-1'><li>BMI standard</li><li>Nouveau BMI - ajusté selon la taille</li><li>IBW - poids corporel idéal</li><li>% Masse grasse - estimé avec la formule Deurenberg</li><li>BMR - calories brûlées au repos</li></ul>",
+      "RESULT_TITLE": "Vos Indicateurs de Santé",
+      "RESULT_SUBTITLE": "Basé sur votre taille, poids, âge et sexe",
+      "BMI": {
+        "SUMMARY": "BMI",
+        "CATEGORY": {
+          "UNDERWEIGHT": "Insuffisance pondérale",
+          "NORMAL": "Normal",
+          "OVERWEIGHT": "Surpoids",
+          "OBESE": "Obésité"
+        }
+      },
+      "NEW_BMI": {
+        "SUMMARY": "Nouveau BMI",
+        "CATEGORY": {
+          "UNDERWEIGHT": "Insuffisance pondérale",
+          "NORMAL": "Poids santé",
+          "OVERWEIGHT": "Léger surpoids",
+          "OBESE": "Obésité"
+        }
+      },
+      "BODY_FAT": {
+        "SUMMARY": "Masse Grasse",
+        "CATEGORY": {
+          "BELOW_ESSENTIAL": "Dangereusement bas",
+          "ESSENTIAL": "Niveau minimum de santé",
+          "ATHLETE": "Corps d'athlète",
+          "FITNESS": "Corps en forme",
+          "AVERAGE": "Moyenne",
+          "OBESE": "Obésité"
+        }
+      },
+      "BMR": {
+        "SUMMARY": "BMR",
+        "CATEGORY": {
+          "BMR_OK": "Calories brûlées au repos"
+        }
+      },
+      "IBW": {
+        "SUMMARY": "IBW",
+        "CATEGORY": {
+          "IBW_BAD": "Votre poids est loin de l'idéal",
+          "IBW_IMPROVE": "Votre poids pourrait être amélioré",
+          "IBW_OK": "Votre poids est acceptable",
+          "IBW_IDEAL": "Votre poids est idéal"
+        }
+      }
     }
   }
 }

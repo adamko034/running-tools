@@ -16,7 +16,9 @@
       "CALORIES_BURNED_CALCULATOR": "Calorie bruciate",
       "CALORIES_BURNED_CALCULATOR_DESC": "Stima quante calorie hai consumato durante la corsa",
       "VO2MAX_CALCULATOR": "Calcolatore VO₂ Max",
-      "VO2MAX_CALCULATOR_DESC": "Stima la tua capacità aerobica (VO₂ Max)"
+      "VO2MAX_CALCULATOR_DESC": "Stima la tua capacità aerobica (VO₂ Max)",
+      "BMI_CALCULATOR": "BMI e Composizione Corporea",
+      "BMI_CALCULATOR_DESC": "Calcola il tuo BMI e stima la massa grassa con metodi avanzati"
     },
     "UNITS": {
       "TITLE": "Convertitori unità",
@@ -45,12 +47,17 @@
     "CUSTOMIZABLE_DESC": "Imposta unità e preferenze secondo le tue esigenze."
   },
   "COMMON": {
+    "AGE": "Età",
+    "SEX": "Sesso",
+    "SEX_F": "Femmina",
+    "SEX_M": "Maschio",
     "DISTANCE": "Distanza",
     "DISTANCE_SELECT": "Seleziona una distanza",
     "TIME": "Tempo",
     "PACE": "Ritmo",
     "SPEED": "Velocità",
     "WEIGHT": "Peso",
+    "HEIGHT": "Altezza",
     "USE": "Usa",
     "SELECT_UNITS": "Seleziona unità",
     "KILOMETERS": "Chilometri",
@@ -66,46 +73,119 @@
       "5K": "5 km",
       "10K": "10 km",
       "HALF_MARATHON": "Mezza maratona",
-      "MARATHON": "Maratona"
+      "HALF_MARATHON_SHORT": "Mezza",
+      "MARATHON": "Maratona",
+      "MARATHON_SHORT": "Maratona"
     },
     "LANGUAGUE": {
       "TITLE": "Lingua",
       "SELECT": "Seleziona lingua"
+    },
+    "BMI_CATEGORY": {
+      "UNDER": "Sottopeso",
+      "NORMAL": "Peso normale",
+      "OVER": "Sovrappeso",
+      "OBESITY": "Obesità"
     }
   },
   "TOOLS": {
     "CALORIES_BURNED_CALCULATOR": {
       "TITLE": "Stima calorie bruciate",
       "DESCRIPTION": "Inserisci distanza, ritmo e peso per stimare le calorie consumate.",
-      "SUMMARY": "Hai bruciato circa {{calories}} kcal."
+      "SUMMARY": "Hai bruciato circa {{calories}} kcal.",
+      "SUMMARY_TITLE": "Calorie Bruciate",
+      "SUMMARY_SUB": "Basato su distanza, tempo e peso."
     },
     "VO2MAX_CALCULATOR": {
       "TITLE": "Calcolo VO₂ Max",
       "DESCRIPTION": "Inserisci distanza e tempo per stimare la tua VO₂ Max.",
-      "SUMMARY": "Il tuo VO₂ Max stimato è {{vo2Max}}."
+      "SUMMARY": "Il tuo VO₂ Max stimato è {{vo2Max}}.",
+      "RESULT_TITLE": "Risultato VO₂ Max",
+      "RESULT_SUBTITLE": "Il tuo consumo massimo di ossigeno stimato",
+      "UNIT": "ml/kg/min"
     },
     "FINISH_TIME_PREDICTOR": {
       "TITLE": "Previsione tempo finale",
-      "DESCRIPTION": "Prevedi i tuoi tempi su distanze comuni usando una corsa recente."
+      "DESCRIPTION": "Prevedi i tuoi tempi su distanze comuni usando una corsa recente.",
+      "SUMMARY": "Tempi di Gara Previsti",
+      "SUMMARY_SUB": "Basato sul tuo ritmo attuale"
     },
     "PACE_CALCULATOR": {
       "TITLE": "Calcolatore ritmo",
-      "DESCRIPTION": "Modifica tempo, distanza o ritmo per calcolare gli altri valori."
+      "DESCRIPTION": "Modifica tempo, distanza o ritmo per calcolare gli altri valori.",
+      "SUMMARY": "Riepilogo del tuo Ritmo"
     },
     "DISTANCE_UNIT_CONVERTER": {
       "TITLE": "Conversione distanza",
       "DESCRIPTION": "Converti rapidamente chilometri in miglia e viceversa.",
-      "SUMMARY": "Chilometri: {{kmDistance}} • Miglia: {{miDistance}}"
+      "SUMMARY": "Chilometri: {{kmDistance}} • Miglia: {{miDistance}}",
+      "RESULT_TITLE": "Conversione Distanza",
+      "RESULT_SUBTITLE": "Distanze equivalenti in chilometri e miglia"
     },
     "PACE_SPEED_UNIT_CONVERTER": {
       "TITLE": "Conversione ritmo / velocità",
       "DESCRIPTION": "Confronta o converti il ritmo in velocità e viceversa.",
-      "SUMMARY": "Ritmo: {{pace}} • Velocità: {{speed}}"
+      "SUMMARY": "Ritmo: {{pace}} • Velocità: {{speed}}",
+      "RESULT_TITLE": "Conversione Ritmo e Velocità",
+      "RESULT_SUBTITLE": "Valori equivalenti di ritmo e velocità"
     },
     "WEIGHT_UNIT_CONVERTER": {
       "TITLE": "Conversione peso",
       "DESCRIPTION": "Converti tra chilogrammi e libbre con facilità.",
-      "SUMMARY": "Chilogrammi: {{kg}} • Libbre: {{lb}}"
+      "SUMMARY": "Chilogrammi: {{kg}} • Libbre: {{lb}}",
+      "RESULT_TITLE": "Conversione Peso",
+      "RESULT_SUBTITLE": "Pesi equivalenti in chilogrammi e libbre"
+    },
+    "BMI_CALCULATOR": {
+      "TITLE": "Composizione Corporea",
+      "DESCRIPTION": "Calcola il tuo BMI e stima la massa grassa usando diversi metodi per una visione completa della tua composizione corporea. Include:",
+      "DESCRIPTION_2": "<ul class='list-disc list-inside ml-4 space-y-1'><li>BMI standard</li><li>Nuovo BMI - aggiustato per altezza</li><li>IBW - peso corporeo ideale</li><li>% Massa grassa - stimata con formula Deurenberg</li><li>BMR - calorie bruciate a riposo</li></ul>",
+      "RESULT_TITLE": "Le Tue Metriche di Salute",
+      "RESULT_SUBTITLE": "Basato su altezza, peso, età e sesso",
+      "BMI": {
+        "SUMMARY": "BMI",
+        "CATEGORY": {
+          "UNDERWEIGHT": "Sottopeso",
+          "NORMAL": "Normale",
+          "OVERWEIGHT": "Sovrappeso",
+          "OBESE": "Obesità"
+        }
+      },
+      "NEW_BMI": {
+        "SUMMARY": "Nuovo BMI",
+        "CATEGORY": {
+          "UNDERWEIGHT": "Sottopeso",
+          "NORMAL": "Peso salutare",
+          "OVERWEIGHT": "Leggermente sovrappeso",
+          "OBESE": "Obesità"
+        }
+      },
+      "BODY_FAT": {
+        "SUMMARY": "Massa Grassa",
+        "CATEGORY": {
+          "BELOW_ESSENTIAL": "Pericolosamente basso",
+          "ESSENTIAL": "Livello minimo salutare",
+          "ATHLETE": "Corpo atletico",
+          "FITNESS": "Corpo in forma",
+          "AVERAGE": "Media",
+          "OBESE": "Obesità"
+        }
+      },
+      "BMR": {
+        "SUMMARY": "MB",
+        "CATEGORY": {
+          "BMR_OK": "Calorie bruciate a riposo"
+        }
+      },
+      "IBW": {
+        "SUMMARY": "IBW",
+        "CATEGORY": {
+          "IBW_BAD": "Il tuo peso è lontano dall'ideale",
+          "IBW_IMPROVE": "Il tuo peso potrebbe migliorare",
+          "IBW_OK": "Il tuo peso è accettabile",
+          "IBW_IDEAL": "Il tuo peso è ideale"
+        }
+      }
     }
   }
 }

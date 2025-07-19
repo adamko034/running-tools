@@ -16,7 +16,9 @@
       "CALORIES_BURNED_CALCULATOR": "Calorías quemadas",
       "CALORIES_BURNED_CALCULATOR_DESC": "Calcula cuántas calorías quemaste corriendo",
       "VO2MAX_CALCULATOR": "Calculadora VO₂ Max",
-      "VO2MAX_CALCULATOR_DESC": "Estima tu capacidad aeróbica (VO₂ Max)"
+      "VO2MAX_CALCULATOR_DESC": "Estima tu capacidad aeróbica (VO₂ Max)",
+      "BMI_CALCULATOR": "BMI y Composición Corporal",
+      "BMI_CALCULATOR_DESC": "Calcula tu BMI y estima tu grasa corporal con métodos avanzados"
     },
     "UNITS": {
       "TITLE": "Conversión de unidades",
@@ -45,12 +47,17 @@
     "CUSTOMIZABLE_DESC": "Configura unidades y preferencias a tu gusto."
   },
   "COMMON": {
+    "AGE": "Edad",
+    "SEX": "Sexo",
+    "SEX_F": "Mujer",
+    "SEX_M": "Hombre",
     "DISTANCE": "Distancia",
     "DISTANCE_SELECT": "Selecciona una distancia",
     "TIME": "Tiempo",
     "PACE": "Ritmo",
     "SPEED": "Velocidad",
     "WEIGHT": "Peso",
+    "HEIGHT": "Altura",
     "USE": "Usar",
     "SELECT_UNITS": "Seleccionar unidades",
     "KILOMETERS": "Kilómetros",
@@ -66,46 +73,119 @@
       "5K": "5 km",
       "10K": "10 km",
       "HALF_MARATHON": "Media maratón",
-      "MARATHON": "Maratón"
+      "HALF_MARATHON_SHORT": "Media",
+      "MARATHON": "Maratón",
+      "MARATHON_SHORT": "Maratón"
     },
     "LANGUAGUE": {
       "TITLE": "Idioma",
       "SELECT": "Seleccionar idioma"
+    },
+    "BMI_CATEGORY": {
+      "UNDER": "Bajo peso",
+      "NORMAL": "Peso normal",
+      "OVER": "Sobrepeso",
+      "OBESITY": "Obesidad"
     }
   },
   "TOOLS": {
     "CALORIES_BURNED_CALCULATOR": {
       "TITLE": "Calorías quemadas",
       "DESCRIPTION": "Introduce distancia, ritmo y peso para estimar las calorías quemadas.",
-      "SUMMARY": "Has quemado aproximadamente {{calories}} kcal."
+      "SUMMARY": "Has quemado aproximadamente {{calories}} kcal.",
+      "SUMMARY_TITLE": "Calorías Quemadas",
+      "SUMMARY_SUB": "Basado en tu distancia, tiempo y peso."
     },
     "VO2MAX_CALCULATOR": {
       "TITLE": "Calculadora VO₂ Max",
       "DESCRIPTION": "Introduce tu tiempo y distancia para estimar tu VO₂ Max.",
-      "SUMMARY": "Tu VO₂ Max estimado es {{vo2Max}}."
+      "SUMMARY": "Tu VO₂ Max estimado es {{vo2Max}}.",
+      "RESULT_TITLE": "Resultado VO₂ Max",
+      "RESULT_SUBTITLE": "Tu consumo máximo estimado de oxígeno",
+      "UNIT": "ml/kg/min"
     },
     "FINISH_TIME_PREDICTOR": {
       "TITLE": "Tiempo estimado de carrera",
-      "DESCRIPTION": "Estima tus tiempos para distintas distancias según una carrera reciente."
+      "DESCRIPTION": "Estima tus tiempos para distintas distancias según una carrera reciente.",
+      "SUMMARY": "Tiempos Estimados de Carrera",
+      "SUMMARY_SUB": "Basado en tu ritmo actual"
     },
     "PACE_CALCULATOR": {
       "TITLE": "Calculadora de ritmo",
-      "DESCRIPTION": "Ajusta tiempo, distancia o ritmo y obtén el valor faltante."
+      "DESCRIPTION": "Ajusta tiempo, distancia o ritmo y obtén el valor faltante.",
+      "SUMMARY": "Resumen de tu Ritmo"
     },
     "DISTANCE_UNIT_CONVERTER": {
       "TITLE": "Conversor de distancia",
       "DESCRIPTION": "Convierte fácilmente entre kilómetros y millas.",
-      "SUMMARY": "Kilómetros: {{kmDistance}} • Millas: {{miDistance}}"
+      "SUMMARY": "Kilómetros: {{kmDistance}} • Millas: {{miDistance}}",
+      "RESULT_TITLE": "Conversión de Distancia",
+      "RESULT_SUBTITLE": "Distancias equivalentes en kilómetros y millas"
     },
     "PACE_SPEED_UNIT_CONVERTER": {
       "TITLE": "Ritmo y velocidad",
       "DESCRIPTION": "Convierte entre ritmo y velocidad según tu entrenamiento.",
-      "SUMMARY": "Ritmo: {{pace}} • Velocidad: {{speed}}"
+      "SUMMARY": "Ritmo: {{pace}} • Velocidad: {{speed}}",
+      "RESULT_TITLE": "Conversión de Ritmo y Velocidad",
+      "RESULT_SUBTITLE": "Valores equivalentes de ritmo y velocidad"
     },
     "WEIGHT_UNIT_CONVERTER": {
       "TITLE": "Conversor de peso",
       "DESCRIPTION": "Convierte entre kilogramos y libras.",
-      "SUMMARY": "Kilogramos: {{kg}} • Libras: {{lb}}"
+      "SUMMARY": "Kilogramos: {{kg}} • Libras: {{lb}}",
+      "RESULT_TITLE": "Conversión de Peso",
+      "RESULT_SUBTITLE": "Pesos equivalentes en kilogramos y libras"
+    },
+    "BMI_CALCULATOR": {
+      "TITLE": "Composición Corporal",
+      "DESCRIPTION": "Calcula tu BMI y estima tu grasa corporal usando múltiples métodos para una visión completa de tu composición corporal. Incluye:",
+      "DESCRIPTION_2": "<ul class='list-disc list-inside ml-4 space-y-1'><li>BMI estándar</li><li>Nuevo BMI - ajustado por altura</li><li>IBW - peso corporal ideal</li><li>% Grasa corporal - estimado con fórmula Deurenberg</li><li>BMR - calorías quemadas en reposo</li></ul>",
+      "RESULT_TITLE": "Tus Métricas de Salud",
+      "RESULT_SUBTITLE": "Basado en tu altura, peso, edad y sexo",
+      "BMI": {
+        "SUMMARY": "BMI",
+        "CATEGORY": {
+          "UNDERWEIGHT": "Bajo peso",
+          "NORMAL": "Normal",
+          "OVERWEIGHT": "Sobrepeso",
+          "OBESE": "Obesidad"
+        }
+      },
+      "NEW_BMI": {
+        "SUMMARY": "Nuevo BMI",
+        "CATEGORY": {
+          "UNDERWEIGHT": "Bajo peso",
+          "NORMAL": "Peso saludable",
+          "OVERWEIGHT": "Ligeramente sobrepeso",
+          "OBESE": "Obesidad"
+        }
+      },
+      "BODY_FAT": {
+        "SUMMARY": "Grasa Corporal",
+        "CATEGORY": {
+          "BELOW_ESSENTIAL": "Peligrosamente bajo",
+          "ESSENTIAL": "Nivel mínimo saludable",
+          "ATHLETE": "Cuerpo atlético",
+          "FITNESS": "Cuerpo en forma",
+          "AVERAGE": "Promedio",
+          "OBESE": "Obesidad"
+        }
+      },
+      "BMR": {
+        "SUMMARY": "BMR",
+        "CATEGORY": {
+          "BMR_OK": "Calorías quemadas en reposo"
+        }
+      },
+      "IBW": {
+        "SUMMARY": "IBW",
+        "CATEGORY": {
+          "IBW_BAD": "Tu peso está lejos del ideal",
+          "IBW_IMPROVE": "Tu peso podría mejorar",
+          "IBW_OK": "Tu peso es aceptable",
+          "IBW_IDEAL": "Tu peso es ideal"
+        }
+      }
     }
   }
 }

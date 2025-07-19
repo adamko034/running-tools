@@ -30,74 +30,10 @@
     </div>
 
     <!-- Quick Distance Selectors -->
-    <div class="flex flex-wrap gap-2 justify-center">
-      <button
-        (click)="onQuickDistanceSelect(0.4)"
-        [ngClass]="{
-          'bg-blue-100 text-blue-700 border-blue-200': isSelected(0.4),
-          'bg-white text-slate-600 border-slate-200': !isSelected(0.4),
-        }"
-        class="px-3 py-2 text-sm border rounded-lg hover:bg-slate-50 hover:border-slate-300 transition-all duration-200"
-        type="button"
-      >
-        400m
-      </button>
-      <button
-        (click)="onQuickDistanceSelect(1)"
-        [ngClass]="{
-          'bg-blue-100 text-blue-700 border-blue-200': isSelected(1),
-          'bg-white text-slate-600 border-slate-200': !isSelected(1),
-        }"
-        class="px-3 py-2 text-sm border rounded-lg hover:bg-slate-50 hover:border-slate-300 transition-all duration-200"
-        type="button"
-      >
-        1000m
-      </button>
-      <button
-        (click)="onQuickDistanceSelect(5)"
-        [ngClass]="{
-          'bg-blue-100 text-blue-700 border-blue-200': isSelected(5),
-          'bg-white text-slate-600 border-slate-200': !isSelected(5),
-        }"
-        class="px-3 py-2 text-sm border rounded-lg hover:bg-slate-50 hover:border-slate-300 transition-all duration-200"
-        type="button"
-      >
-        5K
-      </button>
-      <button
-        (click)="onQuickDistanceSelect(10)"
-        [ngClass]="{
-          'bg-blue-100 text-blue-700 border-blue-200': isSelected(10),
-          'bg-white text-slate-600 border-slate-200': !isSelected(10),
-        }"
-        class="px-3 py-2 text-sm border rounded-lg hover:bg-slate-50 hover:border-slate-300 transition-all duration-200"
-        type="button"
-      >
-        10K
-      </button>
-      <button
-        (click)="onQuickDistanceSelect(21.0975)"
-        [ngClass]="{
-          'bg-blue-100 text-blue-700 border-blue-200': isSelected(21.0975),
-          'bg-white text-slate-600 border-slate-200': !isSelected(21.0975),
-        }"
-        class="px-3 py-2 text-sm border rounded-lg hover:bg-slate-50 hover:border-slate-300 transition-all duration-200"
-        type="button"
-      >
-        Half Marathon
-      </button>
-      <button
-        (click)="onQuickDistanceSelect(42.195)"
-        [ngClass]="{
-          'bg-blue-100 text-blue-700 border-blue-200': isSelected(42.195),
-          'bg-white text-slate-600 border-slate-200': !isSelected(42.195),
-        }"
-        class="px-3 py-2 text-sm border rounded-lg hover:bg-slate-50 hover:border-slate-300 transition-all duration-200"
-        type="button"
-      >
-        Marathon
-      </button>
-    </div>
+    <app-distance-quick-selectors
+      [selectedDistance]="selectedKmDistance"
+      (distanceSelected)="onQuickDistanceSelect($event)"
+    ></app-distance-quick-selectors>
   </ng-container>
   <ng-container tool-summary>
     <app-fancy-result>

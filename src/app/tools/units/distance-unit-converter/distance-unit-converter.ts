@@ -4,6 +4,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { Distance } from '../../../core/business/model/distance.model';
 import { DistanceUnit } from '../../../core/business/model/enums/distance-unit.enum';
 import { StoreService } from '../../../core/store/store.service';
+import { DistanceQuickSelectors } from '../../../shared/components/business/distance-quick-selectors/distance-quick-selectors';
 import { FancyResult } from '../../../shared/components/ui/fancy-result/fancy-result';
 import { NumberFormField } from '../../../shared/components/ui/number-form-field/number-form-field';
 import { ToolView } from '../../../shared/views/tool-view/tool-view';
@@ -14,8 +15,8 @@ import { ToolView } from '../../../shared/views/tool-view/tool-view';
     ToolView,
     FancyResult,
     NumberFormField,
+    DistanceQuickSelectors,
     TranslateModule,
-    CommonModule,
   ],
   templateUrl: './distance-unit-converter.html',
 })

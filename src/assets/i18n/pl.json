@@ -16,7 +16,9 @@
       "CALORIES_BURNED_CALCULATOR": "Spalone kalorie",
       "CALORIES_BURNED_CALCULATOR_DESC": "Oblicz ilość spalonych kalorii podczas biegu",
       "VO2MAX_CALCULATOR": "Kalkulator VO₂ Max",
-      "VO2MAX_CALCULATOR_DESC": "Oszacuj maksymalny pobór tlenu (VO₂ Max)"
+      "VO2MAX_CALCULATOR_DESC": "Oszacuj maksymalny pobór tlenu (VO₂ Max)",
+      "BMI_CALCULATOR": "BMI i Skład Ciała",
+      "BMI_CALCULATOR_DESC": "Oblicz BMI i oszacuj tkankę tłuszczową zaawansowanymi metodami"
     },
     "UNITS": {
       "TITLE": "Przeliczniki",
@@ -45,12 +47,17 @@
     "CUSTOMIZABLE_DESC": "Dostosuj jednostki i ustawienia według własnych potrzeb."
   },
   "COMMON": {
+    "AGE": "Wiek",
+    "SEX": "Płeć",
+    "SEX_F": "Kobieta",
+    "SEX_M": "Mężczyzna",
     "DISTANCE": "Dystans",
     "DISTANCE_SELECT": "Wybierz dystans biegu",
     "TIME": "Czas",
     "PACE": "Tempo",
     "SPEED": "Prędkość",
     "WEIGHT": "Waga",
+    "HEIGHT": "Wzrost",
     "USE": "Użyj",
     "SELECT_UNITS": "Wybierz jednostki",
     "KILOMETERS": "Kilometry",
@@ -67,46 +74,118 @@
       "10K": "10 km",
       "HALF_MARATHON": "Półmaraton",
       "HALF_MARATHON_SHORT": "Połówka",
-      "MARATHON": "Maraton"
+      "MARATHON": "Maraton",
+      "MARATHON_SHORT": "Maraton"
     },
     "LANGUAGUE": {
       "TITLE": "Język",
       "SELECT": "Wybierz język"
+    },
+    "BMI_CATEGORY": {
+      "UNDER": "Niedowaga",
+      "NORMAL": "Waga prawidłowa",
+      "OVER": "Nadwaga",
+      "OBESITY": "Otyłość"
     }
   },
   "TOOLS": {
     "CALORIES_BURNED_CALCULATOR": {
       "TITLE": "Oblicz spalone kalorie",
       "DESCRIPTION": "Podaj dystans, tempo oraz wagę ciała, aby oszacować spalone kalorie.",
-      "SUMMARY": "Szacunkowa liczba spalonych kalorii: {{calories}} kcal."
+      "SUMMARY": "Szacunkowa liczba spalonych kalorii: {{calories}} kcal.",
+      "SUMMARY_TITLE": "Spalone Kalorie",
+      "SUMMARY_SUB": "Na podstawie dystansu, czasu i wagi."
     },
     "VO2MAX_CALCULATOR": {
       "TITLE": "Oblicz VO₂max",
       "DESCRIPTION": "Podaj dystans i czas biegu, aby oszacować swoją wydolność tlenową.",
-      "SUMMARY": "Twoje VO₂max wynosi około {{vo2Max}}."
+      "SUMMARY": "Twoje VO₂max wynosi około {{vo2Max}}.",
+      "RESULT_TITLE": "Wynik VO₂ Max",
+      "RESULT_SUBTITLE": "Twoja szacowana maksymalna wydolność tlenowa",
+      "UNIT": "ml/kg/min"
     },
     "FINISH_TIME_PREDICTOR": {
       "TITLE": "Prognoza czasu biegu",
-      "DESCRIPTION": "Szacuj czas ukończenia biegu dla różnych dystansów na podstawie ostatniego biegu."
+      "DESCRIPTION": "Szacuj czas ukończenia biegu dla różnych dystansów na podstawie ostatniego biegu.",
+      "SUMMARY": "Przewidywane Czasy Biegu",
+      "SUMMARY_SUB": "Na podstawie aktualnego tempa"
     },
     "PACE_CALCULATOR": {
       "TITLE": "Kalkulator tempa",
-      "DESCRIPTION": "Zmieniaj czas, dystans lub tempo – obliczymy pozostałe wartości."
+      "DESCRIPTION": "Zmieniaj czas, dystans lub tempo – obliczymy pozostałe wartości.",
+      "SUMMARY": "Podsumowanie Tempa"
     },
     "DISTANCE_UNIT_CONVERTER": {
       "TITLE": "Kilometry i mile",
       "DESCRIPTION": "Szybko przelicz odległości pomiędzy kilometrami a milami.",
-      "SUMMARY": "Kilometry: {{kmDistance}} • Mile: {{miDistance}}"
+      "SUMMARY": "Kilometry: {{kmDistance}} • Mile: {{miDistance}}",
+      "RESULT_TITLE": "Przeliczanie Dystansu",
+      "RESULT_SUBTITLE": "Równoważne odległości w kilometrach i milach"
     },
     "PACE_SPEED_UNIT_CONVERTER": {
       "TITLE": "Tempo i prędkość",
       "DESCRIPTION": "Oblicz tempo na podstawie prędkości lub odwrotnie.",
-      "SUMMARY": "Tempo: {{pace}} • Prędkość: {{speed}}"
+      "SUMMARY": "Tempo: {{pace}} • Prędkość: {{speed}}",
+      "RESULT_TITLE": "Przeliczanie Tempa i Prędkości",
+      "RESULT_SUBTITLE": "Równoważne wartości tempa i prędkości"
     },
     "WEIGHT_UNIT_CONVERTER": {
       "TITLE": "Kilogramy i funty",
       "DESCRIPTION": "Przelicz wagę między kilogramami a funtami.",
-      "SUMMARY": "Kilogramy: {{kg}} • Funty: {{lb}}"
+      "SUMMARY": "Kilogramy: {{kg}} • Funty: {{lb}}",
+      "RESULT_TITLE": "Przeliczanie Wagi",
+      "RESULT_SUBTITLE": "Równoważne wagi w kilogramach i funtach"
+    },
+    "BMI_CALCULATOR": {
+      "TITLE": "Skład Ciała",
+      "DESCRIPTION": "Oblicz swoje BMI i oszacuj tkankę tłuszczową używając różnych metod dla pełnej analizy składu ciała. Zawiera:",
+      "DESCRIPTION_2": "<ul class='list-disc list-inside ml-4 space-y-1'><li>Standardowe BMI</li><li>Nowe BMI - dostosowane do wzrostu</li><li>IBW - idealna masa ciała</li><li>% Tkanki tłuszczowej - szacowane wzorem Deurenberga</li><li>BMR - kalorie spalane w spoczynku</li></ul>",
+      "RESULT_TITLE": "Twoje Wskaźniki Zdrowia",
+      "RESULT_SUBTITLE": "Na podstawie wzrostu, wagi, wieku i płci",
+      "BMI": {
+        "SUMMARY": "BMI",
+        "CATEGORY": {
+          "UNDERWEIGHT": "Niedowaga",
+          "NORMAL": "Prawidłowa",
+          "OVERWEIGHT": "Nadwaga",
+          "OBESE": "Otyłość"
+        }
+      },
+      "NEW_BMI": {
+        "SUMMARY": "Nowe BMI",
+        "CATEGORY": {
+          "UNDERWEIGHT": "Niedowaga",
+          "NORMAL": "Zdrowa waga",
+          "OVERWEIGHT": "Lekka nadwaga",
+          "OBESE": "Otyłość"
+        }
+      },
+      "BODY_FAT": {
+        "SUMMARY": "Tkanka Tłuszczowa",
+        "CATEGORY": {
+          "BELOW_ESSENTIAL": "Niebezpiecznie niska",
+          "ESSENTIAL": "Minimalny poziom zdrowia",
+          "ATHLETE": "Sylwetka sportowca",
+          "FITNESS": "Sprawne ciało",
+          "AVERAGE": "Średnia",
+          "OBESE": "Otyłość"
+        }
+      },
+      "BMR": {
+        "SUMMARY": "BMR",
+        "CATEGORY": {
+          "BMR_OK": "Kalorie spalane w spoczynku"
+        }
+      },
+      "IBW": {
+        "SUMMARY": "IBW",
+        "CATEGORY": {
+          "IBW_BAD": "Twoja waga jest daleka od idealnej",
+          "IBW_IMPROVE": "Twoja waga mogłaby być lepsza",
+          "IBW_OK": "Twoja waga jest akceptowalna",
+          "IBW_IDEAL": "Twoja waga jest idealna"
+        }
+      }
     }
   }
 }

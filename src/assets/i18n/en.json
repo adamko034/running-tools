@@ -140,6 +140,8 @@
       "TITLE": "Body Composition",
       "DESCRIPTION": "Calculate your BMI and estimate body fat using multiple methods for a more complete view of your body composition. Includes:",
       "DESCRIPTION_2": "<ul class='list-disc list-inside ml-4 space-y-1'><li>Standard BMI</li><li>New BMI - height-adjusted BMI</li><li>IBW - ideal body weight</li><li>Body Fat % - estimated using Deurenberg formula</li><li>BMR - calories burned at rest</li></ul>",
+      "RESULT_TITLE": "Your Health Metrics",
+      "RESULT_SUBTITLE": "Based on your height, weight, age and sex",
       "BMI": {
         "SUMMARY": "BMI",
         "CATEGORY": {
