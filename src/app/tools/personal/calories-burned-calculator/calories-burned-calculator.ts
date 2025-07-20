@@ -1,5 +1,6 @@
 import { Component, computed, inject } from '@angular/core';
 import { CalculatorsFacade } from '../../../core/business/calculators-facade';
+import { SeoService } from '../../../core/services/seo.service';
 import { StoreService } from '../../../core/store/store.service';
 import { DistanceStoreFormField } from '../../../shared/components/store/distance-store-form-field/distance-store-form-field';
 import { WeightStoreFormField } from '../../../shared/components/store/weight-store-form-field/weight-store-form-field';
@@ -24,6 +25,12 @@ import { ToolView } from './../../../shared/views/tool-view/tool-view';
 export class CaloriesBurnedCalculator {
   private store = inject(StoreService);
   private calculators = inject(CalculatorsFacade);
+  private seoService = inject(SeoService);
+
+  constructor() {
+    // Set SEO meta tags for calories burned calculator
+    this.seoService.updateCaloriesBurnedMeta();
+  }
 
   calories = computed(() => {
     const distance = this.store.distance();

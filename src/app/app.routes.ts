@@ -8,7 +8,7 @@ const commonRoutes: Routes = [
       import('./home/home.component').then(m => m.HomeComponent),
   },
   {
-    path: 'race',
+    path: 'tools/race',
     children: [
       {
         path: 'pace-calculator',
@@ -27,7 +27,7 @@ const commonRoutes: Routes = [
     ],
   },
   {
-    path: 'personal',
+    path: 'tools/personal',
     children: [
       {
         path: 'vo2max-calculator',
@@ -53,7 +53,7 @@ const commonRoutes: Routes = [
     ],
   },
   {
-    path: 'units',
+    path: 'tools/units',
     children: [
       {
         path: 'pace-to-speed',

@@ -1,4 +1,5 @@
 import { CommonModule } from '@angular/common';
+import { SeoService } from '../../../core/services/seo.service';
 import { Component, effect, inject } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { TranslateModule } from '@ngx-translate/core';
@@ -35,6 +36,7 @@ import { ToolView } from '../../../shared/views/tool-view/tool-view';
 export class BmiCalculator {
   private store = inject(StoreService);
   private facade = inject(CalculatorsFacade);
+  private seoService = inject(SeoService);
 
   public bmi = 0;
   public bmiCategory = BmiCategory.NORMAL;
@@ -49,6 +51,9 @@ export class BmiCalculator {
   };
 
   constructor() {
+    // Set SEO meta tags for BMI calculator
+    this.seoService.updateBmiCalculatorMeta();
+    
     effect(() => {
       const height = this.store.height();
       const weight = this.store.weight();

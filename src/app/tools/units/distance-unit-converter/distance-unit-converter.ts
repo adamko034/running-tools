@@ -1,8 +1,8 @@
-import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { Distance } from '../../../core/business/model/distance.model';
 import { DistanceUnit } from '../../../core/business/model/enums/distance-unit.enum';
+import { SeoService } from '../../../core/services/seo.service';
 import { StoreService } from '../../../core/store/store.service';
 import { DistanceQuickSelectors } from '../../../shared/components/business/distance-quick-selectors/distance-quick-selectors';
 import { FancyResult } from '../../../shared/components/ui/fancy-result/fancy-result';
@@ -22,6 +22,12 @@ import { ToolView } from '../../../shared/views/tool-view/tool-view';
 })
 export class DistanceUnitConverter {
   private store = inject(StoreService);
+  private seoService = inject(SeoService);
+
+  constructor() {
+    // Set SEO meta tags for distance converter
+    this.seoService.updateDistanceConverterMeta();
+  }
 
   kmDistance = this.store.distance().clone();
   miDistance = this.kmDistance.cloneAndConvert(DistanceUnit.MI);

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -10,8 +10,8 @@ import { Navigation } from './core/navigation/navigation.model';
 import { NavigationService } from './core/services/navigation.service';
 import { RouterService } from './core/services/router.service';
 import { UiService } from './core/services/ui.service';
-import { UnitStoreSelector } from './shared/components/store/unit-store-selector/unit-store-selector';
 import { LanguageStoreSelector } from './shared/components/store/language-store-selector/language-store-selector';
+import { UnitStoreSelector } from './shared/components/store/unit-store-selector/unit-store-selector';
 
 @Component({
   selector: 'app-root',

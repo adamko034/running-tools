@@ -1,5 +1,6 @@
 import { Component, computed, inject, Signal } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
+import { SeoService } from '../../../core/services/seo.service';
 import { MatIconModule } from '@angular/material/icon';
 import { TranslateModule } from '@ngx-translate/core';
 import { CalculatorsFacade } from '../../../core/business/calculators-facade';
@@ -30,6 +31,12 @@ import { ToolView } from '../../../shared/views/tool-view/tool-view';
 export class FinishTimePredictor {
   private store = inject(StoreService);
   private calculators = inject(CalculatorsFacade);
+  private seoService = inject(SeoService);
+
+  constructor() {
+    // Set SEO meta tags for finish time predictor
+    this.seoService.updateFinishTimePredictorMeta();
+  }
 
   public raceTimes: Signal<FinishTime[]> = computed(() => {
     const knownTime = this.store.time();

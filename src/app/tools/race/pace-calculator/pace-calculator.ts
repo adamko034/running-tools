@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, computed, inject } from '@angular/core';
+import { SeoService } from '../../../core/services/seo.service';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -31,6 +32,12 @@ import { StoreService } from './../../../core/store/store.service';
 })
 export class PaceCalculator {
   private storeService = inject(StoreService);
+  private seoService = inject(SeoService);
+
+  constructor() {
+    // Set SEO meta tags for pace calculator
+    this.seoService.updatePaceCalculatorMeta();
+  }
 
   summary = computed(() => this.getSummary(this.storeService.store()));
 

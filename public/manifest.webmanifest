@@ -1,6 +1,6 @@
 {
-  "name": "running-tools",
-  "short_name": "running-tools",
+  "name": "Runner Toolkit - Running Calculator & Performance Tools",
+  "short_name": "Runner Toolkit",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",

@@ -43,13 +43,13 @@ export class NavigationService {
           links: [
             {
               text: translations['NAVIGATION.RACE.PACE_CALCULATOR'],
-              link: 'race/pace-calculator',
+              link: 'tools/race/pace-calculator',
               description: translations['NAVIGATION.RACE.PACE_CALCULATOR_DESC'],
               icon: 'speed',
             },
             {
               text: translations['NAVIGATION.RACE.FINISH_TIME_PREDICTOR'],
-              link: 'race/finish-time-predictor',
+              link: 'tools/race/finish-time-predictor',
               description:
                 translations['NAVIGATION.RACE.FINISH_TIME_PREDICTOR_DESC'],
               icon: 'flag',
@@ -61,7 +61,7 @@ export class NavigationService {
           links: [
             {
               text: translations['NAVIGATION.PERSONAL.BMI_CALCULATOR'],
-              link: 'personal/bmi-calculator',
+              link: 'tools/personal/bmi-calculator',
               description:
                 translations['NAVIGATION.PERSONAL.BMI_CALCULATOR_DESC'],
               icon: 'monitor_weight',
@@ -70,7 +70,7 @@ export class NavigationService {
               text: translations[
                 'NAVIGATION.PERSONAL.CALORIES_BURNED_CALCULATOR'
               ],
-              link: 'personal/burned-calories-estimator',
+              link: 'tools/personal/burned-calories-estimator',
               description:
                 translations[
                   'NAVIGATION.PERSONAL.CALORIES_BURNED_CALCULATOR_DESC'
@@ -79,7 +79,7 @@ export class NavigationService {
             },
             {
               text: translations['NAVIGATION.PERSONAL.VO2MAX_CALCULATOR'],
-              link: 'personal/vo2max-calculator',
+              link: 'tools/personal/vo2max-calculator',
               description:
                 translations['NAVIGATION.PERSONAL.VO2MAX_CALCULATOR_DESC'],
               icon: 'favorite',
@@ -91,21 +91,21 @@ export class NavigationService {
           links: [
             {
               text: translations['NAVIGATION.UNITS.PACE_SPEED_CONVERTER'],
-              link: 'units/pace-to-speed',
+              link: 'tools/units/pace-to-speed',
               description:
                 translations['NAVIGATION.UNITS.PACE_SPEED_CONVERTER_DESC'],
               icon: 'swap_horiz',
             },
             {
               text: translations['NAVIGATION.UNITS.DISTANCE_CONVERTER'],
-              link: 'units/kilometers-to-miles',
+              link: 'tools/units/kilometers-to-miles',
               description:
                 translations['NAVIGATION.UNITS.DISTANCE_CONVERTER_DESC'],
               icon: 'straighten',
             },
             {
               text: translations['NAVIGATION.UNITS.WEIGHT_CONVERTER'],
-              link: 'units/kilograms-to-pounds',
+              link: 'tools/units/kilograms-to-pounds',
               description:
                 translations['NAVIGATION.UNITS.WEIGHT_CONVERTER_DESC'],
               icon: 'fitness_center',

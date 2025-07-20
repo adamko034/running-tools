@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
+import { SeoService } from '../../../core/services/seo.service';
 import { WeightUnit } from '../../../core/business/model/enums/weight-unit.enum';
 import { StoreService } from '../../../core/store/store.service';
 import { FancyResult } from '../../../shared/components/ui/fancy-result/fancy-result';
@@ -13,6 +14,12 @@ import { ToolView } from '../../../shared/views/tool-view/tool-view';
 })
 export class WeightUnitConverter {
   private store = inject(StoreService);
+  private seoService = inject(SeoService);
+
+  constructor() {
+    // Set SEO meta tags for weight converter
+    this.seoService.updateWeightConverterMeta();
+  }
 
   private weight = this.store.weight();
 
