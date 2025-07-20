@@ -97,7 +97,22 @@
       "DESCRIPTION": "Podaj dystans, tempo oraz wagę ciała, aby oszacować spalone kalorie.",
       "SUMMARY": "Szacunkowa liczba spalonych kalorii: {{calories}} kcal.",
       "SUMMARY_TITLE": "Spalone Kalorie",
-      "SUMMARY_SUB": "Na podstawie dystansu, czasu i wagi."
+      "SUMMARY_SUB": "Na podstawie dystansu, czasu i wagi.",
+      "FAQ": {
+        "TITLE": "Najczęściej Zadawane Pytania",
+        "Q1": "Jak dokładne jest obliczanie spalonych kalorii?",
+        "A1": "Nasz kalkulator zapewnia szacunki oparte na ustalonych równaniach metabolicznych, które uwzględniają wagę, dystans i czas. Dokładność wynosi zazwyczaj 10-15% dla większości biegaczy. Czynniki indywidualne jak poziom kondycji, efektywność biegu i metabolizm mogą wpływać na rzeczywiste spalanie kalorii.",
+        "Q2": "Jakie czynniki wpływają na to, ile kalorii spalę podczas biegu?",
+        "A2": "Kilka czynników wpływa na spalanie kalorii: masa ciała (ciężsi biegacze spalają więcej), prędkość i intensywność biegu, teren (wzgórza zwiększają spalanie), warunki pogodowe (upał/zimno wymagają więcej energii), i indywidualny metabolizm. Twój <a href='/tools/personal/bmi-calculator' class='text-blue-600 hover:text-blue-800 underline'>skład ciała</a> również odgrywa rolę w efektywności metabolicznej.",
+        "Q3": "Czy spalę więcej kalorii biegając szybciej czy dłużej?",
+        "A3": "Zarówno prędkość, jak i czas zwiększają spalanie kalorii, ale na różne sposoby. Szybszy bieg spala więcej kalorii na minutę, podczas gdy dłuższy bieg spala więcej kalorii łącznie. Do utraty wagi najważniejsze jest całkowite spalanie kalorii. Użyj naszego <a href='/tools/race/pace-calculator' class='text-blue-600 hover:text-blue-800 underline'>kalkulatora tempa</a> aby znaleźć zrównoważone prędkości dla dłuższych biegów.",
+        "Q4": "Jak moja waga wpływa na spalanie kalorii podczas biegu?",
+        "A4": "Ciężsi biegacze spalają więcej kalorii, ponieważ potrzeba więcej energii do poruszania większej masy. Ogólnie spalasz około 1,4 kalorii na kilogram masy ciała na kilometr. Dlatego waga jest najważniejszym czynnikiem w naszym obliczeniu.",
+        "Q5": "Czy powinienem uzupełniać kalorie, które spalę podczas biegu?",
+        "A5": "To zależy od twoich celów. Do utraty wagi stwórz umiarkowany deficyt kaloryczny, nie uzupełniając wszystkich spalonych kalorii. Do wydajności i regeneracji, szczególnie podczas intensywnego treningu, możesz potrzebować zastąpić większość spalonych kalorii. Monitoruj poziom energii i rozważ intensywność treningu przy planowaniu żywienia.",
+        "Q6": "Jak wykorzystać te informacje do zarządzania wagą?",
+        "A6": "Aby stracić 1 funt tłuszczu, musisz stworzyć deficyt około 3500 kalorii poprzez dietę i ćwiczenia łącznie. Śledź dzienne spalanie kalorii z biegu i połącz z <a href='/tools/personal/bmi-calculator' class='text-blue-600 hover:text-blue-800 underline'>BMR (podstawową przemianą materii)</a> aby zrozumieć całkowity dzienny wydatek energetyczny. Dąż do zrównoważonego deficytu 300-500 kalorii dziennie dla zdrowej utraty wagi."
+      }
     },
     "VO2MAX_CALCULATOR": {
       "TITLE": "Oblicz VO₂max",
@@ -111,12 +126,38 @@
       "TITLE": "Prognoza czasu biegu",
       "DESCRIPTION": "Szacuj czas ukończenia biegu dla różnych dystansów na podstawie ostatniego biegu.",
       "SUMMARY": "Przewidywane Czasy Biegu",
-      "SUMMARY_SUB": "Na podstawie aktualnego tempa"
+      "SUMMARY_SUB": "Na podstawie aktualnego tempa",
+      "FAQ": {
+        "TITLE": "Najczęściej Zadawane Pytania",
+        "Q1": "Jak dokładne są prognozy czasu wyścigu?",
+        "A1": "Prognozy czasu wyścigu to szacunki oparte na twoim obecnym poziomie kondycji i sprawdzonych formułach matematycznych. Są zazwyczaj dokładne w granicach 2-5% dla dobrze wytrenowanych biegaczy w podobnych warunkach terenu i pogody. Twoja rzeczywista wydajność może się różnić w zależności od treningu, <a href='/tools/personal/vo2max-calculator' class='text-blue-600 hover:text-blue-800 underline'>poziomu kondycji</a>, warunków dnia wyścigu i strategii tempa.",
+        "Q2": "Jaki dystans wyścigu najlepiej użyć do prognoz?",
+        "A2": "Ostatnie czasy wyścigów od 5K do półmaratonu zapewniają najdokładniejsze prognozy. Czas 10K jest często uważany za złoty standard do przewidywania dłuższych dystansów. Użyj swojego najnowszego wyniku wyścigu (w ciągu 6 miesięcy) dla najlepszej dokładności. Oblicz swoje docelowe <a href='/tools/race/pace-calculator' class='text-blue-600 hover:text-blue-800 underline'>tempo wyścigu</a> na podstawie tych prognoz.",
+        "Q3": "Dlaczego moje przewidywane czasy wydają się za szybkie lub wolne?",
+        "A3": "Prognozy zakładają stały trening i podobne warunki wyścigu. Jeśli prognozy wydają się szybkie, możesz potrzebować więcej treningu wytrzymałościowego na dłuższe dystanse. Jeśli wydają się wolne, możesz być niedotrenowany na krótsze wyścigi skupione na prędkości. Rozważ swój obecny wolumen treningowy i <a href='/tools/personal/burned-calories-estimator' class='text-blue-600 hover:text-blue-800 underline'>wydatek energetyczny</a> przy ocenie prognoz.",
+        "Q4": "Jak powinienem trenować na podstawie tych prognoz?",
+        "A4": "Użyj przewidywanych czasów do ustalenia realistycznych celów wyścigowych i określenia temp treningowych. Do treningu maratońskiego celuj w długie biegi o 30-90 sekund na milę wolniejsze niż przewidywane tempo maratońskie. Do treningu 5K/10K włącz interwały w przewidywanym tempie lub nieco szybciej. Monitoruj swój postęp regularnymi testami czasowymi.",
+        "Q5": "Czy te prognozy działają dla wszystkich biegaczy?",
+        "A5": "Prognozy działają najlepiej dla wytrenowanych biegaczy z konsekwentnym doświadczeniem wyścigowym. Mogą być mniej dokładne dla początkujących, biegaczy wracających po kontuzji lub tych ze znacznymi nierównowagami siły/prędkości. Elitarni i rekreacyjni biegacze mogą widzieć różne poziomy dokładności ze względu na specyfikę treningu i różnice w <a href='/tools/personal/vo2max-calculator' class='text-blue-600 hover:text-blue-800 underline'>pojemności tlenowej</a>."
+      }
     },
     "PACE_CALCULATOR": {
       "TITLE": "Kalkulator tempa",
       "DESCRIPTION": "Zmieniaj czas, dystans lub tempo – obliczymy pozostałe wartości.",
-      "SUMMARY": "Podsumowanie Tempa"
+      "SUMMARY": "Podsumowanie Tempa",
+      "FAQ": {
+        "TITLE": "Najczęściej Zadawane Pytania",
+        "Q1": "Jakie jest dobre tempo biegu dla początkujących?",
+        "A1": "Dla początkujących dobre tempo biegu to takie, przy którym można prowadzić rozmowę podczas biegania. Zwykle wynosi to 5:30-7:30 na kilometr. Skup się na regularności i stopniowym budowaniu wytrzymałości zamiast na prędkości na początku.",
+        "Q2": "Jak obliczyć docelowe tempo maratońskie?",
+        "A2": "Twoje tempo maratońskie powinno być o 15-30 sekund na kilometr wolniejsze niż tempo na 10K. Użyj ostatnich czasów z zawodów z naszą <a href='/tools/race/finish-time-predictor' class='text-blue-600 hover:text-blue-800 underline'>Prognozą czasu</a> do przewidzenia tempa maratońskiego i ćwicz bieganie w tym tempie podczas długich treningów.",
+        "Q3": "Jaka jest różnica między tempem a prędkością?",
+        "A3": "Tempo to czas na dystans (np. 6:00 na kilometr), podczas gdy prędkość to dystans na czas (np. 10 km/h). Biegacze zwykle używają tempa, ponieważ łatwiej jest utrzymać stały poziom wysiłku i planować strategie wyścigowe.",
+        "Q4": "Jak powinienem rozłożyć tempo na różnych dystansach wyścigowych?",
+        "A4": "5K: Zacznij nieco wolniej niż docelowe tempo, przyspiesz w środku, mocno finiszuj. 10K: Równe tempo przez cały bieg. Półmaraton: Zacznij ostrożnie, negatywny split jeśli możliwe. Maraton: Równe tempo jest kluczowe, oszczędzaj energię na ostatnie 10K.",
+        "Q5": "Jakie czynniki wpływają na moje tempo biegu?",
+        "A5": "Pogoda (upał/wilgotność spowalniają), teren (wzgórza i szlaki są wolniejsze), wysokość (większa wysokość zmniejsza tempo), poziom zmęczenia, nawodnienie i odżywianie - wszystko to znacząco wpływa na tempo biegu. Śledź swoje <a href='/tools/personal/burned-calories-estimator' class='text-blue-600 hover:text-blue-800 underline'>spalone kalorie</a> aby zoptymalizować strategię żywieniową."
+      }
     },
     "DISTANCE_UNIT_CONVERTER": {
       "TITLE": "Kilometry i mile",
@@ -188,6 +229,21 @@
           "IBW_OK": "Twoja waga jest akceptowalna",
           "IBW_IDEAL": "Twoja waga jest idealna"
         }
+      },
+      "FAQ": {
+        "TITLE": "Najczęściej Zadawane Pytania",
+        "Q1": "Jakie BMI jest zdrowe dla biegaczy?",
+        "A1": "Dla biegaczy BMI między 18,5-24,9 jest uważane za zdrowe. Jednak wielu elitarnych biegaczy długodystansowych ma BMI na dolnym końcu (18,5-22) ze względu na szczupłą masę mięśniową i niski poziom tkanki tłuszczowej. Obliczenie \"Nowego BMI\" w naszym narzędziu zapewnia dokładniejszą ocenę dla wyższych sportowców.",
+        "Q2": "Jaka jest różnica między BMI a Nowym BMI?",
+        "A2": "Tradycyjne BMI może być niedokładne dla bardzo wysokich lub niskich osób. \"Nowe BMI\" używa wykładnika wzrostu 2,5 zamiast 2, zapewniając dokładniejsze wyniki dla sportowców i osób poza przeciętnymi zakresami wzrostu. Jest to szczególnie przydatne dla biegaczy, którzy zwykle są wyżsi.",
+        "Q3": "Jak obliczyć moje BMR (Podstawowa Przemiana Materii)?",
+        "A3": "BMR to liczba kalorii, które twoje ciało spala w spoczynku. Nasz kalkulator używa równania Mifflin-St Jeor, uważanego za najdokładniejsze. Dla biegaczy znajomość BMR pomaga określić dzienne zapotrzebowanie kaloryczne na trening i regenerację. Pomnóż swoje BMR przez 1,6-1,9 w zależności od intensywności treningu. Użyj naszego <a href='/tools/personal/burned-calories-estimator' class='text-blue-600 hover:text-blue-800 underline'>Kalkulatora spalonych kalorii</a> aby oszacować kalorie spalone podczas biegania.",
+        "Q4": "Co to jest Idealna Masa Ciała (IBW) i dlaczego ma znaczenie?",
+        "A4": "IBW to twoja optymalna waga oparta na wzroście i płci przy użyciu wzoru Devine. Dla biegaczy bycie blisko IBW może poprawić wydajność poprzez optymalizację stosunku mocy do wagi. Jednak masa mięśniowa i skład ciała są ważniejsze niż osiągnięcie dokładnej liczby.",
+        "Q5": "Jak dokładne jest obliczanie procentu tkanki tłuszczowej?",
+        "A5": "Nasz kalkulator tkanki tłuszczowej używa wzoru Deurenberga, który zapewnia rozsądne oszacowanie oparte na BMI, wieku i płci. Dla biegaczy zdrowe zakresy tkanki tłuszczowej to zwykle 6-13% dla mężczyzn i 14-20% dla kobiet. Dla dokładniejszych pomiarów rozważ skany DEXA lub ważenie hydrostatyczne.",
+        "Q6": "Czy biegacze powinni skupić się na BMI czy składzie ciała?",
+        "A6": "Chociaż BMI jest przydatnym narzędziem przesiewowym, biegacze powinni skupić się bardziej na składzie ciała (stosunek mięśni do tłuszczu). Biegacz z wysoką masą mięśniową może mieć wyższe BMI, ale doskonałe zdrowie. Używaj BMI wraz z procentem tkanki tłuszczowej i wskaźnikami wydajności jak <a href='/tools/personal/vo2max-calculator' class='text-blue-600 hover:text-blue-800 underline'>VO2 Max</a> dla pełnego obrazu."
       }
     }
   }

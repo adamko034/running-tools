@@ -39,4 +39,38 @@
       </div>
     </app-fancy-result>
   </ng-container>
+
+  <!-- FAQ Section -->
+  <ng-container tool-faq>
+    <app-faq-section>
+      <div faq-title>{{ 'TOOLS.FINISH_TIME_PREDICTOR.FAQ.TITLE' | translate }}</div>
+      
+      <div faq-items>
+        <app-faq-item>
+          <div faq-question>{{ 'TOOLS.FINISH_TIME_PREDICTOR.FAQ.Q1' | translate }}</div>
+          <div faq-answer [innerHTML]="'TOOLS.FINISH_TIME_PREDICTOR.FAQ.A1' | translate"></div>
+        </app-faq-item>
+
+        <app-faq-item>
+          <div faq-question>{{ 'TOOLS.FINISH_TIME_PREDICTOR.FAQ.Q2' | translate }}</div>
+          <div faq-answer [innerHTML]="'TOOLS.FINISH_TIME_PREDICTOR.FAQ.A2' | translate"></div>
+        </app-faq-item>
+
+        <app-faq-item>
+          <div faq-question>{{ 'TOOLS.FINISH_TIME_PREDICTOR.FAQ.Q3' | translate }}</div>
+          <div faq-answer [innerHTML]="'TOOLS.FINISH_TIME_PREDICTOR.FAQ.A3' | translate"></div>
+        </app-faq-item>
+
+        <app-faq-item>
+          <div faq-question>{{ 'TOOLS.FINISH_TIME_PREDICTOR.FAQ.Q4' | translate }}</div>
+          <div faq-answer [innerHTML]="'TOOLS.FINISH_TIME_PREDICTOR.FAQ.A4' | translate"></div>
+        </app-faq-item>
+
+        <app-faq-item>
+          <div faq-question>{{ 'TOOLS.FINISH_TIME_PREDICTOR.FAQ.Q5' | translate }}</div>
+          <div faq-answer [innerHTML]="'TOOLS.FINISH_TIME_PREDICTOR.FAQ.A5' | translate"></div>
+        </app-faq-item>
+      </div>
+    </app-faq-section>
+  </ng-container>
 </app-tool-view>

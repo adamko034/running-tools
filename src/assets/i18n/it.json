@@ -97,7 +97,22 @@
       "DESCRIPTION": "Inserisci distanza, ritmo e peso per stimare le calorie consumate.",
       "SUMMARY": "Hai bruciato circa {{calories}} kcal.",
       "SUMMARY_TITLE": "Calorie Bruciate",
-      "SUMMARY_SUB": "Basato su distanza, tempo e peso."
+      "SUMMARY_SUB": "Basato su distanza, tempo e peso.",
+      "FAQ": {
+        "TITLE": "Domande Frequenti",
+        "Q1": "Quanto è accurato il calcolo delle calorie bruciate?",
+        "A1": "La nostra calcolatrice fornisce stime basate su equazioni metaboliche consolidate che considerano peso, distanza e tempo. L'accuratezza è tipicamente del 10-15% per la maggior parte dei corridori. Fattori individuali come livello di fitness, efficienza di corsa e metabolismo possono influenzare il consumo calorico reale.",
+        "Q2": "Quali fattori influenzano quante calorie brucio correndo?",
+        "A2": "Diversi fattori influenzano il consumo calorico: peso corporeo (corridori più pesanti bruciano di più), velocità e intensità di corsa, terreno (le salite aumentano il consumo), condizioni meteorologiche (caldo/freddo richiedono più energia), e metabolismo individuale. La tua <a href='/tools/personal/bmi-calculator' class='text-blue-600 hover:text-blue-800 underline'>composizione corporea</a> gioca anche un ruolo nell'efficienza metabolica.",
+        "Q3": "Brucio più calorie correndo più veloce o più a lungo?",
+        "A3": "Sia velocità che durata aumentano il consumo calorico, ma in modi diversi. Correre più veloce brucia più calorie al minuto, mentre correre più a lungo brucia più calorie totali. Per la perdita di peso, il consumo calorico totale è più importante. Usa il nostro <a href='/tools/race/pace-calculator' class='text-blue-600 hover:text-blue-800 underline'>calcolatore di ritmo</a> per trovare velocità sostenibili per corse più lunghe.",
+        "Q4": "Come influisce il mio peso sul consumo calorico durante la corsa?",
+        "A4": "I corridori più pesanti bruciano più calorie perché serve più energia per muovere una massa maggiore. Generalmente, bruci circa 1,4 calorie per chilogrammo di peso corporeo per chilometro. Ecco perché il peso è il fattore più importante nel nostro calcolo.",
+        "Q5": "Dovrei reintegrare le calorie che brucio correndo?",
+        "A5": "Dipende dai tuoi obiettivi. Per la perdita di peso, crea un deficit calorico moderato non reintegrando tutte le calorie bruciate. Per performance e recupero, specialmente durante allenamenti intensi, potresti dover sostituire la maggior parte delle calorie bruciate. Monitora i tuoi livelli di energia e considera l'intensità del tuo allenamento nella pianificazione nutrizionale.",
+        "Q6": "Come uso queste informazioni per la gestione del peso?",
+        "A6": "Per perdere 1 libbra di grasso, devi creare un deficit di circa 3.500 calorie attraverso dieta ed esercizio combinati. Traccia il tuo consumo calorico giornaliero dalla corsa e combinalo con il tuo <a href='/tools/personal/bmi-calculator' class='text-blue-600 hover:text-blue-800 underline'>BMR (tasso metabolico basale)</a> per capire il tuo dispendio energetico giornaliero totale. Punta a un deficit sostenibile di 300-500 calorie al giorno per una perdita di peso sana."
+      }
     },
     "VO2MAX_CALCULATOR": {
       "TITLE": "Calcolo VO₂ Max",
@@ -111,12 +126,38 @@
       "TITLE": "Previsione tempo finale",
       "DESCRIPTION": "Prevedi i tuoi tempi su distanze comuni usando una corsa recente.",
       "SUMMARY": "Tempi di Gara Previsti",
-      "SUMMARY_SUB": "Basato sul tuo ritmo attuale"
+      "SUMMARY_SUB": "Basato sul tuo ritmo attuale",
+      "FAQ": {
+        "TITLE": "Domande Frequenti",
+        "Q1": "Quanto sono accurate le previsioni dei tempi di gara?",
+        "A1": "Le previsioni dei tempi di gara sono stime basate sul tuo livello di forma attuale e formule matematiche comprovate. Sono tipicamente accurate entro il 2-5% per corridori ben allenati in condizioni simili di terreno e meteo. La tua performance reale può variare in base all'allenamento, <a href='/tools/personal/vo2max-calculator' class='text-blue-600 hover:text-blue-800 underline'>livello di forma</a>, condizioni del giorno di gara e strategia di ritmo.",
+        "Q2": "Qual è la migliore distanza di gara da usare per le previsioni?",
+        "A2": "I tempi di gara recenti da 5K a mezza maratona forniscono le previsioni più accurate. Un tempo sui 10K è spesso considerato il gold standard per predire distanze più lunghe. Usa il tuo risultato di gara più recente (entro 6 mesi) per la migliore accuratezza. Calcola il tuo <a href='/tools/race/pace-calculator' class='text-blue-600 hover:text-blue-800 underline'>ritmo di gara</a> target basato su queste previsioni.",
+        "Q3": "Perché i miei tempi previsti sembrano troppo veloci o lenti?",
+        "A3": "Le previsioni assumono allenamento costante e condizioni di gara simili. Se le previsioni sembrano veloci, potresti aver bisogno di più allenamento di resistenza per distanze più lunghe. Se sembrano lente, potresti essere sotto-allenato per gare brevi focalizzate sulla velocità. Considera il tuo volume di allenamento attuale e il <a href='/tools/personal/burned-calories-estimator' class='text-blue-600 hover:text-blue-800 underline'>dispendio energetico</a> quando valuti le previsioni.",
+        "Q4": "Come dovrei allenarmi basandomi su queste previsioni?",
+        "A4": "Usa i tempi previsti per stabilire obiettivi di gara realistici e determinare i ritmi di allenamento. Per l'allenamento maratona, punta a corse lunghe 30-90 secondi per miglio più lente del ritmo maratona previsto. Per l'allenamento 5K/10K, includi intervalli al ritmo previsto o leggermente più veloce. Monitora i tuoi progressi con prove a tempo regolari.",
+        "Q5": "Queste previsioni funzionano per tutti i corridori?",
+        "A5": "Le previsioni funzionano meglio per corridori allenati con esperienza di gara costante. Possono essere meno accurate per principianti, corridori che tornano da infortuni, o quelli con squilibri significativi forza/velocità. Corridori élite e ricreativi possono vedere diversi livelli di accuratezza a causa della specificità dell'allenamento e delle differenze nella <a href='/tools/personal/vo2max-calculator' class='text-blue-600 hover:text-blue-800 underline'>capacità aerobica</a>."
+      }
     },
     "PACE_CALCULATOR": {
       "TITLE": "Calcolatore ritmo",
       "DESCRIPTION": "Modifica tempo, distanza o ritmo per calcolare gli altri valori.",
-      "SUMMARY": "Riepilogo del tuo Ritmo"
+      "SUMMARY": "Riepilogo del tuo Ritmo",
+      "FAQ": {
+        "TITLE": "Domande Frequenti",
+        "Q1": "Qual è un buon ritmo di corsa per principianti?",
+        "A1": "Per i principianti, un buon ritmo di corsa è quello in cui puoi mantenere una conversazione mentre corri. Questo varia tipicamente tra 5:30-7:30 per chilometro. Concentrati sulla costanza e sviluppa gradualmente la resistenza piuttosto che la velocità inizialmente.",
+        "Q2": "Come calcolo il mio ritmo obiettivo per la maratona?",
+        "A2": "Il tuo ritmo maratona dovrebbe essere 15-30 secondi per chilometro più lento del tuo ritmo 10K. Usa i tempi di gara recenti con la nostra <a href='/tools/race/finish-time-predictor' class='text-blue-600 hover:text-blue-800 underline'>Previsione tempo finale</a> per predire il tuo ritmo maratona, e pratica correndo a questo ritmo durante gli allenamenti lunghi.",
+        "Q3": "Qual è la differenza tra ritmo e velocità?",
+        "A3": "Il ritmo è tempo per distanza (es: 6:00 per chilometro), mentre la velocità è distanza per tempo (es: 10 km/h). I corridori tipicamente usano il ritmo perché è più facile mantenere un livello di sforzo costante e pianificare strategie di gara.",
+        "Q4": "Come dovrei gestire il ritmo su diverse distanze di gara?",
+        "A4": "5K: Inizia leggermente più lento del ritmo obiettivo, accelera nel mezzo, finisci forte. 10K: Ritmo uniforme per tutta la gara. Mezza maratona: Inizia conservativamente, split negativo se possibile. Maratona: Il ritmo uniforme è cruciale, risparmia energia per i 10K finali.",
+        "Q5": "Quali fattori influenzano il mio ritmo di corsa?",
+        "A5": "Il tempo (caldo/umidità ti rallentano), il terreno (colline e sentieri sono più lenti), l'altitudine (elevazione maggiore riduce il ritmo), il livello di affaticamento, l'idratazione e la nutrizione influenzano tutti significativamente il tuo ritmo di corsa. Monitora le tue <a href='/tools/personal/burned-calories-estimator' class='text-blue-600 hover:text-blue-800 underline'>calorie bruciate</a> per ottimizzare la tua strategia nutrizionale."
+      }
     },
     "DISTANCE_UNIT_CONVERTER": {
       "TITLE": "Conversione distanza",
@@ -188,6 +229,21 @@
           "IBW_OK": "Il tuo peso è accettabile",
           "IBW_IDEAL": "Il tuo peso è ideale"
         }
+      },
+      "FAQ": {
+        "TITLE": "Domande Frequenti",
+        "Q1": "Qual è un BMI sano per i corridori?",
+        "A1": "Per i corridori, un BMI tra 18,5-24,9 è considerato sano. Tuttavia, molti corridori d'élite di lunga distanza hanno BMI più bassi (18,5-22) a causa della loro massa muscolare magra e del basso grasso corporeo. Il calcolo \"Nuovo BMI\" nel nostro strumento fornisce una valutazione più accurata per atleti più alti.",
+        "Q2": "Qual è la differenza tra BMI e Nuovo BMI?",
+        "A2": "Il BMI tradizionale può essere impreciso per persone molto alte o basse. Il \"Nuovo BMI\" usa un esponente di altezza di 2,5 invece di 2, fornendo risultati più accurati per atleti e persone al di fuori dei range di altezza medi. Questo è particolarmente utile per i corridori che tendono ad essere più alti.",
+        "Q3": "Come calcolo il mio BMR (Metabolismo Basale)?",
+        "A3": "Il BMR è il numero di calorie che il tuo corpo brucia a riposo. Il nostro calcolatore usa l'equazione Mifflin-St Jeor, considerata la più accurata. Per i corridori, conoscere il BMR aiuta a determinare il fabbisogno calorico giornaliero per allenamento e recupero. Moltiplica il tuo BMR per 1,6-1,9 a seconda dell'intensità di allenamento. Usa il nostro <a href='/tools/personal/burned-calories-estimator' class='text-blue-600 hover:text-blue-800 underline'>Calcolatore di Calorie Bruciate</a> per stimare le calorie bruciate durante la corsa.",
+        "Q4": "Cos'è il Peso Corporeo Ideale (IBW) e perché è importante?",
+        "A4": "L'IBW è il tuo peso ottimale basato su altezza e sesso usando la formula Devine. Per i corridori, essere vicini al proprio IBW può migliorare le prestazioni ottimizzando il rapporto potenza-peso. Tuttavia, la massa muscolare e la composizione corporea sono più importanti del raggiungere un numero esatto.",
+        "Q5": "Quanto è accurato il calcolo della percentuale di grasso corporeo?",
+        "A5": "Il nostro calcolatore di grasso corporeo usa la formula Deurenberg, che fornisce una stima ragionevole basata su BMI, età e sesso. Per i corridori, i range sani di grasso corporeo sono tipicamente 6-13% per gli uomini e 14-20% per le donne. Per misurazioni più precise, considera scansioni DEXA o pesatura idrostatica.",
+        "Q6": "I corridori dovrebbero concentrarsi sul BMI o sulla composizione corporea?",
+        "A6": "Mentre il BMI è uno strumento di screening utile, i corridori dovrebbero concentrarsi di più sulla composizione corporea (rapporto muscolo vs grasso). Un corridore con alta massa muscolare potrebbe avere un BMI più alto ma eccellente salute. Usa il BMI insieme alla percentuale di grasso corporeo e alle metriche di prestazione come <a href='/tools/personal/vo2max-calculator' class='text-blue-600 hover:text-blue-800 underline'>VO2 Max</a> per un quadro completo."
       }
     }
   }

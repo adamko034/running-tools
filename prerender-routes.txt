@@ -1,9 +1,0 @@
-/
-/tools/personal/bmi-calculator
-/tools/race/pace-calculator
-/tools/personal/vo2max-calculator
-/tools/personal/burned-calories-estimator
-/tools/race/finish-time-predictor
-/tools/units/pace-to-speed
-/tools/units/kilometers-to-miles
-/tools/units/kilograms-to-pounds

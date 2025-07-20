@@ -97,7 +97,22 @@
       "DESCRIPTION": "Indiquez votre distance, allure et poids pour estimer les calories brûlées.",
       "SUMMARY": "Vous avez brûlé environ {{calories}} kcal.",
       "SUMMARY_TITLE": "Calories Brûlées",
-      "SUMMARY_SUB": "Basé sur votre distance, temps et poids."
+      "SUMMARY_SUB": "Basé sur votre distance, temps et poids.",
+      "FAQ": {
+        "TITLE": "Questions Fréquemment Posées",
+        "Q1": "Quelle est la précision du calcul des calories brûlées ?",
+        "A1": "Notre calculatrice fournit des estimations basées sur des équations métaboliques établies qui considèrent votre poids, distance et temps. La précision est typiquement de 10-15% pour la plupart des coureurs. Des facteurs individuels comme le niveau de forme physique, l'efficacité de course et le métabolisme peuvent affecter la combustion réelle des calories.",
+        "Q2": "Quels facteurs affectent le nombre de calories que je brûle en courant ?",
+        "A2": "Plusieurs facteurs influencent la combustion des calories : le poids corporel (les coureurs plus lourds brûlent plus), la vitesse et l'intensité de course, le terrain (les collines augmentent la combustion), les conditions météorologiques (chaleur/froid nécessitent plus d'énergie), et le métabolisme individuel. Votre <a href='/tools/personal/bmi-calculator' class='text-blue-600 hover:text-blue-800 underline'>composition corporelle</a> joue aussi un rôle dans l'efficacité métabolique.",
+        "Q3": "Est-ce que je brûle plus de calories en courant plus vite ou plus longtemps ?",
+        "A3": "La vitesse et la durée augmentent toutes deux la combustion des calories, mais de différentes manières. Courir plus vite brûle plus de calories par minute, tandis que courir plus longtemps brûle plus de calories au total. Pour la perte de poids, la combustion totale des calories compte le plus. Utilisez notre <a href='/tools/race/pace-calculator' class='text-blue-600 hover:text-blue-800 underline'>calculateur d'allure</a> pour trouver des vitesses durables pour des courses plus longues.",
+        "Q4": "Comment mon poids affecte-t-il la combustion des calories pendant la course ?",
+        "A4": "Les coureurs plus lourds brûlent plus de calories car il faut plus d'énergie pour déplacer une masse plus importante. Généralement, vous brûlez environ 1,4 calories par kilogramme de poids corporel par kilomètre. C'est pourquoi le poids est le facteur le plus important dans notre calcul.",
+        "Q5": "Dois-je compenser les calories que je brûle en courant ?",
+        "A5": "Cela dépend de vos objectifs. Pour la perte de poids, créez un déficit calorique modéré en ne compensant pas toutes les calories brûlées. Pour la performance et la récupération, surtout pendant un entraînement intense, vous pourriez avoir besoin de remplacer la plupart des calories brûlées. Surveillez vos niveaux d'énergie et considérez l'intensité de votre entraînement lors de la planification nutritionnelle.",
+        "Q6": "Comment utiliser cette information pour la gestion du poids ?",
+        "A6": "Pour perdre 1 livre de graisse, vous devez créer un déficit d'environ 3 500 calories par l'alimentation et l'exercice combinés. Suivez votre combustion quotidienne de calories en courant et combinez avec votre <a href='/tools/personal/bmi-calculator' class='text-blue-600 hover:text-blue-800 underline'>BMR (taux métabolique de base)</a> pour comprendre votre dépense énergétique quotidienne totale. Visez un déficit durable de 300-500 calories par jour pour une perte de poids saine."
+      }
     },
     "VO2MAX_CALCULATOR": {
       "TITLE": "Calcul du VO₂ Max",
@@ -111,12 +126,38 @@
       "TITLE": "Estimation du temps d'arrivée",
       "DESCRIPTION": "Estimez votre temps de course sur différentes distances à partir d'une performance récente.",
       "SUMMARY": "Temps de Course Prédits",
-      "SUMMARY_SUB": "Basé sur votre allure actuelle"
+      "SUMMARY_SUB": "Basé sur votre allure actuelle",
+      "FAQ": {
+        "TITLE": "Questions Fréquemment Posées",
+        "Q1": "Quelle est la précision des prédictions de temps de course ?",
+        "A1": "Les prédictions de temps de course sont des estimations basées sur votre niveau de forme actuel et des formules mathématiques éprouvées. Elles sont généralement précises à 2-5% près pour les coureurs bien entraînés dans des conditions de terrain et météo similaires. Votre performance réelle peut varier selon l'entraînement, le <a href='/tools/personal/vo2max-calculator' class='text-blue-600 hover:text-blue-800 underline'>niveau de forme</a>, les conditions de course et la stratégie d'allure.",
+        "Q2": "Quelle est la meilleure distance de course à utiliser pour les prédictions ?",
+        "A2": "Les temps de course récents de 5K à semi-marathon fournissent les prédictions les plus précises. Un temps de 10K est souvent considéré comme l'étalon-or pour prédire les distances plus longues. Utilisez votre résultat de course le plus récent (dans les 6 mois) pour une meilleure précision. Calculez votre <a href='/tools/race/pace-calculator' class='text-blue-600 hover:text-blue-800 underline'>allure de course</a> cible basée sur ces prédictions.",
+        "Q3": "Pourquoi mes temps prédits semblent-ils trop rapides ou lents ?",
+        "A3": "Les prédictions supposent un entraînement constant et des conditions de course similaires. Si les prédictions semblent rapides, vous pourriez avoir besoin de plus d'entraînement d'endurance pour les distances plus longues. Si elles semblent lentes, vous pourriez être sous-entraîné pour les courses courtes axées sur la vitesse. Considérez votre volume d'entraînement actuel et la <a href='/tools/personal/burned-calories-estimator' class='text-blue-600 hover:text-blue-800 underline'>dépense énergétique</a> lors de l'évaluation des prédictions.",
+        "Q4": "Comment devrais-je m'entraîner basé sur ces prédictions ?",
+        "A4": "Utilisez les temps prédits pour fixer des objectifs de course réalistes et déterminer les allures d'entraînement. Pour l'entraînement marathon, visez des sorties longues à 30-90 secondes par mile plus lent que l'allure marathon prédite. Pour l'entraînement 5K/10K, incluez des intervalles à ou légèrement plus rapide que l'allure prédite. Surveillez vos progrès avec des tests chronométrés réguliers.",
+        "Q5": "Ces prédictions fonctionnent-elles pour tous les coureurs ?",
+        "A5": "Les prédictions fonctionnent mieux pour les coureurs entraînés avec une expérience de course constante. Elles peuvent être moins précises pour les débutants, les coureurs revenant de blessure, ou ceux avec des déséquilibres force/vitesse significatifs. Les coureurs élites et récréatifs peuvent voir différents niveaux de précision dus à la spécificité d'entraînement et aux différences de <a href='/tools/personal/vo2max-calculator' class='text-blue-600 hover:text-blue-800 underline'>capacité aérobie</a>."
+      }
     },
     "PACE_CALCULATOR": {
       "TITLE": "Calculateur d'allure",
       "DESCRIPTION": "Modifiez le temps, la distance ou l'allure pour obtenir les autres valeurs.",
-      "SUMMARY": "Résumé de votre Allure"
+      "SUMMARY": "Résumé de votre Allure",
+      "FAQ": {
+        "TITLE": "Questions Fréquemment Posées",
+        "Q1": "Quelle est une bonne allure de course pour les débutants ?",
+        "A1": "Pour les débutants, une bonne allure de course est celle où vous pouvez maintenir une conversation en courant. Cela varie généralement entre 5:30-7:30 par kilomètre. Concentrez-vous sur la régularité et développez progressivement l'endurance plutôt que la vitesse au début.",
+        "Q2": "Comment calculer mon allure cible pour le marathon ?",
+        "A2": "Votre allure marathon devrait être 15-30 secondes par kilomètre plus lente que votre allure 10K. Utilisez vos temps de course récents avec notre <a href='/tools/race/finish-time-predictor' class='text-blue-600 hover:text-blue-800 underline'>Estimation du temps d'arrivée</a> pour prédire votre allure marathon, et pratiquez cette allure lors des sorties longues d'entraînement.",
+        "Q3": "Quelle est la différence entre allure et vitesse ?",
+        "A3": "L'allure est le temps par distance (ex: 6:00 par kilomètre), tandis que la vitesse est la distance par temps (ex: 10 km/h). Les coureurs utilisent généralement l'allure car il est plus facile de maintenir un niveau d'effort constant et planifier les stratégies de course.",
+        "Q4": "Comment gérer l'allure sur différentes distances de course ?",
+        "A4": "5K : Commencer légèrement plus lent que l'allure cible, accélérer au milieu, finir fort. 10K : Allure régulière tout au long. Semi-marathon : Commencer prudemment, split négatif si possible. Marathon : L'allure régulière est cruciale, économiser l'énergie pour les 10K finaux.",
+        "Q5": "Quels facteurs affectent mon allure de course ?",
+        "A5": "La météo (chaleur/humidité ralentissent), le terrain (collines et sentiers sont plus lents), l'altitude (élévation plus haute réduit l'allure), le niveau de fatigue, l'hydratation et la nutrition impactent tous significativement votre allure de course. Suivez vos <a href='/tools/personal/burned-calories-estimator' class='text-blue-600 hover:text-blue-800 underline'>calories brûlées</a> pour optimiser votre stratégie nutritionnelle."
+      }
     },
     "DISTANCE_UNIT_CONVERTER": {
       "TITLE": "Conversion de distance",
@@ -188,6 +229,21 @@
           "IBW_OK": "Votre poids est acceptable",
           "IBW_IDEAL": "Votre poids est idéal"
         }
+      },
+      "FAQ": {
+        "TITLE": "Questions Fréquemment Posées",
+        "Q1": "Quel est un BMI sain pour les coureurs ?",
+        "A1": "Pour les coureurs, un BMI entre 18,5-24,9 est considéré comme sain. Cependant, de nombreux coureurs de fond d'élite ont des BMI plus bas (18,5-22) en raison de leur masse musculaire maigre et de leur faible taux de graisse corporelle. Le calcul \"Nouveau BMI\" de notre outil fournit une évaluation plus précise pour les athlètes plus grands.",
+        "Q2": "Quelle est la différence entre BMI et Nouveau BMI ?",
+        "A2": "Le BMI traditionnel peut être inexact pour les personnes très grandes ou petites. Le \"Nouveau BMI\" utilise un exposant de taille de 2,5 au lieu de 2, fournissant des résultats plus précis pour les athlètes et les personnes en dehors des gammes de taille moyennes. Ceci est particulièrement utile pour les coureurs qui tendent à être plus grands.",
+        "Q3": "Comment calculer mon BMR (Métabolisme de Base) ?",
+        "A3": "Le BMR est le nombre de calories que votre corps brûle au repos. Notre calculateur utilise l'équation Mifflin-St Jeor, considérée comme la plus précise. Pour les coureurs, connaître votre BMR aide à déterminer les besoins caloriques quotidiens pour l'entraînement et la récupération. Multipliez votre BMR par 1,6-1,9 selon votre intensité d'entraînement. Utilisez notre <a href='/tools/personal/burned-calories-estimator' class='text-blue-600 hover:text-blue-800 underline'>Calculateur de Calories Brûlées</a> pour estimer les calories brûlées pendant la course.",
+        "Q4": "Qu'est-ce que le Poids Corporel Idéal (IBW) et pourquoi est-ce important ?",
+        "A4": "L'IBW est votre poids optimal basé sur la taille et le sexe en utilisant la formule Devine. Pour les coureurs, être proche de votre IBW peut améliorer les performances en optimisant votre rapport puissance-poids. Cependant, la masse musculaire et la composition corporelle sont plus importantes qu'atteindre un nombre exact.",
+        "Q5": "Quelle est la précision du calcul du pourcentage de graisse corporelle ?",
+        "A5": "Notre calculateur de graisse corporelle utilise la formule Deurenberg, qui fournit une estimation raisonnable basée sur le BMI, l'âge et le sexe. Pour les coureurs, les plages de graisse corporelle saines sont typiquement de 6-13% pour les hommes et 14-20% pour les femmes. Pour des mesures plus précises, considérez les scans DEXA ou la pesée hydrostatique.",
+        "Q6": "Les coureurs devraient-ils se concentrer sur le BMI ou la composition corporelle ?",
+        "A6": "Bien que le BMI soit un outil de dépistage utile, les coureurs devraient se concentrer davantage sur la composition corporelle (rapport muscle vs graisse). Un coureur avec une masse musculaire élevée pourrait avoir un BMI plus élevé mais une excellente santé. Utilisez le BMI avec le pourcentage de graisse corporelle et les métriques de performance comme le <a href='/tools/personal/vo2max-calculator' class='text-blue-600 hover:text-blue-800 underline'>VO2 Max</a> pour une image complète."
       }
     }
   }

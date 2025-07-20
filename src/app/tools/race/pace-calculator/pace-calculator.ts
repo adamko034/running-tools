@@ -9,6 +9,8 @@ import { DistanceStoreFormField } from '../../../shared/components/store/distanc
 import { PaceStoreFormField } from '../../../shared/components/store/pace-store-form-field/pace-store-form-field';
 import { TimeStoreFormField } from '../../../shared/components/store/time-store-form-field/time-store-form-field';
 import { FancyResult } from '../../../shared/components/ui/fancy-result/fancy-result';
+import { FaqSectionComponent } from '../../../shared/components/ui/faq-section/faq-section';
+import { FaqItemComponent } from '../../../shared/components/ui/faq-item/faq-item';
 import { ToolView } from '../../../shared/views/tool-view/tool-view';
 import { Store } from './../../../core/store/store.model';
 import { StoreService } from './../../../core/store/store.service';
@@ -25,6 +27,8 @@ import { StoreService } from './../../../core/store/store.service';
     PaceStoreFormField,
     ToolView,
     FancyResult,
+    FaqSectionComponent,
+    FaqItemComponent,
     TranslateModule,
   ],
   templateUrl: './pace-calculator.html',

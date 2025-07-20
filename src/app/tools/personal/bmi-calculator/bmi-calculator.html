@@ -75,6 +75,45 @@
       </div>
     </app-fancy-result>
   </ng-container>
+
+  <!-- FAQ Section -->
+  <ng-container tool-faq>
+    <app-faq-section>
+      <div faq-title>{{ 'TOOLS.BMI_CALCULATOR.FAQ.TITLE' | translate }}</div>
+      
+      <div faq-items>
+        <app-faq-item>
+          <div faq-question>{{ 'TOOLS.BMI_CALCULATOR.FAQ.Q1' | translate }}</div>
+          <div faq-answer>{{ 'TOOLS.BMI_CALCULATOR.FAQ.A1' | translate }}</div>
+        </app-faq-item>
+
+        <app-faq-item>
+          <div faq-question>{{ 'TOOLS.BMI_CALCULATOR.FAQ.Q2' | translate }}</div>
+          <div faq-answer>{{ 'TOOLS.BMI_CALCULATOR.FAQ.A2' | translate }}</div>
+        </app-faq-item>
+
+        <app-faq-item>
+          <div faq-question>{{ 'TOOLS.BMI_CALCULATOR.FAQ.Q3' | translate }}</div>
+          <div faq-answer [innerHTML]="'TOOLS.BMI_CALCULATOR.FAQ.A3' | translate"></div>
+        </app-faq-item>
+
+        <app-faq-item>
+          <div faq-question>{{ 'TOOLS.BMI_CALCULATOR.FAQ.Q4' | translate }}</div>
+          <div faq-answer>{{ 'TOOLS.BMI_CALCULATOR.FAQ.A4' | translate }}</div>
+        </app-faq-item>
+
+        <app-faq-item>
+          <div faq-question>{{ 'TOOLS.BMI_CALCULATOR.FAQ.Q5' | translate }}</div>
+          <div faq-answer>{{ 'TOOLS.BMI_CALCULATOR.FAQ.A5' | translate }}</div>
+        </app-faq-item>
+
+        <app-faq-item>
+          <div faq-question>{{ 'TOOLS.BMI_CALCULATOR.FAQ.Q6' | translate }}</div>
+          <div faq-answer [innerHTML]="'TOOLS.BMI_CALCULATOR.FAQ.A6' | translate"></div>
+        </app-faq-item>
+      </div>
+    </app-faq-section>
+  </ng-container>
 </app-tool-view>
 
 <ng-template #summary let-value="value" let-category="category" let-type="type">

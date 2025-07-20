@@ -97,7 +97,22 @@
       "DESCRIPTION": "Estimate how many calories you burned based on your running distance, pace, and body weight.",
       "SUMMARY": "You burned approximately {{calories}} kcal.",
       "SUMMARY_TITLE": "Calories Burned",
-      "SUMMARY_SUB": "Based on your distance, time and weight."
+      "SUMMARY_SUB": "Based on your distance, time and weight.",
+      "FAQ": {
+        "TITLE": "Frequently Asked Questions",
+        "Q1": "How accurate is the calories burned calculation?",
+        "A1": "Our calculator provides estimates based on established metabolic equations that consider your weight, distance, and time. Accuracy is typically within 10-15% for most runners. Individual factors like fitness level, running efficiency, and metabolism can affect actual calorie burn.",
+        "Q2": "What factors affect how many calories I burn while running?",
+        "A2": "Several factors influence calorie burn: body weight (heavier runners burn more), running speed and intensity, terrain (hills increase burn), weather conditions (heat/cold require more energy), and individual metabolism. Your <a href='/tools/personal/bmi-calculator' class='text-blue-600 hover:text-blue-800 underline'>body composition</a> also plays a role in metabolic efficiency.",
+        "Q3": "Do I burn more calories running faster or running longer?",
+        "A3": "Both speed and duration increase calorie burn, but in different ways. Running faster burns more calories per minute, while running longer burns more total calories. For weight loss, total calorie burn matters most. Use our <a href='/tools/race/pace-calculator' class='text-blue-600 hover:text-blue-800 underline'>pace calculator</a> to find sustainable speeds for longer runs.",
+        "Q4": "How does my weight affect calorie burn during running?",
+        "A4": "Heavier runners burn more calories because it takes more energy to move a larger mass. Generally, you burn about 0.63 calories per pound of body weight per mile (or 1.4 calories per kg per km). This is why weight is the most important factor in our calculation.",
+        "Q5": "Should I eat back the calories I burn while running?",
+        "A5": "It depends on your goals. For weight loss, create a moderate calorie deficit by not eating back all burned calories. For performance and recovery, especially during intense training, you may need to replace most calories burned. Monitor your energy levels and consider your training intensity when planning nutrition.",
+        "Q6": "How do I use this information for weight management?",
+        "A6": "To lose 1 pound of fat, you need to create a deficit of about 3,500 calories through diet and exercise combined. Track your daily calorie burn from running and combine with your <a href='/tools/personal/bmi-calculator' class='text-blue-600 hover:text-blue-800 underline'>BMR (basal metabolic rate)</a> to understand your total daily energy expenditure. Aim for a sustainable deficit of 300-500 calories per day for healthy weight loss."
+      }
     },
     "VO2MAX_CALCULATOR": {
       "TITLE": "VO₂max Calculator",
@@ -111,12 +126,38 @@
       "TITLE": "Finish Time Predictor",
       "DESCRIPTION": "Estimate your finish times for popular race distances based on a recent run.",
       "SUMMARY": "Predicted Race Times",
-      "SUMMARY_SUB": "Based on your current pace"
+      "SUMMARY_SUB": "Based on your current pace",
+      "FAQ": {
+        "TITLE": "Frequently Asked Questions",
+        "Q1": "How accurate are race time predictions?",
+        "A1": "Race time predictions are estimates based on your current fitness level and proven mathematical formulas. They're typically accurate within 2-5% for well-trained runners on similar terrain and weather conditions. Your actual performance may vary based on training, <a href='/tools/personal/vo2max-calculator' class='text-blue-600 hover:text-blue-800 underline'>fitness level</a>, race day conditions, and pacing strategy.",
+        "Q2": "What's the best race distance to use for predictions?",
+        "A2": "Recent race times from 5K to half marathon distances provide the most accurate predictions. A 10K time is often considered the gold standard for predicting longer distances. Use your most recent race result (within 6 months) for best accuracy. Calculate your target <a href='/tools/race/pace-calculator' class='text-blue-600 hover:text-blue-800 underline'>race pace</a> based on these predictions.",
+        "Q3": "Why do my predicted times seem too fast or slow?",
+        "A3": "Predictions assume consistent training and similar race conditions. If predictions seem fast, you may need more endurance training for longer distances. If they seem slow, you might be undertrained for shorter, speed-focused races. Consider your current training volume and <a href='/tools/personal/burned-calories-estimator' class='text-blue-600 hover:text-blue-800 underline'>energy expenditure</a> when evaluating predictions.",
+        "Q4": "How should I train based on these predictions?",
+        "A4": "Use predicted times to set realistic race goals and determine training paces. For marathon training, aim for long runs at 30-90 seconds per mile slower than predicted marathon pace. For 5K/10K training, include intervals at or slightly faster than predicted pace. Monitor your progress with regular time trials.",
+        "Q5": "Do these predictions work for all runners?",
+        "A5": "Predictions work best for trained runners with consistent racing experience. They may be less accurate for beginners, runners returning from injury, or those with significant strength/speed imbalances. Elite runners and recreational runners may see different accuracy levels due to training specificity and <a href='/tools/personal/vo2max-calculator' class='text-blue-600 hover:text-blue-800 underline'>aerobic capacity</a> differences."
+      }
     },
     "PACE_CALCULATOR": {
       "TITLE": "Pace Calculator",
       "DESCRIPTION": "Adjust time, distance, or pace to recalculate the others.",
-      "SUMMARY": "Your Pace Summary"
+      "SUMMARY": "Your Pace Summary",
+      "FAQ": {
+        "TITLE": "Frequently Asked Questions",
+        "Q1": "What is a good running pace for beginners?",
+        "A1": "For beginners, a good running pace is one where you can maintain a conversation while running. This typically ranges from 9-12 minutes per mile (5:30-7:30 per km). Focus on consistency and gradually building endurance rather than speed initially.",
+        "Q2": "How do I calculate my target marathon pace?",
+        "A2": "Your marathon pace should be 30-60 seconds per mile slower than your 10K pace, or about 15-30 seconds per km slower. Use recent race times with our <a href='/tools/race/finish-time-predictor' class='text-blue-600 hover:text-blue-800 underline'>Finish Time Predictor</a> to estimate your marathon pace, and practice running at this pace during long training runs.",
+        "Q3": "What's the difference between pace and speed?",
+        "A3": "Pace is time per distance (e.g., 6:00 per mile), while speed is distance per time (e.g., 10 mph). Runners typically use pace because it's easier to maintain a consistent effort level and plan race strategies.",
+        "Q4": "How should I pace different race distances?",
+        "A4": "5K: Start slightly slower than goal pace, build in middle, finish strong. 10K: Even pacing throughout. Half Marathon: Start conservatively, negative split if possible. Marathon: Even pacing is crucial, save energy for final 10K.",
+        "Q5": "What factors affect my running pace?",
+        "A5": "Weather (heat/humidity slow you down), terrain (hills and trails are slower), altitude (higher elevation reduces pace), fatigue level, hydration, and nutrition all significantly impact your running pace. Track your <a href='/tools/personal/burned-calories-estimator' class='text-blue-600 hover:text-blue-800 underline'>calories burned</a> to optimize your nutrition strategy."
+      }
     },
     "DISTANCE_UNIT_CONVERTER": {
       "TITLE": "Distance Unit Convertsion",
@@ -188,6 +229,21 @@
           "IBW_OK": "Your weight is acceptable",
           "IBW_IDEAL": "Your weight is ideal"
         }
+      },
+      "FAQ": {
+        "TITLE": "Frequently Asked Questions",
+        "Q1": "What is a healthy BMI for runners?",
+        "A1": "For runners, a BMI between 18.5-24.9 is considered healthy. However, many elite distance runners have BMIs on the lower end (18.5-22) due to their lean muscle mass and low body fat. The \"New BMI\" calculation in our tool provides a more accurate assessment for taller athletes.",
+        "Q2": "What's the difference between BMI and New BMI?",
+        "A2": "Traditional BMI can be inaccurate for very tall or short people. The \"New BMI\" (also called BMI Prime) uses a height exponent of 2.5 instead of 2, providing more accurate results for athletes and people outside average height ranges. This is especially useful for runners who tend to be taller.",
+        "Q3": "How do I calculate my BMR (Basal Metabolic Rate)?",
+        "A3": "BMR is the number of calories your body burns at rest. Our calculator uses the Mifflin-St Jeor equation, which is considered the most accurate. For runners, knowing your BMR helps determine daily calorie needs for training and recovery. Multiply your BMR by 1.6-1.9 depending on your training intensity. Use our <a href='/tools/personal/burned-calories-estimator' class='text-blue-600 hover:text-blue-800 underline'>Calories Burned Calculator</a> to estimate calories burned during runs.",
+        "Q4": "What is Ideal Body Weight (IBW) and why does it matter?",
+        "A4": "IBW is your optimal weight based on height and gender using the Devine formula. For runners, being close to your IBW can improve performance by optimizing your power-to-weight ratio. However, muscle mass and body composition are more important than hitting an exact number.",
+        "Q5": "How accurate is body fat percentage calculation?",
+        "A5": "Our body fat calculator uses the Deurenberg formula, which provides a reasonable estimate based on BMI, age, and gender. For runners, healthy body fat ranges are typically 6-13% for men and 14-20% for women. For more precise measurements, consider DEXA scans or hydrostatic weighing.",
+        "Q6": "Should runners focus on BMI or body composition?",
+        "A6": "While BMI is a useful screening tool, runners should focus more on body composition (muscle vs. fat ratio). A runner with high muscle mass might have a higher BMI but excellent health. Use BMI alongside body fat percentage and performance metrics like <a href='/tools/personal/vo2max-calculator' class='text-blue-600 hover:text-blue-800 underline'>VO2 Max</a> for a complete picture."
       }
     }
   }

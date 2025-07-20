@@ -97,7 +97,22 @@
       "DESCRIPTION": "Gib Distanz, Tempo und Körpergewicht ein, um deinen Kalorienverbrauch zu schätzen.",
       "SUMMARY": "Du hast ungefähr {{calories}} kcal verbrannt.",
       "SUMMARY_TITLE": "Verbrannte Kalorien",
-      "SUMMARY_SUB": "Basierend auf deiner Distanz, Zeit und Gewicht."
+      "SUMMARY_SUB": "Basierend auf deiner Distanz, Zeit und Gewicht.",
+      "FAQ": {
+        "TITLE": "Häufig gestellte Fragen",
+        "Q1": "Wie genau ist die Kalorienverbrauch-Berechnung?",
+        "A1": "Unser Rechner liefert Schätzungen basierend auf etablierten metabolischen Gleichungen, die Gewicht, Distanz und Zeit berücksichtigen. Die Genauigkeit liegt typischerweise bei 10-15% für die meisten Läufer. Individuelle Faktoren wie Fitnesslevel, Laufeffizienz und Stoffwechsel können den tatsächlichen Kalorienverbrauch beeinflussen.",
+        "Q2": "Welche Faktoren beeinflussen, wie viele Kalorien ich beim Laufen verbrenne?",
+        "A2": "Mehrere Faktoren beeinflussen den Kalorienverbrauch: Körpergewicht (schwerere Läufer verbrennen mehr), Laufgeschwindigkeit und -intensität, Gelände (Hügel erhöhen den Verbrauch), Wetterbedingungen (Hitze/Kälte erfordern mehr Energie), und individueller Stoffwechsel. Deine <a href='/tools/personal/bmi-calculator' class='text-blue-600 hover:text-blue-800 underline'>Körperzusammensetzung</a> spielt auch eine Rolle bei der metabolischen Effizienz.",
+        "Q3": "Verbrenne ich mehr Kalorien beim schnelleren oder längeren Laufen?",
+        "A3": "Sowohl Geschwindigkeit als auch Dauer erhöhen den Kalorienverbrauch, aber auf unterschiedliche Weise. Schnelleres Laufen verbrennt mehr Kalorien pro Minute, während längeres Laufen mehr Gesamtkalorien verbrennt. Für Gewichtsverlust ist der Gesamtkalorienverbrauch am wichtigsten. Nutze unseren <a href='/tools/race/pace-calculator' class='text-blue-600 hover:text-blue-800 underline'>Tempo-Rechner</a> um nachhaltige Geschwindigkeiten für längere Läufe zu finden.",
+        "Q4": "Wie beeinflusst mein Gewicht den Kalorienverbrauch beim Laufen?",
+        "A4": "Schwerere Läufer verbrennen mehr Kalorien, weil mehr Energie benötigt wird, um eine größere Masse zu bewegen. Generell verbrennst du etwa 1,4 Kalorien pro Kilogramm Körpergewicht pro Kilometer. Deshalb ist das Gewicht der wichtigste Faktor in unserer Berechnung.",
+        "Q5": "Sollte ich die Kalorien ersetzen, die ich beim Laufen verbrenne?",
+        "A5": "Das hängt von deinen Zielen ab. Für Gewichtsverlust schaffe ein moderates Kaloriendefizit, indem du nicht alle verbrannten Kalorien ersetzt. Für Leistung und Erholung, besonders bei intensivem Training, musst du möglicherweise die meisten verbrannten Kalorien ersetzen. Überwache dein Energielevel und berücksichtige deine Trainingsintensität bei der Ernährungsplanung.",
+        "Q6": "Wie nutze ich diese Informationen für das Gewichtsmanagement?",
+        "A6": "Um 1 Pfund Fett zu verlieren, musst du ein Defizit von etwa 3.500 Kalorien durch Ernährung und Sport kombiniert schaffen. Verfolge deinen täglichen Kalorienverbrauch beim Laufen und kombiniere ihn mit deinem <a href='/tools/personal/bmi-calculator' class='text-blue-600 hover:text-blue-800 underline'>BMR (Grundumsatz)</a> um deinen gesamten täglichen Energieverbrauch zu verstehen. Strebe ein nachhaltiges Defizit von 300-500 Kalorien pro Tag für gesunden Gewichtsverlust an."
+      }
     },
     "VO2MAX_CALCULATOR": {
       "TITLE": "VO₂max berechnen",
@@ -111,12 +126,38 @@
       "TITLE": "Zielzeit-Prognose",
       "DESCRIPTION": "Berechne deine voraussichtliche Zeit für beliebte Distanzen basierend auf einem aktuellen Lauf.",
       "SUMMARY": "Prognostizierte Laufzeiten",
-      "SUMMARY_SUB": "Basierend auf deinem aktuellen Tempo"
+      "SUMMARY_SUB": "Basierend auf deinem aktuellen Tempo",
+      "FAQ": {
+        "TITLE": "Häufig gestellte Fragen",
+        "Q1": "Wie genau sind Wettkampfzeit-Vorhersagen?",
+        "A1": "Wettkampfzeit-Vorhersagen sind Schätzungen basierend auf deinem aktuellen Fitnesslevel und bewährten mathematischen Formeln. Sie sind typischerweise innerhalb von 2-5% genau für gut trainierte Läufer bei ähnlichen Gelände- und Wetterbedingungen. Deine tatsächliche Leistung kann je nach Training, <a href='/tools/personal/vo2max-calculator' class='text-blue-600 hover:text-blue-800 underline'>Fitnesslevel</a>, Wettkampftag-Bedingungen und Tempo-Strategie variieren.",
+        "Q2": "Welche Wettkampfdistanz eignet sich am besten für Vorhersagen?",
+        "A2": "Aktuelle Wettkampfzeiten von 5K bis Halbmarathon-Distanzen liefern die genauesten Vorhersagen. Eine 10K-Zeit wird oft als Goldstandard für die Vorhersage längerer Distanzen betrachtet. Verwende dein aktuellstes Wettkampfergebnis (innerhalb von 6 Monaten) für beste Genauigkeit. Berechne dein Ziel-<a href='/tools/race/pace-calculator' class='text-blue-600 hover:text-blue-800 underline'>Wettkampftempo</a> basierend auf diesen Vorhersagen.",
+        "Q3": "Warum scheinen meine vorhergesagten Zeiten zu schnell oder langsam?",
+        "A3": "Vorhersagen setzen konstantes Training und ähnliche Wettkampfbedingungen voraus. Wenn Vorhersagen zu schnell erscheinen, benötigst du möglicherweise mehr Ausdauertraining für längere Distanzen. Wenn sie zu langsam erscheinen, könntest du für kürzere, geschwindigkeitsfokussierte Rennen untertrainiert sein. Berücksichtige dein aktuelles Trainingsvolumen und <a href='/tools/personal/burned-calories-estimator' class='text-blue-600 hover:text-blue-800 underline'>Energieverbrauch</a> bei der Bewertung von Vorhersagen.",
+        "Q4": "Wie sollte ich basierend auf diesen Vorhersagen trainieren?",
+        "A4": "Verwende vorhergesagte Zeiten, um realistische Wettkampfziele zu setzen und Trainingstempi zu bestimmen. Für Marathontraining ziele auf lange Läufe mit 30-90 Sekunden pro Meile langsamer als das vorhergesagte Marathontempo. Für 5K/10K-Training schließe Intervalle bei oder etwas schneller als dem vorhergesagten Tempo ein. Überwache deinen Fortschritt mit regelmäßigen Zeitläufen.",
+        "Q5": "Funktionieren diese Vorhersagen für alle Läufer?",
+        "A5": "Vorhersagen funktionieren am besten für trainierte Läufer mit konstanter Wettkampferfahrung. Sie können weniger genau für Anfänger, Läufer nach Verletzungen oder solche mit erheblichen Kraft-/Geschwindigkeits-Ungleichgewichten sein. Elite-Läufer und Freizeitläufer können unterschiedliche Genauigkeitslevel aufgrund von Trainingsspezifität und <a href='/tools/personal/vo2max-calculator' class='text-blue-600 hover:text-blue-800 underline'>aerober Kapazität</a> Unterschieden sehen."
+      }
     },
     "PACE_CALCULATOR": {
       "TITLE": "Tempo-Rechner",
       "DESCRIPTION": "Passe Zeit, Distanz oder Tempo an – die anderen Werte werden automatisch berechnet.",
-      "SUMMARY": "Deine Tempo-Zusammenfassung"
+      "SUMMARY": "Deine Tempo-Zusammenfassung",
+      "FAQ": {
+        "TITLE": "Häufig gestellte Fragen",
+        "Q1": "Was ist ein gutes Lauftempo für Anfänger?",
+        "A1": "Für Anfänger ist ein gutes Lauftempo eines, bei dem man sich noch unterhalten kann. Das liegt typischerweise zwischen 5:30-7:30 pro Kilometer. Konzentriere dich zunächst auf Konstanz und den schrittweisen Aufbau der Ausdauer statt auf Geschwindigkeit.",
+        "Q2": "Wie berechne ich mein Ziel-Marathon-Tempo?",
+        "A2": "Dein Marathon-Tempo sollte 15-30 Sekunden pro Kilometer langsamer sein als dein 10K-Tempo. Nutze aktuelle Wettkampfzeiten mit unserem <a href='/tools/race/finish-time-predictor' class='text-blue-600 hover:text-blue-800 underline'>Zielzeit-Rechner</a> zur Vorhersage deines Marathon-Tempos und übe dieses Tempo bei langen Trainingsläufen.",
+        "Q3": "Was ist der Unterschied zwischen Tempo und Geschwindigkeit?",
+        "A3": "Tempo ist Zeit pro Distanz (z.B. 6:00 pro Kilometer), während Geschwindigkeit Distanz pro Zeit ist (z.B. 10 km/h). Läufer nutzen meist das Tempo, da es einfacher ist, ein konstantes Anstrengungsniveau zu halten und Rennstrategien zu planen.",
+        "Q4": "Wie sollte ich verschiedene Wettkampfdistanzen einteilen?",
+        "A4": "5K: Etwas langsamer als Zieltempo starten, in der Mitte steigern, stark finishen. 10K: Gleichmäßiges Tempo durchgehend. Halbmarathon: Konservativ starten, wenn möglich negative Zwischenzeit. Marathon: Gleichmäßiges Tempo ist entscheidend, Energie für die letzten 10K sparen.",
+        "Q5": "Welche Faktoren beeinflussen mein Lauftempo?",
+        "A5": "Wetter (Hitze/Luftfeuchtigkeit verlangsamen), Gelände (Hügel und Trails sind langsamer), Höhenlage (größere Höhe reduziert das Tempo), Ermüdungsgrad, Hydratation und Ernährung beeinflussen alle erheblich dein Lauftempo. Verfolge deinen <a href='/tools/personal/burned-calories-estimator' class='text-blue-600 hover:text-blue-800 underline'>Kalorienverbrauch</a> um deine Ernährungsstrategie zu optimieren."
+      }
     },
     "DISTANCE_UNIT_CONVERTER": {
       "TITLE": "Distanzen umrechnen",
@@ -188,6 +229,21 @@
           "IBW_OK": "Dein Gewicht ist akzeptabel",
           "IBW_IDEAL": "Dein Gewicht ist ideal"
         }
+      },
+      "FAQ": {
+        "TITLE": "Häufig gestellte Fragen",
+        "Q1": "Was ist ein gesunder BMI für Läufer?",
+        "A1": "Für Läufer gilt ein BMI zwischen 18,5-24,9 als gesund. Viele Eliteläufer haben jedoch BMI-Werte am unteren Ende (18,5-22) aufgrund ihrer schlanken Muskelmasse und des niedrigen Körperfettanteils. Der \"Neue BMI\" in unserem Tool bietet eine genauere Bewertung für größere Athleten.",
+        "Q2": "Was ist der Unterschied zwischen BMI und Neuem BMI?",
+        "A2": "Der traditionelle BMI kann bei sehr großen oder kleinen Menschen ungenau sein. Der \"Neue BMI\" verwendet einen Größenexponenten von 2,5 statt 2 und liefert genauere Ergebnisse für Athleten und Menschen außerhalb der durchschnittlichen Größenbereiche. Dies ist besonders nützlich für Läufer, die tendenziell größer sind.",
+        "Q3": "Wie berechne ich meinen BMR (Grundumsatz)?",
+        "A3": "BMR ist die Anzahl der Kalorien, die dein Körper in Ruhe verbrennt. Unser Rechner verwendet die Mifflin-St Jeor-Gleichung, die als die genaueste gilt. Für Läufer hilft die Kenntnis des BMR bei der Bestimmung des täglichen Kalorienbedarfs für Training und Erholung. Multipliziere deinen BMR mit 1,6-1,9 je nach Trainingsintensität. Nutze unseren <a href='/tools/personal/burned-calories-estimator' class='text-blue-600 hover:text-blue-800 underline'>Kalorienrechner</a> um den Kalorienverbrauch beim Laufen zu schätzen.",
+        "Q4": "Was ist das Idealgewicht (IBW) und warum ist es wichtig?",
+        "A4": "IBW ist dein optimales Gewicht basierend auf Größe und Geschlecht nach der Devine-Formel. Für Läufer kann die Nähe zum IBW die Leistung verbessern, indem das Kraft-Gewicht-Verhältnis optimiert wird. Muskelmasse und Körperzusammensetzung sind jedoch wichtiger als eine exakte Zahl zu erreichen.",
+        "Q5": "Wie genau ist die Körperfettberechnung?",
+        "A5": "Unser Körperfettrechner verwendet die Deurenberg-Formel, die eine vernünftige Schätzung basierend auf BMI, Alter und Geschlecht liefert. Für Läufer liegen gesunde Körperfettbereiche typischerweise bei 6-13% für Männer und 14-20% für Frauen. Für präzisere Messungen solltest du DEXA-Scans oder hydrostatisches Wiegen in Betracht ziehen.",
+        "Q6": "Sollten sich Läufer auf BMI oder Körperzusammensetzung konzentrieren?",
+        "A6": "Während BMI ein nützliches Screening-Tool ist, sollten sich Läufer mehr auf die Körperzusammensetzung (Muskel-zu-Fett-Verhältnis) konzentrieren. Ein Läufer mit hoher Muskelmasse könnte einen höheren BMI haben, aber ausgezeichnete Gesundheit. Verwende BMI zusammen mit Körperfettanteil und Leistungsmetriken wie <a href='/tools/personal/vo2max-calculator' class='text-blue-600 hover:text-blue-800 underline'>VO2 Max</a> für ein vollständiges Bild."
       }
     }
   }
