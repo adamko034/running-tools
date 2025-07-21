@@ -94,7 +94,7 @@
   "TOOLS": {
     "CALORIES_BURNED_CALCULATOR": {
       "TITLE": "Estimation des calories brûlées",
-      "DESCRIPTION": "Calculez les calories brûlées en courant avec notre calculatrice gratuite et précise. Entrez votre distance, temps et poids pour estimer la dépense énergétique. Parfait pour les coureurs qui suivent leurs objectifs de fitness, perte de poids et intensité d'entraînement. Utilisé par les athlètes du monde entier pour la planification nutritionnelle et l'optimisation des entraînements.",
+      "DESCRIPTION": "Calculez les calories brûlées en courant avec notre calculatrice gratuite et précise. Entrez votre distance, temps et poids pour estimer la dépense énergétique. Parfait pour les coureurs qui suivent leurs objectifs de fitness, perte de poids et intensité d'entraînement.",
       "SUMMARY": "Vous avez brûlé environ {{calories}} kcal.",
       "SUMMARY_TITLE": "Calories Brûlées",
       "SUMMARY_SUB": "Basé sur votre distance, temps et poids.",
@@ -116,7 +116,7 @@
     },
     "VO2MAX_CALCULATOR": {
       "TITLE": "Calcul du VO₂ Max",
-      "DESCRIPTION": "Calculez votre VO₂ max à partir de la performance de course. Calculatrice de course gratuite utilisée par les athlètes du monde entier pour estimer la condition physique aérobie et optimiser l'entraînement. Entrez votre distance de course récente et temps d'arrivée pour obtenir votre estimation VO₂ max basée sur la formule éprouvée de Jack Daniels.",
+      "DESCRIPTION": "Calculez votre VO₂ max à partir de la performance de course. Utilisée par les athlètes du monde entier pour estimer la condition physique aérobie et optimiser l'entraînement. Entrez votre distance de course récente et temps d'arrivée pour obtenir votre estimation VO₂ max basée sur la formule éprouvée de Jack Daniels.",
       "SUMMARY": "Votre VO₂ Max estimé est de {{vo2Max}}.",
       "RESULT_TITLE": "Résultat VO₂ Max",
       "RESULT_SUBTITLE": "Votre consommation maximale d'oxygène estimée",
@@ -190,7 +190,7 @@
     },
     "FINISH_TIME_PREDICTOR": {
       "TITLE": "Estimation du temps d'arrivée",
-      "DESCRIPTION": "Prédisez vos temps d'arrivée de course pour les distances 5K, 10K, semi-marathon et marathon. Basé sur des formules éprouvées utilisées par les entraîneurs d'élite. Entrez votre temps de course récent pour obtenir des prédictions précises pour la fixation d'objectifs et la planification de courses. Outil gratuit pour les coureurs sérieux.",
+      "DESCRIPTION": "Prédisez vos temps d'arrivée de course pour les distances 5K, 10K, semi-marathon et marathon. Basé sur des formules éprouvées utilisées par les entraîneurs d'élite. Entrez votre temps de course récent pour obtenir des prédictions précises pour la fixation d'objectifs et la planification de courses.",
       "SUMMARY": "Temps de Course Prédits",
       "SUMMARY_SUB": "Basé sur votre allure actuelle",
       "FAQ": {
@@ -294,7 +294,7 @@
     },
     "DISTANCE_UNIT_CONVERTER": {
       "TITLE": "Conversion de distance",
-      "DESCRIPTION": "Convertissez les distances de course entre kilomètres et miles instantanément. Outil essentiel pour la planification de courses internationales, programmes d'entraînement et configuration de montres GPS. Conversion précise pour 5K, 10K, semi-marathon, marathon et distances personnalisées. Calculatrice de distance gratuite pour les coureurs du monde entier.",
+      "DESCRIPTION": "Convertissez les distances de course entre kilomètres et miles instantanément. Outil essentiel pour la planification de courses internationales, programmes d'entraînement et configuration de montres GPS. Conversion précise pour 5K, 10K, semi-marathon, marathon et distances personnalisées.",
       "SUMMARY": "Kilomètres : {{kmDistance}} • Miles : {{miDistance}}",
       "RESULT_TITLE": "Conversion de Distance",
       "RESULT_SUBTITLE": "Distances équivalentes en kilomètres et miles",
@@ -316,7 +316,7 @@
     },
     "PACE_SPEED_UNIT_CONVERTER": {
       "TITLE": "Conversion allure / vitesse",
-      "DESCRIPTION": "Convertissez entre l'allure de course (min/mile, min/km) et la vitesse (mph, km/h) instantanément. Parfait pour l'entraînement sur tapis de course, comparer les intensités d'entraînement et comprendre les allures de course. Outil essentiel pour les coureurs utilisant différentes méthodes d'entraînement et équipements.",
+      "DESCRIPTION": "Convertissez entre l'allure de course (min/mile, min/km) et la vitesse (mph, km/h) instantanément. Parfait pour l'entraînement sur tapis de course, comparer les intensités d'entraînement et comprendre les allures de course.",
       "SUMMARY": "Allure : {{pace}} • Vitesse : {{speed}}",
       "RESULT_TITLE": "Conversion Allure et Vitesse",
       "RESULT_SUBTITLE": "Valeurs équivalentes d'allure et de vitesse",
@@ -338,7 +338,7 @@
     },
     "WEIGHT_UNIT_CONVERTER": {
       "TITLE": "Conversion de poids",
-      "DESCRIPTION": "Convertissez le poids corporel entre kilogrammes et livres pour le suivi de fitness et les programmes d'entraînement internationaux. Outil de conversion de poids précis pour les coureurs, athlètes et surveillance de la santé. Essentiel pour les calculs d'IMC et la planification nutritionnelle.",
+      "DESCRIPTION": "Convertissez le poids corporel entre kilogrammes et livres pour le suivi de fitness et les programmes d'entraînement internationaux.",
       "SUMMARY": "Kilogrammes : {{kg}} • Livres : {{lb}}",
       "RESULT_TITLE": "Conversion de Poids",
       "RESULT_SUBTITLE": "Poids équivalents en kilogrammes et livres",

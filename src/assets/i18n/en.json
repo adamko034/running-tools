@@ -93,8 +93,8 @@
   },
   "TOOLS": {
     "CALORIES_BURNED_CALCULATOR": {
-      "TITLE": "Calories Burned Calculator for Running",
-      "DESCRIPTION": "Calculate calories burned while running with our free, accurate calculator. Enter your distance, time, and weight to estimate energy expenditure. Perfect for runners tracking fitness goals, weight loss, and training intensity. Used by athletes worldwide for nutrition planning and workout optimization.",
+      "TITLE": "Calories Burned Calculator",
+      "DESCRIPTION": "Calculate calories burned while running with our free, accurate calculator. Enter your distance, time, and weight to estimate energy expenditure. Perfect for runners tracking fitness goals, weight loss, and training intensity.",
       "SUMMARY": "You burned approximately {{calories}} kcal.",
       "SUMMARY_TITLE": "Calories Burned",
       "SUMMARY_SUB": "Based on your distance, time and weight.",
@@ -116,7 +116,7 @@
     },
     "VO2MAX_CALCULATOR": {
       "TITLE": "VO₂max Calculator",
-      "DESCRIPTION": "Calculate your VO₂ max from race performance. Free running calculator used by athletes worldwide to estimate aerobic fitness and optimize training. Enter your recent race distance and finish time to get your VO₂ max estimation based on the proven Jack Daniels formula.",
+      "DESCRIPTION": "Calculate your VO₂ max from race performance. Used by athletes worldwide to estimate aerobic fitness and optimize training. Enter your recent race distance and finish time to get your VO₂ max estimation based on the proven Jack Daniels formula.",
       "SUMMARY": "Your estimated VO₂max is {{vo2Max}}.",
       "RESULT_TITLE": "VO₂ Max Result",
       "RESULT_SUBTITLE": "Your estimated maximum oxygen uptake",
@@ -160,7 +160,7 @@
           "DESC": "Predict your finish times for different race distances based on your VO₂ max"
         },
         "PACE_CALC": {
-          "TITLE": "Training Pace Calculator", 
+          "TITLE": "Training Pace Calculator",
           "DESC": "Calculate optimal training paces for different workout types"
         },
         "CALORIES": {
@@ -189,8 +189,8 @@
       }
     },
     "FINISH_TIME_PREDICTOR": {
-      "TITLE": "Race Time Predictor - Marathon & 5K Calculator",
-      "DESCRIPTION": "Predict your race finish times for 5K, 10K, half marathon, and marathon distances. Based on proven formulas used by elite coaches. Enter your recent race time to get accurate predictions for goal setting and race planning. Free tool for serious runners.",
+      "TITLE": "Race Time Predictor",
+      "DESCRIPTION": "Predict your race finish times for 5K, 10K, half marathon, and marathon distances. Based on proven formulas used by elite coaches. Enter your recent race time to get accurate predictions for goal setting and race planning.",
       "SUMMARY": "Predicted Race Times",
       "SUMMARY_SUB": "Based on your current pace",
       "FAQ": {
@@ -209,7 +209,7 @@
     },
     "PACE_CALCULATOR": {
       "TITLE": "Running Pace Calculator",
-      "DESCRIPTION": "Calculate running pace, time, and distance for marathon training, 5K preparation, and race planning. Enter any two values to calculate the third. Supports both metric and imperial units for accurate training calculations.",
+      "DESCRIPTION": "Calculate running pace, time, and distance for marathon training, 5K preparation, and race planning. Enter any two values to calculate the third.",
       "SUMMARY": "Your Pace Summary",
       "HOW_TO_USE": {
         "TITLE": "How to Use the Pace Calculator",
@@ -294,7 +294,7 @@
     },
     "DISTANCE_UNIT_CONVERTER": {
       "TITLE": "Distance Converter - Miles to Kilometers Calculator",
-      "DESCRIPTION": "Convert running distances between miles and kilometers instantly. Essential tool for international race planning, training programs, and GPS watch setup. Accurate conversion for 5K, 10K, half marathon, marathon, and custom distances. Free distance calculator for runners worldwide.",
+      "DESCRIPTION": "Convert running distances between miles and kilometers instantly. Essential tool for international race planning, training programs, and GPS watch setup. Accurate conversion for 5K, 10K, half marathon, marathon, and custom distances.",
       "SUMMARY": "Kilometers: {{kmDistance}} • Miles: {{miDistance}}",
       "RESULT_TITLE": "Distance Conversion",
       "RESULT_SUBTITLE": "Equivalent distances in kilometers and miles",
@@ -315,8 +315,8 @@
       }
     },
     "PACE_SPEED_UNIT_CONVERTER": {
-      "TITLE": "Pace to Speed Converter - Running Calculator",
-      "DESCRIPTION": "Convert between running pace (min/mile, min/km) and speed (mph, km/h) instantly. Perfect for treadmill training, comparing workout intensities, and understanding race paces. Essential tool for runners using different training methods and equipment.",
+      "TITLE": "Pace to Speed Converter",
+      "DESCRIPTION": "Convert between running pace (min/mile, min/km) and speed (mph, km/h) instantly. Perfect for treadmill training, comparing workout intensities, and understanding race paces.",
       "SUMMARY": "Pace: {{pace}} • Speed: {{speed}}",
       "RESULT_TITLE": "Pace & Speed Conversion",
       "RESULT_SUBTITLE": "Equivalent pace and speed values",
@@ -338,7 +338,7 @@
     },
     "WEIGHT_UNIT_CONVERTER": {
       "TITLE": "Weight Converter - Kilograms to Pounds Calculator",
-      "DESCRIPTION": "Convert body weight between kilograms and pounds for fitness tracking and international training programs. Accurate weight conversion tool for runners, athletes, and health monitoring. Essential for BMI calculations and nutrition planning.",
+      "DESCRIPTION": "Convert body weight between kilograms and pounds for fitness tracking and international training programs.",
       "SUMMARY": "Kilograms: {{kg}} • Pounds: {{lb}}",
       "RESULT_TITLE": "Weight Conversion",
       "RESULT_SUBTITLE": "Equivalent weights in kilograms and pounds",

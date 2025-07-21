@@ -94,7 +94,7 @@
   "TOOLS": {
     "CALORIES_BURNED_CALCULATOR": {
       "TITLE": "Kalorienrechner",
-      "DESCRIPTION": "Berechne verbrannte Kalorien beim Laufen mit unserem kostenlosen, genauen Rechner. Gib deine Distanz, Zeit und Gewicht ein, um den Energieverbrauch zu schätzen. Perfekt für Läufer, die Fitnessziele, Gewichtsverlust und Trainingsintensität verfolgen. Weltweit von Athleten für Ernährungsplanung und Trainingsoptimierung verwendet.",
+      "DESCRIPTION": "Berechne verbrannte Kalorien beim Laufen mit unserem kostenlosen, genauen Rechner. Gib deine Distanz, Zeit und Gewicht ein, um den Energieverbrauch zu schätzen. Perfekt für Läufer, die Fitnessziele, Gewichtsverlust und Trainingsintensität verfolgen.",
       "SUMMARY": "Du hast ungefähr {{calories}} kcal verbrannt.",
       "SUMMARY_TITLE": "Verbrannte Kalorien",
       "SUMMARY_SUB": "Basierend auf deiner Distanz, Zeit und Gewicht.",
@@ -116,7 +116,7 @@
     },
     "VO2MAX_CALCULATOR": {
       "TITLE": "VO₂max berechnen",
-      "DESCRIPTION": "Berechne dein VO₂ max aus der Wettkampfleistung. Kostenloser Laufrechner, weltweit von Athleten zur Schätzung der aeroben Fitness und Trainingsoptimierung verwendet. Gib deine aktuelle Wettkampfdistanz und Zielzeit ein, um deine VO₂ max-Schätzung basierend auf der bewährten Jack Daniels-Formel zu erhalten.",
+      "DESCRIPTION": "Berechne dein VO₂ max aus der Wettkampfleistung. Weltweit von Athleten zur Schätzung der aeroben Fitness und Trainingsoptimierung verwendet. Gib deine aktuelle Wettkampfdistanz und Zielzeit ein, um deine VO₂ max-Schätzung basierend auf der bewährten Jack Daniels-Formel zu erhalten.",
       "SUMMARY": "Dein VO₂max liegt bei etwa {{vo2Max}}.",
       "RESULT_TITLE": "VO₂ Max Ergebnis",
       "RESULT_SUBTITLE": "Deine geschätzte maximale Sauerstoffaufnahme",
@@ -190,7 +190,7 @@
     },
     "FINISH_TIME_PREDICTOR": {
       "TITLE": "Zielzeit-Prognose",
-      "DESCRIPTION": "Prognostiziere deine Wettkampf-Zielzeiten für 5K, 10K, Halbmarathon und Marathon-Distanzen. Basiert auf bewährten Formeln, die von Elite-Trainern verwendet werden. Gib deine aktuelle Wettkampfzeit ein, um genaue Vorhersagen für Zielsetzung und Wettkampfplanung zu erhalten. Kostenloses Tool für ernsthafte Läufer.",
+      "DESCRIPTION": "Prognostiziere deine Wettkampf-Zielzeiten für 5K, 10K, Halbmarathon und Marathon-Distanzen. Basiert auf bewährten Formeln, die von Elite-Trainern verwendet werden. Gib deine aktuelle Wettkampfzeit ein, um genaue Vorhersagen für Zielsetzung und Wettkampfplanung zu erhalten.",
       "SUMMARY": "Prognostizierte Laufzeiten",
       "SUMMARY_SUB": "Basierend auf deinem aktuellen Tempo",
       "FAQ": {
@@ -294,7 +294,7 @@
     },
     "DISTANCE_UNIT_CONVERTER": {
       "TITLE": "Distanzen umrechnen",
-      "DESCRIPTION": "Konvertiere Laufdistanzen zwischen Meilen und Kilometern sofort. Unverzichtbares Tool für internationale Wettkampfplanung, Trainingsprogramme und GPS-Uhren-Setup. Genaue Konvertierung für 5K, 10K, Halbmarathon, Marathon und benutzerdefinierte Distanzen. Kostenloser Distanzrechner für Läufer weltweit.",
+      "DESCRIPTION": "Konvertiere Laufdistanzen zwischen Meilen und Kilometern sofort. Unverzichtbares Tool für internationale Wettkampfplanung, Trainingsprogramme und GPS-Uhren-Setup. Genaue Konvertierung für 5K, 10K, Halbmarathon, Marathon und benutzerdefinierte Distanzen.",
       "SUMMARY": "Kilometer: {{kmDistance}} • Meilen: {{miDistance}}",
       "RESULT_TITLE": "Distanz-Umrechnung",
       "RESULT_SUBTITLE": "Entsprechende Distanzen in Kilometern und Meilen",
@@ -316,7 +316,7 @@
     },
     "PACE_SPEED_UNIT_CONVERTER": {
       "TITLE": "Tempo & Geschwindigkeit",
-      "DESCRIPTION": "Konvertiere zwischen Lauftempo (min/Meile, min/km) und Geschwindigkeit (mph, km/h) sofort. Perfekt für Laufbandtraining, Vergleich von Trainingsintensitäten und Verständnis von Wettkampftempi. Unverzichtbares Tool für Läufer, die verschiedene Trainingsmethoden und Geräte verwenden.",
+      "DESCRIPTION": "Konvertiere zwischen Lauftempo (min/Meile, min/km) und Geschwindigkeit (mph, km/h) sofort. Perfekt für Laufbandtraining, Vergleich von Trainingsintensitäten und Verständnis von Wettkampftempi.",
       "SUMMARY": "Tempo: {{pace}} • Geschwindigkeit: {{speed}}",
       "RESULT_TITLE": "Tempo & Geschwindigkeits-Umrechnung",
       "RESULT_SUBTITLE": "Entsprechende Tempo- und Geschwindigkeitswerte",
@@ -338,7 +338,7 @@
     },
     "WEIGHT_UNIT_CONVERTER": {
       "TITLE": "Gewicht umrechnen",
-      "DESCRIPTION": "Konvertiere Körpergewicht zwischen Kilogramm und Pfund für Fitness-Tracking und internationale Trainingsprogramme. Genaues Gewichts-Konvertierungstool für Läufer, Athleten und Gesundheitsüberwachung. Unverzichtbar für BMI-Berechnungen und Ernährungsplanung.",
+      "DESCRIPTION": "Konvertiere Körpergewicht zwischen Kilogramm und Pfund für Fitness-Tracking und internationale Trainingsprogramme.",
       "SUMMARY": "Kilogramm: {{kg}} • Pfund: {{lb}}",
       "RESULT_TITLE": "Gewichts-Umrechnung",
       "RESULT_SUBTITLE": "Entsprechende Gewichte in Kilogramm und Pfund",

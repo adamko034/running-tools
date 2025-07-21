@@ -94,7 +94,7 @@
   "TOOLS": {
     "CALORIES_BURNED_CALCULATOR": {
       "TITLE": "Stima calorie bruciate",
-      "DESCRIPTION": "Calcola le calorie bruciate correndo con la nostra calcolatrice gratuita e accurata. Inserisci la tua distanza, tempo e peso per stimare il dispendio energetico. Perfetto per corridori che seguono obiettivi di fitness, perdita di peso e intensità di allenamento. Utilizzato da atleti in tutto il mondo per pianificazione nutrizionale e ottimizzazione degli allenamenti.",
+      "DESCRIPTION": "Calcola le calorie bruciate correndo con la nostra calcolatrice gratuita e accurata. Inserisci la tua distanza, tempo e peso per stimare il dispendio energetico. Perfetto per corridori che seguono obiettivi di fitness, perdita di peso e intensità di allenamento.",
       "SUMMARY": "Hai bruciato circa {{calories}} kcal.",
       "SUMMARY_TITLE": "Calorie Bruciate",
       "SUMMARY_SUB": "Basato su distanza, tempo e peso.",
@@ -116,7 +116,7 @@
     },
     "VO2MAX_CALCULATOR": {
       "TITLE": "Calcolo VO₂ Max",
-      "DESCRIPTION": "Calcola il tuo VO₂ max dalla prestazione di gara. Calcolatrice di corsa gratuita utilizzata da atleti in tutto il mondo per stimare la forma fisica aerobica e ottimizzare l'allenamento. Inserisci la tua distanza di gara recente e tempo di arrivo per ottenere la tua stima VO₂ max basata sulla formula comprovata di Jack Daniels.",
+      "DESCRIPTION": "Calcola il tuo VO₂ max dalla prestazione di gara. Utilizzata da atleti in tutto il mondo per stimare la forma fisica aerobica e ottimizzare l'allenamento. Inserisci la tua distanza di gara recente e tempo di arrivo per ottenere la tua stima VO₂ max basata sulla formula comprovata di Jack Daniels.",
       "SUMMARY": "Il tuo VO₂ Max stimato è {{vo2Max}}.",
       "RESULT_TITLE": "Risultato VO₂ Max",
       "RESULT_SUBTITLE": "Il tuo consumo massimo di ossigeno stimato",
@@ -190,7 +190,7 @@
     },
     "FINISH_TIME_PREDICTOR": {
       "TITLE": "Previsione tempo finale",
-      "DESCRIPTION": "Predici i tuoi tempi finali di gara per distanze di 5K, 10K, mezza maratona e maratona. Basato su formule comprovate utilizzate da allenatori d'élite. Inserisci il tuo tempo di gara recente per ottenere previsioni accurate per definizione di obiettivi e pianificazione di gare. Strumento gratuito per corridori seri.",
+      "DESCRIPTION": "Predici i tuoi tempi finali di gara per distanze di 5K, 10K, mezza maratona e maratona. Basato su formule comprovate utilizzate da allenatori d'élite. Inserisci il tuo tempo di gara recente per ottenere previsioni accurate per definizione di obiettivi e pianificazione di gare.",
       "SUMMARY": "Tempi di Gara Previsti",
       "SUMMARY_SUB": "Basato sul tuo ritmo attuale",
       "FAQ": {
@@ -294,7 +294,7 @@
     },
     "DISTANCE_UNIT_CONVERTER": {
       "TITLE": "Conversione distanza",
-      "DESCRIPTION": "Converti distanze di corsa tra chilometri e miglia istantaneamente. Strumento essenziale per pianificazione di gare internazionali, programmi di allenamento e configurazione di orologi GPS. Conversione accurata per 5K, 10K, mezza maratona, maratona e distanze personalizzate. Calcolatrice di distanza gratuita per corridori in tutto il mondo.",
+      "DESCRIPTION": "Converti distanze di corsa tra chilometri e miglia istantaneamente. Strumento essenziale per pianificazione di gare internazionali, programmi di allenamento e configurazione di orologi GPS. Conversione accurata per 5K, 10K, mezza maratona, maratona e distanze personalizzate.",
       "SUMMARY": "Chilometri: {{kmDistance}} • Miglia: {{miDistance}}",
       "RESULT_TITLE": "Conversione Distanza",
       "RESULT_SUBTITLE": "Distanze equivalenti in chilometri e miglia",
@@ -316,7 +316,7 @@
     },
     "PACE_SPEED_UNIT_CONVERTER": {
       "TITLE": "Conversione ritmo / velocità",
-      "DESCRIPTION": "Converti tra ritmo di corsa (min/miglio, min/km) e velocità (mph, km/h) istantaneamente. Perfetto per allenamento su tapis roulant, confrontare intensità di allenamento e comprendere ritmi di gara. Strumento essenziale per corridori che utilizzano diversi metodi di allenamento e attrezzature.",
+      "DESCRIPTION": "Converti tra ritmo di corsa (min/miglio, min/km) e velocità (mph, km/h) istantaneamente. Perfetto per allenamento su tapis roulant, confrontare intensità di allenamento e comprendere ritmi di gara.",
       "SUMMARY": "Ritmo: {{pace}} • Velocità: {{speed}}",
       "RESULT_TITLE": "Conversione Ritmo e Velocità",
       "RESULT_SUBTITLE": "Valori equivalenti di ritmo e velocità",
@@ -338,7 +338,7 @@
     },
     "WEIGHT_UNIT_CONVERTER": {
       "TITLE": "Conversione peso",
-      "DESCRIPTION": "Converti peso corporeo tra chilogrammi e libbre per monitoraggio fitness e programmi di allenamento internazionali. Strumento accurato di conversione peso per corridori, atleti e monitoraggio della salute. Essenziale per calcoli BMI e pianificazione nutrizionale.",
+      "DESCRIPTION": "Converti peso corporeo tra chilogrammi e libbre per monitoraggio fitness e programmi di allenamento internazionali.",
       "SUMMARY": "Chilogrammi: {{kg}} • Libbre: {{lb}}",
       "RESULT_TITLE": "Conversione Peso",
       "RESULT_SUBTITLE": "Pesi equivalenti in chilogrammi e libbre",

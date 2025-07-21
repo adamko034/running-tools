@@ -94,7 +94,7 @@
   "TOOLS": {
     "CALORIES_BURNED_CALCULATOR": {
       "TITLE": "Calorías quemadas",
-      "DESCRIPTION": "Calcula las calorías quemadas al correr con nuestra calculadora gratuita y precisa. Introduce tu distancia, tiempo y peso para estimar el gasto energético. Perfecto para corredores que siguen objetivos de fitness, pérdida de peso e intensidad de entrenamiento. Usado por atletas en todo el mundo para planificación nutricional y optimización de entrenamientos.",
+      "DESCRIPTION": "Calcula las calorías quemadas al correr con nuestra calculadora gratuita y precisa. Introduce tu distancia, tiempo y peso para estimar el gasto energético. Perfecto para corredores que siguen objetivos de fitness, pérdida de peso e intensidad de entrenamiento.",
       "SUMMARY": "Has quemado aproximadamente {{calories}} kcal.",
       "SUMMARY_TITLE": "Calorías Quemadas",
       "SUMMARY_SUB": "Basado en tu distancia, tiempo y peso.",
@@ -116,7 +116,7 @@
     },
     "VO2MAX_CALCULATOR": {
       "TITLE": "Calculadora VO₂ Max",
-      "DESCRIPTION": "Calcula tu VO₂ max desde el rendimiento de carrera. Calculadora de carrera gratuita utilizada por atletas mundialmente para estimar la condición física aeróbica y optimizar el entrenamiento. Introduce tu distancia de carrera reciente y tiempo final para obtener tu estimación de VO₂ max basada en la fórmula probada de Jack Daniels.",
+      "DESCRIPTION": "Calcula tu VO₂ max desde el rendimiento de carrera. Utilizada por atletas mundialmente para estimar la condición física aeróbica y optimizar el entrenamiento. Introduce tu distancia de carrera reciente y tiempo final para obtener tu estimación de VO₂ max basada en la fórmula probada de Jack Daniels.",
       "SUMMARY": "Tu VO₂ Max estimado es {{vo2Max}}.",
       "RESULT_TITLE": "Resultado VO₂ Max",
       "RESULT_SUBTITLE": "Tu consumo máximo estimado de oxígeno",
@@ -190,7 +190,7 @@
     },
     "FINISH_TIME_PREDICTOR": {
       "TITLE": "Tiempo estimado de carrera",
-      "DESCRIPTION": "Predice tus tiempos finales de carrera para distancias de 5K, 10K, medio maratón y maratón. Basado en fórmulas probadas utilizadas por entrenadores de élite. Introduce tu tiempo de carrera reciente para obtener predicciones precisas para establecimiento de objetivos y planificación de carreras. Herramienta gratuita para corredores serios.",
+      "DESCRIPTION": "Predice tus tiempos finales de carrera para distancias de 5K, 10K, medio maratón y maratón. Basado en fórmulas probadas utilizadas por entrenadores de élite. Introduce tu tiempo de carrera reciente para obtener predicciones precisas para establecimiento de objetivos y planificación de carreras.",
       "SUMMARY": "Tiempos Estimados de Carrera",
       "SUMMARY_SUB": "Basado en tu ritmo actual",
       "FAQ": {
@@ -294,7 +294,7 @@
     },
     "DISTANCE_UNIT_CONVERTER": {
       "TITLE": "Conversor de distancia",
-      "DESCRIPTION": "Convierte distancias de carrera entre kilómetros y millas instantáneamente. Herramienta esencial para planificación de carreras internacionales, programas de entrenamiento y configuración de relojes GPS. Conversión precisa para 5K, 10K, medio maratón, maratón y distancias personalizadas. Calculadora de distancia gratuita para corredores en todo el mundo.",
+      "DESCRIPTION": "Convierte distancias de carrera entre kilómetros y millas instantáneamente. Herramienta esencial para planificación de carreras internacionales, programas de entrenamiento y configuración de relojes GPS. Conversión precisa para 5K, 10K, medio maratón, maratón y distancias personalizadas.",
       "SUMMARY": "Kilómetros: {{kmDistance}} • Millas: {{miDistance}}",
       "RESULT_TITLE": "Conversión de Distancia",
       "RESULT_SUBTITLE": "Distancias equivalentes en kilómetros y millas",
@@ -316,7 +316,7 @@
     },
     "PACE_SPEED_UNIT_CONVERTER": {
       "TITLE": "Ritmo y velocidad",
-      "DESCRIPTION": "Convierte entre ritmo de carrera (min/milla, min/km) y velocidad (mph, km/h) instantáneamente. Perfecto para entrenamiento en cinta, comparar intensidades de entrenamiento y entender ritmos de carrera. Herramienta esencial para corredores que usan diferentes métodos de entrenamiento y equipos.",
+      "DESCRIPTION": "Convierte entre ritmo de carrera (min/milla, min/km) y velocidad (mph, km/h) instantáneamente. Perfecto para entrenamiento en cinta, comparar intensidades de entrenamiento y entender ritmos de carrera.",
       "SUMMARY": "Ritmo: {{pace}} • Velocidad: {{speed}}",
       "RESULT_TITLE": "Conversión de Ritmo y Velocidad",
       "RESULT_SUBTITLE": "Valores equivalentes de ritmo y velocidad",
@@ -338,7 +338,7 @@
     },
     "WEIGHT_UNIT_CONVERTER": {
       "TITLE": "Conversor de peso",
-      "DESCRIPTION": "Convierte peso corporal entre kilogramos y libras para seguimiento de fitness y programas de entrenamiento internacionales. Herramienta precisa de conversión de peso para corredores, atletas y monitoreo de salud. Esencial para cálculos de BMI y planificación nutricional.",
+      "DESCRIPTION": "Convierte peso corporal entre kilogramos y libras para seguimiento de fitness y programas de entrenamiento internacionales.",
       "SUMMARY": "Kilogramos: {{kg}} • Libras: {{lb}}",
       "RESULT_TITLE": "Conversión de Peso",
       "RESULT_SUBTITLE": "Pesos equivalentes en kilogramos y libras",

@@ -94,7 +94,7 @@
   "TOOLS": {
     "CALORIES_BURNED_CALCULATOR": {
       "TITLE": "Oblicz spalone kalorie",
-      "DESCRIPTION": "Oblicz spalone kalorie podczas biegania za pomocą naszego darmowego, dokładnego kalkulatora. Wprowadź swoją odległość, czas i wagę, aby oszacować wydatek energetyczny. Idealny dla biegaczy śledzących cele fitness, utratę wagi i intensywność treningu. Używany przez sportowców na całym świecie do planowania żywienia i optymalizacji treningów.",
+      "DESCRIPTION": "Oblicz spalone kalorie podczas biegania za pomocą naszego darmowego, dokładnego kalkulatora. Wprowadź swoją odległość, czas i wagę, aby oszacować wydatek energetyczny. Idealny dla biegaczy śledzących cele fitness, utratę wagi i intensywność treningu.",
       "SUMMARY": "Szacunkowa liczba spalonych kalorii: {{calories}} kcal.",
       "SUMMARY_TITLE": "Spalone Kalorie",
       "SUMMARY_SUB": "Na podstawie dystansu, czasu i wagi.",
@@ -116,7 +116,7 @@
     },
     "VO2MAX_CALCULATOR": {
       "TITLE": "Oblicz VO₂max",
-      "DESCRIPTION": "Oblicz swoje VO₂ max na podstawie wydajności startowej. Darmowy kalkulator biegowy używany przez sportowców na całym świecie do szacowania kondycji tlenowej i optymalizacji treningu. Wprowadź swoją ostatnią odległość startową i czas mety, aby otrzymać oszacowanie VO₂ max oparte na sprawdzonej formule Jacka Danielsa.",
+      "DESCRIPTION": "Oblicz swoje VO₂ max na podstawie wydajności startowej. Używany przez sportowców na całym świecie do szacowania kondycji tlenowej i optymalizacji treningu. Wprowadź swoją ostatnią odległość startową i czas mety, aby otrzymać oszacowanie VO₂ max oparte na sprawdzonej formule Jacka Danielsa.",
       "SUMMARY": "Twoje VO₂max wynosi około {{vo2Max}}.",
       "RESULT_TITLE": "Wynik VO₂ Max",
       "RESULT_SUBTITLE": "Twoja szacowana maksymalna wydolność tlenowa",
@@ -190,7 +190,7 @@
     },
     "FINISH_TIME_PREDICTOR": {
       "TITLE": "Prognoza czasu biegu",
-      "DESCRIPTION": "Przewiduj swoje czasy ukończenia wyścigu dla dystansów 5K, 10K, półmaraton i maraton. Oparte na sprawdzonych formułach używanych przez elitarnych trenerów. Wprowadź swój ostatni czas wyścigu, aby otrzymać dokładne prognozy do ustalania celów i planowania wyścigów. Darmowe narzędzie dla poważnych biegaczy.",
+      "DESCRIPTION": "Przewiduj swoje czasy ukończenia wyścigu dla dystansów 5K, 10K, półmaraton i maraton. Oparte na sprawdzonych formułach używanych przez elitarnych trenerów. Wprowadź swój ostatni czas wyścigu, aby otrzymać dokładne prognozy do ustalania celów i planowania wyścigów.",
       "SUMMARY": "Przewidywane Czasy Biegu",
       "SUMMARY_SUB": "Na podstawie aktualnego tempa",
       "FAQ": {
@@ -294,7 +294,7 @@
     },
     "DISTANCE_UNIT_CONVERTER": {
       "TITLE": "Kilometry i mile",
-      "DESCRIPTION": "Konwertuj dystanse biegowe między kilometrami a milami natychmiastowo. Niezbędne narzędzie do planowania międzynarodowych wyścigów, programów treningowych i konfiguracji zegarków GPS. Dokładna konwersja dla 5K, 10K, półmaraton, maraton i niestandardowych dystansów. Darmowy kalkulator dystansu dla biegaczy na całym świecie.",
+      "DESCRIPTION": "Konwertuj dystanse biegowe między kilometrami a milami natychmiastowo. Niezbędne narzędzie do planowania międzynarodowych wyścigów, programów treningowych i konfiguracji zegarków GPS. Dokładna konwersja dla 5K, 10K, półmaraton, maraton i niestandardowych dystansów.",
       "SUMMARY": "Kilometry: {{kmDistance}} • Mile: {{miDistance}}",
       "RESULT_TITLE": "Przeliczanie Dystansu",
       "RESULT_SUBTITLE": "Równoważne odległości w kilometrach i milach",
@@ -316,7 +316,7 @@
     },
     "PACE_SPEED_UNIT_CONVERTER": {
       "TITLE": "Tempo i prędkość",
-      "DESCRIPTION": "Konwertuj między tempem biegowym (min/mila, min/km) a prędkością (mph, km/h) natychmiastowo. Idealne do treningu na bieżni, porównywania intensywności treningów i rozumienia temp wyścigowych. Niezbędne narzędzie dla biegaczy używających różnych metod treningowych i sprzętu.",
+      "DESCRIPTION": "Konwertuj między tempem biegowym (min/mila, min/km) a prędkością (mph, km/h) natychmiastowo. Idealne do treningu na bieżni, porównywania intensywności treningów i rozumienia temp wyścigowych.",
       "SUMMARY": "Tempo: {{pace}} • Prędkość: {{speed}}",
       "RESULT_TITLE": "Przeliczanie Tempa i Prędkości",
       "RESULT_SUBTITLE": "Równoważne wartości tempa i prędkości",
@@ -338,7 +338,7 @@
     },
     "WEIGHT_UNIT_CONVERTER": {
       "TITLE": "Kilogramy i funty",
-      "DESCRIPTION": "Konwertuj wagę ciała między kilogramami a funtami do śledzenia fitness i międzynarodowych programów treningowych. Dokładne narzędzie konwersji wagi dla biegaczy, sportowców i monitorowania zdrowia. Niezbędne do obliczeń BMI i planowania żywienia.",
+      "DESCRIPTION": "Konwertuj wagę ciała między kilogramami a funtami do śledzenia fitness i międzynarodowych programów treningowych.",
       "SUMMARY": "Kilogramy: {{kg}} • Funty: {{lb}}",
       "RESULT_TITLE": "Przeliczanie Wagi",
       "RESULT_SUBTITLE": "Równoważne wagi w kilogramach i funtach",
