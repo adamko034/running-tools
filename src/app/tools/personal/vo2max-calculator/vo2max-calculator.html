@@ -22,6 +22,88 @@
     </app-fancy-result>
   </ng-container>
 
+  <!-- Educational Content Section -->
+  <ng-container tool-education>
+    <div class="mt-8 space-y-6">
+      <!-- How to Use Section -->
+      <div class="bg-blue-50 p-6 rounded-lg">
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">{{ 'TOOLS.VO2MAX_CALCULATOR.HOW_TO_USE.TITLE' | translate }}</h2>
+        <div class="space-y-2 text-gray-700">
+          <p [innerHTML]="'TOOLS.VO2MAX_CALCULATOR.HOW_TO_USE.STEP1' | translate"></p>
+          <p [innerHTML]="'TOOLS.VO2MAX_CALCULATOR.HOW_TO_USE.STEP2' | translate"></p>
+          <p [innerHTML]="'TOOLS.VO2MAX_CALCULATOR.HOW_TO_USE.STEP3' | translate"></p>
+          <p [innerHTML]="'TOOLS.VO2MAX_CALCULATOR.HOW_TO_USE.STEP4' | translate"></p>
+        </div>
+      </div>
+
+      <!-- Understanding Results Section -->
+      <div class="bg-green-50 p-6 rounded-lg">
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">{{ 'TOOLS.VO2MAX_CALCULATOR.UNDERSTANDING.TITLE' | translate }}</h2>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div>
+            <h3 class="font-medium text-gray-900 mb-2">{{ 'TOOLS.VO2MAX_CALCULATOR.UNDERSTANDING.RANGES.TITLE' | translate }}</h3>
+            <ul class="space-y-1 text-sm text-gray-700">
+              <li [innerHTML]="'TOOLS.VO2MAX_CALCULATOR.UNDERSTANDING.RANGES.BEGINNER' | translate"></li>
+              <li [innerHTML]="'TOOLS.VO2MAX_CALCULATOR.UNDERSTANDING.RANGES.RECREATIONAL' | translate"></li>
+              <li [innerHTML]="'TOOLS.VO2MAX_CALCULATOR.UNDERSTANDING.RANGES.COMPETITIVE' | translate"></li>
+              <li [innerHTML]="'TOOLS.VO2MAX_CALCULATOR.UNDERSTANDING.RANGES.ELITE' | translate"></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-medium text-gray-900 mb-2">{{ 'TOOLS.VO2MAX_CALCULATOR.UNDERSTANDING.FACTORS.TITLE' | translate }}</h3>
+            <ul class="space-y-1 text-sm text-gray-700">
+              <li [innerHTML]="'TOOLS.VO2MAX_CALCULATOR.UNDERSTANDING.FACTORS.AGE' | translate"></li>
+              <li [innerHTML]="'TOOLS.VO2MAX_CALCULATOR.UNDERSTANDING.FACTORS.GENDER' | translate"></li>
+              <li [innerHTML]="'TOOLS.VO2MAX_CALCULATOR.UNDERSTANDING.FACTORS.TRAINING' | translate"></li>
+              <li [innerHTML]="'TOOLS.VO2MAX_CALCULATOR.UNDERSTANDING.FACTORS.GENETICS' | translate"></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Training Tips Section -->
+      <div class="bg-yellow-50 p-6 rounded-lg">
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">{{ 'TOOLS.VO2MAX_CALCULATOR.TRAINING_TIPS.TITLE' | translate }}</h2>
+        <div class="space-y-3 text-gray-700">
+          <p [innerHTML]="'TOOLS.VO2MAX_CALCULATOR.TRAINING_TIPS.INTRO' | translate"></p>
+          <ul class="list-disc list-inside space-y-1 ml-4">
+            <li [innerHTML]="'TOOLS.VO2MAX_CALCULATOR.TRAINING_TIPS.TIP1' | translate"></li>
+            <li [innerHTML]="'TOOLS.VO2MAX_CALCULATOR.TRAINING_TIPS.TIP2' | translate"></li>
+            <li [innerHTML]="'TOOLS.VO2MAX_CALCULATOR.TRAINING_TIPS.TIP3' | translate"></li>
+            <li [innerHTML]="'TOOLS.VO2MAX_CALCULATOR.TRAINING_TIPS.TIP4' | translate"></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Related Tools Section -->
+      <div class="bg-purple-50 p-6 rounded-lg">
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">{{ 'TOOLS.VO2MAX_CALCULATOR.RELATED_TOOLS.TITLE' | translate }}</h2>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="space-y-2">
+            <a href="/tools/race/finish-time-predictor" class="block p-3 bg-white rounded border hover:border-blue-300 transition-colors">
+              <h3 class="font-medium text-blue-600">{{ 'TOOLS.VO2MAX_CALCULATOR.RELATED_TOOLS.FINISH_TIME.TITLE' | translate }}</h3>
+              <p class="text-sm text-gray-600">{{ 'TOOLS.VO2MAX_CALCULATOR.RELATED_TOOLS.FINISH_TIME.DESC' | translate }}</p>
+            </a>
+            <a href="/tools/race/pace-calculator" class="block p-3 bg-white rounded border hover:border-blue-300 transition-colors">
+              <h3 class="font-medium text-blue-600">{{ 'TOOLS.VO2MAX_CALCULATOR.RELATED_TOOLS.PACE_CALC.TITLE' | translate }}</h3>
+              <p class="text-sm text-gray-600">{{ 'TOOLS.VO2MAX_CALCULATOR.RELATED_TOOLS.PACE_CALC.DESC' | translate }}</p>
+            </a>
+          </div>
+          <div class="space-y-2">
+            <a href="/tools/personal/burned-calories-estimator" class="block p-3 bg-white rounded border hover:border-blue-300 transition-colors">
+              <h3 class="font-medium text-blue-600">{{ 'TOOLS.VO2MAX_CALCULATOR.RELATED_TOOLS.CALORIES.TITLE' | translate }}</h3>
+              <p class="text-sm text-gray-600">{{ 'TOOLS.VO2MAX_CALCULATOR.RELATED_TOOLS.CALORIES.DESC' | translate }}</p>
+            </a>
+            <a href="/tools/personal/bmi-calculator" class="block p-3 bg-white rounded border hover:border-blue-300 transition-colors">
+              <h3 class="font-medium text-blue-600">{{ 'TOOLS.VO2MAX_CALCULATOR.RELATED_TOOLS.BMI.TITLE' | translate }}</h3>
+              <p class="text-sm text-gray-600">{{ 'TOOLS.VO2MAX_CALCULATOR.RELATED_TOOLS.BMI.DESC' | translate }}</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
   <!-- FAQ Section -->
   <ng-container tool-faq>
     <app-faq-section>

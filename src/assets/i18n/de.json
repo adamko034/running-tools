@@ -94,7 +94,7 @@
   "TOOLS": {
     "CALORIES_BURNED_CALCULATOR": {
       "TITLE": "Kalorienrechner",
-      "DESCRIPTION": "Gib Distanz, Tempo und Körpergewicht ein, um deinen Kalorienverbrauch zu schätzen.",
+      "DESCRIPTION": "Berechne verbrannte Kalorien beim Laufen mit unserem kostenlosen, genauen Rechner. Gib deine Distanz, Zeit und Gewicht ein, um den Energieverbrauch zu schätzen. Perfekt für Läufer, die Fitnessziele, Gewichtsverlust und Trainingsintensität verfolgen. Weltweit von Athleten für Ernährungsplanung und Trainingsoptimierung verwendet.",
       "SUMMARY": "Du hast ungefähr {{calories}} kcal verbrannt.",
       "SUMMARY_TITLE": "Verbrannte Kalorien",
       "SUMMARY_SUB": "Basierend auf deiner Distanz, Zeit und Gewicht.",
@@ -116,11 +116,62 @@
     },
     "VO2MAX_CALCULATOR": {
       "TITLE": "VO₂max berechnen",
-      "DESCRIPTION": "Gib eine Wettkampfdistanz und deine Zeit ein, um deine Ausdauerleistung einzuschätzen.",
+      "DESCRIPTION": "Berechne dein VO₂ max aus der Wettkampfleistung. Kostenloser Laufrechner, weltweit von Athleten zur Schätzung der aeroben Fitness und Trainingsoptimierung verwendet. Gib deine aktuelle Wettkampfdistanz und Zielzeit ein, um deine VO₂ max-Schätzung basierend auf der bewährten Jack Daniels-Formel zu erhalten.",
       "SUMMARY": "Dein VO₂max liegt bei etwa {{vo2Max}}.",
       "RESULT_TITLE": "VO₂ Max Ergebnis",
       "RESULT_SUBTITLE": "Deine geschätzte maximale Sauerstoffaufnahme",
       "UNIT": "ml/kg/min",
+      "HOW_TO_USE": {
+        "TITLE": "Wie man den VO₂ Max Rechner verwendet",
+        "STEP1": "<strong>1. Wähle deine Wettkampfdistanz:</strong> Wähle eine aktuelle Wettkampfdistanz von 5K bis Marathon. Für beste Genauigkeit verwende einen Wettkampf, den du in den letzten 3-6 Monaten mit maximaler Anstrengung absolviert hast.",
+        "STEP2": "<strong>2. Gib deine Zielzeit ein:</strong> Trage deine tatsächliche Wettkampf-Zielzeit in Stunden, Minuten und Sekunden ein. Sei so präzise wie möglich für die genaueste VO₂ max-Schätzung.",
+        "STEP3": "<strong>3. Erhalte dein Ergebnis:</strong> Dein geschätztes VO₂ max wird mit der Jack Daniels-Formel berechnet, die weltweit von Lauftrainern und Sportwissenschaftlern verwendet wird.",
+        "STEP4": "<strong>4. Interpretiere deine Punktzahl:</strong> Vergleiche dein Ergebnis mit den Bereichen unten und nutze es, um Trainingsziele zu setzen und Fitnessverbesserungen über die Zeit zu verfolgen."
+      },
+      "UNDERSTANDING": {
+        "TITLE": "Verstehen deiner VO₂ Max Ergebnisse",
+        "RANGES": {
+          "TITLE": "VO₂ Max Bereiche (ml/kg/min)",
+          "BEGINNER": "<strong>Anfänger-Läufer:</strong> 25-35 - Anfängliches Fitnessniveau",
+          "RECREATIONAL": "<strong>Freizeitläufer:</strong> 35-45 - Gutes Fitnessniveau",
+          "COMPETITIVE": "<strong>Wettkampfläufer:</strong> 45-60 - Ausgezeichnetes Fitnessniveau",
+          "ELITE": "<strong>Elite-Läufer:</strong> 60-80+ - Weltklasse-Fitnessniveau"
+        },
+        "FACTORS": {
+          "TITLE": "Faktoren, die VO₂ Max beeinflussen",
+          "AGE": "<strong>Alter:</strong> Nimmt typischerweise 1% pro Jahr nach dem 25. Lebensjahr ab",
+          "GENDER": "<strong>Geschlecht:</strong> Männer haben durchschnittlich 10-15% mehr als Frauen",
+          "TRAINING": "<strong>Training:</strong> Kann sich mit angemessenem Training um 15-25% verbessern",
+          "GENETICS": "<strong>Genetik:</strong> Macht 25-50% deines Potentials aus"
+        }
+      },
+      "TRAINING_TIPS": {
+        "TITLE": "Wie du dein VO₂ Max verbesserst",
+        "INTRO": "Steigere deine aerobe Fitness mit diesen evidenzbasierten Strategien:",
+        "TIP1": "<strong>Hochintensive Intervalle:</strong> 3-8 Minuten Intervalle im 3K-5K Wettkampftempo, 1-2 mal pro Woche",
+        "TIP2": "<strong>Tempoläufe:</strong> 20-40 Minuten Läufe in angenehm hartem Tempo (15K-Halbmarathon-Tempo)",
+        "TIP3": "<strong>Lange Läufe:</strong> Baue aerobe Basis mit wöchentlichen langen Läufen in Gesprächstempo auf",
+        "TIP4": "<strong>Beständigkeit:</strong> Trainiere regelmäßig für 6-12 Wochen, um signifikante Verbesserungen zu sehen"
+      },
+      "RELATED_TOOLS": {
+        "TITLE": "Verwandte Laufrechner",
+        "FINISH_TIME": {
+          "TITLE": "Wettkampfzeit-Vorhersage",
+          "DESC": "Sage deine Zielzeiten für verschiedene Wettkampfdistanzen basierend auf deinem VO₂ max vorher"
+        },
+        "PACE_CALC": {
+          "TITLE": "Trainingstempo-Rechner",
+          "DESC": "Berechne optimale Trainingstempi für verschiedene Trainingsarten"
+        },
+        "CALORIES": {
+          "TITLE": "Kalorienverbrauch-Rechner",
+          "DESC": "Schätze den Energieverbrauch während deiner Trainingsläufe"
+        },
+        "BMI": {
+          "TITLE": "Körperzusammensetzung-Rechner",
+          "DESC": "Bewerte deine Körperzusammensetzung und ideales Wettkampfgewicht"
+        }
+      },
       "FAQ": {
         "TITLE": "Häufig Gestellte Fragen",
         "Q1": "Was ist VO₂ Max und warum ist es wichtig?",
@@ -139,7 +190,7 @@
     },
     "FINISH_TIME_PREDICTOR": {
       "TITLE": "Zielzeit-Prognose",
-      "DESCRIPTION": "Berechne deine voraussichtliche Zeit für beliebte Distanzen basierend auf einem aktuellen Lauf.",
+      "DESCRIPTION": "Prognostiziere deine Wettkampf-Zielzeiten für 5K, 10K, Halbmarathon und Marathon-Distanzen. Basiert auf bewährten Formeln, die von Elite-Trainern verwendet werden. Gib deine aktuelle Wettkampfzeit ein, um genaue Vorhersagen für Zielsetzung und Wettkampfplanung zu erhalten. Kostenloses Tool für ernsthafte Läufer.",
       "SUMMARY": "Prognostizierte Laufzeiten",
       "SUMMARY_SUB": "Basierend auf deinem aktuellen Tempo",
       "FAQ": {
@@ -157,9 +208,76 @@
       }
     },
     "PACE_CALCULATOR": {
-      "TITLE": "Tempo-Rechner",
-      "DESCRIPTION": "Passe Zeit, Distanz oder Tempo an – die anderen Werte werden automatisch berechnet.",
+      "TITLE": "Lauftempo-Rechner",
+      "DESCRIPTION": "Berechne Lauftempo, Zeit und Distanz für Marathontraining, 5K-Vorbereitung und Rennplanung. Gib zwei beliebige Werte ein, um den dritten zu berechnen. Unterstützt metrische und imperiale Einheiten für genaue Trainingsberechnungen.",
       "SUMMARY": "Deine Tempo-Zusammenfassung",
+      "HOW_TO_USE": {
+        "TITLE": "Wie man den Tempo-Rechner verwendet",
+        "STEP1": "<strong>1. Gib zwei beliebige Werte ein:</strong> Trage Distanz, Zeit oder Tempo ein - der Rechner berechnet automatisch den fehlenden Wert. Perfekt für Trainingsplanung oder Rennleistungsanalyse.",
+        "STEP2": "<strong>2. Wähle deine Einheiten:</strong> Wähle zwischen metrischen (Kilometer, min/km) oder imperialen (Meilen, min/Meile) Einheiten basierend auf deiner Präferenz oder Trainingsprogramm-Anforderungen.",
+        "STEP3": "<strong>3. Erhalte sofortige Ergebnisse:</strong> Sieh dein berechnetes Tempo, Zeit oder Distanz sofort. Verwende diese Werte für Trainingsplanung, Rennziel-Setzung oder Trainingsanalyse.",
+        "STEP4": "<strong>4. Auf Training anwenden:</strong> Verwende das berechnete Tempo für verschiedene Trainingsarten - lockere Läufe, Tempo-Trainings, Intervalle oder Renn-Tempo-Strategien."
+      },
+      "TRAINING_PACES": {
+        "TITLE": "Trainings-Tempo Leitfäden",
+        "EASY_RUNS": {
+          "TITLE": "Lockere/Erholungsläufe",
+          "DESC": "<strong>Gesprächstempo</strong> - du solltest in ganzen Sätzen sprechen können",
+          "PACE": "<strong>Tempo:</strong> Deutlich langsamer als 5K-Renntempo (etwa 20-30% langsamer)",
+          "PURPOSE": "<strong>Zweck:</strong> Aerobe Basis aufbauen, Erholung fördern, wöchentliche Laufleistung sicher steigern"
+        },
+        "TEMPO_RUNS": {
+          "TITLE": "Tempo/Schwellenläufe",
+          "DESC": "<strong>Angenehm hartes Tempo</strong> - nachhaltiger aber herausfordernder Aufwand",
+          "PACE": "<strong>Tempo:</strong> Etwas langsamer als 10K-Renntempo (etwa 5-10% langsamer)",
+          "PURPOSE": "<strong>Zweck:</strong> Laktatschwelle verbessern, rennspezifische Fitness, mentale Stärke"
+        },
+        "INTERVALS": {
+          "TITLE": "Intervalltraining",
+          "DESC": "<strong>Harter Aufwand</strong> - 5K-Renntempo oder schneller für kurze Wiederholungen",
+          "PACE": "<strong>Tempo:</strong> 3K-5K Renntempo für VO₂ max Intervalle",
+          "PURPOSE": "<strong>Zweck:</strong> VO₂ max verbessern, Laufökonomie, Geschwindigkeit, anaerobe Kapazität"
+        },
+        "LONG_RUNS": {
+          "TITLE": "Lange Läufe",
+          "DESC": "<strong>Gleichmäßiges, nachhaltiges Tempo</strong> - konzentriere dich auf Zeit/Distanz, nicht Geschwindigkeit",
+          "PACE": "<strong>Tempo:</strong> Mäßig langsamer als Marathontempo (etwa 10-20% langsamer)",
+          "PURPOSE": "<strong>Zweck:</strong> Ausdauer aufbauen, mentale Stärke, Fettverbrennungseffizienz"
+        }
+      },
+      "RACE_STRATEGY": {
+        "TITLE": "Renn-Tempo Strategien",
+        "INTRO": "Intelligentes Tempo ist entscheidend für Rennerfolg. Hier sind bewährte Strategien für verschiedene Renndistanzen:",
+        "SHORT_RACES": {
+          "TITLE": "5K & 10K Rennen",
+          "STRATEGY1": "<strong>5K:</strong> Leicht konservativ starten, in der Mitte aufbauen, starker Finish",
+          "STRATEGY2": "<strong>10K:</strong> Gleichmäßiges Tempo durchgehend, leichter negativer Split wenn möglich"
+        },
+        "LONG_RACES": {
+          "TITLE": "Halbmarathon & Marathon",
+          "STRATEGY1": "<strong>Halbmarathon:</strong> Konservative erste 5K, gleichmäßige Mitte, starke finale 5K",
+          "STRATEGY2": "<strong>Marathon:</strong> Gleichmäßiges Tempo ist kritisch, Energie für finalen 10K-Schub sparen"
+        }
+      },
+      "RELATED_TOOLS": {
+        "TITLE": "Verwandte Laufrechner",
+        "FINISH_TIME": {
+          "TITLE": "Rennzeit-Vorhersage",
+          "DESC": "Sage deine Zielzeiten für verschiedene Distanzen basierend auf aktueller Fitness vorher"
+        },
+        "VO2MAX": {
+          "TITLE": "VO₂ Max Rechner",
+          "DESC": "Schätze deine aerobe Fitness und Trainingszonen aus Rennleistung"
+        },
+        "PACE_SPEED": {
+          "TITLE": "Tempo zu Geschwindigkeit Umrechner",
+          "DESC": "Rechne zwischen Tempo- und Geschwindigkeitseinheiten für Laufbandtraining um"
+        },
+        "CALORIES": {
+          "TITLE": "Kalorienverbrauch-Rechner",
+          "DESC": "Schätze Energieverbrauch für verschiedene Tempi und Distanzen"
+        }
+      },
       "FAQ": {
         "TITLE": "Häufig gestellte Fragen",
         "Q1": "Was ist ein gutes Lauftempo für Anfänger?",
@@ -176,7 +294,7 @@
     },
     "DISTANCE_UNIT_CONVERTER": {
       "TITLE": "Distanzen umrechnen",
-      "DESCRIPTION": "Schnell zwischen Kilometern und Meilen wechseln.",
+      "DESCRIPTION": "Konvertiere Laufdistanzen zwischen Meilen und Kilometern sofort. Unverzichtbares Tool für internationale Wettkampfplanung, Trainingsprogramme und GPS-Uhren-Setup. Genaue Konvertierung für 5K, 10K, Halbmarathon, Marathon und benutzerdefinierte Distanzen. Kostenloser Distanzrechner für Läufer weltweit.",
       "SUMMARY": "Kilometer: {{kmDistance}} • Meilen: {{miDistance}}",
       "RESULT_TITLE": "Distanz-Umrechnung",
       "RESULT_SUBTITLE": "Entsprechende Distanzen in Kilometern und Meilen",
@@ -198,7 +316,7 @@
     },
     "PACE_SPEED_UNIT_CONVERTER": {
       "TITLE": "Tempo & Geschwindigkeit",
-      "DESCRIPTION": "Rechne Tempo in Geschwindigkeit um oder umgekehrt.",
+      "DESCRIPTION": "Konvertiere zwischen Lauftempo (min/Meile, min/km) und Geschwindigkeit (mph, km/h) sofort. Perfekt für Laufbandtraining, Vergleich von Trainingsintensitäten und Verständnis von Wettkampftempi. Unverzichtbares Tool für Läufer, die verschiedene Trainingsmethoden und Geräte verwenden.",
       "SUMMARY": "Tempo: {{pace}} • Geschwindigkeit: {{speed}}",
       "RESULT_TITLE": "Tempo & Geschwindigkeits-Umrechnung",
       "RESULT_SUBTITLE": "Entsprechende Tempo- und Geschwindigkeitswerte",
@@ -220,7 +338,7 @@
     },
     "WEIGHT_UNIT_CONVERTER": {
       "TITLE": "Gewicht umrechnen",
-      "DESCRIPTION": "Kilogramm und Pfund einfach umrechnen.",
+      "DESCRIPTION": "Konvertiere Körpergewicht zwischen Kilogramm und Pfund für Fitness-Tracking und internationale Trainingsprogramme. Genaues Gewichts-Konvertierungstool für Läufer, Athleten und Gesundheitsüberwachung. Unverzichtbar für BMI-Berechnungen und Ernährungsplanung.",
       "SUMMARY": "Kilogramm: {{kg}} • Pfund: {{lb}}",
       "RESULT_TITLE": "Gewichts-Umrechnung",
       "RESULT_SUBTITLE": "Entsprechende Gewichte in Kilogramm und Pfund",
@@ -242,7 +360,7 @@
     },
     "BMI_CALCULATOR": {
       "TITLE": "Körperzusammensetzung",
-      "DESCRIPTION": "Berechne deinen BMI und schätze deinen Körperfettanteil mit verschiedenen Methoden für eine umfassende Analyse deiner Körperzusammensetzung. Beinhaltet:",
+      "DESCRIPTION": "Umfassender Körperzusammensetzungs-Rechner für Läufer und Athleten. Berechne BMI, Körperfettanteil, Idealgewicht und Grundumsatz (BMR). Verwendet fortgeschrittene Formeln einschließlich Neuer BMI für genaue Ergebnisse. Beinhaltet:",
       "DESCRIPTION_2": "<ul class='list-disc list-inside ml-4 space-y-1'><li>Standard-BMI</li><li>Neuer BMI - größenangepasster BMI</li><li>IBW - ideales Körpergewicht</li><li>Körperfett % - geschätzt mit Deurenberg-Formel</li><li>BMR - Kalorien im Ruhezustand</li></ul>",
       "RESULT_TITLE": "Deine Gesundheitswerte",
       "RESULT_SUBTITLE": "Basierend auf deiner Größe, Gewicht, Alter und Geschlecht",
@@ -288,6 +406,64 @@
           "IBW_IMPROVE": "Dein Gewicht könnte verbessert werden",
           "IBW_OK": "Dein Gewicht ist akzeptabel",
           "IBW_IDEAL": "Dein Gewicht ist ideal"
+        }
+      },
+      "HOW_TO_USE": {
+        "TITLE": "Wie man den BMI-Rechner verwendet",
+        "STEP1": "<strong>1. Gib deine Grundinformationen ein:</strong> Trage dein Alter, Geschlecht, Größe und Gewicht in deinen bevorzugten Einheiten ein. Der Rechner passt sich automatisch an verschiedene Messsysteme an.",
+        "STEP2": "<strong>2. Überprüfe alle Metriken:</strong> Erhalte umfassende Ergebnisse einschließlich BMI, Neuer BMI, Körperfettanteil, ideales Körpergewicht und Grundumsatz (BMR).",
+        "STEP3": "<strong>3. Verstehe deine Ergebnisse:</strong> Jede Metrik bietet verschiedene Einblicke in deine Gesundheit und Fitness. Vergleiche deine Werte mit den bereitgestellten gesunden Bereichen.",
+        "STEP4": "<strong>4. Nutze für Gesundheitsplanung:</strong> Wende diese Metriken an, um realistische Fitnessziele zu setzen, Ernährung zu planen und Fortschritte über die Zeit zu verfolgen."
+      },
+      "UNDERSTANDING": {
+        "TITLE": "Verstehen deiner Körperzusammensetzungs-Ergebnisse",
+        "BMI_RANGES": {
+          "TITLE": "BMI-Kategorien",
+          "UNDERWEIGHT": "<strong>Untergewicht:</strong> Unter 18,5 - Kann auf unzureichendes Körpergewicht hinweisen",
+          "NORMAL": "<strong>Normalgewicht:</strong> 18,5-24,9 - Gesunder Gewichtsbereich für die meisten Menschen",
+          "OVERWEIGHT": "<strong>Übergewicht:</strong> 25-29,9 - Über Normalgewicht, erwäge Lebensstiländerungen",
+          "OBESE": "<strong>Adipös:</strong> 30+ - Deutlich über gesundem Gewicht, konsultiere einen Gesundheitsdienstleister"
+        },
+        "BODY_FAT": {
+          "TITLE": "Körperfettanteil-Bereiche",
+          "MALE_RANGES": "<strong>Männer:</strong> Essentiell 2-5%, Athleten 6-13%, Fitness 14-17%, Durchschnitt 18-24%",
+          "FEMALE_RANGES": "<strong>Frauen:</strong> Essentiell 10-13%, Athleten 14-20%, Fitness 21-24%, Durchschnitt 25-31%",
+          "ATHLETE_NOTE": "<strong>Hinweis:</strong> Läufer halten typischerweise niedrigere Körperfettanteile für optimale Leistung"
+        }
+      },
+      "HEALTH_TIPS": {
+        "TITLE": "Gesundheits- und Fitness-Empfehlungen",
+        "INTRO": "Nutze diese evidenzbasierten Strategien, um deine Körperzusammensetzung und allgemeine Gesundheit zu optimieren:",
+        "WEIGHT_MANAGEMENT": {
+          "TITLE": "Gesundes Gewichtsmanagement",
+          "TIP1": "Schaffe moderate Kaloriendefizite durch ausgewogene Ernährung und Bewegung",
+          "TIP2": "Konzentriere dich auf nachhaltige Lebensstiländerungen statt schnelle Lösungen",
+          "TIP3": "Überwache Fortschritte durch mehrere Metriken, nicht nur Gewicht"
+        },
+        "RUNNERS": {
+          "TITLE": "Spezielle Tipps für Läufer",
+          "TIP1": "Halte angemessenes Körperfett für Hormonproduktion und Verletzungsprävention",
+          "TIP2": "Priorisiere Muskelmasseerhaltung während Gewichtsverlustphasen",
+          "TIP3": "Nutze BMR zur Berechnung täglicher Kalorienbedürfnisse einschließlich Trainingsanforderungen"
+        }
+      },
+      "RELATED_TOOLS": {
+        "TITLE": "Verwandte Gesundheits- und Fitness-Rechner",
+        "CALORIES": {
+          "TITLE": "Kalorienverbrauch-Rechner",
+          "DESC": "Berechne Energieverbrauch während Laufen und anderen Aktivitäten"
+        },
+        "VO2MAX": {
+          "TITLE": "VO₂ Max-Rechner",
+          "DESC": "Bewerte deine aerobe Fitness und Herz-Kreislauf-Gesundheit"
+        },
+        "WEIGHT_CONVERTER": {
+          "TITLE": "Gewichtseinheiten-Umrechner",
+          "DESC": "Rechne zwischen verschiedenen Gewichtsmesssystemen um"
+        },
+        "PACE_CALC": {
+          "TITLE": "Tempo-Rechner",
+          "DESC": "Berechne optimale Trainingstempi für dein Fitnesslevel"
         }
       },
       "FAQ": {

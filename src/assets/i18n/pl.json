@@ -94,7 +94,7 @@
   "TOOLS": {
     "CALORIES_BURNED_CALCULATOR": {
       "TITLE": "Oblicz spalone kalorie",
-      "DESCRIPTION": "Podaj dystans, tempo oraz wagę ciała, aby oszacować spalone kalorie.",
+      "DESCRIPTION": "Oblicz spalone kalorie podczas biegania za pomocą naszego darmowego, dokładnego kalkulatora. Wprowadź swoją odległość, czas i wagę, aby oszacować wydatek energetyczny. Idealny dla biegaczy śledzących cele fitness, utratę wagi i intensywność treningu. Używany przez sportowców na całym świecie do planowania żywienia i optymalizacji treningów.",
       "SUMMARY": "Szacunkowa liczba spalonych kalorii: {{calories}} kcal.",
       "SUMMARY_TITLE": "Spalone Kalorie",
       "SUMMARY_SUB": "Na podstawie dystansu, czasu i wagi.",
@@ -116,11 +116,62 @@
     },
     "VO2MAX_CALCULATOR": {
       "TITLE": "Oblicz VO₂max",
-      "DESCRIPTION": "Podaj dystans i czas biegu, aby oszacować swoją wydolność tlenową.",
+      "DESCRIPTION": "Oblicz swoje VO₂ max na podstawie wydajności startowej. Darmowy kalkulator biegowy używany przez sportowców na całym świecie do szacowania kondycji tlenowej i optymalizacji treningu. Wprowadź swoją ostatnią odległość startową i czas mety, aby otrzymać oszacowanie VO₂ max oparte na sprawdzonej formule Jacka Danielsa.",
       "SUMMARY": "Twoje VO₂max wynosi około {{vo2Max}}.",
       "RESULT_TITLE": "Wynik VO₂ Max",
       "RESULT_SUBTITLE": "Twoja szacowana maksymalna wydolność tlenowa",
       "UNIT": "ml/kg/min",
+      "HOW_TO_USE": {
+        "TITLE": "Jak Używać Kalkulatora VO₂ Max",
+        "STEP1": "<strong>1. Wybierz dystans startu:</strong> Wybierz ostatni dystans startowy od 5K do maratonu. Dla najlepszej dokładności użyj startu, który ukończyłeś w ciągu ostatnich 3-6 miesięcy z maksymalnym wysiłkiem.",
+        "STEP2": "<strong>2. Wprowadź czas mety:</strong> Wpisz swój rzeczywisty czas ukończenia startu w godzinach, minutach i sekundach. Bądź tak precyzyjny jak to możliwe dla najdokładniejszego oszacowania VO₂ max.",
+        "STEP3": "<strong>3. Otrzymaj wynik:</strong> Twoje szacowane VO₂ max zostanie obliczone przy użyciu formuły Jacka Danielsa, szeroko stosowanej przez trenerów biegowych i naukowców sportu na całym świecie.",
+        "STEP4": "<strong>4. Interpretuj wynik:</strong> Porównaj swój wynik z zakresami poniżej i użyj go do ustalenia celów treningowych i śledzenia poprawy kondycji w czasie."
+      },
+      "UNDERSTANDING": {
+        "TITLE": "Zrozumienie Wyników VO₂ Max",
+        "RANGES": {
+          "TITLE": "Zakresy VO₂ Max (ml/kg/min)",
+          "BEGINNER": "<strong>Biegacze początkujący:</strong> 25-35 - Początkowy poziom kondycji",
+          "RECREATIONAL": "<strong>Biegacze rekreacyjni:</strong> 35-45 - Dobry poziom kondycji",
+          "COMPETITIVE": "<strong>Biegacze zawodniczy:</strong> 45-60 - Doskonały poziom kondycji",
+          "ELITE": "<strong>Biegacze elitarni:</strong> 60-80+ - Światowej klasy poziom kondycji"
+        },
+        "FACTORS": {
+          "TITLE": "Czynniki Wpływające na VO₂ Max",
+          "AGE": "<strong>Wiek:</strong> Typowo spada o 1% rocznie po 25 roku życia",
+          "GENDER": "<strong>Płeć:</strong> Mężczyźni mają średnio 10-15% więcej niż kobiety",
+          "TRAINING": "<strong>Trening:</strong> Może poprawić się o 15-25% przy odpowiednim treningu",
+          "GENETICS": "<strong>Genetyka:</strong> Stanowi 25-50% twojego potencjału"
+        }
+      },
+      "TRAINING_TIPS": {
+        "TITLE": "Jak Poprawić Swoje VO₂ Max",
+        "INTRO": "Zwiększ swoją kondycję tlenową dzięki tym strategiom opartym na dowodach:",
+        "TIP1": "<strong>Interwały Wysokiej Intensywności:</strong> Interwały 3-8 minut w tempie startowym 3K-5K, 1-2 razy w tygodniu",
+        "TIP2": "<strong>Biegi Tempo:</strong> Biegi 20-40 minut w tempie wygodnie trudnym (tempo 15K-półmaraton)",
+        "TIP3": "<strong>Biegi Długie:</strong> Buduj bazę tlenową cotygodniowymi długimi biegami w tempie konwersacyjnym",
+        "TIP4": "<strong>Konsekwencja:</strong> Trenuj regularnie przez 6-12 tygodni, aby zobaczyć znaczące poprawy"
+      },
+      "RELATED_TOOLS": {
+        "TITLE": "Powiązane Kalkulatory Biegowe",
+        "FINISH_TIME": {
+          "TITLE": "Predyktor Czasu Startu",
+          "DESC": "Przewiduj swoje czasy mety dla różnych dystansów startowych na podstawie swojego VO₂ max"
+        },
+        "PACE_CALC": {
+          "TITLE": "Kalkulator Tempa Treningowego",
+          "DESC": "Oblicz optymalne tempa treningowe dla różnych typów treningów"
+        },
+        "CALORIES": {
+          "TITLE": "Kalkulator Spalonych Kalorii",
+          "DESC": "Oszacuj wydatek energetyczny podczas swoich treningowych biegów"
+        },
+        "BMI": {
+          "TITLE": "Kalkulator Składu Ciała",
+          "DESC": "Oceń swój skład ciała i idealną wagę startową"
+        }
+      },
       "FAQ": {
         "TITLE": "Najczęściej Zadawane Pytania",
         "Q1": "Czym jest VO₂ Max i dlaczego jest ważne?",
@@ -139,7 +190,7 @@
     },
     "FINISH_TIME_PREDICTOR": {
       "TITLE": "Prognoza czasu biegu",
-      "DESCRIPTION": "Szacuj czas ukończenia biegu dla różnych dystansów na podstawie ostatniego biegu.",
+      "DESCRIPTION": "Przewiduj swoje czasy ukończenia wyścigu dla dystansów 5K, 10K, półmaraton i maraton. Oparte na sprawdzonych formułach używanych przez elitarnych trenerów. Wprowadź swój ostatni czas wyścigu, aby otrzymać dokładne prognozy do ustalania celów i planowania wyścigów. Darmowe narzędzie dla poważnych biegaczy.",
       "SUMMARY": "Przewidywane Czasy Biegu",
       "SUMMARY_SUB": "Na podstawie aktualnego tempa",
       "FAQ": {
@@ -157,9 +208,76 @@
       }
     },
     "PACE_CALCULATOR": {
-      "TITLE": "Kalkulator tempa",
-      "DESCRIPTION": "Zmieniaj czas, dystans lub tempo – obliczymy pozostałe wartości.",
+      "TITLE": "Kalkulator Tempa Biegowego",
+      "DESCRIPTION": "Oblicz tempo biegowe, czas i dystans do treningu maratońskiego, przygotowań do 5K i planowania startów. Wprowadź dowolne dwie wartości, aby obliczyć trzecią. Obsługuje jednostki metryczne i imperialne dla dokładnych obliczeń treningowych.",
       "SUMMARY": "Podsumowanie Tempa",
+      "HOW_TO_USE": {
+        "TITLE": "Jak Używać Kalkulatora Tempa",
+        "STEP1": "<strong>1. Wprowadź dowolne dwie wartości:</strong> Wpisz dystans, czas lub tempo - kalkulator automatycznie obliczy brakującą wartość. Idealny do planowania treningów lub analizy wydajności startowej.",
+        "STEP2": "<strong>2. Wybierz swoje jednostki:</strong> Wybierz między jednostkami metrycznymi (kilometry, min/km) lub imperialnymi (mile, min/mila) w zależności od preferencji lub wymagań programu treningowego.",
+        "STEP3": "<strong>3. Otrzymaj natychmiastowe wyniki:</strong> Zobacz swoje obliczone tempo, czas lub dystans natychmiast. Użyj tych wartości do planowania treningów, ustalania celów startowych lub analizy treningów.",
+        "STEP4": "<strong>4. Zastosuj w treningu:</strong> Użyj obliczonego tempa dla różnych typów treningów - biegi łatwe, treningi tempo, interwały lub strategie tempa startowego."
+      },
+      "TRAINING_PACES": {
+        "TITLE": "Przewodniki Tempa Treningowego",
+        "EASY_RUNS": {
+          "TITLE": "Biegi Łatwe/Regeneracyjne",
+          "DESC": "<strong>Tempo konwersacyjne</strong> - powinieneś móc mówić pełnymi zdaniami",
+          "PACE": "<strong>Tempo:</strong> Znacząco wolniej niż tempo startowe 5K (około 20-30% wolniej)",
+          "PURPOSE": "<strong>Cel:</strong> Budowanie bazy tlenowej, promowanie regeneracji, bezpieczne zwiększanie tygodniowego kilometrażu"
+        },
+        "TEMPO_RUNS": {
+          "TITLE": "Biegi Tempo/Progowe",
+          "DESC": "<strong>Tempo wygodnie trudne</strong> - wysiłek zrównoważony ale wymagający",
+          "PACE": "<strong>Tempo:</strong> Nieco wolniej niż tempo startowe 10K (około 5-10% wolniej)",
+          "PURPOSE": "<strong>Cel:</strong> Poprawa progu mleczanowego, kondycji specyficznej dla startu, wytrzymałości psychicznej"
+        },
+        "INTERVALS": {
+          "TITLE": "Trening Interwałowy",
+          "DESC": "<strong>Twardy wysiłek</strong> - tempo startowe 5K lub szybsze dla krótkich powtórzeń",
+          "PACE": "<strong>Tempo:</strong> Tempo startowe 3K-5K dla interwałów VO₂ max",
+          "PURPOSE": "<strong>Cel:</strong> Poprawa VO₂ max, ekonomii biegu, prędkości, wydolności beztlenowej"
+        },
+        "LONG_RUNS": {
+          "TITLE": "Biegi Długie",
+          "DESC": "<strong>Tempo stabilne i zrównoważone</strong> - skup się na czasie/dystansie, nie prędkości",
+          "PACE": "<strong>Tempo:</strong> Umiarkowanie wolniej niż tempo maratońskie (około 10-20% wolniej)",
+          "PURPOSE": "<strong>Cel:</strong> Budowanie wytrzymałości, wytrzymałości psychicznej, efektywności spalania tłuszczu"
+        }
+      },
+      "RACE_STRATEGY": {
+        "TITLE": "Strategie Tempa Startowego",
+        "INTRO": "Inteligentne tempo jest kluczowe dla sukcesu startowego. Oto sprawdzone strategie dla różnych dystansów startowych:",
+        "SHORT_RACES": {
+          "TITLE": "Starty 5K i 10K",
+          "STRATEGY1": "<strong>5K:</strong> Zacznij lekko zachowawczo, buduj przez środek, mocny finisz",
+          "STRATEGY2": "<strong>10K:</strong> Równe tempo przez cały bieg, lekki negatywny split jeśli możliwe"
+        },
+        "LONG_RACES": {
+          "TITLE": "Półmaraton i Maraton",
+          "STRATEGY1": "<strong>Półmaraton:</strong> Zachowawcze pierwsze 5K, stabilny środek, mocne ostatnie 5K",
+          "STRATEGY2": "<strong>Maraton:</strong> Równe tempo jest krytyczne, oszczędzaj energię na finałowy napęd 10K"
+        }
+      },
+      "RELATED_TOOLS": {
+        "TITLE": "Powiązane Kalkulatory Biegowe",
+        "FINISH_TIME": {
+          "TITLE": "Predyktor Czasu Startu",
+          "DESC": "Przewiduj swoje czasy mety dla różnych dystansów na podstawie aktualnej kondycji"
+        },
+        "VO2MAX": {
+          "TITLE": "Kalkulator VO₂ Max",
+          "DESC": "Oszacuj swoją kondycję tlenową i strefy treningowe na podstawie wydajności startowej"
+        },
+        "PACE_SPEED": {
+          "TITLE": "Konwerter Tempo na Prędkość",
+          "DESC": "Konwertuj między jednostkami tempa i prędkości dla treningu na bieżni"
+        },
+        "CALORIES": {
+          "TITLE": "Kalkulator Spalonych Kalorii",
+          "DESC": "Oszacuj wydatek energetyczny dla różnych temp i dystansów"
+        }
+      },
       "FAQ": {
         "TITLE": "Najczęściej Zadawane Pytania",
         "Q1": "Jakie jest dobre tempo biegu dla początkujących?",
@@ -176,7 +294,7 @@
     },
     "DISTANCE_UNIT_CONVERTER": {
       "TITLE": "Kilometry i mile",
-      "DESCRIPTION": "Szybko przelicz odległości pomiędzy kilometrami a milami.",
+      "DESCRIPTION": "Konwertuj dystanse biegowe między kilometrami a milami natychmiastowo. Niezbędne narzędzie do planowania międzynarodowych wyścigów, programów treningowych i konfiguracji zegarków GPS. Dokładna konwersja dla 5K, 10K, półmaraton, maraton i niestandardowych dystansów. Darmowy kalkulator dystansu dla biegaczy na całym świecie.",
       "SUMMARY": "Kilometry: {{kmDistance}} • Mile: {{miDistance}}",
       "RESULT_TITLE": "Przeliczanie Dystansu",
       "RESULT_SUBTITLE": "Równoważne odległości w kilometrach i milach",
@@ -198,7 +316,7 @@
     },
     "PACE_SPEED_UNIT_CONVERTER": {
       "TITLE": "Tempo i prędkość",
-      "DESCRIPTION": "Oblicz tempo na podstawie prędkości lub odwrotnie.",
+      "DESCRIPTION": "Konwertuj między tempem biegowym (min/mila, min/km) a prędkością (mph, km/h) natychmiastowo. Idealne do treningu na bieżni, porównywania intensywności treningów i rozumienia temp wyścigowych. Niezbędne narzędzie dla biegaczy używających różnych metod treningowych i sprzętu.",
       "SUMMARY": "Tempo: {{pace}} • Prędkość: {{speed}}",
       "RESULT_TITLE": "Przeliczanie Tempa i Prędkości",
       "RESULT_SUBTITLE": "Równoważne wartości tempa i prędkości",
@@ -220,7 +338,7 @@
     },
     "WEIGHT_UNIT_CONVERTER": {
       "TITLE": "Kilogramy i funty",
-      "DESCRIPTION": "Przelicz wagę między kilogramami a funtami.",
+      "DESCRIPTION": "Konwertuj wagę ciała między kilogramami a funtami do śledzenia fitness i międzynarodowych programów treningowych. Dokładne narzędzie konwersji wagi dla biegaczy, sportowców i monitorowania zdrowia. Niezbędne do obliczeń BMI i planowania żywienia.",
       "SUMMARY": "Kilogramy: {{kg}} • Funty: {{lb}}",
       "RESULT_TITLE": "Przeliczanie Wagi",
       "RESULT_SUBTITLE": "Równoważne wagi w kilogramach i funtach",
@@ -242,7 +360,7 @@
     },
     "BMI_CALCULATOR": {
       "TITLE": "Skład Ciała",
-      "DESCRIPTION": "Oblicz swoje BMI i oszacuj tkankę tłuszczową używając różnych metod dla pełnej analizy składu ciała. Zawiera:",
+      "DESCRIPTION": "Kompleksowy kalkulator składu ciała dla biegaczy i sportowców. Oblicz BMI, procent tkanki tłuszczowej, idealną wagę i podstawową przemianę materii (BMR). Używa zaawansowanych formuł włączając Nowe BMI dla dokładnych wyników. Zawiera:",
       "DESCRIPTION_2": "<ul class='list-disc list-inside ml-4 space-y-1'><li>Standardowe BMI</li><li>Nowe BMI - dostosowane do wzrostu</li><li>IBW - idealna masa ciała</li><li>% Tkanki tłuszczowej - szacowane wzorem Deurenberga</li><li>BMR - kalorie spalane w spoczynku</li></ul>",
       "RESULT_TITLE": "Twoje Wskaźniki Zdrowia",
       "RESULT_SUBTITLE": "Na podstawie wzrostu, wagi, wieku i płci",
@@ -288,6 +406,64 @@
           "IBW_IMPROVE": "Twoja waga mogłaby być lepsza",
           "IBW_OK": "Twoja waga jest akceptowalna",
           "IBW_IDEAL": "Twoja waga jest idealna"
+        }
+      },
+      "HOW_TO_USE": {
+        "TITLE": "Jak Używać Kalkulatora BMI",
+        "STEP1": "<strong>1. Wprowadź swoje podstawowe informacje:</strong> Wpisz swój wiek, płeć, wzrost i wagę używając preferowanych jednostek. Kalkulator automatycznie dostosowuje się do różnych systemów pomiarowych.",
+        "STEP2": "<strong>2. Przejrzyj wszystkie metryki:</strong> Otrzymaj kompleksowe wyniki obejmujące BMI, Nowe BMI, procent tkanki tłuszczowej, idealną wagę ciała i podstawową przemianę materii (BMR).",
+        "STEP3": "<strong>3. Zrozum swoje wyniki:</strong> Każda metryka dostarcza różnych perspektyw na twoje zdrowie i kondycję. Porównaj swoje wartości z podanymi zdrowymi zakresami.",
+        "STEP4": "<strong>4. Użyj do planowania zdrowia:</strong> Zastosuj te metryki do ustalania realistycznych celów fitness, planowania żywienia i śledzenia postępów w czasie."
+      },
+      "UNDERSTANDING": {
+        "TITLE": "Zrozumienie Wyników Składu Ciała",
+        "BMI_RANGES": {
+          "TITLE": "Kategorie BMI",
+          "UNDERWEIGHT": "<strong>Niedowaga:</strong> Poniżej 18,5 - Może wskazywać na niewystarczającą wagę ciała",
+          "NORMAL": "<strong>Waga normalna:</strong> 18,5-24,9 - Zdrowy zakres wagi dla większości ludzi",
+          "OVERWEIGHT": "<strong>Nadwaga:</strong> 25-29,9 - Powyżej normalnej wagi, rozważ zmiany stylu życia",
+          "OBESE": "<strong>Otyłość:</strong> 30+ - Znacząco powyżej zdrowej wagi, skonsultuj się z lekarzem"
+        },
+        "BODY_FAT": {
+          "TITLE": "Zakresy Procentu Tkanki Tłuszczowej",
+          "MALE_RANGES": "<strong>Mężczyźni:</strong> Niezbędny 2-5%, Sportowcy 6-13%, Fitness 14-17%, Średni 18-24%",
+          "FEMALE_RANGES": "<strong>Kobiety:</strong> Niezbędny 10-13%, Sportowcy 14-20%, Fitness 21-24%, Średni 25-31%",
+          "ATHLETE_NOTE": "<strong>Uwaga:</strong> Biegacze zazwyczaj utrzymują niższe procenty tkanki tłuszczowej dla optymalnej wydajności"
+        }
+      },
+      "HEALTH_TIPS": {
+        "TITLE": "Zalecenia Zdrowia i Fitness",
+        "INTRO": "Użyj tych strategii opartych na dowodach, aby zoptymalizować skład ciała i ogólne zdrowie:",
+        "WEIGHT_MANAGEMENT": {
+          "TITLE": "Zdrowe Zarządzanie Wagą",
+          "TIP1": "Twórz umiarkowane deficyty kaloryczne poprzez zbilansowaną dietę i ćwiczenia",
+          "TIP2": "Skup się na trwałych zmianach stylu życia zamiast szybkich rozwiązań",
+          "TIP3": "Monitoruj postępy poprzez wiele metryk, nie tylko wagę"
+        },
+        "RUNNERS": {
+          "TITLE": "Specjalne Wskazówki dla Biegaczy",
+          "TIP1": "Utrzymuj odpowiednią tkankę tłuszczową dla produkcji hormonów i zapobiegania kontuzjom",
+          "TIP2": "Priorytetowo traktuj zachowanie masy mięśniowej podczas faz utraty wagi",
+          "TIP3": "Używaj BMR do obliczania dziennych potrzeb kalorycznych włączając wymagania treningowe"
+        }
+      },
+      "RELATED_TOOLS": {
+        "TITLE": "Powiązane Kalkulatory Zdrowia i Fitness",
+        "CALORIES": {
+          "TITLE": "Kalkulator Spalonych Kalorii",
+          "DESC": "Oblicz wydatek energetyczny podczas biegania i innych aktywności"
+        },
+        "VO2MAX": {
+          "TITLE": "Kalkulator VO₂ Max",
+          "DESC": "Oceń swoją kondycję tlenową i zdrowie sercowo-naczyniowe"
+        },
+        "WEIGHT_CONVERTER": {
+          "TITLE": "Konwerter Jednostek Wagi",
+          "DESC": "Konwertuj między różnymi systemami pomiarowymi wagi"
+        },
+        "PACE_CALC": {
+          "TITLE": "Kalkulator Tempa",
+          "DESC": "Oblicz optymalne tempa treningowe dla swojego poziomu kondycji"
         }
       },
       "FAQ": {

@@ -94,7 +94,7 @@
   "TOOLS": {
     "CALORIES_BURNED_CALCULATOR": {
       "TITLE": "Calorías quemadas",
-      "DESCRIPTION": "Introduce distancia, ritmo y peso para estimar las calorías quemadas.",
+      "DESCRIPTION": "Calcula las calorías quemadas al correr con nuestra calculadora gratuita y precisa. Introduce tu distancia, tiempo y peso para estimar el gasto energético. Perfecto para corredores que siguen objetivos de fitness, pérdida de peso e intensidad de entrenamiento. Usado por atletas en todo el mundo para planificación nutricional y optimización de entrenamientos.",
       "SUMMARY": "Has quemado aproximadamente {{calories}} kcal.",
       "SUMMARY_TITLE": "Calorías Quemadas",
       "SUMMARY_SUB": "Basado en tu distancia, tiempo y peso.",
@@ -116,11 +116,62 @@
     },
     "VO2MAX_CALCULATOR": {
       "TITLE": "Calculadora VO₂ Max",
-      "DESCRIPTION": "Introduce tu tiempo y distancia para estimar tu VO₂ Max.",
+      "DESCRIPTION": "Calcula tu VO₂ max desde el rendimiento de carrera. Calculadora de carrera gratuita utilizada por atletas mundialmente para estimar la condición física aeróbica y optimizar el entrenamiento. Introduce tu distancia de carrera reciente y tiempo final para obtener tu estimación de VO₂ max basada en la fórmula probada de Jack Daniels.",
       "SUMMARY": "Tu VO₂ Max estimado es {{vo2Max}}.",
       "RESULT_TITLE": "Resultado VO₂ Max",
       "RESULT_SUBTITLE": "Tu consumo máximo estimado de oxígeno",
       "UNIT": "ml/kg/min",
+      "HOW_TO_USE": {
+        "TITLE": "Cómo Usar la Calculadora de VO₂ Max",
+        "STEP1": "<strong>1. Elige tu distancia de carrera:</strong> Selecciona una distancia de carrera reciente de 5K a maratón. Para mejor precisión, usa una carrera que completaste en los últimos 3-6 meses con máximo esfuerzo.",
+        "STEP2": "<strong>2. Introduce tu tiempo final:</strong> Ingresa tu tiempo real de finalización de carrera en horas, minutos y segundos. Sé tan preciso como sea posible para la estimación más exacta de VO₂ max.",
+        "STEP3": "<strong>3. Obtén tu resultado:</strong> Tu VO₂ max estimado será calculado usando la fórmula de Jack Daniels, ampliamente utilizada por entrenadores de carrera y científicos deportivos mundialmente.",
+        "STEP4": "<strong>4. Interpreta tu puntuación:</strong> Compara tu resultado con los rangos de abajo y úsalo para establecer objetivos de entrenamiento y rastrear mejoras de condición física a lo largo del tiempo."
+      },
+      "UNDERSTANDING": {
+        "TITLE": "Entendiendo Tus Resultados de VO₂ Max",
+        "RANGES": {
+          "TITLE": "Rangos de VO₂ Max (ml/kg/min)",
+          "BEGINNER": "<strong>Corredores principiantes:</strong> 25-35 - Nivel de condición física inicial",
+          "RECREATIONAL": "<strong>Corredores recreativos:</strong> 35-45 - Buen nivel de condición física",
+          "COMPETITIVE": "<strong>Corredores competitivos:</strong> 45-60 - Excelente nivel de condición física",
+          "ELITE": "<strong>Corredores de élite:</strong> 60-80+ - Nivel de condición física de clase mundial"
+        },
+        "FACTORS": {
+          "TITLE": "Factores que Afectan el VO₂ Max",
+          "AGE": "<strong>Edad:</strong> Típicamente disminuye 1% por año después de los 25",
+          "GENDER": "<strong>Género:</strong> Los hombres promedian 10-15% más alto que las mujeres",
+          "TRAINING": "<strong>Entrenamiento:</strong> Puede mejorar 15-25% con entrenamiento adecuado",
+          "GENETICS": "<strong>Genética:</strong> Representa 25-50% de tu potencial"
+        }
+      },
+      "TRAINING_TIPS": {
+        "TITLE": "Cómo Mejorar Tu VO₂ Max",
+        "INTRO": "Impulsa tu condición física aeróbica con estas estrategias basadas en evidencia:",
+        "TIP1": "<strong>Intervalos de Alta Intensidad:</strong> Intervalos de 3-8 minutos al ritmo de carrera de 3K-5K, 1-2 veces por semana",
+        "TIP2": "<strong>Carreras Tempo:</strong> Carreras de 20-40 minutos a ritmo cómodamente duro (ritmo de 15K-media maratón)",
+        "TIP3": "<strong>Carreras Largas:</strong> Construye base aeróbica con carreras largas semanales a ritmo conversacional",
+        "TIP4": "<strong>Consistencia:</strong> Entrena regularmente por 6-12 semanas para ver mejoras significativas"
+      },
+      "RELATED_TOOLS": {
+        "TITLE": "Calculadoras de Carrera Relacionadas",
+        "FINISH_TIME": {
+          "TITLE": "Predictor de Tiempo de Carrera",
+          "DESC": "Predice tus tiempos finales para diferentes distancias de carrera basado en tu VO₂ max"
+        },
+        "PACE_CALC": {
+          "TITLE": "Calculadora de Ritmo de Entrenamiento",
+          "DESC": "Calcula ritmos de entrenamiento óptimos para diferentes tipos de entrenamientos"
+        },
+        "CALORIES": {
+          "TITLE": "Calculadora de Calorías Quemadas",
+          "DESC": "Estima el gasto energético durante tus carreras de entrenamiento"
+        },
+        "BMI": {
+          "TITLE": "Calculadora de Composición Corporal",
+          "DESC": "Evalúa tu composición corporal y peso ideal de carrera"
+        }
+      },
       "FAQ": {
         "TITLE": "Preguntas Frecuentes",
         "Q1": "¿Qué es el VO₂ Max y por qué es importante?",
@@ -139,7 +190,7 @@
     },
     "FINISH_TIME_PREDICTOR": {
       "TITLE": "Tiempo estimado de carrera",
-      "DESCRIPTION": "Estima tus tiempos para distintas distancias según una carrera reciente.",
+      "DESCRIPTION": "Predice tus tiempos finales de carrera para distancias de 5K, 10K, medio maratón y maratón. Basado en fórmulas probadas utilizadas por entrenadores de élite. Introduce tu tiempo de carrera reciente para obtener predicciones precisas para establecimiento de objetivos y planificación de carreras. Herramienta gratuita para corredores serios.",
       "SUMMARY": "Tiempos Estimados de Carrera",
       "SUMMARY_SUB": "Basado en tu ritmo actual",
       "FAQ": {
@@ -157,9 +208,76 @@
       }
     },
     "PACE_CALCULATOR": {
-      "TITLE": "Calculadora de ritmo",
-      "DESCRIPTION": "Ajusta tiempo, distancia o ritmo y obtén el valor faltante.",
+      "TITLE": "Calculadora de Ritmo de Carrera",
+      "DESCRIPTION": "Calcula ritmo de carrera, tiempo y distancia para entrenamiento de maratón, preparación de 5K y planificación de carreras. Introduce cualquier dos valores para calcular el tercero. Soporta unidades métricas e imperiales para cálculos de entrenamiento precisos.",
       "SUMMARY": "Resumen de tu Ritmo",
+      "HOW_TO_USE": {
+        "TITLE": "Cómo Usar la Calculadora de Ritmo",
+        "STEP1": "<strong>1. Introduce cualquier dos valores:</strong> Ingresa distancia, tiempo o ritmo - la calculadora computará automáticamente el valor faltante. Perfecto para planificar entrenamientos o analizar rendimiento de carrera.",
+        "STEP2": "<strong>2. Elige tus unidades:</strong> Selecciona entre unidades métricas (kilómetros, min/km) o imperiales (millas, min/milla) basado en tu preferencia o requisitos del programa de entrenamiento.",
+        "STEP3": "<strong>3. Obtén resultados instantáneos:</strong> Ve tu ritmo, tiempo o distancia calculados inmediatamente. Usa estos valores para planificación de entrenamiento, establecimiento de objetivos de carrera o análisis de entrenamientos.",
+        "STEP4": "<strong>4. Aplica al entrenamiento:</strong> Usa el ritmo calculado para diferentes tipos de entrenamiento - carreras fáciles, entrenamientos tempo, intervalos o estrategias de ritmo de carrera."
+      },
+      "TRAINING_PACES": {
+        "TITLE": "Guías de Ritmo de Entrenamiento",
+        "EASY_RUNS": {
+          "TITLE": "Carreras Fáciles/Recuperación",
+          "DESC": "<strong>Ritmo conversacional</strong> - deberías poder hablar en oraciones completas",
+          "PACE": "<strong>Ritmo:</strong> Significativamente más lento que el ritmo de carrera de 5K (aproximadamente 20-30% más lento)",
+          "PURPOSE": "<strong>Propósito:</strong> Construir base aeróbica, promover recuperación, aumentar kilometraje semanal de forma segura"
+        },
+        "TEMPO_RUNS": {
+          "TITLE": "Carreras Tempo/Umbral",
+          "DESC": "<strong>Ritmo cómodamente duro</strong> - esfuerzo sostenible pero desafiante",
+          "PACE": "<strong>Ritmo:</strong> Ligeramente más lento que el ritmo de carrera de 10K (aproximadamente 5-10% más lento)",
+          "PURPOSE": "<strong>Propósito:</strong> Mejorar umbral de lactato, condición específica de carrera, resistencia mental"
+        },
+        "INTERVALS": {
+          "TITLE": "Entrenamiento de Intervalos",
+          "DESC": "<strong>Esfuerzo duro</strong> - ritmo de carrera de 5K o más rápido para repeticiones cortas",
+          "PACE": "<strong>Ritmo:</strong> Ritmo de carrera de 3K-5K para intervalos de VO₂ max",
+          "PURPOSE": "<strong>Propósito:</strong> Mejorar VO₂ max, economía de carrera, velocidad, capacidad anaeróbica"
+        },
+        "LONG_RUNS": {
+          "TITLE": "Carreras Largas",
+          "DESC": "<strong>Ritmo constante y sostenible</strong> - enfócate en tiempo/distancia, no velocidad",
+          "PACE": "<strong>Ritmo:</strong> Moderadamente más lento que el ritmo de maratón (aproximadamente 10-20% más lento)",
+          "PURPOSE": "<strong>Propósito:</strong> Construir resistencia, resistencia mental, eficiencia de quema de grasa"
+        }
+      },
+      "RACE_STRATEGY": {
+        "TITLE": "Estrategias de Ritmo de Carrera",
+        "INTRO": "El ritmo inteligente es crucial para el éxito en carreras. Aquí están las estrategias probadas para diferentes distancias de carrera:",
+        "SHORT_RACES": {
+          "TITLE": "Carreras de 5K y 10K",
+          "STRATEGY1": "<strong>5K:</strong> Comienza ligeramente conservador, construye a través del medio, final fuerte",
+          "STRATEGY2": "<strong>10K:</strong> Ritmo uniforme a lo largo, ligero split negativo si es posible"
+        },
+        "LONG_RACES": {
+          "TITLE": "Media Maratón y Maratón",
+          "STRATEGY1": "<strong>Media Maratón:</strong> Primeros 5K conservadores, medio constante, últimos 5K fuertes",
+          "STRATEGY2": "<strong>Maratón:</strong> El ritmo uniforme es crítico, guarda energía para el empuje final de 10K"
+        }
+      },
+      "RELATED_TOOLS": {
+        "TITLE": "Calculadoras de Carrera Relacionadas",
+        "FINISH_TIME": {
+          "TITLE": "Predictor de Tiempo de Carrera",
+          "DESC": "Predice tus tiempos finales para diferentes distancias basado en la condición actual"
+        },
+        "VO2MAX": {
+          "TITLE": "Calculadora de VO₂ Max",
+          "DESC": "Estima tu condición aeróbica y zonas de entrenamiento desde el rendimiento de carrera"
+        },
+        "PACE_SPEED": {
+          "TITLE": "Convertidor de Ritmo a Velocidad",
+          "DESC": "Convierte entre unidades de ritmo y velocidad para entrenamiento en cinta"
+        },
+        "CALORIES": {
+          "TITLE": "Calculadora de Calorías Quemadas",
+          "DESC": "Estima el gasto energético para diferentes ritmos y distancias"
+        }
+      },
       "FAQ": {
         "TITLE": "Preguntas Frecuentes",
         "Q1": "¿Cuál es un buen ritmo de carrera para principiantes?",
@@ -176,7 +294,7 @@
     },
     "DISTANCE_UNIT_CONVERTER": {
       "TITLE": "Conversor de distancia",
-      "DESCRIPTION": "Convierte fácilmente entre kilómetros y millas.",
+      "DESCRIPTION": "Convierte distancias de carrera entre kilómetros y millas instantáneamente. Herramienta esencial para planificación de carreras internacionales, programas de entrenamiento y configuración de relojes GPS. Conversión precisa para 5K, 10K, medio maratón, maratón y distancias personalizadas. Calculadora de distancia gratuita para corredores en todo el mundo.",
       "SUMMARY": "Kilómetros: {{kmDistance}} • Millas: {{miDistance}}",
       "RESULT_TITLE": "Conversión de Distancia",
       "RESULT_SUBTITLE": "Distancias equivalentes en kilómetros y millas",
@@ -198,7 +316,7 @@
     },
     "PACE_SPEED_UNIT_CONVERTER": {
       "TITLE": "Ritmo y velocidad",
-      "DESCRIPTION": "Convierte entre ritmo y velocidad según tu entrenamiento.",
+      "DESCRIPTION": "Convierte entre ritmo de carrera (min/milla, min/km) y velocidad (mph, km/h) instantáneamente. Perfecto para entrenamiento en cinta, comparar intensidades de entrenamiento y entender ritmos de carrera. Herramienta esencial para corredores que usan diferentes métodos de entrenamiento y equipos.",
       "SUMMARY": "Ritmo: {{pace}} • Velocidad: {{speed}}",
       "RESULT_TITLE": "Conversión de Ritmo y Velocidad",
       "RESULT_SUBTITLE": "Valores equivalentes de ritmo y velocidad",
@@ -220,7 +338,7 @@
     },
     "WEIGHT_UNIT_CONVERTER": {
       "TITLE": "Conversor de peso",
-      "DESCRIPTION": "Convierte entre kilogramos y libras.",
+      "DESCRIPTION": "Convierte peso corporal entre kilogramos y libras para seguimiento de fitness y programas de entrenamiento internacionales. Herramienta precisa de conversión de peso para corredores, atletas y monitoreo de salud. Esencial para cálculos de BMI y planificación nutricional.",
       "SUMMARY": "Kilogramos: {{kg}} • Libras: {{lb}}",
       "RESULT_TITLE": "Conversión de Peso",
       "RESULT_SUBTITLE": "Pesos equivalentes en kilogramos y libras",
@@ -242,7 +360,7 @@
     },
     "BMI_CALCULATOR": {
       "TITLE": "Composición Corporal",
-      "DESCRIPTION": "Calcula tu BMI y estima tu grasa corporal usando múltiples métodos para una visión completa de tu composición corporal. Incluye:",
+      "DESCRIPTION": "Calculadora integral de composición corporal para corredores y atletas. Calcula BMI, porcentaje de grasa corporal, peso ideal y tasa metabólica basal (BMR). Usa fórmulas avanzadas incluyendo Nuevo BMI para resultados precisos. Incluye:",
       "DESCRIPTION_2": "<ul class='list-disc list-inside ml-4 space-y-1'><li>BMI estándar</li><li>Nuevo BMI - ajustado por altura</li><li>IBW - peso corporal ideal</li><li>% Grasa corporal - estimado con fórmula Deurenberg</li><li>BMR - calorías quemadas en reposo</li></ul>",
       "RESULT_TITLE": "Tus Métricas de Salud",
       "RESULT_SUBTITLE": "Basado en tu altura, peso, edad y sexo",
@@ -288,6 +406,64 @@
           "IBW_IMPROVE": "Tu peso podría mejorar",
           "IBW_OK": "Tu peso es aceptable",
           "IBW_IDEAL": "Tu peso es ideal"
+        }
+      },
+      "HOW_TO_USE": {
+        "TITLE": "Cómo Usar la Calculadora de BMI",
+        "STEP1": "<strong>1. Introduce tu información básica:</strong> Ingresa tu edad, sexo, altura y peso usando tus unidades preferidas. La calculadora se ajusta automáticamente para diferentes sistemas de medición.",
+        "STEP2": "<strong>2. Revisa todas las métricas:</strong> Obtén resultados completos incluyendo BMI, Nuevo BMI, porcentaje de grasa corporal, peso corporal ideal y tasa metabólica basal (BMR).",
+        "STEP3": "<strong>3. Entiende tus resultados:</strong> Cada métrica proporciona diferentes perspectivas sobre tu salud y condición física. Compara tus valores con los rangos saludables proporcionados.",
+        "STEP4": "<strong>4. Usa para planificación de salud:</strong> Aplica estas métricas para establecer objetivos de fitness realistas, planificar nutrición y rastrear progreso a lo largo del tiempo."
+      },
+      "UNDERSTANDING": {
+        "TITLE": "Entendiendo Tus Resultados de Composición Corporal",
+        "BMI_RANGES": {
+          "TITLE": "Categorías de BMI",
+          "UNDERWEIGHT": "<strong>Bajo peso:</strong> Por debajo de 18.5 - Puede indicar peso corporal insuficiente",
+          "NORMAL": "<strong>Peso normal:</strong> 18.5-24.9 - Rango de peso saludable para la mayoría de personas",
+          "OVERWEIGHT": "<strong>Sobrepeso:</strong> 25-29.9 - Por encima del peso normal, considera cambios de estilo de vida",
+          "OBESE": "<strong>Obeso:</strong> 30+ - Significativamente por encima del peso saludable, consulta proveedor de salud"
+        },
+        "BODY_FAT": {
+          "TITLE": "Rangos de Porcentaje de Grasa Corporal",
+          "MALE_RANGES": "<strong>Hombres:</strong> Esencial 2-5%, Atletas 6-13%, Fitness 14-17%, Promedio 18-24%",
+          "FEMALE_RANGES": "<strong>Mujeres:</strong> Esencial 10-13%, Atletas 14-20%, Fitness 21-24%, Promedio 25-31%",
+          "ATHLETE_NOTE": "<strong>Nota:</strong> Los corredores típicamente mantienen porcentajes de grasa corporal más bajos para rendimiento óptimo"
+        }
+      },
+      "HEALTH_TIPS": {
+        "TITLE": "Recomendaciones de Salud y Fitness",
+        "INTRO": "Usa estas estrategias basadas en evidencia para optimizar tu composición corporal y salud general:",
+        "WEIGHT_MANAGEMENT": {
+          "TITLE": "Manejo Saludable del Peso",
+          "TIP1": "Crea déficits calóricos moderados a través de dieta balanceada y ejercicio",
+          "TIP2": "Enfócate en cambios de estilo de vida sostenibles en lugar de soluciones rápidas",
+          "TIP3": "Monitorea el progreso a través de múltiples métricas, no solo peso"
+        },
+        "RUNNERS": {
+          "TITLE": "Consejos Específicos para Corredores",
+          "TIP1": "Mantén grasa corporal adecuada para producción hormonal y prevención de lesiones",
+          "TIP2": "Prioriza la preservación de masa muscular durante fases de pérdida de peso",
+          "TIP3": "Usa BMR para calcular necesidades calóricas diarias incluyendo demandas de entrenamiento"
+        }
+      },
+      "RELATED_TOOLS": {
+        "TITLE": "Calculadoras Relacionadas de Salud y Fitness",
+        "CALORIES": {
+          "TITLE": "Calculadora de Calorías Quemadas",
+          "DESC": "Calcula el gasto energético durante carrera y otras actividades"
+        },
+        "VO2MAX": {
+          "TITLE": "Calculadora de VO₂ Max",
+          "DESC": "Evalúa tu condición física aeróbica y salud cardiovascular"
+        },
+        "WEIGHT_CONVERTER": {
+          "TITLE": "Convertidor de Unidades de Peso",
+          "DESC": "Convierte entre diferentes sistemas de medición de peso"
+        },
+        "PACE_CALC": {
+          "TITLE": "Calculadora de Ritmo",
+          "DESC": "Calcula ritmos de entrenamiento óptimos para tu nivel de condición física"
         }
       },
       "FAQ": {

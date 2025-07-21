@@ -1,6 +1,7 @@
-<app-tool-view 
+<app-tool-view
   [calculatorName]="'TOOLS.BMI_CALCULATOR.TITLE' | translate"
-  [calculatorDescription]="'TOOLS.BMI_CALCULATOR.DESCRIPTION' | translate">
+  [calculatorDescription]="'TOOLS.BMI_CALCULATOR.DESCRIPTION' | translate"
+>
   <ng-container tool-title>{{
     'TOOLS.BMI_CALCULATOR.TITLE' | translate
   }}</ng-container>
@@ -24,8 +25,12 @@
 
   <ng-container tool-summary>
     <app-fancy-result [transparentValue]="true">
-      <div result-title>{{ 'TOOLS.BMI_CALCULATOR.RESULT_TITLE' | translate }}</div>
-      <div result-subtitle>{{ 'TOOLS.BMI_CALCULATOR.RESULT_SUBTITLE' | translate }}</div>
+      <div result-title>
+        {{ 'TOOLS.BMI_CALCULATOR.RESULT_TITLE' | translate }}
+      </div>
+      <div result-subtitle>
+        {{ 'TOOLS.BMI_CALCULATOR.RESULT_SUBTITLE' | translate }}
+      </div>
       <div result-value>
         <!-- Results grid -->
         <div
@@ -41,7 +46,11 @@
           <ng-container
             *ngTemplateOutlet="
               summary;
-              context: { value: bmiHa, category: bmiHaCategory, type: 'NEW_BMI' }
+              context: {
+                value: bmiHa,
+                category: bmiHaCategory,
+                type: 'NEW_BMI',
+              }
             "
           ></ng-container>
 
@@ -78,40 +87,298 @@
     </app-fancy-result>
   </ng-container>
 
+  <!-- Educational Content Section -->
+  <ng-container tool-education>
+    <div class="mt-8 space-y-6">
+      <!-- How to Use Section -->
+      <div class="bg-blue-50 p-6 rounded-lg">
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">
+          {{ 'TOOLS.BMI_CALCULATOR.HOW_TO_USE.TITLE' | translate }}
+        </h2>
+        <div class="space-y-2 text-gray-700">
+          <p
+            [innerHTML]="'TOOLS.BMI_CALCULATOR.HOW_TO_USE.STEP1' | translate"
+          ></p>
+          <p
+            [innerHTML]="'TOOLS.BMI_CALCULATOR.HOW_TO_USE.STEP2' | translate"
+          ></p>
+          <p
+            [innerHTML]="'TOOLS.BMI_CALCULATOR.HOW_TO_USE.STEP3' | translate"
+          ></p>
+          <p
+            [innerHTML]="'TOOLS.BMI_CALCULATOR.HOW_TO_USE.STEP4' | translate"
+          ></p>
+        </div>
+      </div>
+
+      <!-- Understanding Results Section -->
+      <div class="bg-green-50 p-6 rounded-lg">
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">
+          {{ 'TOOLS.BMI_CALCULATOR.UNDERSTANDING.TITLE' | translate }}
+        </h2>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div>
+            <h3 class="font-medium text-gray-900 mb-2">
+              {{
+                'TOOLS.BMI_CALCULATOR.UNDERSTANDING.BMI_RANGES.TITLE'
+                  | translate
+              }}
+            </h3>
+            <ul class="space-y-1 text-sm text-gray-700">
+              <li
+                [innerHTML]="
+                  'TOOLS.BMI_CALCULATOR.UNDERSTANDING.BMI_RANGES.UNDERWEIGHT'
+                    | translate
+                "
+              ></li>
+              <li
+                [innerHTML]="
+                  'TOOLS.BMI_CALCULATOR.UNDERSTANDING.BMI_RANGES.NORMAL'
+                    | translate
+                "
+              ></li>
+              <li
+                [innerHTML]="
+                  'TOOLS.BMI_CALCULATOR.UNDERSTANDING.BMI_RANGES.OVERWEIGHT'
+                    | translate
+                "
+              ></li>
+              <li
+                [innerHTML]="
+                  'TOOLS.BMI_CALCULATOR.UNDERSTANDING.BMI_RANGES.OBESE'
+                    | translate
+                "
+              ></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-medium text-gray-900 mb-2">
+              {{
+                'TOOLS.BMI_CALCULATOR.UNDERSTANDING.BODY_FAT.TITLE' | translate
+              }}
+            </h3>
+            <ul class="space-y-1 text-sm text-gray-700">
+              <li
+                [innerHTML]="
+                  'TOOLS.BMI_CALCULATOR.UNDERSTANDING.BODY_FAT.MALE_RANGES'
+                    | translate
+                "
+              ></li>
+              <li
+                [innerHTML]="
+                  'TOOLS.BMI_CALCULATOR.UNDERSTANDING.BODY_FAT.FEMALE_RANGES'
+                    | translate
+                "
+              ></li>
+              <li
+                [innerHTML]="
+                  'TOOLS.BMI_CALCULATOR.UNDERSTANDING.BODY_FAT.ATHLETE_NOTE'
+                    | translate
+                "
+              ></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Health Tips Section -->
+      <div class="bg-yellow-50 p-6 rounded-lg">
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">
+          {{ 'TOOLS.BMI_CALCULATOR.HEALTH_TIPS.TITLE' | translate }}
+        </h2>
+        <div class="space-y-3 text-gray-700">
+          <p
+            [innerHTML]="'TOOLS.BMI_CALCULATOR.HEALTH_TIPS.INTRO' | translate"
+          ></p>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <h4 class="font-medium text-gray-900 mb-1">
+                {{
+                  'TOOLS.BMI_CALCULATOR.HEALTH_TIPS.WEIGHT_MANAGEMENT.TITLE'
+                    | translate
+                }}
+              </h4>
+              <ul class="list-disc list-inside space-y-1 ml-4 text-sm">
+                <li
+                  [innerHTML]="
+                    'TOOLS.BMI_CALCULATOR.HEALTH_TIPS.WEIGHT_MANAGEMENT.TIP1'
+                      | translate
+                  "
+                ></li>
+                <li
+                  [innerHTML]="
+                    'TOOLS.BMI_CALCULATOR.HEALTH_TIPS.WEIGHT_MANAGEMENT.TIP2'
+                      | translate
+                  "
+                ></li>
+                <li
+                  [innerHTML]="
+                    'TOOLS.BMI_CALCULATOR.HEALTH_TIPS.WEIGHT_MANAGEMENT.TIP3'
+                      | translate
+                  "
+                ></li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-medium text-gray-900 mb-1">
+                {{
+                  'TOOLS.BMI_CALCULATOR.HEALTH_TIPS.RUNNERS.TITLE' | translate
+                }}
+              </h4>
+              <ul class="list-disc list-inside space-y-1 ml-4 text-sm">
+                <li
+                  [innerHTML]="
+                    'TOOLS.BMI_CALCULATOR.HEALTH_TIPS.RUNNERS.TIP1' | translate
+                  "
+                ></li>
+                <li
+                  [innerHTML]="
+                    'TOOLS.BMI_CALCULATOR.HEALTH_TIPS.RUNNERS.TIP2' | translate
+                  "
+                ></li>
+                <li
+                  [innerHTML]="
+                    'TOOLS.BMI_CALCULATOR.HEALTH_TIPS.RUNNERS.TIP3' | translate
+                  "
+                ></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Related Tools Section -->
+      <div class="bg-purple-50 p-6 rounded-lg">
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">
+          {{ 'TOOLS.BMI_CALCULATOR.RELATED_TOOLS.TITLE' | translate }}
+        </h2>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="space-y-2">
+            <a
+              href="/tools/personal/burned-calories-estimator"
+              class="block p-3 bg-white rounded border hover:border-blue-300 transition-colors"
+            >
+              <h3 class="font-medium text-blue-600">
+                {{
+                  'TOOLS.BMI_CALCULATOR.RELATED_TOOLS.CALORIES.TITLE'
+                    | translate
+                }}
+              </h3>
+              <p class="text-sm text-gray-600">
+                {{
+                  'TOOLS.BMI_CALCULATOR.RELATED_TOOLS.CALORIES.DESC' | translate
+                }}
+              </p>
+            </a>
+            <a
+              href="/tools/personal/vo2max-calculator"
+              class="block p-3 bg-white rounded border hover:border-blue-300 transition-colors"
+            >
+              <h3 class="font-medium text-blue-600">
+                {{
+                  'TOOLS.BMI_CALCULATOR.RELATED_TOOLS.VO2MAX.TITLE' | translate
+                }}
+              </h3>
+              <p class="text-sm text-gray-600">
+                {{
+                  'TOOLS.BMI_CALCULATOR.RELATED_TOOLS.VO2MAX.DESC' | translate
+                }}
+              </p>
+            </a>
+          </div>
+          <div class="space-y-2">
+            <a
+              href="/tools/units/weight-unit-converter"
+              class="block p-3 bg-white rounded border hover:border-blue-300 transition-colors"
+            >
+              <h3 class="font-medium text-blue-600">
+                {{
+                  'TOOLS.BMI_CALCULATOR.RELATED_TOOLS.WEIGHT_CONVERTER.TITLE'
+                    | translate
+                }}
+              </h3>
+              <p class="text-sm text-gray-600">
+                {{
+                  'TOOLS.BMI_CALCULATOR.RELATED_TOOLS.WEIGHT_CONVERTER.DESC'
+                    | translate
+                }}
+              </p>
+            </a>
+            <a
+              href="/tools/race/pace-calculator"
+              class="block p-3 bg-white rounded border hover:border-blue-300 transition-colors"
+            >
+              <h3 class="font-medium text-blue-600">
+                {{
+                  'TOOLS.BMI_CALCULATOR.RELATED_TOOLS.PACE_CALC.TITLE'
+                    | translate
+                }}
+              </h3>
+              <p class="text-sm text-gray-600">
+                {{
+                  'TOOLS.BMI_CALCULATOR.RELATED_TOOLS.PACE_CALC.DESC'
+                    | translate
+                }}>
+              </p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
   <!-- FAQ Section -->
   <ng-container tool-faq>
     <app-faq-section>
       <div faq-title>{{ 'TOOLS.BMI_CALCULATOR.FAQ.TITLE' | translate }}</div>
-      
+
       <div faq-items>
         <app-faq-item>
-          <div faq-question>{{ 'TOOLS.BMI_CALCULATOR.FAQ.Q1' | translate }}</div>
+          <div faq-question>
+            {{ 'TOOLS.BMI_CALCULATOR.FAQ.Q1' | translate }}
+          </div>
           <div faq-answer>{{ 'TOOLS.BMI_CALCULATOR.FAQ.A1' | translate }}</div>
         </app-faq-item>
 
         <app-faq-item>
-          <div faq-question>{{ 'TOOLS.BMI_CALCULATOR.FAQ.Q2' | translate }}</div>
+          <div faq-question>
+            {{ 'TOOLS.BMI_CALCULATOR.FAQ.Q2' | translate }}
+          </div>
           <div faq-answer>{{ 'TOOLS.BMI_CALCULATOR.FAQ.A2' | translate }}</div>
         </app-faq-item>
 
         <app-faq-item>
-          <div faq-question>{{ 'TOOLS.BMI_CALCULATOR.FAQ.Q3' | translate }}</div>
-          <div faq-answer [innerHTML]="'TOOLS.BMI_CALCULATOR.FAQ.A3' | translate"></div>
+          <div faq-question>
+            {{ 'TOOLS.BMI_CALCULATOR.FAQ.Q3' | translate }}
+          </div>
+          <div
+            faq-answer
+            [innerHTML]="'TOOLS.BMI_CALCULATOR.FAQ.A3' | translate"
+          ></div>
         </app-faq-item>
 
         <app-faq-item>
-          <div faq-question>{{ 'TOOLS.BMI_CALCULATOR.FAQ.Q4' | translate }}</div>
+          <div faq-question>
+            {{ 'TOOLS.BMI_CALCULATOR.FAQ.Q4' | translate }}
+          </div>
           <div faq-answer>{{ 'TOOLS.BMI_CALCULATOR.FAQ.A4' | translate }}</div>
         </app-faq-item>
 
         <app-faq-item>
-          <div faq-question>{{ 'TOOLS.BMI_CALCULATOR.FAQ.Q5' | translate }}</div>
+          <div faq-question>
+            {{ 'TOOLS.BMI_CALCULATOR.FAQ.Q5' | translate }}
+          </div>
           <div faq-answer>{{ 'TOOLS.BMI_CALCULATOR.FAQ.A5' | translate }}</div>
         </app-faq-item>
 
         <app-faq-item>
-          <div faq-question>{{ 'TOOLS.BMI_CALCULATOR.FAQ.Q6' | translate }}</div>
-          <div faq-answer [innerHTML]="'TOOLS.BMI_CALCULATOR.FAQ.A6' | translate"></div>
+          <div faq-question>
+            {{ 'TOOLS.BMI_CALCULATOR.FAQ.Q6' | translate }}
+          </div>
+          <div
+            faq-answer
+            [innerHTML]="'TOOLS.BMI_CALCULATOR.FAQ.A6' | translate"
+          ></div>
         </app-faq-item>
       </div>
     </app-faq-section>

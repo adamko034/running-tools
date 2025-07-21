@@ -7,7 +7,7 @@
     "RACE": {
       "TITLE": "Outils de course",
       "FINISH_TIME_PREDICTOR": "Estimation du temps d'arrivée",
-      "FINISH_TIME_PREDICTOR_DESC": "Estimez votre temps d’arrivée selon vos performances récentes",
+      "FINISH_TIME_PREDICTOR_DESC": "Estimez votre temps d'arrivée selon vos performances récentes",
       "PACE_CALCULATOR": "Calculateur d’allure",
       "PACE_CALCULATOR_DESC": "Calculez l’allure à partir de la distance et du temps"
     },
@@ -25,7 +25,7 @@
       "DISTANCE_CONVERTER": "Distance",
       "DISTANCE_CONVERTER_DESC": "Convertissez rapidement entre kilomètres et miles",
       "PACE_SPEED_CONVERTER": "Allure / Vitesse",
-      "PACE_SPEED_CONVERTER_DESC": "Convertissez entre l’allure et la vitesse",
+      "PACE_SPEED_CONVERTER_DESC": "Convertissez entre l'allure et la vitesse",
       "WEIGHT_CONVERTER": "Poids",
       "WEIGHT_CONVERTER_DESC": "Convertissez entre kilogrammes et livres"
     }
@@ -94,7 +94,7 @@
   "TOOLS": {
     "CALORIES_BURNED_CALCULATOR": {
       "TITLE": "Estimation des calories brûlées",
-      "DESCRIPTION": "Indiquez votre distance, allure et poids pour estimer les calories brûlées.",
+      "DESCRIPTION": "Calculez les calories brûlées en courant avec notre calculatrice gratuite et précise. Entrez votre distance, temps et poids pour estimer la dépense énergétique. Parfait pour les coureurs qui suivent leurs objectifs de fitness, perte de poids et intensité d'entraînement. Utilisé par les athlètes du monde entier pour la planification nutritionnelle et l'optimisation des entraînements.",
       "SUMMARY": "Vous avez brûlé environ {{calories}} kcal.",
       "SUMMARY_TITLE": "Calories Brûlées",
       "SUMMARY_SUB": "Basé sur votre distance, temps et poids.",
@@ -116,11 +116,62 @@
     },
     "VO2MAX_CALCULATOR": {
       "TITLE": "Calcul du VO₂ Max",
-      "DESCRIPTION": "Renseignez votre distance et temps de course pour estimer votre VO₂ Max.",
+      "DESCRIPTION": "Calculez votre VO₂ max à partir de la performance de course. Calculatrice de course gratuite utilisée par les athlètes du monde entier pour estimer la condition physique aérobie et optimiser l'entraînement. Entrez votre distance de course récente et temps d'arrivée pour obtenir votre estimation VO₂ max basée sur la formule éprouvée de Jack Daniels.",
       "SUMMARY": "Votre VO₂ Max estimé est de {{vo2Max}}.",
       "RESULT_TITLE": "Résultat VO₂ Max",
       "RESULT_SUBTITLE": "Votre consommation maximale d'oxygène estimée",
       "UNIT": "ml/kg/min",
+      "HOW_TO_USE": {
+        "TITLE": "Comment Utiliser le Calculateur de VO₂ Max",
+        "STEP1": "<strong>1. Choisissez votre distance de course :</strong> Sélectionnez une distance de course récente de 5K à marathon. Pour une meilleure précision, utilisez une course que vous avez terminée dans les 3-6 derniers mois avec un effort maximal.",
+        "STEP2": "<strong>2. Entrez votre temps d'arrivée :</strong> Saisissez votre temps réel d'arrivée de course en heures, minutes et secondes. Soyez aussi précis que possible pour l'estimation VO₂ max la plus exacte.",
+        "STEP3": "<strong>3. Obtenez votre résultat :</strong> Votre VO₂ max estimé sera calculé en utilisant la formule de Jack Daniels, largement utilisée par les entraîneurs de course et scientifiques du sport mondialement.",
+        "STEP4": "<strong>4. Interprétez votre score :</strong> Comparez votre résultat avec les gammes ci-dessous et utilisez-le pour fixer des objectifs d'entraînement et suivre les améliorations de condition physique au fil du temps."
+      },
+      "UNDERSTANDING": {
+        "TITLE": "Comprendre Vos Résultats de VO₂ Max",
+        "RANGES": {
+          "TITLE": "Gammes de VO₂ Max (ml/kg/min)",
+          "BEGINNER": "<strong>Coureurs débutants :</strong> 25-35 - Niveau de condition physique de départ",
+          "RECREATIONAL": "<strong>Coureurs récréatifs :</strong> 35-45 - Bon niveau de condition physique",
+          "COMPETITIVE": "<strong>Coureurs compétitifs :</strong> 45-60 - Excellent niveau de condition physique",
+          "ELITE": "<strong>Coureurs d'élite :</strong> 60-80+ - Niveau de condition physique de classe mondiale"
+        },
+        "FACTORS": {
+          "TITLE": "Facteurs Affectant le VO₂ Max",
+          "AGE": "<strong>Âge :</strong> Diminue typiquement de 1% par an après 25 ans",
+          "GENDER": "<strong>Genre :</strong> Les hommes ont en moyenne 10-15% de plus que les femmes",
+          "TRAINING": "<strong>Entraînement :</strong> Peut s'améliorer de 15-25% avec un entraînement approprié",
+          "GENETICS": "<strong>Génétique :</strong> Représente 25-50% de votre potentiel"
+        }
+      },
+      "TRAINING_TIPS": {
+        "TITLE": "Comment Améliorer Votre VO₂ Max",
+        "INTRO": "Boostez votre condition physique aérobie avec ces stratégies basées sur des preuves :",
+        "TIP1": "<strong>Intervalles Haute Intensité :</strong> Intervalles de 3-8 minutes au rythme de course 3K-5K, 1-2 fois par semaine",
+        "TIP2": "<strong>Courses Tempo :</strong> Courses de 20-40 minutes à rythme confortablement dur (rythme 15K-semi-marathon)",
+        "TIP3": "<strong>Courses Longues :</strong> Construisez une base aérobie avec des courses longues hebdomadaires à rythme conversationnel",
+        "TIP4": "<strong>Consistance :</strong> Entraînez-vous régulièrement pendant 6-12 semaines pour voir des améliorations significatives"
+      },
+      "RELATED_TOOLS": {
+        "TITLE": "Calculateurs de Course Connexes",
+        "FINISH_TIME": {
+          "TITLE": "Prédicteur de Temps de Course",
+          "DESC": "Prédisez vos temps d'arrivée pour différentes distances de course basés sur votre VO₂ max"
+        },
+        "PACE_CALC": {
+          "TITLE": "Calculateur d'Allure d'Entraînement",
+          "DESC": "Calculez les allures d'entraînement optimales pour différents types d'entraînements"
+        },
+        "CALORIES": {
+          "TITLE": "Calculateur de Calories Brûlées",
+          "DESC": "Estimez la dépense énergétique pendant vos courses d'entraînement"
+        },
+        "BMI": {
+          "TITLE": "Calculateur de Composition Corporelle",
+          "DESC": "Évaluez votre composition corporelle et poids de course idéal"
+        }
+      },
       "FAQ": {
         "TITLE": "Questions Fréquemment Posées",
         "Q1": "Qu'est-ce que le VO₂ Max et pourquoi est-il important ?",
@@ -139,7 +190,7 @@
     },
     "FINISH_TIME_PREDICTOR": {
       "TITLE": "Estimation du temps d'arrivée",
-      "DESCRIPTION": "Estimez votre temps de course sur différentes distances à partir d'une performance récente.",
+      "DESCRIPTION": "Prédisez vos temps d'arrivée de course pour les distances 5K, 10K, semi-marathon et marathon. Basé sur des formules éprouvées utilisées par les entraîneurs d'élite. Entrez votre temps de course récent pour obtenir des prédictions précises pour la fixation d'objectifs et la planification de courses. Outil gratuit pour les coureurs sérieux.",
       "SUMMARY": "Temps de Course Prédits",
       "SUMMARY_SUB": "Basé sur votre allure actuelle",
       "FAQ": {
@@ -157,9 +208,76 @@
       }
     },
     "PACE_CALCULATOR": {
-      "TITLE": "Calculateur d'allure",
-      "DESCRIPTION": "Modifiez le temps, la distance ou l'allure pour obtenir les autres valeurs.",
+      "TITLE": "Calculateur d'Allure de Course",
+      "DESCRIPTION": "Calculez l'allure de course, le temps et la distance pour l'entraînement au marathon, la préparation 5K et la planification de course. Entrez deux valeurs pour calculer la troisième. Supporte les unités métriques et impériales pour des calculs d'entraînement précis.",
       "SUMMARY": "Résumé de votre Allure",
+      "HOW_TO_USE": {
+        "TITLE": "Comment Utiliser le Calculateur d'Allure",
+        "STEP1": "<strong>1. Entrez deux valeurs :</strong> Saisissez distance, temps ou allure - le calculateur calculera automatiquement la valeur manquante. Parfait pour planifier les entraînements ou analyser la performance de course.",
+        "STEP2": "<strong>2. Choisissez vos unités :</strong> Sélectionnez entre unités métriques (kilomètres, min/km) ou impériales (miles, min/mile) selon votre préférence ou les exigences du programme d'entraînement.",
+        "STEP3": "<strong>3. Obtenez des résultats instantanés :</strong> Voyez votre allure, temps ou distance calculés immédiatement. Utilisez ces valeurs pour la planification d'entraînement, la fixation d'objectifs de course ou l'analyse d'entraînements.",
+        "STEP4": "<strong>4. Appliquez à l'entraînement :</strong> Utilisez l'allure calculée pour différents types d'entraînement - courses faciles, entraînements tempo, intervalles ou stratégies d'allure de course."
+      },
+      "TRAINING_PACES": {
+        "TITLE": "Guides d'Allure d'Entraînement",
+        "EASY_RUNS": {
+          "TITLE": "Courses Faciles/Récupération",
+          "DESC": "<strong>Allure conversationnelle</strong> - vous devriez pouvoir parler en phrases complètes",
+          "PACE": "<strong>Allure :</strong> Significativement plus lent que l'allure de course 5K (environ 20-30% plus lent)",
+          "PURPOSE": "<strong>Objectif :</strong> Construire la base aérobie, promouvoir la récupération, augmenter le kilométrage hebdomadaire en sécurité"
+        },
+        "TEMPO_RUNS": {
+          "TITLE": "Courses Tempo/Seuil",
+          "DESC": "<strong>Allure confortablement dure</strong> - effort soutenable mais difficile",
+          "PACE": "<strong>Allure :</strong> Légèrement plus lent que l'allure de course 10K (environ 5-10% plus lent)",
+          "PURPOSE": "<strong>Objectif :</strong> Améliorer le seuil lactique, la condition spécifique à la course, la résistance mentale"
+        },
+        "INTERVALS": {
+          "TITLE": "Entraînement par Intervalles",
+          "DESC": "<strong>Effort dur</strong> - allure de course 5K ou plus rapide pour les répétitions courtes",
+          "PACE": "<strong>Allure :</strong> Allure de course 3K-5K pour les intervalles VO₂ max",
+          "PURPOSE": "<strong>Objectif :</strong> Améliorer VO₂ max, économie de course, vitesse, capacité anaérobie"
+        },
+        "LONG_RUNS": {
+          "TITLE": "Courses Longues",
+          "DESC": "<strong>Allure stable et soutenable</strong> - concentrez-vous sur le temps/distance, pas la vitesse",
+          "PACE": "<strong>Allure :</strong> Modérément plus lent que l'allure marathon (environ 10-20% plus lent)",
+          "PURPOSE": "<strong>Objectif :</strong> Construire l'endurance, la résistance mentale, l'efficacité de combustion des graisses"
+        }
+      },
+      "RACE_STRATEGY": {
+        "TITLE": "Stratégies d'Allure de Course",
+        "INTRO": "L'allure intelligente est cruciale pour le succès en course. Voici les stratégies éprouvées pour différentes distances de course :",
+        "SHORT_RACES": {
+          "TITLE": "Courses 5K et 10K",
+          "STRATEGY1": "<strong>5K :</strong> Commencez légèrement conservateur, construisez au milieu, finition forte",
+          "STRATEGY2": "<strong>10K :</strong> Allure régulière tout au long, léger split négatif si possible"
+        },
+        "LONG_RACES": {
+          "TITLE": "Semi-marathon et Marathon",
+          "STRATEGY1": "<strong>Semi-marathon :</strong> Premiers 5K conservateurs, milieu stable, derniers 5K forts",
+          "STRATEGY2": "<strong>Marathon :</strong> L'allure régulière est critique, économisez l'énergie pour la poussée finale de 10K"
+        }
+      },
+      "RELATED_TOOLS": {
+        "TITLE": "Calculateurs de Course Connexes",
+        "FINISH_TIME": {
+          "TITLE": "Prédicteur de Temps de Course",
+          "DESC": "Prédisez vos temps d'arrivée pour différentes distances basés sur la condition actuelle"
+        },
+        "VO2MAX": {
+          "TITLE": "Calculateur VO₂ Max",
+          "DESC": "Estimez votre condition aérobie et zones d'entraînement depuis la performance de course"
+        },
+        "PACE_SPEED": {
+          "TITLE": "Convertisseur Allure vers Vitesse",
+          "DESC": "Convertissez entre unités d'allure et de vitesse pour l'entraînement sur tapis"
+        },
+        "CALORIES": {
+          "TITLE": "Calculateur de Calories Brûlées",
+          "DESC": "Estimez la dépense énergétique pour différentes allures et distances"
+        }
+      },
       "FAQ": {
         "TITLE": "Questions Fréquemment Posées",
         "Q1": "Quelle est une bonne allure de course pour les débutants ?",
@@ -176,7 +294,7 @@
     },
     "DISTANCE_UNIT_CONVERTER": {
       "TITLE": "Conversion de distance",
-      "DESCRIPTION": "Convertissez rapidement entre kilomètres et miles.",
+      "DESCRIPTION": "Convertissez les distances de course entre kilomètres et miles instantanément. Outil essentiel pour la planification de courses internationales, programmes d'entraînement et configuration de montres GPS. Conversion précise pour 5K, 10K, semi-marathon, marathon et distances personnalisées. Calculatrice de distance gratuite pour les coureurs du monde entier.",
       "SUMMARY": "Kilomètres : {{kmDistance}} • Miles : {{miDistance}}",
       "RESULT_TITLE": "Conversion de Distance",
       "RESULT_SUBTITLE": "Distances équivalentes en kilomètres et miles",
@@ -198,7 +316,7 @@
     },
     "PACE_SPEED_UNIT_CONVERTER": {
       "TITLE": "Conversion allure / vitesse",
-      "DESCRIPTION": "Calculez ou comparez votre allure et votre vitesse.",
+      "DESCRIPTION": "Convertissez entre l'allure de course (min/mile, min/km) et la vitesse (mph, km/h) instantanément. Parfait pour l'entraînement sur tapis de course, comparer les intensités d'entraînement et comprendre les allures de course. Outil essentiel pour les coureurs utilisant différentes méthodes d'entraînement et équipements.",
       "SUMMARY": "Allure : {{pace}} • Vitesse : {{speed}}",
       "RESULT_TITLE": "Conversion Allure et Vitesse",
       "RESULT_SUBTITLE": "Valeurs équivalentes d'allure et de vitesse",
@@ -220,7 +338,7 @@
     },
     "WEIGHT_UNIT_CONVERTER": {
       "TITLE": "Conversion de poids",
-      "DESCRIPTION": "Convertissez facilement entre kilogrammes et livres.",
+      "DESCRIPTION": "Convertissez le poids corporel entre kilogrammes et livres pour le suivi de fitness et les programmes d'entraînement internationaux. Outil de conversion de poids précis pour les coureurs, athlètes et surveillance de la santé. Essentiel pour les calculs d'IMC et la planification nutritionnelle.",
       "SUMMARY": "Kilogrammes : {{kg}} • Livres : {{lb}}",
       "RESULT_TITLE": "Conversion de Poids",
       "RESULT_SUBTITLE": "Poids équivalents en kilogrammes et livres",
@@ -237,12 +355,12 @@
         "Q5": "Comment le poids affecte-t-il la combustion de calories pendant la course ?",
         "A5": "Les coureurs plus lourds brûlent plus de calories par mile car ils déplacent plus de masse contre la gravité. La relation est approximativement linéaire - une augmentation de 10% du poids résulte typiquement en environ 10% plus de calories brûlées au même rythme et distance. Utilisez notre <a href='/tools/personal/burned-calories-estimator' class='text-blue-600 hover:text-blue-800 underline'>calculateur de calories brûlées</a> pour estimer votre dépense énergétique basée sur votre poids actuel.",
         "Q6": "Quelle est une fourchette de poids saine pour les coureurs ?",
-        "A6": "Le poids sain pour les coureurs varie grandement selon l'individu, la composition corporelle et les objectifs de course. Les coureurs d'élite de distance ont souvent des IMC plus bas, mais les coureurs récréatifs devraient prioriser la santé générale sur le poids de performance. Concentrez-vous sur maintenir un poids qui soutient vos niveaux d'énergie, récupération et santé à long terme. Considérez consulter des professionnels de la santé et utilisez notre <a href='/tools/personal/vo2max-calculator' class='text-blue-600 hover:text-blue-800 underline'>calculateur de VO₂ max</a> pour évaluer votre niveau de fitness indépendamment du poids."
+        "A6": "Le poids sain pour les coureurs varie grandement selon l'individu, la composition corporelle et les objectifs de course. Les coureurs d'élite de distance ont souvent des BMI plus bas, mais les coureurs récréatifs devraient prioriser la santé générale sur le poids de performance. Concentrez-vous sur maintenir un poids qui soutient vos niveaux d'énergie, récupération et santé à long terme. Considérez consulter des professionnels de la santé et utilisez notre <a href='/tools/personal/vo2max-calculator' class='text-blue-600 hover:text-blue-800 underline'>calculateur de VO₂ max</a> pour évaluer votre niveau de fitness indépendamment du poids."
       }
     },
     "BMI_CALCULATOR": {
       "TITLE": "Composition Corporelle",
-      "DESCRIPTION": "Calculez votre BMI et estimez votre masse grasse en utilisant plusieurs méthodes pour une vue complète de votre composition corporelle. Inclut :",
+      "DESCRIPTION": "Calculateur complet de composition corporelle pour coureurs et athlètes. Calculez BMI, pourcentage de graisse corporelle, poids idéal et taux métabolique de base (BMR). Utilise des formules avancées incluant le Nouveau BMI pour des résultats précis. Inclut :",
       "DESCRIPTION_2": "<ul class='list-disc list-inside ml-4 space-y-1'><li>BMI standard</li><li>Nouveau BMI - ajusté selon la taille</li><li>IBW - poids corporel idéal</li><li>% Masse grasse - estimé avec la formule Deurenberg</li><li>BMR - calories brûlées au repos</li></ul>",
       "RESULT_TITLE": "Vos Indicateurs de Santé",
       "RESULT_SUBTITLE": "Basé sur votre taille, poids, âge et sexe",
@@ -288,6 +406,64 @@
           "IBW_IMPROVE": "Votre poids pourrait être amélioré",
           "IBW_OK": "Votre poids est acceptable",
           "IBW_IDEAL": "Votre poids est idéal"
+        }
+      },
+      "HOW_TO_USE": {
+        "TITLE": "Comment Utiliser le Calculateur de BMI",
+        "STEP1": "<strong>1. Entrez vos informations de base :</strong> Saisissez votre âge, sexe, taille et poids en utilisant vos unités préférées. Le calculateur s'ajuste automatiquement aux différents systèmes de mesure.",
+        "STEP2": "<strong>2. Examinez toutes les métriques :</strong> Obtenez des résultats complets incluant BMI, Nouveau BMI, pourcentage de graisse corporelle, poids corporel idéal et taux métabolique de base (BMR).",
+        "STEP3": "<strong>3. Comprenez vos résultats :</strong> Chaque métrique fournit différentes perspectives sur votre santé et condition physique. Comparez vos valeurs avec les plages saines fournies.",
+        "STEP4": "<strong>4. Utilisez pour la planification santé :</strong> Appliquez ces métriques pour fixer des objectifs de fitness réalistes, planifier la nutrition et suivre les progrès au fil du temps."
+      },
+      "UNDERSTANDING": {
+        "TITLE": "Comprendre Vos Résultats de Composition Corporelle",
+        "BMI_RANGES": {
+          "TITLE": "Catégories de BMI",
+          "UNDERWEIGHT": "<strong>Insuffisance pondérale :</strong> En dessous de 18,5 - Peut indiquer un poids corporel insuffisant",
+          "NORMAL": "<strong>Poids normal :</strong> 18,5-24,9 - Plage de poids saine pour la plupart des gens",
+          "OVERWEIGHT": "<strong>Surpoids :</strong> 25-29,9 - Au-dessus du poids normal, considérez des changements de mode de vie",
+          "OBESE": "<strong>Obèse :</strong> 30+ - Significativement au-dessus du poids sain, consultez un professionnel de santé"
+        },
+        "BODY_FAT": {
+          "TITLE": "Plages de Pourcentage de Graisse Corporelle",
+          "MALE_RANGES": "<strong>Hommes :</strong> Essentiel 2-5%, Athlètes 6-13%, Fitness 14-17%, Moyenne 18-24%",
+          "FEMALE_RANGES": "<strong>Femmes :</strong> Essentiel 10-13%, Athlètes 14-20%, Fitness 21-24%, Moyenne 25-31%",
+          "ATHLETE_NOTE": "<strong>Note :</strong> Les coureurs maintiennent typiquement des pourcentages de graisse corporelle plus bas pour une performance optimale"
+        }
+      },
+      "HEALTH_TIPS": {
+        "TITLE": "Recommandations Santé et Fitness",
+        "INTRO": "Utilisez ces stratégies basées sur des preuves pour optimiser votre composition corporelle et santé générale :",
+        "WEIGHT_MANAGEMENT": {
+          "TITLE": "Gestion Saine du Poids",
+          "TIP1": "Créez des déficits caloriques modérés par une alimentation équilibrée et l'exercice",
+          "TIP2": "Concentrez-vous sur des changements de mode de vie durables plutôt que des solutions rapides",
+          "TIP3": "Surveillez les progrès à travers plusieurs métriques, pas seulement le poids"
+        },
+        "RUNNERS": {
+          "TITLE": "Conseils Spécifiques pour Coureurs",
+          "TIP1": "Maintenez une graisse corporelle adéquate pour la production hormonale et la prévention des blessures",
+          "TIP2": "Priorisez la préservation de la masse musculaire pendant les phases de perte de poids",
+          "TIP3": "Utilisez le BMR pour calculer les besoins caloriques quotidiens incluant les demandes d'entraînement"
+        }
+      },
+      "RELATED_TOOLS": {
+        "TITLE": "Calculateurs Santé et Fitness Connexes",
+        "CALORIES": {
+          "TITLE": "Calculateur de Calories Brûlées",
+          "DESC": "Calculez la dépense énergétique pendant la course et autres activités"
+        },
+        "VO2MAX": {
+          "TITLE": "Calculateur VO₂ Max",
+          "DESC": "Évaluez votre condition physique aérobie et santé cardiovasculaire"
+        },
+        "WEIGHT_CONVERTER": {
+          "TITLE": "Convertisseur d'Unités de Poids",
+          "DESC": "Convertissez entre différents systèmes de mesure de poids"
+        },
+        "PACE_CALC": {
+          "TITLE": "Calculateur d'Allure",
+          "DESC": "Calculez les allures d'entraînement optimales pour votre niveau de condition physique"
         }
       },
       "FAQ": {
