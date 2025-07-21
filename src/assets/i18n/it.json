@@ -120,7 +120,22 @@
       "SUMMARY": "Il tuo VO₂ Max stimato è {{vo2Max}}.",
       "RESULT_TITLE": "Risultato VO₂ Max",
       "RESULT_SUBTITLE": "Il tuo consumo massimo di ossigeno stimato",
-      "UNIT": "ml/kg/min"
+      "UNIT": "ml/kg/min",
+      "FAQ": {
+        "TITLE": "Domande Frequenti",
+        "Q1": "Cos'è il VO₂ Max e perché è importante?",
+        "A1": "Il VO₂ Max è la quantità massima di ossigeno che il tuo corpo può utilizzare durante l'esercizio intenso, misurata in millilitri per chilogrammo di peso corporeo al minuto. È considerato il gold standard per misurare la forma fisica aerobica e la capacità di resistenza. Valori più alti di VO₂ Max indicano una migliore forma cardiovascolare e potenziale di prestazione nella corsa.",
+        "Q2": "Quanto è accurata questa stima del VO₂ Max?",
+        "A2": "Questa calcolatrice utilizza la formula di Jack Daniels, ampiamente utilizzata da allenatori e atleti. Fornisce una stima ragionevole basata sulla prestazione recente in gara, tipicamente accurata entro il 5-10% per corridori allenati. Per la misurazione più precisa, considera test di laboratorio con attrezzature specializzate. Usa il nostro <a href='/tools/race/finish-time-predictor' class='text-blue-600 hover:text-blue-800 underline'>Predittore di Tempo Finale</a> per vedere come il tuo VO₂ Max si traduce in prestazione di gara.",
+        "Q3": "Quale distanza di gara dovrei usare per il risultato più accurato?",
+        "A3": "Usa un tempo di gara recente (entro 3-6 mesi) da una distanza che hai corso con massimo sforzo. I tempi da 5K a mezza maratona tipicamente forniscono le stime più accurate. Evita di usare tempi da gare dove non hai dato il massimo sforzo, hai corso in condizioni meteorologiche estreme, o su terreno impegnativo. Calcola i tuoi <a href='/tools/race/pace-calculator' class='text-blue-600 hover:text-blue-800 underline'>ritmi di allenamento</a> ottimali basati sul tuo VO₂ Max stimato.",
+        "Q4": "Quali sono i valori tipici di VO₂ Max per i corridori?",
+        "A4": "Corridori ricreativi medi: 35-45 ml/kg/min. Corridori competitivi di club: 45-55 ml/kg/min. Corridori d'élite di distanza: 60-80+ ml/kg/min. I valori variano per età, sesso e background di allenamento. Ricorda che il VO₂ Max è solo un fattore nella prestazione di corsa - efficienza, soglia del lattato e forza mentale contano anche significativamente.",
+        "Q5": "Come posso migliorare il mio VO₂ Max?",
+        "A5": "Migliora il VO₂ Max attraverso allenamento a intervalli ad alta intensità, corse tempo e costruzione consistente della base aerobica. Includi 1-2 allenamenti VO₂ Max a settimana (intervalli di 3-8 minuti al ritmo di gara 3K-5K). Mantieni una base aerobica forte con corse facili. Traccia i tuoi progressi monitorando la tua <a href='/tools/personal/burned-calories-estimator' class='text-blue-600 hover:text-blue-800 underline'>intensità di allenamento</a> e ritestando ogni 6-8 settimane.",
+        "Q6": "Il peso corporeo influisce sui calcoli del VO₂ Max?",
+        "A6": "Sì, il VO₂ Max è espresso per chilogrammo di peso corporeo, quindi i cambiamenti di peso possono influire sui tuoi valori. Perdere peso in eccesso tipicamente migliora il VO₂ Max e la prestazione di corsa. Tuttavia, la perdita di peso estrema può ridurre la massa muscolare e danneggiare la prestazione. Usa la nostra <a href='/tools/personal/bmi-calculator' class='text-blue-600 hover:text-blue-800 underline'>Calcolatrice BMI</a> per trovare il tuo peso ottimale di gara e composizione corporea."
+      }
     },
     "FINISH_TIME_PREDICTOR": {
       "TITLE": "Previsione tempo finale",
@@ -164,21 +179,66 @@
       "DESCRIPTION": "Converti rapidamente chilometri in miglia e viceversa.",
       "SUMMARY": "Chilometri: {{kmDistance}} • Miglia: {{miDistance}}",
       "RESULT_TITLE": "Conversione Distanza",
-      "RESULT_SUBTITLE": "Distanze equivalenti in chilometri e miglia"
+      "RESULT_SUBTITLE": "Distanze equivalenti in chilometri e miglia",
+      "FAQ": {
+        "TITLE": "Domande Frequenti",
+        "Q1": "Qual è la conversione esatta tra chilometri e miglia?",
+        "A1": "1 chilometro equivale a 0,621371 miglia, e 1 miglio equivale a 1,609344 chilometri. Questo strumento usa fattori di conversione precisi per assicurare accuratezza per tutte le tue esigenze di allenamento e gara. Comprendere entrambe le unità aiuta quando si seguono piani di allenamento internazionali o si gareggia all'estero.",
+        "Q2": "Perché alcuni paesi usano i chilometri mentre altri usano le miglia?",
+        "A2": "La maggior parte dei paesi nel mondo usa il sistema metrico (chilometri), mentre gli Stati Uniti, il Regno Unito e alcuni altri usano principalmente il sistema imperiale (miglia) per le distanze stradali. Nella corsa, questo significa che le distanze di gara come 5K, 10K e maratone sono spesso misurate in chilometri globalmente, mentre alcune regioni preferiscono le miglia per allenamento e gare brevi.",
+        "Q3": "Come converto i miei ritmi di allenamento tra le unità?",
+        "A3": "Quando converti piani di allenamento tra unità, ricorda che anche il ritmo cambia. Un ritmo di 6:00/miglio equivale approssimativamente a 3:44/km. Usa il nostro <a href='/tools/units/pace-to-speed' class='text-blue-600 hover:text-blue-800 underline'>convertitore di ritmo</a> per conversioni di ritmo accurate, e il nostro <a href='/tools/race/pace-calculator' class='text-blue-600 hover:text-blue-800 underline'>calcolatore di ritmo</a> per determinare i ritmi di allenamento ottimali nella tua unità preferita.",
+        "Q4": "Quali sono le distanze di gara standard in entrambe le unità?",
+        "A4": "Distanze di gara comuni: 5K = 3,11 miglia, 10K = 6,21 miglia, Mezza Maratona = 21,1K = 13,11 miglia, Maratona = 42,2K = 26,22 miglia. Molte gare usano anche marcatori di miglio (1 miglio = 1,61K). Usa il nostro <a href='/tools/race/finish-time-predictor' class='text-blue-600 hover:text-blue-800 underline'>predittore di tempo finale</a> per stimare la tua prestazione su diverse distanze di gara.",
+        "Q5": "Dovrei allenarmi in chilometri o miglia?",
+        "A5": "Allenati nel sistema di unità con cui ti senti più a tuo agio o che corrisponde alle tue gare target. Se gareggi internazionalmente, considera l'allenamento in chilometri. Se gareggi localmente in regioni basate sulle miglia, le miglia potrebbero essere più intuitive. La chiave è la coerenza nel tuo diario di allenamento e la comprensione di entrambi i sistemi per la pianificazione delle gare.",
+        "Q6": "Come influisce la scelta dell'unità di distanza sul mio allenamento?",
+        "A6": "La scelta dell'unità non influisce sulla tua forma fisica reale o prestazione, ma può impattare il tuo approccio mentale e strategia di ritmo. Alcuni corridori trovano gli split chilometrici più motivanti (traguardi più piccoli e frequenti), mentre altri preferiscono i marcatori tradizionali di miglio. Scegli quello che ti aiuta a rimanere motivato e tracciare efficacemente i progressi. Monitora il tuo <a href='/tools/personal/burned-calories-estimator' class='text-blue-600 hover:text-blue-800 underline'>dispendio energetico</a> indipendentemente dall'unità di distanza che preferisci."
+      }
     },
     "PACE_SPEED_UNIT_CONVERTER": {
       "TITLE": "Conversione ritmo / velocità",
       "DESCRIPTION": "Confronta o converti il ritmo in velocità e viceversa.",
       "SUMMARY": "Ritmo: {{pace}} • Velocità: {{speed}}",
       "RESULT_TITLE": "Conversione Ritmo e Velocità",
-      "RESULT_SUBTITLE": "Valori equivalenti di ritmo e velocità"
+      "RESULT_SUBTITLE": "Valori equivalenti di ritmo e velocità",
+      "FAQ": {
+        "TITLE": "Domande Frequenti",
+        "Q1": "Qual è la differenza tra ritmo e velocità?",
+        "A1": "Il ritmo è tempo per distanza (es: 6:00 per miglio o 3:44 per km), mentre la velocità è distanza per tempo (es: 10 mph o 16 km/h). I corridori preferiscono tipicamente il ritmo perché è più facile mantenere uno sforzo costante e pianificare strategie di gara. Usa il nostro <a href='/tools/race/pace-calculator' class='text-blue-600 hover:text-blue-800 underline'>calcolatore di ritmo</a> per determinare i ritmi di allenamento ottimali.",
+        "Q2": "Quando dovrei usare ritmo vs velocità per l'allenamento?",
+        "A2": "Usa il ritmo per la maggior parte dell'allenamento di corsa poiché si relaziona direttamente al livello di sforzo e alla pianificazione di gara. La velocità è più utile per le impostazioni del tapis roulant, confrontare con velocità di ciclismo/guida, o analisi scientifica. La maggior parte degli orologi e app da corsa mostrano il ritmo perché è più intuitivo per le strategie di ritmo durante gare e allenamenti.",
+        "Q3": "Come converto tra diverse unità di ritmo?",
+        "A3": "Questo strumento converte automaticamente tra minuti per miglio e minuti per chilometro. Per conversione manuale: moltiplica min/miglio per 0,621 per ottenere min/km, o moltiplica min/km per 1,609 per ottenere min/miglio. Comprendere entrambe le unità aiuta quando si seguono piani di allenamento internazionali o si gareggia all'estero.",
+        "Q4": "Quale ritmo dovrei mirare per diversi tipi di corse?",
+        "A4": "Corse facili: 1-2 minuti per miglio più lento del ritmo di gara. Corse tempo: 15-30 secondi per miglio più lento del ritmo 10K. Allenamento a intervalli: ritmo 5K o più veloce. Corse lunghe: 30-90 secondi per miglio più lento del ritmo maratona. Usa il nostro <a href='/tools/race/finish-time-predictor' class='text-blue-600 hover:text-blue-800 underline'>predittore di tempo di gara</a> per stabilire i tuoi ritmi base.",
+        "Q5": "Come influisce il terreno sul mio ritmo?",
+        "A5": "Le colline rallentano significativamente il ritmo - aspettati 15-30 secondi per miglio più lento su colline moderate, di più su terreno ripido. La corsa su sentiero è tipicamente 30-60 secondi per miglio più lenta del ritmo su strada a causa di superfici irregolari e ostacoli. Aggiusta il tuo ritmo target di conseguenza e concentrati sul livello di sforzo piuttosto che sul ritmo esatto su terreno impegnativo.",
+        "Q6": "Dovrei concentrarmi sul migliorare il ritmo o mantenerlo più a lungo?",
+        "A6": "Per i corridori di distanza, mantenere il ritmo più a lungo (resistenza) è solitamente più importante della velocità pura. Costruisci prima la tua base aerobica, poi aggiungi lavoro di velocità. Per 5K e distanze più brevi, lo sviluppo della velocità diventa più importante. Monitora il tuo carico di allenamento con il nostro <a href='/tools/personal/burned-calories-estimator' class='text-blue-600 hover:text-blue-800 underline'>calcolatore di calorie bruciate</a> per bilanciare intensità e volume."
+      }
     },
     "WEIGHT_UNIT_CONVERTER": {
       "TITLE": "Conversione peso",
       "DESCRIPTION": "Converti tra chilogrammi e libbre con facilità.",
       "SUMMARY": "Chilogrammi: {{kg}} • Libbre: {{lb}}",
       "RESULT_TITLE": "Conversione Peso",
-      "RESULT_SUBTITLE": "Pesi equivalenti in chilogrammi e libbre"
+      "RESULT_SUBTITLE": "Pesi equivalenti in chilogrammi e libbre",
+      "FAQ": {
+        "TITLE": "Domande Frequenti",
+        "Q1": "Qual è la conversione esatta tra chilogrammi e libbre?",
+        "A1": "1 chilogrammo equivale a 2,20462 libbre, e 1 libbra equivale a 0,453592 chilogrammi. Questo strumento usa fattori di conversione precisi per assicurare accuratezza per tutte le tue esigenze di monitoraggio fitness e salute. Comprendere entrambe le unità aiuta quando si seguono programmi di allenamento internazionali o si usa equipaggiamento con diversi sistemi di misurazione.",
+        "Q2": "Perché alcuni paesi usano i chilogrammi mentre altri usano le libbre?",
+        "A2": "La maggior parte dei paesi nel mondo usa il sistema metrico (chilogrammi), mentre gli Stati Uniti e alcuni altri usano principalmente il sistema imperiale (libbre) per il peso corporeo. Nel fitness e nella corsa, questo significa che programmi di allenamento, equipaggiamenti e linee guida sanitarie possono essere espressi in diverse unità a seconda della loro origine.",
+        "Q3": "Come influisce il mio peso sulla mia prestazione di corsa?",
+        "A3": "Il peso corporeo impatta significativamente la prestazione di corsa, specialmente negli eventi di distanza. Generalmente, portare meno peso eccessivo migliora l'economia di corsa e la velocità. Tuttavia, il peso ottimale varia per individuo e dovrebbe supportare la salute generale e la prestazione. Usa il nostro <a href='/tools/personal/bmi-calculator' class='text-blue-600 hover:text-blue-800 underline'>calcolatore BMI</a> per valutare se il tuo peso è in un range salutare per la tua altezza.",
+        "Q4": "Dovrei tracciare il mio peso in chilogrammi o libbre?",
+        "A4": "Usa il sistema di unità con cui ti senti più a tuo agio o che corrisponde al tuo ambiente locale di salute e fitness. Molti corridori preferiscono i chilogrammi perché i cambiamenti incrementali più piccoli (0,1 kg vs 0,2 lbs) possono fornire un tracciamento più preciso. La chiave è la coerenza nel tuo metodo di tracciamento e la comprensione di entrambi i sistemi quando necessario.",
+        "Q5": "Come influisce il peso sul consumo di calorie durante la corsa?",
+        "A5": "I corridori più pesanti bruciano più calorie per miglio perché stanno muovendo più massa contro la gravità. La relazione è approssimativamente lineare - un aumento del 10% nel peso tipicamente risulta in circa il 10% più calorie bruciate allo stesso ritmo e distanza. Usa il nostro <a href='/tools/personal/burned-calories-estimator' class='text-blue-600 hover:text-blue-800 underline'>calcolatore di calorie bruciate</a> per stimare il tuo dispendio energetico basato sul tuo peso attuale.",
+        "Q6": "Qual è un range di peso salutare per i corridori?",
+        "A6": "Il peso salutare per i corridori varia molto per individuo, composizione corporea e obiettivi di corsa. I corridori d'élite di distanza spesso hanno BMI più bassi, ma i corridori ricreativi dovrebbero prioritizzare la salute generale sul peso di prestazione. Concentrati sul mantenere un peso che supporti i tuoi livelli di energia, recupero e salute a lungo termine. Considera di consultare professionisti sanitari e usa il nostro <a href='/tools/personal/vo2max-calculator' class='text-blue-600 hover:text-blue-800 underline'>calcolatore VO₂ max</a> per valutare il tuo livello di fitness indipendentemente dal peso."
+      }
     },
     "BMI_CALCULATOR": {
       "TITLE": "Composizione Corporea",

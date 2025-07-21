@@ -120,7 +120,22 @@
       "SUMMARY": "Twoje VO₂max wynosi około {{vo2Max}}.",
       "RESULT_TITLE": "Wynik VO₂ Max",
       "RESULT_SUBTITLE": "Twoja szacowana maksymalna wydolność tlenowa",
-      "UNIT": "ml/kg/min"
+      "UNIT": "ml/kg/min",
+      "FAQ": {
+        "TITLE": "Najczęściej Zadawane Pytania",
+        "Q1": "Czym jest VO₂ Max i dlaczego jest ważne?",
+        "A1": "VO₂ Max to maksymalna ilość tlenu, którą Twoje ciało może wykorzystać podczas intensywnego wysiłku, mierzona w mililitrach na kilogram masy ciała na minutę. Jest uważane za złoty standard pomiaru wydolności tlenowej i wytrzymałości. Wyższe wartości VO₂ Max wskazują na lepszą kondycję sercowo-naczyniową i potencjał wydolnościowy w bieganiu.",
+        "A2": "Ten kalkulator używa wzoru Jacka Danielsa, szeroko stosowanego przez trenerów i sportowców. Zapewnia rozsądne oszacowanie oparte na ostatnich wynikach startowych, zazwyczaj dokładne w granicach 5-10% dla wytrenowanych biegaczy. Dla najdokładniejszego pomiaru rozważ testy laboratoryjne ze specjalistycznym sprzętem. Użyj naszego <a href='/tools/race/finish-time-predictor' class='text-blue-600 hover:text-blue-800 underline'>Predyktora Czasu Mety</a>, aby zobaczyć jak Twoje VO₂ Max przekłada się na wyniki startowe.",
+        "Q2": "Jak dokładne jest to oszacowanie VO₂ Max?",
+        "Q3": "Jakiego dystansu startowego powinienem użyć dla najdokładniejszego wyniku?",
+        "A3": "Użyj ostatniego czasu startowego (w ciągu 3-6 miesięcy) z dystansu, który przebiegłeś z maksymalnym wysiłkiem. Czasy z dystansów 5K do półmaratonu zazwyczaj zapewniają najdokładniejsze oszacowania. Unikaj używania czasów ze startów, gdzie nie dałeś maksymalnego wysiłku, biegłeś w ekstremalnych warunkach pogodowych lub na trudnym terenie. Oblicz swoje optymalne <a href='/tools/race/pace-calculator' class='text-blue-600 hover:text-blue-800 underline'>tempa treningowe</a> oparte na oszacowanym VO₂ Max.",
+        "Q4": "Jakie są typowe wartości VO₂ Max dla biegaczy?",
+        "A4": "Przeciętni biegacze rekreacyjni: 35-45 ml/kg/min. Zawodnicy klubowi: 45-55 ml/kg/min. Elitarni biegacze długodystansowi: 60-80+ ml/kg/min. Wartości różnią się w zależności od wieku, płci i historii treningowej. Pamiętaj, że VO₂ Max to tylko jeden czynnik w wydajności biegowej - efektywność, próg mleczanowy i siła mentalna również mają znaczące znaczenie.",
+        "Q5": "Jak mogę poprawić swoje VO₂ Max?",
+        "A5": "Popraw VO₂ Max poprzez trening interwałowy o wysokiej intensywności, biegi tempo i konsekwentne budowanie bazy tlenowej. Włącz 1-2 treningi VO₂ Max tygodniowo (interwały 3-8 minut w tempie startowym 3K-5K). Utrzymuj silną bazę tlenową z łatwymi biegami. Śledź swoje postępy monitorując <a href='/tools/personal/burned-calories-estimator' class='text-blue-600 hover:text-blue-800 underline'>intensywność treningu</a> i powtarzając testy co 6-8 tygodni.",
+        "Q6": "Czy masa ciała wpływa na obliczenia VO₂ Max?",
+        "A6": "Tak, VO₂ Max jest wyrażane na kilogram masy ciała, więc zmiany wagi mogą wpływać na Twoje wartości. Utrata nadmiernej wagi zazwyczaj poprawia VO₂ Max i wydajność biegową. Jednak ekstremalna utrata wagi może zmniejszyć masę mięśniową i zaszkodzić wydajności. Użyj naszego <a href='/tools/personal/bmi-calculator' class='text-blue-600 hover:text-blue-800 underline'>Kalkulatora BMI</a>, aby znaleźć swoją optymalną wagę startową i skład ciała."
+      }
     },
     "FINISH_TIME_PREDICTOR": {
       "TITLE": "Prognoza czasu biegu",
@@ -164,21 +179,66 @@
       "DESCRIPTION": "Szybko przelicz odległości pomiędzy kilometrami a milami.",
       "SUMMARY": "Kilometry: {{kmDistance}} • Mile: {{miDistance}}",
       "RESULT_TITLE": "Przeliczanie Dystansu",
-      "RESULT_SUBTITLE": "Równoważne odległości w kilometrach i milach"
+      "RESULT_SUBTITLE": "Równoważne odległości w kilometrach i milach",
+      "FAQ": {
+        "TITLE": "Najczęściej Zadawane Pytania",
+        "Q1": "Jaka jest dokładna konwersja między kilometrami a milami?",
+        "A1": "1 kilometr równa się 0,621371 mili, a 1 mila równa się 1,609344 kilometra. To narzędzie używa precyzyjnych współczynników konwersji, aby zapewnić dokładność dla wszystkich Twoich potrzeb treningowych i startowych. Zrozumienie obu jednostek pomaga przy śledzeniu międzynarodowych planów treningowych lub startowaniu za granicą.",
+        "Q2": "Dlaczego niektóre kraje używają kilometrów, a inne mil?",
+        "A2": "Większość krajów na świecie używa systemu metrycznego (kilometry), podczas gdy Stany Zjednoczone, Wielka Brytania i kilka innych używa głównie systemu imperialnego (mile) dla dystansów drogowych. W bieganiu oznacza to, że dystanse startowe jak 5K, 10K i maratony są często mierzone w kilometrach globalnie, podczas gdy niektóre regiony preferują mile dla treningu i krótszych biegów.",
+        "Q3": "Jak przeliczać moje tempa treningowe między jednostkami?",
+        "A3": "Przy konwersji planów treningowych między jednostkami pamiętaj, że tempo też się zmienia. Tempo 6:00/milę równa się w przybliżeniu 3:44/km. Użyj naszego <a href='/tools/units/pace-to-speed' class='text-blue-600 hover:text-blue-800 underline'>konwertera tempa</a> dla dokładnych konwersji tempa, i naszego <a href='/tools/race/pace-calculator' class='text-blue-600 hover:text-blue-800 underline'>kalkulatora tempa</a> aby określić optymalne tempa treningowe w preferowanej jednostce.",
+        "Q4": "Jakie są standardowe dystanse startowe w obu jednostkach?",
+        "A4": "Popularne dystanse startowe: 5K = 3,11 mili, 10K = 6,21 mili, Półmaraton = 21,1K = 13,11 mili, Maraton = 42,2K = 26,22 mili. Wiele biegów używa też znaczników milowych (1 mila = 1,61K). Użyj naszego <a href='/tools/race/finish-time-predictor' class='text-blue-600 hover:text-blue-800 underline'>predyktora czasu mety</a> aby oszacować swoją wydajność na różnych dystansach startowych.",
+        "Q5": "Czy powinienem trenować w kilometrach czy milach?",
+        "A5": "Trenuj w systemie jednostek, z którym czujesz się najwygodniej lub który pasuje do Twoich docelowych startów. Jeśli startujesz międzynarodowo, rozważ trening w kilometrach. Jeśli startujesz lokalnie w regionach opartych na milach, mile mogą być bardziej intuicyjne. Kluczem jest spójność w dzienniku treningowym i zrozumienie obu systemów do planowania startów.",
+        "Q6": "Jak wybór jednostki dystansu wpływa na mój trening?",
+        "A6": "Wybór jednostki nie wpływa na Twoją rzeczywistą kondycję czy wydajność, ale może wpłynąć na Twoje mentalne podejście i strategię tempa. Niektórzy biegacze uważają kilometry za bardziej motywujące (mniejsze, częstsze kamienie milowe), podczas gdy inni preferują tradycyjne znaczniki milowe. Wybierz to, co pomaga Ci pozostać zmotywowanym i skutecznie śledzić postępy. Monitoruj swoje <a href='/tools/personal/burned-calories-estimator' class='text-blue-600 hover:text-blue-800 underline'>wydatkowanie energii</a> niezależnie od preferowanej jednostki dystansu."
+      }
     },
     "PACE_SPEED_UNIT_CONVERTER": {
       "TITLE": "Tempo i prędkość",
       "DESCRIPTION": "Oblicz tempo na podstawie prędkości lub odwrotnie.",
       "SUMMARY": "Tempo: {{pace}} • Prędkość: {{speed}}",
       "RESULT_TITLE": "Przeliczanie Tempa i Prędkości",
-      "RESULT_SUBTITLE": "Równoważne wartości tempa i prędkości"
+      "RESULT_SUBTITLE": "Równoważne wartości tempa i prędkości",
+      "FAQ": {
+        "TITLE": "Najczęściej Zadawane Pytania",
+        "Q1": "Jaka jest różnica między tempem a prędkością?",
+        "A1": "Tempo to czas na dystans (np. 6:00 na milę lub 3:44 na km), podczas gdy prędkość to dystans na czas (np. 10 mph lub 16 km/h). Biegacze zazwyczaj preferują tempo, ponieważ łatwiej jest utrzymać stały wysiłek i planować strategie startowe. Użyj naszego <a href='/tools/race/pace-calculator' class='text-blue-600 hover:text-blue-800 underline'>kalkulatora tempa</a>, aby określić optymalne tempa treningowe.",
+        "Q2": "Kiedy powinienem używać tempa vs prędkości do treningu?",
+        "A2": "Używaj tempa do większości treningów biegowych, ponieważ bezpośrednio odnosi się do poziomu wysiłku i planowania startów. Prędkość jest bardziej przydatna do ustawień bieżni, porównywania z prędkościami jazdy na rowerze/samochodem lub analizy naukowej. Większość zegarków i aplikacji biegowych wyświetla tempo, ponieważ jest bardziej intuicyjne dla strategii rytmu podczas startów i treningów.",
+        "Q3": "Jak przeliczać między różnymi jednostkami tempa?",
+        "A3": "To narzędzie automatycznie przelicza między minutami na milę a minutami na kilometr. Do ręcznej konwersji: pomnóż min/milę przez 0,621, aby uzyskać min/km, lub pomnóż min/km przez 1,609, aby uzyskać min/milę. Zrozumienie obu jednostek pomaga przy śledzeniu międzynarodowych planów treningowych lub startowaniu za granicą.",
+        "Q4": "Jakie tempo powinienem celować dla różnych typów biegów?",
+        "A4": "Biegi łatwe: 1-2 minuty na milę wolniej niż tempo startowe. Biegi tempo: 15-30 sekund na milę wolniej niż tempo 10K. Trening interwałowy: tempo 5K lub szybsze. Biegi długie: 30-90 sekund na milę wolniej niż tempo maratońskie. Użyj naszego <a href='/tools/race/finish-time-predictor' class='text-blue-600 hover:text-blue-800 underline'>predyktora czasu startu</a>, aby ustalić swoje podstawowe tempa.",
+        "Q5": "Jak teren wpływa na moje tempo?",
+        "A5": "Wzgórza znacząco spowalniają tempo - oczekuj 15-30 sekund na milę wolniej na umiarkowanych wzgórzach, więcej na stromym terenie. Bieganie po szlakach jest zazwyczaj 30-60 sekund na milę wolniejsze niż tempo na drodze z powodu nierównych powierzchni i przeszkód. Dostosuj swoje docelowe tempo odpowiednio i skup się na poziomie wysiłku zamiast dokładnego tempa na trudnym terenie.",
+        "Q6": "Czy powinienem skupić się na poprawie tempa czy utrzymaniu go dłużej?",
+        "A6": "Dla biegaczy długodystansowych utrzymanie tempa dłużej (wytrzymałość) jest zazwyczaj ważniejsze niż czysta prędkość. Zbuduj najpierw swoją bazę tlenową, potem dodaj pracę nad prędkością. Dla 5K i krótszych dystansów rozwój prędkości staje się ważniejszy. Monitoruj swoje obciążenie treningowe za pomocą naszego <a href='/tools/personal/burned-calories-estimator' class='text-blue-600 hover:text-blue-800 underline'>kalkulatora spalonych kalorii</a>, aby zrównoważyć intensywność i objętość."
+      }
     },
     "WEIGHT_UNIT_CONVERTER": {
       "TITLE": "Kilogramy i funty",
       "DESCRIPTION": "Przelicz wagę między kilogramami a funtami.",
       "SUMMARY": "Kilogramy: {{kg}} • Funty: {{lb}}",
       "RESULT_TITLE": "Przeliczanie Wagi",
-      "RESULT_SUBTITLE": "Równoważne wagi w kilogramach i funtach"
+      "RESULT_SUBTITLE": "Równoważne wagi w kilogramach i funtach",
+      "FAQ": {
+        "TITLE": "Najczęściej Zadawane Pytania",
+        "Q1": "Jaka jest dokładna konwersja między kilogramami a funtami?",
+        "A1": "1 kilogram równa się 2,20462 funta, a 1 funt równa się 0,453592 kilograma. To narzędzie używa precyzyjnych współczynników konwersji, aby zapewnić dokładność dla wszystkich Twoich potrzeb monitorowania fitness i zdrowia. Zrozumienie obu jednostek pomaga przy śledzeniu międzynarodowych programów treningowych lub używaniu sprzętu z różnymi systemami pomiarowymi.",
+        "Q2": "Dlaczego niektóre kraje używają kilogramów, a inne funtów?",
+        "A2": "Większość krajów na świecie używa systemu metrycznego (kilogramy), podczas gdy Stany Zjednoczone i kilka innych używa głównie systemu imperialnego (funty) dla masy ciała. W fitness i bieganiu oznacza to, że programy treningowe, sprzęt i wytyczne zdrowotne mogą być wyrażane w różnych jednostkach w zależności od ich pochodzenia.",
+        "Q3": "Jak moja waga wpływa na moją wydajność biegową?",
+        "A3": "Masa ciała znacząco wpływa na wydajność biegową, szczególnie w wydarzeniach dystansowych. Ogólnie, noszenie mniejszej nadmiernej wagi poprawia ekonomię biegu i prędkość. Jednak optymalna waga różni się dla każdej osoby i powinna wspierać ogólne zdrowie i wydajność. Użyj naszego <a href='/tools/personal/bmi-calculator' class='text-blue-600 hover:text-blue-800 underline'>kalkulatora BMI</a>, aby ocenić, czy Twoja waga mieści się w zdrowym zakresie dla Twojego wzrostu.",
+        "Q4": "Czy powinienem śledzić swoją wagę w kilogramach czy funtach?",
+        "A4": "Używaj systemu jednostek, z którym czujesz się najwygodniej lub który pasuje do Twojego lokalnego środowiska zdrowia i fitness. Wielu biegaczy preferuje kilogramy, ponieważ mniejsze zmiany przyrostowe (0,1 kg vs 0,2 funta) mogą zapewnić bardziej precyzyjne śledzenie. Kluczem jest spójność w metodzie śledzenia i zrozumienie obu systemów w razie potrzeby.",
+        "Q5": "Jak waga wpływa na spalanie kalorii podczas biegania?",
+        "A5": "Ciężsi biegacze spalają więcej kalorii na milę, ponieważ poruszają większą masę przeciwko grawitacji. Związek jest w przybliżeniu liniowy - 10% wzrost wagi zazwyczaj skutkuje około 10% więcej spalonych kalorii przy tym samym tempie i dystansie. Użyj naszego <a href='/tools/personal/burned-calories-estimator' class='text-blue-600 hover:text-blue-800 underline'>kalkulatora spalonych kalorii</a>, aby oszacować swoje wydatkowanie energii na podstawie aktualnej wagi.",
+        "Q6": "Jaki jest zdrowy zakres wagi dla biegaczy?",
+        "A6": "Zdrowa waga dla biegaczy bardzo różni się w zależności od osoby, składu ciała i celów biegowych. Elitarni biegacze długodystansowi często mają niższe BMI, ale biegacze rekreacyjni powinni priorytetowo traktować ogólne zdrowie nad wagą wydajnościową. Skup się na utrzymaniu wagi, która wspiera Twoje poziomy energii, regenerację i długoterminowe zdrowie. Rozważ konsultację z profesjonalistami zdrowotnymi i użyj naszego <a href='/tools/personal/vo2max-calculator' class='text-blue-600 hover:text-blue-800 underline'>kalkulatora VO₂ max</a>, aby ocenić swój poziom kondycji niezależnie od wagi."
+      }
     },
     "BMI_CALCULATOR": {
       "TITLE": "Skład Ciała",

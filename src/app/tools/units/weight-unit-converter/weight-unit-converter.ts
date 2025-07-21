@@ -4,12 +4,14 @@ import { SeoService } from '../../../core/services/seo.service';
 import { WeightUnit } from '../../../core/business/model/enums/weight-unit.enum';
 import { StoreService } from '../../../core/store/store.service';
 import { FancyResult } from '../../../shared/components/ui/fancy-result/fancy-result';
+import { FaqSectionComponent } from '../../../shared/components/ui/faq-section/faq-section';
+import { FaqItemComponent } from '../../../shared/components/ui/faq-item/faq-item';
 import { NumberFormField } from '../../../shared/components/ui/number-form-field/number-form-field';
 import { ToolView } from '../../../shared/views/tool-view/tool-view';
 
 @Component({
   selector: 'app-weight-unit-converter',
-  imports: [ToolView, NumberFormField, FancyResult, TranslateModule],
+  imports: [ToolView, NumberFormField, FancyResult, FaqSectionComponent, FaqItemComponent, TranslateModule],
   templateUrl: './weight-unit-converter.html',
 })
 export class WeightUnitConverter {

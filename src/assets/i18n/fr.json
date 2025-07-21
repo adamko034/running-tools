@@ -120,7 +120,22 @@
       "SUMMARY": "Votre VO₂ Max estimé est de {{vo2Max}}.",
       "RESULT_TITLE": "Résultat VO₂ Max",
       "RESULT_SUBTITLE": "Votre consommation maximale d'oxygène estimée",
-      "UNIT": "ml/kg/min"
+      "UNIT": "ml/kg/min",
+      "FAQ": {
+        "TITLE": "Questions Fréquemment Posées",
+        "Q1": "Qu'est-ce que le VO₂ Max et pourquoi est-il important ?",
+        "A1": "Le VO₂ Max est la quantité maximale d'oxygène que votre corps peut utiliser pendant un exercice intense, mesurée en millilitres par kilogramme de poids corporel par minute. Il est considéré comme l'étalon-or pour mesurer la condition physique aérobie et la capacité d'endurance. Des valeurs de VO₂ Max plus élevées indiquent une meilleure condition cardiovasculaire et un potentiel de performance en course.",
+        "Q2": "Quelle est la précision de cette estimation de VO₂ Max ?",
+        "A2": "Cette calculatrice utilise la formule de Jack Daniels, largement utilisée par les entraîneurs et les athlètes. Elle fournit une estimation raisonnable basée sur la performance récente en course, généralement précise à 5-10% près pour les coureurs entraînés. Pour la mesure la plus précise, considérez les tests en laboratoire avec un équipement spécialisé. Utilisez notre <a href='/tools/race/finish-time-predictor' class='text-blue-600 hover:text-blue-800 underline'>Prédicteur de Temps Final</a> pour voir comment votre VO₂ Max se traduit en performance de course.",
+        "Q3": "Quelle distance de course dois-je utiliser pour le résultat le plus précis ?",
+        "A3": "Utilisez un temps de course récent (dans les 3-6 mois) d'une distance que vous avez courue avec un effort maximal. Les temps de 5K à semi-marathon fournissent généralement les estimations les plus précises. Évitez d'utiliser les temps de courses où vous n'avez pas donné un effort maximal, couru par temps extrême, ou sur terrain difficile. Calculez vos <a href='/tools/race/pace-calculator' class='text-blue-600 hover:text-blue-800 underline'>allures d'entraînement</a> optimales basées sur votre VO₂ Max estimé.",
+        "Q4": "Quelles sont les valeurs typiques de VO₂ Max pour les coureurs ?",
+        "A4": "Coureurs récréatifs moyens : 35-45 ml/kg/min. Coureurs compétitifs de club : 45-55 ml/kg/min. Coureurs d'élite de distance : 60-80+ ml/kg/min. Les valeurs varient selon l'âge, le sexe et l'historique d'entraînement. Rappelez-vous que le VO₂ Max n'est qu'un facteur dans la performance de course - l'efficacité, le seuil lactique et la force mentale comptent aussi significativement.",
+        "Q5": "Comment puis-je améliorer mon VO₂ Max ?",
+        "A5": "Améliorez le VO₂ Max grâce à l'entraînement par intervalles à haute intensité, les courses tempo et la construction cohérente de base aérobie. Incluez 1-2 entraînements VO₂ Max par semaine (intervalles de 3-8 minutes à l'allure de course 3K-5K). Maintenez une base aérobie forte avec des courses faciles. Suivez vos progrès en surveillant votre <a href='/tools/personal/burned-calories-estimator' class='text-blue-600 hover:text-blue-800 underline'>intensité d'entraînement</a> et en retestant toutes les 6-8 semaines.",
+        "Q6": "Le poids corporel affecte-t-il les calculs de VO₂ Max ?",
+        "A6": "Oui, le VO₂ Max est exprimé par kilogramme de poids corporel, donc les changements de poids peuvent affecter vos valeurs. Perdre du poids excessif améliore généralement le VO₂ Max et la performance de course. Cependant, une perte de poids extrême peut réduire la masse musculaire et nuire à la performance. Utilisez notre <a href='/tools/personal/bmi-calculator' class='text-blue-600 hover:text-blue-800 underline'>Calculateur d'IMC</a> pour trouver votre poids de course optimal et votre composition corporelle."
+      }
     },
     "FINISH_TIME_PREDICTOR": {
       "TITLE": "Estimation du temps d'arrivée",
@@ -164,21 +179,66 @@
       "DESCRIPTION": "Convertissez rapidement entre kilomètres et miles.",
       "SUMMARY": "Kilomètres : {{kmDistance}} • Miles : {{miDistance}}",
       "RESULT_TITLE": "Conversion de Distance",
-      "RESULT_SUBTITLE": "Distances équivalentes en kilomètres et miles"
+      "RESULT_SUBTITLE": "Distances équivalentes en kilomètres et miles",
+      "FAQ": {
+        "TITLE": "Questions Fréquemment Posées",
+        "Q1": "Quelle est la conversion exacte entre kilomètres et miles ?",
+        "A1": "1 kilomètre équivaut à 0,621371 miles, et 1 mile équivaut à 1,609344 kilomètres. Cet outil utilise des facteurs de conversion précis pour assurer l'exactitude de tous vos besoins d'entraînement et de course. Comprendre les deux unités aide lors du suivi de plans d'entraînement internationaux ou de courses à l'étranger.",
+        "Q2": "Pourquoi certains pays utilisent-ils les kilomètres tandis que d'autres utilisent les miles ?",
+        "A2": "La plupart des pays dans le monde utilisent le système métrique (kilomètres), tandis que les États-Unis, le Royaume-Uni et quelques autres utilisent principalement le système impérial (miles) pour les distances routières. En course à pied, cela signifie que les distances de course comme 5K, 10K et marathons sont souvent mesurées en kilomètres globalement, tandis que certaines régions préfèrent les miles pour l'entraînement et les courses courtes.",
+        "Q3": "Comment convertir mes allures d'entraînement entre les unités ?",
+        "A3": "Lors de la conversion de plans d'entraînement entre unités, rappelez-vous que l'allure change aussi. Une allure de 6:00/mile équivaut approximativement à 3:44/km. Utilisez notre <a href='/tools/units/pace-to-speed' class='text-blue-600 hover:text-blue-800 underline'>convertisseur d'allure</a> pour des conversions d'allure précises, et notre <a href='/tools/race/pace-calculator' class='text-blue-600 hover:text-blue-800 underline'>calculateur d'allure</a> pour déterminer les allures d'entraînement optimales dans votre unité préférée.",
+        "Q4": "Quelles sont les distances de course standard dans les deux unités ?",
+        "A4": "Distances de course communes : 5K = 3,11 miles, 10K = 6,21 miles, Semi-marathon = 21,1K = 13,11 miles, Marathon = 42,2K = 26,22 miles. Beaucoup de courses utilisent aussi des marqueurs de mile (1 mile = 1,61K). Utilisez notre <a href='/tools/race/finish-time-predictor' class='text-blue-600 hover:text-blue-800 underline'>prédicteur de temps final</a> pour estimer votre performance sur différentes distances de course.",
+        "Q5": "Dois-je m'entraîner en kilomètres ou en miles ?",
+        "A5": "Entraînez-vous dans le système d'unités avec lequel vous êtes le plus à l'aise ou qui correspond à vos courses cibles. Si vous courez internationalement, considérez l'entraînement en kilomètres. Si vous courez localement dans des régions basées sur les miles, les miles pourraient être plus intuitifs. La clé est la cohérence dans votre journal d'entraînement et la compréhension des deux systèmes pour la planification de course.",
+        "Q6": "Comment le choix d'unité de distance affecte-t-il mon entraînement ?",
+        "A6": "Le choix d'unité n'affecte pas votre condition physique réelle ou votre performance, mais peut impacter votre approche mentale et votre stratégie d'allure. Certains coureurs trouvent les splits de kilomètres plus motivants (jalons plus petits et fréquents), tandis que d'autres préfèrent les marqueurs traditionnels de mile. Choisissez ce qui vous aide à rester motivé et à suivre efficacement vos progrès. Surveillez votre <a href='/tools/personal/burned-calories-estimator' class='text-blue-600 hover:text-blue-800 underline'>dépense énergétique</a> quelle que soit l'unité de distance que vous préférez."
+      }
     },
     "PACE_SPEED_UNIT_CONVERTER": {
       "TITLE": "Conversion allure / vitesse",
       "DESCRIPTION": "Calculez ou comparez votre allure et votre vitesse.",
       "SUMMARY": "Allure : {{pace}} • Vitesse : {{speed}}",
       "RESULT_TITLE": "Conversion Allure et Vitesse",
-      "RESULT_SUBTITLE": "Valeurs équivalentes d'allure et de vitesse"
+      "RESULT_SUBTITLE": "Valeurs équivalentes d'allure et de vitesse",
+      "FAQ": {
+        "TITLE": "Questions Fréquemment Posées",
+        "Q1": "Quelle est la différence entre allure et vitesse ?",
+        "A1": "L'allure est le temps par distance (ex : 6:00 par mile ou 3:44 par km), tandis que la vitesse est la distance par temps (ex : 10 mph ou 16 km/h). Les coureurs préfèrent généralement l'allure car il est plus facile de maintenir un effort constant et de planifier des stratégies de course. Utilisez notre <a href='/tools/race/pace-calculator' class='text-blue-600 hover:text-blue-800 underline'>calculateur d'allure</a> pour déterminer vos allures d'entraînement optimales.",
+        "Q2": "Quand dois-je utiliser l'allure vs la vitesse pour l'entraînement ?",
+        "A2": "Utilisez l'allure pour la plupart des entraînements de course car elle se rapporte directement au niveau d'effort et à la planification de course. La vitesse est plus utile pour les réglages de tapis de course, comparer avec les vitesses de cyclisme/conduite, ou l'analyse scientifique. La plupart des montres et apps de course affichent l'allure car c'est plus intuitif pour les stratégies de rythme pendant les courses et entraînements.",
+        "Q3": "Comment convertir entre différentes unités d'allure ?",
+        "A3": "Cet outil convertit automatiquement entre minutes par mile et minutes par kilomètre. Pour une conversion manuelle : multipliez min/mile par 0,621 pour obtenir min/km, ou multipliez min/km par 1,609 pour obtenir min/mile. Comprendre les deux unités aide lors du suivi de plans d'entraînement internationaux ou de courses à l'étranger.",
+        "Q4": "Quelle allure dois-je viser pour différents types de courses ?",
+        "A4": "Courses faciles : 1-2 minutes par mile plus lent que l'allure de course. Courses tempo : 15-30 secondes par mile plus lent que l'allure 10K. Entraînement par intervalles : allure 5K ou plus rapide. Courses longues : 30-90 secondes par mile plus lent que l'allure marathon. Utilisez notre <a href='/tools/race/finish-time-predictor' class='text-blue-600 hover:text-blue-800 underline'>prédicteur de temps de course</a> pour établir vos allures de base.",
+        "Q5": "Comment le terrain affecte-t-il mon allure ?",
+        "A5": "Les collines ralentissent significativement l'allure - attendez-vous à 15-30 secondes par mile plus lent sur des collines modérées, plus sur terrain escarpé. La course en sentier est typiquement 30-60 secondes par mile plus lente que l'allure sur route en raison des surfaces inégales et obstacles. Ajustez votre allure cible en conséquence et concentrez-vous sur le niveau d'effort plutôt que l'allure exacte sur terrain difficile.",
+        "Q6": "Dois-je me concentrer sur l'amélioration de l'allure ou la maintenir plus longtemps ?",
+        "A6": "Pour les coureurs de distance, maintenir l'allure plus longtemps (endurance) est généralement plus important que la vitesse pure. Construisez d'abord votre base aérobie, puis ajoutez le travail de vitesse. Pour 5K et distances plus courtes, le développement de la vitesse devient plus important. Surveillez votre charge d'entraînement avec notre <a href='/tools/personal/burned-calories-estimator' class='text-blue-600 hover:text-blue-800 underline'>calculateur de calories brûlées</a> pour équilibrer intensité et volume."
+      }
     },
     "WEIGHT_UNIT_CONVERTER": {
       "TITLE": "Conversion de poids",
       "DESCRIPTION": "Convertissez facilement entre kilogrammes et livres.",
       "SUMMARY": "Kilogrammes : {{kg}} • Livres : {{lb}}",
       "RESULT_TITLE": "Conversion de Poids",
-      "RESULT_SUBTITLE": "Poids équivalents en kilogrammes et livres"
+      "RESULT_SUBTITLE": "Poids équivalents en kilogrammes et livres",
+      "FAQ": {
+        "TITLE": "Questions Fréquemment Posées",
+        "Q1": "Quelle est la conversion exacte entre kilogrammes et livres ?",
+        "A1": "1 kilogramme équivaut à 2,20462 livres, et 1 livre équivaut à 0,453592 kilogrammes. Cet outil utilise des facteurs de conversion précis pour assurer l'exactitude de tous vos besoins de suivi de fitness et de santé. Comprendre les deux unités aide lors du suivi de programmes d'entraînement internationaux ou de l'utilisation d'équipements avec différents systèmes de mesure.",
+        "Q2": "Pourquoi certains pays utilisent-ils les kilogrammes tandis que d'autres utilisent les livres ?",
+        "A2": "La plupart des pays dans le monde utilisent le système métrique (kilogrammes), tandis que les États-Unis et quelques autres utilisent principalement le système impérial (livres) pour le poids corporel. En fitness et course, cela signifie que les programmes d'entraînement, équipements et directives de santé peuvent être exprimés dans différentes unités selon leur origine.",
+        "Q3": "Comment mon poids affecte-t-il ma performance de course ?",
+        "A3": "Le poids corporel impacte significativement la performance de course, surtout dans les événements de distance. Généralement, porter moins de poids excessif améliore l'économie de course et la vitesse. Cependant, le poids optimal varie selon l'individu et devrait soutenir la santé générale et la performance. Utilisez notre <a href='/tools/personal/bmi-calculator' class='text-blue-600 hover:text-blue-800 underline'>calculateur d'IMC</a> pour évaluer si votre poids est dans une fourchette saine pour votre taille.",
+        "Q4": "Dois-je suivre mon poids en kilogrammes ou en livres ?",
+        "A4": "Utilisez le système d'unités avec lequel vous êtes le plus à l'aise ou qui correspond à votre environnement local de santé et fitness. Beaucoup de coureurs préfèrent les kilogrammes car les changements incrémentaux plus petits (0,1 kg vs 0,2 lbs) peuvent fournir un suivi plus précis. La clé est la cohérence dans votre méthode de suivi et la compréhension des deux systèmes quand nécessaire.",
+        "Q5": "Comment le poids affecte-t-il la combustion de calories pendant la course ?",
+        "A5": "Les coureurs plus lourds brûlent plus de calories par mile car ils déplacent plus de masse contre la gravité. La relation est approximativement linéaire - une augmentation de 10% du poids résulte typiquement en environ 10% plus de calories brûlées au même rythme et distance. Utilisez notre <a href='/tools/personal/burned-calories-estimator' class='text-blue-600 hover:text-blue-800 underline'>calculateur de calories brûlées</a> pour estimer votre dépense énergétique basée sur votre poids actuel.",
+        "Q6": "Quelle est une fourchette de poids saine pour les coureurs ?",
+        "A6": "Le poids sain pour les coureurs varie grandement selon l'individu, la composition corporelle et les objectifs de course. Les coureurs d'élite de distance ont souvent des IMC plus bas, mais les coureurs récréatifs devraient prioriser la santé générale sur le poids de performance. Concentrez-vous sur maintenir un poids qui soutient vos niveaux d'énergie, récupération et santé à long terme. Considérez consulter des professionnels de la santé et utilisez notre <a href='/tools/personal/vo2max-calculator' class='text-blue-600 hover:text-blue-800 underline'>calculateur de VO₂ max</a> pour évaluer votre niveau de fitness indépendamment du poids."
+      }
     },
     "BMI_CALCULATOR": {
       "TITLE": "Composition Corporelle",

@@ -7,6 +7,8 @@ import { StoreService } from '../../../core/store/store.service';
 import { PacePureFormField } from '../../../shared/components/business/pace-pure-form-field/pace-pure-form-field';
 import { SpeedPureFormField } from '../../../shared/components/business/speed-pure-form-field/speed-pure-form-field';
 import { FancyResult } from '../../../shared/components/ui/fancy-result/fancy-result';
+import { FaqSectionComponent } from '../../../shared/components/ui/faq-section/faq-section';
+import { FaqItemComponent } from '../../../shared/components/ui/faq-item/faq-item';
 import { ToolView } from '../../../shared/views/tool-view/tool-view';
 
 @Component({
@@ -16,6 +18,8 @@ import { ToolView } from '../../../shared/views/tool-view/tool-view';
     FancyResult,
     PacePureFormField,
     SpeedPureFormField,
+    FaqSectionComponent,
+    FaqItemComponent,
     TranslateModule,
   ],
   templateUrl: './pace-to-speed.html',

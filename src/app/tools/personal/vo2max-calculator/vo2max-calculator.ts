@@ -6,6 +6,8 @@ import { StoreService } from '../../../core/store/store.service';
 import { DistanceStoreFormField } from '../../../shared/components/store/distance-store-form-field/distance-store-form-field';
 import { TimeStoreFormField } from '../../../shared/components/store/time-store-form-field/time-store-form-field';
 import { FancyResult } from '../../../shared/components/ui/fancy-result/fancy-result';
+import { FaqSectionComponent } from '../../../shared/components/ui/faq-section/faq-section';
+import { FaqItemComponent } from '../../../shared/components/ui/faq-item/faq-item';
 import { ToolView } from '../../../shared/views/tool-view/tool-view';
 @Component({
   selector: 'app-vo2max-calculator',
@@ -14,6 +16,8 @@ import { ToolView } from '../../../shared/views/tool-view/tool-view';
     DistanceStoreFormField,
     TimeStoreFormField,
     FancyResult,
+    FaqSectionComponent,
+    FaqItemComponent,
     TranslateModule,
   ],
   templateUrl: './vo2max-calculator.html',

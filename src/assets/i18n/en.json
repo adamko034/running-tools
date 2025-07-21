@@ -120,7 +120,22 @@
       "SUMMARY": "Your estimated VO₂max is {{vo2Max}}.",
       "RESULT_TITLE": "VO₂ Max Result",
       "RESULT_SUBTITLE": "Your estimated maximum oxygen uptake",
-      "UNIT": "ml/kg/min"
+      "UNIT": "ml/kg/min",
+      "FAQ": {
+        "TITLE": "Frequently Asked Questions",
+        "Q1": "What is VO₂ Max and why is it important?",
+        "A1": "VO₂ Max is the maximum amount of oxygen your body can use during intense exercise, measured in milliliters per kilogram of body weight per minute. It's considered the gold standard for measuring aerobic fitness and endurance capacity. Higher VO₂ Max values indicate better cardiovascular fitness and running performance potential.",
+        "Q2": "How accurate is this VO₂ Max estimation?",
+        "A2": "This calculator uses the Jack Daniels formula, which is widely used by coaches and athletes. It provides a reasonable estimate based on recent race performance, typically accurate within 5-10% for trained runners. For the most precise measurement, consider laboratory testing with specialized equipment. Use our <a href='/tools/race/finish-time-predictor' class='text-blue-600 hover:text-blue-800 underline'>Finish Time Predictor</a> to see how your VO₂ Max translates to race performance.",
+        "Q3": "What race distance should I use for the most accurate result?",
+        "A3": "Use a recent race time (within 3-6 months) from a distance you ran at maximum effort. Times from 5K to half marathon typically provide the most accurate estimates. Avoid using times from races where you didn't give full effort, ran in extreme weather, or on challenging terrain. Calculate your optimal <a href='/tools/race/pace-calculator' class='text-blue-600 hover:text-blue-800 underline'>training paces</a> based on your estimated VO₂ Max.",
+        "Q4": "What are typical VO₂ Max values for runners?",
+        "A4": "Average recreational runners: 35-45 ml/kg/min. Competitive club runners: 45-55 ml/kg/min. Elite distance runners: 60-80+ ml/kg/min. Values vary by age, gender, and training background. Remember that VO₂ Max is just one factor in running performance - efficiency, lactate threshold, and mental toughness also matter significantly.",
+        "Q5": "How can I improve my VO₂ Max?",
+        "A5": "Improve VO₂ Max through high-intensity interval training, tempo runs, and consistent aerobic base building. Include 1-2 VO₂ Max workouts per week (3-8 minute intervals at 3K-5K race pace). Maintain a strong aerobic base with easy runs. Track your progress by monitoring your <a href='/tools/personal/burned-calories-estimator' class='text-blue-600 hover:text-blue-800 underline'>training intensity</a> and retesting every 6-8 weeks.",
+        "Q6": "Does body weight affect VO₂ Max calculations?",
+        "A6": "Yes, VO₂ Max is expressed per kilogram of body weight, so changes in weight can affect your values. Losing excess weight typically improves VO₂ Max and running performance. However, extreme weight loss can reduce muscle mass and hurt performance. Use our <a href='/tools/personal/bmi-calculator' class='text-blue-600 hover:text-blue-800 underline'>BMI Calculator</a> to find your optimal racing weight and body composition."
+      }
     },
     "FINISH_TIME_PREDICTOR": {
       "TITLE": "Finish Time Predictor",
@@ -164,21 +179,66 @@
       "DESCRIPTION": "Quickly convert distances between miles and kilometers to plan your training or races.",
       "SUMMARY": "Kilometers: {{kmDistance}} • Miles: {{miDistance}}",
       "RESULT_TITLE": "Distance Conversion",
-      "RESULT_SUBTITLE": "Equivalent distances in kilometers and miles"
+      "RESULT_SUBTITLE": "Equivalent distances in kilometers and miles",
+      "FAQ": {
+        "TITLE": "Frequently Asked Questions",
+        "Q1": "What's the exact conversion between kilometers and miles?",
+        "A1": "1 kilometer equals 0.621371 miles, and 1 mile equals 1.609344 kilometers. This tool uses precise conversion factors to ensure accuracy for all your training and racing needs. Understanding both units helps when following international training plans or racing abroad.",
+        "Q2": "Why do some countries use kilometers while others use miles?",
+        "A2": "Most countries worldwide use the metric system (kilometers), while the United States, United Kingdom, and a few others primarily use the imperial system (miles) for road distances. In running, this means race distances like 5K, 10K, and marathons are often measured in kilometers globally, while some regions prefer miles for training and shorter races.",
+        "Q3": "How do I convert my training paces between units?",
+        "A3": "When converting training plans between units, remember that pace also changes. A 6:00/mile pace equals approximately 3:44/km pace. Use our <a href='/tools/units/pace-to-speed' class='text-blue-600 hover:text-blue-800 underline'>pace converter</a> for accurate pace conversions, and our <a href='/tools/race/pace-calculator' class='text-blue-600 hover:text-blue-800 underline'>pace calculator</a> to determine optimal training paces in your preferred unit.",
+        "Q4": "What are the standard race distances in both units?",
+        "A4": "Common race distances: 5K = 3.11 miles, 10K = 6.21 miles, Half Marathon = 21.1K = 13.11 miles, Marathon = 42.2K = 26.22 miles. Many races also use mile markers (1 mile = 1.61K). Use our <a href='/tools/race/finish-time-predictor' class='text-blue-600 hover:text-blue-800 underline'>finish time predictor</a> to estimate your performance across different race distances.",
+        "Q5": "Should I train in kilometers or miles?",
+        "A5": "Train in the unit system you're most comfortable with or that matches your target races. If racing internationally, consider training in kilometers. If racing locally in mile-based regions, miles might be more intuitive. The key is consistency in your training log and understanding both systems for race planning.",
+        "Q6": "How does distance unit choice affect my training?",
+        "A6": "The unit choice doesn't affect your actual fitness or performance, but it can impact your mental approach and pacing strategy. Some runners find kilometer splits more motivating (smaller, more frequent milestones), while others prefer the traditional mile markers. Choose what helps you stay motivated and track progress effectively. Monitor your <a href='/tools/personal/burned-calories-estimator' class='text-blue-600 hover:text-blue-800 underline'>energy expenditure</a> regardless of the distance unit you prefer."
+      }
     },
     "PACE_SPEED_UNIT_CONVERTER": {
       "TITLE": "Pace to Speed Conversion",
       "DESCRIPTION": "Calculate equivalent speed and pace for your workouts.",
       "SUMMARY": "Pace: {{pace}} • Speed: {{speed}}",
       "RESULT_TITLE": "Pace & Speed Conversion",
-      "RESULT_SUBTITLE": "Equivalent pace and speed values"
+      "RESULT_SUBTITLE": "Equivalent pace and speed values",
+      "FAQ": {
+        "TITLE": "Frequently Asked Questions",
+        "Q1": "What's the difference between pace and speed?",
+        "A1": "Pace is time per distance (e.g., 6:00 per mile or 3:44 per km), while speed is distance per time (e.g., 10 mph or 16 km/h). Runners typically prefer pace because it's easier to maintain consistent effort and plan race strategies. Use our <a href='/tools/race/pace-calculator' class='text-blue-600 hover:text-blue-800 underline'>pace calculator</a> to determine optimal training paces.",
+        "Q2": "When should I use pace vs speed for training?",
+        "A2": "Use pace for most running training as it directly relates to effort level and race planning. Speed is more useful for treadmill settings, comparing with cycling/driving speeds, or scientific analysis. Most running watches and apps display pace because it's more intuitive for pacing strategies during races and workouts.",
+        "Q3": "How do I convert between different pace units?",
+        "A3": "This tool automatically converts between minutes per mile and minutes per kilometer. For manual conversion: multiply min/mile by 0.621 to get min/km, or multiply min/km by 1.609 to get min/mile. Understanding both units helps when following international training plans or racing abroad.",
+        "Q4": "What pace should I target for different types of runs?",
+        "A4": "Easy runs: 1-2 minutes per mile slower than race pace. Tempo runs: 15-30 seconds per mile slower than 10K pace. Interval training: 5K pace or faster. Long runs: 30-90 seconds per mile slower than marathon pace. Use our <a href='/tools/race/finish-time-predictor' class='text-blue-600 hover:text-blue-800 underline'>race time predictor</a> to establish your baseline paces.",
+        "Q5": "How does terrain affect my pace?",
+        "A5": "Hills significantly slow pace - expect 15-30 seconds per mile slower on moderate hills, more on steep terrain. Trail running is typically 30-60 seconds per mile slower than road pace due to uneven surfaces and obstacles. Adjust your target pace accordingly and focus on effort level rather than exact pace on challenging terrain.",
+        "Q6": "Should I focus on improving pace or maintaining it longer?",
+        "A6": "For distance runners, maintaining pace longer (endurance) is usually more important than pure speed. Build your aerobic base first, then add speed work. For 5K and shorter, speed development becomes more important. Monitor your training load with our <a href='/tools/personal/burned-calories-estimator' class='text-blue-600 hover:text-blue-800 underline'>calories burned calculator</a> to balance intensity and volume."
+      }
     },
     "WEIGHT_UNIT_CONVERTER": {
       "TITLE": "Weight Unit Conversion",
       "DESCRIPTION": "Quickly convert weights between kilograms and pounds.",
       "SUMMARY": "Kilograms: {{kg}} • Pounds: {{lb}}",
       "RESULT_TITLE": "Weight Conversion",
-      "RESULT_SUBTITLE": "Equivalent weights in kilograms and pounds"
+      "RESULT_SUBTITLE": "Equivalent weights in kilograms and pounds",
+      "FAQ": {
+        "TITLE": "Frequently Asked Questions",
+        "Q1": "What's the exact conversion between kilograms and pounds?",
+        "A1": "1 kilogram equals 2.20462 pounds, and 1 pound equals 0.453592 kilograms. This tool uses precise conversion factors to ensure accuracy for all your fitness and health tracking needs. Understanding both units helps when following international training programs or using equipment with different measurement systems.",
+        "Q2": "Why do some countries use kilograms while others use pounds?",
+        "A2": "Most countries worldwide use the metric system (kilograms), while the United States and a few others primarily use the imperial system (pounds) for body weight. In fitness and running, this means training programs, equipment, and health guidelines may be expressed in different units depending on their origin.",
+        "Q3": "How does my weight affect my running performance?",
+        "A3": "Body weight significantly impacts running performance, especially in distance events. Generally, carrying less excess weight improves running economy and speed. However, optimal weight varies by individual and should support overall health and performance. Use our <a href='/tools/personal/bmi-calculator' class='text-blue-600 hover:text-blue-800 underline'>BMI calculator</a> to assess if your weight is in a healthy range for your height.",
+        "Q4": "Should I track my weight in kilograms or pounds?",
+        "A4": "Use the unit system you're most comfortable with or that matches your local healthcare and fitness environment. Many runners prefer kilograms because smaller incremental changes (0.1 kg vs 0.2 lbs) can provide more precise tracking. The key is consistency in your tracking method and understanding both systems when needed.",
+        "Q5": "How does weight affect calorie burn during running?",
+        "A5": "Heavier runners burn more calories per mile because they're moving more mass against gravity. The relationship is roughly linear - a 10% increase in weight typically results in about 10% more calories burned at the same pace and distance. Use our <a href='/tools/personal/burned-calories-estimator' class='text-blue-600 hover:text-blue-800 underline'>calories burned calculator</a> to estimate your energy expenditure based on your current weight.",
+        "Q6": "What's a healthy weight range for runners?",
+        "A6": "Healthy weight for runners varies greatly by individual, body composition, and running goals. Elite distance runners often have lower BMIs, but recreational runners should prioritize overall health over performance weight. Focus on maintaining a weight that supports your energy levels, recovery, and long-term health. Consider consulting with healthcare professionals and use our <a href='/tools/personal/vo2max-calculator' class='text-blue-600 hover:text-blue-800 underline'>VO₂ max calculator</a> to assess your fitness level regardless of weight."
+      }
     },
     "BMI_CALCULATOR": {
       "TITLE": "Body Composition",

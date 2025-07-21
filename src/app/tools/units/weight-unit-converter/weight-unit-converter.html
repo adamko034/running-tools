@@ -32,4 +32,43 @@
       <div result-value>{{ kgWeight.format() }} ⟷ {{ lbWeight.format() }}</div>
     </app-fancy-result>
   </ng-container>
+
+  <!-- FAQ Section -->
+  <ng-container tool-faq>
+    <app-faq-section>
+      <div faq-title>{{ 'TOOLS.WEIGHT_UNIT_CONVERTER.FAQ.TITLE' | translate }}</div>
+      
+      <div faq-items>
+        <app-faq-item>
+          <div faq-question>{{ 'TOOLS.WEIGHT_UNIT_CONVERTER.FAQ.Q1' | translate }}</div>
+          <div faq-answer [innerHTML]="'TOOLS.WEIGHT_UNIT_CONVERTER.FAQ.A1' | translate"></div>
+        </app-faq-item>
+
+        <app-faq-item>
+          <div faq-question>{{ 'TOOLS.WEIGHT_UNIT_CONVERTER.FAQ.Q2' | translate }}</div>
+          <div faq-answer [innerHTML]="'TOOLS.WEIGHT_UNIT_CONVERTER.FAQ.A2' | translate"></div>
+        </app-faq-item>
+
+        <app-faq-item>
+          <div faq-question>{{ 'TOOLS.WEIGHT_UNIT_CONVERTER.FAQ.Q3' | translate }}</div>
+          <div faq-answer [innerHTML]="'TOOLS.WEIGHT_UNIT_CONVERTER.FAQ.A3' | translate"></div>
+        </app-faq-item>
+
+        <app-faq-item>
+          <div faq-question>{{ 'TOOLS.WEIGHT_UNIT_CONVERTER.FAQ.Q4' | translate }}</div>
+          <div faq-answer [innerHTML]="'TOOLS.WEIGHT_UNIT_CONVERTER.FAQ.A4' | translate"></div>
+        </app-faq-item>
+
+        <app-faq-item>
+          <div faq-question>{{ 'TOOLS.WEIGHT_UNIT_CONVERTER.FAQ.Q5' | translate }}</div>
+          <div faq-answer [innerHTML]="'TOOLS.WEIGHT_UNIT_CONVERTER.FAQ.A5' | translate"></div>
+        </app-faq-item>
+
+        <app-faq-item>
+          <div faq-question>{{ 'TOOLS.WEIGHT_UNIT_CONVERTER.FAQ.Q6' | translate }}</div>
+          <div faq-answer [innerHTML]="'TOOLS.WEIGHT_UNIT_CONVERTER.FAQ.A6' | translate"></div>
+        </app-faq-item>
+      </div>
+    </app-faq-section>
+  </ng-container>
 </app-tool-view>

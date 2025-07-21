@@ -120,7 +120,22 @@
       "SUMMARY": "Dein VO₂max liegt bei etwa {{vo2Max}}.",
       "RESULT_TITLE": "VO₂ Max Ergebnis",
       "RESULT_SUBTITLE": "Deine geschätzte maximale Sauerstoffaufnahme",
-      "UNIT": "ml/kg/min"
+      "UNIT": "ml/kg/min",
+      "FAQ": {
+        "TITLE": "Häufig Gestellte Fragen",
+        "Q1": "Was ist VO₂ Max und warum ist es wichtig?",
+        "A1": "VO₂ Max ist die maximale Sauerstoffmenge, die dein Körper während intensiver Belastung verwerten kann, gemessen in Millilitern pro Kilogramm Körpergewicht pro Minute. Es gilt als Goldstandard zur Messung der aeroben Fitness und Ausdauerkapazität. Höhere VO₂ Max-Werte zeigen eine bessere Herz-Kreislauf-Fitness und Laufleistungspotential an.",
+        "Q2": "Wie genau ist diese VO₂ Max-Schätzung?",
+        "A2": "Dieser Rechner verwendet die Jack Daniels-Formel, die von Trainern und Athleten weit verbreitet ist. Sie liefert eine vernünftige Schätzung basierend auf aktueller Wettkampfleistung, typischerweise genau innerhalb von 5-10% für trainierte Läufer. Für die präziseste Messung erwäge Labortests mit spezieller Ausrüstung. Nutze unseren <a href='/tools/race/finish-time-predictor' class='text-blue-600 hover:text-blue-800 underline'>Zielzeit-Rechner</a>, um zu sehen wie sich dein VO₂ Max in Wettkampfleistung übersetzt.",
+        "Q3": "Welche Wettkampfdistanz sollte ich für das genaueste Ergebnis verwenden?",
+        "A3": "Verwende eine aktuelle Wettkampfzeit (innerhalb von 3-6 Monaten) von einer Distanz, die du mit maximaler Anstrengung gelaufen bist. Zeiten von 5K bis Halbmarathon liefern typischerweise die genauesten Schätzungen. Vermeide Zeiten von Wettkämpfen, wo du nicht maximale Anstrengung gegeben hast, bei extremen Wetterbedingungen gelaufen bist oder auf schwierigem Terrain. Berechne deine optimalen <a href='/tools/race/pace-calculator' class='text-blue-600 hover:text-blue-800 underline'>Trainingstempi</a> basierend auf deinem geschätzten VO₂ Max.",
+        "Q4": "Was sind typische VO₂ Max-Werte für Läufer?",
+        "A4": "Durchschnittliche Freizeitläufer: 35-45 ml/kg/min. Wettkampfläufer im Verein: 45-55 ml/kg/min. Elite-Langstreckenläufer: 60-80+ ml/kg/min. Werte variieren nach Alter, Geschlecht und Trainingshintergrund. Denke daran, dass VO₂ Max nur ein Faktor in der Laufleistung ist - Effizienz, Laktatschwelle und mentale Stärke sind ebenfalls bedeutsam.",
+        "Q5": "Wie kann ich mein VO₂ Max verbessern?",
+        "A5": "Verbessere VO₂ Max durch hochintensives Intervalltraining, Tempoläufe und konsequenten aeroben Grundlagenaufbau. Integriere 1-2 VO₂ Max-Trainings pro Woche (3-8 Minuten Intervalle im 3K-5K Wettkampftempo). Halte eine starke aerobe Basis mit lockeren Läufen aufrecht. Verfolge deinen Fortschritt durch Überwachung deiner <a href='/tools/personal/burned-calories-estimator' class='text-blue-600 hover:text-blue-800 underline'>Trainingsintensität</a> und Wiederholung der Tests alle 6-8 Wochen.",
+        "Q6": "Beeinflusst das Körpergewicht die VO₂ Max-Berechnungen?",
+        "A6": "Ja, VO₂ Max wird pro Kilogramm Körpergewicht ausgedrückt, daher können Gewichtsveränderungen deine Werte beeinflussen. Überschüssiges Gewicht zu verlieren verbessert typischerweise VO₂ Max und Laufleistung. Jedoch kann extremer Gewichtsverlust Muskelmasse reduzieren und die Leistung beeinträchtigen. Nutze unseren <a href='/tools/personal/bmi-calculator' class='text-blue-600 hover:text-blue-800 underline'>BMI-Rechner</a>, um dein optimales Wettkampfgewicht und deine Körperzusammensetzung zu finden."
+      }
     },
     "FINISH_TIME_PREDICTOR": {
       "TITLE": "Zielzeit-Prognose",
@@ -164,21 +179,66 @@
       "DESCRIPTION": "Schnell zwischen Kilometern und Meilen wechseln.",
       "SUMMARY": "Kilometer: {{kmDistance}} • Meilen: {{miDistance}}",
       "RESULT_TITLE": "Distanz-Umrechnung",
-      "RESULT_SUBTITLE": "Entsprechende Distanzen in Kilometern und Meilen"
+      "RESULT_SUBTITLE": "Entsprechende Distanzen in Kilometern und Meilen",
+      "FAQ": {
+        "TITLE": "Häufig Gestellte Fragen",
+        "Q1": "Was ist die exakte Umrechnung zwischen Kilometern und Meilen?",
+        "A1": "1 Kilometer entspricht 0,621371 Meilen, und 1 Meile entspricht 1,609344 Kilometern. Dieses Tool verwendet präzise Umrechnungsfaktoren, um Genauigkeit für alle deine Trainings- und Wettkampfbedürfnisse zu gewährleisten. Das Verstehen beider Einheiten hilft beim Befolgen internationaler Trainingspläne oder Wettkämpfen im Ausland.",
+        "Q2": "Warum verwenden manche Länder Kilometer, während andere Meilen verwenden?",
+        "A2": "Die meisten Länder weltweit verwenden das metrische System (Kilometer), während die USA, Großbritannien und einige andere hauptsächlich das imperiale System (Meilen) für Straßendistanzen verwenden. Beim Laufen bedeutet dies, dass Wettkampfdistanzen wie 5K, 10K und Marathons oft global in Kilometern gemessen werden, während einige Regionen Meilen für Training und kürzere Läufe bevorzugen.",
+        "Q3": "Wie rechne ich meine Trainingstempi zwischen Einheiten um?",
+        "A3": "Bei der Umrechnung von Trainingsplänen zwischen Einheiten denke daran, dass sich auch das Tempo ändert. Ein 6:00/Meile Tempo entspricht etwa 3:44/km. Nutze unseren <a href='/tools/units/pace-to-speed' class='text-blue-600 hover:text-blue-800 underline'>Tempo-Umrechner</a> für genaue Tempo-Umrechnungen und unseren <a href='/tools/race/pace-calculator' class='text-blue-600 hover:text-blue-800 underline'>Tempo-Rechner</a>, um optimale Trainingstempi in deiner bevorzugten Einheit zu bestimmen.",
+        "Q4": "Was sind die Standard-Wettkampfdistanzen in beiden Einheiten?",
+        "A4": "Gängige Wettkampfdistanzen: 5K = 3,11 Meilen, 10K = 6,21 Meilen, Halbmarathon = 21,1K = 13,11 Meilen, Marathon = 42,2K = 26,22 Meilen. Viele Rennen verwenden auch Meilenmarkierungen (1 Meile = 1,61K). Nutze unseren <a href='/tools/race/finish-time-predictor' class='text-blue-600 hover:text-blue-800 underline'>Zielzeit-Rechner</a>, um deine Leistung über verschiedene Wettkampfdistanzen zu schätzen.",
+        "Q5": "Sollte ich in Kilometern oder Meilen trainieren?",
+        "A5": "Trainiere in dem Einheitensystem, mit dem du dich am wohlsten fühlst oder das zu deinen Zielwettkämpfen passt. Wenn du international läufst, erwäge Training in Kilometern. Wenn du lokal in meilenbasierten Regionen läufst, könnten Meilen intuitiver sein. Der Schlüssel ist Konsistenz in deinem Trainingstagebuch und das Verstehen beider Systeme für die Wettkampfplanung.",
+        "Q6": "Wie beeinflusst die Wahl der Distanzeinheit mein Training?",
+        "A6": "Die Einheitenwahl beeinflusst nicht deine tatsächliche Fitness oder Leistung, kann aber deinen mentalen Ansatz und deine Tempo-Strategie beeinflussen. Manche Läufer finden Kilometer-Splits motivierender (kleinere, häufigere Meilensteine), während andere traditionelle Meilenmarkierungen bevorzugen. Wähle, was dir hilft, motiviert zu bleiben und Fortschritte effektiv zu verfolgen. Überwache deinen <a href='/tools/personal/burned-calories-estimator' class='text-blue-600 hover:text-blue-800 underline'>Energieverbrauch</a> unabhängig von deiner bevorzugten Distanzeinheit."
+      }
     },
     "PACE_SPEED_UNIT_CONVERTER": {
       "TITLE": "Tempo & Geschwindigkeit",
       "DESCRIPTION": "Rechne Tempo in Geschwindigkeit um oder umgekehrt.",
       "SUMMARY": "Tempo: {{pace}} • Geschwindigkeit: {{speed}}",
       "RESULT_TITLE": "Tempo & Geschwindigkeits-Umrechnung",
-      "RESULT_SUBTITLE": "Entsprechende Tempo- und Geschwindigkeitswerte"
+      "RESULT_SUBTITLE": "Entsprechende Tempo- und Geschwindigkeitswerte",
+      "FAQ": {
+        "TITLE": "Häufig Gestellte Fragen",
+        "Q1": "Was ist der Unterschied zwischen Tempo und Geschwindigkeit?",
+        "A1": "Tempo ist Zeit pro Distanz (z.B. 6:00 pro Meile oder 3:44 pro km), während Geschwindigkeit Distanz pro Zeit ist (z.B. 10 mph oder 16 km/h). Läufer bevorzugen typischerweise Tempo, weil es einfacher ist, konstante Anstrengung zu halten und Rennstrategien zu planen. Nutze unseren <a href='/tools/race/pace-calculator' class='text-blue-600 hover:text-blue-800 underline'>Tempo-Rechner</a>, um optimale Trainingstempi zu bestimmen.",
+        "Q2": "Wann sollte ich Tempo vs Geschwindigkeit für Training verwenden?",
+        "A2": "Verwende Tempo für die meisten Lauftrainings, da es sich direkt auf Anstrengungsniveau und Rennplanung bezieht. Geschwindigkeit ist nützlicher für Laufbandeinstellungen, Vergleiche mit Rad-/Autogeschwindigkeiten oder wissenschaftliche Analysen. Die meisten Laufuhren und Apps zeigen Tempo an, weil es intuitiver für Rhythmusstrategien während Rennen und Trainings ist.",
+        "Q3": "Wie rechne ich zwischen verschiedenen Tempo-Einheiten um?",
+        "A3": "Dieses Tool rechnet automatisch zwischen Minuten pro Meile und Minuten pro Kilometer um. Für manuelle Umrechnung: multipliziere min/Meile mit 0,621 für min/km, oder multipliziere min/km mit 1,609 für min/Meile. Das Verstehen beider Einheiten hilft beim Befolgen internationaler Trainingspläne oder Rennen im Ausland.",
+        "Q4": "Welches Tempo sollte ich für verschiedene Laufarten anstreben?",
+        "A4": "Lockere Läufe: 1-2 Minuten pro Meile langsamer als Renntempo. Tempoläufe: 15-30 Sekunden pro Meile langsamer als 10K-Tempo. Intervalltraining: 5K-Tempo oder schneller. Lange Läufe: 30-90 Sekunden pro Meile langsamer als Marathon-Tempo. Nutze unseren <a href='/tools/race/finish-time-predictor' class='text-blue-600 hover:text-blue-800 underline'>Zielzeit-Rechner</a>, um deine Grundtempi zu etablieren.",
+        "Q5": "Wie beeinflusst das Gelände mein Tempo?",
+        "A5": "Hügel verlangsamen das Tempo erheblich - erwarte 15-30 Sekunden pro Meile langsamer bei moderaten Hügeln, mehr bei steilem Gelände. Traillaufen ist typischerweise 30-60 Sekunden pro Meile langsamer als Straßentempo aufgrund unebener Oberflächen und Hindernisse. Passe dein Zieltempo entsprechend an und konzentriere dich auf Anstrengungsniveau statt exaktes Tempo bei schwierigem Gelände.",
+        "Q6": "Sollte ich mich darauf konzentrieren, das Tempo zu verbessern oder länger zu halten?",
+        "A6": "Für Langstreckenläufer ist das längere Halten des Tempos (Ausdauer) meist wichtiger als reine Geschwindigkeit. Baue zuerst deine aerobe Basis auf, dann füge Geschwindigkeitsarbeit hinzu. Für 5K und kürzere Distanzen wird Geschwindigkeitsentwicklung wichtiger. Überwache deine Trainingsbelastung mit unserem <a href='/tools/personal/burned-calories-estimator' class='text-blue-600 hover:text-blue-800 underline'>Kalorienrechner</a>, um Intensität und Volumen auszubalancieren."
+      }
     },
     "WEIGHT_UNIT_CONVERTER": {
       "TITLE": "Gewicht umrechnen",
       "DESCRIPTION": "Kilogramm und Pfund einfach umrechnen.",
       "SUMMARY": "Kilogramm: {{kg}} • Pfund: {{lb}}",
       "RESULT_TITLE": "Gewichts-Umrechnung",
-      "RESULT_SUBTITLE": "Entsprechende Gewichte in Kilogramm und Pfund"
+      "RESULT_SUBTITLE": "Entsprechende Gewichte in Kilogramm und Pfund",
+      "FAQ": {
+        "TITLE": "Häufig Gestellte Fragen",
+        "Q1": "Was ist die exakte Umrechnung zwischen Kilogramm und Pfund?",
+        "A1": "1 Kilogramm entspricht 2,20462 Pfund, und 1 Pfund entspricht 0,453592 Kilogramm. Dieses Tool verwendet präzise Umrechnungsfaktoren, um Genauigkeit für alle deine Fitness- und Gesundheits-Tracking-Bedürfnisse zu gewährleisten. Das Verstehen beider Einheiten hilft beim Befolgen internationaler Trainingsprogramme oder der Verwendung von Geräten mit verschiedenen Messsystemen.",
+        "Q2": "Warum verwenden manche Länder Kilogramm, während andere Pfund verwenden?",
+        "A2": "Die meisten Länder weltweit verwenden das metrische System (Kilogramm), während die USA und einige andere hauptsächlich das imperiale System (Pfund) für Körpergewicht verwenden. In Fitness und Laufen bedeutet dies, dass Trainingsprogramme, Ausrüstung und Gesundheitsrichtlinien in verschiedenen Einheiten ausgedrückt werden können, je nach ihrer Herkunft.",
+        "Q3": "Wie beeinflusst mein Gewicht meine Laufleistung?",
+        "A3": "Körpergewicht beeinflusst die Laufleistung erheblich, besonders bei Distanzveranstaltungen. Generell verbessert das Tragen von weniger überschüssigem Gewicht die Laufökonomie und Geschwindigkeit. Jedoch variiert das optimale Gewicht je nach Person und sollte die allgemeine Gesundheit und Leistung unterstützen. Nutze unseren <a href='/tools/personal/bmi-calculator' class='text-blue-600 hover:text-blue-800 underline'>BMI-Rechner</a>, um zu bewerten, ob dein Gewicht in einem gesunden Bereich für deine Größe liegt.",
+        "Q4": "Sollte ich mein Gewicht in Kilogramm oder Pfund verfolgen?",
+        "A4": "Verwende das Einheitensystem, mit dem du dich am wohlsten fühlst oder das zu deiner lokalen Gesundheits- und Fitness-Umgebung passt. Viele Läufer bevorzugen Kilogramm, weil kleinere inkrementelle Änderungen (0,1 kg vs 0,2 lbs) eine präzisere Verfolgung ermöglichen können. Der Schlüssel ist Konsistenz in deiner Verfolgungsmethode und das Verstehen beider Systeme bei Bedarf.",
+        "Q5": "Wie beeinflusst Gewicht den Kalorienverbrauch beim Laufen?",
+        "A5": "Schwerere Läufer verbrennen mehr Kalorien pro Meile, weil sie mehr Masse gegen die Schwerkraft bewegen. Die Beziehung ist ungefähr linear - eine 10%ige Gewichtszunahme führt typischerweise zu etwa 10% mehr verbrannten Kalorien bei gleichem Tempo und Distanz. Nutze unseren <a href='/tools/personal/burned-calories-estimator' class='text-blue-600 hover:text-blue-800 underline'>Kalorienverbrauch-Rechner</a>, um deinen Energieverbrauch basierend auf deinem aktuellen Gewicht zu schätzen.",
+        "Q6": "Was ist ein gesunder Gewichtsbereich für Läufer?",
+        "A6": "Gesundes Gewicht für Läufer variiert stark je nach Person, Körperzusammensetzung und Laufzielen. Elite-Langstreckenläufer haben oft niedrigere BMIs, aber Freizeitläufer sollten die allgemeine Gesundheit über das Leistungsgewicht priorisieren. Konzentriere dich darauf, ein Gewicht zu halten, das deine Energielevel, Erholung und langfristige Gesundheit unterstützt. Erwäge die Beratung durch Gesundheitsfachkräfte und nutze unseren <a href='/tools/personal/vo2max-calculator' class='text-blue-600 hover:text-blue-800 underline'>VO₂ Max-Rechner</a>, um dein Fitnesslevel unabhängig vom Gewicht zu bewerten."
+      }
     },
     "BMI_CALCULATOR": {
       "TITLE": "Körperzusammensetzung",

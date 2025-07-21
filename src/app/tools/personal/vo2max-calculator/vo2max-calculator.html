@@ -19,4 +19,43 @@
       <div result-value>{{ vo2Max() }} {{ 'TOOLS.VO2MAX_CALCULATOR.UNIT' | translate }}</div>
     </app-fancy-result>
   </ng-container>
+
+  <!-- FAQ Section -->
+  <ng-container tool-faq>
+    <app-faq-section>
+      <div faq-title>{{ 'TOOLS.VO2MAX_CALCULATOR.FAQ.TITLE' | translate }}</div>
+      
+      <div faq-items>
+        <app-faq-item>
+          <div faq-question>{{ 'TOOLS.VO2MAX_CALCULATOR.FAQ.Q1' | translate }}</div>
+          <div faq-answer [innerHTML]="'TOOLS.VO2MAX_CALCULATOR.FAQ.A1' | translate"></div>
+        </app-faq-item>
+
+        <app-faq-item>
+          <div faq-question>{{ 'TOOLS.VO2MAX_CALCULATOR.FAQ.Q2' | translate }}</div>
+          <div faq-answer [innerHTML]="'TOOLS.VO2MAX_CALCULATOR.FAQ.A2' | translate"></div>
+        </app-faq-item>
+
+        <app-faq-item>
+          <div faq-question>{{ 'TOOLS.VO2MAX_CALCULATOR.FAQ.Q3' | translate }}</div>
+          <div faq-answer [innerHTML]="'TOOLS.VO2MAX_CALCULATOR.FAQ.A3' | translate"></div>
+        </app-faq-item>
+
+        <app-faq-item>
+          <div faq-question>{{ 'TOOLS.VO2MAX_CALCULATOR.FAQ.Q4' | translate }}</div>
+          <div faq-answer [innerHTML]="'TOOLS.VO2MAX_CALCULATOR.FAQ.A4' | translate"></div>
+        </app-faq-item>
+
+        <app-faq-item>
+          <div faq-question>{{ 'TOOLS.VO2MAX_CALCULATOR.FAQ.Q5' | translate }}</div>
+          <div faq-answer [innerHTML]="'TOOLS.VO2MAX_CALCULATOR.FAQ.A5' | translate"></div>
+        </app-faq-item>
+
+        <app-faq-item>
+          <div faq-question>{{ 'TOOLS.VO2MAX_CALCULATOR.FAQ.Q6' | translate }}</div>
+          <div faq-answer [innerHTML]="'TOOLS.VO2MAX_CALCULATOR.FAQ.A6' | translate"></div>
+        </app-faq-item>
+      </div>
+    </app-faq-section>
+  </ng-container>
 </app-tool-view>
