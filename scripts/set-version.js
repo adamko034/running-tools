@@ -29,4 +29,16 @@ const envProdContent = `export const environment = {
 fs.writeFileSync(envProdPath, envProdContent);
 console.log(`Updated ${envProdPath}`);
 
+// Auto-commit version changes if this is a production build
+if (process.argv.includes('--commit')) {
+  const { execSync } = require('child_process');
+  try {
+    execSync('git add package.json package-lock.json src/environments/', { stdio: 'inherit' });
+    execSync(`git commit -m "Bump version to ${version}"`, { stdio: 'inherit' });
+    console.log(`Committed version ${version} to Git`);
+  } catch (error) {
+    console.log('Note: Could not auto-commit (this is normal if Git is not initialized or no changes)');
+  }
+}
+
 console.log('Version sync completed successfully!');
