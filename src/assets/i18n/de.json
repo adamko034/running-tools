@@ -18,7 +18,9 @@
       "VO2MAX_CALCULATOR": "VO₂max-Rechner",
       "VO2MAX_CALCULATOR_DESC": "Ermittle deine maximale Sauerstoffaufnahme (VO₂max)",
       "BMI_CALCULATOR": "BMI & Körperzusammensetzung",
-      "BMI_CALCULATOR_DESC": "Berechne deinen BMI und schätze deinen Körperfettanteil mit fortschrittlichen Methoden"
+      "BMI_CALCULATOR_DESC": "Berechne deinen BMI und schätze deinen Körperfettanteil mit fortschrittlichen Methoden",
+      "TRAINING_PACES_CALCULATOR": "Meine Trainingstempos",
+      "TRAINING_PACES_CALCULATOR_DESC": "Erhalte personalisierte Trainingstempos basierend auf deinen letzten Läufen"
     },
     "UNITS": {
       "TITLE": "Einheiten umrechnen",
@@ -480,6 +482,111 @@
         "A5": "Unser Körperfettrechner verwendet die Deurenberg-Formel, die eine vernünftige Schätzung basierend auf BMI, Alter und Geschlecht liefert. Für Läufer liegen gesunde Körperfettbereiche typischerweise bei 6-13% für Männer und 14-20% für Frauen. Für präzisere Messungen solltest du DEXA-Scans oder hydrostatisches Wiegen in Betracht ziehen.",
         "Q6": "Sollten sich Läufer auf BMI oder Körperzusammensetzung konzentrieren?",
         "A6": "Während BMI ein nützliches Screening-Tool ist, sollten sich Läufer mehr auf die Körperzusammensetzung (Muskel-zu-Fett-Verhältnis) konzentrieren. Ein Läufer mit hoher Muskelmasse könnte einen höheren BMI haben, aber ausgezeichnete Gesundheit. Verwende BMI zusammen mit Körperfettanteil und Leistungsmetriken wie <a href='/tools/personal/vo2max-calculator' class='text-blue-600 hover:text-blue-800 underline'>VO2 Max</a> für ein vollständiges Bild."
+      }
+    },
+    "TRAINING_PACES_CALCULATOR": {
+      "TITLE": "Meine Trainingstempos Rechner",
+      "DESCRIPTION": "Berechne personalisierte Trainingstempos basierend auf deinen letzten Läufen. Erhalte Regenerations-, Basis-, Unterhaltungs- und Tempotempos für optimale Trainingszonen und verbesserte Leistung.",
+      "INPUT": {
+        "TITLE": "Gib deinen letzten Lauf ein",
+        "DESCRIPTION": "Gib die Distanz und Zeit deines letzten Laufs ein, um deine personalisierten Trainingstempos zu berechnen."
+      },
+      "SUMMARY": {
+        "TITLE": "Deine Trainingstempos",
+        "SUBTITLE": "Personalisierte Tempozonen für optimales Training",
+        "DESCRIPTION": "Basierend auf deiner letzten Laufleistung"
+      },
+      "PACES": {
+        "CURRENT": {
+          "TITLE": "Aktuelles Tempo",
+          "DESC": "Dein Tempo vom letzten Lauf"
+        },
+        "RECOVERY": {
+          "TITLE": "Regenerationstempo",
+          "DESC": "Leichtes Tempo für Regenerationsläufe und aktive Ruhetage"
+        },
+        "CHAT": {
+          "TITLE": "Unterhaltungstempo",
+          "DESC": "Komfortables Tempo, bei dem du dich unterhalten kannst"
+        },
+        "BASE": {
+          "TITLE": "Basis-/Aerobisches Tempo",
+          "DESC": "Grundlagentempo für den Aufbau der aeroben Fitness"
+        },
+        "LONG_RUN": {
+          "TITLE": "Langer Lauf Tempo",
+          "DESC": "Nachhaltiges Tempo für lange Trainingsläufe"
+        },
+        "TEMPO": {
+          "TITLE": "Tempotempo",
+          "DESC": "Angenehm hartes Tempo für Schwellentraining"
+        }
+      },
+      "HOW_TO_USE": {
+        "TITLE": "So verwendest du deine Trainingstempos",
+        "STEP1": "<strong>1. Gib deine letzten Laufdaten ein:</strong> Gib Distanz und Zeit eines letzten Laufs ein, der dein aktuelles Fitnessniveau repräsentiert - idealerweise ein Lauf, bei dem du dich stark gefühlt und ein gleichmäßiges Tempo gehalten hast.",
+        "STEP2": "<strong>2. Überprüfe deine Tempozonen:</strong> Der Rechner liefert sechs verschiedene Trainingstempos basierend auf bewährten Trainingszonenprozentsätzen, die von Elite-Trainern weltweit verwendet werden.",
+        "STEP3": "<strong>3. Wende sie auf dein Training an:</strong> Verwende diese Tempos für verschiedene Arten von Trainingseinheiten während deiner Trainingswoche, um die Leistung zu optimieren und Übertraining zu vermeiden.",
+        "STEP4": "<strong>4. Überwache und passe an:</strong> Aktualisiere deine Tempos alle 4-6 Wochen, wenn sich deine Fitness verbessert, oder nach dem Abschluss eines Rennens oder Zeitlaufs."
+      },
+      "ZONES": {
+        "TITLE": "Trainingszonen verstehen",
+        "RECOVERY": {
+          "TITLE": "Regenerationstempo (25% langsamer)",
+          "PURPOSE": "<strong>Zweck:</strong> Aktive Regeneration, leichte Tage, Aufwärmen und Abkühlen",
+          "EFFORT": "<strong>Anstrengung:</strong> Sehr leicht, du solltest dich nach diesen Läufen erfrischt fühlen",
+          "FREQUENCY": "<strong>Häufigkeit:</strong> 20-30% des wöchentlichen Trainingsvolumens"
+        },
+        "BASE": {
+          "TITLE": "Basis-/Aerobisches Tempo (15% langsamer)",
+          "PURPOSE": "<strong>Zweck:</strong> Aufbau der aeroben Kapazität und Ausdauerbasis",
+          "EFFORT": "<strong>Anstrengung:</strong> Komfortabel, nachhaltig für lange Zeiträume",
+          "FREQUENCY": "<strong>Häufigkeit:</strong> 60-70% des wöchentlichen Trainingsvolumens"
+        },
+        "CHAT": {
+          "TITLE": "Unterhaltungstempo (20% langsamer)",
+          "PURPOSE": "<strong>Zweck:</strong> Soziale Läufe, leichte Trainingstage, Kilometeraufbau",
+          "EFFORT": "<strong>Anstrengung:</strong> Leicht genug, um während des gesamten Laufs ein Gespräch zu führen",
+          "FREQUENCY": "<strong>Häufigkeit:</strong> Kann für die meisten leichten Läufe verwendet werden"
+        },
+        "LONG_RUN": {
+          "TITLE": "Langer Lauf Tempo (10% langsamer)",
+          "PURPOSE": "<strong>Zweck:</strong> Wöchentliche lange Läufe, Marathon-Vorbereitung",
+          "EFFORT": "<strong>Anstrengung:</strong> Gleichmäßig, nachhaltig für längere Distanzen",
+          "FREQUENCY": "<strong>Häufigkeit:</strong> Einmal pro Woche für lange Laufeinheiten"
+        }
+      },
+      "RELATED_TOOLS": {
+        "TITLE": "Verwandte Trainingstools",
+        "PACE_CALC": {
+          "TITLE": "Tempo-Rechner",
+          "DESC": "Berechne Tempo, Zeit und Distanz für die Rennplanung"
+        },
+        "VO2MAX": {
+          "TITLE": "VO₂ Max Rechner",
+          "DESC": "Bewerte dein aerobes Fitnessniveau anhand der Rennleistung"
+        },
+        "FINISH_TIME": {
+          "TITLE": "Rennzeit-Vorhersage",
+          "DESC": "Sage Zielzeiten für verschiedene Renndistanzen voraus"
+        },
+        "CALORIES": {
+          "TITLE": "Kalorienverbrauch Rechner",
+          "DESC": "Verfolge den Energieverbrauch während der Trainingsläufe"
+        }
+      },
+      "FAQ": {
+        "TITLE": "Häufig gestellte Fragen",
+        "Q1": "Wie oft sollte ich meine Trainingstempos aktualisieren?",
+        "A1": "Aktualisiere deine Trainingstempos alle 4-6 Wochen, wenn sich deine Fitness verbessert, oder nach dem Abschluss eines Rennens oder Zeitlaufs. Wenn du merkst, dass die Tempos durchgehend zu leicht oder zu schwer sind, ist es Zeit für eine Aktualisierung.",
+        "Q2": "Welche Art von Lauf sollte ich verwenden, um meine Tempos zu berechnen?",
+        "A2": "Verwende einen letzten Lauf, bei dem du eine gleichmäßige Anstrengung aufrechterhalten und dich während des gesamten Laufs stark gefühlt hast. Vermeide Läufe, bei denen du müde, krank warst oder bei extremen Wetterbedingungen gelaufen bist. Ein Tempolauf, Zeitlauf oder starker Trainingslauf funktioniert am besten.",
+        "Q3": "Kann ich Rennzeiten verwenden, um Trainingstempos zu berechnen?",
+        "A3": "Ja, aktuelle Rennzeiten können ausgezeichnete Basisdaten für Trainingstempos liefern. Stelle jedoch sicher, dass das Rennen dein aktuelles Fitnessniveau repräsentiert und nicht von schlechten Bedingungen oder Tempofehler beeinflusst wurde.",
+        "Q4": "Warum sind meine Regenerationstempos so viel langsamer als mein normales Lauftempo?",
+        "A4": "Regenerationstempos sind absichtlich viel langsamer, um tatsächliche Erholung und Anpassung zu fördern. Viele Läufer machen den Fehler, an leichten Tagen zu schnell zu laufen, was eine ordnungsgemäße Erholung verhindert und zu Übertraining führen kann.",
+        "Q5": "Wie weiß ich, ob ich mit dem richtigen Anstrengungsniveau laufe?",
+        "A5": "Verwende den 'Sprechtest' - bei leichten Tempos solltest du dich unterhalten können, bei Tempotempo solltest du in kurzen Sätzen sprechen können, und bei härteren Anstrengungen wird das Sprechen schwierig. Herzfrequenzmesser können auch dabei helfen, Anstrengungsniveaus zu validieren."
       }
     }
   }

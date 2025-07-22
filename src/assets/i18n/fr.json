@@ -18,7 +18,9 @@
       "VO2MAX_CALCULATOR": "Calculateur VO₂ Max",
       "VO2MAX_CALCULATOR_DESC": "Estimez votre capacité aérobie (VO₂ Max)",
       "BMI_CALCULATOR": "BMI et Composition Corporelle",
-      "BMI_CALCULATOR_DESC": "Calculez votre BMI et estimez votre masse grasse avec des méthodes avancées"
+      "BMI_CALCULATOR_DESC": "Calculez votre BMI et estimez votre masse grasse avec des méthodes avancées",
+      "TRAINING_PACES_CALCULATOR": "Mes Allures d'Entraînement",
+      "TRAINING_PACES_CALCULATOR_DESC": "Obtenez des allures d'entraînement personnalisées basées sur vos courses récentes"
     },
     "UNITS": {
       "TITLE": "Convertisseurs d’unités",
@@ -480,6 +482,111 @@
         "A5": "Notre calculateur de graisse corporelle utilise la formule Deurenberg, qui fournit une estimation raisonnable basée sur le BMI, l'âge et le sexe. Pour les coureurs, les plages de graisse corporelle saines sont typiquement de 6-13% pour les hommes et 14-20% pour les femmes. Pour des mesures plus précises, considérez les scans DEXA ou la pesée hydrostatique.",
         "Q6": "Les coureurs devraient-ils se concentrer sur le BMI ou la composition corporelle ?",
         "A6": "Bien que le BMI soit un outil de dépistage utile, les coureurs devraient se concentrer davantage sur la composition corporelle (rapport muscle vs graisse). Un coureur avec une masse musculaire élevée pourrait avoir un BMI plus élevé mais une excellente santé. Utilisez le BMI avec le pourcentage de graisse corporelle et les métriques de performance comme le <a href='/tools/personal/vo2max-calculator' class='text-blue-600 hover:text-blue-800 underline'>VO2 Max</a> pour une image complète."
+      }
+    },
+    "TRAINING_PACES_CALCULATOR": {
+      "TITLE": "Calculateur de Mes Allures d'Entraînement",
+      "DESCRIPTION": "Calculez des allures d'entraînement personnalisées basées sur vos courses récentes. Obtenez des allures de récupération, de base, conversationnelle et de tempo pour des zones d'entraînement optimales et une performance améliorée.",
+      "INPUT": {
+        "TITLE": "Entrez votre course récente",
+        "DESCRIPTION": "Saisissez la distance et le temps de votre course récente pour calculer vos allures d'entraînement personnalisées."
+      },
+      "SUMMARY": {
+        "TITLE": "Vos Allures d'Entraînement",
+        "SUBTITLE": "Zones d'allure personnalisées pour un entraînement optimal",
+        "DESCRIPTION": "Basé sur votre performance de course récente"
+      },
+      "PACES": {
+        "CURRENT": {
+          "TITLE": "Allure Actuelle",
+          "DESC": "Votre allure de la course récente"
+        },
+        "RECOVERY": {
+          "TITLE": "Allure de Récupération",
+          "DESC": "Allure facile pour les courses de récupération et les jours de repos actif"
+        },
+        "CHAT": {
+          "TITLE": "Allure Conversationnelle",
+          "DESC": "Allure confortable où vous pouvez tenir une conversation"
+        },
+        "BASE": {
+          "TITLE": "Allure de Base/Aérobie",
+          "DESC": "Allure de fondation pour développer la condition aérobie"
+        },
+        "LONG_RUN": {
+          "TITLE": "Allure de Sortie Longue",
+          "DESC": "Allure durable pour les courses d'entraînement longues"
+        },
+        "TEMPO": {
+          "TITLE": "Allure Tempo",
+          "DESC": "Allure confortablement difficile pour l'entraînement au seuil"
+        }
+      },
+      "HOW_TO_USE": {
+        "TITLE": "Comment utiliser vos allures d'entraînement",
+        "STEP1": "<strong>1. Entrez vos données de course récente :</strong> Saisissez la distance et le temps d'une course récente qui représente votre niveau de forme actuel - idéalement une course où vous vous êtes senti fort et avez maintenu un effort régulier.",
+        "STEP2": "<strong>2. Examinez vos zones d'allure :</strong> Le calculateur fournit six allures d'entraînement différentes basées sur des pourcentages de zones d'entraînement éprouvés utilisés par les entraîneurs d'élite dans le monde entier.",
+        "STEP3": "<strong>3. Appliquez-les à votre entraînement :</strong> Utilisez ces allures pour différents types d'entraînements tout au long de votre semaine d'entraînement pour optimiser la performance et prévenir le surentraînement.",
+        "STEP4": "<strong>4. Surveillez et ajustez :</strong> Mettez à jour vos allures toutes les 4-6 semaines à mesure que votre forme s'améliore, ou après avoir terminé une course ou un test chronométré."
+      },
+      "ZONES": {
+        "TITLE": "Comprendre les zones d'entraînement",
+        "RECOVERY": {
+          "TITLE": "Allure de Récupération (25% plus lente)",
+          "PURPOSE": "<strong>Objectif :</strong> Récupération active, jours faciles, échauffement et récupération",
+          "EFFORT": "<strong>Effort :</strong> Très facile, vous devriez vous sentir rafraîchi après ces courses",
+          "FREQUENCY": "<strong>Fréquence :</strong> 20-30% du volume d'entraînement hebdomadaire"
+        },
+        "BASE": {
+          "TITLE": "Allure de Base/Aérobie (15% plus lente)",
+          "PURPOSE": "<strong>Objectif :</strong> Développer la capacité aérobie et la base d'endurance",
+          "EFFORT": "<strong>Effort :</strong> Confortable, durable pendant de longues périodes",
+          "FREQUENCY": "<strong>Fréquence :</strong> 60-70% du volume d'entraînement hebdomadaire"
+        },
+        "CHAT": {
+          "TITLE": "Allure Conversationnelle (20% plus lente)",
+          "PURPOSE": "<strong>Objectif :</strong> Courses sociales, jours d'entraînement faciles, accumulation de kilométrage",
+          "EFFORT": "<strong>Effort :</strong> Assez facile pour maintenir une conversation tout au long",
+          "FREQUENCY": "<strong>Fréquence :</strong> Peut être utilisée pour la plupart des courses faciles"
+        },
+        "LONG_RUN": {
+          "TITLE": "Allure de Sortie Longue (10% plus lente)",
+          "PURPOSE": "<strong>Objectif :</strong> Sorties longues hebdomadaires, préparation marathon",
+          "EFFORT": "<strong>Effort :</strong> Régulier, durable pour des distances étendues",
+          "FREQUENCY": "<strong>Fréquence :</strong> Une fois par semaine pour les séances de course longue"
+        }
+      },
+      "RELATED_TOOLS": {
+        "TITLE": "Outils d'Entraînement Connexes",
+        "PACE_CALC": {
+          "TITLE": "Calculateur d'Allure",
+          "DESC": "Calculez l'allure, le temps et la distance pour la planification de course"
+        },
+        "VO2MAX": {
+          "TITLE": "Calculateur VO₂ Max",
+          "DESC": "Évaluez votre niveau de condition aérobie à partir de la performance de course"
+        },
+        "FINISH_TIME": {
+          "TITLE": "Prédicteur de Temps de Course",
+          "DESC": "Prédisez les temps d'arrivée pour différentes distances de course"
+        },
+        "CALORIES": {
+          "TITLE": "Calculateur de Calories Brûlées",
+          "DESC": "Suivez la dépense énergétique pendant les courses d'entraînement"
+        }
+      },
+      "FAQ": {
+        "TITLE": "Questions Fréquemment Posées",
+        "Q1": "À quelle fréquence dois-je mettre à jour mes allures d'entraînement ?",
+        "A1": "Mettez à jour vos allures d'entraînement toutes les 4-6 semaines à mesure que votre forme s'améliore, ou après avoir terminé une course ou un test chronométré. Si vous remarquez que les allures semblent constamment trop faciles ou trop difficiles, il est temps de les mettre à jour.",
+        "Q2": "Quel type de course dois-je utiliser pour calculer mes allures ?",
+        "A2": "Utilisez une course récente où vous avez maintenu un effort régulier et vous êtes senti fort tout au long. Évitez les courses où vous étiez fatigué, malade ou couriez dans des conditions météorologiques extrêmes. Une course tempo, un test chronométré ou une course d'entraînement forte fonctionne le mieux.",
+        "Q3": "Puis-je utiliser les temps de course pour calculer les allures d'entraînement ?",
+        "A3": "Oui, les temps de course récents peuvent fournir d'excellentes données de base pour les allures d'entraînement. Cependant, assurez-vous que la course représente votre niveau de forme actuel et n'a pas été affectée par de mauvaises conditions ou des erreurs d'allure.",
+        "Q4": "Pourquoi mes allures de récupération sont-elles beaucoup plus lentes que mon allure de course normale ?",
+        "A4": "Les allures de récupération sont intentionnellement beaucoup plus lentes pour favoriser une récupération et une adaptation réelles. Beaucoup de coureurs font l'erreur de courir trop vite les jours faciles, ce qui empêche une récupération appropriée et peut mener au surentraînement.",
+        "Q5": "Comment savoir si je cours au bon niveau d'effort ?",
+        "A5": "Utilisez le 'test de conversation' - pour les allures faciles, vous devriez pouvoir tenir une conversation, pour l'allure tempo vous devriez pouvoir parler en phrases courtes, et pour les efforts plus difficiles, parler devient difficile. Les moniteurs de fréquence cardiaque peuvent aussi aider à valider les niveaux d'effort."
       }
     }
   }

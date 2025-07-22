@@ -18,7 +18,9 @@
       "VO2MAX_CALCULATOR": "Calcolatore VO₂ Max",
       "VO2MAX_CALCULATOR_DESC": "Stima la tua capacità aerobica (VO₂ Max)",
       "BMI_CALCULATOR": "BMI e Composizione Corporea",
-      "BMI_CALCULATOR_DESC": "Calcola il tuo BMI e stima la massa grassa con metodi avanzati"
+      "BMI_CALCULATOR_DESC": "Calcola il tuo BMI e stima la massa grassa con metodi avanzati",
+      "TRAINING_PACES_CALCULATOR": "I Miei Ritmi di Allenamento",
+      "TRAINING_PACES_CALCULATOR_DESC": "Ottieni ritmi di allenamento personalizzati basati sulle tue corse recenti"
     },
     "UNITS": {
       "TITLE": "Convertitori unità",
@@ -480,6 +482,111 @@
         "A5": "Il nostro calcolatore di grasso corporeo usa la formula Deurenberg, che fornisce una stima ragionevole basata su BMI, età e sesso. Per i corridori, i range sani di grasso corporeo sono tipicamente 6-13% per gli uomini e 14-20% per le donne. Per misurazioni più precise, considera scansioni DEXA o pesatura idrostatica.",
         "Q6": "I corridori dovrebbero concentrarsi sul BMI o sulla composizione corporea?",
         "A6": "Mentre il BMI è uno strumento di screening utile, i corridori dovrebbero concentrarsi di più sulla composizione corporea (rapporto muscolo vs grasso). Un corridore con alta massa muscolare potrebbe avere un BMI più alto ma eccellente salute. Usa il BMI insieme alla percentuale di grasso corporeo e alle metriche di prestazione come <a href='/tools/personal/vo2max-calculator' class='text-blue-600 hover:text-blue-800 underline'>VO2 Max</a> per un quadro completo."
+      }
+    },
+    "TRAINING_PACES_CALCULATOR": {
+      "TITLE": "Calcolatore dei Miei Ritmi di Allenamento",
+      "DESCRIPTION": "Calcola ritmi di allenamento personalizzati basati sulle tue corse recenti. Ottieni ritmi di recupero, di base, conversazionale e tempo per zone di allenamento ottimali e prestazioni migliorate.",
+      "INPUT": {
+        "TITLE": "Inserisci la tua corsa recente",
+        "DESCRIPTION": "Inserisci la distanza e il tempo della tua corsa recente per calcolare i tuoi ritmi di allenamento personalizzati."
+      },
+      "SUMMARY": {
+        "TITLE": "I Tuoi Ritmi di Allenamento",
+        "SUBTITLE": "Zone di ritmo personalizzate per un allenamento ottimale",
+        "DESCRIPTION": "Basato sulla tua prestazione di corsa recente"
+      },
+      "PACES": {
+        "CURRENT": {
+          "TITLE": "Ritmo Attuale",
+          "DESC": "Il tuo ritmo dalla corsa recente"
+        },
+        "RECOVERY": {
+          "TITLE": "Ritmo di Recupero",
+          "DESC": "Ritmo facile per corse di recupero e giorni di riposo attivo"
+        },
+        "CHAT": {
+          "TITLE": "Ritmo Conversazionale",
+          "DESC": "Ritmo confortevole dove puoi sostenere una conversazione"
+        },
+        "BASE": {
+          "TITLE": "Ritmo di Base/Aerobico",
+          "DESC": "Ritmo di fondazione per sviluppare la forma aerobica"
+        },
+        "LONG_RUN": {
+          "TITLE": "Ritmo Lungo",
+          "DESC": "Ritmo sostenibile per corse di allenamento lunghe"
+        },
+        "TEMPO": {
+          "TITLE": "Ritmo Tempo",
+          "DESC": "Ritmo comodamente impegnativo per l'allenamento di soglia"
+        }
+      },
+      "HOW_TO_USE": {
+        "TITLE": "Come usare i tuoi ritmi di allenamento",
+        "STEP1": "<strong>1. Inserisci i dati della corsa recente:</strong> Inserisci distanza e tempo di una corsa recente che rappresenta il tuo livello di forma attuale - idealmente una corsa in cui ti sei sentito forte e hai mantenuto uno sforzo costante.",
+        "STEP2": "<strong>2. Esamina le tue zone di ritmo:</strong> Il calcolatore fornisce sei diversi ritmi di allenamento basati su percentuali di zone di allenamento comprovate utilizzate da allenatori d'élite in tutto il mondo.",
+        "STEP3": "<strong>3. Applicali al tuo allenamento:</strong> Usa questi ritmi per diversi tipi di allenamenti durante la tua settimana di allenamento per ottimizzare le prestazioni e prevenire il sovrallenamento.",
+        "STEP4": "<strong>4. Monitora e aggiusta:</strong> Aggiorna i tuoi ritmi ogni 4-6 settimane man mano che la tua forma migliora, o dopo aver completato una gara o un test cronometrato."
+      },
+      "ZONES": {
+        "TITLE": "Comprendere le zone di allenamento",
+        "RECOVERY": {
+          "TITLE": "Ritmo di Recupero (25% più lento)",
+          "PURPOSE": "<strong>Scopo:</strong> Recupero attivo, giorni facili, riscaldamento e defaticamento",
+          "EFFORT": "<strong>Sforzo:</strong> Molto facile, dovresti sentirti rinfresco dopo queste corse",
+          "FREQUENCY": "<strong>Frequenza:</strong> 20-30% del volume di allenamento settimanale"
+        },
+        "BASE": {
+          "TITLE": "Ritmo di Base/Aerobico (15% più lento)",
+          "PURPOSE": "<strong>Scopo:</strong> Sviluppare la capacità aerobica e la base di resistenza",
+          "EFFORT": "<strong>Sforzo:</strong> Confortevole, sostenibile per lunghi periodi",
+          "FREQUENCY": "<strong>Frequenza:</strong> 60-70% del volume di allenamento settimanale"
+        },
+        "CHAT": {
+          "TITLE": "Ritmo Conversazionale (20% più lento)",
+          "PURPOSE": "<strong>Scopo:</strong> Corse sociali, giorni di allenamento facili, accumulo di chilometraggio",
+          "EFFORT": "<strong>Sforzo:</strong> Abbastanza facile da mantenere una conversazione per tutto il tempo",
+          "FREQUENCY": "<strong>Frequenza:</strong> Può essere usato per la maggior parte delle corse facili"
+        },
+        "LONG_RUN": {
+          "TITLE": "Ritmo Lungo (10% più lento)",
+          "PURPOSE": "<strong>Scopo:</strong> Corse lunghe settimanali, preparazione maratona",
+          "EFFORT": "<strong>Sforzo:</strong> Costante, sostenibile per distanze estese",
+          "FREQUENCY": "<strong>Frequenza:</strong> Una volta a settimana per sessioni di corsa lunga"
+        }
+      },
+      "RELATED_TOOLS": {
+        "TITLE": "Strumenti di Allenamento Correlati",
+        "PACE_CALC": {
+          "TITLE": "Calcolatore di Ritmo",
+          "DESC": "Calcola ritmo, tempo e distanza per la pianificazione delle gare"
+        },
+        "VO2MAX": {
+          "TITLE": "Calcolatore VO₂ Max",
+          "DESC": "Valuta il tuo livello di forma aerobica dalle prestazioni di gara"
+        },
+        "FINISH_TIME": {
+          "TITLE": "Predittore Tempo di Gara",
+          "DESC": "Prevedi i tempi di arrivo per diverse distanze di gara"
+        },
+        "CALORIES": {
+          "TITLE": "Calcolatore Calorie Bruciate",
+          "DESC": "Traccia il dispendio energetico durante le corse di allenamento"
+        }
+      },
+      "FAQ": {
+        "TITLE": "Domande Frequenti",
+        "Q1": "Quanto spesso dovrei aggiornare i miei ritmi di allenamento?",
+        "A1": "Aggiorna i tuoi ritmi di allenamento ogni 4-6 settimane man mano che la tua forma migliora, o dopo aver completato una gara o un test cronometrato. Se noti che i ritmi sembrano costantemente troppo facili o troppo difficili, è ora di aggiornarli.",
+        "Q2": "Che tipo di corsa dovrei usare per calcolare i miei ritmi?",
+        "A2": "Usa una corsa recente in cui hai mantenuto uno sforzo costante e ti sei sentito forte per tutto il tempo. Evita corse in cui eri stanco, malato o correvi in condizioni meteorologiche estreme. Una corsa tempo, un test cronometrato o una corsa di allenamento forte funziona meglio.",
+        "Q3": "Posso usare i tempi di gara per calcolare i ritmi di allenamento?",
+        "A3": "Sì, i tempi di gara recenti possono fornire eccellenti dati di base per i ritmi di allenamento. Tuttavia, assicurati che la gara rappresenti il tuo livello di forma attuale e non sia stata influenzata da cattive condizioni o errori di ritmo.",
+        "Q4": "Perché i miei ritmi di recupero sono molto più lenti del mio ritmo di corsa normale?",
+        "A4": "I ritmi di recupero sono intenzionalmente molto più lenti per promuovere un vero recupero e adattamento. Molti corridori commettono l'errore di correre troppo veloce nei giorni facili, il che impedisce un recupero adeguato e può portare al sovrallenamento.",
+        "Q5": "Come faccio a sapere se sto correndo al giusto livello di sforzo?",
+        "A5": "Usa il 'test della conversazione' - per i ritmi facili dovresti essere in grado di sostenere una conversazione, per il ritmo tempo dovresti essere in grado di parlare a frasi brevi, e per gli sforzi più intensi parlare diventa difficile. I cardiofrequenzimetri possono anche aiutare a validare i livelli di sforzo."
       }
     }
   }
