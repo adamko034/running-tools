@@ -27,9 +27,9 @@ export class SwUpdateService {
     // Initial check when app becomes stable
     const appIsStable$ = this.appRef.isStable.pipe(first(isStable => isStable === true));
     
-    // Check for updates every 15 minutes (more frequent for better UX)
-    const everyFifteenMinutes$ = interval(15 * 60 * 1000);
-    const periodicChecks$ = concat(appIsStable$, everyFifteenMinutes$);
+    // Check for updates every 5 minutes (more frequent for fresh content)
+    const everyFiveMinutes$ = interval(5 * 60 * 1000);
+    const periodicChecks$ = concat(appIsStable$, everyFiveMinutes$);
 
     periodicChecks$.subscribe(() => {
       this.swUpdate.checkForUpdate().then(() => {
@@ -37,14 +37,21 @@ export class SwUpdateService {
       });
     });
 
-    // Also check when user returns to the app (visibility change)
+    // Check immediately when user returns to the app (visibility change)
     document.addEventListener('visibilitychange', () => {
       if (!document.hidden && this.swUpdate.isEnabled) {
-        setTimeout(() => {
-          this.swUpdate.checkForUpdate().then(() => {
-            console.log('Checked for updates on app focus');
-          });
-        }, 1000); // Small delay to avoid immediate checks
+        this.swUpdate.checkForUpdate().then(() => {
+          console.log('Checked for updates on app focus');
+        });
+      }
+    });
+
+    // Check on page focus
+    window.addEventListener('focus', () => {
+      if (this.swUpdate.isEnabled) {
+        this.swUpdate.checkForUpdate().then(() => {
+          console.log('Checked for updates on window focus');
+        });
       }
     });
   }

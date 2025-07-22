@@ -51,6 +51,7 @@ export const appConfig: ApplicationConfig = {
     provideServiceWorker('ngsw-worker.js', {
       enabled: !isDevMode(),
       registrationStrategy: 'registerImmediately',
+      scope: './',
     }),
     {
       provide: APP_INITIALIZER,
