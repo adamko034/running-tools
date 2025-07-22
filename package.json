@@ -1,15 +1,20 @@
 {
   "name": "running-tools",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "build:ssr": "ng build --configuration production",
+    "start": "npm run set-version && ng serve",
+    "build": "npm run set-version && ng build",
+    "build:ssr": "npm run set-version && ng build --configuration production",
     "serve:ssr": "node dist/running-tools/server/server.mjs",
-    "watch": "ng build --watch --configuration development",
+    "watch": "npm run set-version && ng build --watch --configuration development",
     "test": "ng test",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "set-version": "node scripts/set-version.js",
+    "version:patch": "npm version patch && npm run set-version",
+    "version:minor": "npm version minor && npm run set-version",
+    "version:major": "npm version major && npm run set-version",
+    "build:prod": "npm version patch --no-git-tag-version && npm run set-version && ng build --configuration production"
   },
   "private": true,
   "dependencies": {

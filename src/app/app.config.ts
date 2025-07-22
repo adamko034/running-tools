@@ -4,6 +4,7 @@ import {
   isDevMode,
   provideBrowserGlobalErrorListeners,
   provideZoneChangeDetection,
+  APP_INITIALIZER,
 } from '@angular/core';
 import {
   provideClientHydration,
@@ -16,10 +17,19 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
 import { routes } from './app.routes';
+import { SwUpdateService } from './core/services/sw-update.service';
 
 // Factory function for TranslateHttpLoader
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, '/assets/i18n/', '.json');
+}
+
+// Factory function for SW Update Service initialization
+export function initializeSwUpdate(swUpdateService: SwUpdateService) {
+  return () => {
+    // Service will auto-initialize in constructor
+    return Promise.resolve();
+  };
 }
 
 export const appConfig: ApplicationConfig = {
@@ -41,7 +51,13 @@ export const appConfig: ApplicationConfig = {
     ),
     provideServiceWorker('ngsw-worker.js', {
       enabled: !isDevMode(),
-      registrationStrategy: 'registerWhenStable:30000',
+      registrationStrategy: 'registerImmediately',
     }),
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initializeSwUpdate,
+      deps: [SwUpdateService],
+      multi: true,
+    },
   ],
 };
