@@ -190,7 +190,8 @@ export class StoreService {
       this.getHeightUnit(units)
     );
 
-    const lang = stored.lang || initialStore.lang;
+    //const lang = stored.lang || initialStore.lang;
+    const lang = initialStore.lang;
     const sex = stored.sex || initialStore.sex;
     const age = stored.age || initialStore.age;
 
@@ -226,19 +227,19 @@ export class StoreService {
       weight,
       height,
       units: distanceUnit === DistanceUnit.KM ? Units.EU : Units.EN,
-      lang: this.getLanguageFromLocal(),
+      lang: 'en',
       sex: Sex.M,
       age: 30,
     };
   }
 
-  public getLanguageFromLocal(): string {
-    const locale = Intl.DateTimeFormat().resolvedOptions().locale;
-    const supportedLanguages = ['en', 'de', 'fr', 'es', 'pl', 'it'];
-    const languageCode = locale.split('-')[0];
+  // public getLanguageFromLocal(): string {
+  //   const locale = Intl.DateTimeFormat().resolvedOptions().locale;
+  //   const supportedLanguages = ['en', 'de', 'fr', 'es', 'pl', 'it'];
+  //   const languageCode = locale.split('-')[0];
 
-    return supportedLanguages.includes(languageCode) ? languageCode : 'en';
-  }
+  //   return supportedLanguages.includes(languageCode) ? languageCode : 'en';
+  // }
 
   private getDistanceUnitFromLocal(): DistanceUnit {
     const locale = Intl.DateTimeFormat().resolvedOptions().locale;

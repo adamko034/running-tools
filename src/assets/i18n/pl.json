@@ -18,7 +18,9 @@
       "VO2MAX_CALCULATOR": "Kalkulator VO₂ Max",
       "VO2MAX_CALCULATOR_DESC": "Oszacuj maksymalny pobór tlenu (VO₂ Max)",
       "BMI_CALCULATOR": "BMI i Skład Ciała",
-      "BMI_CALCULATOR_DESC": "Oblicz BMI i oszacuj tkankę tłuszczową zaawansowanymi metodami"
+      "BMI_CALCULATOR_DESC": "Oblicz BMI i oszacuj tkankę tłuszczową zaawansowanymi metodami",
+      "TRAINING_PACES_CALCULATOR": "Moje Tempa Treningowe",
+      "TRAINING_PACES_CALCULATOR_DESC": "Otrzymaj spersonalizowane tempa treningowe na podstawie swoich ostatnich biegów"
     },
     "UNITS": {
       "TITLE": "Przeliczniki",
@@ -208,7 +210,7 @@
       }
     },
     "PACE_CALCULATOR": {
-      "TITLE": "Kalkulator Tempa Biegowego",
+      "TITLE": "Kalkulator Tempa",
       "DESCRIPTION": "Oblicz tempo biegowe, czas i dystans do treningu maratońskiego, przygotowań do 5K i planowania startów. Wprowadź dowolne dwie wartości, aby obliczyć trzecią. Obsługuje jednostki metryczne i imperialne dla dokładnych obliczeń treningowych.",
       "SUMMARY": "Podsumowanie Tempa",
       "HOW_TO_USE": {
@@ -480,6 +482,111 @@
         "A5": "Nasz kalkulator tkanki tłuszczowej używa wzoru Deurenberga, który zapewnia rozsądne oszacowanie oparte na BMI, wieku i płci. Dla biegaczy zdrowe zakresy tkanki tłuszczowej to zwykle 6-13% dla mężczyzn i 14-20% dla kobiet. Dla dokładniejszych pomiarów rozważ skany DEXA lub ważenie hydrostatyczne.",
         "Q6": "Czy biegacze powinni skupić się na BMI czy składzie ciała?",
         "A6": "Chociaż BMI jest przydatnym narzędziem przesiewowym, biegacze powinni skupić się bardziej na składzie ciała (stosunek mięśni do tłuszczu). Biegacz z wysoką masą mięśniową może mieć wyższe BMI, ale doskonałe zdrowie. Używaj BMI wraz z procentem tkanki tłuszczowej i wskaźnikami wydajności jak <a href='/tools/personal/vo2max-calculator' class='text-blue-600 hover:text-blue-800 underline'>VO2 Max</a> dla pełnego obrazu."
+      }
+    },
+    "TRAINING_PACES_CALCULATOR": {
+      "TITLE": "Tempo Treningowe",
+      "DESCRIPTION": "Oblicz spersonalizowane tempa treningowe na podstawie swoich ostatnich biegów. Wylicz swoje tempo regeneracyjne, bazowe, konwersacyjne i tempo dla optymalnych stref treningowych.",
+      "INPUT": {
+        "TITLE": "Wprowadź swój ostatni bieg",
+        "DESCRIPTION": "Wprowadź dystans i czas swojego ostatniego biegu, aby obliczyć spersonalizowane tempa treningowe."
+      },
+      "SUMMARY": {
+        "TITLE": "Twoje Tempa Treningowe",
+        "SUBTITLE": "Spersonalizowane strefy tempa dla optymalnego treningu",
+        "DESCRIPTION": "Na podstawie Twojego ostatniego wyniku biegowego"
+      },
+      "PACES": {
+        "CURRENT": {
+          "TITLE": "Aktualne Tempo",
+          "DESC": "Twoje tempo z ostatniego biegu"
+        },
+        "RECOVERY": {
+          "TITLE": "Tempo Regeneracyjne",
+          "DESC": "Łatwe tempo dla biegów regeneracyjnych i dni aktywnego odpoczynku"
+        },
+        "CHAT": {
+          "TITLE": "Tempo Konwersacyjne",
+          "DESC": "Komfortowe tempo, przy którym możesz prowadzić rozmowę"
+        },
+        "BASE": {
+          "TITLE": "Tempo Bazowe/Tlenowe",
+          "DESC": "Podstawowe tempo do budowania kondycji tlenowej"
+        },
+        "LONG_RUN": {
+          "TITLE": "Tempo Długiego Biegu",
+          "DESC": "Stabilne tempo dla długich biegów treningowych"
+        },
+        "TEMPO": {
+          "TITLE": "Tempo Tempo",
+          "DESC": "Komfortowo wymagające tempo dla treningu progowego"
+        }
+      },
+      "HOW_TO_USE": {
+        "TITLE": "Jak używać swoich temp treningowych",
+        "STEP1": "<strong>1. Wprowadź dane z ostatniego biegu:</strong> Wprowadź dystans i czas z ostatniego biegu, który reprezentuje Twój aktualny poziom kondycji - idealnie bieg, podczas którego czułeś się silny i utrzymywałeś stały wysiłek.",
+        "STEP2": "<strong>2. Przejrzyj swoje strefy tempa:</strong> Kalkulator dostarcza sześć różnych temp treningowych opartych na sprawdzonych procentach stref treningowych używanych przez elitarnych trenerów na całym świecie.",
+        "STEP3": "<strong>3. Zastosuj je w swoim treningu:</strong> Używaj tych temp dla różnych typów treningów w ciągu tygodnia treningowego, aby zoptymalizować wydajność i zapobiec przetrenowaniu.",
+        "STEP4": "<strong>4. Monitoruj i dostosowuj:</strong> Aktualizuj swoje tempa co 4-6 tygodni, gdy Twoja kondycja się poprawia, lub po ukończeniu wyścigu lub testu czasowego."
+      },
+      "ZONES": {
+        "TITLE": "Zrozumienie stref treningowych",
+        "RECOVERY": {
+          "TITLE": "Tempo Regeneracyjne (25% wolniejsze)",
+          "PURPOSE": "<strong>Cel:</strong> Aktywna regeneracja, łatwe dni, rozgrzewka i wyciszenie",
+          "EFFORT": "<strong>Wysiłek:</strong> Bardzo łatwy, powinieneś czuć się odświeżony po tych biegach",
+          "FREQUENCY": "<strong>Częstotliwość:</strong> 20-30% tygodniowego objętości treningowej"
+        },
+        "BASE": {
+          "TITLE": "Tempo Bazowe/Tlenowe (15% wolniejsze)",
+          "PURPOSE": "<strong>Cel:</strong> Budowanie pojemności tlenowej i bazy wytrzymałościowej",
+          "EFFORT": "<strong>Wysiłek:</strong> Komfortowy, możliwy do utrzymania przez długie okresy",
+          "FREQUENCY": "<strong>Częstotliwość:</strong> 60-70% tygodniowego objętości treningowej"
+        },
+        "CHAT": {
+          "TITLE": "Tempo Konwersacyjne (20% wolniejsze)",
+          "PURPOSE": "<strong>Cel:</strong> Biegi towarzyskie, łatwe dni treningowe, budowanie kilometrażu",
+          "EFFORT": "<strong>Wysiłek:</strong> Na tyle łatwy, aby utrzymać rozmowę przez cały czas",
+          "FREQUENCY": "<strong>Częstotliwość:</strong> Może być używane dla większości łatwych biegów"
+        },
+        "LONG_RUN": {
+          "TITLE": "Tempo Długiego Biegu (10% wolniejsze)",
+          "PURPOSE": "<strong>Cel:</strong> Tygodniowe długie biegi, przygotowanie do maratonu",
+          "EFFORT": "<strong>Wysiłek:</strong> Stały, możliwy do utrzymania na rozszerzonych dystansach",
+          "FREQUENCY": "<strong>Częstotliwość:</strong> Raz w tygodniu dla sesji długiego biegu"
+        }
+      },
+      "RELATED_TOOLS": {
+        "TITLE": "Powiązane Narzędzia Treningowe",
+        "PACE_CALC": {
+          "TITLE": "Kalkulator Tempa",
+          "DESC": "Oblicz tempo, czas i dystans do planowania wyścigów"
+        },
+        "VO2MAX": {
+          "TITLE": "Kalkulator VO₂ Max",
+          "DESC": "Oceń swój poziom kondycji tlenowej na podstawie wyników wyścigowych"
+        },
+        "FINISH_TIME": {
+          "TITLE": "Predyktor Czasu Wyścigu",
+          "DESC": "Przewiduj czasy ukończenia dla różnych dystansów wyścigowych"
+        },
+        "CALORIES": {
+          "TITLE": "Kalkulator Spalonych Kalorii",
+          "DESC": "Śledź wydatek energetyczny podczas biegów treningowych"
+        }
+      },
+      "FAQ": {
+        "TITLE": "Często Zadawane Pytania",
+        "Q1": "Jak często powinienem aktualizować swoje tempa treningowe?",
+        "A1": "Aktualizuj swoje tempa treningowe co 4-6 tygodni, gdy Twoja kondycja się poprawia, lub po ukończeniu wyścigu lub testu czasowego. Jeśli zauważysz, że tempa wydają się stale zbyt łatwe lub zbyt trudne, czas je zaktualizować.",
+        "Q2": "Jakiego typu bieg powinienem użyć do obliczenia moich temp?",
+        "A2": "Użyj ostatniego biegu, podczas którego utrzymywałeś stały wysiłek i czułeś się silny przez cały czas. Unikaj biegów, podczas których byłeś zmęczony, chory lub biegałeś w ekstremalnych warunkach pogodowych. Bieg tempo, test czasowy lub silny bieg treningowy działa najlepiej.",
+        "Q3": "Czy mogę używać czasów wyścigowych do obliczania temp treningowych?",
+        "A3": "Tak, ostatnie czasy wyścigowe mogą dostarczyć doskonałych danych bazowych dla temp treningowych. Jednak upewnij się, że wyścig reprezentuje Twój aktualny poziom kondycji i nie był wpływany przez złe warunki lub błędy w tempie.",
+        "Q4": "Dlaczego moje tempa regeneracyjne są znacznie wolniejsze niż moje normalne tempo biegu?",
+        "A4": "Tempa regeneracyjne są celowo znacznie wolniejsze, aby promować prawdziwą regenerację i adaptację. Wielu biegaczy popełnia błąd biegania zbyt szybko w łatwe dni, co zapobiega właściwej regeneracji i może prowadzić do przetrenowania.",
+        "Q5": "Jak mogę wiedzieć, czy biegnę na właściwym poziomie wysiłku?",
+        "A5": "Używaj 'testu rozmowy' - dla łatwych temp powinieneś być w stanie prowadzić rozmowę, dla tempa tempo powinieneś być w stanie mówić krótkimi zdaniami, a dla trudniejszych wysiłków mówienie staje się trudne. Pulsometry mogą również pomóc w walidacji poziomów wysiłku."
       }
     }
   }

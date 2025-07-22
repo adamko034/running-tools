@@ -10,7 +10,6 @@ import { Navigation } from './core/navigation/navigation.model';
 import { NavigationService } from './core/services/navigation.service';
 import { RouterService } from './core/services/router.service';
 import { UiService } from './core/services/ui.service';
-import { LanguageStoreSelector } from './shared/components/store/language-store-selector/language-store-selector';
 import { UnitStoreSelector } from './shared/components/store/unit-store-selector/unit-store-selector';
 import { UpdateNotificationComponent } from './shared/components/ui/update-notification/update-notification.component';
 import { VersionDisplayComponent } from './shared/components/ui/version-display/version-display.component';
@@ -23,7 +22,6 @@ import { VersionDisplayComponent } from './shared/components/ui/version-display/
     MatIconModule,
     RouterModule,
     UnitStoreSelector,
-    LanguageStoreSelector,
     MatSidenavModule,
     MatToolbarModule,
     UpdateNotificationComponent,

@@ -9,7 +9,6 @@ import { Observable } from 'rxjs';
 import { Navigation } from '../core/navigation/navigation.model';
 import { NavigationService } from '../core/services/navigation.service';
 import { UiService } from '../core/services/ui.service';
-import { LanguageStoreSelector } from '../shared/components/store/language-store-selector/language-store-selector';
 
 @Component({
   selector: 'app-home',
@@ -20,7 +19,6 @@ import { LanguageStoreSelector } from '../shared/components/store/language-store
     MatCardModule,
     MatIconModule,
     MatButtonModule,
-    LanguageStoreSelector,
     TranslateModule,
   ],
   templateUrl: './home.component.html',

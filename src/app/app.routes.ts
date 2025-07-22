@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { languageGuard } from './core/guards/language-guard';
 
 const commonRoutes: Routes = [
   {
@@ -89,11 +88,11 @@ const commonRoutes: Routes = [
 
 export const routes: Routes = [
   ...commonRoutes,
-  {
-    path: ':locale',
-    canActivate: [languageGuard],
-    children: commonRoutes,
-  },
+  // {
+  //   path: ':locale',
+  //   canActivate: [languageGuard],
+  //   children: commonRoutes,
+  // },
   {
     path: '**',
     redirectTo: '',
