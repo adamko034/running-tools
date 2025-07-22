@@ -66,7 +66,7 @@ export class NavigationService {
               text: translations[
                 'NAVIGATION.TRAINING.TRAINING_PACES_CALCULATOR'
               ],
-              link: 'tools/personal/training-paces-calculator',
+              link: 'tools/training/training-paces-calculator',
               description:
                 translations[
                   'NAVIGATION.TRAINING.TRAINING_PACES_CALCULATOR_DESC'

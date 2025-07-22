@@ -49,6 +49,11 @@ const commonRoutes: Routes = [
             m => m.BmiCalculator
           ),
       },
+    ],
+  },
+  {
+    path: 'tools/training',
+    children: [
       {
         path: 'training-paces-calculator',
         loadComponent: () =>
