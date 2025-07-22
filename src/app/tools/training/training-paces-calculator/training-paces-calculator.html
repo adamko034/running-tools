@@ -1,0 +1,792 @@
+<app-tool-view
+  [calculatorName]="'TOOLS.TRAINING_PACES_CALCULATOR.TITLE' | translate"
+  [calculatorDescription]="
+    'TOOLS.TRAINING_PACES_CALCULATOR.DESCRIPTION' | translate
+  "
+>
+  <ng-container tool-title>{{
+    'TOOLS.TRAINING_PACES_CALCULATOR.TITLE' | translate
+  }}</ng-container>
+  <ng-container tool-description>{{
+    'TOOLS.TRAINING_PACES_CALCULATOR.DESCRIPTION' | translate
+  }}</ng-container>
+  <ng-container tool-content>
+    <!-- Input Section -->
+    <div class="text-center mb-6">
+      <h2 class="text-xl font-bold text-gray-900 mb-3">
+        {{ 'TOOLS.TRAINING_PACES_CALCULATOR.INPUT.TITLE' | translate }}
+      </h2>
+      <p class="text-md text-gray-600 max-w-2xl mx-auto">
+        {{ 'TOOLS.TRAINING_PACES_CALCULATOR.INPUT.DESCRIPTION' | translate }}
+      </p>
+    </div>
+
+    <!-- Responsive Form Grid -->
+    <div class="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+      <app-distance-store-form-field />
+      <app-time-store-form-field />
+    </div>
+  </ng-container>
+
+  <ng-container tool-summary>
+    <app-fancy-result>
+      <div result-value>
+        {{ 'TOOLS.TRAINING_PACES_CALCULATOR.PACES.CURRENT.TITLE' | translate }}:
+        {{ trainingPaces().current.format() }}
+      </div>
+      <div result-title>
+        {{ 'TOOLS.TRAINING_PACES_CALCULATOR.SUMMARY.SUBTITLE' | translate }}
+      </div>
+      <div result-subtitle>
+        {{ 'TOOLS.TRAINING_PACES_CALCULATOR.SUMMARY.DESCRIPTION' | translate }}
+      </div>
+    </app-fancy-result>
+
+    <div class="mt-8 space-y-8">
+      <!-- Aerobic Low Intensity Group -->
+      <div>
+        <h2 class="text-2xl font-bold text-green-700 mb-4 flex items-center">
+          <span class="w-4 h-4 bg-green-500 rounded-full mr-3"></span>
+          {{
+            'TOOLS.TRAINING_PACES_CALCULATOR.GROUPS.AEROBIC_LOW.TITLE'
+              | translate
+          }}
+        </h2>
+        <p class="text-gray-600 mb-6">
+          {{
+            'TOOLS.TRAINING_PACES_CALCULATOR.GROUPS.AEROBIC_LOW.DESC'
+              | translate
+          }}
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <app-fancy-result variant="card" colorScheme="green">
+            <div class="text-center">
+              <h3 class="text-lg font-semibold text-gray-800 mb-2">
+                {{
+                  'TOOLS.TRAINING_PACES_CALCULATOR.PACES.EASY_RUN.TITLE'
+                    | translate
+                }}
+              </h3>
+              <div class="text-2xl font-bold text-green-600 mb-1">
+                {{ trainingPaces().aerobicLowIntensity.easyRun.min.format() }}
+              </div>
+              <div class="text-sm text-gray-500 mb-2">to</div>
+              <div class="text-2xl font-bold text-green-600 mb-3">
+                {{ trainingPaces().aerobicLowIntensity.easyRun.max.format() }}
+              </div>
+              <p class="text-sm text-gray-600">
+                {{
+                  'TOOLS.TRAINING_PACES_CALCULATOR.PACES.EASY_RUN.DESC'
+                    | translate
+                }}
+              </p>
+            </div>
+          </app-fancy-result>
+
+          <app-fancy-result variant="card" colorScheme="green">
+            <div class="text-center">
+              <h3 class="text-lg font-semibold text-gray-800 mb-2">
+                {{
+                  'TOOLS.TRAINING_PACES_CALCULATOR.PACES.BASE_RUN.TITLE'
+                    | translate
+                }}
+              </h3>
+              <div class="text-2xl font-bold text-green-600 mb-1">
+                {{ trainingPaces().aerobicLowIntensity.baseRun.min.format() }}
+              </div>
+              <div class="text-sm text-gray-500 mb-2">to</div>
+              <div class="text-2xl font-bold text-green-600 mb-3">
+                {{ trainingPaces().aerobicLowIntensity.baseRun.max.format() }}
+              </div>
+              <p class="text-sm text-gray-600">
+                {{
+                  'TOOLS.TRAINING_PACES_CALCULATOR.PACES.BASE_RUN.DESC'
+                    | translate
+                }}
+              </p>
+            </div>
+          </app-fancy-result>
+
+          <app-fancy-result variant="card" colorScheme="green">
+            <div class="text-center">
+              <h3 class="text-lg font-semibold text-gray-800 mb-2">
+                {{
+                  'TOOLS.TRAINING_PACES_CALCULATOR.PACES.LONG_RUN.TITLE'
+                    | translate
+                }}
+              </h3>
+              <div class="text-2xl font-bold text-green-600 mb-1">
+                {{ trainingPaces().aerobicLowIntensity.longRun.min.format() }}
+              </div>
+              <div class="text-sm text-gray-500 mb-2">to</div>
+              <div class="text-2xl font-bold text-green-600 mb-3">
+                {{ trainingPaces().aerobicLowIntensity.longRun.max.format() }}
+              </div>
+              <p class="text-sm text-gray-600">
+                {{
+                  'TOOLS.TRAINING_PACES_CALCULATOR.PACES.LONG_RUN.DESC'
+                    | translate
+                }}
+              </p>
+            </div>
+          </app-fancy-result>
+        </div>
+      </div>
+
+      <!-- High Intensity Aerobic Group -->
+      <div>
+        <h2 class="text-2xl font-bold text-amber-700 mb-4 flex items-center">
+          <span class="w-4 h-4 bg-amber-500 rounded-full mr-3"></span>
+          {{
+            'TOOLS.TRAINING_PACES_CALCULATOR.GROUPS.HIGH_AEROBIC.TITLE'
+              | translate
+          }}
+        </h2>
+        <p class="text-gray-600 mb-6">
+          {{
+            'TOOLS.TRAINING_PACES_CALCULATOR.GROUPS.HIGH_AEROBIC.DESC'
+              | translate
+          }}
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <app-fancy-result variant="card" colorScheme="amber">
+            <div class="text-center">
+              <h3 class="text-lg font-semibold text-gray-800 mb-2">
+                {{
+                  'TOOLS.TRAINING_PACES_CALCULATOR.PACES.TEMPO_RUN.TITLE'
+                    | translate
+                }}
+              </h3>
+              <div class="text-2xl font-bold text-amber-600 mb-1">
+                {{ trainingPaces().highIntensityAerobic.tempoRun.min.format() }}
+              </div>
+              <div class="text-sm text-gray-500 mb-2">to</div>
+              <div class="text-2xl font-bold text-amber-600 mb-3">
+                {{ trainingPaces().highIntensityAerobic.tempoRun.max.format() }}
+              </div>
+              <p class="text-sm text-gray-600">
+                {{
+                  'TOOLS.TRAINING_PACES_CALCULATOR.PACES.TEMPO_RUN.DESC'
+                    | translate
+                }}
+              </p>
+            </div>
+          </app-fancy-result>
+
+          <app-fancy-result variant="card" colorScheme="amber">
+            <div class="text-center">
+              <h3 class="text-lg font-semibold text-gray-800 mb-2">
+                {{
+                  'TOOLS.TRAINING_PACES_CALCULATOR.PACES.THRESHOLD_RUN.TITLE'
+                    | translate
+                }}
+              </h3>
+              <div class="text-2xl font-bold text-amber-600 mb-1">
+                {{
+                  trainingPaces().highIntensityAerobic.thresholdRun.min.format()
+                }}
+              </div>
+              <div class="text-sm text-gray-500 mb-2">to</div>
+              <div class="text-2xl font-bold text-amber-600 mb-3">
+                {{
+                  trainingPaces().highIntensityAerobic.thresholdRun.max.format()
+                }}
+              </div>
+              <p class="text-sm text-gray-600">
+                {{
+                  'TOOLS.TRAINING_PACES_CALCULATOR.PACES.THRESHOLD_RUN.DESC'
+                    | translate
+                }}
+              </p>
+            </div>
+          </app-fancy-result>
+
+          <app-fancy-result variant="card" colorScheme="amber">
+            <div class="text-center">
+              <h3 class="text-lg font-semibold text-gray-800 mb-2">
+                {{
+                  'TOOLS.TRAINING_PACES_CALCULATOR.PACES.VO2MAX_RUN.TITLE'
+                    | translate
+                }}
+              </h3>
+              <div class="text-2xl font-bold text-amber-600 mb-1">
+                {{
+                  trainingPaces().highIntensityAerobic.vo2maxRun.min.format()
+                }}
+              </div>
+              <div class="text-sm text-gray-500 mb-2">to</div>
+              <div class="text-2xl font-bold text-amber-600 mb-3">
+                {{
+                  trainingPaces().highIntensityAerobic.vo2maxRun.max.format()
+                }}
+              </div>
+              <p class="text-sm text-gray-600">
+                {{
+                  'TOOLS.TRAINING_PACES_CALCULATOR.PACES.VO2MAX_RUN.DESC'
+                    | translate
+                }}
+              </p>
+            </div>
+          </app-fancy-result>
+        </div>
+      </div>
+
+      <!-- Anaerobic Group -->
+      <div>
+        <h2 class="text-2xl font-bold text-red-700 mb-4 flex items-center">
+          <span class="w-4 h-4 bg-red-500 rounded-full mr-3"></span>
+          {{
+            'TOOLS.TRAINING_PACES_CALCULATOR.GROUPS.ANAEROBIC.TITLE' | translate
+          }}
+        </h2>
+        <p class="text-gray-600 mb-6">
+          {{
+            'TOOLS.TRAINING_PACES_CALCULATOR.GROUPS.ANAEROBIC.DESC' | translate
+          }}
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <app-fancy-result variant="card" colorScheme="red">
+            <div class="text-center">
+              <h3 class="text-lg font-semibold text-gray-800 mb-2">
+                {{
+                  'TOOLS.TRAINING_PACES_CALCULATOR.PACES.ANAEROBIC_INTERVALS.TITLE'
+                    | translate
+                }}
+              </h3>
+              <div class="text-2xl font-bold text-red-600 mb-1">
+                {{ trainingPaces().anaerobic.anaerobicIntervals.min.format() }}
+              </div>
+              <div class="text-sm text-gray-500 mb-2">to</div>
+              <div class="text-2xl font-bold text-red-600 mb-3">
+                {{ trainingPaces().anaerobic.anaerobicIntervals.max.format() }}
+              </div>
+              <p class="text-sm text-gray-600">
+                {{
+                  'TOOLS.TRAINING_PACES_CALCULATOR.PACES.ANAEROBIC_INTERVALS.DESC'
+                    | translate
+                }}
+              </p>
+            </div>
+          </app-fancy-result>
+
+          <app-fancy-result variant="card" colorScheme="red">
+            <div class="text-center">
+              <h3 class="text-lg font-semibold text-gray-800 mb-2">
+                {{
+                  'TOOLS.TRAINING_PACES_CALCULATOR.PACES.SPRINTS.TITLE'
+                    | translate
+                }}
+              </h3>
+              <div class="text-2xl font-bold text-red-600 mb-1">
+                {{ trainingPaces().anaerobic.sprints.min.format() }}
+              </div>
+              <div class="text-sm text-gray-500 mb-2">to</div>
+              <div class="text-2xl font-bold text-red-600 mb-3">
+                {{ trainingPaces().anaerobic.sprints.max.format() }}
+              </div>
+              <p class="text-sm text-gray-600">
+                {{
+                  'TOOLS.TRAINING_PACES_CALCULATOR.PACES.SPRINTS.DESC'
+                    | translate
+                }}
+              </p>
+            </div>
+          </app-fancy-result>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+  <!-- Educational Content Section -->
+  <ng-container tool-education>
+    <div class="mt-8 space-y-6">
+      <!-- How to Use Section -->
+      <div class="bg-blue-50 p-6 rounded-lg">
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">
+          {{ 'TOOLS.TRAINING_PACES_CALCULATOR.HOW_TO_USE.TITLE' | translate }}
+        </h2>
+        <div class="space-y-2 text-gray-700">
+          <p
+            [innerHTML]="
+              'TOOLS.TRAINING_PACES_CALCULATOR.HOW_TO_USE.STEP1' | translate
+            "
+          ></p>
+          <p
+            [innerHTML]="
+              'TOOLS.TRAINING_PACES_CALCULATOR.HOW_TO_USE.STEP2' | translate
+            "
+          ></p>
+          <p
+            [innerHTML]="
+              'TOOLS.TRAINING_PACES_CALCULATOR.HOW_TO_USE.STEP3' | translate
+            "
+          ></p>
+          <p
+            [innerHTML]="
+              'TOOLS.TRAINING_PACES_CALCULATOR.HOW_TO_USE.STEP4' | translate
+            "
+          ></p>
+        </div>
+      </div>
+
+      <!-- Training Zone Explanation -->
+      <div class="bg-green-50 p-6 rounded-lg">
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">
+          {{ 'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.TITLE' | translate }}
+        </h2>
+
+        <!-- Aerobic Low Intensity -->
+        <div class="mb-6">
+          <h3 class="text-lg font-semibold text-green-700 mb-3">
+            {{
+              'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.AEROBIC_LOW.TITLE'
+                | translate
+            }}
+          </h3>
+          <div class="grid md:grid-cols-3 gap-4">
+            <div>
+              <h4 class="font-medium text-gray-900 mb-2">
+                {{
+                  'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.AEROBIC_LOW.EASY_RUN.TITLE'
+                    | translate
+                }}
+              </h4>
+              <ul class="space-y-1 text-sm text-gray-700">
+                <li
+                  [innerHTML]="
+                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.AEROBIC_LOW.EASY_RUN.PURPOSE'
+                      | translate
+                  "
+                ></li>
+                <li
+                  [innerHTML]="
+                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.AEROBIC_LOW.EASY_RUN.EFFORT'
+                      | translate
+                  "
+                ></li>
+                <li
+                  [innerHTML]="
+                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.AEROBIC_LOW.EASY_RUN.FREQUENCY'
+                      | translate
+                  "
+                ></li>
+                <li
+                  [innerHTML]="
+                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.AEROBIC_LOW.EASY_RUN.BENEFITS'
+                      | translate
+                  "
+                ></li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-medium text-gray-900 mb-2">
+                {{
+                  'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.AEROBIC_LOW.BASE_RUN.TITLE'
+                    | translate
+                }}
+              </h4>
+              <ul class="space-y-1 text-sm text-gray-700">
+                <li
+                  [innerHTML]="
+                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.AEROBIC_LOW.BASE_RUN.PURPOSE'
+                      | translate
+                  "
+                ></li>
+                <li
+                  [innerHTML]="
+                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.AEROBIC_LOW.BASE_RUN.EFFORT'
+                      | translate
+                  "
+                ></li>
+                <li
+                  [innerHTML]="
+                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.AEROBIC_LOW.BASE_RUN.FREQUENCY'
+                      | translate
+                  "
+                ></li>
+                <li
+                  [innerHTML]="
+                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.AEROBIC_LOW.BASE_RUN.BENEFITS'
+                      | translate
+                  "
+                ></li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-medium text-gray-900 mb-2">
+                {{
+                  'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.AEROBIC_LOW.LONG_RUN.TITLE'
+                    | translate
+                }}
+              </h4>
+              <ul class="space-y-1 text-sm text-gray-700">
+                <li
+                  [innerHTML]="
+                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.AEROBIC_LOW.LONG_RUN.PURPOSE'
+                      | translate
+                  "
+                ></li>
+                <li
+                  [innerHTML]="
+                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.AEROBIC_LOW.LONG_RUN.EFFORT'
+                      | translate
+                  "
+                ></li>
+                <li
+                  [innerHTML]="
+                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.AEROBIC_LOW.LONG_RUN.FREQUENCY'
+                      | translate
+                  "
+                ></li>
+                <li
+                  [innerHTML]="
+                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.AEROBIC_LOW.LONG_RUN.BENEFITS'
+                      | translate
+                  "
+                ></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- High Intensity Aerobic -->
+        <div class="mb-6">
+          <h3 class="text-lg font-semibold text-amber-700 mb-3">
+            {{
+              'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.HIGH_AEROBIC.TITLE'
+                | translate
+            }}
+          </h3>
+          <div class="grid md:grid-cols-3 gap-4">
+            <div>
+              <h4 class="font-medium text-gray-900 mb-2">
+                {{
+                  'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.HIGH_AEROBIC.TEMPO_RUN.TITLE'
+                    | translate
+                }}
+              </h4>
+              <ul class="space-y-1 text-sm text-gray-700">
+                <li
+                  [innerHTML]="
+                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.HIGH_AEROBIC.TEMPO_RUN.PURPOSE'
+                      | translate
+                  "
+                ></li>
+                <li
+                  [innerHTML]="
+                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.HIGH_AEROBIC.TEMPO_RUN.EFFORT'
+                      | translate
+                  "
+                ></li>
+                <li
+                  [innerHTML]="
+                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.HIGH_AEROBIC.TEMPO_RUN.FREQUENCY'
+                      | translate
+                  "
+                ></li>
+                <li
+                  [innerHTML]="
+                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.HIGH_AEROBIC.TEMPO_RUN.BENEFITS'
+                      | translate
+                  "
+                ></li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-medium text-gray-900 mb-2">
+                {{
+                  'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.HIGH_AEROBIC.THRESHOLD_RUN.TITLE'
+                    | translate
+                }}
+              </h4>
+              <ul class="space-y-1 text-sm text-gray-700">
+                <li
+                  [innerHTML]="
+                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.HIGH_AEROBIC.THRESHOLD_RUN.PURPOSE'
+                      | translate
+                  "
+                ></li>
+                <li
+                  [innerHTML]="
+                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.HIGH_AEROBIC.THRESHOLD_RUN.EFFORT'
+                      | translate
+                  "
+                ></li>
+                <li
+                  [innerHTML]="
+                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.HIGH_AEROBIC.THRESHOLD_RUN.FREQUENCY'
+                      | translate
+                  "
+                ></li>
+                <li
+                  [innerHTML]="
+                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.HIGH_AEROBIC.THRESHOLD_RUN.BENEFITS'
+                      | translate
+                  "
+                ></li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-medium text-gray-900 mb-2">
+                {{
+                  'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.HIGH_AEROBIC.VO2MAX_RUN.TITLE'
+                    | translate
+                }}
+              </h4>
+              <ul class="space-y-1 text-sm text-gray-700">
+                <li
+                  [innerHTML]="
+                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.HIGH_AEROBIC.VO2MAX_RUN.PURPOSE'
+                      | translate
+                  "
+                ></li>
+                <li
+                  [innerHTML]="
+                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.HIGH_AEROBIC.VO2MAX_RUN.EFFORT'
+                      | translate
+                  "
+                ></li>
+                <li
+                  [innerHTML]="
+                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.HIGH_AEROBIC.VO2MAX_RUN.FREQUENCY'
+                      | translate
+                  "
+                ></li>
+                <li
+                  [innerHTML]="
+                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.HIGH_AEROBIC.VO2MAX_RUN.BENEFITS'
+                      | translate
+                  "
+                ></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Anaerobic -->
+        <div>
+          <h3 class="text-lg font-semibold text-red-700 mb-3">
+            {{
+              'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.ANAEROBIC.TITLE'
+                | translate
+            }}
+          </h3>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <h4 class="font-medium text-gray-900 mb-2">
+                {{
+                  'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.ANAEROBIC.ANAEROBIC_INTERVALS.TITLE'
+                    | translate
+                }}
+              </h4>
+              <ul class="space-y-1 text-sm text-gray-700">
+                <li
+                  [innerHTML]="
+                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.ANAEROBIC.ANAEROBIC_INTERVALS.PURPOSE'
+                      | translate
+                  "
+                ></li>
+                <li
+                  [innerHTML]="
+                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.ANAEROBIC.ANAEROBIC_INTERVALS.EFFORT'
+                      | translate
+                  "
+                ></li>
+                <li
+                  [innerHTML]="
+                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.ANAEROBIC.ANAEROBIC_INTERVALS.FREQUENCY'
+                      | translate
+                  "
+                ></li>
+                <li
+                  [innerHTML]="
+                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.ANAEROBIC.ANAEROBIC_INTERVALS.BENEFITS'
+                      | translate
+                  "
+                ></li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-medium text-gray-900 mb-2">
+                {{
+                  'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.ANAEROBIC.SPRINTS.TITLE'
+                    | translate
+                }}
+              </h4>
+              <ul class="space-y-1 text-sm text-gray-700">
+                <li
+                  [innerHTML]="
+                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.ANAEROBIC.SPRINTS.PURPOSE'
+                      | translate
+                  "
+                ></li>
+                <li
+                  [innerHTML]="
+                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.ANAEROBIC.SPRINTS.EFFORT'
+                      | translate
+                  "
+                ></li>
+                <li
+                  [innerHTML]="
+                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.ANAEROBIC.SPRINTS.FREQUENCY'
+                      | translate
+                  "
+                ></li>
+                <li
+                  [innerHTML]="
+                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.ANAEROBIC.SPRINTS.BENEFITS'
+                      | translate
+                  "
+                ></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Related Tools Section -->
+      <div class="bg-purple-50 p-6 rounded-lg">
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">
+          {{
+            'TOOLS.TRAINING_PACES_CALCULATOR.RELATED_TOOLS.TITLE' | translate
+          }}
+        </h2>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="space-y-2">
+            <a
+              href="/tools/race/pace-calculator"
+              class="block p-3 bg-white rounded border hover:border-blue-300 transition-colors"
+            >
+              <h3 class="font-medium text-blue-600">
+                {{
+                  'TOOLS.TRAINING_PACES_CALCULATOR.RELATED_TOOLS.PACE_CALC.TITLE'
+                    | translate
+                }}
+              </h3>
+              <p class="text-sm text-gray-600">
+                {{
+                  'TOOLS.TRAINING_PACES_CALCULATOR.RELATED_TOOLS.PACE_CALC.DESC'
+                    | translate
+                }}
+              </p>
+            </a>
+            <a
+              href="/tools/personal/vo2max-calculator"
+              class="block p-3 bg-white rounded border hover:border-blue-300 transition-colors"
+            >
+              <h3 class="font-medium text-blue-600">
+                {{
+                  'TOOLS.TRAINING_PACES_CALCULATOR.RELATED_TOOLS.VO2MAX.TITLE'
+                    | translate
+                }}
+              </h3>
+              <p class="text-sm text-gray-600">
+                {{
+                  'TOOLS.TRAINING_PACES_CALCULATOR.RELATED_TOOLS.VO2MAX.DESC'
+                    | translate
+                }}
+              </p>
+            </a>
+          </div>
+          <div class="space-y-2">
+            <a
+              href="/tools/race/finish-time-predictor"
+              class="block p-3 bg-white rounded border hover:border-blue-300 transition-colors"
+            >
+              <h3 class="font-medium text-blue-600">
+                {{
+                  'TOOLS.TRAINING_PACES_CALCULATOR.RELATED_TOOLS.FINISH_TIME.TITLE'
+                    | translate
+                }}
+              </h3>
+              <p class="text-sm text-gray-600">
+                {{
+                  'TOOLS.TRAINING_PACES_CALCULATOR.RELATED_TOOLS.FINISH_TIME.DESC'
+                    | translate
+                }}
+              </p>
+            </a>
+            <a
+              href="/tools/personal/burned-calories-estimator"
+              class="block p-3 bg-white rounded border hover:border-blue-300 transition-colors"
+            >
+              <h3 class="font-medium text-blue-600">
+                {{
+                  'TOOLS.TRAINING_PACES_CALCULATOR.RELATED_TOOLS.CALORIES.TITLE'
+                    | translate
+                }}
+              </h3>
+              <p class="text-sm text-gray-600">
+                {{
+                  'TOOLS.TRAINING_PACES_CALCULATOR.RELATED_TOOLS.CALORIES.DESC'
+                    | translate
+                }}
+              </p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+  <!-- FAQ Section -->
+  <ng-container tool-faq>
+    <app-faq-section>
+      <div faq-title>
+        {{ 'TOOLS.TRAINING_PACES_CALCULATOR.FAQ.TITLE' | translate }}
+      </div>
+
+      <div faq-items>
+        <app-faq-item>
+          <div faq-question>
+            {{ 'TOOLS.TRAINING_PACES_CALCULATOR.FAQ.Q1' | translate }}
+          </div>
+          <div faq-answer>
+            {{ 'TOOLS.TRAINING_PACES_CALCULATOR.FAQ.A1' | translate }}
+          </div>
+        </app-faq-item>
+
+        <app-faq-item>
+          <div faq-question>
+            {{ 'TOOLS.TRAINING_PACES_CALCULATOR.FAQ.Q2' | translate }}
+          </div>
+          <div
+            faq-answer
+            [innerHTML]="'TOOLS.TRAINING_PACES_CALCULATOR.FAQ.A2' | translate"
+          ></div>
+        </app-faq-item>
+
+        <app-faq-item>
+          <div faq-question>
+            {{ 'TOOLS.TRAINING_PACES_CALCULATOR.FAQ.Q3' | translate }}
+          </div>
+          <div faq-answer>
+            {{ 'TOOLS.TRAINING_PACES_CALCULATOR.FAQ.A3' | translate }}
+          </div>
+        </app-faq-item>
+
+        <app-faq-item>
+          <div faq-question>
+            {{ 'TOOLS.TRAINING_PACES_CALCULATOR.FAQ.Q4' | translate }}
+          </div>
+          <div faq-answer>
+            {{ 'TOOLS.TRAINING_PACES_CALCULATOR.FAQ.A4' | translate }}
+          </div>
+        </app-faq-item>
+
+        <app-faq-item>
+          <div faq-question>
+            {{ 'TOOLS.TRAINING_PACES_CALCULATOR.FAQ.Q5' | translate }}
+          </div>
+          <div
+            faq-answer
+            [innerHTML]="'TOOLS.TRAINING_PACES_CALCULATOR.FAQ.A5' | translate"
+          ></div>
+        </app-faq-item>
+      </div>
+    </app-faq-section>
+  </ng-container>
+</app-tool-view>

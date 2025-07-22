@@ -28,6 +28,9 @@ export class NavigationService {
           'NAVIGATION.PERSONAL.PACE_SPEED_CONVERTER_DESC',
           'NAVIGATION.PERSONAL.BMI_CALCULATOR',
           'NAVIGATION.PERSONAL.BMI_CALCULATOR_DESC',
+          'NAVIGATION.TRAINING.TITLE',
+          'NAVIGATION.TRAINING.TRAINING_PACES_CALCULATOR',
+          'NAVIGATION.TRAINING.TRAINING_PACES_CALCULATOR_DESC',
           'NAVIGATION.UNITS.TITLE',
           'NAVIGATION.UNITS.DISTANCE_CONVERTER',
           'NAVIGATION.UNITS.DISTANCE_CONVERTER_DESC',
@@ -83,6 +86,18 @@ export class NavigationService {
               description:
                 translations['NAVIGATION.PERSONAL.VO2MAX_CALCULATOR_DESC'],
               icon: 'favorite',
+            },
+          ],
+        },
+        {
+          title: translations['NAVIGATION.TRAINING.TITLE'],
+          links: [
+            {
+              text: translations['NAVIGATION.TRAINING.TRAINING_PACES_CALCULATOR'],
+              link: 'tools/personal/training-paces-calculator',
+              description:
+                translations['NAVIGATION.TRAINING.TRAINING_PACES_CALCULATOR_DESC'],
+              icon: 'directions_run',
             },
           ],
         },

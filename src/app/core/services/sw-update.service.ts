@@ -24,15 +24,28 @@ export class SwUpdateService {
   }
 
   private checkForUpdates(): void {
-    // Check for updates every 30 minutes
+    // Initial check when app becomes stable
     const appIsStable$ = this.appRef.isStable.pipe(first(isStable => isStable === true));
-    const everyThirtyMinutes$ = interval(30 * 60 * 1000);
-    const everyThirtyMinutesOnceAppIsStable$ = concat(appIsStable$, everyThirtyMinutes$);
+    
+    // Check for updates every 15 minutes (more frequent for better UX)
+    const everyFifteenMinutes$ = interval(15 * 60 * 1000);
+    const periodicChecks$ = concat(appIsStable$, everyFifteenMinutes$);
 
-    everyThirtyMinutesOnceAppIsStable$.subscribe(() => {
+    periodicChecks$.subscribe(() => {
       this.swUpdate.checkForUpdate().then(() => {
         console.log('Checked for app updates');
       });
+    });
+
+    // Also check when user returns to the app (visibility change)
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden && this.swUpdate.isEnabled) {
+        setTimeout(() => {
+          this.swUpdate.checkForUpdate().then(() => {
+            console.log('Checked for updates on app focus');
+          });
+        }, 1000); // Small delay to avoid immediate checks
+      }
     });
   }
 
@@ -41,7 +54,12 @@ export class SwUpdateService {
       .pipe(filter((evt): evt is VersionReadyEvent => evt.type === 'VERSION_READY'))
       .subscribe(() => {
         console.log('New version available');
-        this.updateAvailable$.next(true);
+        
+        // Small delay to avoid showing notification immediately on app load
+        // This gives users time to see the app before being interrupted
+        setTimeout(() => {
+          this.updateAvailable$.next(true);
+        }, 2000); // 2 second delay
       });
   }
 

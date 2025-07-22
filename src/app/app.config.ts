@@ -1,10 +1,11 @@
+import { HttpClient, provideHttpClient } from '@angular/common/http';
 import {
+  APP_INITIALIZER,
   ApplicationConfig,
   importProvidersFrom,
   isDevMode,
   provideBrowserGlobalErrorListeners,
   provideZoneChangeDetection,
-  APP_INITIALIZER,
 } from '@angular/core';
 import {
   provideClientHydration,
@@ -12,10 +13,8 @@ import {
 } from '@angular/platform-browser';
 import { provideRouter } from '@angular/router';
 import { provideServiceWorker } from '@angular/service-worker';
-import { provideHttpClient } from '@angular/common/http';
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { HttpClient } from '@angular/common/http';
 import { routes } from './app.routes';
 import { SwUpdateService } from './core/services/sw-update.service';
 
@@ -25,7 +24,7 @@ export function createTranslateLoader(http: HttpClient) {
 }
 
 // Factory function for SW Update Service initialization
-export function initializeSwUpdate(swUpdateService: SwUpdateService) {
+export function initializeSwUpdate() {
   return () => {
     // Service will auto-initialize in constructor
     return Promise.resolve();

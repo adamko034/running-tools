@@ -103,6 +103,18 @@ export class SeoService {
     });
   }
 
+  updateTrainingPacesCalculatorMeta() {
+    this.title.setTitle('Training Paces Calculator - Personalized Running Zones | Runner Toolkit');
+    this.updateMeta({
+      description: 'Calculate personalized training paces based on your recent runs. Get recovery, base, conversational, and tempo paces for optimal training zones.',
+      keywords: 'training paces calculator, running zones calculator, recovery pace, base pace, conversational pace, tempo pace, training heart rate zones',
+      'og:title': 'Training Paces Calculator - Personalized Running Zones | Runner Toolkit',
+      'og:description': 'Calculate personalized training paces based on your recent runs. Get recovery, base, conversational, and tempo paces for optimal training zones.',
+      'twitter:title': 'Training Paces Calculator - Personalized Running Zones | Runner Toolkit',
+      'twitter:description': 'Calculate personalized training paces based on your recent runs. Get recovery, base, conversational, and tempo paces for optimal training zones.'
+    });
+  }
+
   private updateMeta(tags: { [key: string]: string }) {
     Object.keys(tags).forEach(key => {
       if (key.startsWith('og:') || key.startsWith('twitter:')) {
