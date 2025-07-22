@@ -14,7 +14,6 @@ import { environment } from '../../../../../environments/environment';
   styles: [`
     .version-display {
       text-align: center;
-      margin-top: 16px;
       padding: 8px;
     }
     

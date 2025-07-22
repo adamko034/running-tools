@@ -1,7 +1,13 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  HostListener,
+  ViewChild,
+} from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -28,19 +34,64 @@ import { VersionDisplayComponent } from './shared/components/ui/version-display/
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
-export class App {
+export class App implements AfterViewInit {
+  @ViewChild('drawer') drawer!: MatSidenav;
+
   isHomePage$;
   isMobile = false;
   navigation$: Observable<Navigation[]>;
+  activeCategory: Navigation | null = null;
+
+  private lastScrollTop = 0;
+  private navBarElement: HTMLElement | null = null;
 
   constructor(
     private routerService: RouterService,
     private uiService: UiService,
-    private navigationService: NavigationService
+    private navigationService: NavigationService,
+    private elementRef: ElementRef
   ) {
     this.isHomePage$ = this.routerService.isHomePage$;
     this.navigation$ = this.navigationService.getNavigation();
 
     this.uiService.isMobile$.subscribe(isMobile => (this.isMobile = isMobile));
+  }
+
+  ngAfterViewInit() {
+    this.navBarElement =
+      this.elementRef.nativeElement.querySelector('.top-nav-bar');
+  }
+
+  @HostListener('window:scroll')
+  onWindowScroll() {
+    if (!this.navBarElement || this.isMobile) return;
+
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    // Add scrolled class when scrolling down
+    if (scrollTop > 50) {
+      this.navBarElement.classList.add('scrolled');
+    } else {
+      this.navBarElement.classList.remove('scrolled');
+    }
+
+    // Hide navbar when scrolling down fast, show when scrolling up
+    if (scrollTop > this.lastScrollTop && scrollTop > 200) {
+      // Scrolling down
+      this.navBarElement.classList.add('hidden');
+    } else {
+      // Scrolling up
+      this.navBarElement.classList.remove('hidden');
+    }
+
+    this.lastScrollTop = scrollTop;
+  }
+
+  setActiveCategory(category: Navigation) {
+    this.activeCategory = category;
+  }
+
+  clearActiveCategory() {
+    this.activeCategory = null;
   }
 }

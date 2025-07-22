@@ -1,116 +1,154 @@
 <app-update-notification></app-update-notification>
-<mat-sidenav-container class="h-screen">
-  <!-- Sidenav for mobile -->
-  <mat-sidenav #drawer mode="over" [opened]="false" class="py-3 px-4">
-    <nav
-      tabindex="0"
-      (click)="drawer.close()"
-      (keyup)="($event.key === 'Enter' || $event.key === ' ') && drawer.close()"
-      role="button"
-      aria-label="Close navigation"
+
+<!-- Top Navigation Bar -->
+<header class="top-nav-bar">
+  <!-- Brand/Logo -->
+  <a routerLink="/" class="nav-brand-top">
+    <img src="icons/icon-48x48.png" alt="Runner Toolkit" class="brand-icon" />
+    <span class="brand-text">Runner Toolkit</span>
+  </a>
+
+  <!-- Main Navigation Categories -->
+  <nav class="nav-categories" *ngIf="!isMobile">
+    @for (navGroup of navigation$ | async; track $index) {
+      <div 
+        class="nav-category"
+        (mouseenter)="setActiveCategory(navGroup)"
+        (mouseleave)="clearActiveCategory()"
+      >
+        <button 
+          class="category-button"
+          [class.active]="activeCategory === navGroup"
+        >
+          {{ navGroup.title }}
+          <mat-icon class="category-icon">keyboard_arrow_down</mat-icon>
+        </button>
+        
+        <!-- Dropdown Menu -->
+        <div 
+          class="category-dropdown"
+          [class.show]="activeCategory === navGroup"
+        >
+          @for (link of navGroup.links; track $index) {
+            <a 
+              [routerLink]="link.link"
+              class="dropdown-link"
+              routerLinkActive="dropdown-link-active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              [title]="link.description"
+              (click)="clearActiveCategory()"
+            >
+              <mat-icon class="dropdown-icon">{{ link.icon }}</mat-icon>
+              <span>{{ link.text }}</span>
+            </a>
+          }
+        </div>
+      </div>
+    }
+  </nav>
+
+  <!-- Settings and Mobile Menu -->
+  <div class="nav-actions">
+    <app-unit-store-selector *ngIf="!isMobile" />
+    <app-version-display *ngIf="!isMobile" class="version-in-nav" />
+    
+    <!-- Mobile menu button -->
+    <button
+      *ngIf="isMobile"
+      mat-icon-button
+      (click)="drawer.toggle()"
+      class="mobile-menu-btn"
+      aria-label="Toggle navigation"
     >
-      <ng-container *ngTemplateOutlet="nav"></ng-container>
-    </nav>
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile Drawer -->
+<mat-sidenav-container class="mobile-nav-container" *ngIf="isMobile">
+  <mat-sidenav #drawer mode="over" [opened]="false" class="mobile-drawer">
+    <div class="mobile-nav-content">
+      <ng-container *ngTemplateOutlet="mobileNav"></ng-container>
+    </div>
   </mat-sidenav>
-
+  
   <mat-sidenav-content>
-    <mat-toolbar *ngIf="isMobile" color="primary" class="flexs items-center">
-      <button
-        mat-icon-button
-        (click)="drawer.toggle()"
-        class="mt-[7px] mr-3 cursor-wpointer"
-        aria-label="Toggle navigation"
-      >
-        <mat-icon>menu</mat-icon>
-      </button>
-    </mat-toolbar>
-
-    <main
-      class="min-height-screen flex w-full pb-6"
-      [class.justify-center]="!isMobile"
-    >
-      <!-- Main content area -->
-      <div
-        *ngIf="(isHomePage$ | async) === false"
-        class="flex-1 px-4 w-full max-w-4xl min-w-0"
-        [class.mr-4]="!isMobile"
-      >
-        <router-outlet></router-outlet>
-      </div>
-
-      <div *ngIf="isHomePage$ | async" class="flex-1 px-4">
-        <router-outlet></router-outlet>
-      </div>
-
-      <div
-        *ngIf="(isHomePage$ | async) === false && !isMobile"
-        class="w-px divider flex-shrink-0"
-        role="separator"
-        aria-label="Divider"
-      ></div>
-
-      <!-- Sidebar - only show when not on home page -->
-      <aside
-        *ngIf="(isHomePage$ | async) === false && !isMobile"
-        class="w-70 flex-shrink-0 px-3"
-      >
-        <ng-container *ngTemplateOutlet="nav"></ng-container>
-      </aside>
+    <!-- Main content -->
+    <main class="main-content">
+      <router-outlet></router-outlet>
     </main>
   </mat-sidenav-content>
 </mat-sidenav-container>
 
-<ng-template #nav>
-  <!-- Logo/Brand -->
-  <a
-    routerLink="/"
-    class="nav-brand flex justify-center items-center hover:bg-gray-50 no-underline text-inherit transition-all duration-200 ease-in-out rounded-xl px-3 py-2 mb-6"
-  >
-    <span class="font-semibold mr-2 text-xl text-gray-800">Runner</span>
-    <img src="icons/icon-48x48.png" alt="Runner Toolkit" class="w-[40px]" />
-    <span class="font-semibold text-xl text-gray-800">Toolkit</span>
-  </a>
+<!-- Desktop content -->
+<main *ngIf="!isMobile" class="main-content">
+  <router-outlet></router-outlet>
+</main>
 
-  <!-- Navigation Content -->
-  <div class="nav-content overflow-y-auto">
-    <nav class="nav-groups">
-      @for (navGroup of navigation$ | async; track $index) {
-        <div class="nav-group">
-          <!-- Group Title -->
-          <div class="nav-group-title">
-            {{ navGroup.title }}
-          </div>
+<!-- Mobile Navigation Template -->
+<ng-template #mobileNav>
+  <!-- Fixed Header with Close Button -->
+  <div class="mobile-nav-header">
+    <button 
+      mat-icon-button 
+      (click)="drawer.close()"
+      class="close-btn"
+      aria-label="Close navigation"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
 
-          <!-- Group Links -->
-          <div class="nav-links">
-            @for (link of navGroup.links; track $index) {
-              <a
-                [routerLink]="link.link"
-                routerLinkActive="nav-link-active"
-                [routerLinkActiveOptions]="{ exact: true }"
-                class="nav-link"
-                [title]="link.description"
-              >
-                <mat-icon class="nav-link-icon">{{ link.icon }}</mat-icon>
-                <span class="nav-link-text">{{ link.text }}</span>
-              </a>
-            }
-          </div>
+  <!-- Scrollable Navigation Groups -->
+  <div class="mobile-nav-groups">
+    @for (navGroup of navigation$ | async; track $index) {
+      <div class="mobile-nav-section">
+        <!-- Category Header -->
+        <div class="mobile-category-header">
+          <div class="category-indicator"></div>
+          <span class="category-title">{{ navGroup.title }}</span>
+          <div class="category-count">{{ navGroup.links.length }}</div>
         </div>
-      }
-    </nav>
+        
+        <!-- Category Links -->
+        <div class="mobile-nav-links">
+          @for (link of navGroup.links; track $index) {
+            <a
+              [routerLink]="link.link"
+              class="mobile-nav-link"
+              routerLinkActive="mobile-nav-link-active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              (click)="drawer.close()"
+            >
+              <div class="link-icon-wrapper">
+                <mat-icon class="mobile-nav-icon">{{ link.icon }}</mat-icon>
+              </div>
+              <div class="link-content">
+                <span class="link-title">{{ link.text }}</span>
+                <span class="link-description">{{ link.description }}</span>
+              </div>
+              <mat-icon class="link-arrow">chevron_right</mat-icon>
+            </a>
+          }
+        </div>
+      </div>
+    }
+  </div>
 
-    <!-- Settings Section -->
-    <div class="nav-settings">
-      <div class="nav-group-title">Settings</div>
-      <div class="settings-controls">
+  <!-- Fixed Footer with Settings -->
+  <div class="mobile-nav-footer">
+    <div class="mobile-settings-section">
+      <div class="settings-header">
+        <mat-icon class="settings-icon">settings</mat-icon>
+        <span>Settings</span>
+      </div>
+      <div class="settings-content">
         <app-unit-store-selector />
-        <!-- <app-language-store-selector /> -->
       </div>
     </div>
-
-    <!-- Version Display -->
-    <div class="nav-footer">
+    
+    <div class="mobile-version">
       <app-version-display />
     </div>
   </div>
