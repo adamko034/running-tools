@@ -60,6 +60,22 @@ export class NavigationService {
           ],
         },
         {
+          title: translations['NAVIGATION.TRAINING.TITLE'],
+          links: [
+            {
+              text: translations[
+                'NAVIGATION.TRAINING.TRAINING_PACES_CALCULATOR'
+              ],
+              link: 'tools/personal/training-paces-calculator',
+              description:
+                translations[
+                  'NAVIGATION.TRAINING.TRAINING_PACES_CALCULATOR_DESC'
+                ],
+              icon: 'directions_run',
+            },
+          ],
+        },
+        {
           title: translations['NAVIGATION.PERSONAL.TITLE'],
           links: [
             {
@@ -86,18 +102,6 @@ export class NavigationService {
               description:
                 translations['NAVIGATION.PERSONAL.VO2MAX_CALCULATOR_DESC'],
               icon: 'favorite',
-            },
-          ],
-        },
-        {
-          title: translations['NAVIGATION.TRAINING.TITLE'],
-          links: [
-            {
-              text: translations['NAVIGATION.TRAINING.TRAINING_PACES_CALCULATOR'],
-              link: 'tools/personal/training-paces-calculator',
-              description:
-                translations['NAVIGATION.TRAINING.TRAINING_PACES_CALCULATOR_DESC'],
-              icon: 'directions_run',
             },
           ],
         },

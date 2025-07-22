@@ -52,7 +52,7 @@
       <!-- Sidebar - only show when not on home page -->
       <aside
         *ngIf="(isHomePage$ | async) === false && !isMobile"
-        class="w-80 flex-shrink-0 px-3"
+        class="w-70 flex-shrink-0 px-3"
       >
         <ng-container *ngTemplateOutlet="nav"></ng-container>
       </aside>
@@ -61,40 +61,57 @@
 </mat-sidenav-container>
 
 <ng-template #nav>
+  <!-- Logo/Brand -->
   <a
     routerLink="/"
-    class="root-font flex justify-center items-center hover:bg-gray-100 hover:scale-105 no-underline text-inherit transition-all duration-200 ease-in-out rounded-lg px-2"
+    class="nav-brand flex justify-center items-center hover:bg-gray-50 no-underline text-inherit transition-all duration-200 ease-in-out rounded-xl px-3 py-2 mb-6"
   >
-    <span class="font-semibold mr-2 text-xl">Runner</span>
-    <img src="icons/icon-48x48.png" alt="Runner Toolkit" class="w-[48px]" />
-    <span class="font-semibold text-xl">Toolkit</span>
+    <span class="font-semibold mr-2 text-xl text-gray-800">Runner</span>
+    <img src="icons/icon-48x48.png" alt="Runner Toolkit" class="w-[40px]" />
+    <span class="font-semibold text-xl text-gray-800">Toolkit</span>
   </a>
-  <div class="pt-3 overflow-y-auto">
-    <mat-nav-list class="space-y-2">
-      @for (nav of navigation$ | async; track $index) {
-        <div>
-          <div class="text-sm font-semibold uppercase tracking-wide mb-1">
-            {{ nav.title }}
+
+  <!-- Navigation Content -->
+  <div class="nav-content overflow-y-auto">
+    <nav class="nav-groups">
+      @for (navGroup of navigation$ | async; track $index) {
+        <div class="nav-group">
+          <!-- Group Title -->
+          <div class="nav-group-title">
+            {{ navGroup.title }}
           </div>
-          @for (link of nav.links; track $index) {
-            <div
-              routerLinkActive="bg-blue-100 link-active rounded-4xl"
-              [routerLinkActiveOptions]="{ exact: true }"
-            >
-              <a mat-list-item [routerLink]="link.link" class="pl-4">{{
-                link.text
-              }}</a>
-            </div>
-          }
+
+          <!-- Group Links -->
+          <div class="nav-links">
+            @for (link of navGroup.links; track $index) {
+              <a
+                [routerLink]="link.link"
+                routerLinkActive="nav-link-active"
+                [routerLinkActiveOptions]="{ exact: true }"
+                class="nav-link"
+                [title]="link.description"
+              >
+                <mat-icon class="nav-link-icon">{{ link.icon }}</mat-icon>
+                <span class="nav-link-text">{{ link.text }}</span>
+              </a>
+            }
+          </div>
         </div>
       }
-    </mat-nav-list>
+    </nav>
 
-    <div class="m-3 flex gap-x-5">
-      <app-unit-store-selector />
-      <!-- <app-language-store-selector /> -->
+    <!-- Settings Section -->
+    <div class="nav-settings">
+      <div class="nav-group-title">Settings</div>
+      <div class="settings-controls">
+        <app-unit-store-selector />
+        <!-- <app-language-store-selector /> -->
+      </div>
     </div>
 
-    <app-version-display />
+    <!-- Version Display -->
+    <div class="nav-footer">
+      <app-version-display />
+    </div>
   </div>
 </ng-template>
