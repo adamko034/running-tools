@@ -7,6 +7,8 @@ import {
   provideBrowserGlobalErrorListeners,
   provideZoneChangeDetection,
 } from '@angular/core';
+import { getAnalytics, provideAnalytics } from '@angular/fire/analytics';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import {
   provideClientHydration,
   withEventReplay,
@@ -31,6 +33,16 @@ export function initializeSwUpdate() {
   };
 }
 
+const firebaseConfig = {
+  apiKey: 'AIzaSyDoMelBdC2zgCyf70Oiqf9am2gXxyGN04U',
+  authDomain: 'runner-toolkit.firebaseapp.com',
+  projectId: 'runner-toolkit',
+  storageBucket: 'runner-toolkit.firebasestorage.app',
+  messagingSenderId: '684354601316',
+  appId: '1:684354601316:web:d05ed696695ee347bb3a71',
+  measurementId: 'G-8JEM0W90KY',
+};
+
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
@@ -48,6 +60,8 @@ export const appConfig: ApplicationConfig = {
         defaultLanguage: 'en',
       })
     ),
+    provideFirebaseApp(() => initializeApp(firebaseConfig)),
+    provideAnalytics(() => getAnalytics()),
     provideServiceWorker('ngsw-worker.js', {
       enabled: !isDevMode(),
       registrationStrategy: 'registerImmediately',
