@@ -1,0 +1,76 @@
+// Footer specific styles
+footer {
+  margin-top: auto; // Push footer to bottom when using flexbox layout
+}
+
+.footer-gradient {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+}
+
+// Icon alignment fixes
+mat-icon {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+// Custom responsive layout
+// Mobile: 1 column
+.footer-grid {
+  grid-template-columns: 1fr;
+}
+
+// 500px-770px: Features and Categories in 2 columns
+@media (min-width: 500px) and (max-width: 769px) {
+  .features-categories-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+}
+
+// 770px+: 4 columns layout
+@media (min-width: 770px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  
+  .features-categories-grid {
+    display: contents; // This makes the children participate in the parent grid
+  }
+}
+
+// Mobile bottom bar: stack copyright and made-with section vertically
+@media (max-width: 499px) {
+  .bottom-bar-content {
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+    text-align: center !important;
+    align-items: center !important;
+  }
+  
+  .copyright-text {
+    text-align: center !important;
+  }
+  
+  .made-with-section {
+    text-align: center !important;
+  }
+  
+  .made-with-text {
+    text-align: center !important;
+  }
+  
+  .tech-chips {
+    justify-content: center !important;
+  }
+}
+
+// Desktop: made-with section should be horizontal
+@media (min-width: 500px) {
+  .made-with-section {
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 1rem !important;
+  }
+}

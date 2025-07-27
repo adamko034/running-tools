@@ -16,6 +16,7 @@ import { NavigationService } from './core/services/navigation.service';
 import { RouterService } from './core/services/router.service';
 import { UiService } from './core/services/ui.service';
 import { UnitStoreSelector } from './shared/components/store/unit-store-selector/unit-store-selector';
+import { FooterComponent } from './shared/components/ui/footer/footer.component';
 
 @Component({
   selector: 'app-root',
@@ -26,6 +27,7 @@ import { UnitStoreSelector } from './shared/components/store/unit-store-selector
     UnitStoreSelector,
     MatSidenavModule,
     MatToolbarModule,
+    FooterComponent,
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss',

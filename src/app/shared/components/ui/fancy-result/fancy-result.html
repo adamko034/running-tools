@@ -31,11 +31,7 @@
         </p>
         
         <!-- Accent line -->
-        <div class="mt-3 flex items-center justify-center space-x-2">
-          <div class="w-2 h-2 rounded-full" [ngClass]="getPrimaryAccentClasses()"></div>
-          <div class="w-16 h-1 rounded-full" [ngClass]="getGradientClasses()"></div>
-          <div class="w-2 h-2 rounded-full" [ngClass]="getSecondaryAccentClasses()"></div>
-        </div>
+        <app-accent-line [colorScheme]="colorScheme"></app-accent-line>
       </div>
 
       <!-- Value Display -->

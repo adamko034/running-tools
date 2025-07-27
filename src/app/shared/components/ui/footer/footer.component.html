@@ -1,0 +1,144 @@
+<footer class="footer-gradient text-white">
+  <div class="max-w-7xl mx-auto px-4 py-8">
+    <!-- Main Footer Content -->
+    <div class="grid grid-cols-1 gap-6 footer-grid">
+      
+      <!-- Brand & Description -->
+      <div>
+      <!-- Brand & Description -->
+        <div class="flex items-center gap-2 mb-3">
+          <img src="icons/icon-48x48.png" alt="Runner Toolkit" class="w-5 h-5" />
+          <span class="font-semibold text-lg">Runner Toolkit</span>
+        </div>
+        <p class="text-gray-300 text-sm mb-4 leading-relaxed">
+          {{ 'footer.description' | translate }}
+        </p>
+
+        <!-- Accent Line -->
+        <app-accent-line></app-accent-line>
+
+        <div class="mt-4 space-y-1 text-xs text-gray-400">
+          <div>{{ 'footer.created_by' | translate }} {{ createdBy }}</div>
+          <div>{{ 'footer.version' | translate }} {{ version }}</div>
+        </div>
+      </div>
+
+      <!-- Features and Categories Container -->
+      <div class="features-categories-grid">
+        <!-- Features List -->
+        <div>
+          <h4 class="font-medium text-white mb-3">
+            {{ 'footer.features' | translate }}
+          </h4>
+          <ul class="space-y-2 text-sm">
+            <li class="text-gray-300">
+              {{ 'footer.pace_calculator' | translate }}
+            </li>
+            <li class="text-gray-300">
+              {{ 'footer.finish_time_predictions' | translate }}
+            </li>
+            <li class="text-gray-300">
+              {{ 'footer.training_paces' | translate }}
+            </li>
+            <li class="text-gray-300">
+              {{ 'footer.bmi_body_composition' | translate }}
+            </li>
+            <li class="text-gray-300">
+              {{ 'footer.calories_burned_run' | translate }}
+            </li>
+            <li class="text-gray-300">
+              {{ 'footer.vo2max_calculator' | translate }}
+            </li>
+            <li class="text-gray-300">
+              {{ 'footer.multiple_unit_converters' | translate }}
+            </li>
+          </ul>
+        </div>
+
+        <!-- Tool Categories -->
+        <div>
+          <h4 class="font-medium text-white mb-3">
+            {{ 'footer.tools' | translate }}
+          </h4>
+          <ul class="space-y-2 text-sm">
+            <li class="text-gray-300">{{ 'footer.race_tools' | translate }}</li>
+            <li class="text-gray-300">
+              {{ 'footer.training_tools' | translate }}
+            </li>
+            <li class="text-gray-300">
+              {{ 'footer.personal_tools' | translate }}
+            </li>
+            <li class="text-gray-300">
+              {{ 'footer.unit_converters' | translate }}
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Contact Us -->
+      <div class="contact-section">
+        <h4 class="font-medium text-white mb-3">
+          {{ 'footer.contact_us' | translate }}
+        </h4>
+        <div class="text-sm space-y-3">
+          <a
+            routerLink="/contact"
+            class="text-gray-300 hover:text-white transition-colors inline-flex items-center gap-2"
+          >
+            <mat-icon class="text-blue-400 text-lg">contact_support</mat-icon>
+            {{ 'footer.get_help' | translate }}
+          </a>
+          <div class="flex gap-2">
+            <span class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-300"
+              >English</span
+            >
+            <span class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-300"
+              >Polish</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="border-t border-gray-700 mt-6 pt-4">
+      <div
+        class="bottom-bar-content flex flex-col md:flex-row justify-between items-center gap-2 text-xs text-gray-400"
+      >
+        <div class="copyright-text">
+          © {{ currentYear }} Runner Toolkit.
+          {{ 'footer.all_rights_reserved' | translate }}
+        </div>
+        <div class="made-with-section flex flex-col items-center gap-2">
+          <div class="made-with-text flex items-center justify-center">
+            <span>{{ 'footer.made_with' | translate }}</span>
+            <mat-icon
+              class="text-red-500 text-sm mx-1 inline-flex items-center justify-center"
+              style="color: #ef4444 !important;"
+              >favorite</mat-icon
+            >
+            <span>{{ 'footer.for_runners' | translate }}</span>
+          </div>
+          <div class="tech-chips flex gap-2">
+            <span
+              class="text-xs border border-gray-600 px-2 py-1 rounded text-gray-400"
+              >Angular</span
+            >
+            <span
+              class="text-xs border border-gray-600 px-2 py-1 rounded text-gray-400"
+              >TypeScript</span
+            >
+            <span
+              class="text-xs border border-gray-600 px-2 py-1 rounded text-gray-400"
+              >SSR</span
+            >
+            <span
+              class="text-xs border border-gray-600 px-2 py-1 rounded text-gray-400"
+              >PWA</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { AccentLineComponent } from '../accent-line/accent-line.component';
 
 @Component({
   selector: 'app-fancy-result',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, AccentLineComponent],
   templateUrl: './fancy-result.html',
 })
 export class FancyResult {
