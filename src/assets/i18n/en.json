@@ -33,6 +33,11 @@
       "PACE_SPEED_CONVERTER_DESC": "Convert between pace and speed units",
       "WEIGHT_CONVERTER": "Weight Converter",
       "WEIGHT_CONVERTER_DESC": "Convert between kilograms and pounds"
+    },
+    "SUPPORT": {
+      "TITLE": "Support",
+      "CONTACT": "Contact Us",
+      "CONTACT_DESC": "Get help with bugs, GDPR requests, or general questions"
     }
   },
 
@@ -50,6 +55,26 @@
     "OFFLINE_DESC": "No internet connection required - calculate anytime, anywhere.",
     "CUSTOMIZABLE": "Customizable",
     "CUSTOMIZABLE_DESC": "Choose your preferred units and settings for a personalized experience."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Get in touch with us for any questions or assistance",
+    "get_in_touch": "Get in Touch",
+    "response_time": "We typically respond within {{days}} days",
+    "copy_email": "Copy email address",
+    "send_email": "Send Email",
+    "email_copied": "Email address copied to clipboard!",
+    "copy_failed": "Failed to copy email. Please copy manually.",
+    "inquiry_types": {
+      "title": "We Handle",
+      "bugs_and_issues": "Bugs and Technical Issues",
+      "rodo_gdpr": "GDPR/RODO Data Protection Requests",
+      "general_questions": "General Questions and Support"
+    },
+    "supported_languages": {
+      "title": "Languages We Support"
+    },
+    "response_info": "We aim to respond to all inquiries within {{days}} business days. For urgent technical issues, please include detailed steps to reproduce the problem."
   },
   "COMMON": {
     "AGE": "Age",

@@ -115,6 +115,18 @@ export class SeoService {
     });
   }
 
+  updateContactMeta() {
+    this.title.setTitle('Contact Us - Runner Toolkit Support');
+    this.updateMeta({
+      description: 'Get in touch with Runner Toolkit support team. We handle bugs, GDPR/RODO requests, and general questions in English and Polish.',
+      keywords: 'contact, support, runner toolkit, bugs, GDPR, RODO, help, customer service',
+      'og:title': 'Contact Us - Runner Toolkit Support',
+      'og:description': 'Get in touch with Runner Toolkit support team. We handle bugs, GDPR/RODO requests, and general questions in English and Polish.',
+      'twitter:title': 'Contact Us - Runner Toolkit Support',
+      'twitter:description': 'Get in touch with Runner Toolkit support team. We handle bugs, GDPR/RODO requests, and general questions in English and Polish.'
+    });
+  }
+
   private updateMeta(tags: { [key: string]: string }) {
     Object.keys(tags).forEach(key => {
       if (key.startsWith('og:') || key.startsWith('twitter:')) {

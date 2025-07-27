@@ -38,6 +38,9 @@ export class NavigationService {
           'NAVIGATION.UNITS.WEIGHT_CONVERTER_DESC',
           'NAVIGATION.UNITS.PACE_SPEED_CONVERTER',
           'NAVIGATION.UNITS.PACE_SPEED_CONVERTER_DESC',
+          'NAVIGATION.SUPPORT.TITLE',
+          'NAVIGATION.SUPPORT.CONTACT',
+          'NAVIGATION.SUPPORT.CONTACT_DESC',
         ])
       ),
       map((translations: any) => [
@@ -128,6 +131,17 @@ export class NavigationService {
               description:
                 translations['NAVIGATION.UNITS.WEIGHT_CONVERTER_DESC'],
               icon: 'fitness_center',
+            },
+          ],
+        },
+        {
+          title: translations['NAVIGATION.SUPPORT.TITLE'],
+          links: [
+            {
+              text: translations['NAVIGATION.SUPPORT.CONTACT'],
+              link: 'contact',
+              description: translations['NAVIGATION.SUPPORT.CONTACT_DESC'],
+              icon: 'contact_support',
             },
           ],
         },

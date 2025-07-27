@@ -7,6 +7,11 @@ const commonRoutes: Routes = [
       import('./home/home.component').then(m => m.HomeComponent),
   },
   {
+    path: 'contact',
+    loadComponent: () =>
+      import('./contact/contact.component').then(m => m.ContactComponent),
+  },
+  {
     path: 'tools/race',
     children: [
       {

@@ -48,7 +48,6 @@
   <!-- Settings and Mobile Menu -->
   <div class="nav-actions">
     <app-unit-store-selector *ngIf="!isMobile" />
-    <app-version-display *ngIf="!isMobile" class="version-in-nav" />
     
     <!-- Mobile menu button -->
     <button
@@ -144,10 +143,6 @@
       <div class="settings-content">
         <app-unit-store-selector />
       </div>
-    </div>
-    
-    <div class="mobile-version">
-      <app-version-display />
     </div>
   </div>
 </ng-template>
