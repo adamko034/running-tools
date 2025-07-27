@@ -1,12 +1,12 @@
-import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { ContactData } from '../core/business/catalog/contact-data';
-import { SeoService } from '../core/services/seo.service';
+import { DataCatalog } from '../../core/business/catalog/data-catalog';
+import { SeoService } from '../../core/services/seo.service';
 
 @Component({
   selector: 'app-contact',
@@ -17,20 +17,18 @@ import { SeoService } from '../core/services/seo.service';
     MatIconModule,
     MatCardModule,
     MatSnackBarModule,
-    TranslateModule
+    TranslateModule,
   ],
   templateUrl: './contact.component.html',
-  styleUrl: './contact.component.scss'
+  styleUrl: './contact.component.scss',
 })
 export class ContactComponent {
   private snackBar = inject(MatSnackBar);
   private translateService = inject(TranslateService);
   private seoService = inject(SeoService);
 
-  readonly email = ContactData.EMAIL;
-  readonly responseTime = ContactData.RESPONSE_TIME_DAYS;
-  readonly supportedLanguages = ContactData.SUPPORTED_LANGUAGES;
-  readonly inquiryTypes = ContactData.INQUIRY_TYPES;
+  readonly email = DataCatalog.EMAIL;
+  supportedLanguages = ['English', 'Polish'];
 
   constructor() {
     this.setupSeo();
@@ -48,7 +46,7 @@ export class ContactComponent {
         duration: 2000,
         horizontalPosition: 'center',
         verticalPosition: 'bottom',
-        panelClass: ['success-snackbar']
+        panelClass: ['success-snackbar'],
       });
     } catch (err) {
       // Fallback for older browsers
@@ -65,7 +63,7 @@ export class ContactComponent {
     document.body.appendChild(textArea);
     textArea.focus();
     textArea.select();
-    
+
     try {
       document.execCommand('copy');
       const message = this.translateService.instant('contact.email_copied');
@@ -73,7 +71,7 @@ export class ContactComponent {
         duration: 2000,
         horizontalPosition: 'center',
         verticalPosition: 'bottom',
-        panelClass: ['success-snackbar']
+        panelClass: ['success-snackbar'],
       });
     } catch (err) {
       const message = this.translateService.instant('contact.copy_failed');
@@ -81,7 +79,7 @@ export class ContactComponent {
         duration: 3000,
         horizontalPosition: 'center',
         verticalPosition: 'bottom',
-        panelClass: ['error-snackbar']
+        panelClass: ['error-snackbar'],
       });
     } finally {
       document.body.removeChild(textArea);
@@ -101,7 +99,7 @@ Please describe your inquiry below:
 
 
 Best regards`);
-    
+
     window.location.href = `mailto:${this.email}?subject=${subject}&body=${body}`;
   }
 }

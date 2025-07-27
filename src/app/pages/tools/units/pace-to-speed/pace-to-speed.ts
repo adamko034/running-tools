@@ -1,15 +1,15 @@
 import { Component, effect, inject } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
-import { SeoService } from '../../../core/services/seo.service';
-import { Pace } from '../../../core/business/model/pace.model';
-import { Speed } from '../../../core/business/model/speed.model';
-import { StoreService } from '../../../core/store/store.service';
-import { PacePureFormField } from '../../../shared/components/business/pace-pure-form-field/pace-pure-form-field';
-import { SpeedPureFormField } from '../../../shared/components/business/speed-pure-form-field/speed-pure-form-field';
-import { FancyResult } from '../../../shared/components/ui/fancy-result/fancy-result';
-import { FaqSectionComponent } from '../../../shared/components/ui/faq-section/faq-section';
-import { FaqItemComponent } from '../../../shared/components/ui/faq-item/faq-item';
-import { ToolView } from '../../../shared/views/tool-view/tool-view';
+import { SeoService } from '../../../../core/services/seo.service';
+import { Pace } from '../../../../core/business/model/pace.model';
+import { Speed } from '../../../../core/business/model/speed.model';
+import { StoreService } from '../../../../core/store/store.service';
+import { PacePureFormField } from '../../../../shared/components/business/pace-pure-form-field/pace-pure-form-field';
+import { SpeedPureFormField } from '../../../../shared/components/business/speed-pure-form-field/speed-pure-form-field';
+import { FancyResult } from '../../../../shared/components/ui/fancy-result/fancy-result';
+import { FaqSectionComponent } from '../../../../shared/components/ui/faq-section/faq-section';
+import { FaqItemComponent } from '../../../../shared/components/ui/faq-item/faq-item';
+import { ToolView } from '../../../../shared/views/tool-view/tool-view';
 
 @Component({
   selector: 'app-pace-to-speed',

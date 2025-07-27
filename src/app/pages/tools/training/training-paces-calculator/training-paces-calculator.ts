@@ -4,16 +4,16 @@ import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { TranslateModule } from '@ngx-translate/core';
-import { Pace } from '../../../core/business/model/pace.model';
-import { SeoService } from '../../../core/services/seo.service';
-import { Store } from '../../../core/store/store.model';
-import { StoreService } from '../../../core/store/store.service';
-import { DistanceStoreFormField } from '../../../shared/components/store/distance-store-form-field/distance-store-form-field';
-import { TimeStoreFormField } from '../../../shared/components/store/time-store-form-field/time-store-form-field';
-import { FancyResult } from '../../../shared/components/ui/fancy-result/fancy-result';
-import { FaqItemComponent } from '../../../shared/components/ui/faq-item/faq-item';
-import { FaqSectionComponent } from '../../../shared/components/ui/faq-section/faq-section';
-import { ToolView } from '../../../shared/views/tool-view/tool-view';
+import { Pace } from '../../../../core/business/model/pace.model';
+import { SeoService } from '../../../../core/services/seo.service';
+import { Store } from '../../../../core/store/store.model';
+import { StoreService } from '../../../../core/store/store.service';
+import { DistanceStoreFormField } from '../../../../shared/components/store/distance-store-form-field/distance-store-form-field';
+import { TimeStoreFormField } from '../../../../shared/components/store/time-store-form-field/time-store-form-field';
+import { FancyResult } from '../../../../shared/components/ui/fancy-result/fancy-result';
+import { FaqItemComponent } from '../../../../shared/components/ui/faq-item/faq-item';
+import { FaqSectionComponent } from '../../../../shared/components/ui/faq-section/faq-section';
+import { ToolView } from '../../../../shared/views/tool-view/tool-view';
 
 @Component({
   selector: 'app-training-paces-calculator',

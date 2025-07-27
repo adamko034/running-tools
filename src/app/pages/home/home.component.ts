@@ -6,9 +6,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
-import { Navigation } from '../core/navigation/navigation.model';
-import { NavigationService } from '../core/services/navigation.service';
-import { UiService } from '../core/services/ui.service';
+import { Navigation } from '../../core/navigation/navigation.model';
+import { NavigationService } from '../../core/services/navigation.service';
+import { UiService } from '../../core/services/ui.service';
 
 @Component({
   selector: 'app-home',

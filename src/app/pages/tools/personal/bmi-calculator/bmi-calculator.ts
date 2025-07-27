@@ -1,24 +1,24 @@
 import { CommonModule } from '@angular/common';
-import { SeoService } from '../../../core/services/seo.service';
+import { SeoService } from '../../../../core/services/seo.service';
 import { Component, effect, inject } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { TranslateModule } from '@ngx-translate/core';
-import { CalculatorsFacade } from '../../../core/business/calculators-facade';
-import { BmiCategory } from '../../../core/business/model/enums/bmi-category.enum';
-import { FatCategory } from '../../../core/business/model/enums/fat-category.enum';
-import { IbwCategory } from '../../../core/business/model/enums/ibw-category.enum';
-import { WeightUnit } from '../../../core/business/model/enums/weight-unit.enum';
-import { Weight } from '../../../core/business/model/weight.model';
-import { StoreService } from '../../../core/store/store.service';
-import { AgeStoreFormField } from '../../../shared/components/store/age-store-form-field/age-store-form-field';
-import { HeightStoreFormField } from '../../../shared/components/store/height-store-form-field/height-store-form-field';
-import { SexStoreFormField } from '../../../shared/components/store/sex-store-form-field/sex-store-form-field';
-import { WeightStoreFormField } from '../../../shared/components/store/weight-store-form-field/weight-store-form-field';
-import { FancyResult } from '../../../shared/components/ui/fancy-result/fancy-result';
-import { FaqSectionComponent } from '../../../shared/components/ui/faq-section/faq-section';
-import { FaqItemComponent } from '../../../shared/components/ui/faq-item/faq-item';
-import { ResultBoxType } from '../../../shared/components/ui/fancy-result/result-box-type.enum';
-import { ToolView } from '../../../shared/views/tool-view/tool-view';
+import { CalculatorsFacade } from '../../../../core/business/calculators-facade';
+import { BmiCategory } from '../../../../core/business/model/enums/bmi-category.enum';
+import { FatCategory } from '../../../../core/business/model/enums/fat-category.enum';
+import { IbwCategory } from '../../../../core/business/model/enums/ibw-category.enum';
+import { WeightUnit } from '../../../../core/business/model/enums/weight-unit.enum';
+import { Weight } from '../../../../core/business/model/weight.model';
+import { StoreService } from '../../../../core/store/store.service';
+import { AgeStoreFormField } from '../../../../shared/components/store/age-store-form-field/age-store-form-field';
+import { HeightStoreFormField } from '../../../../shared/components/store/height-store-form-field/height-store-form-field';
+import { SexStoreFormField } from '../../../../shared/components/store/sex-store-form-field/sex-store-form-field';
+import { WeightStoreFormField } from '../../../../shared/components/store/weight-store-form-field/weight-store-form-field';
+import { FancyResult } from '../../../../shared/components/ui/fancy-result/fancy-result';
+import { FaqSectionComponent } from '../../../../shared/components/ui/faq-section/faq-section';
+import { FaqItemComponent } from '../../../../shared/components/ui/faq-item/faq-item';
+import { ResultBoxType } from '../../../../shared/components/ui/fancy-result/result-box-type.enum';
+import { ToolView } from '../../../../shared/views/tool-view/tool-view';
 
 @Component({
   selector: 'app-bmi-calculator',

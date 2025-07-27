@@ -4,12 +4,12 @@ const commonRoutes: Routes = [
   {
     path: '',
     loadComponent: () =>
-      import('./home/home.component').then(m => m.HomeComponent),
+      import('./pages/home/home.component').then(m => m.HomeComponent),
   },
   {
     path: 'contact',
     loadComponent: () =>
-      import('./contact/contact.component').then(m => m.ContactComponent),
+      import('./pages/contact/contact.component').then(m => m.ContactComponent),
   },
   {
     path: 'tools/race',
@@ -17,7 +17,7 @@ const commonRoutes: Routes = [
       {
         path: 'pace-calculator',
         loadComponent: () =>
-          import('./tools/race/pace-calculator/pace-calculator').then(
+          import('./pages/tools/race/pace-calculator/pace-calculator').then(
             m => m.PaceCalculator
           ),
       },
@@ -25,7 +25,7 @@ const commonRoutes: Routes = [
         path: 'finish-time-predictor',
         loadComponent: () =>
           import(
-            './tools/race/finish-time-predictor/finish-time-predictor'
+            './pages/tools/race/finish-time-predictor/finish-time-predictor'
           ).then(m => m.FinishTimePredictor),
       },
     ],
@@ -36,7 +36,7 @@ const commonRoutes: Routes = [
       {
         path: 'vo2max-calculator',
         loadComponent: () =>
-          import('./tools/personal/vo2max-calculator/vo2max-calculator').then(
+          import('./pages/tools/personal/vo2max-calculator/vo2max-calculator').then(
             m => m.Vo2maxCalculator
           ),
       },
@@ -44,13 +44,13 @@ const commonRoutes: Routes = [
         path: 'burned-calories-estimator',
         loadComponent: () =>
           import(
-            './tools/personal/calories-burned-calculator/calories-burned-calculator'
+            './pages/tools/personal/calories-burned-calculator/calories-burned-calculator'
           ).then(m => m.CaloriesBurnedCalculator),
       },
       {
         path: 'bmi-calculator',
         loadComponent: () =>
-          import('./tools/personal/bmi-calculator/bmi-calculator').then(
+          import('./pages/tools/personal/bmi-calculator/bmi-calculator').then(
             m => m.BmiCalculator
           ),
       },
@@ -63,7 +63,7 @@ const commonRoutes: Routes = [
         path: 'training-paces-calculator',
         loadComponent: () =>
           import(
-            './tools/training/training-paces-calculator/training-paces-calculator'
+            './pages/tools/training/training-paces-calculator/training-paces-calculator'
           ).then(m => m.TrainingPacesCalculator),
       },
     ],
@@ -74,7 +74,7 @@ const commonRoutes: Routes = [
       {
         path: 'pace-to-speed',
         loadComponent: () =>
-          import('./tools/units/pace-to-speed/pace-to-speed').then(
+          import('./pages/tools/units/pace-to-speed/pace-to-speed').then(
             m => m.PaceToSpeed
           ),
       },
@@ -82,14 +82,14 @@ const commonRoutes: Routes = [
         path: 'kilometers-to-miles',
         loadComponent: () =>
           import(
-            './tools/units/distance-unit-converter/distance-unit-converter'
+            './pages/tools/units/distance-unit-converter/distance-unit-converter'
           ).then(m => m.DistanceUnitConverter),
       },
       {
         path: 'kilograms-to-pounds',
         loadComponent: () =>
           import(
-            './tools/units/weight-unit-converter/weight-unit-converter'
+            './pages/tools/units/weight-unit-converter/weight-unit-converter'
           ).then(m => m.WeightUnitConverter),
       },
     ],

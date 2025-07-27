@@ -1,6 +1,7 @@
 import { DataCatalogDistance } from './data-catalog-distance.model';
 
 export class DataCatalog {
+  static readonly EMAIL = 'elioapps@outlook.com';
   static readonly distances: Record<DistanceKey, DataCatalogDistance> = {
     fourHundredM: DataCatalogDistance.ofKm(0.4, '400m'),
     oneK: DataCatalogDistance.ofKm(1, '1000m'),

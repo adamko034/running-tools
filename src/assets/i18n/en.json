@@ -33,11 +33,6 @@
       "PACE_SPEED_CONVERTER_DESC": "Convert between pace and speed units",
       "WEIGHT_CONVERTER": "Weight Converter",
       "WEIGHT_CONVERTER_DESC": "Convert between kilograms and pounds"
-    },
-    "SUPPORT": {
-      "TITLE": "Support",
-      "CONTACT": "Contact Us",
-      "CONTACT_DESC": "Get help with bugs, GDPR requests, or general questions"
     }
   },
 
@@ -60,7 +55,7 @@
     "title": "Contact Us",
     "subtitle": "Get in touch with us for any questions or assistance",
     "get_in_touch": "Get in Touch",
-    "response_time": "We typically respond within {{days}} days",
+    "response_time": "We typically respond within 7 days",
     "copy_email": "Copy email address",
     "send_email": "Send Email",
     "email_copied": "Email address copied to clipboard!",
@@ -74,7 +69,7 @@
     "supported_languages": {
       "title": "Languages We Support"
     },
-    "response_info": "We aim to respond to all inquiries within {{days}} business days. For urgent technical issues, please include detailed steps to reproduce the problem."
+    "response_info": "We aim to respond to all inquiries within 7 business days. For urgent technical issues, please include detailed steps to reproduce the problem."
   },
   "COMMON": {
     "AGE": "Age",

@@ -1,15 +1,15 @@
 import { Component, inject } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
-import { Distance } from '../../../core/business/model/distance.model';
-import { DistanceUnit } from '../../../core/business/model/enums/distance-unit.enum';
-import { SeoService } from '../../../core/services/seo.service';
-import { StoreService } from '../../../core/store/store.service';
-import { DistanceQuickSelectors } from '../../../shared/components/business/distance-quick-selectors/distance-quick-selectors';
-import { FancyResult } from '../../../shared/components/ui/fancy-result/fancy-result';
-import { FaqSectionComponent } from '../../../shared/components/ui/faq-section/faq-section';
-import { FaqItemComponent } from '../../../shared/components/ui/faq-item/faq-item';
-import { NumberFormField } from '../../../shared/components/ui/number-form-field/number-form-field';
-import { ToolView } from '../../../shared/views/tool-view/tool-view';
+import { Distance } from '../../../../core/business/model/distance.model';
+import { DistanceUnit } from '../../../../core/business/model/enums/distance-unit.enum';
+import { SeoService } from '../../../../core/services/seo.service';
+import { StoreService } from '../../../../core/store/store.service';
+import { DistanceQuickSelectors } from '../../../../shared/components/business/distance-quick-selectors/distance-quick-selectors';
+import { FancyResult } from '../../../../shared/components/ui/fancy-result/fancy-result';
+import { FaqSectionComponent } from '../../../../shared/components/ui/faq-section/faq-section';
+import { FaqItemComponent } from '../../../../shared/components/ui/faq-item/faq-item';
+import { NumberFormField } from '../../../../shared/components/ui/number-form-field/number-form-field';
+import { ToolView } from '../../../../shared/views/tool-view/tool-view';
 
 @Component({
   selector: 'app-distance-unit-converter',
