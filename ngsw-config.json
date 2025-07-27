@@ -33,9 +33,10 @@
         ]
       },
       "cacheConfig": {
-        "strategy": "performance",
+        "strategy": "freshness",
         "maxSize": 100,
-        "maxAge": "7d"
+        "maxAge": "1d",
+        "timeout": "5s"
       }
     }
   ],
@@ -44,9 +45,10 @@
       "name": "api-performance",
       "urls": ["/assets/i18n/*.json"],
       "cacheConfig": {
-        "strategy": "performance",
+        "strategy": "freshness",
         "maxSize": 100,
-        "maxAge": "1h"
+        "maxAge": "30m",
+        "timeout": "5s"
       }
     },
     {

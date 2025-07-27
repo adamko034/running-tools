@@ -23,20 +23,12 @@ import { provideServiceWorker } from '@angular/service-worker';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { routes } from './app.routes';
-import { SwUpdateService } from './core/services/sw-update.service';
 
 // Factory function for TranslateHttpLoader
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, '/assets/i18n/', '.json');
 }
 
-// Factory function for SW Update Service initialization
-export function initializeSwUpdate() {
-  return () => {
-    // Service will auto-initialize in constructor
-    return Promise.resolve();
-  };
-}
 
 const firebaseConfig = {
   apiKey: 'AIzaSyDoMelBdC2zgCyf70Oiqf9am2gXxyGN04U',
@@ -74,11 +66,5 @@ export const appConfig: ApplicationConfig = {
       registrationStrategy: 'registerImmediately',
       scope: './',
     }),
-    {
-      provide: APP_INITIALIZER,
-      useFactory: initializeSwUpdate,
-      deps: [SwUpdateService],
-      multi: true,
-    },
   ],
 };

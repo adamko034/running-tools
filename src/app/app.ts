@@ -16,7 +16,6 @@ import { NavigationService } from './core/services/navigation.service';
 import { RouterService } from './core/services/router.service';
 import { UiService } from './core/services/ui.service';
 import { UnitStoreSelector } from './shared/components/store/unit-store-selector/unit-store-selector';
-import { UpdateNotificationComponent } from './shared/components/ui/update-notification/update-notification.component';
 import { VersionDisplayComponent } from './shared/components/ui/version-display/version-display.component';
 
 @Component({
@@ -28,7 +27,6 @@ import { VersionDisplayComponent } from './shared/components/ui/version-display/
     UnitStoreSelector,
     MatSidenavModule,
     MatToolbarModule,
-    UpdateNotificationComponent,
     VersionDisplayComponent,
   ],
   templateUrl: './app.html',
