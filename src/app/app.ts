@@ -62,9 +62,10 @@ export class App implements AfterViewInit {
 
   @HostListener('window:scroll')
   onWindowScroll() {
-    if (!this.navBarElement || this.isMobile) return;
+    if (!this.navBarElement) return;
 
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollDifference = Math.abs(scrollTop - this.lastScrollTop);
 
     // Add scrolled class when scrolling down
     if (scrollTop > 50) {
@@ -73,16 +74,17 @@ export class App implements AfterViewInit {
       this.navBarElement.classList.remove('scrolled');
     }
 
-    // Hide navbar when scrolling down fast, show when scrolling up
-    if (scrollTop > this.lastScrollTop && scrollTop > 200) {
-      // Scrolling down
-      this.navBarElement.classList.add('hidden');
-    } else {
-      // Scrolling up
-      this.navBarElement.classList.remove('hidden');
+    // Only hide/show navbar on significant scroll movements to prevent shaking
+    if (scrollDifference > 10) {
+      if (scrollTop > this.lastScrollTop && scrollTop > 200) {
+        // Scrolling down - hide navbar
+        this.navBarElement.classList.add('hidden');
+      } else if (scrollTop < this.lastScrollTop) {
+        // Scrolling up - show navbar
+        this.navBarElement.classList.remove('hidden');
+      }
+      this.lastScrollTop = scrollTop;
     }
-
-    this.lastScrollTop = scrollTop;
   }
 
   setActiveCategory(category: Navigation) {

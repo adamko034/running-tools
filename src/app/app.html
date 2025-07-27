@@ -75,16 +75,19 @@
     <main class="main-content">
       <router-outlet></router-outlet>
     </main>
+    <!-- Footer inside sidenav-content for mobile -->
+    <app-footer></app-footer>
   </mat-sidenav-content>
 </mat-sidenav-container>
 
 <!-- Desktop content -->
-<main *ngIf="!isMobile" class="main-content">
-  <router-outlet></router-outlet>
-</main>
-
-<!-- Footer -->
-<app-footer></app-footer>
+<div *ngIf="!isMobile">
+  <main class="main-content">
+    <router-outlet></router-outlet>
+  </main>
+  <!-- Footer for desktop -->
+  <app-footer></app-footer>
+</div>
 
 <!-- Mobile Navigation Template -->
 <ng-template #mobileNav>

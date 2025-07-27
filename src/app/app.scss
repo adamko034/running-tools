@@ -2,6 +2,7 @@
   --bright-blue: oklch(51.01% 0.274 263.83);
 }
 
+
 // Top Navigation Bar Styles
 .top-nav-bar {
   display: flex;
@@ -11,21 +12,22 @@
   background: white;
   border-bottom: 1px solid #e5e7eb;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
 
   &.scrolled {
     opacity: 0.95;
-    transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
 
   &.hidden {
-    opacity: 0;
     transform: translateY(-100%);
     pointer-events: none;
+    transition: transform 0.3s ease;
   }
 }
 
@@ -170,7 +172,7 @@
 
 // Main Content
 .main-content {
-  padding: 1rem 1.5rem;
+  padding: calc(1rem + 70px) 1.5rem 1rem; // Add top padding for fixed navbar
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
@@ -178,7 +180,7 @@
 
 // Mobile Navigation Styles
 .mobile-nav-container {
-  height: calc(100vh - 60px); // Account for top nav bar
+  min-height: 100vh; // Full height but allow content to expand
 }
 
 .mobile-drawer {
@@ -417,6 +419,6 @@
   }
 
   .main-content {
-    padding: 1rem;
+    padding: calc(1rem + 70px) 1rem 1rem; // Add top padding for fixed navbar on mobile
   }
 }
