@@ -891,5 +891,33 @@
       "email_button": "Go to Contact Page"
     },
     "back_to_home": "Back to Home"
+  },
+  "cookie_consent": {
+    "title": "We Use Cookies",
+    "description": "We use cookies to enhance your experience, analyze site usage, and provide personalized advertisements. You can customize your preferences or accept all cookies.",
+    "privacy_policy_link": "Learn more in our Privacy Policy",
+    "accept_all": "Accept All Cookies",
+    "reject_all": "Reject All",
+    "customize": "Customize",
+    "hide_details": "Hide Details",
+    "save_preferences": "Save Preferences",
+    "customize_title": "Customize Cookie Preferences",
+    "always_active": "Always Active",
+    "essential": {
+      "title": "Essential Cookies",
+      "description": "Required for basic website functionality, user preferences, and security. Cannot be disabled."
+    },
+    "analytics": {
+      "title": "Analytics Cookies",
+      "description": "Help us understand how you use our app through Firebase Analytics. Used to improve performance and user experience."
+    },
+    "advertising": {
+      "title": "Advertising Cookies",
+      "description": "Used by Google AdSense to show relevant advertisements and measure ad effectiveness. May track you across websites."
+    },
+    "help_us": {
+      "title": "Help us keep Runner Toolkit free! ",
+      "description": "This app is completely free thanks to ads and analytics. Your acceptance helps us improve features and develop new tools for runners worldwide."
+    }
   }
 }
