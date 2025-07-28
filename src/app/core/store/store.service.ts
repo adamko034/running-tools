@@ -14,6 +14,7 @@ import { WeightUnit } from '../business/model/enums/weight-unit.enum';
 import { Height } from '../business/model/height.model';
 import { Pace } from '../business/model/pace.model';
 import { Time } from '../business/model/time.model';
+import { LoggerDev } from '../utils/logger-dev';
 import { Sex } from './../business/model/enums/sex.enum';
 import { Weight } from './../business/model/weight.model';
 import { LocalStorageService } from './../services/local-storage.service';
@@ -71,11 +72,9 @@ export class StoreService {
   constructor() {
     this._store = signal<Store>(this.loadStore());
     effect(() => {
-      console.log('store change');
+      LoggerDev.log('store change', this._store);
       this.calculatePace();
       this.saveStore();
-
-      console.log(this._store());
     });
   }
 
@@ -110,7 +109,6 @@ export class StoreService {
   }
 
   public updatePace(newPace: Pace) {
-    console.log('store, updating pace current: ', this._store().pace.format());
     const time = newPace.toTime(this._store().distance);
     this._store.update(current => ({ ...current, time }));
   }

@@ -10,6 +10,7 @@ import {
   FAQItem,
   StructuredDataService,
 } from '../../../../core/services/structured-data.service';
+import { LoggerDev } from '../../../../core/utils/logger-dev';
 
 @Component({
   selector: 'app-faq-section',
@@ -71,7 +72,7 @@ export class FaqSectionComponent implements OnInit, OnDestroy, AfterViewInit {
         this.structuredDataService.addFAQSchema(this.faqItems, this.pageTitle);
       }
     } catch (error) {
-      console.warn('Error extracting FAQ data for schema markup:', error);
+      LoggerDev.warn('Error extracting FAQ data for schema markup:', error);
     }
   }
 }

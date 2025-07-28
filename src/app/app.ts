@@ -12,12 +12,15 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Navigation } from './core/navigation/navigation.model';
+import { AnalyticsService } from './core/services/analytics.service';
 import { NavigationService } from './core/services/navigation.service';
+import { PageTrackingService } from './core/services/page-tracking.service';
 import { RouterService } from './core/services/router.service';
 import { UiService } from './core/services/ui.service';
+import { LoggerDev } from './core/utils/logger-dev';
 import { UnitStoreSelector } from './shared/components/store/unit-store-selector/unit-store-selector';
-import { FooterComponent } from './shared/components/ui/footer/footer.component';
 import { CookieConsentComponent } from './shared/components/ui/cookie-consent/cookie-consent.component';
+import { FooterComponent } from './shared/components/ui/footer/footer.component';
 
 @Component({
   selector: 'app-root',
@@ -49,7 +52,9 @@ export class App implements AfterViewInit {
     private routerService: RouterService,
     private uiService: UiService,
     private navigationService: NavigationService,
-    private elementRef: ElementRef
+    private elementRef: ElementRef,
+    private analyticsService: AnalyticsService,
+    private pageTrackingService: PageTrackingService
   ) {
     this.isHomePage$ = this.routerService.isHomePage$;
     this.navigation$ = this.navigationService.getNavigation();
@@ -60,6 +65,14 @@ export class App implements AfterViewInit {
   ngAfterViewInit() {
     this.navBarElement =
       this.elementRef.nativeElement.querySelector('.top-nav-bar');
+
+    // Log app start event (only works if user has consented)
+    this.analyticsService.logEvent('app_start', {
+      timestamp: new Date().toISOString(),
+    });
+
+    // Page tracking is automatically handled by PageTrackingService
+    LoggerDev.log('Page tracking service initialized');
   }
 
   @HostListener('window:scroll')

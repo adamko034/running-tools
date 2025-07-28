@@ -895,6 +895,7 @@
   "cookie_consent": {
     "title": "We Use Cookies",
     "description": "We use cookies to enhance your experience, analyze site usage, and provide personalized advertisements. You can customize your preferences or accept all cookies.",
+    "description_returning": "Thank you for using Runner Toolkit! We're asking again about cookies to ensure you have the best experience. Your support helps us keep this app free and continuously improve our tools for runners worldwide.",
     "privacy_policy_link": "Learn more in our Privacy Policy",
     "accept_all": "Accept All Cookies",
     "reject_all": "Reject All",

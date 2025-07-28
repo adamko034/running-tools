@@ -6,6 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
+import { LoggerDev } from '../../../../core/utils/logger-dev';
 
 interface CookiePreferences {
   essential: boolean;
@@ -23,14 +24,15 @@ interface CookiePreferences {
     MatSlideToggleModule,
     TranslateModule,
     RouterModule,
-    FormsModule
+    FormsModule,
   ],
   templateUrl: './cookie-consent.component.html',
-  styleUrl: './cookie-consent.component.scss'
+  styleUrl: './cookie-consent.component.scss',
 })
 export class CookieConsentComponent implements OnInit {
   showBanner = false;
   showDetails = false;
+  isReturningUser = false;
 
   preferences: CookiePreferences = {
     essential: true, // Always required
@@ -48,8 +50,8 @@ export class CookieConsentComponent implements OnInit {
   private readonly RETRY_AFTER_OPENS = 20;
 
   ngOnInit(): void {
-    this.incrementAppOpens();
     this.checkConsentStatus();
+    this.incrementAppOpensIfNeeded();
   }
 
   private checkConsentStatus(): void {
@@ -62,6 +64,7 @@ export class CookieConsentComponent implements OnInit {
 
     // Check if we should retry asking for consent
     if (this.shouldRetryConsent()) {
+      this.isReturningUser = true;
       this.resetConsentForRetry();
       this.showBannerWithDelay();
       return;
@@ -122,11 +125,25 @@ export class CookieConsentComponent implements OnInit {
     return false;
   }
 
-  private incrementAppOpens(): void {
+  private incrementAppOpensIfNeeded(): void {
+    // Check if user has already accepted all cookies
+    const savedPreferences = localStorage.getItem(this.PREFERENCES_KEY);
+    if (savedPreferences) {
+      const preferences = JSON.parse(savedPreferences);
+      // If user accepted all cookies, don't increment counter
+      if (preferences.analytics && preferences.advertising) {
+        LoggerDev.log('User has accepted all cookies - not incrementing app opens counter');
+        return;
+      }
+    }
+
+    // Only increment if user hasn't accepted all cookies
     const currentOpens = parseInt(
       localStorage.getItem(this.APP_OPENS_KEY) || '0'
     );
-    localStorage.setItem(this.APP_OPENS_KEY, (currentOpens + 1).toString());
+    const newOpens = currentOpens + 1;
+    localStorage.setItem(this.APP_OPENS_KEY, newOpens.toString());
+    LoggerDev.log(`App opens incremented to: ${newOpens}`);
   }
 
   private resetConsentForRetry(): void {
@@ -143,16 +160,30 @@ export class CookieConsentComponent implements OnInit {
     };
   }
 
+  private resetCountersForDecline(): void {
+    // Reset app opens counter to 0 so the count starts fresh
+    localStorage.setItem(this.APP_OPENS_KEY, '0');
+    
+    LoggerDev.log('Counters reset for decline - app opens and time will start counting from 0');
+  }
+
   acceptAll(): void {
     this.preferences = {
       essential: true,
       analytics: true,
-      advertising: true
+      advertising: true,
     };
+    // Reset app opens counter to 0 since we won't need to track anymore
+    localStorage.setItem(this.APP_OPENS_KEY, '0');
+    LoggerDev.log('User accepted all cookies - app opens counter reset to 0');
     this.hideBannerWithAnimation();
   }
 
   acceptSelected(): void {
+    // If user didn't accept all cookies, reset counters for next retry
+    if (!this.preferences.analytics || !this.preferences.advertising) {
+      this.resetCountersForDecline();
+    }
     this.hideBannerWithAnimation();
   }
 
@@ -160,8 +191,9 @@ export class CookieConsentComponent implements OnInit {
     this.preferences = {
       essential: true, // Essential cookies cannot be disabled
       analytics: false,
-      advertising: false
+      advertising: false,
     };
+    this.resetCountersForDecline();
     this.hideBannerWithAnimation();
   }
 
@@ -171,7 +203,7 @@ export class CookieConsentComponent implements OnInit {
     if (bannerElement) {
       bannerElement.classList.add('fade-out');
     }
-    
+
     // Hide banner after animation completes
     setTimeout(() => {
       this.saveConsent();
@@ -208,7 +240,7 @@ export class CookieConsentComponent implements OnInit {
     );
     localStorage.setItem(this.LAST_CONSENT_DATE_KEY, Date.now().toString());
 
-    console.log('Consent saved:', {
+    LoggerDev.log('Consent saved:', {
       preferences: this.preferences,
       appOpensAtConsent: currentAppOpens,
       acceptedAll: this.preferences.analytics && this.preferences.advertising,
@@ -244,7 +276,7 @@ export class CookieConsentComponent implements OnInit {
       })
     );
 
-    console.log('Cookie consent applied:', this.preferences);
+    LoggerDev.log('Cookie consent applied:', this.preferences);
   }
 
   // Method to reset consent (for testing or user preference changes)
@@ -265,6 +297,6 @@ export class CookieConsentComponent implements OnInit {
   // Method to force show banner (for testing)
   forceShowBanner(): void {
     this.showBanner = true;
-    console.log('Banner forced to show');
+    LoggerDev.log('Banner forced to show');
   }
 }

@@ -21,9 +21,14 @@
           id="cookie-consent-description"
           class="text-gray-700 text-sm leading-relaxed mb-3"
         >
-          {{ 'cookie_consent.description' | translate }}
+          {{
+            (isReturningUser
+              ? 'cookie_consent.description_returning'
+              : 'cookie_consent.description'
+            ) | translate
+          }}
           <a
-            routerLink="/privacy"
+            routerLink="/privacy-policy"
             class="text-blue-600 hover:text-blue-800 underline"
           >
             {{ 'cookie_consent.privacy_policy_link' | translate }}
@@ -77,7 +82,10 @@
     </div>
 
     <!-- Detailed Cookie Settings -->
-    <div *ngIf="showDetails" class="mt-6 pt-6 border-t border-gray-200 details-section">
+    <div
+      *ngIf="showDetails"
+      class="mt-6 pt-6 border-t border-gray-200 details-section"
+    >
       <h4 class="font-medium text-gray-900 mb-4">
         {{ 'cookie_consent.customize_title' | translate }}
       </h4>
