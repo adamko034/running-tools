@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "npm run set-version && ng serve",
     "build": "npm run set-version && ng build",
+    "build:debug": "ng build --verbose > ng-build.log 2>&1",
     "build:ssr": "npm run set-version && ng build --configuration production",
     "serve:ssr": "node dist/running-tools/server/server.mjs",
     "watch": "npm run set-version && ng build --watch --configuration development",
@@ -15,7 +16,6 @@
     "version:minor": "npm version minor && npm run set-version",
     "version:major": "npm version major && npm run set-version",
     "build:prod": "npm version patch --no-git-tag-version && npm run set-version -- --commit && ng build --configuration production",
-    "push-version": "node scripts/push-version.js",
     "build:prod-no-commit": "npm version patch --no-git-tag-version && npm run set-version && ng build --configuration production"
   },
   "private": true,
