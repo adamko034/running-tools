@@ -6,6 +6,11 @@ import {
   provideBrowserGlobalErrorListeners,
   provideZoneChangeDetection,
 } from '@angular/core';
+import {
+  getAnalytics,
+  provideAnalytics,
+  UserTrackingService,
+} from '@angular/fire/analytics';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import {
   provideClientHydration,
@@ -15,11 +20,27 @@ import { provideRouter, withInMemoryScrolling } from '@angular/router';
 import { provideServiceWorker } from '@angular/service-worker';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { Observable, of } from 'rxjs';
 import { routes } from './app.routes';
 
-// Factory function for TranslateHttpLoader
+// Server-side loader that returns empty translations
+class ServerTranslateLoader implements TranslateLoader {
+  getTranslation(lang: string): Observable<any> {
+    // Return empty object for SSR - translations will load in browser
+    return of({});
+  }
+}
+
+// Factory function for TranslateLoader
 export function createTranslateLoader(http: HttpClient) {
-  return new TranslateHttpLoader(http, '/assets/i18n/', '.json');
+  // Check if we're in browser environment
+  if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
+    // Use HTTP loader in browser
+    return new TranslateHttpLoader(http, '/assets/i18n/', '.json');
+  } else {
+    // Use server loader during SSR
+    return new ServerTranslateLoader();
+  }
 }
 
 const firebaseConfig = {
@@ -32,6 +53,15 @@ const firebaseConfig = {
   measurementId: 'G-8JEM0W90KY',
 };
 
+function hasAnalyticsConsent(): boolean {
+  if (typeof window === 'undefined' || typeof localStorage === 'undefined') return false; // SSR check
+  try {
+    return localStorage.getItem('cookie-consent') === 'accepted';
+  } catch {
+    return false;
+  }
+}
+
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
@@ -43,7 +73,11 @@ export const appConfig: ApplicationConfig = {
         anchorScrolling: 'enabled',
       })
     ),
-    provideClientHydration(withEventReplay()),
+    // Only enable hydration in production with SSR
+    ...(typeof document !== 'undefined' &&
+    document.querySelector('script[type="application/json"]')
+      ? [provideClientHydration(withEventReplay())]
+      : []),
     provideHttpClient(),
     importProvidersFrom(
       TranslateModule.forRoot({
@@ -56,8 +90,9 @@ export const appConfig: ApplicationConfig = {
       })
     ),
     provideFirebaseApp(() => initializeApp(firebaseConfig)),
-    //provideAnalytics(() => getAnalytics()),
-    //UserTrackingService,
+    ...(hasAnalyticsConsent()
+      ? [provideAnalytics(() => getAnalytics()), UserTrackingService]
+      : []),
     provideServiceWorker('ngsw-worker.js', {
       enabled: !isDevMode(),
       registrationStrategy: 'registerImmediately',

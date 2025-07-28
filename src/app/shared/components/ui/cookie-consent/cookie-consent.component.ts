@@ -1,5 +1,5 @@
-import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { Component, inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -30,6 +30,8 @@ interface CookiePreferences {
   styleUrl: './cookie-consent.component.scss',
 })
 export class CookieConsentComponent implements OnInit {
+  private platformId = inject(PLATFORM_ID);
+
   showBanner = false;
   showDetails = false;
   isReturningUser = false;
@@ -55,6 +57,8 @@ export class CookieConsentComponent implements OnInit {
   }
 
   private checkConsentStatus(): void {
+    if (!isPlatformBrowser(this.platformId)) return;
+
     const consent = localStorage.getItem(this.CONSENT_KEY);
 
     if (!consent) {
@@ -88,6 +92,8 @@ export class CookieConsentComponent implements OnInit {
   }
 
   private shouldRetryConsent(): boolean {
+    if (!isPlatformBrowser(this.platformId)) return false;
+
     const savedPreferences = localStorage.getItem(this.PREFERENCES_KEY);
     if (!savedPreferences) return false;
 
@@ -126,13 +132,17 @@ export class CookieConsentComponent implements OnInit {
   }
 
   private incrementAppOpensIfNeeded(): void {
+    if (!isPlatformBrowser(this.platformId)) return;
+
     // Check if user has already accepted all cookies
     const savedPreferences = localStorage.getItem(this.PREFERENCES_KEY);
     if (savedPreferences) {
       const preferences = JSON.parse(savedPreferences);
       // If user accepted all cookies, don't increment counter
       if (preferences.analytics && preferences.advertising) {
-        LoggerDev.log('User has accepted all cookies - not incrementing app opens counter');
+        LoggerDev.log(
+          'User has accepted all cookies - not incrementing app opens counter'
+        );
         return;
       }
     }
@@ -147,6 +157,8 @@ export class CookieConsentComponent implements OnInit {
   }
 
   private resetConsentForRetry(): void {
+    if (!isPlatformBrowser(this.platformId)) return;
+
     // Clear consent data but keep app opens counter
     localStorage.removeItem(this.CONSENT_KEY);
     localStorage.removeItem(this.PREFERENCES_KEY);
@@ -161,10 +173,14 @@ export class CookieConsentComponent implements OnInit {
   }
 
   private resetCountersForDecline(): void {
+    if (!isPlatformBrowser(this.platformId)) return;
+
     // Reset app opens counter to 0 so the count starts fresh
     localStorage.setItem(this.APP_OPENS_KEY, '0');
-    
-    LoggerDev.log('Counters reset for decline - app opens and time will start counting from 0');
+
+    LoggerDev.log(
+      'Counters reset for decline - app opens and time will start counting from 0'
+    );
   }
 
   acceptAll(): void {
@@ -174,7 +190,9 @@ export class CookieConsentComponent implements OnInit {
       advertising: true,
     };
     // Reset app opens counter to 0 since we won't need to track anymore
-    localStorage.setItem(this.APP_OPENS_KEY, '0');
+    if (isPlatformBrowser(this.platformId)) {
+      localStorage.setItem(this.APP_OPENS_KEY, '0');
+    }
     LoggerDev.log('User accepted all cookies - app opens counter reset to 0');
     this.hideBannerWithAnimation();
   }
@@ -224,6 +242,8 @@ export class CookieConsentComponent implements OnInit {
   }
 
   private saveConsent(): void {
+    if (!isPlatformBrowser(this.platformId)) return;
+
     const currentAppOpens = parseInt(
       localStorage.getItem(this.APP_OPENS_KEY) || '0'
     );
@@ -281,6 +301,8 @@ export class CookieConsentComponent implements OnInit {
 
   // Method to reset consent (for testing or user preference changes)
   resetConsent(): void {
+    if (!isPlatformBrowser(this.platformId)) return;
+
     localStorage.removeItem(this.CONSENT_KEY);
     localStorage.removeItem(this.PREFERENCES_KEY);
     localStorage.removeItem(this.LAST_CONSENT_DATE_KEY);

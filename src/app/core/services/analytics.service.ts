@@ -1,4 +1,5 @@
-import { inject, Injectable } from '@angular/core';
+import { inject, Injectable, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { Analytics, getAnalytics, logEvent } from '@angular/fire/analytics';
 import { FirebaseApp } from '@angular/fire/app';
 import { LoggerDev } from '../utils/logger-dev';
@@ -8,16 +9,20 @@ import { LoggerDev } from '../utils/logger-dev';
 })
 export class AnalyticsService {
   private firebaseApp = inject(FirebaseApp);
+  private platformId = inject(PLATFORM_ID);
   private analytics: Analytics | null = null;
   private isEnabled = false;
 
   constructor() {
-    this.checkConsentAndInitialize();
+    // Only initialize in browser
+    if (isPlatformBrowser(this.platformId)) {
+      this.checkConsentAndInitialize();
 
-    // Listen for consent changes
-    window.addEventListener('cookieConsentChanged', (event: any) => {
-      this.handleConsentChange(event.detail);
-    });
+      // Listen for consent changes
+      window.addEventListener('cookieConsentChanged', (event: any) => {
+        this.handleConsentChange(event.detail);
+      });
+    }
   }
 
   private checkConsentAndInitialize(): void {

@@ -6,7 +6,9 @@ import {
   Signal,
   signal,
   WritableSignal,
+  PLATFORM_ID,
 } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { Distance } from '../business/model/distance.model';
 import { DistanceUnit } from '../business/model/enums/distance-unit.enum';
 import { HeightUnit } from '../business/model/enums/height-unit.enum';
@@ -26,7 +28,7 @@ import { Units } from './units.enum';
 })
 export class StoreService {
   private readonly _store: WritableSignal<Store>;
-
+  private platformId = inject(PLATFORM_ID);
   private localStorageService = inject(LocalStorageService);
 
   get store(): Signal<Store> {
@@ -74,7 +76,10 @@ export class StoreService {
     effect(() => {
       LoggerDev.log('store change', this._store);
       this.calculatePace();
-      this.saveStore();
+      // Only save to localStorage in browser
+      if (isPlatformBrowser(this.platformId)) {
+        this.saveStore();
+      }
     });
   }
 
@@ -160,9 +165,14 @@ export class StoreService {
   }
 
   private loadStore(): Store {
-    const stored = this.localStorageService.load();
     const initialStore = this.initialValues();
+    
+    // During SSR, just return initial values
+    if (!isPlatformBrowser(this.platformId)) {
+      return initialStore;
+    }
 
+    const stored = this.localStorageService.load();
     if (!stored) {
       return initialStore;
     }

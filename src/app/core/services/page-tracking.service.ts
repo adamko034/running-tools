@@ -1,4 +1,5 @@
-import { Injectable, inject } from '@angular/core';
+import { Injectable, inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { NavigationLink } from '../navigation/navigation-link.model';
@@ -18,12 +19,16 @@ export class PageTrackingService {
   private router = inject(Router);
   private analyticsService = inject(AnalyticsService);
   private navigationService = inject(NavigationService);
+  private platformId = inject(PLATFORM_ID);
 
   private pageMap: Record<string, PageInfo> = {};
   private isInitialized = false;
 
   constructor() {
-    this.initializePageTracking();
+    // Only initialize page tracking in browser
+    if (isPlatformBrowser(this.platformId)) {
+      this.initializePageTracking();
+    }
   }
 
   private async initializePageTracking(): Promise<void> {
@@ -119,9 +124,10 @@ export class PageTrackingService {
 
     if (pageInfo) {
       // Log the page view event
+      const pageLocation = isPlatformBrowser(this.platformId) ? window.location.href : '';
       this.analyticsService.logEvent(pageInfo.event_name, {
         page_title: pageInfo.page_title,
-        page_location: window.location.href,
+        page_location: pageLocation,
       });
 
       LoggerDev.log(
@@ -132,9 +138,10 @@ export class PageTrackingService {
       const fallbackEventName = this.generateEventNameFromRoute(cleanUrl);
       const fallbackTitle = this.generateFallbackTitle(cleanUrl);
 
+      const pageLocation = isPlatformBrowser(this.platformId) ? window.location.href : '';
       this.analyticsService.logEvent(fallbackEventName, {
         page_title: fallbackTitle,
-        page_location: window.location.href,
+        page_location: pageLocation,
         page_path: cleanUrl,
       });
 
