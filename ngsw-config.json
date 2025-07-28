@@ -30,6 +30,19 @@
       }
     }
   ],
+  "navigationUrls": [
+    "/**",
+    "!/**/*.*",
+    "!/**/*__*",
+    "!/**/*__*/**",
+    "!/**/collect*",
+    "!/**/*googlesyndication*",
+    "!/**/*doubleclick*",
+    "!/**/*google-analytics*",
+    "!/**/*googletagmanager*",
+    "!/**/*firebase*",
+    "!/**/*firebaseapp*"
+  ],
   "dataGroups": [
     {
       "name": "api-freshness",
@@ -39,20 +52,6 @@
         "maxSize": 10,
         "maxAge": "1d",
         "timeout": "5s"
-      }
-    },
-    {
-      "name": "no-cache-google-analytics",
-      "urls": [
-        "https://region1.google-analytics.com/**",
-        "https://www.google-analytics.com/**",
-        "https://www.googletagmanager.com/**"
-      ],
-      "cacheConfig": {
-        "strategy": "freshness",
-        "maxSize": 0,
-        "maxAge": "0u",
-        "timeout": "0u"
       }
     }
   ]
