@@ -127,6 +127,18 @@ export class SeoService {
     });
   }
 
+  updatePrivacyPolicyMeta() {
+    this.title.setTitle('Privacy Policy - Runner Toolkit');
+    this.updateMeta({
+      description: 'Runner Toolkit Privacy Policy. Learn how we collect, use, and protect your data. Information about Google AdSense, Firebase Analytics, and your privacy rights.',
+      keywords: 'privacy policy, data protection, GDPR, cookies, Google AdSense, Firebase Analytics, user privacy',
+      'og:title': 'Privacy Policy - Runner Toolkit',
+      'og:description': 'Runner Toolkit Privacy Policy. Learn how we collect, use, and protect your data. Information about Google AdSense, Firebase Analytics, and your privacy rights.',
+      'twitter:title': 'Privacy Policy - Runner Toolkit',
+      'twitter:description': 'Runner Toolkit Privacy Policy. Learn how we collect, use, and protect your data. Information about Google AdSense, Firebase Analytics, and your privacy rights.'
+    });
+  }
+
   private updateMeta(tags: { [key: string]: string }) {
     Object.keys(tags).forEach(key => {
       if (key.startsWith('og:') || key.startsWith('twitter:')) {

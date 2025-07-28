@@ -716,5 +716,180 @@
         "A8": "Yes! Your threshold pace approximates your 10K-15K race pace, tempo pace is close to half-marathon pace, and your long run pace helps establish marathon pacing strategy. Use our <a href='/tools/race/finish-time-predictor' class='text-blue-600 hover:text-blue-800 underline'>Race Time Predictor</a> for more specific race pace guidance."
       }
     }
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "last_updated": "Last Updated",
+    "effective_date": "Effective Date",
+    "introduction": {
+      "title": "Introduction",
+      "content": "Welcome to Runner Toolkit. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our running calculator and fitness tools application.",
+      "commitment": "We are committed to protecting your privacy and ensuring you understand how your information is handled."
+    },
+    "information_collected": {
+      "title": "Information We Collect",
+      "analytics": {
+        "title": "Analytics Data (Firebase Analytics)",
+        "content": "We use Firebase Analytics to understand how users interact with our application. This service automatically collects:",
+        "items": {
+          "device_info": "Device information (type, operating system, browser)",
+          "usage_data": "App usage patterns and feature interactions",
+          "performance": "Performance metrics and crash reports",
+          "location": "General location data (country/region level)"
+        }
+      },
+      "local_storage": {
+        "title": "Local Storage Data",
+        "content": "We store certain information locally on your device to enhance your experience:",
+        "items": {
+          "preferences": "Your unit preferences (metric/imperial)",
+          "calculations": "Recent calculation history (stored locally only)",
+          "settings": "App settings and customizations"
+        }
+      }
+    },
+    "adsense": {
+      "title": "Google AdSense and Advertising",
+      "content": "We use Google AdSense to display advertisements. Google AdSense uses cookies and similar technologies to serve ads based on your interests.",
+      "cookies": {
+        "title": "Advertising Cookies",
+        "content": "Google AdSense may place and read cookies on your browser, or use web beacons to collect information in the course of ads being served."
+      },
+      "personalization": {
+        "title": "Ad Personalization",
+        "content": "Ads may be personalized based on your interests. You can control ad personalization through Google's Ad Settings."
+      },
+      "opt_out_link": "Manage Ad Preferences"
+    },
+    "firebase": {
+      "title": "Firebase Analytics and User Tracking",
+      "content": "We use Firebase Analytics to collect information about how you use our app. This helps us improve our services and understand user behavior.",
+      "data_collected": {
+        "title": "Data Collected by Firebase",
+        "items": {
+          "events": "User interactions and app events",
+          "demographics": "Age and gender (when available)",
+          "interests": "Interest categories based on usage",
+          "crashes": "Crash reports and performance data"
+        }
+      },
+      "opt_out": "You can opt out of Google Analytics tracking by installing the Google Analytics Opt-out Browser Add-on.",
+      "opt_out_link": "Download Google Analytics Opt-out Add-on"
+    },
+    "how_we_use": {
+      "title": "How We Use Your Information",
+      "items": {
+        "improve_service": "Improve and optimize our application and services",
+        "understand_usage": "Understand how users interact with our features",
+        "personalize_ads": "Provide relevant advertisements through Google AdSense",
+        "technical_issues": "Identify and fix technical issues and bugs",
+        "security": "Maintain the security and integrity of our services"
+      }
+    },
+    "legal_basis": {
+      "title": "Legal Basis for Processing (GDPR)",
+      "content": "Under the General Data Protection Regulation (GDPR), we process your personal data based on the following legal grounds:",
+      "items": {
+        "legitimate_interest": {
+          "name": "Legitimate Interest",
+          "description": "Analytics and app improvement (Firebase Analytics) - we have a legitimate business interest in understanding how our app is used"
+        },
+        "consent": {
+          "name": "Consent",
+          "description": "Advertising cookies and personalized ads (Google AdSense) - you can withdraw consent at any time through browser settings"
+        },
+        "contract": {
+          "name": "Contract Performance",
+          "description": "Essential app functionality and user preferences - necessary to provide the service you requested"
+        }
+      }
+    },
+    "data_sharing": {
+      "title": "Information Sharing and Disclosure",
+      "content": "We do not sell, trade, or otherwise transfer your personal information to third parties except as described below:",
+      "items": {
+        "google_analytics": "Google Analytics and Firebase for analytics purposes",
+        "google_adsense": "Google AdSense for advertising services",
+        "legal_requirements": "When required by law or to protect our rights"
+      }
+    },
+    "data_controller": {
+      "title": "Data Controller Information",
+      "content": "For the purposes of data protection law, the data controller of your personal information is:",
+      "name": "Data Controller",
+      "business_name": "elioapps",
+      "location": "Location",
+      "country": "Poland",
+      "contact": "Contact Email"
+    },
+    "international_transfers": {
+      "title": "International Data Transfers",
+      "content": "Your personal data may be transferred to and processed in countries outside your country of residence, including the United States, where Google's servers are located.",
+      "safeguards": {
+        "title": "Transfer Safeguards",
+        "items": {
+          "adequacy_decisions": "Transfers to countries with European Commission adequacy decisions",
+          "privacy_framework": "EU-US Data Privacy Framework for transfers to the United States",
+          "google_compliance": "Google's compliance with international data protection standards and contractual safeguards"
+        }
+      }
+    },
+    "your_rights": {
+      "title": "Your Privacy Rights",
+      "content": "Under GDPR and other privacy laws, you have the following rights:",
+      "items": {
+        "access": "Right to access your personal data",
+        "rectification": "Right to correct inaccurate personal data",
+        "erasure": "Right to request deletion of your personal data",
+        "portability": "Right to data portability",
+        "objection": "Right to object to processing of your personal data"
+      }
+    },
+    "cookies": {
+      "title": "Cookies and Tracking Technologies",
+      "content": "We use cookies and similar tracking technologies to enhance your experience and provide our services.",
+      "types": {
+        "title": "Types of Cookies We Use",
+        "essential": {
+          "name": "Essential Cookies",
+          "description": "Required for basic app functionality and user preferences"
+        },
+        "analytics": {
+          "name": "Analytics Cookies",
+          "description": "Help us understand how you use our app (Firebase Analytics)"
+        },
+        "advertising": {
+          "name": "Advertising Cookies",
+          "description": "Used to serve relevant ads (Google AdSense)"
+        }
+      }
+    },
+    "data_retention": {
+      "title": "Data Retention",
+      "content": "We retain your information for different periods depending on the type of data and its purpose:",
+      "items": {
+        "analytics": "Analytics data (Firebase): Automatically deleted after 26 months (Google's default retention period)",
+        "local_storage": "Local storage data: Retained until you clear your browser data, uninstall the app, or manually delete it",
+        "advertising": "Advertising cookies: Typically expire after 30 days to 2 years depending on the specific cookie"
+      }
+    },
+    "security": {
+      "title": "Data Security",
+      "content": "We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the internet is 100% secure."
+    },
+    "children": {
+      "title": "Children's Privacy",
+      "content": "Our service is not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us."
+    },
+    "changes": {
+      "title": "Changes to This Privacy Policy",
+      "content": "We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the 'Last Updated' date. You are advised to review this Privacy Policy periodically for any changes."
+    },
+    "contact": {
+      "title": "Contact Us",
+      "content": "If you have any questions about this Privacy Policy or our privacy practices, please contact us:",
+      "email_button": "Go to Contact Page"
+    },
+    "back_to_home": "Back to Home"
   }
 }

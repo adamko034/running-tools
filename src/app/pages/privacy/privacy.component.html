@@ -1,0 +1,306 @@
+<div class="max-w-4xl mx-auto p-6 md:p-8 min-h-screen">
+  <!-- Header -->
+  <div class="text-center mb-8">
+    <h1 class="text-3xl md:text-4xl font-light mb-4 text-blue-600">
+      {{ 'privacy.title' | translate }}
+    </h1>
+    <p class="text-gray-600 mb-2">
+      {{ 'privacy.last_updated' | translate }}: {{ lastUpdated }}
+    </p>
+    <p class="text-gray-600">
+      {{ 'privacy.effective_date' | translate }}: {{ lastUpdated }}
+    </p>
+  </div>
+
+  <!-- Introduction -->
+  <section class="mb-8">
+    <h2 class="text-2xl font-semibold mb-4 text-gray-800">
+      {{ 'privacy.introduction.title' | translate }}
+    </h2>
+    <p class="text-gray-700 leading-relaxed mb-4">
+      {{ 'privacy.introduction.content' | translate }}
+    </p>
+    <p class="text-gray-700 leading-relaxed">
+      {{ 'privacy.introduction.commitment' | translate }}
+    </p>
+  </section>
+
+  <!-- Information We Collect -->
+  <section class="mb-8">
+    <h2 class="text-2xl font-semibold mb-4 text-gray-800">
+      {{ 'privacy.information_collected.title' | translate }}
+    </h2>
+    
+    <h3 class="text-xl font-medium mb-3 text-gray-700">
+      {{ 'privacy.information_collected.analytics.title' | translate }}
+    </h3>
+    <p class="text-gray-700 leading-relaxed mb-4">
+      {{ 'privacy.information_collected.analytics.content' | translate }}
+    </p>
+    <ul class="list-disc list-inside text-gray-700 mb-6 space-y-2">
+      <li>{{ 'privacy.information_collected.analytics.items.device_info' | translate }}</li>
+      <li>{{ 'privacy.information_collected.analytics.items.usage_data' | translate }}</li>
+      <li>{{ 'privacy.information_collected.analytics.items.performance' | translate }}</li>
+      <li>{{ 'privacy.information_collected.analytics.items.location' | translate }}</li>
+    </ul>
+
+    <h3 class="text-xl font-medium mb-3 text-gray-700">
+      {{ 'privacy.information_collected.local_storage.title' | translate }}
+    </h3>
+    <p class="text-gray-700 leading-relaxed mb-4">
+      {{ 'privacy.information_collected.local_storage.content' | translate }}
+    </p>
+    <ul class="list-disc list-inside text-gray-700 mb-6 space-y-2">
+      <li>{{ 'privacy.information_collected.local_storage.items.preferences' | translate }}</li>
+      <li>{{ 'privacy.information_collected.local_storage.items.calculations' | translate }}</li>
+      <li>{{ 'privacy.information_collected.local_storage.items.settings' | translate }}</li>
+    </ul>
+  </section>
+
+  <!-- Google AdSense -->
+  <section class="mb-8">
+    <h2 class="text-2xl font-semibold mb-4 text-gray-800">
+      {{ 'privacy.adsense.title' | translate }}
+    </h2>
+    <p class="text-gray-700 leading-relaxed mb-4">
+      {{ 'privacy.adsense.content' | translate }}
+    </p>
+    <h3 class="text-xl font-medium mb-3 text-gray-700">
+      {{ 'privacy.adsense.cookies.title' | translate }}
+    </h3>
+    <p class="text-gray-700 leading-relaxed mb-4">
+      {{ 'privacy.adsense.cookies.content' | translate }}
+    </p>
+    <h3 class="text-xl font-medium mb-3 text-gray-700">
+      {{ 'privacy.adsense.personalization.title' | translate }}
+    </h3>
+    <p class="text-gray-700 leading-relaxed mb-4">
+      {{ 'privacy.adsense.personalization.content' | translate }}
+    </p>
+    <a 
+      href="https://www.google.com/settings/ads" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      class="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors"
+    >
+      <mat-icon class="mr-2">open_in_new</mat-icon>
+      {{ 'privacy.adsense.opt_out_link' | translate }}
+    </a>
+  </section>
+
+  <!-- Firebase Analytics -->
+  <section class="mb-8">
+    <h2 class="text-2xl font-semibold mb-4 text-gray-800">
+      {{ 'privacy.firebase.title' | translate }}
+    </h2>
+    <p class="text-gray-700 leading-relaxed mb-4">
+      {{ 'privacy.firebase.content' | translate }}
+    </p>
+    <h3 class="text-xl font-medium mb-3 text-gray-700">
+      {{ 'privacy.firebase.data_collected.title' | translate }}
+    </h3>
+    <ul class="list-disc list-inside text-gray-700 mb-6 space-y-2">
+      <li>{{ 'privacy.firebase.data_collected.items.events' | translate }}</li>
+      <li>{{ 'privacy.firebase.data_collected.items.demographics' | translate }}</li>
+      <li>{{ 'privacy.firebase.data_collected.items.interests' | translate }}</li>
+      <li>{{ 'privacy.firebase.data_collected.items.crashes' | translate }}</li>
+    </ul>
+    <p class="text-gray-700 leading-relaxed mb-4">
+      {{ 'privacy.firebase.opt_out' | translate }}
+    </p>
+    <a 
+      href="https://tools.google.com/dlpage/gaoptout" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      class="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors"
+    >
+      <mat-icon class="mr-2">open_in_new</mat-icon>
+      {{ 'privacy.firebase.opt_out_link' | translate }}
+    </a>
+  </section>
+
+  <!-- How We Use Information -->
+  <section class="mb-8">
+    <h2 class="text-2xl font-semibold mb-4 text-gray-800">
+      {{ 'privacy.how_we_use.title' | translate }}
+    </h2>
+    <ul class="list-disc list-inside text-gray-700 space-y-2">
+      <li>{{ 'privacy.how_we_use.items.improve_service' | translate }}</li>
+      <li>{{ 'privacy.how_we_use.items.understand_usage' | translate }}</li>
+      <li>{{ 'privacy.how_we_use.items.personalize_ads' | translate }}</li>
+      <li>{{ 'privacy.how_we_use.items.technical_issues' | translate }}</li>
+      <li>{{ 'privacy.how_we_use.items.security' | translate }}</li>
+    </ul>
+  </section>
+
+  <!-- Legal Basis for Processing -->
+  <section class="mb-8">
+    <h2 class="text-2xl font-semibold mb-4 text-gray-800">
+      {{ 'privacy.legal_basis.title' | translate }}
+    </h2>
+    <p class="text-gray-700 leading-relaxed mb-4">
+      {{ 'privacy.legal_basis.content' | translate }}
+    </p>
+    <ul class="list-disc list-inside text-gray-700 space-y-2">
+      <li><strong>{{ 'privacy.legal_basis.items.legitimate_interest.name' | translate }}:</strong> {{ 'privacy.legal_basis.items.legitimate_interest.description' | translate }}</li>
+      <li><strong>{{ 'privacy.legal_basis.items.consent.name' | translate }}:</strong> {{ 'privacy.legal_basis.items.consent.description' | translate }}</li>
+      <li><strong>{{ 'privacy.legal_basis.items.contract.name' | translate }}:</strong> {{ 'privacy.legal_basis.items.contract.description' | translate }}</li>
+    </ul>
+  </section>
+
+  <!-- Data Sharing -->
+  <section class="mb-8">
+    <h2 class="text-2xl font-semibold mb-4 text-gray-800">
+      {{ 'privacy.data_sharing.title' | translate }}
+    </h2>
+    <p class="text-gray-700 leading-relaxed mb-4">
+      {{ 'privacy.data_sharing.content' | translate }}
+    </p>
+    <ul class="list-disc list-inside text-gray-700 space-y-2">
+      <li>{{ 'privacy.data_sharing.items.google_analytics' | translate }}</li>
+      <li>{{ 'privacy.data_sharing.items.google_adsense' | translate }}</li>
+      <li>{{ 'privacy.data_sharing.items.legal_requirements' | translate }}</li>
+    </ul>
+  </section>
+
+  <!-- Data Controller Information -->
+  <section class="mb-8">
+    <h2 class="text-2xl font-semibold mb-4 text-gray-800">
+      {{ 'privacy.data_controller.title' | translate }}
+    </h2>
+    <p class="text-gray-700 leading-relaxed mb-4">
+      {{ 'privacy.data_controller.content' | translate }}
+    </p>
+    <div class="bg-gray-50 p-4 rounded-lg">
+      <p class="text-gray-700"><strong>{{ 'privacy.data_controller.name' | translate }}:</strong> {{ 'privacy.data_controller.business_name' | translate }}</p>
+      <p class="text-gray-700"><strong>{{ 'privacy.data_controller.location' | translate }}:</strong> {{ 'privacy.data_controller.country' | translate }}</p>
+      <p class="text-gray-700"><strong>{{ 'privacy.data_controller.contact' | translate }}:</strong> {{ email }}</p>
+    </div>
+  </section>
+
+  <!-- International Data Transfers -->
+  <section class="mb-8">
+    <h2 class="text-2xl font-semibold mb-4 text-gray-800">
+      {{ 'privacy.international_transfers.title' | translate }}
+    </h2>
+    <p class="text-gray-700 leading-relaxed mb-4">
+      {{ 'privacy.international_transfers.content' | translate }}
+    </p>
+    <h3 class="text-xl font-medium mb-3 text-gray-700">
+      {{ 'privacy.international_transfers.safeguards.title' | translate }}
+    </h3>
+    <ul class="list-disc list-inside text-gray-700 space-y-2">
+      <li>{{ 'privacy.international_transfers.safeguards.items.adequacy_decisions' | translate }}</li>
+      <li>{{ 'privacy.international_transfers.safeguards.items.privacy_framework' | translate }}</li>
+      <li>{{ 'privacy.international_transfers.safeguards.items.google_compliance' | translate }}</li>
+    </ul>
+  </section>
+
+  <!-- Your Rights -->
+  <section class="mb-8">
+    <h2 class="text-2xl font-semibold mb-4 text-gray-800">
+      {{ 'privacy.your_rights.title' | translate }}
+    </h2>
+    <p class="text-gray-700 leading-relaxed mb-4">
+      {{ 'privacy.your_rights.content' | translate }}
+    </p>
+    <ul class="list-disc list-inside text-gray-700 space-y-2">
+      <li>{{ 'privacy.your_rights.items.access' | translate }}</li>
+      <li>{{ 'privacy.your_rights.items.rectification' | translate }}</li>
+      <li>{{ 'privacy.your_rights.items.erasure' | translate }}</li>
+      <li>{{ 'privacy.your_rights.items.portability' | translate }}</li>
+      <li>{{ 'privacy.your_rights.items.objection' | translate }}</li>
+    </ul>
+  </section>
+
+  <!-- Cookies -->
+  <section class="mb-8">
+    <h2 class="text-2xl font-semibold mb-4 text-gray-800">
+      {{ 'privacy.cookies.title' | translate }}
+    </h2>
+    <p class="text-gray-700 leading-relaxed mb-4">
+      {{ 'privacy.cookies.content' | translate }}
+    </p>
+    <h3 class="text-xl font-medium mb-3 text-gray-700">
+      {{ 'privacy.cookies.types.title' | translate }}
+    </h3>
+    <ul class="list-disc list-inside text-gray-700 space-y-2">
+      <li><strong>{{ 'privacy.cookies.types.essential.name' | translate }}:</strong> {{ 'privacy.cookies.types.essential.description' | translate }}</li>
+      <li><strong>{{ 'privacy.cookies.types.analytics.name' | translate }}:</strong> {{ 'privacy.cookies.types.analytics.description' | translate }}</li>
+      <li><strong>{{ 'privacy.cookies.types.advertising.name' | translate }}:</strong> {{ 'privacy.cookies.types.advertising.description' | translate }}</li>
+    </ul>
+  </section>
+
+  <!-- Data Retention -->
+  <section class="mb-8">
+    <h2 class="text-2xl font-semibold mb-4 text-gray-800">
+      {{ 'privacy.data_retention.title' | translate }}
+    </h2>
+    <p class="text-gray-700 leading-relaxed mb-4">
+      {{ 'privacy.data_retention.content' | translate }}
+    </p>
+    <ul class="list-disc list-inside text-gray-700 space-y-2">
+      <li>{{ 'privacy.data_retention.items.analytics' | translate }}</li>
+      <li>{{ 'privacy.data_retention.items.local_storage' | translate }}</li>
+      <li>{{ 'privacy.data_retention.items.advertising' | translate }}</li>
+    </ul>
+  </section>
+
+  <!-- Data Security -->
+  <section class="mb-8">
+    <h2 class="text-2xl font-semibold mb-4 text-gray-800">
+      {{ 'privacy.security.title' | translate }}
+    </h2>
+    <p class="text-gray-700 leading-relaxed">
+      {{ 'privacy.security.content' | translate }}
+    </p>
+  </section>
+
+  <!-- Children's Privacy -->
+  <section class="mb-8">
+    <h2 class="text-2xl font-semibold mb-4 text-gray-800">
+      {{ 'privacy.children.title' | translate }}
+    </h2>
+    <p class="text-gray-700 leading-relaxed">
+      {{ 'privacy.children.content' | translate }}
+    </p>
+  </section>
+
+  <!-- Changes to Policy -->
+  <section class="mb-8">
+    <h2 class="text-2xl font-semibold mb-4 text-gray-800">
+      {{ 'privacy.changes.title' | translate }}
+    </h2>
+    <p class="text-gray-700 leading-relaxed">
+      {{ 'privacy.changes.content' | translate }}
+    </p>
+  </section>
+
+  <!-- Contact Information -->
+  <section class="mb-8">
+    <h2 class="text-2xl font-semibold mb-4 text-gray-800">
+      {{ 'privacy.contact.title' | translate }}
+    </h2>
+    <p class="text-gray-700 leading-relaxed mb-4">
+      {{ 'privacy.contact.content' | translate }}
+    </p>
+    <a 
+      routerLink="/contact"
+      class="inline-flex items-center bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+    >
+      <mat-icon class="mr-2">contact_support</mat-icon>
+      {{ 'privacy.contact.email_button' | translate }}
+    </a>
+  </section>
+
+  <!-- Back to Home -->
+  <div class="text-center mt-12">
+    <a 
+      routerLink="/" 
+      class="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors"
+    >
+      <mat-icon class="mr-2">arrow_back</mat-icon>
+      {{ 'privacy.back_to_home' | translate }}
+    </a>
+  </div>
+</div>

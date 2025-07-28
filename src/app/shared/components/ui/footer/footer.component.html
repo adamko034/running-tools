@@ -2,12 +2,15 @@
   <div class="max-w-7xl mx-auto px-4 py-8">
     <!-- Main Footer Content -->
     <div class="grid grid-cols-1 gap-6 footer-grid">
-      
       <!-- Brand & Description -->
       <div>
-      <!-- Brand & Description -->
+        <!-- Brand & Description -->
         <div class="flex items-center gap-2 mb-3">
-          <img src="icons/icon-48x48.png" alt="Runner Toolkit" class="w-5 h-5" />
+          <img
+            src="icons/icon-48x48.png"
+            alt="Runner Toolkit"
+            class="w-5 h-5"
+          />
           <span class="font-semibold text-lg">Runner Toolkit</span>
         </div>
         <p class="text-gray-300 text-sm mb-4 leading-relaxed">
@@ -80,13 +83,20 @@
         <h4 class="font-medium text-white mb-3">
           {{ 'footer.contact_us' | translate }}
         </h4>
-        <div class="text-sm space-y-3">
+        <div class="text-sm space-y-3 flex flex-col">
           <a
             routerLink="/contact"
             class="text-gray-300 hover:text-white transition-colors inline-flex items-center gap-2"
           >
             <mat-icon class="text-blue-400 text-lg">contact_support</mat-icon>
             {{ 'footer.get_help' | translate }}
+          </a>
+          <a
+            routerLink="/privacy-policy"
+            class="text-gray-300 hover:text-white transition-colors inline-flex items-center gap-2"
+          >
+            <mat-icon class="text-blue-400 text-lg">privacy_tip</mat-icon>
+            {{ 'footer.privacy_policy' | translate }}
           </a>
           <div class="flex gap-2">
             <span class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-300"
@@ -114,7 +124,7 @@
             <span>{{ 'footer.made_with' | translate }}</span>
             <mat-icon
               class="text-red-500 text-sm mx-1 inline-flex items-center justify-center"
-              style="color: #ef4444 !important;"
+              style="color: #ef4444 !important"
               >favorite</mat-icon
             >
             <span>{{ 'footer.for_runners' | translate }}</span>

@@ -1,9 +1,10 @@
-import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
-import { CommonModule, isPlatformBrowser, DOCUMENT } from '@angular/common';
-import { MatIconModule } from '@angular/material/icon';
+import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
-import { TranslateModule } from '@ngx-translate/core';
+import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
+import { environment } from '../../../../../environments/environment.prod';
 import { DataCatalog } from '../../../../core/business/catalog/data-catalog';
 import { AccentLineComponent } from '../accent-line/accent-line.component';
 
@@ -16,19 +17,19 @@ import { AccentLineComponent } from '../accent-line/accent-line.component';
     MatButtonModule,
     TranslateModule,
     RouterModule,
-    AccentLineComponent
+    AccentLineComponent,
   ],
   templateUrl: './footer.component.html',
-  styleUrl: './footer.component.scss'
+  styleUrl: './footer.component.scss',
 })
 export class FooterComponent implements OnInit {
   readonly currentYear = new Date().getFullYear();
   readonly email = DataCatalog.EMAIL;
   readonly createdBy = 'elioapps';
-  readonly version = '2.1.0'; // You can make this dynamic later
+  readonly version = environment.version;
 
   constructor(
-    @Inject(PLATFORM_ID) private platformId: Object,
+    @Inject(PLATFORM_ID) private platformId: object,
     @Inject(DOCUMENT) private document: Document
   ) {}
 
@@ -40,28 +41,29 @@ export class FooterComponent implements OnInit {
 
   private addStructuredData(): void {
     const structuredData = {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Runner Toolkit",
-      "url": window.location.origin,
-      "description": "Professional running calculators and tools for athletes. Calculate pace, predict finish times, track training zones, and convert units.",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "email": this.email,
-        "contactType": "customer service",
-        "availableLanguage": ["English", "Polish"]
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: 'Runner Toolkit',
+      url: window.location.origin,
+      description:
+        'Professional running calculators and tools for athletes. Calculate pace, predict finish times, track training zones, and convert units.',
+      contactPoint: {
+        '@type': 'ContactPoint',
+        email: this.email,
+        contactType: 'customer service',
+        availableLanguage: ['English', 'Polish'],
       },
-      "founder": {
-        "@type": "Person",
-        "name": this.createdBy
+      founder: {
+        '@type': 'Person',
+        name: this.createdBy,
       },
-      "applicationCategory": "HealthApplication",
-      "operatingSystem": "Web Browser",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      }
+      applicationCategory: 'HealthApplication',
+      operatingSystem: 'Web Browser',
+      offers: {
+        '@type': 'Offer',
+        price: '0',
+        priceCurrency: 'USD',
+      },
     };
 
     const script = this.document.createElement('script');
