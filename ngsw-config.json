@@ -15,12 +15,6 @@
           "/*.css",
           "/*.js"
         ]
-      },
-      "cacheConfig": {
-        "strategy": "freshness",
-        "maxSize": 100,
-        "maxAge": "2d",
-        "timeout": "5s"
       }
     },
     {
@@ -29,44 +23,37 @@
       "updateMode": "prefetch",
       "resources": {
         "files": [
-          "/**/*.(svg|cur|jpg|jpeg|png|apng|webp|avif|gif|otf|ttf|woff|woff2)"
+          "/icons/icon-192x192.png",
+          "/icons/icon-512x512.png",
+          "/**/*.(svg|cur|jpg|jpeg|webp|avif|gif|otf|ttf|woff|woff2)"
         ]
-      },
-      "cacheConfig": {
-        "strategy": "freshness",
-        "maxSize": 100,
-        "maxAge": "1d",
-        "timeout": "5s"
       }
     }
   ],
   "dataGroups": [
     {
-      "name": "api-performance",
+      "name": "api-freshness",
       "urls": ["/assets/i18n/*.json"],
       "cacheConfig": {
         "strategy": "freshness",
-        "maxSize": 100,
-        "maxAge": "30m",
+        "maxSize": 10,
+        "maxAge": "1d",
         "timeout": "5s"
       }
     },
     {
-      "name": "api-freshness",
-      "urls": ["/**"],
+      "name": "no-cache-google-analytics",
+      "urls": [
+        "https://region1.google-analytics.com/**",
+        "https://www.google-analytics.com/**",
+        "https://www.googletagmanager.com/**"
+      ],
       "cacheConfig": {
         "strategy": "freshness",
-        "maxSize": 100,
-        "maxAge": "1m",
-        "timeout": "5s"
+        "maxSize": 0,
+        "maxAge": "0u",
+        "timeout": "0u"
       }
     }
-  ],
-  "navigationUrls": [
-    "/**",
-    "!/**/*.*",
-    "!/**/*__*",
-    "!/**/*__*/**",
-    "!/**/collect*"
   ]
 }
