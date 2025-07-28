@@ -1,56 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Main Pages -->
   <url>
     <loc>https://runner-toolkit.web.app/</loc>
-    <lastmod>2025-07-03</lastmod>
+    <lastmod>2025-07-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://runner-toolkit.web.app/contact</loc>
+    <lastmod>2025-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://runner-toolkit.web.app/privacy-policy</loc>
+    <lastmod>2025-07-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- Race Tools -->
+  <url>
     <loc>https://runner-toolkit.web.app/tools/race/pace-calculator</loc>
-    <lastmod>2025-07-03</lastmod>
+    <lastmod>2025-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://runner-toolkit.web.app/tools/race/finish-time-predictor</loc>
-    <lastmod>2025-07-03</lastmod>
+    <lastmod>2025-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+  </url>
+
+  <!-- Training Tools -->
+  <url>
+    <loc>https://runner-toolkit.web.app/tools/training/training-paces-calculator</loc>
+    <lastmod>2025-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Personal Tools -->
+  <url>
+    <loc>https://runner-toolkit.web.app/tools/personal/bmi-calculator</loc>
+    <lastmod>2025-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://runner-toolkit.web.app/tools/personal/burned-calories-estimator</loc>
+    <lastmod>2025-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://runner-toolkit.web.app/tools/personal/vo2max-calculator</loc>
-    <lastmod>2025-07-03</lastmod>
+    <lastmod>2025-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://runner-toolkit.web.app/tools/personal/calories-burned-calculator</loc>
-    <lastmod>2025-07-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://runner-toolkit.web.app/tools/personal/bmi-calculator</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://runner-toolkit.web.app/tools/units/distance-unit-converter</loc>
-    <lastmod>2025-07-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+
+  <!-- Unit Converters -->
   <url>
     <loc>https://runner-toolkit.web.app/tools/units/pace-to-speed</loc>
-    <lastmod>2025-07-03</lastmod>
+    <lastmod>2025-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://runner-toolkit.web.app/tools/units/weight-unit-converter</loc>
-    <lastmod>2025-07-03</lastmod>
+    <loc>https://runner-toolkit.web.app/tools/units/kilometers-to-miles</loc>
+    <lastmod>2025-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://runner-toolkit.web.app/tools/units/kilograms-to-pounds</loc>
+    <lastmod>2025-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

@@ -1,14 +1,14 @@
+import { isPlatformBrowser } from '@angular/common';
 import {
   computed,
   effect,
   inject,
   Injectable,
+  PLATFORM_ID,
   Signal,
   signal,
   WritableSignal,
-  PLATFORM_ID,
 } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
 import { Distance } from '../business/model/distance.model';
 import { DistanceUnit } from '../business/model/enums/distance-unit.enum';
 import { HeightUnit } from '../business/model/enums/height-unit.enum';
@@ -166,7 +166,7 @@ export class StoreService {
 
   private loadStore(): Store {
     const initialStore = this.initialValues();
-    
+
     // During SSR, just return initial values
     if (!isPlatformBrowser(this.platformId)) {
       return initialStore;
@@ -218,7 +218,7 @@ export class StoreService {
 
   private initialValues(): Store {
     const time = Time.of(0, 55, 0);
-    const distanceUnit = this.getDistanceUnitFromLocal();
+    const distanceUnit = DistanceUnit.KM;
     const distance = Distance.of(10, distanceUnit);
     const pace = Pace.calculate(time, distance);
     const weightUnit =
@@ -249,13 +249,13 @@ export class StoreService {
   //   return supportedLanguages.includes(languageCode) ? languageCode : 'en';
   // }
 
-  private getDistanceUnitFromLocal(): DistanceUnit {
-    const locale = Intl.DateTimeFormat().resolvedOptions().locale;
-    const milesLocales = ['en-US', 'en-GB', 'my', 'lr'];
-    return milesLocales.some(code => locale.startsWith(code))
-      ? DistanceUnit.MI
-      : DistanceUnit.KM;
-  }
+  // private getDistanceUnitFromLocal(): DistanceUnit {
+  //   const locale = Intl.DateTimeFormat().resolvedOptions().locale;
+  //   const milesLocales = ['en-US', 'en-GB', 'my', 'lr'];
+  //   return milesLocales.some(code => locale.startsWith(code))
+  //     ? DistanceUnit.MI
+  //     : DistanceUnit.KM;
+  // }
 
   private getDistanceUnit(units: Units): DistanceUnit {
     return units === Units.EU ? DistanceUnit.KM : DistanceUnit.MI;
