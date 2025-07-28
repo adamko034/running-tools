@@ -1,6 +1,7 @@
 {
   "$schema": "./node_modules/@angular/service-worker/config/schema.json",
   "index": "/index.html",
+  "scope": "./",
   "assetGroups": [
     {
       "name": "app",
@@ -59,6 +60,18 @@
         "maxSize": 10,
         "maxAge": "1d",
         "timeout": "5s"
+      }
+    },
+    {
+      "name": "external-passthrough",
+      "urls": [
+        "https://**"
+      ],
+      "cacheConfig": {
+        "strategy": "freshness",
+        "maxSize": 0,
+        "maxAge": "1s",
+        "timeout": "60s"
       }
     }
   ],
