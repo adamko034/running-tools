@@ -93,10 +93,11 @@ export const appConfig: ApplicationConfig = {
     ...(hasAnalyticsConsent()
       ? [provideAnalytics(() => getAnalytics()), UserTrackingService]
       : []),
-    provideServiceWorker('ngsw-worker.js', {
-      enabled: !isDevMode(),
-      registrationStrategy: 'registerImmediately',
-      scope: './',
-    }),
+    // Temporarily disable service worker due to AdSense conflicts
+    // provideServiceWorker('ngsw-worker.js', {
+    //   enabled: !isDevMode(),
+    //   registrationStrategy: 'registerImmediately',
+    //   scope: './',
+    // }),
   ],
 };
