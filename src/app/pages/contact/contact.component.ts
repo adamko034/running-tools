@@ -5,10 +5,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { ContentAdComponent } from '../../shared/components/ui/content-ad/content-ad.component';
 import { DataCatalog } from '../../core/business/catalog/data-catalog';
 import { SeoService } from '../../core/services/seo.service';
-
 
 @Component({
   selector: 'app-contact',
@@ -20,7 +18,6 @@ import { SeoService } from '../../core/services/seo.service';
     MatCardModule,
     MatSnackBarModule,
     TranslateModule,
-    ContentAdComponent,
   ],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
@@ -36,7 +33,6 @@ export class ContactComponent {
   constructor() {
     this.setupSeo();
   }
-
 
   private setupSeo(): void {
     this.seoService.updateContactMeta();

@@ -4,7 +4,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
-import { ContentAdComponent } from '../../shared/components/ui/content-ad/content-ad.component';
 import { DataCatalog } from '../../core/business/catalog/data-catalog';
 import { SeoService } from '../../core/services/seo.service';
 
@@ -17,7 +16,6 @@ import { SeoService } from '../../core/services/seo.service';
     MatButtonModule,
     TranslateModule,
     RouterModule,
-    ContentAdComponent,
   ],
   templateUrl: './privacy.component.html',
   styleUrl: './privacy.component.scss',
@@ -35,5 +33,4 @@ export class PrivacyComponent implements OnInit {
   private setupSeo(): void {
     this.seoService.updatePrivacyPolicyMeta();
   }
-
 }

@@ -33,12 +33,12 @@
       </div>
       
       <!-- Ad after main tool content -->
-      <app-content-ad 
-        adSlot="2345678901"
+      <app-google-ad 
+        [adSlot]="adSlots.TOOL_AFTER_CONTENT"
         adFormat="auto"
         [fullWidthResponsive]="true"
         minHeight="200px">
-      </app-content-ad>
+      </app-google-ad>
     </main>
 
     <!-- Summary Section -->
@@ -52,12 +52,12 @@
     </section>
 
     <!-- Content break ad -->
-    <app-content-ad 
-      adSlot="3456789012"
+    <app-google-ad 
+      [adSlot]="adSlots.TOOL_CONTENT_BREAK"
       adFormat="auto"
       [fullWidthResponsive]="true"
       minHeight="250px">
-    </app-content-ad>
+    </app-google-ad>
 
     <!-- FAQ Section -->
     <section class="mb-8">
@@ -65,10 +65,10 @@
     </section>
       </div>
       
-      <!-- Sidebar with Ad -->
-      <aside class="w-80">
+      <!-- Sidebar with Ad (Desktop only) -->
+      <aside class="hidden lg:block w-80">
         <app-sidebar-ad 
-          adSlot="4567890123"
+          [adSlot]="adSlots.TOOL_SIDEBAR"
           title="Recommended">
         </app-sidebar-ad>
       </aside>

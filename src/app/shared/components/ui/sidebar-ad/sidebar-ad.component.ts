@@ -7,7 +7,7 @@ import { GoogleAdComponent } from '../google-ad/google-ad.component';
   standalone: true,
   imports: [CommonModule, GoogleAdComponent],
   template: `
-    <div class="hidden lg:block sticky top-4">
+    <div class="sticky top-4">
       <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
         <h4 class="text-sm font-medium text-gray-600 mb-3 text-center">
           {{ title }}

@@ -6,6 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { GoogleAdComponent } from '../../shared/components/ui/google-ad/google-ad.component';
+import { AD_SLOTS } from '../../core/config/ad-slots.config';
 import { Observable } from 'rxjs';
 import { Navigation } from '../../core/navigation/navigation.model';
 import { NavigationService } from '../../core/services/navigation.service';
@@ -29,6 +30,9 @@ import { UiService } from '../../core/services/ui.service';
 export class HomeComponent {
   isMobile$ = inject(UiService).isMobile$;
   navigation$: Observable<Navigation[]>;
+  
+  // Ad slots from config
+  readonly adSlots = AD_SLOTS;
 
   constructor(private navigationService: NavigationService) {
     this.navigation$ = this.navigationService.getNavigation();
