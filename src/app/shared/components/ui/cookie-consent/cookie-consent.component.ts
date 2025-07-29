@@ -54,6 +54,7 @@ export class CookieConsentComponent implements OnInit {
   ngOnInit(): void {
     this.checkConsentStatus();
     this.incrementAppOpensIfNeeded();
+    this.setupCustomEventListener();
   }
 
   private checkConsentStatus(): void {
@@ -320,5 +321,14 @@ export class CookieConsentComponent implements OnInit {
   forceShowBanner(): void {
     this.showBanner = true;
     LoggerDev.log('Banner forced to show');
+  }
+
+  // Setup listener for custom events to show consent banner
+  private setupCustomEventListener(): void {
+    window.addEventListener('showCookieConsent', () => {
+      this.showBanner = true;
+      this.showDetails = true; // Show details by default when manually opened
+      LoggerDev.log('Cookie consent banner shown via custom event');
+    });
   }
 }

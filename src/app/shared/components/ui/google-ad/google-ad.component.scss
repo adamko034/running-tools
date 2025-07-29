@@ -1,0 +1,177 @@
+.google-ad-wrapper {
+  width: 100%;
+  position: relative;
+  margin: 1rem 0;
+}
+
+.ad-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #e0e0e0;
+  border-radius: 8px;
+  background-color: #fafafa;
+  transition: all 0.3s ease;
+
+  &.no-consent {
+    border-color: #ff9800;
+    background-color: #fff3e0;
+    
+    .placeholder-icon {
+      color: #ff9800;
+    }
+  }
+
+  &.loading {
+    border-color: #2196f3;
+    background-color: #e3f2fd;
+    
+    .loading-spinner {
+      color: #2196f3;
+    }
+  }
+
+  &.error {
+    border-color: #f44336;
+    background-color: #ffebee;
+    
+    .error-icon {
+      color: #f44336;
+    }
+  }
+}
+
+.placeholder-content {
+  text-align: center;
+  padding: 2rem;
+  max-width: 400px;
+
+  .placeholder-icon {
+    font-size: 3rem;
+    width: 3rem;
+    height: 3rem;
+    margin-bottom: 1rem;
+    opacity: 0.8;
+  }
+
+  .placeholder-title {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #424242;
+  }
+
+  .placeholder-description {
+    margin: 0 0 1.5rem 0;
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.4;
+  }
+}
+
+.loading-spinner {
+  .spinning {
+    animation: spin 1s linear infinite;
+    font-size: 2rem;
+    width: 2rem;
+    height: 2rem;
+    margin-bottom: 1rem;
+  }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.consent-button {
+  font-weight: 500;
+  
+  mat-icon {
+    margin-right: 0.5rem;
+  }
+}
+
+.retry-button {
+  color: #666;
+  border-color: #ccc;
+  
+  &:hover {
+    background-color: #f5f5f5;
+  }
+  
+  mat-icon {
+    margin-right: 0.5rem;
+  }
+}
+
+.ad-container {
+  width: 100%;
+  
+  &.ad-loading {
+    opacity: 0.7;
+  }
+  
+  &.ad-loaded {
+    opacity: 1;
+  }
+  
+  .adsbygoogle {
+    width: 100%;
+    min-height: inherit;
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .placeholder-content {
+    padding: 1.5rem;
+    
+    .placeholder-icon {
+      font-size: 2.5rem;
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+    
+    .placeholder-title {
+      font-size: 1rem;
+    }
+    
+    .placeholder-description {
+      font-size: 0.85rem;
+    }
+  }
+}
+
+// Dark mode support (if your app supports it)
+@media (prefers-color-scheme: dark) {
+  .ad-placeholder {
+    background-color: #303030;
+    border-color: #555;
+    
+    &.no-consent {
+      background-color: #3e2723;
+      border-color: #ff9800;
+    }
+    
+    &.loading {
+      background-color: #1a237e;
+      border-color: #2196f3;
+    }
+    
+    &.error {
+      background-color: #3f1a1a;
+      border-color: #f44336;
+    }
+  }
+  
+  .placeholder-content {
+    .placeholder-title {
+      color: #e0e0e0;
+    }
+    
+    .placeholder-description {
+      color: #bbb;
+    }
+  }
+}

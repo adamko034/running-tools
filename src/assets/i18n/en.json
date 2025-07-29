@@ -920,5 +920,21 @@
       "title": "Help us keep Runner Toolkit free! ",
       "description": "This app is completely free thanks to ads and analytics. Your acceptance helps us improve features and develop new tools for runners worldwide."
     }
+  },
+  "google_ad": {
+    "no_consent": {
+      "title": "Ads Disabled",
+      "description": "You haven't consented to advertising cookies. Please enable them to help keep Runner Toolkit free and support our development.",
+      "enable_ads": "Enable Ads"
+    },
+    "loading": {
+      "title": "Loading Advertisement",
+      "description": "Please wait while we load relevant content for you..."
+    },
+    "error": {
+      "title": "Ad Failed to Load",
+      "description": "We couldn't load the advertisement. This might be due to an ad blocker or network issues.",
+      "retry": "Try Again"
+    }
   }
 }

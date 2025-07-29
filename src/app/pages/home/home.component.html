@@ -128,6 +128,16 @@
       ></ng-container>
     </div>
   </section>
+
+  <!-- Example Google Ad placement -->
+  <section class="mt-12">
+    <app-google-ad 
+      adSlot="1234567890"
+      adFormat="auto"
+      [fullWidthResponsive]="true"
+      minHeight="200px">
+    </app-google-ad>
+  </section>
 </div>
 
 <ng-template #card let-icon="icon" let-titleKey="titleKey">

@@ -5,6 +5,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
+import { GoogleAdComponent } from '../../shared/components/ui/google-ad/google-ad.component';
 import { Observable } from 'rxjs';
 import { Navigation } from '../../core/navigation/navigation.model';
 import { NavigationService } from '../../core/services/navigation.service';
@@ -20,6 +21,7 @@ import { UiService } from '../../core/services/ui.service';
     MatIconModule,
     MatButtonModule,
     TranslateModule,
+    GoogleAdComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',

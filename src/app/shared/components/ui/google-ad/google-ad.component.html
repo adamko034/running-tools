@@ -1,0 +1,88 @@
+<!-- Google Ad Container -->
+<div class="google-ad-wrapper" [style.min-height]="minHeight">
+  
+  <!-- No Consent State -->
+  <div 
+    *ngIf="!hasAdvertisingConsent" 
+    class="ad-placeholder no-consent"
+    [style.min-height]="minHeight"
+  >
+    <div class="placeholder-content">
+      <mat-icon class="placeholder-icon">block</mat-icon>
+      <h4 class="placeholder-title">{{ 'google_ad.no_consent.title' | translate }}</h4>
+      <p class="placeholder-description">
+        {{ 'google_ad.no_consent.description' | translate }}
+      </p>
+      <button 
+        mat-raised-button 
+        color="primary" 
+        (click)="openConsentSettings()"
+        class="consent-button"
+      >
+        <mat-icon>settings</mat-icon>
+        {{ 'google_ad.no_consent.enable_ads' | translate }}
+      </button>
+    </div>
+  </div>
+
+  <!-- Loading State -->
+  <div 
+    *ngIf="hasAdvertisingConsent && isAdLoading && !adLoadError" 
+    class="ad-placeholder loading"
+    [style.min-height]="minHeight"
+  >
+    <div class="placeholder-content">
+      <div class="loading-spinner">
+        <mat-icon class="spinning">refresh</mat-icon>
+      </div>
+      <h4 class="placeholder-title">{{ 'google_ad.loading.title' | translate }}</h4>
+      <p class="placeholder-description">
+        {{ 'google_ad.loading.description' | translate }}
+      </p>
+    </div>
+  </div>
+
+  <!-- Error State -->
+  <div 
+    *ngIf="hasAdvertisingConsent && adLoadError" 
+    class="ad-placeholder error"
+    [style.min-height]="minHeight"
+  >
+    <div class="placeholder-content">
+      <mat-icon class="placeholder-icon error-icon">error_outline</mat-icon>
+      <h4 class="placeholder-title">{{ 'google_ad.error.title' | translate }}</h4>
+      <p class="placeholder-description">
+        {{ 'google_ad.error.description' | translate }}
+      </p>
+      <button 
+        mat-stroked-button 
+        (click)="retryAd()"
+        class="retry-button"
+      >
+        <mat-icon>refresh</mat-icon>
+        {{ 'google_ad.error.retry' | translate }}
+      </button>
+    </div>
+  </div>
+
+  <!-- Actual Ad Container -->
+  <div 
+    #adContainer
+    *ngIf="hasAdvertisingConsent && !adLoadError"
+    class="ad-container"
+    [class.ad-loading]="isAdLoading"
+    [class.ad-loaded]="isAdLoaded"
+  >
+    <ins 
+      class="adsbygoogle"
+      style="display:block"
+      [attr.data-ad-client]="'ca-pub-2064593657160416'"
+      [attr.data-ad-slot]="adSlot"
+      [attr.data-ad-format]="adFormat"
+      [attr.data-ad-layout]="adLayout"
+      [attr.data-ad-layout-key]="adLayoutKey"
+      [attr.data-full-width-responsive]="fullWidthResponsive"
+    ></ins>
+  </div>
+
+</div>
