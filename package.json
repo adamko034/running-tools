@@ -1,6 +1,6 @@
 {
   "name": "running-tools",
-  "version": "1.0.38",
+  "version": "1.0.39",
   "scripts": {
     "ng": "ng",
     "start": "npm run set-version && ng serve",
@@ -16,7 +16,8 @@
     "version:minor": "npm version minor && npm run set-version",
     "version:major": "npm version major && npm run set-version",
     "build:prod": "npm version patch --no-git-tag-version && npm run set-version -- --commit && ng build --configuration production",
-    "build:prod-no-commit": "npm version patch --no-git-tag-version && npm run set-version && ng build --configuration production"
+    "build:prod-no-commit": "npm version patch --no-git-tag-version && npm run set-version && ng build --configuration production",
+    "build:prod-debug": "ng build --configuration production"
   },
   "private": true,
   "dependencies": {
