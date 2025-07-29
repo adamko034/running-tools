@@ -929,7 +929,7 @@
     },
     "loading": {
       "title": "Loading Advertisement",
-      "description": "Please wait while we load relevant content for you..."
+      "description": "Content will appear shortly."
     },
     "error": {
       "description": "We couldn't load the advertisement."
