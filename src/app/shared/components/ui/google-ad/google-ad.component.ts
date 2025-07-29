@@ -244,12 +244,6 @@ export class GoogleAdComponent implements OnInit, AfterViewInit, OnDestroy {
     }
   }
 
-  // Method to manually retry ad loading
-  retryAd(): void {
-    LoggerDev.log('GoogleAd: Manual retry requested');
-    this.adLoadError = false;
-    this.initializeAd();
-  }
 
   // Method to open consent settings (if available)
   openConsentSettings(): void {

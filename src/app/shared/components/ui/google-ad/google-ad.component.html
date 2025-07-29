@@ -51,19 +51,9 @@
     [style.min-height]="minHeight"
   >
     <div class="placeholder-content">
-      <mat-icon class="placeholder-icon error-icon">error_outline</mat-icon>
-      <h4 class="placeholder-title">{{ 'google_ad.error.title' | translate }}</h4>
       <p class="placeholder-description">
         {{ 'google_ad.error.description' | translate }}
       </p>
-      <button 
-        mat-stroked-button 
-        (click)="retryAd()"
-        class="retry-button"
-      >
-        <mat-icon>refresh</mat-icon>
-        {{ 'google_ad.error.retry' | translate }}
-      </button>
     </div>
   </div>
 

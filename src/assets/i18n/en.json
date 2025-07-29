@@ -932,9 +932,7 @@
       "description": "Please wait while we load relevant content for you..."
     },
     "error": {
-      "title": "Ad Failed to Load",
-      "description": "We couldn't load the advertisement. This might be due to an ad blocker or network issues.",
-      "retry": "Try Again"
+      "description": "We couldn't load the advertisement."
     }
   }
 }
