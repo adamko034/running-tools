@@ -2,10 +2,18 @@ import { CommonModule } from '@angular/common';
 import { Component, Input, OnDestroy, OnInit, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { StructuredDataService } from '../../../core/services/structured-data.service';
+import { GoogleAdComponent } from '../../components/ui/google-ad/google-ad.component';
+import { SidebarAdComponent } from '../../components/ui/sidebar-ad/sidebar-ad.component';
+import { ContentAdComponent } from '../../components/ui/content-ad/content-ad.component';
 
 @Component({
   selector: 'app-tool-view',
-  imports: [CommonModule],
+  imports: [
+    CommonModule, 
+    GoogleAdComponent, 
+    SidebarAdComponent, 
+    ContentAdComponent
+  ],
   templateUrl: './tool-view.html',
 })
 export class ToolView implements OnInit, OnDestroy {

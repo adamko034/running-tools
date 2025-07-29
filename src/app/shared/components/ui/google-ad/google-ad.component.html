@@ -1,5 +1,7 @@
 <!-- Google Ad Container -->
-<div class="google-ad-wrapper" [style.min-height]="minHeight">
+<div class="google-ad-wrapper" 
+     [style.min-height]="isAdLoaded ? 'auto' : (hasAdvertisingConsent && !adLoadError ? '100px' : minHeight)"
+     [style.transition]="'min-height 0.3s ease'">
   
   <!-- No Consent State -->
   <div 
@@ -72,10 +74,12 @@
     class="ad-container"
     [class.ad-loading]="isAdLoading"
     [class.ad-loaded]="isAdLoaded"
+    [style.min-height]="isAdLoaded ? 'auto' : (isAdLoading ? '100px' : minHeight)"
   >
     <ins 
       class="adsbygoogle"
-      style="display:block"
+      [style.display]="'block'"
+      [style.min-height]="isAdLoaded ? 'auto' : (isAdLoading ? '100px' : minHeight)"
       [attr.data-ad-client]="'ca-pub-2064593657160416'"
       [attr.data-ad-slot]="adSlot"
       [attr.data-ad-format]="adFormat"

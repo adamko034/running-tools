@@ -2,6 +2,7 @@
   width: 100%;
   position: relative;
   margin: 1rem 0;
+  overflow: hidden; // Prevent layout shifts
 }
 
 .ad-placeholder {
@@ -107,18 +108,26 @@
 
 .ad-container {
   width: 100%;
+  transition: all 0.3s ease;
   
   &.ad-loading {
     opacity: 0.7;
+    min-height: 100px; // Minimal height while loading
   }
   
   &.ad-loaded {
     opacity: 1;
+    min-height: auto; // Let ad determine its own height
   }
   
   .adsbygoogle {
     width: 100%;
-    min-height: inherit;
+    display: block !important;
+    
+    // Remove min-height when ad is loaded
+    &[data-ad-status="filled"] {
+      min-height: auto !important;
+    }
   }
 }
 

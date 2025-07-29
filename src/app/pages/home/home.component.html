@@ -101,7 +101,7 @@
       {{ 'HOME.WHY_CHOOSE' | translate }}
     </h2>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
       <ng-container
         *ngTemplateOutlet="
           card;
@@ -129,13 +129,14 @@
     </div>
   </section>
 
-  <!-- Example Google Ad placement -->
+  <!-- Strategic ad placement after features section -->
   <section class="mt-12">
-    <app-google-ad 
+    <app-google-ad
       adSlot="1234567890"
       adFormat="auto"
       [fullWidthResponsive]="true"
-      minHeight="200px">
+      minHeight="200px"
+    >
     </app-google-ad>
   </section>
 </div>

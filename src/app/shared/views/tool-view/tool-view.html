@@ -1,6 +1,9 @@
 <!-- Modern Tool View Layout -->
 <div class="min-h-screen">
-  <div class="max-w-4xl mx-auto px-6 py-3">
+  <div class="max-w-7xl mx-auto px-6 py-3">
+    <div class="flex gap-8">
+      <!-- Main Content -->
+      <div class="flex-1 max-w-4xl">
     <!-- Header Section -->
     <header class="text-center">
       <h1
@@ -28,6 +31,14 @@
       <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
         <ng-content select="[tool-content]"></ng-content>
       </div>
+      
+      <!-- Ad after main tool content -->
+      <app-content-ad 
+        adSlot="2345678901"
+        adFormat="auto"
+        [fullWidthResponsive]="true"
+        minHeight="200px">
+      </app-content-ad>
     </main>
 
     <!-- Summary Section -->
@@ -40,9 +51,27 @@
       <ng-content select="[tool-education]"></ng-content>
     </section>
 
+    <!-- Content break ad -->
+    <app-content-ad 
+      adSlot="3456789012"
+      adFormat="auto"
+      [fullWidthResponsive]="true"
+      minHeight="250px">
+    </app-content-ad>
+
     <!-- FAQ Section -->
     <section class="mb-8">
       <ng-content select="[tool-faq]"></ng-content>
     </section>
+      </div>
+      
+      <!-- Sidebar with Ad -->
+      <aside class="w-80">
+        <app-sidebar-ad 
+          adSlot="4567890123"
+          title="Recommended">
+        </app-sidebar-ad>
+      </aside>
+    </div>
   </div>
 </div>

@@ -44,7 +44,7 @@ export class GoogleAdComponent implements OnInit, AfterViewInit, OnDestroy {
   @Input() adLayout?: string; // Optional layout
   @Input() adLayoutKey?: string; // Optional layout key
   @Input() fullWidthResponsive: boolean = true; // Responsive ads
-  @Input() minHeight: string = '250px'; // Minimum height for placeholder
+  @Input() minHeight: string = '250px'; // Minimum height for placeholder (only used for no-consent state)
 
   @ViewChild('adContainer', { static: true }) adContainer!: ElementRef;
 
@@ -58,6 +58,7 @@ export class GoogleAdComponent implements OnInit, AfterViewInit, OnDestroy {
   
   private consentCheckInterval?: number;
   private adLoadTimeout?: number;
+  private resizeObserver?: ResizeObserver;
 
   ngOnInit(): void {
     if (!isPlatformBrowser(this.platformId)) {
@@ -90,6 +91,9 @@ export class GoogleAdComponent implements OnInit, AfterViewInit, OnDestroy {
     }
     if (this.adLoadTimeout) {
       clearTimeout(this.adLoadTimeout);
+    }
+    if (this.resizeObserver) {
+      this.resizeObserver.disconnect();
     }
   }
 
@@ -163,6 +167,9 @@ export class GoogleAdComponent implements OnInit, AfterViewInit, OnDestroy {
       
       LoggerDev.log('GoogleAd: Ad initialization requested', { adSlot: this.adSlot });
 
+      // Set up resize observer to monitor ad loading
+      this.setupResizeObserver();
+
       // Check if ad loaded successfully after a short delay
       setTimeout(() => {
         this.checkAdLoadStatus();
@@ -179,18 +186,31 @@ export class GoogleAdComponent implements OnInit, AfterViewInit, OnDestroy {
     const adElement = this.adContainer?.nativeElement?.querySelector('ins[data-ad-slot]');
     
     if (adElement) {
-      // Check if ad has content
+      // Check if ad has content and actual height
       const hasContent = adElement.innerHTML.trim().length > 0 || 
-                        adElement.children.length > 0 ||
-                        adElement.offsetHeight > 0;
+                        adElement.children.length > 0;
+      const hasHeight = adElement.offsetHeight > 50; // Minimum meaningful height
+      const iframe = adElement.querySelector('iframe');
+      const iframeHasContent = iframe && iframe.offsetHeight > 50;
 
-      if (hasContent) {
+      if ((hasContent && hasHeight) || iframeHasContent) {
         this.isAdLoading = false;
         this.isAdLoaded = true;
+        
+        // Remove min-height constraint
+        if (adElement instanceof HTMLElement) {
+          adElement.style.minHeight = 'auto';
+        }
+        
         if (this.adLoadTimeout) {
           clearTimeout(this.adLoadTimeout);
         }
-        LoggerDev.log('GoogleAd: Ad loaded successfully');
+        LoggerDev.log('GoogleAd: Ad loaded successfully', { 
+          height: adElement.offsetHeight,
+          hasContent,
+          hasHeight,
+          iframeHeight: iframe?.offsetHeight 
+        });
       } else {
         // Check again after a longer delay
         setTimeout(() => {
@@ -243,5 +263,38 @@ export class GoogleAdComponent implements OnInit, AfterViewInit, OnDestroy {
     
     // Alternative: dispatch custom event
     window.dispatchEvent(new CustomEvent('showCookieConsent'));
+  }
+
+  private setupResizeObserver(): void {
+    if (!isPlatformBrowser(this.platformId) || !window.ResizeObserver) {
+      return;
+    }
+
+    const adElement = this.adContainer?.nativeElement?.querySelector('ins[data-ad-slot]');
+    if (!adElement) return;
+
+    this.resizeObserver = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        const height = entry.contentRect.height;
+        
+        // If ad has meaningful height, consider it loaded
+        if (height > 50 && this.isAdLoading) {
+          this.isAdLoading = false;
+          this.isAdLoaded = true;
+          
+          if (this.adLoadTimeout) {
+            clearTimeout(this.adLoadTimeout);
+          }
+          
+          LoggerDev.log('GoogleAd: Ad loaded via ResizeObserver', { height });
+          
+          // Disconnect observer once loaded
+          this.resizeObserver?.disconnect();
+          break;
+        }
+      }
+    });
+
+    this.resizeObserver.observe(adElement);
   }
 }

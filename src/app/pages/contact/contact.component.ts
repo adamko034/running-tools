@@ -1,18 +1,14 @@
 import { CommonModule } from '@angular/common';
-import { AfterViewInit, Component, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { ContentAdComponent } from '../../shared/components/ui/content-ad/content-ad.component';
 import { DataCatalog } from '../../core/business/catalog/data-catalog';
 import { SeoService } from '../../core/services/seo.service';
 
-declare global {
-  interface Window {
-    adsbygoogle: any[];
-  }
-}
 
 @Component({
   selector: 'app-contact',
@@ -24,11 +20,12 @@ declare global {
     MatCardModule,
     MatSnackBarModule,
     TranslateModule,
+    ContentAdComponent,
   ],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
 })
-export class ContactComponent implements AfterViewInit {
+export class ContactComponent {
   private snackBar = inject(MatSnackBar);
   private translateService = inject(TranslateService);
   private seoService = inject(SeoService);
@@ -40,13 +37,6 @@ export class ContactComponent implements AfterViewInit {
     this.setupSeo();
   }
 
-  ngAfterViewInit() {
-    try {
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
-    } catch (e) {
-      console.error('AdSense error:', e);
-    }
-  }
 
   private setupSeo(): void {
     this.seoService.updateContactMeta();
