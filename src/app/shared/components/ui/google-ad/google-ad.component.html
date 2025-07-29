@@ -98,11 +98,10 @@
   <!-- Actual Ad Container -->
   <div
     #adContainer
-    *ngIf="hasAdvertisingConsent && !isAdBlockerDetected && !adLoadError"
+    *ngIf="hasAdvertisingConsent && !isAdBlockerDetected && !adLoadError && !isAdLoading"
     class="ad-container"
-    [class.ad-loading]="isAdLoading"
     [class.ad-loaded]="isAdLoaded"
-    [style.min-height]="isAdLoaded ? 'auto' : isAdLoading ? '100px' : minHeight"
+    [style.min-height]="isAdLoaded ? 'auto' : minHeight"
   >
     <ins
       class="adsbygoogle"
