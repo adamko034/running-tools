@@ -55,6 +55,7 @@ export class GoogleAdComponent implements OnInit, AfterViewInit, OnDestroy {
   isAdLoading = false;
   isAdLoaded = false;
   adLoadError = false;
+  isAdBlockerDetected = false;
   
   private consentCheckInterval?: number;
   private adLoadTimeout?: number;
@@ -72,6 +73,8 @@ export class GoogleAdComponent implements OnInit, AfterViewInit, OnDestroy {
 
     this.checkAdvertisingConsent();
     this.setupConsentListener();
+    this.detectAdBlocker();
+    this.checkAdBlockerStatus();
   }
 
   ngAfterViewInit(): void {
@@ -142,6 +145,11 @@ export class GoogleAdComponent implements OnInit, AfterViewInit, OnDestroy {
       return;
     }
 
+    // Check for ad blocker before attempting to load ads
+    if (this.isAdBlockerDetected) {
+      return; // Don't try to load ads if ad blocker is detected
+    }
+
     // Reset states
     this.isAdLoading = true;
     this.isAdLoaded = false;
@@ -150,7 +158,11 @@ export class GoogleAdComponent implements OnInit, AfterViewInit, OnDestroy {
     try {
       // Ensure adsbygoogle is available
       if (typeof window.adsbygoogle === 'undefined') {
-        window.adsbygoogle = [];
+        // If adsbygoogle is still undefined, ad blocker is likely active
+        this.isAdBlockerDetected = true;
+        this.isAdLoading = false;
+        LoggerDev.log('GoogleAd: Ad blocker detected - adsbygoogle not available');
+        return;
       }
 
       // Set timeout for ad loading
@@ -290,5 +302,62 @@ export class GoogleAdComponent implements OnInit, AfterViewInit, OnDestroy {
     });
 
     this.resizeObserver.observe(adElement);
+  }
+
+  private detectAdBlocker(): void {
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
+    // Check if adsbygoogle script is loaded
+    setTimeout(() => {
+      // Method 1: Check if adsbygoogle is available
+      if (typeof window.adsbygoogle === 'undefined') {
+        this.isAdBlockerDetected = true;
+        LoggerDev.log('GoogleAd: Ad blocker detected - adsbygoogle script blocked');
+        return;
+      }
+
+      // Method 2: Check if Google AdSense script is in DOM
+      const adsenseScript = document.querySelector('script[src*="adsbygoogle.js"]');
+      if (!adsenseScript) {
+        this.isAdBlockerDetected = true;
+        LoggerDev.log('GoogleAd: Ad blocker detected - AdSense script not found');
+        return;
+      }
+
+      // Method 3: Try to create a test ad element (common ad blocker detection)
+      const testAd = document.createElement('div');
+      testAd.innerHTML = '&nbsp;';
+      testAd.className = 'adsbox';
+      testAd.style.position = 'absolute';
+      testAd.style.left = '-10000px';
+      document.body.appendChild(testAd);
+
+      setTimeout(() => {
+        if (testAd.offsetHeight === 0) {
+          this.isAdBlockerDetected = true;
+          LoggerDev.log('GoogleAd: Ad blocker detected - test element blocked');
+        }
+        document.body.removeChild(testAd);
+      }, 100);
+
+    }, 1000); // Give time for scripts to load
+  }
+
+  private checkAdBlockerStatus(): void {
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
+    // Check every 2 seconds if ad blocker was disabled
+    setInterval(() => {
+      if (this.isAdBlockerDetected && typeof window.adsbygoogle !== 'undefined') {
+        // Ad blocker was disabled!
+        this.isAdBlockerDetected = false;
+        LoggerDev.log('GoogleAd: Ad blocker disabled, attempting to load ads');
+        this.initializeAd();
+      }
+    }, 2000);
   }
 }

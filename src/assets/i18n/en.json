@@ -933,6 +933,11 @@
     },
     "error": {
       "description": "We couldn't load the advertisement."
+    },
+    "ad_blocker": {
+      "title": "Ad Blocker Detected",
+      "description": "Help us keep Runner Toolkit free by allowing ads. Your support enables us to maintain and improve these tools for the running community.",
+      "request": "Please disable your ad blocker on our site."
     }
   }
 }

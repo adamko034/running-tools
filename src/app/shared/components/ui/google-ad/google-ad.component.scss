@@ -40,6 +40,15 @@
       color: #f44336;
     }
   }
+
+  &.ad-blocker {
+    border-color: #ff5722;
+    background-color: #fbe9e7;
+    
+    .placeholder-icon {
+      color: #ff5722;
+    }
+  }
 }
 
 .placeholder-content {
@@ -91,6 +100,15 @@
   mat-icon {
     margin-right: 0.5rem;
   }
+}
+
+.ad-blocker-request {
+  margin-top: 1.5rem !important;
+  margin-bottom: 0 !important;
+  font-weight: 600 !important;
+  font-size: 1rem !important;
+  color: #ff5722 !important;
+  text-align: center;
 }
 
 .retry-button {
@@ -150,6 +168,19 @@
       font-size: 0.85rem;
     }
   }
+  
+  .instructions-content {
+    min-width: auto !important; // Allow wrapping on mobile
+    
+    .instructions-title {
+      white-space: normal !important; // Allow title wrapping on mobile
+    }
+    
+    .instructions-list li {
+      white-space: normal !important; // Allow text wrapping on mobile
+      padding-right: 0.5rem; // Add some right padding
+    }
+  }
 }
 
 // Dark mode support (if your app supports it)
@@ -171,6 +202,11 @@
     &.error {
       background-color: #3f1a1a;
       border-color: #f44336;
+    }
+
+    &.ad-blocker {
+      background-color: #3e2723;
+      border-color: #ff5722;
     }
   }
   

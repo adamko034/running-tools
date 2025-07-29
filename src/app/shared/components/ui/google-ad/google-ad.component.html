@@ -3,9 +3,28 @@
      [style.min-height]="isAdLoaded ? 'auto' : (hasAdvertisingConsent && !adLoadError ? '100px' : minHeight)"
      [style.transition]="'min-height 0.3s ease'">
   
+  <!-- Ad Blocker Detected State -->
+  <div 
+    *ngIf="hasAdvertisingConsent && isAdBlockerDetected" 
+    class="ad-placeholder ad-blocker"
+    [style.min-height]="minHeight"
+  >
+    <div class="placeholder-content">
+      <mat-icon class="placeholder-icon">block</mat-icon>
+      <h4 class="placeholder-title">{{ 'google_ad.ad_blocker.title' | translate }}</h4>
+      <p class="placeholder-description">
+        {{ 'google_ad.ad_blocker.description' | translate }}
+      </p>
+      
+      <p class="ad-blocker-request">
+        {{ 'google_ad.ad_blocker.request' | translate }}
+      </p>
+    </div>
+  </div>
+
   <!-- No Consent State -->
   <div 
-    *ngIf="!hasAdvertisingConsent" 
+    *ngIf="!hasAdvertisingConsent && !isAdBlockerDetected" 
     class="ad-placeholder no-consent"
     [style.min-height]="minHeight"
   >
@@ -29,7 +48,7 @@
 
   <!-- Loading State -->
   <div 
-    *ngIf="hasAdvertisingConsent && isAdLoading && !adLoadError" 
+    *ngIf="hasAdvertisingConsent && !isAdBlockerDetected && isAdLoading && !adLoadError" 
     class="ad-placeholder loading"
     [style.min-height]="minHeight"
   >
@@ -46,7 +65,7 @@
 
   <!-- Error State -->
   <div 
-    *ngIf="hasAdvertisingConsent && adLoadError" 
+    *ngIf="hasAdvertisingConsent && !isAdBlockerDetected && adLoadError" 
     class="ad-placeholder error"
     [style.min-height]="minHeight"
   >
@@ -61,7 +80,7 @@
   <!-- Actual Ad Container -->
   <div 
     #adContainer
-    *ngIf="hasAdvertisingConsent && !adLoadError"
+    *ngIf="hasAdvertisingConsent && !isAdBlockerDetected && !adLoadError"
     class="ad-container"
     [class.ad-loading]="isAdLoading"
     [class.ad-loaded]="isAdLoaded"
