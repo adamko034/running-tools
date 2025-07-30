@@ -3,24 +3,59 @@
   <div class="max-w-7xl mx-auto px-6 py-3">
     <!-- Main Content -->
     <div class="max-w-4xl mx-auto">
-      <!-- Header Section -->
-      <header class="text-center">
+      <!-- Enhanced Typography Header -->
+      <header class="text-center mb-8">
+        <!-- Enhanced Title (Neutral Color) -->
         <h1
-          class="text-4xl font-light text-slate-900 mb-4 tracking-tight leading-tight"
+          class="text-3xl font-bold mb-6 tracking-tight leading-tight text-slate-900"
         >
           <ng-content select="[tool-title]"></ng-content>
         </h1>
 
+        <!-- Icon and Category Badge Row -->
+        <div class="flex items-center justify-center gap-3 mb-6">
+          <!-- Category Icon Badge -->
+          <div
+            class="w-10 h-10 rounded-full flex items-center justify-center shadow-md"
+            [ngClass]="
+              category
+                ? getCategoryIconStyles()
+                : 'bg-gradient-to-br from-slate-500 to-slate-600'
+            "
+          >
+            <mat-icon class="text-white text-sm">{{ getToolIcon() }}</mat-icon>
+          </div>
+
+          <!-- Category Badge -->
+          <span
+            class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-medium"
+            [ngClass]="
+              category
+                ? getCategoryBadgeStyles()
+                : 'bg-slate-100 text-slate-700'
+            "
+          >
+            <mat-icon class="text-xs">{{ getCategoryIcon() }}</mat-icon>
+            {{ getCategoryDisplayName() }}
+          </span>
+        </div>
+
+        <!-- Enhanced Description -->
         <p
-          class="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed font-light"
+          class="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed font-light mb-8 tracking-wide"
         >
           <ng-content select="[tool-description]"></ng-content>
         </p>
 
-        <!-- Subtle divider -->
-        <div class="mt-8 flex items-center justify-center">
+        <!-- Enhanced divider with category color -->
+        <div class="flex items-center justify-center">
           <div
-            class="w-16 h-px bg-gradient-to-r from-transparent via-slate-300 to-transparent"
+            class="w-24 h-px bg-gradient-to-r transition-all duration-300"
+            [ngClass]="
+              category
+                ? getCategoryDividerStyles()
+                : 'from-transparent via-slate-300 to-transparent'
+            "
           ></div>
         </div>
       </header>
