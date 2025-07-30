@@ -1,78 +1,85 @@
 <!-- Modern Tool View Layout -->
 <div class="min-h-screen">
   <div class="max-w-7xl mx-auto px-6 py-3">
-    <div class="flex gap-8">
-      <!-- Main Content -->
-      <div class="flex-1 max-w-4xl">
-    <!-- Header Section -->
-    <header class="text-center">
-      <h1
-        class="text-4xl font-light text-slate-900 mb-4 tracking-tight leading-tight"
-      >
-        <ng-content select="[tool-title]"></ng-content>
-      </h1>
+    <!-- Main Content -->
+    <div class="max-w-4xl mx-auto">
+      <!-- Header Section -->
+      <header class="text-center">
+        <h1
+          class="text-4xl font-light text-slate-900 mb-4 tracking-tight leading-tight"
+        >
+          <ng-content select="[tool-title]"></ng-content>
+        </h1>
 
-      <p
-        class="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed font-light"
-      >
-        <ng-content select="[tool-description]"></ng-content>
-      </p>
+        <p
+          class="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed font-light"
+        >
+          <ng-content select="[tool-description]"></ng-content>
+        </p>
 
-      <!-- Subtle divider -->
-      <div class="mt-8 flex items-center justify-center">
+        <!-- Subtle divider -->
+        <div class="mt-8 flex items-center justify-center">
+          <div
+            class="w-16 h-px bg-gradient-to-r from-transparent via-slate-300 to-transparent"
+          ></div>
+        </div>
+      </header>
+
+      <!-- Content Section -->
+      <main class="mb-12">
         <div
-          class="w-16 h-px bg-gradient-to-r from-transparent via-slate-300 to-transparent"
-        ></div>
-      </div>
-    </header>
+          class="rounded-2xl p-8 shadow-sm border-2 transition-all duration-300"
+          [ngClass]="
+            category
+              ? categoryStyles.bg + ' ' + categoryStyles.border
+              : 'bg-white border-gray-100'
+          "
+        >
+          <ng-content select="[tool-content]"></ng-content>
+        </div>
 
-    <!-- Content Section -->
-    <main class="mb-12">
-      <div class="rounded-2xl p-8 shadow-sm border-2 transition-all duration-300"
-           [ngClass]="category ? categoryStyles.bg + ' ' + categoryStyles.border : 'bg-white border-gray-100'">
-        <ng-content select="[tool-content]"></ng-content>
-      </div>
-      
-      <!-- Ad after main tool content -->
-      <app-google-ad 
-        [adSlot]="adSlots.TOOL_AFTER_CONTENT"
+        <!-- Ad after main tool content -->
+        <app-google-ad
+          [adSlot]="adSlots.TOOL_AFTER_CONTENT"
+          adFormat="auto"
+          [fullWidthResponsive]="true"
+          minHeight="200px"
+        >
+        </app-google-ad>
+      </main>
+
+      <!-- Summary Section -->
+      <section *ngIf="showSummary" class="mb-8">
+        <ng-content select="[tool-summary]"></ng-content>
+      </section>
+
+      <!-- Horizontal Ad between education sections -->
+      <app-google-ad
+        [adSlot]="adSlots.TOOL_CONTENT_BREAK_2"
         adFormat="auto"
         [fullWidthResponsive]="true"
-        minHeight="200px">
+        minHeight="200px"
+        class="mb-8"
+      >
       </app-google-ad>
-    </main>
+      <!-- Educational Content Section -->
+      <section class="mb-8">
+        <ng-content select="[tool-education]"></ng-content>
+      </section>
 
-    <!-- Summary Section -->
-    <section *ngIf="showSummary" class="mb-8">
-      <ng-content select="[tool-summary]"></ng-content>
-    </section>
+      <!-- Content break ad -->
+      <app-google-ad
+        [adSlot]="adSlots.TOOL_CONTENT_BREAK"
+        adFormat="auto"
+        [fullWidthResponsive]="true"
+        minHeight="250px"
+      >
+      </app-google-ad>
 
-    <!-- Educational Content Section -->
-    <section class="mb-8">
-      <ng-content select="[tool-education]"></ng-content>
-    </section>
-
-    <!-- Content break ad -->
-    <app-google-ad 
-      [adSlot]="adSlots.TOOL_CONTENT_BREAK"
-      adFormat="auto"
-      [fullWidthResponsive]="true"
-      minHeight="250px">
-    </app-google-ad>
-
-    <!-- FAQ Section -->
-    <section class="mb-8">
-      <ng-content select="[tool-faq]"></ng-content>
-    </section>
-      </div>
-      
-      <!-- Sidebar with Ad (Desktop only) -->
-      <aside class="hidden lg:block w-80">
-        <app-sidebar-ad 
-          [adSlot]="adSlots.TOOL_SIDEBAR"
-          title="Recommended">
-        </app-sidebar-ad>
-      </aside>
+      <!-- FAQ Section -->
+      <section class="mb-8">
+        <ng-content select="[tool-faq]"></ng-content>
+      </section>
     </div>
   </div>
 </div>
