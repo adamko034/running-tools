@@ -11,6 +11,7 @@
     @for (navGroup of navigation$ | async; track $index) {
       <div 
         class="nav-category"
+        [ngClass]="getCategoryClass(navGroup.title)"
         (mouseenter)="setActiveCategory(navGroup)"
         (mouseleave)="clearActiveCategory()"
       >
@@ -109,7 +110,7 @@
   <!-- Scrollable Navigation Groups -->
   <div class="mobile-nav-groups">
     @for (navGroup of navigation$ | async; track $index) {
-      <div class="mobile-nav-section">
+      <div class="mobile-nav-section" [ngClass]="getCategoryClass(navGroup.title)">
         <!-- Category Header -->
         <div class="mobile-category-header">
           <div class="category-indicator"></div>

@@ -109,4 +109,14 @@ export class App implements AfterViewInit {
   clearActiveCategory() {
     this.activeCategory = null;
   }
+
+  getCategoryClass(categoryTitle: string): string {
+    const categoryMap: { [key: string]: string } = {
+      'Race Tools': 'nav-race',
+      'Training': 'nav-training', 
+      'Personal Tools': 'nav-personal',
+      'Unit Converters': 'nav-units'
+    };
+    return categoryMap[categoryTitle] || 'nav-default';
+  }
 }

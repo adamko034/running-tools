@@ -1,0 +1,203 @@
+/* Category Theming System - Centralized Color Management */
+
+:root {
+  /* Race Tools (Blue) */
+  --race-50: #eff6ff;
+  --race-100: #dbeafe;
+  --race-200: #bfdbfe;
+  --race-300: #93c5fd;
+  --race-400: #60a5fa;
+  --race-500: #3b82f6;
+  --race-600: #2563eb;
+  --race-700: #1d4ed8;
+  --race-800: #1e40af;
+  --race-900: #1e3a8a;
+
+  /* Personal Tools (Green) */
+  --personal-50: #f0fdf4;
+  --personal-100: #dcfce7;
+  --personal-200: #bbf7d0;
+  --personal-300: #86efac;
+  --personal-400: #4ade80;
+  --personal-500: #22c55e;
+  --personal-600: #16a34a;
+  --personal-700: #15803d;
+  --personal-800: #166534;
+  --personal-900: #14532d;
+
+  /* Training (Purple) */
+  --training-50: #faf5ff;
+  --training-100: #f3e8ff;
+  --training-200: #e9d5ff;
+  --training-300: #d8b4fe;
+  --training-400: #c084fc;
+  --training-500: #a855f7;
+  --training-600: #9333ea;
+  --training-700: #7c3aed;
+  --training-800: #6b21a8;
+  --training-900: #581c87;
+
+  /* Unit Converters (Orange) */
+  --units-50: #fff7ed;
+  --units-100: #ffedd5;
+  --units-200: #fed7aa;
+  --units-300: #fdba74;
+  --units-400: #fb923c;
+  --units-500: #f97316;
+  --units-600: #ea580c;
+  --units-700: #c2410c;
+  --units-800: #9a3412;
+  --units-900: #7c2d12;
+
+  /* Active State (Neutral) */
+  --active-bg: #4b5563;
+  --active-text: #ffffff;
+  --active-indicator: #22c55e;
+}
+
+/* Category Background Utilities */
+.bg-race-gradient {
+  background: linear-gradient(135deg, var(--race-50), var(--race-100));
+}
+.bg-personal-gradient {
+  background: linear-gradient(135deg, var(--personal-50), var(--personal-100));
+}
+.bg-training-gradient {
+  background: linear-gradient(135deg, var(--training-50), var(--training-100));
+}
+.bg-units-gradient {
+  background: linear-gradient(135deg, var(--units-50), var(--units-100));
+}
+
+/* Category Icon Background Utilities */
+.bg-race-icon {
+  background: linear-gradient(135deg, var(--race-500), var(--race-600));
+}
+.bg-personal-icon {
+  background: linear-gradient(135deg, var(--personal-500), var(--personal-600));
+}
+.bg-training-icon {
+  background: linear-gradient(135deg, var(--training-500), var(--training-600));
+}
+.bg-units-icon {
+  background: linear-gradient(135deg, var(--units-500), var(--units-600));
+}
+
+/* Category Text Utilities */
+.text-race-light {
+  color: var(--race-700);
+}
+.text-race-dark {
+  color: var(--race-900);
+}
+.text-personal-light {
+  color: var(--personal-700);
+}
+.text-personal-dark {
+  color: var(--personal-900);
+}
+.text-training-light {
+  color: var(--training-700);
+}
+.text-training-dark {
+  color: var(--training-900);
+}
+.text-units-light {
+  color: var(--units-700);
+}
+.text-units-dark {
+  color: var(--units-900);
+}
+
+/* Category Badge Utilities */
+.badge-race {
+  background-color: var(--race-100);
+  color: var(--race-700);
+}
+.badge-personal {
+  background-color: var(--personal-100);
+  color: var(--personal-700);
+}
+.badge-training {
+  background-color: var(--training-100);
+  color: var(--training-700);
+}
+.badge-units {
+  background-color: var(--units-100);
+  color: var(--units-700);
+}
+
+/* Category Border Utilities */
+.border-race {
+  border-color: var(--race-200);
+}
+.border-personal {
+  border-color: var(--personal-200);
+}
+.border-training {
+  border-color: var(--training-200);
+}
+.border-units {
+  border-color: var(--units-200);
+}
+
+/* Category Hover Utilities */
+.hover-race:hover {
+  background-color: var(--race-100);
+  color: var(--race-700);
+}
+.hover-personal:hover {
+  background-color: var(--personal-100);
+  color: var(--personal-700);
+}
+.hover-training:hover {
+  background-color: var(--training-100);
+  color: var(--training-700);
+}
+.hover-units:hover {
+  background-color: var(--units-100);
+  color: var(--units-700);
+}
+
+/* Category Divider Utilities */
+.divider-race {
+  background: linear-gradient(90deg, transparent, var(--race-400), transparent);
+}
+.divider-personal {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--personal-400),
+    transparent
+  );
+}
+.divider-training {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--training-400),
+    transparent
+  );
+}
+.divider-units {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--units-400),
+    transparent
+  );
+}
+
+/* Category Accent Utilities */
+.accent-race {
+  background-color: var(--race-300);
+}
+.accent-personal {
+  background-color: var(--personal-300);
+}
+.accent-training {
+  background-color: var(--training-300);
+}
+.accent-units {
+  background-color: var(--units-300);
+}
