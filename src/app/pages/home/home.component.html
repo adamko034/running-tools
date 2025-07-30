@@ -3,9 +3,9 @@
 ></app-language-store-selector> -->
 
 <div class="max-w-7xl mx-auto px-4">
-  <!-- Enhanced Hero Section (from Design 2, without stats) -->
+  <!-- Enhanced Hero Section (mobile-optimized) -->
   <header
-    class="relative text-center mb-16 px-8 py-16 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 rounded-3xl text-white shadow-2xl overflow-hidden"
+    class="relative text-center mb-12 px-6 py-8 md:px-8 md:py-16 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 rounded-3xl text-white shadow-2xl overflow-hidden"
   >
     <!-- Animated Background -->
     <div class="absolute inset-0 opacity-20">
@@ -15,42 +15,56 @@
     </div>
 
     <div class="relative z-10 max-w-4xl mx-auto">
-      <div class="flex items-center justify-center gap-6 mb-8">
+      <!-- Mobile-optimized header layout -->
+      <div
+        class="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 mb-6 md:mb-8"
+      >
         <div
           *ngIf="(isMobile$ | async) === false"
-          class="flex items-center justify-center w-24 h-24 bg-gradient-to-br from-orange-400 via-pink-400 to-purple-500 rounded-full shadow-2xl ring-4 ring-white ring-opacity-30"
+          class="flex items-center justify-center w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br from-orange-400 via-pink-400 to-purple-500 rounded-full shadow-2xl ring-4 ring-white ring-opacity-30"
         >
           <img
             src="icons/icon-96x96.png"
             alt="Runner Toolkit Logo"
-            class="w-20 h-20 rounded-full filter brightness-110 contrast-110"
+            class="w-16 h-16 md:w-20 md:h-20 rounded-full filter brightness-110 contrast-110"
           />
         </div>
-        <div>
+        <div class="text-center md:text-left">
           <h1
-            class="text-6xl font-bold mb-2 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent"
+            class="text-4xl md:text-6xl font-bold mb-2 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent"
           >
             {{ 'APP.TITLE' | translate }}
           </h1>
         </div>
       </div>
 
-      <p class="text-xl leading-relaxed mb-8 text-blue-100 max-w-3xl mx-auto">
+      <p
+        class="text-lg md:text-xl leading-relaxed mb-6 md:mb-8 text-blue-100 max-w-3xl mx-auto"
+      >
         {{ 'APP.DESCRIPTION' | translate }}
       </p>
 
-      <div class="flex items-center justify-center gap-8 text-blue-200">
+      <!-- Mobile-optimized feature highlights -->
+      <div
+        class="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 text-blue-200"
+      >
         <div class="flex items-center gap-2">
-          <mat-icon>trending_up</mat-icon>
-          <span>{{ 'HOME.HERO_TRACK_PROGRESS' | translate }}</span>
+          <mat-icon class="text-lg">trending_up</mat-icon>
+          <span class="text-sm md:text-base">{{
+            'HOME.HERO_TRACK_PROGRESS' | translate
+          }}</span>
         </div>
         <div class="flex items-center gap-2">
-          <mat-icon>psychology</mat-icon>
-          <span>{{ 'HOME.HERO_TRAIN_SMART' | translate }}</span>
+          <mat-icon class="text-lg">psychology</mat-icon>
+          <span class="text-sm md:text-base">{{
+            'HOME.HERO_TRAIN_SMART' | translate
+          }}</span>
         </div>
         <div class="flex items-center gap-2">
-          <mat-icon>emoji_events</mat-icon>
-          <span>{{ 'HOME.HERO_ACHIEVE_GOALS' | translate }}</span>
+          <mat-icon class="text-lg">emoji_events</mat-icon>
+          <span class="text-sm md:text-base">{{
+            'HOME.HERO_ACHIEVE_GOALS' | translate
+          }}</span>
         </div>
       </div>
     </div>

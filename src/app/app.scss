@@ -55,11 +55,11 @@
     .category-indicator {
       background-color: var(--race-500);
     }
-    
+
     .category-title {
       color: var(--race-700);
     }
-    
+
     .category-count {
       background-color: var(--race-100);
       color: var(--race-700);
@@ -78,7 +78,7 @@
     .link-title {
       color: var(--race-800);
     }
-    
+
     .link-arrow {
       color: var(--race-600);
     }
@@ -106,11 +106,11 @@
     .category-indicator {
       background-color: var(--personal-500);
     }
-    
+
     .category-title {
       color: var(--personal-700);
     }
-    
+
     .category-count {
       background-color: var(--personal-100);
       color: var(--personal-700);
@@ -129,7 +129,7 @@
     .link-title {
       color: var(--personal-800);
     }
-    
+
     .link-arrow {
       color: var(--personal-600);
     }
@@ -157,11 +157,11 @@
     .category-indicator {
       background-color: var(--training-500);
     }
-    
+
     .category-title {
       color: var(--training-700);
     }
-    
+
     .category-count {
       background-color: var(--training-100);
       color: var(--training-700);
@@ -180,7 +180,7 @@
     .link-title {
       color: var(--training-800);
     }
-    
+
     .link-arrow {
       color: var(--training-600);
     }
@@ -208,11 +208,11 @@
     .category-indicator {
       background-color: var(--units-500);
     }
-    
+
     .category-title {
       color: var(--units-700);
     }
-    
+
     .category-count {
       background-color: var(--units-100);
       color: var(--units-700);
@@ -231,7 +231,7 @@
     .link-title {
       color: var(--units-800);
     }
-    
+
     .link-arrow {
       color: var(--units-600);
     }
@@ -626,6 +626,6 @@
   }
 
   .main-content {
-    padding: calc(1rem + 70px) 1rem 1rem; // Add top padding for fixed navbar on mobile
+    padding: calc(1rem + 50px) 1rem 1rem; // Add top padding for fixed navbar on mobile
   }
 }
