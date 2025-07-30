@@ -3,91 +3,191 @@
 ></app-language-store-selector> -->
 
 <div class="max-w-7xl mx-auto px-4">
-  <!-- Header Section -->
-  <header
-    class="relative text-center mb-12 px-8 py-12 bg-gradient-to-br from-blue-100 via-blue-200 to-green-100 rounded-2xl text-gray-800 shadow-2xl"
-    [class.py-12]="(isMobile$ | async) === false"
-    [class.py-6]="isMobile$ | async"
-  >
-    <div class="max-w-4xl mx-auto">
-      <div class="flex items-center justify-center gap-4 mb-6">
+  <!-- Enhanced Hero Section (from Design 2, without stats) -->
+  <header class="relative text-center mb-16 px-8 py-16 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 rounded-3xl text-white shadow-2xl overflow-hidden">
+    <!-- Animated Background -->
+    <div class="absolute inset-0 opacity-20">
+      <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white to-transparent transform -skew-x-12 animate-shimmer"></div>
+    </div>
+    
+    <div class="relative z-10 max-w-4xl mx-auto">
+      <div class="flex items-center justify-center gap-6 mb-8">
         <div
           *ngIf="(isMobile$ | async) === false"
-          class="flex items-center justify-center w-20 h-20 bg-gradient-to-br from-orange-400 via-pink-400 to-purple-500 rounded-full shadow-2xl ring-4 ring-white ring-opacity-50"
+          class="flex items-center justify-center w-24 h-24 bg-gradient-to-br from-orange-400 via-pink-400 to-purple-500 rounded-full shadow-2xl ring-4 ring-white ring-opacity-30"
         >
           <img
             src="icons/icon-96x96.png"
             alt="Runner Toolkit Logo"
-            class="w-18 h-18 rounded-full filter brightness-110 contrast-110"
+            class="w-20 h-20 rounded-full filter brightness-110 contrast-110"
           />
         </div>
-        <h1 class="text-5xl font-bold text-shadow-lg">
-          {{ 'APP.TITLE' | translate }}
-        </h1>
+        <div>
+          <h1 class="text-6xl font-bold mb-2 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+            {{ 'APP.TITLE' | translate }}
+          </h1>
+          <p class="text-blue-200 text-lg">{{ 'HOME.HERO_SUBTITLE' | translate }}</p>
+        </div>
       </div>
-      <div class="mt-6">
-        <p class="text-xl leading-relaxed mb-4 opacity-95">
-          {{ 'APP.DESCRIPTION' | translate }}
-        </p>
-        <p
-          *ngIf="(isMobile$ | async) === false"
-          class="text-lg leading-relaxed opacity-90 italic"
-        >
-          {{ 'HOME.SUB_DESCRIPTION' | translate }}
-          <strong class="font-semibold not-italic text-shadow">
-            {{ 'HOME.SUB_DESCRIPTION_2' | translate }}</strong
-          >
-        </p>
+      
+      <p class="text-xl leading-relaxed mb-8 text-blue-100 max-w-3xl mx-auto">
+        {{ 'APP.DESCRIPTION' | translate }}
+      </p>
+      
+      <div class="flex items-center justify-center gap-8 text-blue-200">
+        <div class="flex items-center gap-2">
+          <mat-icon>trending_up</mat-icon>
+          <span>{{ 'HOME.HERO_TRACK_PROGRESS' | translate }}</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <mat-icon>psychology</mat-icon>
+          <span>{{ 'HOME.HERO_TRAIN_SMART' | translate }}</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <mat-icon>emoji_events</mat-icon>
+          <span>{{ 'HOME.HERO_ACHIEVE_GOALS' | translate }}</span>
+        </div>
       </div>
     </div>
   </header>
 
-  <!-- Tools Grid -->
+  <!-- Quick Access Tools (from Design 1) -->
   <section class="mb-16">
-    @for (category of navigation$ | async; track $index) {
-      <div class="mb-12">
-        <h2
-          class="text-3xl pr-6 font-semibold text-gray-900 mb-6 capitalize border-b-3 border-blue-500 pb-2 inline-block"
-        >
-          {{ category.title }}
-        </h2>
-        <div class="flex justify-center">
-          <div
-            class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 max-w-fit"
-          >
-            @for (tool of category.links; track $index) {
-              <mat-card
-                class="cursor-pointer transition-all duration-300 border-2 border-transparent rounded-lg overflow-hidden hover:-translate-y-1 hover:shadow-lg hover:border-blue-500 p-3"
-                [routerLink]="tool.link"
-              >
-                <div class="text-center flex flex-col h-full justify-between">
-                  <div
-                    class="flex items-center justify-center w-10 h-10 bg-gradient-to-br from-blue-100 to-green-100 rounded-lg mx-auto mb-2 border border-blue-200"
-                  >
-                    <mat-icon class="text-blue-700 text-lg">{{
-                      tool.icon
-                    }}</mat-icon>
-                  </div>
-                  <h3
-                    class="text-base font-semibold text-gray-900 mb-1 leading-tight"
-                  >
-                    {{ tool.text }}
-                  </h3>
-                  <p class="text-sm text-gray-600 leading-snug mb-2">
-                    {{ tool.description }}
-                  </p>
-                  <button
-                    mat-button
-                    color="primary"
-                    class="text-sm py-1 px-2 min-h-0 self-end justify-self-end"
-                  >
-                    <mat-icon class="text-sm mr-1">arrow_forward</mat-icon>
-                    {{ 'COMMON.USE' | translate }}
-                  </button>
-                </div>
-              </mat-card>
-            }
+    <div class="text-center mb-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-2">{{ 'HOME.QUICK_START_TITLE' | translate }}</h2>
+      <p class="text-gray-600">{{ 'HOME.QUICK_START_SUBTITLE' | translate }}</p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+      <!-- Most Popular Tools with Design 3 styling -->
+      <div 
+        class="tool-card group relative bg-gradient-to-br from-blue-50 to-indigo-100 rounded-2xl p-6 cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-xl border-2 border-transparent hover:border-blue-300"
+        routerLink="tools/race/pace-calculator"
+      >
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-300">
+            <mat-icon class="text-white text-xl">speed</mat-icon>
           </div>
+          <div>
+            <h3 class="font-bold text-gray-900">Pace Calculator</h3>
+            <div class="flex items-center gap-1 text-sm text-blue-600">
+              <mat-icon class="text-xs">trending_up</mat-icon>
+              <span>{{ 'HOME.QUICK_START_MOST_POPULAR' | translate }}</span>
+            </div>
+          </div>
+        </div>
+        <p class="text-gray-700 text-sm mb-4">{{ 'HOME.QUICK_START_PACE_DESC' | translate }}</p>
+        <div class="flex items-center justify-between">
+          <span class="text-xs text-gray-500">Race Tools</span>
+          <mat-icon class="text-blue-600 group-hover:translate-x-1 transition-transform duration-300">arrow_forward</mat-icon>
+        </div>
+      </div>
+
+      <div 
+        class="tool-card group relative bg-gradient-to-br from-green-50 to-emerald-100 rounded-2xl p-6 cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-xl border-2 border-transparent hover:border-green-300"
+        routerLink="tools/personal/bmi-calculator"
+      >
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-300">
+            <mat-icon class="text-white text-xl">monitor_weight</mat-icon>
+          </div>
+          <div>
+            <h3 class="font-bold text-gray-900">BMI Calculator</h3>
+            <div class="flex items-center gap-1 text-sm text-green-600">
+              <mat-icon class="text-xs">favorite</mat-icon>
+              <span>{{ 'HOME.QUICK_START_HEALTH_FOCUS' | translate }}</span>
+            </div>
+          </div>
+        </div>
+        <p class="text-gray-700 text-sm mb-4">{{ 'HOME.QUICK_START_BMI_DESC' | translate }}</p>
+        <div class="flex items-center justify-between">
+          <span class="text-xs text-gray-500">Personal Tools</span>
+          <mat-icon class="text-green-600 group-hover:translate-x-1 transition-transform duration-300">arrow_forward</mat-icon>
+        </div>
+      </div>
+
+      <div 
+        class="tool-card group relative bg-gradient-to-br from-purple-50 to-violet-100 rounded-2xl p-6 cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-xl border-2 border-transparent hover:border-purple-300"
+        routerLink="tools/training/training-paces-calculator"
+      >
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-violet-600 rounded-xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-300">
+            <mat-icon class="text-white text-xl">directions_run</mat-icon>
+          </div>
+          <div>
+            <h3 class="font-bold text-gray-900">Training Paces</h3>
+            <div class="flex items-center gap-1 text-sm text-purple-600">
+              <mat-icon class="text-xs">psychology</mat-icon>
+              <span>{{ 'HOME.QUICK_START_SMART_TRAINING' | translate }}</span>
+            </div>
+          </div>
+        </div>
+        <p class="text-gray-700 text-sm mb-4">{{ 'HOME.QUICK_START_TRAINING_DESC' | translate }}</p>
+        <div class="flex items-center justify-between">
+          <span class="text-xs text-gray-500">Training</span>
+          <mat-icon class="text-purple-600 group-hover:translate-x-1 transition-transform duration-300">arrow_forward</mat-icon>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- All Tools by Category (Structure from Design 1, Styling from Design 3) -->
+  <section class="mb-16">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 mb-2">{{ 'HOME.ALL_TOOLS_TITLE' | translate }}</h2>
+      <p class="text-gray-600">{{ 'HOME.ALL_TOOLS_SUBTITLE' | translate }}</p>
+    </div>
+
+    @for (category of navigation$ | async; track $index) {
+      <div class="mb-12 fade-in-up" [style.animation-delay]="($index * 200) + 'ms'">
+        <!-- Category Header -->
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-8 h-8 rounded-lg flex items-center justify-center" 
+               [ngClass]="getCategoryStyles(category.title).bg">
+            <mat-icon [ngClass]="getCategoryStyles(category.title).text" class="text-lg">
+              {{ getCategoryIcon(category.title) }}
+            </mat-icon>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900">{{ category.title }}</h3>
+          <div class="flex-1 h-px bg-gradient-to-r from-gray-300 to-transparent"></div>
+        </div>
+
+        <!-- Tools Grid with Same Height -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+          @for (tool of category.links; track $index) {
+            <div 
+              class="tool-card group h-48 rounded-xl p-5 cursor-pointer transform transition-all duration-300 hover:shadow-lg hover:-translate-y-1 border-2 border-transparent"
+              [ngClass]="getCategoryCardStyles(category.title)"
+              [routerLink]="tool.link"
+            >
+              <div class="flex flex-col h-full">
+                <div class="flex items-center gap-3 mb-4">
+                  <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300"
+                       [ngClass]="getCategoryIconStyles(category.title)">
+                    <mat-icon class="text-white text-lg">
+                      {{ tool.icon }}
+                    </mat-icon>
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <h4 class="font-semibold text-gray-900 mb-1 group-hover:text-blue-600 transition-colors duration-200 leading-tight">
+                      {{ tool.text }}
+                    </h4>
+                  </div>
+                </div>
+                
+                <p class="text-sm text-gray-600 leading-relaxed mb-4 flex-1">
+                  {{ tool.description }}
+                </p>
+                
+                <div class="flex items-center justify-between mt-auto">
+                  <span class="text-xs text-gray-400 uppercase tracking-wide">{{ category.title }}</span>
+                  <mat-icon class="text-gray-400 text-sm group-hover:text-blue-600 group-hover:translate-x-1 transition-all duration-200">
+                    arrow_forward
+                  </mat-icon>
+                </div>
+              </div>
+            </div>
+          }
         </div>
       </div>
     }

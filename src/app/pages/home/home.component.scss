@@ -11,3 +11,200 @@
 .border-b-3 {
   border-bottom-width: 3px;
 }
+
+/* Hero Section Animations (from Design 2) */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) skewX(-12deg);
+  }
+  100% {
+    transform: translateX(200%) skewX(-12deg);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+/* Gradient text support */
+.bg-clip-text {
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* Tool Card Animations (from Design 3 styling) */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+/* Staggered animation delays for category sections */
+.fade-in-up:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.fade-in-up:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.fade-in-up:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.fade-in-up:nth-child(4) {
+  animation-delay: 0.8s;
+}
+
+/* Tool Card Styling (Design 3 look with Design 1 structure) */
+.tool-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.tool-card:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  z-index: 10;
+}
+
+/* Icon hover animations */
+.tool-card:hover .w-10,
+.tool-card:hover .w-12 {
+  transform: scale(1.1) rotate(6deg);
+}
+
+/* Quick Start section cards - staggered animation */
+.tool-card:nth-child(1) {
+  animation: fadeInUp 0.6s ease-out 0.1s both;
+}
+
+.tool-card:nth-child(2) {
+  animation: fadeInUp 0.6s ease-out 0.2s both;
+}
+
+.tool-card:nth-child(3) {
+  animation: fadeInUp 0.6s ease-out 0.3s both;
+}
+
+/* Category tools grid - staggered animation within each category */
+.tool-card:nth-child(1) {
+  animation: fadeInUp 0.5s ease-out 0.1s both;
+}
+
+.tool-card:nth-child(2) {
+  animation: fadeInUp 0.5s ease-out 0.2s both;
+}
+
+.tool-card:nth-child(3) {
+  animation: fadeInUp 0.5s ease-out 0.3s both;
+}
+
+.tool-card:nth-child(4) {
+  animation: fadeInUp 0.5s ease-out 0.4s both;
+}
+
+.tool-card:nth-child(5) {
+  animation: fadeInUp 0.5s ease-out 0.5s both;
+}
+
+/* Enhanced hover effects for icons and arrows */
+.group:hover .group-hover\:rotate-12 {
+  transform: rotate(12deg);
+}
+
+.group:hover .group-hover\:translate-x-1 {
+  transform: translateX(0.25rem);
+}
+
+.group:hover .group-hover\:scale-105 {
+  transform: scale(1.05);
+}
+
+.group:hover .group-hover\:rotate-6 {
+  transform: rotate(6deg);
+}
+
+.group:hover .group-hover\:scale-110 {
+  transform: scale(1.1);
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+  transition-property: transform, opacity, box-shadow, background-color, border-color, color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+/* Focus states for accessibility */
+.tool-card:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Enhanced category header styling */
+.category-header {
+  position: relative;
+}
+
+.category-header::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+  transition: width 0.3s ease;
+}
+
+.category-header:hover::after {
+  width: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .tool-card {
+    height: auto !important;
+    min-height: 180px;
+  }
+}
+
+/* Loading state for tool cards */
+.tool-card {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.tool-card.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
