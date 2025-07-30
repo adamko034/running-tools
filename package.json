@@ -1,6 +1,6 @@
 {
   "name": "running-tools",
-  "version": "1.0.43",
+  "version": "1.0.44",
   "scripts": {
     "ng": "ng",
     "start": "npm run set-version && ng serve",
