@@ -1,13 +1,14 @@
-<app-tool-view 
-  [calculatorName]="'TOOLS.FINISH_TIME_PREDICTOR.TITLE' | translate"
-  [calculatorDescription]="'TOOLS.FINISH_TIME_PREDICTOR.DESCRIPTION' | translate"
-  category="race">
-  <ng-container tool-title>{{
-    'TOOLS.FINISH_TIME_PREDICTOR.TITLE' | translate
-  }}</ng-container>
-  <ng-container tool-description>{{
-    'TOOLS.FINISH_TIME_PREDICTOR.DESCRIPTION' | translate
-  }}</ng-container>
+<app-tool-view
+  calculatorName="Race Finish Time Predictor"
+  calculatorDescription="Predict your finish times for different race distances based on your current performance. Enter a recent race time to get accurate predictions for 5K, 10K, half marathon, marathon, and more."
+  category="race"
+>
+  <ng-container tool-title>Race Finish Time Predictor</ng-container>
+  <ng-container tool-description
+    >Predict your finish times for different race distances based on your
+    current performance. Enter a recent race time to get accurate predictions
+    for 5K, 10K, half marathon, marathon, and more.</ng-container
+  >
   <ng-container tool-content>
     <!-- Responsive Form Grid -->
     <div class="grid md:grid-cols-2 gap-6">
@@ -18,20 +19,18 @@
 
   <ng-container tool-summary>
     <app-fancy-result [transparentValue]="true">
-      <div result-title>
-        {{ 'TOOLS.FINISH_TIME_PREDICTOR.SUMMARY' | translate }}
-      </div>
-      <div result-subtitle>
-        {{ 'TOOLS.FINISH_TIME_PREDICTOR.SUMMARY_SUB' | translate }}
-      </div>
+      <div result-title>Predicted Race Times</div>
+
+      <div result-subtitle>Based on your current performance level</div>
+
       <div result-value>
         <!-- Race times grid -->
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          @for (raceTime of raceTimes(); track raceTime.translationKey) {
+          @for (raceTime of raceTimes(); track raceTime.label) {
             @if (raceTime.time) {
               <app-race-time-card>
                 <div race-distance>
-                  {{ raceTime.translationKey | translate }}
+                  {{ raceTime.label }}
                 </div>
                 <div race-time>{{ raceTime.time.format() }}</div>
                 <div race-pace>{{ raceTime.pace.format() }}</div>
@@ -43,35 +42,375 @@
     </app-fancy-result>
   </ng-container>
 
+  <!-- Educational Content Section -->
+  <ng-container tool-education>
+    <div class="mt-8 space-y-6">
+      <!-- How to Use Section -->
+      <div class="bg-blue-50 p-6 rounded-lg">
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">
+          How to Use the Finish Time Predictor
+        </h2>
+        <div class="space-y-2 text-gray-700">
+          <p>
+            <strong>1. Enter your recent race performance:</strong> Input the
+            distance and time from a recent race or time trial. The more recent
+            and race-specific the data, the more accurate your predictions will
+            be.
+          </p>
+          <p>
+            <strong>2. Choose representative performance:</strong> Use a race
+            where you gave your best effort and felt well-prepared. Avoid times
+            from training runs or races where you were injured or undertrained.
+          </p>
+          <p>
+            <strong>3. Review predicted times:</strong> The calculator shows
+            equivalent performances for 400m, 1K, 5K, 10K, half marathon, and
+            marathon distances based on your input.
+          </p>
+          <p>
+            <strong>4. Set realistic goals:</strong> Use predictions as a
+            starting point for goal setting, but consider your training
+            background, experience at the target distance, and time available
+            for preparation.
+          </p>
+        </div>
+      </div>
+
+      <!-- Prediction Science Section -->
+      <div class="bg-green-50 p-6 rounded-lg">
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">
+          The Science Behind Race Time Predictions
+        </h2>
+        <div class="space-y-3 text-gray-700">
+          <p>
+            Race time predictions are based on established relationships between
+            performance at different distances, considering physiological
+            factors that determine running performance:
+          </p>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <h4 class="font-medium text-gray-900 mb-1">
+                Key Performance Factors
+              </h4>
+              <ul class="list-disc list-inside space-y-1 ml-4 text-sm">
+                <li>
+                  <strong>VO₂ Max:</strong> Maximum oxygen uptake capacity -
+                  determines aerobic power
+                </li>
+                <li>
+                  <strong>Lactate Threshold:</strong> Pace you can sustain
+                  without lactate accumulation
+                </li>
+                <li>
+                  <strong>Running Economy:</strong> How efficiently you use
+                  oxygen at different speeds
+                </li>
+                <li>
+                  <strong>Neuromuscular Power:</strong> Ability to generate
+                  force and maintain form
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-medium text-gray-900 mb-1">
+                Prediction Accuracy
+              </h4>
+              <ul class="list-disc list-inside space-y-1 ml-4 text-sm">
+                <li>
+                  <strong>Most accurate:</strong> Between similar distances (5K
+                  ↔ 10K, half ↔ marathon)
+                </li>
+                <li>
+                  <strong>Less accurate:</strong> Between very different
+                  distances (800m ↔ marathon)
+                </li>
+                <li>
+                  <strong>Individual variation:</strong> Some runners excel at
+                  shorter vs longer distances
+                </li>
+                <li>
+                  <strong>Training specificity:</strong> Performance improves
+                  with distance-specific training
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Training Applications Section -->
+      <div class="bg-yellow-50 p-6 rounded-lg">
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">
+          Using Predictions for Training & Racing
+        </h2>
+        <div class="space-y-3 text-gray-700">
+          <p>
+            Race time predictions are valuable tools for setting realistic
+            goals, planning training, and developing race strategies:
+          </p>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <h4 class="font-medium text-gray-900 mb-1">
+                Goal Setting & Planning
+              </h4>
+              <ul class="list-disc list-inside space-y-1 ml-4 text-sm">
+                <li>
+                  <strong>Realistic targets:</strong> Set achievable goals based
+                  on current fitness level
+                </li>
+                <li>
+                  <strong>Training focus:</strong> Identify which energy systems
+                  need development for your target distance
+                </li>
+                <li>
+                  <strong>Timeline planning:</strong> Determine how much
+                  training time you need to achieve predicted times
+                </li>
+                <li>
+                  <strong>Progress tracking:</strong> Monitor improvements by
+                  updating predictions with new race times
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-medium text-gray-900 mb-1">
+                Race Strategy Development
+              </h4>
+              <ul class="list-disc list-inside space-y-1 ml-4 text-sm">
+                <li>
+                  <strong>Pacing strategy:</strong> Use our
+                  <a
+                    href="/tools/race/pace-calculator"
+                    class="text-blue-600 hover:text-blue-800 underline"
+                    >pace calculator</a
+                  >
+                  to determine target race pace
+                </li>
+                <li>
+                  <strong>Training paces:</strong> Get personalized training
+                  zones with our
+                  <a
+                    href="/tools/training/training-paces-calculator"
+                    class="text-purple-600 hover:text-purple-800 underline"
+                    >training paces calculator</a
+                  >
+                </li>
+                <li>
+                  <strong>Race selection:</strong> Choose races that align with
+                  your strengths and goals
+                </li>
+                <li>
+                  <strong>Backup plans:</strong> Prepare alternative goals based
+                  on race day conditions
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Performance Optimization Section -->
+      <div class="bg-orange-50 p-6 rounded-lg">
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">
+          Optimizing Performance Across Distances
+        </h2>
+        <div class="space-y-3 text-gray-700">
+          <p>
+            Different race distances require specific training adaptations and
+            strategies to achieve predicted times:
+          </p>
+          <div class="grid md:grid-cols-3 gap-4">
+            <div class="bg-white p-3 rounded border">
+              <h4 class="font-medium text-gray-900 mb-1">
+                Short Distances (400m-5K)
+              </h4>
+              <ul class="text-sm space-y-1">
+                <li>
+                  <strong>Focus:</strong> Speed, VO₂ max, lactate tolerance
+                </li>
+                <li>
+                  <strong>Training:</strong> Intervals, tempo runs, track work
+                </li>
+                <li>
+                  <strong>Strategy:</strong> Aggressive pacing, strong finish
+                </li>
+              </ul>
+            </div>
+            <div class="bg-white p-3 rounded border">
+              <h4 class="font-medium text-gray-900 mb-1">
+                Middle Distances (10K-Half)
+              </h4>
+              <ul class="text-sm space-y-1">
+                <li>
+                  <strong>Focus:</strong> Lactate threshold, running economy
+                </li>
+                <li>
+                  <strong>Training:</strong> Tempo runs, long intervals, base
+                  building
+                </li>
+                <li>
+                  <strong>Strategy:</strong> Even pacing, controlled effort
+                </li>
+              </ul>
+            </div>
+            <div class="bg-white p-3 rounded border">
+              <h4 class="font-medium text-gray-900 mb-1">
+                Long Distances (Marathon+)
+              </h4>
+              <ul class="text-sm space-y-1">
+                <li>
+                  <strong>Focus:</strong> Aerobic capacity, fat utilization,
+                  endurance
+                </li>
+                <li>
+                  <strong>Training:</strong> Long runs, easy miles, marathon
+                  pace work
+                </li>
+                <li>
+                  <strong>Strategy:</strong> Conservative pacing, energy
+                  management
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Related Tools Section -->
+      <div class="bg-purple-50 p-6 rounded-lg">
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">
+          Related Race Planning Tools
+        </h2>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="space-y-2">
+            <a
+              href="/tools/race/pace-calculator"
+              class="block p-3 bg-white rounded border hover:border-blue-300 transition-colors"
+            >
+              <h3 class="font-medium text-blue-600">Pace Calculator</h3>
+              <p class="text-sm text-gray-600">
+                Calculate running pace from distance and time for race planning
+              </p>
+            </a>
+            <a
+              href="/tools/training/training-paces-calculator"
+              class="block p-3 bg-white rounded border hover:border-purple-300 transition-colors"
+            >
+              <h3 class="font-medium text-purple-600">
+                Training Paces Calculator
+              </h3>
+              <p class="text-sm text-gray-600">
+                Get personalized training paces based on your race goals
+              </p>
+            </a>
+            <a
+              href="/tools/personal/vo2max-calculator"
+              class="block p-3 bg-white rounded border hover:border-red-300 transition-colors"
+            >
+              <h3 class="font-medium text-red-600">VO₂ Max Calculator</h3>
+              <p class="text-sm text-gray-600">
+                Estimate your aerobic fitness and performance potential
+              </p>
+            </a>
+          </div>
+          <div class="space-y-2">
+            <a
+              href="/tools/units/pace-to-speed"
+              class="block p-3 bg-white rounded border hover:border-orange-300 transition-colors"
+            >
+              <h3 class="font-medium text-orange-600">
+                Pace to Speed Converter
+              </h3>
+              <p class="text-sm text-gray-600">
+                Convert between pace and speed units for training
+              </p>
+            </a>
+            <a
+              href="/tools/personal/burned-calories-estimator"
+              class="block p-3 bg-white rounded border hover:border-green-300 transition-colors"
+            >
+              <h3 class="font-medium text-green-600">
+                Calories Burned Calculator
+              </h3>
+              <p class="text-sm text-gray-600">
+                Estimate energy expenditure for different race distances
+              </p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
   <!-- FAQ Section -->
   <ng-container tool-faq>
     <app-faq-section>
-      <div faq-title>{{ 'TOOLS.FINISH_TIME_PREDICTOR.FAQ.TITLE' | translate }}</div>
-      
+      <div faq-title>Frequently Asked Questions</div>
+
       <div faq-items>
         <app-faq-item>
-          <div faq-question>{{ 'TOOLS.FINISH_TIME_PREDICTOR.FAQ.Q1' | translate }}</div>
-          <div faq-answer [innerHTML]="'TOOLS.FINISH_TIME_PREDICTOR.FAQ.A1' | translate"></div>
+          <div faq-question>How accurate are race time predictions?</div>
+          <div faq-answer>
+            Race time predictions are most accurate between similar distances
+            (within 2-5% for 5K-10K or half-marathon predictions). Accuracy
+            decreases when predicting very different distances (e.g., 5K to
+            marathon). Individual factors like training background, race
+            experience, and natural strengths at different distances can affect
+            accuracy. Use predictions as guidelines rather than guarantees.
+          </div>
         </app-faq-item>
 
         <app-faq-item>
-          <div faq-question>{{ 'TOOLS.FINISH_TIME_PREDICTOR.FAQ.Q2' | translate }}</div>
-          <div faq-answer [innerHTML]="'TOOLS.FINISH_TIME_PREDICTOR.FAQ.A2' | translate"></div>
+          <div faq-question>
+            What race time should I use for the most accurate predictions?
+          </div>
+          <div faq-answer>
+            Use your most recent race time from a distance you're well-trained
+            for, where you gave maximum effort under good conditions. Avoid
+            using times from training runs, time trials without proper taper, or
+            races where you were injured, sick, or undertrained. The more
+            representative your input time is of your current fitness, the more
+            accurate your predictions will be.
+          </div>
         </app-faq-item>
 
         <app-faq-item>
-          <div faq-question>{{ 'TOOLS.FINISH_TIME_PREDICTOR.FAQ.Q3' | translate }}</div>
-          <div faq-answer [innerHTML]="'TOOLS.FINISH_TIME_PREDICTOR.FAQ.A3' | translate"></div>
+          <div faq-question>
+            Why might my actual race times differ from predictions?
+          </div>
+          <div faq-answer>
+            Several factors can cause differences: individual strengths (some
+            excel at speed vs endurance), training specificity (marathon
+            training improves marathon performance more than 5K performance),
+            race conditions (weather, course difficulty), pacing strategy,
+            experience at the distance, and current fitness changes since your
+            reference race. Use predictions as starting points for goal setting.
+          </div>
         </app-faq-item>
 
         <app-faq-item>
-          <div faq-question>{{ 'TOOLS.FINISH_TIME_PREDICTOR.FAQ.Q4' | translate }}</div>
-          <div faq-answer [innerHTML]="'TOOLS.FINISH_TIME_PREDICTOR.FAQ.A4' | translate"></div>
+          <div faq-question>How should I use predictions for goal setting?</div>
+          <div faq-answer>
+            Start with predicted times as baseline goals, then adjust based on
+            your training background, time available for preparation, and
+            experience at the target distance. For new distances, aim for times
+            2-5% slower than predictions initially. As you gain experience and
+            specific training, you can target the predicted times or faster.
+            Always have A, B, and C goals for race day.
+          </div>
         </app-faq-item>
 
         <app-faq-item>
-          <div faq-question>{{ 'TOOLS.FINISH_TIME_PREDICTOR.FAQ.Q5' | translate }}</div>
-          <div faq-answer [innerHTML]="'TOOLS.FINISH_TIME_PREDICTOR.FAQ.A5' | translate"></div>
+          <div faq-question>Can I improve my predictions through training?</div>
+          <div faq-answer>
+            Absolutely! Predictions reflect your current fitness level.
+            Consistent training, especially distance-specific preparation, will
+            improve your actual race times and update your predictions. Track
+            progress by entering new race times periodically. Focus on the
+            training systems most important for your target distance - speed
+            work for 5K, threshold training for 10K-half marathon, and aerobic
+            base for marathon.
+          </div>
         </app-faq-item>
       </div>
     </app-faq-section>

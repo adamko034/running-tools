@@ -3,7 +3,6 @@ import { Component, computed, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { TranslateModule } from '@ngx-translate/core';
 import { Pace } from '../../../../core/business/model/pace.model';
 import { SeoService } from '../../../../core/services/seo.service';
 import { Store } from '../../../../core/store/store.model';
@@ -28,7 +27,6 @@ import { ToolView } from '../../../../shared/views/tool-view/tool-view';
     FancyResult,
     FaqSectionComponent,
     FaqItemComponent,
-    TranslateModule,
   ],
   templateUrl: './training-paces-calculator.html',
   standalone: true,

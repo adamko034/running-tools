@@ -1,8 +1,9 @@
-import { inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { Analytics, getAnalytics, logEvent } from '@angular/fire/analytics';
 import { FirebaseApp } from '@angular/fire/app';
 import { LoggerDev } from '../utils/logger-dev';
+import { EnvironmentService } from './environment.service';
 
 @Injectable({
   providedIn: 'root',
@@ -10,6 +11,7 @@ import { LoggerDev } from '../utils/logger-dev';
 export class AnalyticsService {
   private firebaseApp = inject(FirebaseApp);
   private platformId = inject(PLATFORM_ID);
+  private environmentService = inject(EnvironmentService);
   private analytics: Analytics | null = null;
   private isEnabled = false;
 
@@ -63,6 +65,11 @@ export class AnalyticsService {
   // Public method to log events (only works if analytics is enabled)
   logEvent(eventName: string, parameters?: Record<string, any>): void {
     if (this.analytics && this.isEnabled) {
+      if (this.environmentService.isLocalhost()) {
+        LoggerDev.log(`Skipped analytics event: ${eventName}`, parameters);
+        return;
+      }
+
       try {
         logEvent(this.analytics, eventName, {
           ...parameters,

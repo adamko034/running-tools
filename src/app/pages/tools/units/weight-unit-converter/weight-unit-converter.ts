@@ -1,5 +1,4 @@
 import { Component, inject } from '@angular/core';
-import { TranslateModule } from '@ngx-translate/core';
 import { WeightUnit } from '../../../../core/business/model/enums/weight-unit.enum';
 import { SeoService } from '../../../../core/services/seo.service';
 import { StoreService } from '../../../../core/store/store.service';
@@ -17,7 +16,6 @@ import { ToolView } from '../../../../shared/views/tool-view/tool-view';
     FancyResult,
     FaqSectionComponent,
     FaqItemComponent,
-    TranslateModule,
   ],
   templateUrl: './weight-unit-converter.html',
 })

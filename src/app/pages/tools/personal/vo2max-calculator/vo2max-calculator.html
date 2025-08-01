@@ -1,13 +1,15 @@
-<app-tool-view 
-  [calculatorName]="'TOOLS.VO2MAX_CALCULATOR.TITLE' | translate"
-  [calculatorDescription]="'TOOLS.VO2MAX_CALCULATOR.DESCRIPTION' | translate"
-  category="personal">
-  <ng-container tool-title>{{
-    'TOOLS.VO2MAX_CALCULATOR.TITLE' | translate
-  }}</ng-container>
-  <ng-container tool-description>{{
-    'TOOLS.VO2MAX_CALCULATOR.DESCRIPTION' | translate
-  }}</ng-container>
+<app-tool-view
+  calculatorName="VO₂ Max Calculator"
+  calculatorDescription="Estimate your maximum oxygen uptake (VO₂ max) based on running performance. VO₂ max is the gold standard measure of cardiovascular fitness and aerobic capacity, crucial for endurance performance and health assessment."
+  category="personal"
+>
+  <ng-container tool-title>VO₂ Max Calculator</ng-container>
+  <ng-container tool-description
+    >Estimate your maximum oxygen uptake (VO₂ max) based on running performance.
+    VO₂ max is the gold standard measure of cardiovascular fitness and aerobic
+    capacity, crucial for endurance performance and health
+    assessment.</ng-container
+  >
   <ng-container tool-content>
     <div class="grid md:grid-cols-2 gap-6">
       <app-distance-store-form-field />
@@ -17,9 +19,9 @@
 
   <ng-container tool-summary>
     <app-fancy-result>
-      <div result-title>{{ 'TOOLS.VO2MAX_CALCULATOR.RESULT_TITLE' | translate }}</div>
-      <div result-subtitle>{{ 'TOOLS.VO2MAX_CALCULATOR.RESULT_SUBTITLE' | translate }}</div>
-      <div result-value>{{ vo2Max() }} {{ 'TOOLS.VO2MAX_CALCULATOR.UNIT' | translate }}</div>
+      <div result-title>Your VO₂ Max</div>
+      <div result-subtitle>Maximum oxygen uptake capacity</div>
+      <div result-value>{{ vo2Max() }} ml/kg/min</div>
     </app-fancy-result>
   </ng-container>
 
@@ -28,76 +30,291 @@
     <div class="mt-8 space-y-6">
       <!-- How to Use Section -->
       <div class="bg-blue-50 p-6 rounded-lg">
-        <h2 class="text-xl font-semibold text-gray-900 mb-3">{{ 'TOOLS.VO2MAX_CALCULATOR.HOW_TO_USE.TITLE' | translate }}</h2>
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">
+          How to Use the VO₂ Max Calculator
+        </h2>
         <div class="space-y-2 text-gray-700">
-          <p [innerHTML]="'TOOLS.VO2MAX_CALCULATOR.HOW_TO_USE.STEP1' | translate"></p>
-          <p [innerHTML]="'TOOLS.VO2MAX_CALCULATOR.HOW_TO_USE.STEP2' | translate"></p>
-          <p [innerHTML]="'TOOLS.VO2MAX_CALCULATOR.HOW_TO_USE.STEP3' | translate"></p>
-          <p [innerHTML]="'TOOLS.VO2MAX_CALCULATOR.HOW_TO_USE.STEP4' | translate"></p>
+          <p>
+            <strong>1. Enter recent race performance:</strong> Input your
+            distance and time from a recent race or time trial where you gave
+            maximum effort. Use performances from the last 2-3 months for
+            accuracy.
+          </p>
+          <p>
+            <strong>2. Choose appropriate distance:</strong> VO₂ max
+            calculations are most accurate using race times from 1500m to 10K
+            distances, where aerobic capacity is the primary limiting factor.
+          </p>
+          <p>
+            <strong>3. Review your VO₂ max estimate:</strong> The result shows
+            your estimated maximum oxygen uptake in ml/kg/min, the standard unit
+            for measuring aerobic fitness.
+          </p>
+          <p>
+            <strong>4. Compare and track progress:</strong> Use age and gender
+            norms to understand your fitness level and track improvements over
+            time with consistent testing.
+          </p>
         </div>
       </div>
 
-      <!-- Understanding Results Section -->
+      <!-- Understanding VO₂ Max Section -->
       <div class="bg-green-50 p-6 rounded-lg">
-        <h2 class="text-xl font-semibold text-gray-900 mb-3">{{ 'TOOLS.VO2MAX_CALCULATOR.UNDERSTANDING.TITLE' | translate }}</h2>
-        <div class="grid md:grid-cols-2 gap-4">
-          <div>
-            <h3 class="font-medium text-gray-900 mb-2">{{ 'TOOLS.VO2MAX_CALCULATOR.UNDERSTANDING.RANGES.TITLE' | translate }}</h3>
-            <ul class="space-y-1 text-sm text-gray-700">
-              <li [innerHTML]="'TOOLS.VO2MAX_CALCULATOR.UNDERSTANDING.RANGES.BEGINNER' | translate"></li>
-              <li [innerHTML]="'TOOLS.VO2MAX_CALCULATOR.UNDERSTANDING.RANGES.RECREATIONAL' | translate"></li>
-              <li [innerHTML]="'TOOLS.VO2MAX_CALCULATOR.UNDERSTANDING.RANGES.COMPETITIVE' | translate"></li>
-              <li [innerHTML]="'TOOLS.VO2MAX_CALCULATOR.UNDERSTANDING.RANGES.ELITE' | translate"></li>
-            </ul>
-          </div>
-          <div>
-            <h3 class="font-medium text-gray-900 mb-2">{{ 'TOOLS.VO2MAX_CALCULATOR.UNDERSTANDING.FACTORS.TITLE' | translate }}</h3>
-            <ul class="space-y-1 text-sm text-gray-700">
-              <li [innerHTML]="'TOOLS.VO2MAX_CALCULATOR.UNDERSTANDING.FACTORS.AGE' | translate"></li>
-              <li [innerHTML]="'TOOLS.VO2MAX_CALCULATOR.UNDERSTANDING.FACTORS.GENDER' | translate"></li>
-              <li [innerHTML]="'TOOLS.VO2MAX_CALCULATOR.UNDERSTANDING.FACTORS.TRAINING' | translate"></li>
-              <li [innerHTML]="'TOOLS.VO2MAX_CALCULATOR.UNDERSTANDING.FACTORS.GENETICS' | translate"></li>
-            </ul>
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">
+          Understanding VO₂ Max
+        </h2>
+        <div class="space-y-3 text-gray-700">
+          <p>
+            VO₂ max represents the maximum amount of oxygen your body can
+            utilize during intense exercise, measured in milliliters of oxygen
+            consumed per kilogram of body weight per minute (ml/kg/min).
+          </p>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <h4 class="font-medium text-gray-900 mb-1">
+                What VO₂ Max Measures
+              </h4>
+              <ul class="list-disc list-inside space-y-1 ml-4 text-sm">
+                <li>
+                  <strong>Cardiovascular efficiency:</strong> Heart's ability to
+                  pump oxygenated blood
+                </li>
+                <li>
+                  <strong>Lung capacity:</strong> Oxygen uptake and carbon
+                  dioxide removal
+                </li>
+                <li>
+                  <strong>Muscle efficiency:</strong> Ability to extract and use
+                  oxygen from blood
+                </li>
+                <li>
+                  <strong>Overall fitness:</strong> Integrated measure of
+                  aerobic fitness systems
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-medium text-gray-900 mb-1">
+                Factors Affecting VO₂ Max
+              </h4>
+              <ul class="list-disc list-inside space-y-1 ml-4 text-sm">
+                <li>
+                  <strong>Genetics:</strong> 40-50% of VO₂ max is genetically
+                  determined
+                </li>
+                <li>
+                  <strong>Training:</strong> Aerobic exercise can improve VO₂
+                  max by 15-25%
+                </li>
+                <li>
+                  <strong>Age:</strong> Typically declines 1% per year after age
+                  30
+                </li>
+                <li>
+                  <strong>Body composition:</strong> Lower body fat generally
+                  correlates with higher VO₂ max
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Training Tips Section -->
-      <div class="bg-yellow-50 p-6 rounded-lg">
-        <h2 class="text-xl font-semibold text-gray-900 mb-3">{{ 'TOOLS.VO2MAX_CALCULATOR.TRAINING_TIPS.TITLE' | translate }}</h2>
+      <!-- VO₂ Max Norms Section -->
+      <div class="bg-orange-50 p-6 rounded-lg">
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">
+          VO₂ Max Fitness Categories
+        </h2>
         <div class="space-y-3 text-gray-700">
-          <p [innerHTML]="'TOOLS.VO2MAX_CALCULATOR.TRAINING_TIPS.INTRO' | translate"></p>
-          <ul class="list-disc list-inside space-y-1 ml-4">
-            <li [innerHTML]="'TOOLS.VO2MAX_CALCULATOR.TRAINING_TIPS.TIP1' | translate"></li>
-            <li [innerHTML]="'TOOLS.VO2MAX_CALCULATOR.TRAINING_TIPS.TIP2' | translate"></li>
-            <li [innerHTML]="'TOOLS.VO2MAX_CALCULATOR.TRAINING_TIPS.TIP3' | translate"></li>
-            <li [innerHTML]="'TOOLS.VO2MAX_CALCULATOR.TRAINING_TIPS.TIP4' | translate"></li>
-          </ul>
+          <p>
+            Compare your VO₂ max to age and gender-specific norms to understand
+            your cardiovascular fitness level:
+          </p>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-medium text-gray-900 mb-2">Men (ml/kg/min)</h4>
+              <div class="space-y-2 text-sm">
+                <div class="grid grid-cols-6 gap-1 font-medium">
+                  <span>Age</span><span>Poor</span><span>Fair</span
+                  ><span>Good</span><span>Excellent</span><span>Elite</span>
+                </div>
+                <div class="grid grid-cols-6 gap-1">
+                  <span>20-29</span><span>&lt;42</span><span>42-46</span
+                  ><span>47-51</span><span>52-56</span><span>&gt;56</span>
+                </div>
+                <div class="grid grid-cols-6 gap-1">
+                  <span>30-39</span><span>&lt;41</span><span>41-45</span
+                  ><span>46-50</span><span>51-55</span><span>&gt;55</span>
+                </div>
+                <div class="grid grid-cols-6 gap-1">
+                  <span>40-49</span><span>&lt;39</span><span>39-43</span
+                  ><span>44-48</span><span>49-53</span><span>&gt;53</span>
+                </div>
+                <div class="grid grid-cols-6 gap-1">
+                  <span>50-59</span><span>&lt;36</span><span>36-40</span
+                  ><span>41-45</span><span>46-50</span><span>&gt;50</span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h4 class="font-medium text-gray-900 mb-2">Women (ml/kg/min)</h4>
+              <div class="space-y-2 text-sm">
+                <div class="grid grid-cols-6 gap-1 font-medium">
+                  <span>Age</span><span>Poor</span><span>Fair</span
+                  ><span>Good</span><span>Excellent</span><span>Elite</span>
+                </div>
+                <div class="grid grid-cols-6 gap-1">
+                  <span>20-29</span><span>&lt;36</span><span>36-40</span
+                  ><span>41-45</span><span>46-50</span><span>&gt;50</span>
+                </div>
+                <div class="grid grid-cols-6 gap-1">
+                  <span>30-39</span><span>&lt;35</span><span>35-39</span
+                  ><span>40-44</span><span>45-49</span><span>&gt;49</span>
+                </div>
+                <div class="grid grid-cols-6 gap-1">
+                  <span>40-49</span><span>&lt;33</span><span>33-37</span
+                  ><span>38-42</span><span>43-47</span><span>&gt;47</span>
+                </div>
+                <div class="grid grid-cols-6 gap-1">
+                  <span>50-59</span><span>&lt;31</span><span>31-35</span
+                  ><span>36-40</span><span>41-45</span><span>&gt;45</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Improving VO₂ Max Section -->
+      <div class="bg-yellow-50 p-6 rounded-lg">
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">
+          How to Improve Your VO₂ Max
+        </h2>
+        <div class="space-y-3 text-gray-700">
+          <p>
+            Targeted training can significantly improve your VO₂ max and overall
+            cardiovascular fitness:
+          </p>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <h4 class="font-medium text-gray-900 mb-1">
+                High-Intensity Training
+              </h4>
+              <ul class="list-disc list-inside space-y-1 ml-4 text-sm">
+                <li>
+                  <strong>VO₂ max intervals:</strong> 3-8 minute intervals at
+                  90-95% max heart rate
+                </li>
+                <li>
+                  <strong>5K pace training:</strong> Sustained efforts at your
+                  5K race pace
+                </li>
+                <li>
+                  <strong>Hill repeats:</strong> Short, steep climbs to stress
+                  the aerobic system
+                </li>
+                <li>
+                  <strong>Fartlek training:</strong> Varied pace runs with speed
+                  surges
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-medium text-gray-900 mb-1">Base Building</h4>
+              <ul class="list-disc list-inside space-y-1 ml-4 text-sm">
+                <li>
+                  <strong>Easy aerobic runs:</strong> 70-80% of training at
+                  conversational pace
+                </li>
+                <li>
+                  <strong>Long runs:</strong> Extended efforts to build aerobic
+                  capacity
+                </li>
+                <li>
+                  <strong>Tempo runs:</strong> Sustained efforts at lactate
+                  threshold pace
+                </li>
+                <li>
+                  <strong>Cross-training:</strong> Cycling, swimming, or rowing
+                  for variety
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="mt-4 p-4 bg-white rounded border">
+            <p class="text-sm">
+              <strong>Training tip:</strong> Use our
+              <a
+                href="/tools/training/training-paces-calculator"
+                class="text-purple-600 hover:text-purple-800 underline"
+                >training paces calculator</a
+              >
+              to determine optimal intensities for VO₂ max development based on
+              your current fitness level.
+            </p>
+          </div>
         </div>
       </div>
 
       <!-- Related Tools Section -->
       <div class="bg-purple-50 p-6 rounded-lg">
-        <h2 class="text-xl font-semibold text-gray-900 mb-3">{{ 'TOOLS.VO2MAX_CALCULATOR.RELATED_TOOLS.TITLE' | translate }}</h2>
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">
+          Related Fitness & Performance Tools
+        </h2>
         <div class="grid md:grid-cols-2 gap-4">
           <div class="space-y-2">
-            <a href="/tools/race/finish-time-predictor" class="block p-3 bg-white rounded border hover:border-blue-300 transition-colors">
-              <h3 class="font-medium text-blue-600">{{ 'TOOLS.VO2MAX_CALCULATOR.RELATED_TOOLS.FINISH_TIME.TITLE' | translate }}</h3>
-              <p class="text-sm text-gray-600">{{ 'TOOLS.VO2MAX_CALCULATOR.RELATED_TOOLS.FINISH_TIME.DESC' | translate }}</p>
+            <a
+              href="/tools/training/training-paces-calculator"
+              class="block p-3 bg-white rounded border hover:border-purple-300 transition-colors"
+            >
+              <h3 class="font-medium text-purple-600">
+                Training Paces Calculator
+              </h3>
+              <p class="text-sm text-gray-600">
+                Get personalized training paces to improve your VO₂ max
+              </p>
             </a>
-            <a href="/tools/race/pace-calculator" class="block p-3 bg-white rounded border hover:border-blue-300 transition-colors">
-              <h3 class="font-medium text-blue-600">{{ 'TOOLS.VO2MAX_CALCULATOR.RELATED_TOOLS.PACE_CALC.TITLE' | translate }}</h3>
-              <p class="text-sm text-gray-600">{{ 'TOOLS.VO2MAX_CALCULATOR.RELATED_TOOLS.PACE_CALC.DESC' | translate }}</p>
+            <a
+              href="/tools/race/finish-time-predictor"
+              class="block p-3 bg-white rounded border hover:border-blue-300 transition-colors"
+            >
+              <h3 class="font-medium text-blue-600">Finish Time Predictor</h3>
+              <p class="text-sm text-gray-600">
+                Predict race times based on your VO₂ max and fitness level
+              </p>
+            </a>
+            <a
+              href="/tools/personal/bmi-calculator"
+              class="block p-3 bg-white rounded border hover:border-green-300 transition-colors"
+            >
+              <h3 class="font-medium text-green-600">
+                BMI & Body Composition Calculator
+              </h3>
+              <p class="text-sm text-gray-600">
+                Assess body composition factors that affect VO₂ max
+              </p>
             </a>
           </div>
           <div class="space-y-2">
-            <a href="/tools/personal/burned-calories-estimator" class="block p-3 bg-white rounded border hover:border-blue-300 transition-colors">
-              <h3 class="font-medium text-blue-600">{{ 'TOOLS.VO2MAX_CALCULATOR.RELATED_TOOLS.CALORIES.TITLE' | translate }}</h3>
-              <p class="text-sm text-gray-600">{{ 'TOOLS.VO2MAX_CALCULATOR.RELATED_TOOLS.CALORIES.DESC' | translate }}</p>
+            <a
+              href="/tools/race/pace-calculator"
+              class="block p-3 bg-white rounded border hover:border-orange-300 transition-colors"
+            >
+              <h3 class="font-medium text-orange-600">Pace Calculator</h3>
+              <p class="text-sm text-gray-600">
+                Calculate running pace for VO₂ max training sessions
+              </p>
             </a>
-            <a href="/tools/personal/bmi-calculator" class="block p-3 bg-white rounded border hover:border-blue-300 transition-colors">
-              <h3 class="font-medium text-blue-600">{{ 'TOOLS.VO2MAX_CALCULATOR.RELATED_TOOLS.BMI.TITLE' | translate }}</h3>
-              <p class="text-sm text-gray-600">{{ 'TOOLS.VO2MAX_CALCULATOR.RELATED_TOOLS.BMI.DESC' | translate }}</p>
+            <a
+              href="/tools/personal/burned-calories-estimator"
+              class="block p-3 bg-white rounded border hover:border-red-300 transition-colors"
+            >
+              <h3 class="font-medium text-red-600">
+                Calories Burned Calculator
+              </h3>
+              <p class="text-sm text-gray-600">
+                Estimate energy expenditure during VO₂ max training
+              </p>
             </a>
           </div>
         </div>
@@ -108,37 +325,89 @@
   <!-- FAQ Section -->
   <ng-container tool-faq>
     <app-faq-section>
-      <div faq-title>{{ 'TOOLS.VO2MAX_CALCULATOR.FAQ.TITLE' | translate }}</div>
-      
+      <div faq-title>Frequently Asked Questions</div>
+
       <div faq-items>
         <app-faq-item>
-          <div faq-question>{{ 'TOOLS.VO2MAX_CALCULATOR.FAQ.Q1' | translate }}</div>
-          <div faq-answer [innerHTML]="'TOOLS.VO2MAX_CALCULATOR.FAQ.A1' | translate"></div>
+          <div faq-question>What is a good VO₂ max for my age?</div>
+          <div faq-answer>
+            VO₂ max varies significantly by age and gender. For men aged 20-29,
+            values above 52 ml/kg/min are considered excellent, while for women
+            the same age, values above 46 ml/kg/min are excellent. VO₂ max
+            typically declines about 1% per year after age 30, but regular
+            aerobic training can slow this decline significantly.
+          </div>
         </app-faq-item>
 
         <app-faq-item>
-          <div faq-question>{{ 'TOOLS.VO2MAX_CALCULATOR.FAQ.Q2' | translate }}</div>
-          <div faq-answer [innerHTML]="'TOOLS.VO2MAX_CALCULATOR.FAQ.A2' | translate"></div>
+          <div faq-question>
+            How accurate is VO₂ max calculated from running performance?
+          </div>
+          <div faq-answer>
+            VO₂ max estimates from running performance are reasonably accurate
+            (within 5-10% of lab-tested values) when using recent race times
+            from 1500m to 10K distances. The accuracy depends on giving maximum
+            effort, running on flat terrain, and having good pacing. Laboratory
+            testing with gas analysis remains the gold standard for precise
+            measurement.
+          </div>
         </app-faq-item>
 
         <app-faq-item>
-          <div faq-question>{{ 'TOOLS.VO2MAX_CALCULATOR.FAQ.Q3' | translate }}</div>
-          <div faq-answer [innerHTML]="'TOOLS.VO2MAX_CALCULATOR.FAQ.A3' | translate"></div>
+          <div faq-question>Can I improve my VO₂ max, and by how much?</div>
+          <div faq-answer>
+            Yes, VO₂ max can be improved through targeted aerobic training.
+            Untrained individuals can see improvements of 15-25%, while trained
+            athletes may see smaller gains of 5-15%. The key is high-intensity
+            interval training at 90-95% of maximum heart rate, combined with a
+            solid aerobic base. Improvements typically plateau after 8-12 weeks
+            of consistent training.
+          </div>
         </app-faq-item>
 
         <app-faq-item>
-          <div faq-question>{{ 'TOOLS.VO2MAX_CALCULATOR.FAQ.Q4' | translate }}</div>
-          <div faq-answer [innerHTML]="'TOOLS.VO2MAX_CALCULATOR.FAQ.A4' | translate"></div>
+          <div faq-question>
+            What's the difference between VO₂ max and running performance?
+          </div>
+          <div faq-answer>
+            VO₂ max represents your aerobic capacity ceiling, but running
+            performance depends on multiple factors including lactate threshold,
+            running economy, and mental toughness. A runner with lower VO₂ max
+            can outperform someone with higher VO₂ max if they have better
+            efficiency or race tactics. VO₂ max is most predictive for distances
+            from 1500m to 10K.
+          </div>
         </app-faq-item>
 
         <app-faq-item>
-          <div faq-question>{{ 'TOOLS.VO2MAX_CALCULATOR.FAQ.Q5' | translate }}</div>
-          <div faq-answer [innerHTML]="'TOOLS.VO2MAX_CALCULATOR.FAQ.A5' | translate"></div>
+          <div faq-question>How often should I test my VO₂ max?</div>
+          <div faq-answer>
+            Test your VO₂ max every 6-12 weeks during training cycles to track
+            progress. More frequent testing isn't necessary as meaningful
+            changes take time to develop. Use consistent race distances and
+            conditions for comparison. Focus on trends over time rather than
+            small fluctuations, and remember that VO₂ max is just one component
+            of overall fitness and performance.
+          </div>
         </app-faq-item>
 
         <app-faq-item>
-          <div faq-question>{{ 'TOOLS.VO2MAX_CALCULATOR.FAQ.Q6' | translate }}</div>
-          <div faq-answer [innerHTML]="'TOOLS.VO2MAX_CALCULATOR.FAQ.A6' | translate"></div>
+          <div faq-question>
+            What training is most effective for improving VO₂ max?
+          </div>
+          <div faq-answer>
+            The most effective training for VO₂ max improvement includes
+            high-intensity intervals at 90-95% maximum heart rate for 3-8
+            minutes, with equal recovery time. Examples include 5 x 1000m at 5K
+            pace, or 4 x 4 minutes at VO₂ max pace. Combine this with 70-80%
+            easy aerobic training for base building. Use our
+            <a
+              href="/tools/training/training-paces-calculator"
+              class="text-purple-600 hover:text-purple-800 underline"
+              >training paces calculator</a
+            >
+            to determine your optimal VO₂ max training intensities.
+          </div>
         </app-faq-item>
       </div>
     </app-faq-section>

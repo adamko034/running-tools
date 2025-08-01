@@ -1,5 +1,4 @@
 import { CommonModule } from '@angular/common';
-import { SeoService } from '../../../../core/services/seo.service';
 import { Component, effect, inject } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { TranslateModule } from '@ngx-translate/core';
@@ -9,15 +8,16 @@ import { FatCategory } from '../../../../core/business/model/enums/fat-category.
 import { IbwCategory } from '../../../../core/business/model/enums/ibw-category.enum';
 import { WeightUnit } from '../../../../core/business/model/enums/weight-unit.enum';
 import { Weight } from '../../../../core/business/model/weight.model';
+import { SeoService } from '../../../../core/services/seo.service';
 import { StoreService } from '../../../../core/store/store.service';
 import { AgeStoreFormField } from '../../../../shared/components/store/age-store-form-field/age-store-form-field';
 import { HeightStoreFormField } from '../../../../shared/components/store/height-store-form-field/height-store-form-field';
 import { SexStoreFormField } from '../../../../shared/components/store/sex-store-form-field/sex-store-form-field';
 import { WeightStoreFormField } from '../../../../shared/components/store/weight-store-form-field/weight-store-form-field';
 import { FancyResult } from '../../../../shared/components/ui/fancy-result/fancy-result';
-import { FaqSectionComponent } from '../../../../shared/components/ui/faq-section/faq-section';
-import { FaqItemComponent } from '../../../../shared/components/ui/faq-item/faq-item';
 import { ResultBoxType } from '../../../../shared/components/ui/fancy-result/result-box-type.enum';
+import { FaqItemComponent } from '../../../../shared/components/ui/faq-item/faq-item';
+import { FaqSectionComponent } from '../../../../shared/components/ui/faq-section/faq-section';
 import { ToolView } from '../../../../shared/views/tool-view/tool-view';
 
 @Component({
@@ -57,7 +57,7 @@ export class BmiCalculator {
   constructor() {
     // Set SEO meta tags for BMI calculator
     this.seoService.updateBmiCalculatorMeta();
-    
+
     effect(() => {
       const height = this.store.height();
       const weight = this.store.weight();
@@ -207,6 +207,88 @@ export class BmiCalculator {
         return 'red';
       default:
         return 'blue-green';
+    }
+  }
+
+  getMetricLabel(type: string): string {
+    switch (type) {
+      case 'BMI':
+        return 'BMI';
+      case 'BMI_HA':
+        return 'New BMI';
+      case 'IBW':
+        return 'Ideal Weight';
+      case 'FAT':
+        return 'Body Fat %';
+      case 'BMR':
+        return 'BMR (Calories/Day)';
+      default:
+        return '';
+    }
+  }
+
+  getCategoryLabel(type: string, category: string): string {
+    switch (type) {
+      case 'BMI':
+        switch (category) {
+          case BmiCategory.UNDERWEIGHT:
+            return 'Underweight';
+          case BmiCategory.NORMAL:
+            return 'Normal';
+          case BmiCategory.OVERWEIGHT:
+            return 'Overweight';
+          case BmiCategory.OBESITY:
+            return 'Obese';
+          default:
+            return '';
+        }
+      case 'BMI_HA':
+        switch (category) {
+          case BmiCategory.UNDERWEIGHT:
+            return 'Underweight';
+          case BmiCategory.NORMAL:
+            return 'Healthy weight';
+          case BmiCategory.OVERWEIGHT:
+            return 'Slightly overweight';
+          case BmiCategory.OBESITY:
+            return 'Obese';
+          default:
+            return '';
+        }
+      case 'IBW':
+        switch (category) {
+          case IbwCategory.IBW_IDEAL:
+            return 'Your weight is ideal';
+          case IbwCategory.IBW_OK:
+            return 'Your weight is acceptable';
+          case IbwCategory.IBW_IMPROVE:
+            return 'Your weight could be improved';
+          case IbwCategory.IBW_BAD:
+            return 'Your weight is far from ideal';
+          default:
+            return '';
+        }
+      case 'FAT':
+        switch (category) {
+          case FatCategory.BELOW_ESSENTIAL:
+            return 'Dangerously low';
+          case FatCategory.ESSENTIAL:
+            return 'Mminimum healthy level';
+          case FatCategory.ATHLETE:
+            return 'Athletic body';
+          case FatCategory.FITNESS:
+            return 'Fit body';
+          case FatCategory.AVERAGE:
+            return 'Average';
+          case FatCategory.OBESE:
+            return 'Obese';
+          default:
+            return '';
+        }
+      case 'BMR':
+        return 'Calories burned at rest';
+      default:
+        return '';
     }
   }
 }

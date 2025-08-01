@@ -8,7 +8,6 @@ import { FancyResult } from '../../../../shared/components/ui/fancy-result/fancy
 import { FaqSectionComponent } from '../../../../shared/components/ui/faq-section/faq-section';
 import { FaqItemComponent } from '../../../../shared/components/ui/faq-item/faq-item';
 
-import { TranslateModule } from '@ngx-translate/core';
 import { TimeStoreFormField } from '../../../../shared/components/store/time-store-form-field/time-store-form-field';
 import { ToolView } from '../../../../shared/views/tool-view/tool-view';
 
@@ -22,7 +21,6 @@ import { ToolView } from '../../../../shared/views/tool-view/tool-view';
     FancyResult,
     FaqSectionComponent,
     FaqItemComponent,
-    TranslateModule,
   ],
   templateUrl: './calories-burned-calculator.html',
 })

@@ -2,113 +2,83 @@
   <!-- Header -->
   <div class="text-center mb-8">
     <h1 class="text-3xl md:text-4xl font-light mb-4 text-blue-600">
-      {{ 'privacy.title' | translate }}
+      Privacy Policy
     </h1>
-    <p class="text-gray-600 mb-2">
-      {{ 'privacy.last_updated' | translate }}: {{ lastUpdated }}
-    </p>
-    <p class="text-gray-600">
-      {{ 'privacy.effective_date' | translate }}: {{ lastUpdated }}
-    </p>
+    <p class="text-gray-600 mb-2">Last Updated: {{ lastUpdated }}</p>
+    <p class="text-gray-600">Effective Date: {{ lastUpdated }}</p>
   </div>
 
   <!-- Introduction -->
   <section class="mb-8">
-    <h2 class="text-2xl font-semibold mb-4 text-gray-800">
-      {{ 'privacy.introduction.title' | translate }}
-    </h2>
+    <h2 class="text-2xl font-semibold mb-4 text-gray-800">Introduction</h2>
     <p class="text-gray-700 leading-relaxed mb-4">
-      {{ 'privacy.introduction.content' | translate }}
+      Welcome to Runner Toolkit. This Privacy Policy explains how we collect,
+      use, disclose, and safeguard your information when you visit our website
+      and use our running calculators and tools.
     </p>
     <p class="text-gray-700 leading-relaxed">
-      {{ 'privacy.introduction.commitment' | translate }}
+      We are committed to protecting your privacy and ensuring you have a
+      positive experience on our website. This policy outlines our practices
+      regarding the collection and use of your information and tells you about
+      your privacy rights.
     </p>
   </section>
 
   <!-- Information We Collect -->
   <section class="mb-8">
     <h2 class="text-2xl font-semibold mb-4 text-gray-800">
-      {{ 'privacy.information_collected.title' | translate }}
+      Information We Collect
     </h2>
 
-    <h3 class="text-xl font-medium mb-3 text-gray-700">
-      {{ 'privacy.information_collected.analytics.title' | translate }}
-    </h3>
+    <h3 class="text-xl font-medium mb-3 text-gray-700">Analytics Data</h3>
     <p class="text-gray-700 leading-relaxed mb-4">
-      {{ 'privacy.information_collected.analytics.content' | translate }}
+      We use Google Analytics to understand how visitors interact with our
+      website. This helps us improve our tools and user experience. The
+      analytics data we collect includes:
     </p>
     <ul class="list-disc list-inside text-gray-700 mb-6 space-y-2">
-      <li>
-        {{
-          'privacy.information_collected.analytics.items.device_info'
-            | translate
-        }}
-      </li>
-      <li>
-        {{
-          'privacy.information_collected.analytics.items.usage_data' | translate
-        }}
-      </li>
-      <li>
-        {{
-          'privacy.information_collected.analytics.items.performance'
-            | translate
-        }}
-      </li>
-      <li>
-        {{
-          'privacy.information_collected.analytics.items.location' | translate
-        }}
-      </li>
+      <li>Device and browser information (type, version, screen resolution)</li>
+      <li>Usage data (pages visited, time spent, click patterns)</li>
+      <li>Performance metrics (page load times, errors)</li>
+      <li>General location data (country/city level, not precise location)</li>
     </ul>
 
-    <h3 class="text-xl font-medium mb-3 text-gray-700">
-      {{ 'privacy.information_collected.local_storage.title' | translate }}
-    </h3>
+    <h3 class="text-xl font-medium mb-3 text-gray-700">Local Storage Data</h3>
     <p class="text-gray-700 leading-relaxed mb-4">
-      {{ 'privacy.information_collected.local_storage.content' | translate }}
+      Our website stores some information locally on your device to enhance your
+      experience. This data never leaves your device and includes:
     </p>
     <ul class="list-disc list-inside text-gray-700 mb-6 space-y-2">
-      <li>
-        {{
-          'privacy.information_collected.local_storage.items.preferences'
-            | translate
-        }}
-      </li>
-      <li>
-        {{
-          'privacy.information_collected.local_storage.items.calculations'
-            | translate
-        }}
-      </li>
-      <li>
-        {{
-          'privacy.information_collected.local_storage.items.settings'
-            | translate
-        }}
-      </li>
+      <li>Your unit preferences (metric vs imperial)</li>
+      <li>Recent calculation inputs for convenience</li>
+      <li>Language and display settings</li>
     </ul>
   </section>
 
   <!-- Google AdSense -->
   <section class="mb-8">
     <h2 class="text-2xl font-semibold mb-4 text-gray-800">
-      {{ 'privacy.adsense.title' | translate }}
+      Advertising (Google AdSense)
     </h2>
     <p class="text-gray-700 leading-relaxed mb-4">
-      {{ 'privacy.adsense.content' | translate }}
+      We use Google AdSense to display advertisements on our website. These ads
+      help us keep our running tools free for everyone to use.
     </p>
     <h3 class="text-xl font-medium mb-3 text-gray-700">
-      {{ 'privacy.adsense.cookies.title' | translate }}
+      How AdSense Uses Cookies
     </h3>
     <p class="text-gray-700 leading-relaxed mb-4">
-      {{ 'privacy.adsense.cookies.content' | translate }}
+      Google AdSense uses cookies to serve ads based on your prior visits to our
+      website or other websites. These cookies enable Google and its partners to
+      serve ads based on your visit to our sites and/or other sites on the
+      Internet.
     </p>
     <h3 class="text-xl font-medium mb-3 text-gray-700">
-      {{ 'privacy.adsense.personalization.title' | translate }}
+      Personalized Advertising
     </h3>
     <p class="text-gray-700 leading-relaxed mb-4">
-      {{ 'privacy.adsense.personalization.content' | translate }}
+      Google may use your data to personalize ads shown to you. You can control
+      personalized advertising by visiting Google's Ad Settings page.
     </p>
     <a
       href="https://www.google.com/settings/ads"
@@ -117,33 +87,40 @@
       class="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors"
     >
       <mat-icon class="mr-2">open_in_new</mat-icon>
-      {{ 'privacy.adsense.opt_out_link' | translate }}
+      Manage Ad Preferences
     </a>
   </section>
 
   <!-- Firebase Analytics -->
   <section class="mb-8">
     <h2 class="text-2xl font-semibold mb-4 text-gray-800">
-      {{ 'privacy.firebase.title' | translate }}
+      Firebase Analytics
     </h2>
     <p class="text-gray-700 leading-relaxed mb-4">
-      {{ 'privacy.firebase.content' | translate }}
+      We use Firebase Analytics to collect usage statistics and improve our
+      website performance. This service helps us understand how users interact
+      with our running calculators.
     </p>
     <h3 class="text-xl font-medium mb-3 text-gray-700">
-      {{ 'privacy.firebase.data_collected.title' | translate }}
+      Data Collected by Firebase
     </h3>
     <ul class="list-disc list-inside text-gray-700 mb-6 space-y-2">
-      <li>{{ 'privacy.firebase.data_collected.items.events' | translate }}</li>
       <li>
-        {{ 'privacy.firebase.data_collected.items.demographics' | translate }}
+        User interactions and events (button clicks, page views, calculator
+        usage)
       </li>
       <li>
-        {{ 'privacy.firebase.data_collected.items.interests' | translate }}
+        Demographics and interests (age range, gender, interests - when
+        available)
       </li>
-      <li>{{ 'privacy.firebase.data_collected.items.crashes' | translate }}</li>
+      <li>
+        User behavior patterns (session duration, bounce rate, popular tools)
+      </li>
+      <li>Crash reports and performance data to improve stability</li>
     </ul>
     <p class="text-gray-700 leading-relaxed mb-4">
-      {{ 'privacy.firebase.opt_out' | translate }}
+      You can opt out of Google Analytics tracking by installing the Google
+      Analytics Opt-out Browser Add-on.
     </p>
     <a
       href="https://tools.google.com/dlpage/gaoptout"
@@ -152,55 +129,58 @@
       class="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors"
     >
       <mat-icon class="mr-2">open_in_new</mat-icon>
-      {{ 'privacy.firebase.opt_out_link' | translate }}
+      Download Google Analytics Opt-out Add-on
     </a>
   </section>
 
   <!-- How We Use Information -->
   <section class="mb-8">
     <h2 class="text-2xl font-semibold mb-4 text-gray-800">
-      {{ 'privacy.how_we_use.title' | translate }}
+      How We Use Information
     </h2>
     <ul class="list-disc list-inside text-gray-700 space-y-2">
-      <li>{{ 'privacy.how_we_use.items.improve_service' | translate }}</li>
-      <li>{{ 'privacy.how_we_use.items.understand_usage' | translate }}</li>
-      <li>{{ 'privacy.how_we_use.items.personalize_ads' | translate }}</li>
-      <li>{{ 'privacy.how_we_use.items.technical_issues' | translate }}</li>
-      <li>{{ 'privacy.how_we_use.items.security' | translate }}</li>
+      <li>
+        To provide and improve our running calculator tools and website
+        functionality
+      </li>
+      <li>
+        To understand how users interact with our tools and identify popular
+        features
+      </li>
+      <li>To serve relevant advertisements that help keep our tools free</li>
+      <li>
+        To detect and resolve technical issues and improve website performance
+      </li>
+      <li>
+        To ensure website security and prevent abuse or fraudulent activity
+      </li>
     </ul>
   </section>
 
   <!-- Legal Basis for Processing -->
   <section class="mb-8">
     <h2 class="text-2xl font-semibold mb-4 text-gray-800">
-      {{ 'privacy.legal_basis.title' | translate }}
+      Legal Basis for Processing
     </h2>
     <p class="text-gray-700 leading-relaxed mb-4">
-      {{ 'privacy.legal_basis.content' | translate }}
+      Under GDPR and other privacy laws, we process your information based on
+      the following legal grounds:
     </p>
     <ul class="list-disc list-inside text-gray-700 space-y-2">
       <li>
-        <strong
-          >{{
-            'privacy.legal_basis.items.legitimate_interest.name' | translate
-          }}:</strong
-        >
-        {{
-          'privacy.legal_basis.items.legitimate_interest.description'
-            | translate
-        }}
+        <strong>Legitimate Interest:</strong>
+        We process data to improve our website, analyze usage patterns, and
+        provide better user experience
       </li>
       <li>
-        <strong
-          >{{ 'privacy.legal_basis.items.consent.name' | translate }}:</strong
-        >
-        {{ 'privacy.legal_basis.items.consent.description' | translate }}
+        <strong>Consent:</strong>
+        For cookies and tracking technologies, we rely on your consent through
+        our cookie banner
       </li>
       <li>
-        <strong
-          >{{ 'privacy.legal_basis.items.contract.name' | translate }}:</strong
-        >
-        {{ 'privacy.legal_basis.items.contract.description' | translate }}
+        <strong>Contractual Necessity:</strong>
+        To provide our free running calculator services and maintain website
+        functionality
       </li>
     </ul>
   </section>
@@ -208,37 +188,48 @@
   <!-- Data Sharing -->
   <section class="mb-8">
     <h2 class="text-2xl font-semibold mb-4 text-gray-800">
-      {{ 'privacy.data_sharing.title' | translate }}
+      Data Sharing and Third Parties
     </h2>
     <p class="text-gray-700 leading-relaxed mb-4">
-      {{ 'privacy.data_sharing.content' | translate }}
+      We share limited data with trusted third-party services to operate our
+      website:
     </p>
     <ul class="list-disc list-inside text-gray-700 space-y-2">
-      <li>{{ 'privacy.data_sharing.items.google_analytics' | translate }}</li>
-      <li>{{ 'privacy.data_sharing.items.google_adsense' | translate }}</li>
-      <li>{{ 'privacy.data_sharing.items.legal_requirements' | translate }}</li>
+      <li>
+        Google Analytics and Firebase Analytics for website usage analysis and
+        improvement
+      </li>
+      <li>
+        Google AdSense for serving relevant advertisements to keep our tools
+        free
+      </li>
+      <li>
+        Legal authorities when required by law or to protect our rights and
+        users' safety
+      </li>
     </ul>
   </section>
 
   <!-- Data Controller Information -->
   <section class="mb-8">
     <h2 class="text-2xl font-semibold mb-4 text-gray-800">
-      {{ 'privacy.data_controller.title' | translate }}
+      Data Controller Information
     </h2>
     <p class="text-gray-700 leading-relaxed mb-4">
-      {{ 'privacy.data_controller.content' | translate }}
+      For the purposes of data protection law, the data controller for this
+      website is:
     </p>
     <div class="bg-gray-50 p-4 rounded-lg">
       <p class="text-gray-700">
-        <strong>{{ 'privacy.data_controller.name' | translate }}:</strong>
-        {{ 'privacy.data_controller.business_name' | translate }}
+        <strong>Business Name:</strong>
+        Runner Toolkit
       </p>
       <p class="text-gray-700">
-        <strong>{{ 'privacy.data_controller.location' | translate }}:</strong>
-        {{ 'privacy.data_controller.country' | translate }}
+        <strong>Location:</strong>
+        Poland
       </p>
       <p class="text-gray-700">
-        <strong>{{ 'privacy.data_controller.contact' | translate }}:</strong>
+        <strong>Contact Email:</strong>
         {{ email }}
       </p>
     </div>
@@ -247,32 +238,22 @@
   <!-- International Data Transfers -->
   <section class="mb-8">
     <h2 class="text-2xl font-semibold mb-4 text-gray-800">
-      {{ 'privacy.international_transfers.title' | translate }}
+      International Data Transfers
     </h2>
     <p class="text-gray-700 leading-relaxed mb-4">
-      {{ 'privacy.international_transfers.content' | translate }}
+      Your personal data may be transferred to and processed in countries
+      outside your country of residence, including the United States, where
+      Google's servers are located.
     </p>
-    <h3 class="text-xl font-medium mb-3 text-gray-700">
-      {{ 'privacy.international_transfers.safeguards.title' | translate }}
-    </h3>
+    <h3 class="text-xl font-medium mb-3 text-gray-700">Transfer Safeguards</h3>
     <ul class="list-disc list-inside text-gray-700 space-y-2">
       <li>
-        {{
-          'privacy.international_transfers.safeguards.items.adequacy_decisions'
-            | translate
-        }}
+        Transfers to countries with European Commission adequacy decisions
       </li>
+      <li>EU-US Data Privacy Framework for transfers to the United States</li>
       <li>
-        {{
-          'privacy.international_transfers.safeguards.items.privacy_framework'
-            | translate
-        }}
-      </li>
-      <li>
-        {{
-          'privacy.international_transfers.safeguards.items.google_compliance'
-            | translate
-        }}
+        Google's compliance with international data protection standards and
+        contractual safeguards
       </li>
     </ul>
   </section>
@@ -280,17 +261,17 @@
   <!-- Your Rights -->
   <section class="mb-8">
     <h2 class="text-2xl font-semibold mb-4 text-gray-800">
-      {{ 'privacy.your_rights.title' | translate }}
+      Your Privacy Rights
     </h2>
     <p class="text-gray-700 leading-relaxed mb-4">
-      {{ 'privacy.your_rights.content' | translate }}
+      Under GDPR and other privacy laws, you have the following rights:
     </p>
     <ul class="list-disc list-inside text-gray-700 space-y-2">
-      <li>{{ 'privacy.your_rights.items.access' | translate }}</li>
-      <li>{{ 'privacy.your_rights.items.rectification' | translate }}</li>
-      <li>{{ 'privacy.your_rights.items.erasure' | translate }}</li>
-      <li>{{ 'privacy.your_rights.items.portability' | translate }}</li>
-      <li>{{ 'privacy.your_rights.items.objection' | translate }}</li>
+      <li>Right to access your personal data</li>
+      <li>Right to correct inaccurate personal data</li>
+      <li>Right to request deletion of your personal data</li>
+      <li>Right to data portability</li>
+      <li>Right to object to processing of your personal data</li>
     </ul>
   </section>
 
@@ -396,7 +377,7 @@
       class="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors"
     >
       <mat-icon class="mr-2">arrow_back</mat-icon>
-      {{ 'privacy.back_to_home' | translate }}
+      Back to Home
     </a>
   </div>
 </div>

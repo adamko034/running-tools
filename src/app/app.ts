@@ -12,9 +12,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Navigation } from './core/navigation/navigation.model';
-import { AnalyticsService } from './core/services/analytics.service';
 import { NavigationService } from './core/services/navigation.service';
-import { PageTrackingService } from './core/services/page-tracking.service';
 import { RouterService } from './core/services/router.service';
 import { UiService } from './core/services/ui.service';
 import { LoggerDev } from './core/utils/logger-dev';
@@ -52,9 +50,7 @@ export class App implements AfterViewInit {
     private routerService: RouterService,
     private uiService: UiService,
     private navigationService: NavigationService,
-    private elementRef: ElementRef,
-    private analyticsService: AnalyticsService,
-    private pageTrackingService: PageTrackingService
+    private elementRef: ElementRef
   ) {
     this.isHomePage$ = this.routerService.isHomePage$;
     this.navigation$ = this.navigationService.getNavigation();
@@ -65,11 +61,6 @@ export class App implements AfterViewInit {
   ngAfterViewInit() {
     this.navBarElement =
       this.elementRef.nativeElement.querySelector('.top-nav-bar');
-
-    // Log app start event (only works if user has consented)
-    this.analyticsService.logEvent('app_start', {
-      timestamp: new Date().toISOString(),
-    });
 
     // Page tracking is automatically handled by PageTrackingService
     LoggerDev.log('Page tracking service initialized');
@@ -113,9 +104,9 @@ export class App implements AfterViewInit {
   getCategoryClass(categoryTitle: string): string {
     const categoryMap: { [key: string]: string } = {
       'Race Tools': 'nav-race',
-      'Training': 'nav-training', 
+      Training: 'nav-training',
       'Personal Tools': 'nav-personal',
-      'Unit Converters': 'nav-units'
+      'Unit Converters': 'nav-units',
     };
     return categoryMap[categoryTitle] || 'nav-default';
   }

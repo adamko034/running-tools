@@ -7,8 +7,8 @@ export class DataCatalog {
     oneK: DataCatalogDistance.ofKm(1, '1000m'),
     fiveK: DataCatalogDistance.ofKm(5, '5K'),
     tenK: DataCatalogDistance.ofKm(10, '10K'),
-    halfMarathon: DataCatalogDistance.ofKm(21.097, 'HALF_MARATHON'),
-    marathon: DataCatalogDistance.ofKm(42.195, 'MARATHON'),
+    halfMarathon: DataCatalogDistance.ofKm(21.097, 'Half Marathon'),
+    marathon: DataCatalogDistance.ofKm(42.195, 'Marathon'),
   };
   static calorieFactor = 0.0175; // average for running
 

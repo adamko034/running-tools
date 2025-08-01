@@ -2,7 +2,6 @@ import { Component, computed, inject, Signal } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { SeoService } from '../../../../core/services/seo.service';
 import { MatIconModule } from '@angular/material/icon';
-import { TranslateModule } from '@ngx-translate/core';
 import { CalculatorsFacade } from '../../../../core/business/calculators-facade';
 import { DataCatalog } from '../../../../core/business/catalog/data-catalog';
 import { FinishTime } from '../../../../core/business/model/finish-time.model';
@@ -26,7 +25,6 @@ import { ToolView } from '../../../../shared/views/tool-view/tool-view';
     FaqSectionComponent,
     FaqItemComponent,
     RaceTimeCard,
-    TranslateModule,
     MatIconModule,
   ],
   templateUrl: './finish-time-predictor.html',

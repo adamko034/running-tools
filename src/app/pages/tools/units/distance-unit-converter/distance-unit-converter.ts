@@ -1,5 +1,4 @@
 import { Component, inject } from '@angular/core';
-import { TranslateModule } from '@ngx-translate/core';
 import { Distance } from '../../../../core/business/model/distance.model';
 import { DistanceUnit } from '../../../../core/business/model/enums/distance-unit.enum';
 import { SeoService } from '../../../../core/services/seo.service';
@@ -20,7 +19,6 @@ import { ToolView } from '../../../../shared/views/tool-view/tool-view';
     DistanceQuickSelectors,
     FaqSectionComponent,
     FaqItemComponent,
-    TranslateModule,
   ],
   templateUrl: './distance-unit-converter.html',
 })

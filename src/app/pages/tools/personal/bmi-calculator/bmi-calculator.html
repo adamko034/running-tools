@@ -1,18 +1,21 @@
 <app-tool-view
-  [calculatorName]="'TOOLS.BMI_CALCULATOR.TITLE' | translate"
-  [calculatorDescription]="'TOOLS.BMI_CALCULATOR.DESCRIPTION' | translate"
+  calculatorName="BMI Calculator & Body Composition Analysis"
+  calculatorDescription="Comprehensive body composition calculator for runners and athletes. Calculate BMI, body fat percentage, ideal weight, and basal metabolic rate (BMR). Uses advanced formulas including New BMI for accurate results. Free health assessment tool."
   category="personal"
 >
-  <ng-container tool-title>{{
-    'TOOLS.BMI_CALCULATOR.TITLE' | translate
-  }}</ng-container>
+  <ng-container tool-title>BMI Calculator & Body Composition Analysis</ng-container>
   <ng-container tool-description>
-    {{ 'TOOLS.BMI_CALCULATOR.DESCRIPTION' | translate }}
+    Comprehensive body composition calculator for runners and athletes. Calculate BMI, body fat percentage, ideal weight, and basal metabolic rate (BMR). Uses advanced formulas including New BMI for accurate results. Free health assessment tool. Includes:
     <br />
-    <div
-      class="pl-10"
-      [innerHTML]="'TOOLS.BMI_CALCULATOR.DESCRIPTION_2' | translate"
-    ></div>
+    <div class="pl-10">
+      <ul class='list-disc list-inside ml-4 space-y-1'>
+        <li>Standard BMI</li>
+        <li>New BMI - height-adjusted BMI</li>
+        <li>IBW - ideal body weight</li>
+        <li>Body Fat % - estimated using Deurenberg formula</li>
+        <li>BMR - calories burned at rest</li>
+      </ul>
+    </div>
   </ng-container>
   <ng-container tool-content>
     <!-- Responsive Form Grid -->
@@ -26,12 +29,8 @@
 
   <ng-container tool-summary>
     <app-fancy-result [transparentValue]="true">
-      <div result-title>
-        {{ 'TOOLS.BMI_CALCULATOR.RESULT_TITLE' | translate }}
-      </div>
-      <div result-subtitle>
-        {{ 'TOOLS.BMI_CALCULATOR.RESULT_SUBTITLE' | translate }}
-      </div>
+      <div result-title>Your Health Metrics</div>
+      <div result-subtitle>Comprehensive body composition analysis</div>
       <div result-value>
         <!-- Results grid -->
         <div
@@ -93,155 +92,122 @@
     <div class="mt-8 space-y-6">
       <!-- How to Use Section -->
       <div class="bg-blue-50 p-6 rounded-lg">
-        <h2 class="text-xl font-semibold text-gray-900 mb-3">
-          {{ 'TOOLS.BMI_CALCULATOR.HOW_TO_USE.TITLE' | translate }}
-        </h2>
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">How to Use the BMI Calculator</h2>
         <div class="space-y-2 text-gray-700">
-          <p
-            [innerHTML]="'TOOLS.BMI_CALCULATOR.HOW_TO_USE.STEP1' | translate"
-          ></p>
-          <p
-            [innerHTML]="'TOOLS.BMI_CALCULATOR.HOW_TO_USE.STEP2' | translate"
-          ></p>
-          <p
-            [innerHTML]="'TOOLS.BMI_CALCULATOR.HOW_TO_USE.STEP3' | translate"
-          ></p>
-          <p
-            [innerHTML]="'TOOLS.BMI_CALCULATOR.HOW_TO_USE.STEP4' | translate"
-          ></p>
+          <p><strong>1. Enter your personal information:</strong> Input your age, sex, height, and weight accurately. Use your current measurements for the most accurate results.</p>
+          <p><strong>2. Review all calculated metrics:</strong> The calculator provides BMI, New BMI, Ideal Body Weight (IBW), Body Fat percentage, and Basal Metabolic Rate (BMR).</p>
+          <p><strong>3. Understand the context:</strong> BMI is a screening tool, not a diagnostic measure. Consider your muscle mass, bone density, and overall health when interpreting results.</p>
+          <p><strong>4. Consult healthcare professionals:</strong> Use these results as a starting point for discussions with doctors, nutritionists, or fitness professionals about your health goals.</p>
         </div>
       </div>
 
       <!-- Understanding Results Section -->
       <div class="bg-green-50 p-6 rounded-lg">
-        <h2 class="text-xl font-semibold text-gray-900 mb-3">
-          {{ 'TOOLS.BMI_CALCULATOR.UNDERSTANDING.TITLE' | translate }}
-        </h2>
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">Understanding Your Results</h2>
         <div class="grid md:grid-cols-2 gap-4">
           <div>
-            <h3 class="font-medium text-gray-900 mb-2">
-              {{
-                'TOOLS.BMI_CALCULATOR.UNDERSTANDING.BMI_RANGES.TITLE'
-                  | translate
-              }}
-            </h3>
+            <h3 class="font-medium text-gray-900 mb-2">BMI Categories</h3>
             <ul class="space-y-1 text-sm text-gray-700">
-              <li
-                [innerHTML]="
-                  'TOOLS.BMI_CALCULATOR.UNDERSTANDING.BMI_RANGES.UNDERWEIGHT'
-                    | translate
-                "
-              ></li>
-              <li
-                [innerHTML]="
-                  'TOOLS.BMI_CALCULATOR.UNDERSTANDING.BMI_RANGES.NORMAL'
-                    | translate
-                "
-              ></li>
-              <li
-                [innerHTML]="
-                  'TOOLS.BMI_CALCULATOR.UNDERSTANDING.BMI_RANGES.OVERWEIGHT'
-                    | translate
-                "
-              ></li>
-              <li
-                [innerHTML]="
-                  'TOOLS.BMI_CALCULATOR.UNDERSTANDING.BMI_RANGES.OBESE'
-                    | translate
-                "
-              ></li>
+              <li><strong>Underweight:</strong> BMI below 18.5 - may indicate malnutrition or health issues</li>
+              <li><strong>Normal weight:</strong> BMI 18.5-24.9 - associated with lowest health risks</li>
+              <li><strong>Overweight:</strong> BMI 25-29.9 - increased risk of health problems</li>
+              <li><strong>Obese:</strong> BMI 30+ - significantly increased health risks</li>
             </ul>
           </div>
           <div>
-            <h3 class="font-medium text-gray-900 mb-2">
-              {{
-                'TOOLS.BMI_CALCULATOR.UNDERSTANDING.BODY_FAT.TITLE' | translate
-              }}
-            </h3>
+            <h3 class="font-medium text-gray-900 mb-2">Body Fat Ranges</h3>
             <ul class="space-y-1 text-sm text-gray-700">
-              <li
-                [innerHTML]="
-                  'TOOLS.BMI_CALCULATOR.UNDERSTANDING.BODY_FAT.MALE_RANGES'
-                    | translate
-                "
-              ></li>
-              <li
-                [innerHTML]="
-                  'TOOLS.BMI_CALCULATOR.UNDERSTANDING.BODY_FAT.FEMALE_RANGES'
-                    | translate
-                "
-              ></li>
-              <li
-                [innerHTML]="
-                  'TOOLS.BMI_CALCULATOR.UNDERSTANDING.BODY_FAT.ATHLETE_NOTE'
-                    | translate
-                "
-              ></li>
+              <li><strong>Men:</strong> Essential 2-5%, Athletes 6-13%, Fitness 14-17%, Average 18-24%, Obese 25%+</li>
+              <li><strong>Women:</strong> Essential 10-13%, Athletes 14-20%, Fitness 21-24%, Average 25-31%, Obese 32%+</li>
+              <li><strong>Athletes note:</strong> Higher muscle mass may result in higher BMI despite low body fat</li>
             </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Metrics Explanation Section -->
+      <div class="bg-orange-50 p-6 rounded-lg">
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">What Each Metric Means</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="space-y-4">
+            <div>
+              <h4 class="font-medium text-gray-900 mb-1">BMI (Body Mass Index)</h4>
+              <p class="text-sm text-gray-700">Standard measure of body weight relative to height. Useful for population studies but doesn't distinguish between muscle and fat mass.</p>
+            </div>
+            <div>
+              <h4 class="font-medium text-gray-900 mb-1">New BMI</h4>
+              <p class="text-sm text-gray-700">Height-adjusted BMI that accounts for the fact that taller people tend to have proportionally longer legs. More accurate for very tall or short individuals.</p>
+            </div>
+            <div>
+              <h4 class="font-medium text-gray-900 mb-1">IBW (Ideal Body Weight)</h4>
+              <p class="text-sm text-gray-700">Estimated optimal weight for your height and sex based on medical research. Provides a target range for healthy weight management.</p>
+            </div>
+          </div>
+          <div class="space-y-4">
+            <div>
+              <h4 class="font-medium text-gray-900 mb-1">Body Fat Percentage</h4>
+              <p class="text-sm text-gray-700">Estimated using the Deurenberg formula. More accurate indicator of health than BMI alone, especially for athletes with high muscle mass.</p>
+            </div>
+            <div>
+              <h4 class="font-medium text-gray-900 mb-1">BMR (Basal Metabolic Rate)</h4>
+              <p class="text-sm text-gray-700">Calories your body burns at rest to maintain basic functions. Essential for calculating daily caloric needs and weight management plans.</p>
+            </div>
+            <div>
+              <h4 class="font-medium text-gray-900 mb-1">For Runners</h4>
+              <p class="text-sm text-gray-700">Lower body fat and optimal BMI can improve running performance, but prioritize health over performance metrics.</p>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- Health Tips Section -->
       <div class="bg-yellow-50 p-6 rounded-lg">
-        <h2 class="text-xl font-semibold text-gray-900 mb-3">
-          {{ 'TOOLS.BMI_CALCULATOR.HEALTH_TIPS.TITLE' | translate }}
-        </h2>
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">Health & Fitness Tips</h2>
         <div class="space-y-3 text-gray-700">
-          <p
-            [innerHTML]="'TOOLS.BMI_CALCULATOR.HEALTH_TIPS.INTRO' | translate"
-          ></p>
+          <p>Use your body composition results to make informed decisions about your health and fitness goals:</p>
           <div class="grid md:grid-cols-2 gap-4">
             <div>
-              <h4 class="font-medium text-gray-900 mb-1">
-                {{
-                  'TOOLS.BMI_CALCULATOR.HEALTH_TIPS.WEIGHT_MANAGEMENT.TITLE'
-                    | translate
-                }}
-              </h4>
+              <h4 class="font-medium text-gray-900 mb-1">Weight Management</h4>
               <ul class="list-disc list-inside space-y-1 ml-4 text-sm">
-                <li
-                  [innerHTML]="
-                    'TOOLS.BMI_CALCULATOR.HEALTH_TIPS.WEIGHT_MANAGEMENT.TIP1'
-                      | translate
-                  "
-                ></li>
-                <li
-                  [innerHTML]="
-                    'TOOLS.BMI_CALCULATOR.HEALTH_TIPS.WEIGHT_MANAGEMENT.TIP2'
-                      | translate
-                  "
-                ></li>
-                <li
-                  [innerHTML]="
-                    'TOOLS.BMI_CALCULATOR.HEALTH_TIPS.WEIGHT_MANAGEMENT.TIP3'
-                      | translate
-                  "
-                ></li>
+                <li><strong>Gradual changes:</strong> Aim for 1-2 pounds per week weight loss through diet and exercise</li>
+                <li><strong>Focus on body composition:</strong> Build muscle while losing fat for better health outcomes</li>
+                <li><strong>Track progress:</strong> Use our <a href='/tools/personal/burned-calories-estimator' class='text-blue-600 hover:text-blue-800 underline'>calories burned calculator</a> to monitor energy expenditure</li>
               </ul>
             </div>
             <div>
-              <h4 class="font-medium text-gray-900 mb-1">
-                {{
-                  'TOOLS.BMI_CALCULATOR.HEALTH_TIPS.RUNNERS.TITLE' | translate
-                }}
-              </h4>
+              <h4 class="font-medium text-gray-900 mb-1">For Runners & Athletes</h4>
               <ul class="list-disc list-inside space-y-1 ml-4 text-sm">
-                <li
-                  [innerHTML]="
-                    'TOOLS.BMI_CALCULATOR.HEALTH_TIPS.RUNNERS.TIP1' | translate
-                  "
-                ></li>
-                <li
-                  [innerHTML]="
-                    'TOOLS.BMI_CALCULATOR.HEALTH_TIPS.RUNNERS.TIP2' | translate
-                  "
-                ></li>
-                <li
-                  [innerHTML]="
-                    'TOOLS.BMI_CALCULATOR.HEALTH_TIPS.RUNNERS.TIP3' | translate
-                  "
-                ></li>
+                <li><strong>Performance vs health:</strong> Optimal racing weight may differ from healthiest weight</li>
+                <li><strong>Muscle mass matters:</strong> Higher BMI can be healthy if due to muscle, not fat</li>
+                <li><strong>Fuel your training:</strong> Don't compromise nutrition for weight loss during heavy training periods</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BMI Limitations Section -->
+      <div class="bg-red-50 p-6 rounded-lg">
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">Important BMI Limitations</h2>
+        <div class="space-y-3 text-gray-700">
+          <p>While BMI is a useful screening tool, it has important limitations you should understand:</p>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <h4 class="font-medium text-gray-900 mb-1">BMI Doesn't Measure</h4>
+              <ul class="list-disc list-inside space-y-1 ml-4 text-sm">
+                <li><strong>Body composition:</strong> Can't distinguish between muscle and fat mass</li>
+                <li><strong>Fat distribution:</strong> Doesn't show where fat is located on your body</li>
+                <li><strong>Bone density:</strong> Heavier bones can increase BMI without health risks</li>
+                <li><strong>Overall fitness:</strong> A fit person may have "high" BMI due to muscle</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-medium text-gray-900 mb-1">Consider These Factors</h4>
+              <ul class="list-disc list-inside space-y-1 ml-4 text-sm">
+                <li><strong>Age:</strong> Slightly higher BMI may be healthier for older adults</li>
+                <li><strong>Ethnicity:</strong> Health risks vary by ethnic background at same BMI</li>
+                <li><strong>Activity level:</strong> Athletes often have higher BMI due to muscle mass</li>
+                <li><strong>Health markers:</strong> Blood pressure, cholesterol, and fitness matter more than BMI alone</li>
               </ul>
             </div>
           </div>
@@ -250,77 +216,38 @@
 
       <!-- Related Tools Section -->
       <div class="bg-purple-50 p-6 rounded-lg">
-        <h2 class="text-xl font-semibold text-gray-900 mb-3">
-          {{ 'TOOLS.BMI_CALCULATOR.RELATED_TOOLS.TITLE' | translate }}
-        </h2>
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">Related Health & Fitness Tools</h2>
         <div class="grid md:grid-cols-2 gap-4">
           <div class="space-y-2">
             <a
               href="/tools/personal/burned-calories-estimator"
               class="block p-3 bg-white rounded border hover:border-blue-300 transition-colors"
             >
-              <h3 class="font-medium text-blue-600">
-                {{
-                  'TOOLS.BMI_CALCULATOR.RELATED_TOOLS.CALORIES.TITLE'
-                    | translate
-                }}
-              </h3>
-              <p class="text-sm text-gray-600">
-                {{
-                  'TOOLS.BMI_CALCULATOR.RELATED_TOOLS.CALORIES.DESC' | translate
-                }}
-              </p>
+              <h3 class="font-medium text-blue-600">Calories Burned Calculator</h3>
+              <p class="text-sm text-gray-600">Calculate energy expenditure based on your weight and activity level</p>
             </a>
             <a
               href="/tools/personal/vo2max-calculator"
-              class="block p-3 bg-white rounded border hover:border-blue-300 transition-colors"
+              class="block p-3 bg-white rounded border hover:border-red-300 transition-colors"
             >
-              <h3 class="font-medium text-blue-600">
-                {{
-                  'TOOLS.BMI_CALCULATOR.RELATED_TOOLS.VO2MAX.TITLE' | translate
-                }}
-              </h3>
-              <p class="text-sm text-gray-600">
-                {{
-                  'TOOLS.BMI_CALCULATOR.RELATED_TOOLS.VO2MAX.DESC' | translate
-                }}
-              </p>
+              <h3 class="font-medium text-red-600">VO₂ Max Calculator</h3>
+              <p class="text-sm text-gray-600">Assess your cardiovascular fitness and aerobic capacity</p>
             </a>
           </div>
           <div class="space-y-2">
             <a
               href="/tools/units/weight-unit-converter"
-              class="block p-3 bg-white rounded border hover:border-blue-300 transition-colors"
+              class="block p-3 bg-white rounded border hover:border-green-300 transition-colors"
             >
-              <h3 class="font-medium text-blue-600">
-                {{
-                  'TOOLS.BMI_CALCULATOR.RELATED_TOOLS.WEIGHT_CONVERTER.TITLE'
-                    | translate
-                }}
-              </h3>
-              <p class="text-sm text-gray-600">
-                {{
-                  'TOOLS.BMI_CALCULATOR.RELATED_TOOLS.WEIGHT_CONVERTER.DESC'
-                    | translate
-                }}
-              </p>
+              <h3 class="font-medium text-green-600">Weight Unit Converter</h3>
+              <p class="text-sm text-gray-600">Convert between kilograms and pounds for international compatibility</p>
             </a>
             <a
               href="/tools/race/pace-calculator"
-              class="block p-3 bg-white rounded border hover:border-blue-300 transition-colors"
+              class="block p-3 bg-white rounded border hover:border-orange-300 transition-colors"
             >
-              <h3 class="font-medium text-blue-600">
-                {{
-                  'TOOLS.BMI_CALCULATOR.RELATED_TOOLS.PACE_CALC.TITLE'
-                    | translate
-                }}
-              </h3>
-              <p class="text-sm text-gray-600">
-                {{
-                  'TOOLS.BMI_CALCULATOR.RELATED_TOOLS.PACE_CALC.DESC'
-                    | translate
-                }}>
-              </p>
+              <h3 class="font-medium text-orange-600">Pace Calculator</h3>
+              <p class="text-sm text-gray-600">Calculate running pace and optimize your training performance</p>
             </a>
           </div>
         </div>
@@ -331,55 +258,37 @@
   <!-- FAQ Section -->
   <ng-container tool-faq>
     <app-faq-section>
-      <div faq-title>{{ 'TOOLS.BMI_CALCULATOR.FAQ.TITLE' | translate }}</div>
+      <div faq-title>Frequently Asked Questions</div>
 
       <div faq-items>
         <app-faq-item>
-          <div faq-question>
-            {{ 'TOOLS.BMI_CALCULATOR.FAQ.Q1' | translate }}
-          </div>
-          <div faq-answer>{{ 'TOOLS.BMI_CALCULATOR.FAQ.A1' | translate }}</div>
+          <div faq-question>Is BMI an accurate measure of health?</div>
+          <div faq-answer>BMI is a useful screening tool but not a complete measure of health. It doesn't distinguish between muscle and fat mass, so athletes with high muscle mass may have elevated BMI despite being very healthy. Consider BMI alongside other factors like body fat percentage, fitness level, and overall health markers.</div>
         </app-faq-item>
 
         <app-faq-item>
-          <div faq-question>
-            {{ 'TOOLS.BMI_CALCULATOR.FAQ.Q2' | translate }}
-          </div>
-          <div faq-answer>{{ 'TOOLS.BMI_CALCULATOR.FAQ.A2' | translate }}</div>
+          <div faq-question>What's the difference between BMI and New BMI?</div>
+          <div faq-answer>New BMI is a height-adjusted calculation that accounts for the fact that taller people tend to have proportionally longer legs. It provides more accurate results for very tall or short individuals by using a modified formula that better reflects body proportions across different heights.</div>
         </app-faq-item>
 
         <app-faq-item>
-          <div faq-question>
-            {{ 'TOOLS.BMI_CALCULATOR.FAQ.Q3' | translate }}
-          </div>
-          <div
-            faq-answer
-            [innerHTML]="'TOOLS.BMI_CALCULATOR.FAQ.A3' | translate"
-          ></div>
+          <div faq-question>How accurate is the body fat percentage calculation?</div>
+          <div faq-answer>The body fat percentage is estimated using the Deurenberg formula, which considers age, sex, and BMI. While reasonably accurate for general population estimates, it's less precise than methods like DEXA scans or hydrostatic weighing. Use it as a general guideline rather than an exact measurement. For athletes or very muscular individuals, the estimate may be less accurate.</div>
         </app-faq-item>
 
         <app-faq-item>
-          <div faq-question>
-            {{ 'TOOLS.BMI_CALCULATOR.FAQ.Q4' | translate }}
-          </div>
-          <div faq-answer>{{ 'TOOLS.BMI_CALCULATOR.FAQ.A4' | translate }}</div>
+          <div faq-question>What should I do if my BMI is outside the normal range?</div>
+          <div faq-answer>If your BMI is outside the normal range, consider your overall health picture including muscle mass, fitness level, and health markers. Consult with healthcare professionals for personalized advice. Focus on healthy lifestyle changes like balanced nutrition and regular exercise rather than just the BMI number.</div>
         </app-faq-item>
 
         <app-faq-item>
-          <div faq-question>
-            {{ 'TOOLS.BMI_CALCULATOR.FAQ.Q5' | translate }}
-          </div>
-          <div faq-answer>{{ 'TOOLS.BMI_CALCULATOR.FAQ.A5' | translate }}</div>
+          <div faq-question>How does BMI relate to running performance?</div>
+          <div faq-answer>Lower BMI and body fat percentage can improve running performance by reducing the energy cost of movement. However, optimal racing weight varies by individual and shouldn't compromise health or training quality. Elite distance runners often have lower BMIs, but recreational runners should prioritize overall health and sustainable training.</div>
         </app-faq-item>
 
         <app-faq-item>
-          <div faq-question>
-            {{ 'TOOLS.BMI_CALCULATOR.FAQ.Q6' | translate }}
-          </div>
-          <div
-            faq-answer
-            [innerHTML]="'TOOLS.BMI_CALCULATOR.FAQ.A6' | translate"
-          ></div>
+          <div faq-question>How often should I calculate my BMI and body composition?</div>
+          <div faq-answer>For general health monitoring, calculating BMI monthly or quarterly is sufficient. If you're actively trying to change body composition, weekly or bi-weekly measurements can help track progress. Remember that body weight fluctuates daily due to hydration, food intake, and other factors. Focus on trends over time rather than daily variations. Use our <a href='/tools/personal/burned-calories-estimator' class='text-blue-600 hover:text-blue-800 underline'>calories burned calculator</a> to support your fitness goals.</div>
         </app-faq-item>
       </div>
     </app-faq-section>
@@ -412,7 +321,7 @@
           <div
             class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1"
           >
-            {{ 'TOOLS.BMI_CALCULATOR.' + type + '.SUMMARY' | translate }}
+            {{ getMetricLabel(type) }}
           </div>
           <div
             class="text-2xl font-bold leading-none"
@@ -429,9 +338,7 @@
           class="text-xs font-bold px-3 py-1.5 rounded-full shadow-sm text-center w-full"
           [ngClass]="getCategoryBadgeClass(category)"
         >
-          {{
-            'TOOLS.BMI_CALCULATOR.' + type + '.CATEGORY.' + category | translate
-          }}
+          {{ getCategoryLabel(type, category) }}
         </div>
       </div>
     </div>

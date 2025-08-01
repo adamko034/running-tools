@@ -1,5 +1,4 @@
 import { Component, effect, inject } from '@angular/core';
-import { TranslateModule } from '@ngx-translate/core';
 import { SeoService } from '../../../../core/services/seo.service';
 import { Pace } from '../../../../core/business/model/pace.model';
 import { Speed } from '../../../../core/business/model/speed.model';
@@ -20,7 +19,6 @@ import { ToolView } from '../../../../shared/views/tool-view/tool-view';
     SpeedPureFormField,
     FaqSectionComponent,
     FaqItemComponent,
-    TranslateModule,
   ],
   templateUrl: './pace-to-speed.html',
 })

@@ -1,5 +1,4 @@
 import { Component, computed, inject } from '@angular/core';
-import { TranslateModule } from '@ngx-translate/core';
 import { SeoService } from '../../../../core/services/seo.service';
 import { CalculatorsFacade } from '../../../../core/business/calculators-facade';
 import { StoreService } from '../../../../core/store/store.service';
@@ -18,7 +17,6 @@ import { ToolView } from '../../../../shared/views/tool-view/tool-view';
     FancyResult,
     FaqSectionComponent,
     FaqItemComponent,
-    TranslateModule,
   ],
   templateUrl: './vo2max-calculator.html',
 })

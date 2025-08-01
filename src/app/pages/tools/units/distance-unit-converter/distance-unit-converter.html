@@ -1,18 +1,14 @@
 <app-tool-view 
-  [calculatorName]="'TOOLS.DISTANCE_UNIT_CONVERTER.TITLE' | translate"
-  [calculatorDescription]="'TOOLS.DISTANCE_UNIT_CONVERTER.DESCRIPTION' | translate"
+  calculatorName="Distance Converter - Miles to Kilometers Calculator"
+  calculatorDescription="Convert running distances between miles and kilometers instantly. Essential tool for international race planning, training programs, and GPS watch setup. Accurate conversion for 5K, 10K, half marathon, marathon, and custom distances."
   category="units">
-  <ng-container tool-title>
-    {{ 'TOOLS.DISTANCE_UNIT_CONVERTER.TITLE' | translate }}
-  </ng-container>
-  <ng-container tool-description>
-    {{ 'TOOLS.DISTANCE_UNIT_CONVERTER.DESCRIPTION' | translate }}
-  </ng-container>
+  <ng-container tool-title>Distance Converter - Miles to Kilometers Calculator</ng-container>
+  <ng-container tool-description>Convert running distances between miles and kilometers instantly. Essential tool for international race planning, training programs, and GPS watch setup. Accurate conversion for 5K, 10K, half marathon, marathon, and custom distances.</ng-container>
   <ng-container tool-content>
     <!-- Distance Input Fields -->
     <div class="grid md:grid-cols-2 gap-6 mb-2">
       <app-number-form-field
-        [horizontalLineText]="'COMMON.KILOMETERS' | translate"
+        horizontalLineText="Kilometers"
         [name]="'distanceKilometers'"
         [step]="0.001"
         [suffix]="kmDistance.unit"
@@ -22,7 +18,7 @@
       </app-number-form-field>
 
       <app-number-form-field
-        [horizontalLineText]="'COMMON.MILES' | translate"
+        horizontalLineText="Miles"
         [name]="'distanceMiles'"
         [step]="0.001"
         [suffix]="miDistance.unit"
@@ -40,48 +36,152 @@
   </ng-container>
   <ng-container tool-summary>
     <app-fancy-result>
-      <div result-title>{{ 'TOOLS.DISTANCE_UNIT_CONVERTER.RESULT_TITLE' | translate }}</div>
-      <div result-subtitle>{{ 'TOOLS.DISTANCE_UNIT_CONVERTER.RESULT_SUBTITLE' | translate }}</div>
+      <div result-title>Distance Conversion</div>
+      <div result-subtitle>Equivalent distances in kilometers and miles</div>
       <div result-value>
         {{ kmDistance.format() }} ⟷ {{ miDistance.format() }}
       </div>
     </app-fancy-result>
   </ng-container>
 
+  <!-- Educational Content Section -->
+  <ng-container tool-education>
+    <div class="mt-8 space-y-6">
+      <!-- How to Use Section -->
+      <div class="bg-orange-50 p-6 rounded-lg">
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">How to Use the Distance Converter</h2>
+        <div class="space-y-2 text-gray-700">
+          <p><strong>1. Enter your distance:</strong> Type any distance value in either kilometers or miles - the tool automatically converts to the other unit.</p>
+          <p><strong>2. Use quick selectors:</strong> Click on common race distances (5K, 10K, half marathon, marathon) for instant conversion of popular running distances.</p>
+          <p><strong>3. Plan your training:</strong> Use the conversions to follow international training plans, set GPS watch targets, or understand race distances when traveling.</p>
+        </div>
+      </div>
+
+      <!-- Common Race Distances Section -->
+      <div class="bg-blue-50 p-6 rounded-lg">
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">Standard Race Distances</h2>
+        <div class="space-y-3 text-gray-700">
+          <p>Understanding common race distances in both units helps with race planning and training:</p>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <h4 class="font-medium text-gray-900 mb-2">Popular Race Distances</h4>
+              <ul class="space-y-1 text-sm">
+                <li><strong>5K:</strong> 3.11 miles</li>
+                <li><strong>10K:</strong> 6.21 miles</li>
+                <li><strong>15K:</strong> 9.32 miles</li>
+                <li><strong>Half Marathon:</strong> 21.1K = 13.11 miles</li>
+                <li><strong>Marathon:</strong> 42.2K = 26.22 miles</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-medium text-gray-900 mb-2">Training Distances</h4>
+              <ul class="space-y-1 text-sm">
+                <li><strong>1 mile:</strong> 1.61 kilometers</li>
+                <li><strong>3 miles:</strong> 4.83 kilometers</li>
+                <li><strong>5 miles:</strong> 8.05 kilometers</li>
+                <li><strong>10 miles:</strong> 16.09 kilometers</li>
+                <li><strong>20 miles:</strong> 32.19 kilometers</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Practical Applications Section -->
+      <div class="bg-green-50 p-6 rounded-lg">
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">When to Use Each Unit System</h2>
+        <div class="space-y-3 text-gray-700">
+          <p>Choose the right unit system based on your location, training goals, and race destinations:</p>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <h4 class="font-medium text-gray-900 mb-1">Use Kilometers For:</h4>
+              <ul class="list-disc list-inside space-y-1 ml-4 text-sm">
+                <li><strong>International races:</strong> Most global races use metric distances</li>
+                <li><strong>Track training:</strong> Standard track is 400m, making km calculations easier</li>
+                <li><strong>European/Asian training:</strong> Following plans from metric-system countries</li>
+                <li><strong>Smaller milestones:</strong> More frequent progress markers during long runs</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-medium text-gray-900 mb-1">Use Miles For:</h4>
+              <ul class="list-disc list-inside space-y-1 ml-4 text-sm">
+                <li><strong>US/UK racing:</strong> Many local races use mile-based distances</li>
+                <li><strong>Road running:</strong> Mile markers are common on roads and paths</li>
+                <li><strong>Traditional training:</strong> Classic training programs often use miles</li>
+                <li><strong>Mental familiarity:</strong> If you think in miles for daily distances</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Related Tools Section -->
+      <div class="bg-purple-50 p-6 rounded-lg">
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">Related Distance & Training Tools</h2>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="space-y-2">
+            <a href="/tools/race/pace-calculator" class="block p-3 bg-white rounded border hover:border-blue-300 transition-colors">
+              <h3 class="font-medium text-blue-600">Pace Calculator</h3>
+              <p class="text-sm text-gray-600">Calculate your running pace for any distance</p>
+            </a>
+            <a href="/tools/race/finish-time-predictor" class="block p-3 bg-white rounded border hover:border-green-300 transition-colors">
+              <h3 class="font-medium text-green-600">Finish Time Predictor</h3>
+              <p class="text-sm text-gray-600">Predict race times for different distances</p>
+            </a>
+            <a href="/tools/units/pace-to-speed" class="block p-3 bg-white rounded border hover:border-orange-300 transition-colors">
+              <h3 class="font-medium text-orange-600">Pace to Speed Converter</h3>
+              <p class="text-sm text-gray-600">Convert between pace and speed units</p>
+            </a>
+          </div>
+          <div class="space-y-2">
+            <a href="/tools/training/training-paces-calculator" class="block p-3 bg-white rounded border hover:border-purple-300 transition-colors">
+              <h3 class="font-medium text-purple-600">Training Paces Calculator</h3>
+              <p class="text-sm text-gray-600">Get personalized training paces for different workout types</p>
+            </a>
+            <a href="/tools/personal/burned-calories-estimator" class="block p-3 bg-white rounded border hover:border-red-300 transition-colors">
+              <h3 class="font-medium text-red-600">Calories Burned Calculator</h3>
+              <p class="text-sm text-gray-600">Calculate energy expenditure for different distances</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
   <!-- FAQ Section -->
   <ng-container tool-faq>
     <app-faq-section>
-      <div faq-title>{{ 'TOOLS.DISTANCE_UNIT_CONVERTER.FAQ.TITLE' | translate }}</div>
+      <div faq-title>Frequently Asked Questions</div>
       
       <div faq-items>
         <app-faq-item>
-          <div faq-question>{{ 'TOOLS.DISTANCE_UNIT_CONVERTER.FAQ.Q1' | translate }}</div>
-          <div faq-answer [innerHTML]="'TOOLS.DISTANCE_UNIT_CONVERTER.FAQ.A1' | translate"></div>
+          <div faq-question>What's the exact conversion between kilometers and miles?</div>
+          <div faq-answer>1 kilometer equals 0.621371 miles, and 1 mile equals 1.609344 kilometers. This tool uses precise conversion factors to ensure accuracy for all your training and racing needs. Understanding both units helps when following international training plans or racing abroad.</div>
         </app-faq-item>
 
         <app-faq-item>
-          <div faq-question>{{ 'TOOLS.DISTANCE_UNIT_CONVERTER.FAQ.Q2' | translate }}</div>
-          <div faq-answer [innerHTML]="'TOOLS.DISTANCE_UNIT_CONVERTER.FAQ.A2' | translate"></div>
+          <div faq-question>Why do some countries use kilometers while others use miles?</div>
+          <div faq-answer>Most countries worldwide use the metric system (kilometers), while the United States, United Kingdom, and a few others primarily use the imperial system (miles) for road distances. In running, this means race distances like 5K, 10K, and marathons are often measured in kilometers globally, while some regions prefer miles for training and shorter races.</div>
         </app-faq-item>
 
         <app-faq-item>
-          <div faq-question>{{ 'TOOLS.DISTANCE_UNIT_CONVERTER.FAQ.Q3' | translate }}</div>
-          <div faq-answer [innerHTML]="'TOOLS.DISTANCE_UNIT_CONVERTER.FAQ.A3' | translate"></div>
+          <div faq-question>How do I convert my training paces between units?</div>
+          <div faq-answer>When converting training plans between units, remember that pace also changes. A 6:00/mile pace equals approximately 3:44/km pace. Use our <a href='/tools/units/pace-to-speed' class='text-blue-600 hover:text-blue-800 underline'>pace converter</a> for accurate pace conversions, and our <a href='/tools/race/pace-calculator' class='text-blue-600 hover:text-blue-800 underline'>pace calculator</a> to determine optimal training paces in your preferred unit.</div>
         </app-faq-item>
 
         <app-faq-item>
-          <div faq-question>{{ 'TOOLS.DISTANCE_UNIT_CONVERTER.FAQ.Q4' | translate }}</div>
-          <div faq-answer [innerHTML]="'TOOLS.DISTANCE_UNIT_CONVERTER.FAQ.A4' | translate"></div>
+          <div faq-question>What are the standard race distances in both units?</div>
+          <div faq-answer>Common race distances: 5K = 3.11 miles, 10K = 6.21 miles, Half Marathon = 21.1K = 13.11 miles, Marathon = 42.2K = 26.22 miles. Many races also use mile markers (1 mile = 1.61K). Use our <a href='/tools/race/finish-time-predictor' class='text-blue-600 hover:text-blue-800 underline'>finish time predictor</a> to estimate your performance across different race distances.</div>
         </app-faq-item>
 
         <app-faq-item>
-          <div faq-question>{{ 'TOOLS.DISTANCE_UNIT_CONVERTER.FAQ.Q5' | translate }}</div>
-          <div faq-answer [innerHTML]="'TOOLS.DISTANCE_UNIT_CONVERTER.FAQ.A5' | translate"></div>
+          <div faq-question>Should I train in kilometers or miles?</div>
+          <div faq-answer>Train in the unit system you're most comfortable with or that matches your target races. If racing internationally, consider training in kilometers. If racing locally in mile-based regions, miles might be more intuitive. The key is consistency in your training log and understanding both systems for race planning.</div>
         </app-faq-item>
 
         <app-faq-item>
-          <div faq-question>{{ 'TOOLS.DISTANCE_UNIT_CONVERTER.FAQ.Q6' | translate }}</div>
-          <div faq-answer [innerHTML]="'TOOLS.DISTANCE_UNIT_CONVERTER.FAQ.A6' | translate"></div>
+          <div faq-question>How does distance unit choice affect my training?</div>
+          <div faq-answer>The unit choice doesn't affect your actual fitness or performance, but it can impact your mental approach and pacing strategy. Some runners find kilometer splits more motivating (smaller, more frequent milestones), while others prefer the traditional mile markers. Choose what helps you stay motivated and track progress effectively. Monitor your <a href='/tools/personal/burned-calories-estimator' class='text-blue-600 hover:text-blue-800 underline'>energy expenditure</a> regardless of unit choice.</div>
         </app-faq-item>
       </div>
     </app-faq-section>

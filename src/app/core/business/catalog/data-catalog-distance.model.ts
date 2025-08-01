@@ -3,13 +3,10 @@ import { Distance } from '../model/distance.model';
 export class DataCatalogDistance {
   private constructor(
     public distance: Distance,
-    public translationKey: string
+    public label: string
   ) {}
 
-  static ofKm(km: number, translationKeySuffix: string) {
-    return new DataCatalogDistance(
-      Distance.ofKm(km),
-      'COMMON.DISTANCES.' + translationKeySuffix
-    );
+  static ofKm(km: number, label: string) {
+    return new DataCatalogDistance(Distance.ofKm(km), label);
   }
 }

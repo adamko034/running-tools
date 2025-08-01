@@ -2,7 +2,7 @@ import { Pace } from './pace.model';
 import { Time } from './time.model';
 
 export interface FinishTime {
-  translationKey: string;
+  label: string;
   time: Time;
   pace: Pace;
 }

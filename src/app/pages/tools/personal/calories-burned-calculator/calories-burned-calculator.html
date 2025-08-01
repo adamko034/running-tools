@@ -1,13 +1,14 @@
-<app-tool-view 
-  [calculatorName]="'TOOLS.CALORIES_BURNED_CALCULATOR.TITLE' | translate"
-  [calculatorDescription]="'TOOLS.CALORIES_BURNED_CALCULATOR.DESCRIPTION' | translate"
-  category="personal">
-  <ng-container tool-title>{{
-    'TOOLS.CALORIES_BURNED_CALCULATOR.TITLE' | translate
-  }}</ng-container>
-  <ng-container tool-description>{{
-    'TOOLS.CALORIES_BURNED_CALCULATOR.DESCRIPTION' | translate
-  }}</ng-container>
+<app-tool-view
+  calculatorName="Calories Burned Calculator"
+  calculatorDescription="Calculate calories burned during running based on distance, time, and body weight. Get accurate energy expenditure estimates for training planning, weight management, and nutrition strategies."
+  category="personal"
+>
+  <ng-container tool-title>Calories Burned Calculator</ng-container>
+  <ng-container tool-description
+    >Calculate calories burned during running based on distance, time, and body
+    weight. Get accurate energy expenditure estimates for training planning,
+    weight management, and nutrition strategies.</ng-container
+  >
   <ng-container tool-content>
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
       <app-distance-store-form-field />
@@ -17,55 +18,783 @@
   </ng-container>
   <ng-container tool-summary>
     <app-fancy-result>
-      <div result-value>
-        {{
-          'TOOLS.CALORIES_BURNED_CALCULATOR.SUMMARY'
-            | translate: { calories: calories() }
-        }}
-      </div>
-      <div result-title>
-        {{ 'TOOLS.CALORIES_BURNED_CALCULATOR.SUMMARY_TITLE' | translate }}
-      </div>
+      <div result-value>{{ calories() }} calories burned</div>
+      <div result-title>Energy Expenditure</div>
       <div result-subtitle>
-        {{ 'TOOLS.CALORIES_BURNED_CALCULATOR.SUMMARY_SUB' | translate }}
+        Based on your running performance and body weight
       </div>
     </app-fancy-result>
+  </ng-container>
+
+  <!-- Educational Content Section -->
+  <ng-container tool-education>
+    <div class="mt-8 space-y-6">
+      <!-- How to Use Section -->
+      <div class="bg-blue-50 p-6 rounded-lg">
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">
+          How to Use the Calories Burned Calculator
+        </h2>
+        <div class="space-y-2 text-gray-700">
+          <p>
+            <strong>1. Enter your running data:</strong> Input the distance you
+            ran, the time it took, and your current body weight for accurate
+            calorie calculations.
+          </p>
+          <p>
+            <strong>2. Choose appropriate units:</strong> Select between metric
+            (kilometers, kilograms) or imperial (miles, pounds) based on your
+            preference.
+          </p>
+          <p>
+            <strong>3. Review your energy expenditure:</strong> The calculator
+            shows total calories burned based on your pace and body weight using
+            established metabolic equations.
+          </p>
+          <p>
+            <strong>4. Apply to your goals:</strong> Use the results for meal
+            planning, weight management, or understanding your training energy
+            demands.
+          </p>
+        </div>
+      </div>
+
+      <!-- Calorie Burn Science Section -->
+      <div class="bg-green-50 p-6 rounded-lg">
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">
+          The Science of Calorie Burn During Running
+        </h2>
+        <div class="space-y-3 text-gray-700">
+          <p>
+            Calorie burn during running depends on several physiological and
+            mechanical factors:
+          </p>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <h4 class="font-medium text-gray-900 mb-1">Primary Factors</h4>
+              <ul class="list-disc list-inside space-y-1 ml-4 text-sm">
+                <li>
+                  <strong>Body weight:</strong> Heavier runners burn more
+                  calories moving their mass
+                </li>
+                <li>
+                  <strong>Distance:</strong> Total energy expenditure increases
+                  with distance covered
+                </li>
+                <li>
+                  <strong>Running efficiency:</strong> Individual biomechanics
+                  affect energy cost
+                </li>
+                <li>
+                  <strong>Terrain:</strong> Hills, trails, and surfaces impact
+                  calorie burn
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-medium text-gray-900 mb-1">Secondary Factors</h4>
+              <ul class="list-disc list-inside space-y-1 ml-4 text-sm">
+                <li>
+                  <strong>Weather conditions:</strong> Heat, cold, and wind
+                  affect energy demands
+                </li>
+                <li>
+                  <strong>Running form:</strong> Efficient technique reduces
+                  energy waste
+                </li>
+                <li>
+                  <strong>Fitness level:</strong> Trained runners are more
+                  metabolically efficient
+                </li>
+                <li>
+                  <strong>Pace variation:</strong> Steady pace vs intervals
+                  affects total burn
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Weight Management Section -->
+      <div class="bg-yellow-50 p-6 rounded-lg">
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">
+          Using Calorie Data for Weight Management
+        </h2>
+        <div class="space-y-3 text-gray-700">
+          <p>
+            Understanding your calorie burn helps create effective weight
+            management strategies:
+          </p>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <h4 class="font-medium text-gray-900 mb-1">Weight Loss Tips</h4>
+              <ul class="list-disc list-inside space-y-1 ml-4 text-sm">
+                <li>
+                  <strong>Create a caloric deficit:</strong> Burn more calories
+                  than you consume through running and diet
+                </li>
+                <li>
+                  <strong>Track your progress:</strong> Monitor both calories
+                  burned and dietary intake for balance
+                </li>
+                <li>
+                  <strong>Sustainable approach:</strong> Aim for 1-2 pounds per
+                  week through combined diet and exercise
+                </li>
+                <li>
+                  <strong>Don't under-fuel:</strong> Ensure adequate nutrition
+                  to support your training demands
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-medium text-gray-900 mb-1">
+                Performance Optimization
+              </h4>
+              <ul class="list-disc list-inside space-y-1 ml-4 text-sm">
+                <li>
+                  <strong>Fuel your runs:</strong> Use calorie data to plan pre
+                  and post-run nutrition
+                </li>
+                <li>
+                  <strong>Recovery nutrition:</strong> Replace 50-100% of
+                  calories burned within 2 hours
+                </li>
+                <li>
+                  <strong>Body composition:</strong> Use our
+                  <a
+                    href="/tools/personal/bmi-calculator"
+                    class="text-blue-600 hover:text-blue-800 underline"
+                    >BMI calculator</a
+                  >
+                  for comprehensive health assessment
+                </li>
+                <li>
+                  <strong>Training load:</strong> Balance calorie burn with
+                  recovery and adaptation needs
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Calorie Burn by Pace Section -->
+      <div class="bg-orange-50 p-6 rounded-lg">
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">
+          How Pace Affects Calorie Burn
+        </h2>
+        <div class="space-y-3 text-gray-700">
+          <p>
+            Running pace significantly influences your energy expenditure and
+            metabolic demands:
+          </p>
+          <div class="grid md:grid-cols-3 gap-4">
+            <div class="bg-white p-3 rounded border">
+              <h4 class="font-medium text-gray-900 mb-1">
+                Easy Pace (Conversational)
+              </h4>
+              <ul class="text-sm space-y-1">
+                <li>
+                  <strong>Efficiency:</strong> Most economical calorie burn per
+                  mile
+                </li>
+                <li>
+                  <strong>Fat burning:</strong> Higher percentage of calories
+                  from fat
+                </li>
+                <li>
+                  <strong>Sustainability:</strong> Can maintain for long
+                  distances
+                </li>
+                <li><strong>Recovery:</strong> Lower metabolic stress</li>
+              </ul>
+            </div>
+            <div class="bg-white p-3 rounded border">
+              <h4 class="font-medium text-gray-900 mb-1">
+                Moderate Pace (Tempo)
+              </h4>
+              <ul class="text-sm space-y-1">
+                <li>
+                  <strong>Efficiency:</strong> Slightly higher calorie burn per
+                  mile
+                </li>
+                <li>
+                  <strong>Mixed fuel:</strong> Combination of fat and
+                  carbohydrate burning
+                </li>
+                <li>
+                  <strong>Training effect:</strong> Improves lactate threshold
+                </li>
+                <li>
+                  <strong>Duration:</strong> Sustainable for 20-60 minutes
+                </li>
+              </ul>
+            </div>
+            <div class="bg-white p-3 rounded border">
+              <h4 class="font-medium text-gray-900 mb-1">
+                Fast Pace (Intervals)
+              </h4>
+              <ul class="text-sm space-y-1">
+                <li><strong>High burn:</strong> Maximum calories per minute</li>
+                <li>
+                  <strong>Carb dependent:</strong> Primarily burns carbohydrates
+                </li>
+                <li>
+                  <strong>EPOC effect:</strong> Continued calorie burn
+                  post-exercise
+                </li>
+                <li>
+                  <strong>Limited duration:</strong> Only sustainable for short
+                  periods
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Related Tools Section -->
+      <div class="bg-purple-50 p-6 rounded-lg">
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">
+          Related Health & Training Tools
+        </h2>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="space-y-2">
+            <a
+              href="/tools/personal/bmi-calculator"
+              class="block p-3 bg-white rounded border hover:border-blue-300 transition-colors"
+            >
+              <h3 class="font-medium text-blue-600">
+                BMI & Body Composition Calculator
+              </h3>
+              <p class="text-sm text-gray-600">
+                Calculate BMI, body fat percentage, and metabolic rate
+              </p>
+            </a>
+            <a
+              href="/tools/race/pace-calculator"
+              class="block p-3 bg-white rounded border hover:border-green-300 transition-colors"
+            >
+              <h3 class="font-medium text-green-600">Pace Calculator</h3>
+              <p class="text-sm text-gray-600">
+                Calculate running pace to optimize calorie burn efficiency
+              </p>
+            </a>
+            <a
+              href="/tools/units/weight-unit-converter"
+              class="block p-3 bg-white rounded border hover:border-orange-300 transition-colors"
+            >
+              <h3 class="font-medium text-orange-600">Weight Unit Converter</h3>
+              <p class="text-sm text-gray-600">
+                Convert between kilograms and pounds for accurate calculations
+              </p>
+            </a>
+          </div>
+          <div class="space-y-2">
+            <a
+              href="/tools/training/training-paces-calculator"
+              class="block p-3 bg-white rounded border hover:border-purple-300 transition-colors"
+            >
+              <h3 class="font-medium text-purple-600">
+                Training Paces Calculator
+              </h3>
+              <p class="text-sm text-gray-600">
+                Get personalized training paces for different calorie burn rates
+              </p>
+            </a>
+            <a
+              href="/tools/race/finish-time-predictor"
+              class="block p-3 bg-white rounded border hover:border-red-300 transition-colors"
+            >
+              <h3 class="font-medium text-red-600">Finish Time Predictor</h3>
+              <p class="text-sm text-gray-600">
+                Predict race times and plan energy expenditure strategies
+              </p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
   </ng-container>
 
   <!-- FAQ Section -->
   <ng-container tool-faq>
     <app-faq-section>
-      <div faq-title>{{ 'TOOLS.CALORIES_BURNED_CALCULATOR.FAQ.TITLE' | translate }}</div>
-      
+      <div faq-title>Frequently Asked Questions</div>
+
       <div faq-items>
         <app-faq-item>
-          <div faq-question>{{ 'TOOLS.CALORIES_BURNED_CALCULATOR.FAQ.Q1' | translate }}</div>
-          <div faq-answer>{{ 'TOOLS.CALORIES_BURNED_CALCULATOR.FAQ.A1' | translate }}</div>
+          <div faq-question>How accurate are calorie burn calculations?</div>
+          <div faq-answer>
+            Calorie calculations are estimates based on established metabolic
+            equations and average running efficiency. Individual factors like
+            fitness level, running form, and metabolism can cause variations of
+            ±10-20%. The calculations are most accurate for steady-state running
+            on flat terrain and become less precise for interval training or
+            hilly routes.
+          </div>
         </app-faq-item>
 
         <app-faq-item>
-          <div faq-question>{{ 'TOOLS.CALORIES_BURNED_CALCULATOR.FAQ.Q2' | translate }}</div>
-          <div faq-answer [innerHTML]="'TOOLS.CALORIES_BURNED_CALCULATOR.FAQ.A2' | translate"></div>
+          <div faq-question>
+            Why does body weight affect calorie burn so much?
+          </div>
+          <div faq-answer>
+            Heavier runners burn more calories because they're moving more mass
+            against gravity with each step. The relationship is roughly linear -
+            a 10% increase in body weight typically results in about 10% more
+            calories burned at the same pace and distance. This is why weight is
+            the most important factor in calorie burn calculations.
+          </div>
         </app-faq-item>
 
         <app-faq-item>
-          <div faq-question>{{ 'TOOLS.CALORIES_BURNED_CALCULATOR.FAQ.Q3' | translate }}</div>
-          <div faq-answer [innerHTML]="'TOOLS.CALORIES_BURNED_CALCULATOR.FAQ.A3' | translate"></div>
+          <div faq-question>Do I burn more calories running faster?</div>
+          <div faq-answer>
+            Yes, but the relationship is complex. Running faster burns more
+            calories per minute, but the increase isn't proportional to pace.
+            Very fast running becomes less efficient, so you burn more calories
+            per mile. However, easy-paced running allows you to cover more
+            distance, potentially burning more total calories. For weight loss,
+            consistency and total distance often matter more than speed.
+          </div>
         </app-faq-item>
 
         <app-faq-item>
-          <div faq-question>{{ 'TOOLS.CALORIES_BURNED_CALCULATOR.FAQ.Q4' | translate }}</div>
-          <div faq-answer [innerHTML]="'TOOLS.CALORIES_BURNED_CALCULATOR.FAQ.A4' | translate"></div>
+          <div faq-question>
+            How should I use calorie data for weight management?
+          </div>
+          <div faq-answer>
+            Use calorie burn data as one part of your weight management
+            strategy. Create a moderate caloric deficit (300-500 calories per
+            day) through a combination of running and dietary changes. Don't
+            rely solely on exercise for weight loss - diet plays a larger role.
+            Ensure you're eating enough to fuel your training and recovery,
+            especially during heavy training periods.
+          </div>
         </app-faq-item>
 
         <app-faq-item>
-          <div faq-question>{{ 'TOOLS.CALORIES_BURNED_CALCULATOR.FAQ.Q5' | translate }}</div>
-          <div faq-answer [innerHTML]="'TOOLS.CALORIES_BURNED_CALCULATOR.FAQ.A5' | translate"></div>
+          <div faq-question>
+            What factors can make my actual calorie burn different from the
+            calculation?
+          </div>
+          <div faq-answer>
+            Several factors can affect your actual calorie burn: running
+            efficiency (better runners burn fewer calories per mile), terrain
+            (hills increase burn by 10-30%), weather conditions (heat increases
+            energy cost), fitness level (trained runners are more efficient),
+            and running form. Use the calculation as a baseline and adjust based
+            on your individual response and goals.
+          </div>
         </app-faq-item>
 
         <app-faq-item>
-          <div faq-question>{{ 'TOOLS.CALORIES_BURNED_CALCULATOR.FAQ.Q6' | translate }}</div>
-          <div faq-answer [innerHTML]="'TOOLS.CALORIES_BURNED_CALCULATOR.FAQ.A6' | translate"></div>
+          <div faq-question>
+            Should I eat back all the calories I burn running?
+          </div>
+          <div faq-answer>
+            It depends on your goals. For weight maintenance, replace most
+            calories burned. For weight loss, create a moderate deficit by not
+            replacing all calories. For performance and heavy training, ensure
+            adequate fueling by replacing calories and focusing on nutrient
+            timing. Use our
+            <a
+              href="/tools/personal/bmi-calculator"
+              class="text-blue-600 hover:text-blue-800 underline"
+              >BMI calculator</a
+            >
+            to assess if your current weight supports your health and
+            performance goals.
+          </div>
+        </app-faq-item>
+      </div>
+    </app-faq-section>
+  </ng-container>
+
+  <!-- Educational Content Section -->
+  <ng-container tool-education>
+    <div class="mt-8 space-y-6">
+      <!-- How to Use Section -->
+      <div class="bg-blue-50 p-6 rounded-lg">
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">
+          How to Use the Calories Burned Calculator
+        </h2>
+        <div class="space-y-2 text-gray-700">
+          <p>
+            <strong>1. Enter your running data:</strong> Input the distance you
+            ran, the time it took, and your current body weight for accurate
+            calorie calculations.
+          </p>
+          <p>
+            <strong>2. Choose appropriate units:</strong> Select between metric
+            (kilometers, kilograms) or imperial (miles, pounds) based on your
+            preference.
+          </p>
+          <p>
+            <strong>3. Review your energy expenditure:</strong> The calculator
+            shows total calories burned based on your pace and body weight using
+            established metabolic equations.
+          </p>
+          <p>
+            <strong>4. Apply to your goals:</strong> Use the results for meal
+            planning, weight management, or understanding your training energy
+            demands.
+          </p>
+        </div>
+      </div>
+
+      <!-- Calorie Burn Science Section -->
+      <div class="bg-green-50 p-6 rounded-lg">
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">
+          The Science of Calorie Burn During Running
+        </h2>
+        <div class="space-y-3 text-gray-700">
+          <p>
+            Calorie burn during running depends on several physiological and
+            mechanical factors:
+          </p>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <h4 class="font-medium text-gray-900 mb-1">Primary Factors</h4>
+              <ul class="list-disc list-inside space-y-1 ml-4 text-sm">
+                <li>
+                  <strong>Body weight:</strong> Heavier runners burn more
+                  calories moving their mass
+                </li>
+                <li>
+                  <strong>Distance:</strong> Total energy expenditure increases
+                  with distance covered
+                </li>
+                <li>
+                  <strong>Running efficiency:</strong> Individual biomechanics
+                  affect energy cost
+                </li>
+                <li>
+                  <strong>Terrain:</strong> Hills, trails, and surfaces impact
+                  calorie burn
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-medium text-gray-900 mb-1">Secondary Factors</h4>
+              <ul class="list-disc list-inside space-y-1 ml-4 text-sm">
+                <li>
+                  <strong>Weather conditions:</strong> Heat, cold, and wind
+                  affect energy demands
+                </li>
+                <li>
+                  <strong>Running form:</strong> Efficient technique reduces
+                  energy waste
+                </li>
+                <li>
+                  <strong>Fitness level:</strong> Trained runners are more
+                  metabolically efficient
+                </li>
+                <li>
+                  <strong>Pace variation:</strong> Steady pace vs intervals
+                  affects total burn
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Weight Management Section -->
+      <div class="bg-yellow-50 p-6 rounded-lg">
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">
+          Using Calorie Data for Weight Management
+        </h2>
+        <div class="space-y-3 text-gray-700">
+          <p>
+            Understanding your calorie burn helps create effective weight
+            management strategies:
+          </p>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <h4 class="font-medium text-gray-900 mb-1">Weight Loss Tips</h4>
+              <ul class="list-disc list-inside space-y-1 ml-4 text-sm">
+                <li>
+                  <strong>Create a caloric deficit:</strong> Burn more calories
+                  than you consume through running and diet
+                </li>
+                <li>
+                  <strong>Track your progress:</strong> Monitor both calories
+                  burned and dietary intake for balance
+                </li>
+                <li>
+                  <strong>Sustainable approach:</strong> Aim for 1-2 pounds per
+                  week through combined diet and exercise
+                </li>
+                <li>
+                  <strong>Don't under-fuel:</strong> Ensure adequate nutrition
+                  to support your training demands
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-medium text-gray-900 mb-1">
+                Performance Optimization
+              </h4>
+              <ul class="list-disc list-inside space-y-1 ml-4 text-sm">
+                <li>
+                  <strong>Fuel your runs:</strong> Use calorie data to plan pre
+                  and post-run nutrition
+                </li>
+                <li>
+                  <strong>Recovery nutrition:</strong> Replace 50-100% of
+                  calories burned within 2 hours
+                </li>
+                <li>
+                  <strong>Body composition:</strong> Use our
+                  <a
+                    href="/tools/personal/bmi-calculator"
+                    class="text-blue-600 hover:text-blue-800 underline"
+                    >BMI calculator</a
+                  >
+                  for comprehensive health assessment
+                </li>
+                <li>
+                  <strong>Training load:</strong> Balance calorie burn with
+                  recovery and adaptation needs
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Calorie Burn by Pace Section -->
+      <div class="bg-orange-50 p-6 rounded-lg">
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">
+          How Pace Affects Calorie Burn
+        </h2>
+        <div class="space-y-3 text-gray-700">
+          <p>
+            Running pace significantly influences your energy expenditure and
+            metabolic demands:
+          </p>
+          <div class="grid md:grid-cols-3 gap-4">
+            <div class="bg-white p-3 rounded border">
+              <h4 class="font-medium text-gray-900 mb-1">
+                Easy Pace (Conversational)
+              </h4>
+              <ul class="text-sm space-y-1">
+                <li>
+                  <strong>Efficiency:</strong> Most economical calorie burn per
+                  mile
+                </li>
+                <li>
+                  <strong>Fat burning:</strong> Higher percentage of calories
+                  from fat
+                </li>
+                <li>
+                  <strong>Sustainability:</strong> Can maintain for long
+                  distances
+                </li>
+                <li><strong>Recovery:</strong> Lower metabolic stress</li>
+              </ul>
+            </div>
+            <div class="bg-white p-3 rounded border">
+              <h4 class="font-medium text-gray-900 mb-1">
+                Moderate Pace (Tempo)
+              </h4>
+              <ul class="text-sm space-y-1">
+                <li>
+                  <strong>Efficiency:</strong> Slightly higher calorie burn per
+                  mile
+                </li>
+                <li>
+                  <strong>Mixed fuel:</strong> Combination of fat and
+                  carbohydrate burning
+                </li>
+                <li>
+                  <strong>Training effect:</strong> Improves lactate threshold
+                </li>
+                <li>
+                  <strong>Duration:</strong> Sustainable for 20-60 minutes
+                </li>
+              </ul>
+            </div>
+            <div class="bg-white p-3 rounded border">
+              <h4 class="font-medium text-gray-900 mb-1">
+                Fast Pace (Intervals)
+              </h4>
+              <ul class="text-sm space-y-1">
+                <li><strong>High burn:</strong> Maximum calories per minute</li>
+                <li>
+                  <strong>Carb dependent:</strong> Primarily burns carbohydrates
+                </li>
+                <li>
+                  <strong>EPOC effect:</strong> Continued calorie burn
+                  post-exercise
+                </li>
+                <li>
+                  <strong>Limited duration:</strong> Only sustainable for short
+                  periods
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Related Tools Section -->
+      <div class="bg-purple-50 p-6 rounded-lg">
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">
+          Related Health & Training Tools
+        </h2>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="space-y-2">
+            <a
+              href="/tools/personal/bmi-calculator"
+              class="block p-3 bg-white rounded border hover:border-blue-300 transition-colors"
+            >
+              <h3 class="font-medium text-blue-600">
+                BMI & Body Composition Calculator
+              </h3>
+              <p class="text-sm text-gray-600">
+                Calculate BMI, body fat percentage, and metabolic rate
+              </p>
+            </a>
+            <a
+              href="/tools/race/pace-calculator"
+              class="block p-3 bg-white rounded border hover:border-green-300 transition-colors"
+            >
+              <h3 class="font-medium text-green-600">Pace Calculator</h3>
+              <p class="text-sm text-gray-600">
+                Calculate running pace to optimize calorie burn efficiency
+              </p>
+            </a>
+            <a
+              href="/tools/units/weight-unit-converter"
+              class="block p-3 bg-white rounded border hover:border-orange-300 transition-colors"
+            >
+              <h3 class="font-medium text-orange-600">Weight Unit Converter</h3>
+              <p class="text-sm text-gray-600">
+                Convert between kilograms and pounds for accurate calculations
+              </p>
+            </a>
+          </div>
+          <div class="space-y-2">
+            <a
+              href="/tools/training/training-paces-calculator"
+              class="block p-3 bg-white rounded border hover:border-purple-300 transition-colors"
+            >
+              <h3 class="font-medium text-purple-600">
+                Training Paces Calculator
+              </h3>
+              <p class="text-sm text-gray-600">
+                Get personalized training paces for different calorie burn rates
+              </p>
+            </a>
+            <a
+              href="/tools/race/finish-time-predictor"
+              class="block p-3 bg-white rounded border hover:border-red-300 transition-colors"
+            >
+              <h3 class="font-medium text-red-600">Finish Time Predictor</h3>
+              <p class="text-sm text-gray-600">
+                Predict race times and plan energy expenditure strategies
+              </p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+  <!-- FAQ Section -->
+  <ng-container tool-faq>
+    <app-faq-section>
+      <div faq-title>Frequently Asked Questions</div>
+
+      <div faq-items>
+        <app-faq-item>
+          <div faq-question>How accurate are calorie burn calculations?</div>
+          <div faq-answer>
+            Calorie calculations are estimates based on established metabolic
+            equations and average running efficiency. Individual factors like
+            fitness level, running form, and metabolism can cause variations of
+            ±10-20%. The calculations are most accurate for steady-state running
+            on flat terrain and become less precise for interval training or
+            hilly routes.
+          </div>
+        </app-faq-item>
+
+        <app-faq-item>
+          <div faq-question>
+            Why does body weight affect calorie burn so much?
+          </div>
+          <div faq-answer>
+            Heavier runners burn more calories because they're moving more mass
+            against gravity with each step. The relationship is roughly linear -
+            a 10% increase in body weight typically results in about 10% more
+            calories burned at the same pace and distance. This is why weight is
+            the most important factor in calorie burn calculations.
+          </div>
+        </app-faq-item>
+
+        <app-faq-item>
+          <div faq-question>Do I burn more calories running faster?</div>
+          <div faq-answer>
+            Yes, but the relationship is complex. Running faster burns more
+            calories per minute, but the increase isn't proportional to pace.
+            Very fast running becomes less efficient, so you burn more calories
+            per mile. However, easy-paced running allows you to cover more
+            distance, potentially burning more total calories. For weight loss,
+            consistency and total distance often matter more than speed.
+          </div>
+        </app-faq-item>
+
+        <app-faq-item>
+          <div faq-question>
+            How should I use calorie data for weight management?
+          </div>
+          <div faq-answer>
+            Use calorie burn data as one part of your weight management
+            strategy. Create a moderate caloric deficit (300-500 calories per
+            day) through a combination of running and dietary changes. Don't
+            rely solely on exercise for weight loss - diet plays a larger role.
+            Ensure you're eating enough to fuel your training and recovery,
+            especially during heavy training periods.
+          </div>
+        </app-faq-item>
+
+        <app-faq-item>
+          <div faq-question>
+            What factors can make my actual calorie burn different from the
+            calculation?
+          </div>
+          <div faq-answer>
+            Several factors can affect your actual calorie burn: running
+            efficiency (better runners burn fewer calories per mile), terrain
+            (hills increase burn by 10-30%), weather conditions (heat increases
+            energy cost), fitness level (trained runners are more efficient),
+            and running form. Use the calculation as a baseline and adjust based
+            on your individual response and goals.
+          </div>
+        </app-faq-item>
+
+        <app-faq-item>
+          <div faq-question>
+            Should I eat back all the calories I burn running?
+          </div>
+          <div faq-answer>
+            It depends on your goals. For weight maintenance, replace most
+            calories burned. For weight loss, create a moderate deficit by not
+            replacing all calories. For performance and heavy training, ensure
+            adequate fueling by replacing calories and focusing on nutrient
+            timing. Use our
+            <a
+              href="/tools/personal/bmi-calculator"
+              class="text-blue-600 hover:text-blue-800 underline"
+              >BMI calculator</a
+            >
+            to assess if your current weight supports your health and
+            performance goals.
+          </div>
         </app-faq-item>
       </div>
     </app-faq-section>

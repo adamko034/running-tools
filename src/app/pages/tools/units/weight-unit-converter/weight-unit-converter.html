@@ -1,17 +1,13 @@
 <app-tool-view 
-  [calculatorName]="'TOOLS.WEIGHT_UNIT_CONVERTER.TITLE' | translate"
-  [calculatorDescription]="'TOOLS.WEIGHT_UNIT_CONVERTER.DESCRIPTION' | translate"
+  calculatorName="Weight Converter - Kilograms to Pounds Calculator"
+  calculatorDescription="Convert body weight between kilograms and pounds for fitness tracking and international training programs."
   category="units">
-  <ng-container tool-title>{{
-    'TOOLS.WEIGHT_UNIT_CONVERTER.TITLE' | translate
-  }}</ng-container>
-  <ng-container tool-description>{{
-    'TOOLS.WEIGHT_UNIT_CONVERTER.DESCRIPTION' | translate
-  }}</ng-container>
+  <ng-container tool-title>Weight Converter - Kilograms to Pounds Calculator</ng-container>
+  <ng-container tool-description>Convert body weight between kilograms and pounds for fitness tracking and international training programs.</ng-container>
   <ng-container tool-content>
     <div class="grid md:grid-cols-2 gap-6">
       <app-number-form-field
-        [horizontalLineText]="'COMMON.KILOGRAMS' | translate"
+        horizontalLineText="Kilograms"
         [name]="'weightUnitConverterKilograms'"
         [step]="0.1"
         [suffix]="kgWeight.unit"
@@ -19,7 +15,7 @@
         (valueChange)="onKilogramsChange($event)"
       ></app-number-form-field>
       <app-number-form-field
-        [horizontalLineText]="'COMMON.POUNDS' | translate"
+        horizontalLineText="Pounds"
         [name]="'weightUnitConverterPounds'"
         [step]="0.1"
         [suffix]="lbWeight.unit"
@@ -30,46 +26,172 @@
   </ng-container>
   <ng-container tool-summary>
     <app-fancy-result>
-      <div result-title>{{ 'TOOLS.WEIGHT_UNIT_CONVERTER.RESULT_TITLE' | translate }}</div>
-      <div result-subtitle>{{ 'TOOLS.WEIGHT_UNIT_CONVERTER.RESULT_SUBTITLE' | translate }}</div>
+      <div result-title>Weight Conversion</div>
+      <div result-subtitle>Equivalent weights in kilograms and pounds</div>
       <div result-value>{{ kgWeight.format() }} ⟷ {{ lbWeight.format() }}</div>
     </app-fancy-result>
+  </ng-container>
+
+  <!-- Educational Content Section -->
+  <ng-container tool-education>
+    <div class="mt-8 space-y-6">
+      <!-- How to Use Section -->
+      <div class="bg-orange-50 p-6 rounded-lg">
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">How to Use the Weight Converter</h2>
+        <div class="space-y-2 text-gray-700">
+          <p><strong>1. Enter your weight:</strong> Type any weight value in either kilograms or pounds - the tool automatically converts to the other unit.</p>
+          <p><strong>2. Track consistently:</strong> Use the same unit system for regular weight tracking to monitor trends and progress accurately.</p>
+          <p><strong>3. International compatibility:</strong> Convert weights when following training programs, using equipment, or traveling internationally.</p>
+        </div>
+      </div>
+
+      <!-- Weight Management Section -->
+      <div class="bg-yellow-50 p-6 rounded-lg">
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">Weight Management for Runners</h2>
+        <div class="space-y-3 text-gray-700">
+          <p>Understanding your weight in both units helps with training optimization and health monitoring:</p>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <h4 class="font-medium text-gray-900 mb-1">Weight Loss Tips</h4>
+              <ul class="list-disc list-inside space-y-1 ml-4 text-sm">
+                <li><strong>Create a caloric deficit:</strong> Burn more calories than you consume through running and diet</li>
+                <li><strong>Track your progress:</strong> Use our <a href='/tools/personal/burned-calories-estimator' class='text-blue-600 hover:text-blue-800 underline'>calories burned calculator</a> to monitor energy expenditure</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-medium text-gray-900 mb-1">Performance Optimization</h4>
+              <ul class="list-disc list-inside space-y-1 ml-4 text-sm">
+                <li><strong>Optimal weight range:</strong> Maintain a healthy weight that supports performance and recovery</li>
+                <li><strong>Body composition matters:</strong> Use our <a href='/tools/personal/bmi-calculator' class='text-blue-600 hover:text-blue-800 underline'>BMI calculator</a> for comprehensive health assessment</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unit System Comparison Section -->
+      <div class="bg-blue-50 p-6 rounded-lg">
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">Kilograms vs Pounds: Which to Use?</h2>
+        <div class="space-y-3 text-gray-700">
+          <p>Choose the weight unit that best fits your location, equipment, and health tracking needs:</p>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <h4 class="font-medium text-gray-900 mb-1">Use Kilograms For:</h4>
+              <ul class="list-disc list-inside space-y-1 ml-4 text-sm">
+                <li><strong>International standards:</strong> Most countries and medical systems use kg</li>
+                <li><strong>Precise tracking:</strong> Smaller increments (0.1 kg vs 0.2 lbs) for detailed monitoring</li>
+                <li><strong>Scientific accuracy:</strong> Metric system used in research and sports science</li>
+                <li><strong>Equipment compatibility:</strong> Many scales and fitness devices default to kg</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-medium text-gray-900 mb-1">Use Pounds For:</h4>
+              <ul class="list-disc list-inside space-y-1 ml-4 text-sm">
+                <li><strong>US/UK systems:</strong> Common in American and British health systems</li>
+                <li><strong>Familiar reference:</strong> If you naturally think in pounds for body weight</li>
+                <li><strong>Local equipment:</strong> Gym equipment and scales often display pounds</li>
+                <li><strong>Traditional tracking:</strong> Historical weight records in pounds</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Weight and Running Performance Section -->
+      <div class="bg-green-50 p-6 rounded-lg">
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">How Weight Affects Running Performance</h2>
+        <div class="space-y-3 text-gray-700">
+          <p>Understanding the relationship between body weight and running performance helps optimize training:</p>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <h4 class="font-medium text-gray-900 mb-2">Performance Impact</h4>
+              <ul class="space-y-1 text-sm">
+                <li><strong>Energy cost:</strong> Heavier runners burn ~10% more calories per 10% weight increase</li>
+                <li><strong>Running economy:</strong> Lower weight generally improves efficiency and speed</li>
+                <li><strong>Joint stress:</strong> Reduced weight decreases impact on knees and ankles</li>
+                <li><strong>Heat regulation:</strong> Lower weight-to-surface-area ratio aids cooling</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-medium text-gray-900 mb-2">Healthy Weight Management</h4>
+              <ul class="space-y-1 text-sm">
+                <li><strong>Gradual changes:</strong> Aim for 0.5-1 kg (1-2 lbs) per week maximum</li>
+                <li><strong>Fuel your training:</strong> Don't compromise nutrition for weight loss</li>
+                <li><strong>Monitor recovery:</strong> Ensure adequate energy for training adaptations</li>
+                <li><strong>Individual variation:</strong> Optimal weight varies by body type and goals</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Related Tools Section -->
+      <div class="bg-purple-50 p-6 rounded-lg">
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">Related Health & Fitness Tools</h2>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="space-y-2">
+            <a href="/tools/personal/bmi-calculator" class="block p-3 bg-white rounded border hover:border-blue-300 transition-colors">
+              <h3 class="font-medium text-blue-600">BMI & Body Composition Calculator</h3>
+              <p class="text-sm text-gray-600">Calculate BMI, body fat percentage, and ideal weight ranges</p>
+            </a>
+            <a href="/tools/personal/burned-calories-estimator" class="block p-3 bg-white rounded border hover:border-green-300 transition-colors">
+              <h3 class="font-medium text-green-600">Calories Burned Calculator</h3>
+              <p class="text-sm text-gray-600">Calculate energy expenditure based on your weight and activity</p>
+            </a>
+            <a href="/tools/personal/vo2max-calculator" class="block p-3 bg-white rounded border hover:border-red-300 transition-colors">
+              <h3 class="font-medium text-red-600">VO₂ Max Calculator</h3>
+              <p class="text-sm text-gray-600">Assess cardiovascular fitness and training zones</p>
+            </a>
+          </div>
+          <div class="space-y-2">
+            <a href="/tools/race/pace-calculator" class="block p-3 bg-white rounded border hover:border-orange-300 transition-colors">
+              <h3 class="font-medium text-orange-600">Pace Calculator</h3>
+              <p class="text-sm text-gray-600">Calculate optimal running paces for training and racing</p>
+            </a>
+            <a href="/tools/training/training-paces-calculator" class="block p-3 bg-white rounded border hover:border-purple-300 transition-colors">
+              <h3 class="font-medium text-purple-600">Training Paces Calculator</h3>
+              <p class="text-sm text-gray-600">Get personalized training paces for different workout types</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
   </ng-container>
 
   <!-- FAQ Section -->
   <ng-container tool-faq>
     <app-faq-section>
-      <div faq-title>{{ 'TOOLS.WEIGHT_UNIT_CONVERTER.FAQ.TITLE' | translate }}</div>
+      <div faq-title>Frequently Asked Questions</div>
       
       <div faq-items>
         <app-faq-item>
-          <div faq-question>{{ 'TOOLS.WEIGHT_UNIT_CONVERTER.FAQ.Q1' | translate }}</div>
-          <div faq-answer [innerHTML]="'TOOLS.WEIGHT_UNIT_CONVERTER.FAQ.A1' | translate"></div>
+          <div faq-question>What's the exact conversion between kilograms and pounds?</div>
+          <div faq-answer>1 kilogram equals 2.20462 pounds, and 1 pound equals 0.453592 kilograms. This tool uses precise conversion factors to ensure accuracy for all your fitness and health tracking needs. Understanding both units helps when following international training programs or using equipment with different measurement systems.</div>
         </app-faq-item>
 
         <app-faq-item>
-          <div faq-question>{{ 'TOOLS.WEIGHT_UNIT_CONVERTER.FAQ.Q2' | translate }}</div>
-          <div faq-answer [innerHTML]="'TOOLS.WEIGHT_UNIT_CONVERTER.FAQ.A2' | translate"></div>
+          <div faq-question>Why do some countries use kilograms while others use pounds?</div>
+          <div faq-answer>Most countries worldwide use the metric system (kilograms), while the United States and a few others primarily use the imperial system (pounds) for body weight. In fitness and running, this means training programs, equipment, and health guidelines may be expressed in different units depending on their origin.</div>
         </app-faq-item>
 
         <app-faq-item>
-          <div faq-question>{{ 'TOOLS.WEIGHT_UNIT_CONVERTER.FAQ.Q3' | translate }}</div>
-          <div faq-answer [innerHTML]="'TOOLS.WEIGHT_UNIT_CONVERTER.FAQ.A3' | translate"></div>
+          <div faq-question>How does my weight affect my running performance?</div>
+          <div faq-answer>Body weight significantly impacts running performance, especially in distance events. Generally, carrying less excess weight improves running economy and speed. However, optimal weight varies by individual and should support overall health and performance. Use our <a href='/tools/personal/bmi-calculator' class='text-blue-600 hover:text-blue-800 underline'>BMI calculator</a> to assess if your weight is in a healthy range for your height.</div>
         </app-faq-item>
 
         <app-faq-item>
-          <div faq-question>{{ 'TOOLS.WEIGHT_UNIT_CONVERTER.FAQ.Q4' | translate }}</div>
-          <div faq-answer [innerHTML]="'TOOLS.WEIGHT_UNIT_CONVERTER.FAQ.A4' | translate"></div>
+          <div faq-question>Should I track my weight in kilograms or pounds?</div>
+          <div faq-answer>Use the unit system you're most comfortable with or that matches your local healthcare and fitness environment. Many runners prefer kilograms because smaller incremental changes (0.1 kg vs 0.2 lbs) can provide more precise tracking. The key is consistency in your tracking method and understanding both systems when needed.</div>
         </app-faq-item>
 
         <app-faq-item>
-          <div faq-question>{{ 'TOOLS.WEIGHT_UNIT_CONVERTER.FAQ.Q5' | translate }}</div>
-          <div faq-answer [innerHTML]="'TOOLS.WEIGHT_UNIT_CONVERTER.FAQ.A5' | translate"></div>
+          <div faq-question>How does weight affect calorie burn during running?</div>
+          <div faq-answer>Heavier runners burn more calories per mile because they're moving more mass against gravity. The relationship is roughly linear - a 10% increase in weight typically results in about 10% more calories burned at the same pace and distance. Use our <a href='/tools/personal/burned-calories-estimator' class='text-blue-600 hover:text-blue-800 underline'>calories burned calculator</a> to estimate your energy expenditure based on your current weight.</div>
         </app-faq-item>
 
         <app-faq-item>
-          <div faq-question>{{ 'TOOLS.WEIGHT_UNIT_CONVERTER.FAQ.Q6' | translate }}</div>
-          <div faq-answer [innerHTML]="'TOOLS.WEIGHT_UNIT_CONVERTER.FAQ.A6' | translate"></div>
+          <div faq-question>What's a healthy weight range for runners?</div>
+          <div faq-answer>Healthy weight for runners varies greatly by individual, body composition, and running goals. Elite distance runners often have lower BMIs, but recreational runners should prioritize overall health over performance weight. Focus on maintaining a weight that supports your energy levels, recovery, and long-term health. Consider consulting with healthcare professionals and use our <a href='/tools/personal/vo2max-calculator' class='text-blue-600 hover:text-blue-800 underline'>VO₂ max calculator</a> to assess overall fitness.</div>
         </app-faq-item>
       </div>
     </app-faq-section>

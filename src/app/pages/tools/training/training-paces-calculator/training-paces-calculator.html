@@ -1,25 +1,15 @@
 <app-tool-view
-  [calculatorName]="'TOOLS.TRAINING_PACES_CALCULATOR.TITLE' | translate"
-  [calculatorDescription]="
-    'TOOLS.TRAINING_PACES_CALCULATOR.DESCRIPTION' | translate
-  "
+  calculatorName="My Training Paces Calculator"
+  calculatorDescription="Get personalized training paces for different workout types based on your recent race performance. Enter a recent race time to calculate optimal paces for easy runs, tempo workouts, intervals, and more."
   category="training"
 >
-  <ng-container tool-title>{{
-    'TOOLS.TRAINING_PACES_CALCULATOR.TITLE' | translate
-  }}</ng-container>
-  <ng-container tool-description>{{
-    'TOOLS.TRAINING_PACES_CALCULATOR.DESCRIPTION' | translate
-  }}</ng-container>
+  <ng-container tool-title>My Training Paces Calculator</ng-container>
+  <ng-container tool-description>Get personalized training paces for different workout types based on your recent race performance. Enter a recent race time to calculate optimal paces for easy runs, tempo workouts, intervals, and more.</ng-container>
   <ng-container tool-content>
     <!-- Input Section -->
     <div class="text-center mb-6">
-      <h2 class="text-xl font-bold text-gray-900 mb-3">
-        {{ 'TOOLS.TRAINING_PACES_CALCULATOR.INPUT.TITLE' | translate }}
-      </h2>
-      <p class="text-md text-gray-600 max-w-2xl mx-auto">
-        {{ 'TOOLS.TRAINING_PACES_CALCULATOR.INPUT.DESCRIPTION' | translate }}
-      </p>
+      <h2 class="text-xl font-bold text-gray-900 mb-3">Enter Your Recent Race Performance</h2>
+      <p class="text-md text-gray-600 max-w-2xl mx-auto">Input your distance and time from a recent race or time trial to calculate personalized training paces for all workout types.</p>
     </div>
 
     <!-- Responsive Form Grid -->
@@ -32,14 +22,13 @@
   <ng-container tool-summary>
     <app-fancy-result>
       <div result-value>
-        {{ 'TOOLS.TRAINING_PACES_CALCULATOR.PACES.CURRENT.TITLE' | translate }}:
-        {{ trainingPaces().current.format() }}
+        Your Current Pace: {{ trainingPaces().current.format() }}
       </div>
       <div result-title>
-        {{ 'TOOLS.TRAINING_PACES_CALCULATOR.SUMMARY.SUBTITLE' | translate }}
+        Personalized Training Paces
       </div>
       <div result-subtitle>
-        {{ 'TOOLS.TRAINING_PACES_CALCULATOR.SUMMARY.DESCRIPTION' | translate }}
+        Based on your recent race performance
       </div>
     </app-fancy-result>
 
@@ -48,27 +37,16 @@
       <div>
         <h2 class="text-2xl font-bold text-green-700 mb-4 flex items-center">
           <span class="w-4 h-4 bg-green-500 rounded-full mr-3"></span>
-          {{
-            'TOOLS.TRAINING_PACES_CALCULATOR.GROUPS.AEROBIC_LOW.TITLE'
-              | translate
-          }}
+          Aerobic Low Intensity (Zone 1-2)
         </h2>
         <p class="text-gray-600 mb-6">
-          {{
-            'TOOLS.TRAINING_PACES_CALCULATOR.GROUPS.AEROBIC_LOW.DESC'
-              | translate
-          }}
+          Foundation training paces for building aerobic capacity, promoting recovery, and developing endurance. These should feel comfortable and conversational.
         </p>
 
         <div class="grid md:grid-cols-3 gap-6">
           <app-fancy-result variant="card" colorScheme="green">
             <div class="text-center">
-              <h3 class="text-lg font-semibold text-gray-800 mb-2">
-                {{
-                  'TOOLS.TRAINING_PACES_CALCULATOR.PACES.EASY_RUN.TITLE'
-                    | translate
-                }}
-              </h3>
+              <h3 class="text-lg font-semibold text-gray-800 mb-2">Easy Run</h3>
               <div class="text-2xl font-bold text-green-600 mb-1">
                 {{ trainingPaces().aerobicLowIntensity.easyRun.min.format() }}
               </div>
@@ -77,22 +55,14 @@
                 {{ trainingPaces().aerobicLowIntensity.easyRun.max.format() }}
               </div>
               <p class="text-sm text-gray-600">
-                {{
-                  'TOOLS.TRAINING_PACES_CALCULATOR.PACES.EASY_RUN.DESC'
-                    | translate
-                }}
+                Conversational pace for recovery and base building
               </p>
             </div>
           </app-fancy-result>
 
           <app-fancy-result variant="card" colorScheme="green">
             <div class="text-center">
-              <h3 class="text-lg font-semibold text-gray-800 mb-2">
-                {{
-                  'TOOLS.TRAINING_PACES_CALCULATOR.PACES.BASE_RUN.TITLE'
-                    | translate
-                }}
-              </h3>
+              <h3 class="text-lg font-semibold text-gray-800 mb-2">Base Run</h3>
               <div class="text-2xl font-bold text-green-600 mb-1">
                 {{ trainingPaces().aerobicLowIntensity.baseRun.min.format() }}
               </div>
@@ -101,22 +71,14 @@
                 {{ trainingPaces().aerobicLowIntensity.baseRun.max.format() }}
               </div>
               <p class="text-sm text-gray-600">
-                {{
-                  'TOOLS.TRAINING_PACES_CALCULATOR.PACES.BASE_RUN.DESC'
-                    | translate
-                }}
+                Moderate aerobic effort for daily training
               </p>
             </div>
           </app-fancy-result>
 
           <app-fancy-result variant="card" colorScheme="green">
             <div class="text-center">
-              <h3 class="text-lg font-semibold text-gray-800 mb-2">
-                {{
-                  'TOOLS.TRAINING_PACES_CALCULATOR.PACES.LONG_RUN.TITLE'
-                    | translate
-                }}
-              </h3>
+              <h3 class="text-lg font-semibold text-gray-800 mb-2">Long Run</h3>
               <div class="text-2xl font-bold text-green-600 mb-1">
                 {{ trainingPaces().aerobicLowIntensity.longRun.min.format() }}
               </div>
@@ -125,10 +87,7 @@
                 {{ trainingPaces().aerobicLowIntensity.longRun.max.format() }}
               </div>
               <p class="text-sm text-gray-600">
-                {{
-                  'TOOLS.TRAINING_PACES_CALCULATOR.PACES.LONG_RUN.DESC'
-                    | translate
-                }}
+                Steady endurance pace for building stamina
               </p>
             </div>
           </app-fancy-result>
@@ -139,27 +98,16 @@
       <div>
         <h2 class="text-2xl font-bold text-amber-700 mb-4 flex items-center">
           <span class="w-4 h-4 bg-amber-500 rounded-full mr-3"></span>
-          {{
-            'TOOLS.TRAINING_PACES_CALCULATOR.GROUPS.HIGH_AEROBIC.TITLE'
-              | translate
-          }}
+          High Intensity Aerobic (Zone 3-4)
         </h2>
         <p class="text-gray-600 mb-6">
-          {{
-            'TOOLS.TRAINING_PACES_CALCULATOR.GROUPS.HIGH_AEROBIC.DESC'
-              | translate
-          }}
+          Challenging aerobic paces that improve lactate threshold, VO₂ max, and race-specific fitness. These efforts should feel comfortably hard to hard.
         </p>
 
         <div class="grid md:grid-cols-3 gap-6">
           <app-fancy-result variant="card" colorScheme="amber">
             <div class="text-center">
-              <h3 class="text-lg font-semibold text-gray-800 mb-2">
-                {{
-                  'TOOLS.TRAINING_PACES_CALCULATOR.PACES.TEMPO_RUN.TITLE'
-                    | translate
-                }}
-              </h3>
+              <h3 class="text-lg font-semibold text-gray-800 mb-2">Tempo Run</h3>
               <div class="text-2xl font-bold text-amber-600 mb-1">
                 {{ trainingPaces().highIntensityAerobic.tempoRun.min.format() }}
               </div>
@@ -168,22 +116,14 @@
                 {{ trainingPaces().highIntensityAerobic.tempoRun.max.format() }}
               </div>
               <p class="text-sm text-gray-600">
-                {{
-                  'TOOLS.TRAINING_PACES_CALCULATOR.PACES.TEMPO_RUN.DESC'
-                    | translate
-                }}
+                Comfortably hard pace for sustained efforts
               </p>
             </div>
           </app-fancy-result>
 
           <app-fancy-result variant="card" colorScheme="amber">
             <div class="text-center">
-              <h3 class="text-lg font-semibold text-gray-800 mb-2">
-                {{
-                  'TOOLS.TRAINING_PACES_CALCULATOR.PACES.THRESHOLD_RUN.TITLE'
-                    | translate
-                }}
-              </h3>
+              <h3 class="text-lg font-semibold text-gray-800 mb-2">Threshold Run</h3>
               <div class="text-2xl font-bold text-amber-600 mb-1">
                 {{
                   trainingPaces().highIntensityAerobic.thresholdRun.min.format()
@@ -196,22 +136,14 @@
                 }}
               </div>
               <p class="text-sm text-gray-600">
-                {{
-                  'TOOLS.TRAINING_PACES_CALCULATOR.PACES.THRESHOLD_RUN.DESC'
-                    | translate
-                }}
+                Lactate threshold pace for race preparation
               </p>
             </div>
           </app-fancy-result>
 
           <app-fancy-result variant="card" colorScheme="amber">
             <div class="text-center">
-              <h3 class="text-lg font-semibold text-gray-800 mb-2">
-                {{
-                  'TOOLS.TRAINING_PACES_CALCULATOR.PACES.VO2MAX_RUN.TITLE'
-                    | translate
-                }}
-              </h3>
+              <h3 class="text-lg font-semibold text-gray-800 mb-2">VO₂ Max Run</h3>
               <div class="text-2xl font-bold text-amber-600 mb-1">
                 {{
                   trainingPaces().highIntensityAerobic.vo2maxRun.min.format()
@@ -224,10 +156,7 @@
                 }}
               </div>
               <p class="text-sm text-gray-600">
-                {{
-                  'TOOLS.TRAINING_PACES_CALCULATOR.PACES.VO2MAX_RUN.DESC'
-                    | translate
-                }}
+                Maximum aerobic power intervals
               </p>
             </div>
           </app-fancy-result>
@@ -238,25 +167,16 @@
       <div>
         <h2 class="text-2xl font-bold text-red-700 mb-4 flex items-center">
           <span class="w-4 h-4 bg-red-500 rounded-full mr-3"></span>
-          {{
-            'TOOLS.TRAINING_PACES_CALCULATOR.GROUPS.ANAEROBIC.TITLE' | translate
-          }}
+          Anaerobic (Zone 5)
         </h2>
         <p class="text-gray-600 mb-6">
-          {{
-            'TOOLS.TRAINING_PACES_CALCULATOR.GROUPS.ANAEROBIC.DESC' | translate
-          }}
+          High-intensity paces for developing speed, power, and anaerobic capacity. These efforts should feel very hard and can only be sustained for short periods.
         </p>
 
         <div class="grid md:grid-cols-2 gap-6">
           <app-fancy-result variant="card" colorScheme="red">
             <div class="text-center">
-              <h3 class="text-lg font-semibold text-gray-800 mb-2">
-                {{
-                  'TOOLS.TRAINING_PACES_CALCULATOR.PACES.ANAEROBIC_INTERVALS.TITLE'
-                    | translate
-                }}
-              </h3>
+              <h3 class="text-lg font-semibold text-gray-800 mb-2">Anaerobic Intervals</h3>
               <div class="text-2xl font-bold text-red-600 mb-1">
                 {{ trainingPaces().anaerobic.anaerobicIntervals.min.format() }}
               </div>
@@ -265,22 +185,14 @@
                 {{ trainingPaces().anaerobic.anaerobicIntervals.max.format() }}
               </div>
               <p class="text-sm text-gray-600">
-                {{
-                  'TOOLS.TRAINING_PACES_CALCULATOR.PACES.ANAEROBIC_INTERVALS.DESC'
-                    | translate
-                }}
+                Short, intense intervals for speed development
               </p>
             </div>
           </app-fancy-result>
 
           <app-fancy-result variant="card" colorScheme="red">
             <div class="text-center">
-              <h3 class="text-lg font-semibold text-gray-800 mb-2">
-                {{
-                  'TOOLS.TRAINING_PACES_CALCULATOR.PACES.SPRINTS.TITLE'
-                    | translate
-                }}
-              </h3>
+              <h3 class="text-lg font-semibold text-gray-800 mb-2">Sprints</h3>
               <div class="text-2xl font-bold text-red-600 mb-1">
                 {{ trainingPaces().anaerobic.sprints.min.format() }}
               </div>
@@ -289,10 +201,7 @@
                 {{ trainingPaces().anaerobic.sprints.max.format() }}
               </div>
               <p class="text-sm text-gray-600">
-                {{
-                  'TOOLS.TRAINING_PACES_CALCULATOR.PACES.SPRINTS.DESC'
-                    | translate
-                }}
+                Maximum effort for neuromuscular power
               </p>
             </div>
           </app-fancy-result>
@@ -306,148 +215,48 @@
     <div class="mt-8 space-y-6">
       <!-- How to Use Section -->
       <div class="bg-blue-50 p-6 rounded-lg">
-        <h2 class="text-xl font-semibold text-gray-900 mb-3">
-          {{ 'TOOLS.TRAINING_PACES_CALCULATOR.HOW_TO_USE.TITLE' | translate }}
-        </h2>
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">How to Use Your Training Paces</h2>
         <div class="space-y-2 text-gray-700">
-          <p
-            [innerHTML]="
-              'TOOLS.TRAINING_PACES_CALCULATOR.HOW_TO_USE.STEP1' | translate
-            "
-          ></p>
-          <p
-            [innerHTML]="
-              'TOOLS.TRAINING_PACES_CALCULATOR.HOW_TO_USE.STEP2' | translate
-            "
-          ></p>
-          <p
-            [innerHTML]="
-              'TOOLS.TRAINING_PACES_CALCULATOR.HOW_TO_USE.STEP3' | translate
-            "
-          ></p>
-          <p
-            [innerHTML]="
-              'TOOLS.TRAINING_PACES_CALCULATOR.HOW_TO_USE.STEP4' | translate
-            "
-          ></p>
+          <p><strong>1. Enter recent race performance:</strong> Input your distance and time from a recent race or time trial where you gave maximum effort. The more recent and representative, the better.</p>
+          <p><strong>2. Choose the right pace for your workout:</strong> Select paces based on your training goals - easy runs for recovery, tempo for threshold development, intervals for VO₂ max improvement.</p>
+          <p><strong>3. Follow the pace ranges:</strong> Stay within the suggested ranges. Start at the slower end if you're new to the workout type, progress to faster paces as you adapt.</p>
+          <p><strong>4. Monitor your effort level:</strong> Pace is a guide, but listen to your body. Adjust based on weather, fatigue, terrain, and how you feel on the day.</p>
         </div>
       </div>
 
       <!-- Training Zone Explanation -->
       <div class="bg-green-50 p-6 rounded-lg">
-        <h2 class="text-xl font-semibold text-gray-900 mb-3">
-          {{ 'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.TITLE' | translate }}
-        </h2>
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">Understanding Your Training Zones</h2>
 
         <!-- Aerobic Low Intensity -->
         <div class="mb-6">
-          <h3 class="text-lg font-semibold text-green-700 mb-3">
-            {{
-              'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.AEROBIC_LOW.TITLE'
-                | translate
-            }}
-          </h3>
+          <h3 class="text-lg font-semibold text-green-700 mb-3">Aerobic Low Intensity (Zone 1-2)</h3>
           <div class="grid md:grid-cols-3 gap-4">
             <div>
-              <h4 class="font-medium text-gray-900 mb-2">
-                {{
-                  'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.AEROBIC_LOW.EASY_RUN.TITLE'
-                    | translate
-                }}
-              </h4>
+              <h4 class="font-medium text-gray-900 mb-2">Easy Run</h4>
               <ul class="space-y-1 text-sm text-gray-700">
-                <li
-                  [innerHTML]="
-                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.AEROBIC_LOW.EASY_RUN.PURPOSE'
-                      | translate
-                  "
-                ></li>
-                <li
-                  [innerHTML]="
-                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.AEROBIC_LOW.EASY_RUN.EFFORT'
-                      | translate
-                  "
-                ></li>
-                <li
-                  [innerHTML]="
-                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.AEROBIC_LOW.EASY_RUN.FREQUENCY'
-                      | translate
-                  "
-                ></li>
-                <li
-                  [innerHTML]="
-                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.AEROBIC_LOW.EASY_RUN.BENEFITS'
-                      | translate
-                  "
-                ></li>
+                <li><strong>Purpose:</strong> Active recovery, base building, aerobic development</li>
+                <li><strong>Effort:</strong> Conversational pace - you should be able to speak in full sentences</li>
+                <li><strong>Frequency:</strong> 60-80% of your weekly training volume</li>
+                <li><strong>Benefits:</strong> Builds aerobic capacity, promotes recovery, increases capillary density</li>
               </ul>
             </div>
             <div>
-              <h4 class="font-medium text-gray-900 mb-2">
-                {{
-                  'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.AEROBIC_LOW.BASE_RUN.TITLE'
-                    | translate
-                }}
-              </h4>
+              <h4 class="font-medium text-gray-900 mb-2">Base Run</h4>
               <ul class="space-y-1 text-sm text-gray-700">
-                <li
-                  [innerHTML]="
-                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.AEROBIC_LOW.BASE_RUN.PURPOSE'
-                      | translate
-                  "
-                ></li>
-                <li
-                  [innerHTML]="
-                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.AEROBIC_LOW.BASE_RUN.EFFORT'
-                      | translate
-                  "
-                ></li>
-                <li
-                  [innerHTML]="
-                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.AEROBIC_LOW.BASE_RUN.FREQUENCY'
-                      | translate
-                  "
-                ></li>
-                <li
-                  [innerHTML]="
-                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.AEROBIC_LOW.BASE_RUN.BENEFITS'
-                      | translate
-                  "
-                ></li>
+                <li><strong>Purpose:</strong> Aerobic fitness development, daily training foundation</li>
+                <li><strong>Effort:</strong> Comfortable but slightly more effort than easy runs</li>
+                <li><strong>Frequency:</strong> 2-4 times per week as part of regular training</li>
+                <li><strong>Benefits:</strong> Improves running economy, strengthens aerobic system</li>
               </ul>
             </div>
             <div>
-              <h4 class="font-medium text-gray-900 mb-2">
-                {{
-                  'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.AEROBIC_LOW.LONG_RUN.TITLE'
-                    | translate
-                }}
-              </h4>
+              <h4 class="font-medium text-gray-900 mb-2">Long Run</h4>
               <ul class="space-y-1 text-sm text-gray-700">
-                <li
-                  [innerHTML]="
-                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.AEROBIC_LOW.LONG_RUN.PURPOSE'
-                      | translate
-                  "
-                ></li>
-                <li
-                  [innerHTML]="
-                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.AEROBIC_LOW.LONG_RUN.EFFORT'
-                      | translate
-                  "
-                ></li>
-                <li
-                  [innerHTML]="
-                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.AEROBIC_LOW.LONG_RUN.FREQUENCY'
-                      | translate
-                  "
-                ></li>
-                <li
-                  [innerHTML]="
-                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.AEROBIC_LOW.LONG_RUN.BENEFITS'
-                      | translate
-                  "
-                ></li>
+                <li><strong>Purpose:</strong> Endurance building, mental toughness, fat adaptation</li>
+                <li><strong>Effort:</strong> Steady, sustainable pace for extended duration</li>
+                <li><strong>Frequency:</strong> Once per week, gradually increasing distance</li>
+                <li><strong>Benefits:</strong> Builds endurance, improves glycogen storage, mental preparation</li>
               </ul>
             </div>
           </div>
@@ -455,113 +264,33 @@
 
         <!-- High Intensity Aerobic -->
         <div class="mb-6">
-          <h3 class="text-lg font-semibold text-amber-700 mb-3">
-            {{
-              'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.HIGH_AEROBIC.TITLE'
-                | translate
-            }}
-          </h3>
+          <h3 class="text-lg font-semibold text-amber-700 mb-3">High Intensity Aerobic (Zone 3-4)</h3>
           <div class="grid md:grid-cols-3 gap-4">
             <div>
-              <h4 class="font-medium text-gray-900 mb-2">
-                {{
-                  'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.HIGH_AEROBIC.TEMPO_RUN.TITLE'
-                    | translate
-                }}
-              </h4>
+              <h4 class="font-medium text-gray-900 mb-2">Tempo Run</h4>
               <ul class="space-y-1 text-sm text-gray-700">
-                <li
-                  [innerHTML]="
-                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.HIGH_AEROBIC.TEMPO_RUN.PURPOSE'
-                      | translate
-                  "
-                ></li>
-                <li
-                  [innerHTML]="
-                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.HIGH_AEROBIC.TEMPO_RUN.EFFORT'
-                      | translate
-                  "
-                ></li>
-                <li
-                  [innerHTML]="
-                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.HIGH_AEROBIC.TEMPO_RUN.FREQUENCY'
-                      | translate
-                  "
-                ></li>
-                <li
-                  [innerHTML]="
-                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.HIGH_AEROBIC.TEMPO_RUN.BENEFITS'
-                      | translate
-                  "
-                ></li>
+                <li><strong>Purpose:</strong> Lactate threshold development, race preparation</li>
+                <li><strong>Effort:</strong> Comfortably hard - you can speak a few words but not full sentences</li>
+                <li><strong>Frequency:</strong> 1-2 times per week, 20-40 minute sustained efforts</li>
+                <li><strong>Benefits:</strong> Improves lactate clearance, increases sustainable pace</li>
               </ul>
             </div>
             <div>
-              <h4 class="font-medium text-gray-900 mb-2">
-                {{
-                  'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.HIGH_AEROBIC.THRESHOLD_RUN.TITLE'
-                    | translate
-                }}
-              </h4>
+              <h4 class="font-medium text-gray-900 mb-2">Threshold Run</h4>
               <ul class="space-y-1 text-sm text-gray-700">
-                <li
-                  [innerHTML]="
-                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.HIGH_AEROBIC.THRESHOLD_RUN.PURPOSE'
-                      | translate
-                  "
-                ></li>
-                <li
-                  [innerHTML]="
-                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.HIGH_AEROBIC.THRESHOLD_RUN.EFFORT'
-                      | translate
-                  "
-                ></li>
-                <li
-                  [innerHTML]="
-                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.HIGH_AEROBIC.THRESHOLD_RUN.FREQUENCY'
-                      | translate
-                  "
-                ></li>
-                <li
-                  [innerHTML]="
-                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.HIGH_AEROBIC.THRESHOLD_RUN.BENEFITS'
-                      | translate
-                  "
-                ></li>
+                <li><strong>Purpose:</strong> Lactate threshold training, 10K-Half marathon pace work</li>
+                <li><strong>Effort:</strong> Hard but controlled - at or near lactate threshold</li>
+                <li><strong>Frequency:</strong> 1-2 times per week, intervals or sustained runs</li>
+                <li><strong>Benefits:</strong> Increases lactate threshold, improves race-specific fitness</li>
               </ul>
             </div>
             <div>
-              <h4 class="font-medium text-gray-900 mb-2">
-                {{
-                  'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.HIGH_AEROBIC.VO2MAX_RUN.TITLE'
-                    | translate
-                }}
-              </h4>
+              <h4 class="font-medium text-gray-900 mb-2">VO₂ Max Run</h4>
               <ul class="space-y-1 text-sm text-gray-700">
-                <li
-                  [innerHTML]="
-                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.HIGH_AEROBIC.VO2MAX_RUN.PURPOSE'
-                      | translate
-                  "
-                ></li>
-                <li
-                  [innerHTML]="
-                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.HIGH_AEROBIC.VO2MAX_RUN.EFFORT'
-                      | translate
-                  "
-                ></li>
-                <li
-                  [innerHTML]="
-                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.HIGH_AEROBIC.VO2MAX_RUN.FREQUENCY'
-                      | translate
-                  "
-                ></li>
-                <li
-                  [innerHTML]="
-                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.HIGH_AEROBIC.VO2MAX_RUN.BENEFITS'
-                      | translate
-                  "
-                ></li>
+                <li><strong>Purpose:</strong> Maximum aerobic power development, 5K pace training</li>
+                <li><strong>Effort:</strong> Hard - near maximum sustainable effort for 3-8 minutes</li>
+                <li><strong>Frequency:</strong> Once per week, interval training with recovery</li>
+                <li><strong>Benefits:</strong> Increases VO₂ max, improves running economy at speed</li>
               </ul>
             </div>
           </div>
@@ -569,79 +298,54 @@
 
         <!-- Anaerobic -->
         <div>
-          <h3 class="text-lg font-semibold text-red-700 mb-3">
-            {{
-              'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.ANAEROBIC.TITLE'
-                | translate
-            }}
-          </h3>
+          <h3 class="text-lg font-semibold text-red-700 mb-3">Anaerobic (Zone 5)</h3>
           <div class="grid md:grid-cols-2 gap-4">
             <div>
-              <h4 class="font-medium text-gray-900 mb-2">
-                {{
-                  'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.ANAEROBIC.ANAEROBIC_INTERVALS.TITLE'
-                    | translate
-                }}
-              </h4>
+              <h4 class="font-medium text-gray-900 mb-2">Anaerobic Intervals</h4>
               <ul class="space-y-1 text-sm text-gray-700">
-                <li
-                  [innerHTML]="
-                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.ANAEROBIC.ANAEROBIC_INTERVALS.PURPOSE'
-                      | translate
-                  "
-                ></li>
-                <li
-                  [innerHTML]="
-                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.ANAEROBIC.ANAEROBIC_INTERVALS.EFFORT'
-                      | translate
-                  "
-                ></li>
-                <li
-                  [innerHTML]="
-                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.ANAEROBIC.ANAEROBIC_INTERVALS.FREQUENCY'
-                      | translate
-                  "
-                ></li>
-                <li
-                  [innerHTML]="
-                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.ANAEROBIC.ANAEROBIC_INTERVALS.BENEFITS'
-                      | translate
-                  "
-                ></li>
+                <li><strong>Purpose:</strong> Speed development, anaerobic power, neuromuscular training</li>
+                <li><strong>Effort:</strong> Very hard - faster than 5K pace, high lactate production</li>
+                <li><strong>Frequency:</strong> 1-2 times per week during speed phases, short intervals</li>
+                <li><strong>Benefits:</strong> Improves speed, anaerobic capacity, running form at high speeds</li>
               </ul>
             </div>
             <div>
-              <h4 class="font-medium text-gray-900 mb-2">
-                {{
-                  'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.ANAEROBIC.SPRINTS.TITLE'
-                    | translate
-                }}
-              </h4>
+              <h4 class="font-medium text-gray-900 mb-2">Sprints</h4>
               <ul class="space-y-1 text-sm text-gray-700">
-                <li
-                  [innerHTML]="
-                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.ANAEROBIC.SPRINTS.PURPOSE'
-                      | translate
-                  "
-                ></li>
-                <li
-                  [innerHTML]="
-                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.ANAEROBIC.SPRINTS.EFFORT'
-                      | translate
-                  "
-                ></li>
-                <li
-                  [innerHTML]="
-                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.ANAEROBIC.SPRINTS.FREQUENCY'
-                      | translate
-                  "
-                ></li>
-                <li
-                  [innerHTML]="
-                    'TOOLS.TRAINING_PACES_CALCULATOR.ZONES.ANAEROBIC.SPRINTS.BENEFITS'
-                      | translate
-                  "
-                ></li>
+                <li><strong>Purpose:</strong> Maximum speed development, neuromuscular power</li>
+                <li><strong>Effort:</strong> All-out effort - maximum sustainable speed for short bursts</li>
+                <li><strong>Frequency:</strong> 1-2 times per week, very short intervals with full recovery</li>
+                <li><strong>Benefits:</strong> Develops top-end speed, improves running mechanics, power</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Training Planning Section -->
+      <div class="bg-orange-50 p-6 rounded-lg">
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">Weekly Training Structure</h2>
+        <div class="space-y-4 text-gray-700">
+          <p>Use these guidelines to structure your weekly training with the calculated paces:</p>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-medium text-gray-900 mb-2">Training Distribution</h4>
+              <ul class="space-y-1 text-sm">
+                <li><strong>80% Easy/Base:</strong> Build aerobic foundation with low-intensity runs</li>
+                <li><strong>15% Moderate:</strong> Tempo and threshold work for race preparation</li>
+                <li><strong>5% Hard:</strong> VO₂ max intervals and speed work for performance</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-medium text-gray-900 mb-2">Weekly Schedule Example</h4>
+              <ul class="space-y-1 text-sm">
+                <li><strong>Monday:</strong> Easy run or rest day</li>
+                <li><strong>Tuesday:</strong> Tempo or threshold workout</li>
+                <li><strong>Wednesday:</strong> Easy base run</li>
+                <li><strong>Thursday:</strong> VO₂ max intervals or speed work</li>
+                <li><strong>Friday:</strong> Easy run or rest</li>
+                <li><strong>Saturday:</strong> Long run</li>
+                <li><strong>Sunday:</strong> Easy recovery run</li>
               </ul>
             </div>
           </div>
@@ -650,82 +354,38 @@
 
       <!-- Related Tools Section -->
       <div class="bg-purple-50 p-6 rounded-lg">
-        <h2 class="text-xl font-semibold text-gray-900 mb-3">
-          {{
-            'TOOLS.TRAINING_PACES_CALCULATOR.RELATED_TOOLS.TITLE' | translate
-          }}
-        </h2>
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">Related Training Tools</h2>
         <div class="grid md:grid-cols-2 gap-4">
           <div class="space-y-2">
             <a
               href="/tools/race/pace-calculator"
               class="block p-3 bg-white rounded border hover:border-blue-300 transition-colors"
             >
-              <h3 class="font-medium text-blue-600">
-                {{
-                  'TOOLS.TRAINING_PACES_CALCULATOR.RELATED_TOOLS.PACE_CALC.TITLE'
-                    | translate
-                }}
-              </h3>
-              <p class="text-sm text-gray-600">
-                {{
-                  'TOOLS.TRAINING_PACES_CALCULATOR.RELATED_TOOLS.PACE_CALC.DESC'
-                    | translate
-                }}
-              </p>
+              <h3 class="font-medium text-blue-600">Pace Calculator</h3>
+              <p class="text-sm text-gray-600">Calculate running pace from distance and time</p>
             </a>
             <a
               href="/tools/personal/vo2max-calculator"
-              class="block p-3 bg-white rounded border hover:border-blue-300 transition-colors"
+              class="block p-3 bg-white rounded border hover:border-red-300 transition-colors"
             >
-              <h3 class="font-medium text-blue-600">
-                {{
-                  'TOOLS.TRAINING_PACES_CALCULATOR.RELATED_TOOLS.VO2MAX.TITLE'
-                    | translate
-                }}
-              </h3>
-              <p class="text-sm text-gray-600">
-                {{
-                  'TOOLS.TRAINING_PACES_CALCULATOR.RELATED_TOOLS.VO2MAX.DESC'
-                    | translate
-                }}
-              </p>
+              <h3 class="font-medium text-red-600">VO₂ Max Calculator</h3>
+              <p class="text-sm text-gray-600">Estimate your aerobic fitness and training zones</p>
             </a>
           </div>
           <div class="space-y-2">
             <a
               href="/tools/race/finish-time-predictor"
-              class="block p-3 bg-white rounded border hover:border-blue-300 transition-colors"
+              class="block p-3 bg-white rounded border hover:border-green-300 transition-colors"
             >
-              <h3 class="font-medium text-blue-600">
-                {{
-                  'TOOLS.TRAINING_PACES_CALCULATOR.RELATED_TOOLS.FINISH_TIME.TITLE'
-                    | translate
-                }}
-              </h3>
-              <p class="text-sm text-gray-600">
-                {{
-                  'TOOLS.TRAINING_PACES_CALCULATOR.RELATED_TOOLS.FINISH_TIME.DESC'
-                    | translate
-                }}
-              </p>
+              <h3 class="font-medium text-green-600">Finish Time Predictor</h3>
+              <p class="text-sm text-gray-600">Predict race times based on current fitness level</p>
             </a>
             <a
               href="/tools/personal/burned-calories-estimator"
-              class="block p-3 bg-white rounded border hover:border-blue-300 transition-colors"
+              class="block p-3 bg-white rounded border hover:border-orange-300 transition-colors"
             >
-              <h3 class="font-medium text-blue-600">
-                {{
-                  'TOOLS.TRAINING_PACES_CALCULATOR.RELATED_TOOLS.CALORIES.TITLE'
-                    | translate
-                }}
-              </h3>
-              <p class="text-sm text-gray-600">
-                {{
-                  'TOOLS.TRAINING_PACES_CALCULATOR.RELATED_TOOLS.CALORIES.DESC'
-                    | translate
-                }}
-              </p>
+              <h3 class="font-medium text-orange-600">Calories Burned Calculator</h3>
+              <p class="text-sm text-gray-600">Calculate energy expenditure for different training intensities</p>
             </a>
           </div>
         </div>
@@ -736,56 +396,32 @@
   <!-- FAQ Section -->
   <ng-container tool-faq>
     <app-faq-section>
-      <div faq-title>
-        {{ 'TOOLS.TRAINING_PACES_CALCULATOR.FAQ.TITLE' | translate }}
-      </div>
+      <div faq-title>Frequently Asked Questions</div>
 
       <div faq-items>
         <app-faq-item>
-          <div faq-question>
-            {{ 'TOOLS.TRAINING_PACES_CALCULATOR.FAQ.Q1' | translate }}
-          </div>
-          <div faq-answer>
-            {{ 'TOOLS.TRAINING_PACES_CALCULATOR.FAQ.A1' | translate }}
-          </div>
+          <div faq-question>How accurate are these training pace calculations?</div>
+          <div faq-answer>Training paces are calculated based on established physiological relationships between different training intensities. They provide excellent starting points, but individual factors like fitness level, training history, and environmental conditions may require adjustments. Start conservatively and adjust based on how the paces feel during workouts.</div>
         </app-faq-item>
 
         <app-faq-item>
-          <div faq-question>
-            {{ 'TOOLS.TRAINING_PACES_CALCULATOR.FAQ.Q2' | translate }}
-          </div>
-          <div
-            faq-answer
-            [innerHTML]="'TOOLS.TRAINING_PACES_CALCULATOR.FAQ.A2' | translate"
-          ></div>
+          <div faq-question>What type of recent performance should I use for input?</div>
+          <div faq-answer>Use a recent race time or time trial where you gave maximum effort and felt well-prepared. Avoid using times from training runs, races where you were injured or undertrained, or performances in extreme weather conditions. The more recent and representative of your current fitness, the more accurate your training paces will be.</div>
         </app-faq-item>
 
         <app-faq-item>
-          <div faq-question>
-            {{ 'TOOLS.TRAINING_PACES_CALCULATOR.FAQ.Q3' | translate }}
-          </div>
-          <div faq-answer>
-            {{ 'TOOLS.TRAINING_PACES_CALCULATOR.FAQ.A3' | translate }}
-          </div>
+          <div faq-question>How often should I do each type of training pace?</div>
+          <div faq-answer>Follow the 80/15/5 rule: 80% easy/base runs, 15% moderate intensity (tempo/threshold), and 5% high intensity (VO₂ max/anaerobic). Most runners should do 1-2 hard workouts per week, with the majority of training at easy to moderate intensities. Quality over quantity is key for harder efforts.</div>
         </app-faq-item>
 
         <app-faq-item>
-          <div faq-question>
-            {{ 'TOOLS.TRAINING_PACES_CALCULATOR.FAQ.Q4' | translate }}
-          </div>
-          <div faq-answer>
-            {{ 'TOOLS.TRAINING_PACES_CALCULATOR.FAQ.A4' | translate }}
-          </div>
+          <div faq-question>Should I adjust paces for weather or terrain?</div>
+          <div faq-answer>Yes, environmental factors significantly affect pace. In hot/humid conditions, slow down by 10-30 seconds per mile. On hills or trails, focus on effort level rather than exact pace. In cold weather, you may run slightly faster than calculated paces. Always prioritize effort and perceived exertion over hitting exact pace targets.</div>
         </app-faq-item>
 
         <app-faq-item>
-          <div faq-question>
-            {{ 'TOOLS.TRAINING_PACES_CALCULATOR.FAQ.Q5' | translate }}
-          </div>
-          <div
-            faq-answer
-            [innerHTML]="'TOOLS.TRAINING_PACES_CALCULATOR.FAQ.A5' | translate"
-          ></div>
+          <div faq-question>How do I progress with these training paces over time?</div>
+          <div faq-answer>As your fitness improves, update your training paces by entering new race times or time trials. Generally, reassess every 4-6 weeks or after significant races. Your easy pace should feel comfortable throughout your training cycle, while workout paces may feel easier as you adapt. Use our <a href='/tools/race/finish-time-predictor' class='text-blue-600 hover:text-blue-800 underline'>finish time predictor</a> to track your progress across different distances.</div>
         </app-faq-item>
       </div>
     </app-faq-section>

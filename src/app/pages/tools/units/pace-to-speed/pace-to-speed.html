@@ -1,13 +1,9 @@
 <app-tool-view 
-  [calculatorName]="'TOOLS.PACE_SPEED_UNIT_CONVERTER.TITLE' | translate"
-  [calculatorDescription]="'TOOLS.PACE_SPEED_UNIT_CONVERTER.DESCRIPTION' | translate"
+  calculatorName="Pace to Speed Converter"
+  calculatorDescription="Convert between running pace (min/mile, min/km) and speed (mph, km/h) instantly. Perfect for treadmill training, comparing workout intensities, and understanding race paces."
   category="units">
-  <ng-container tool-title>{{
-    'TOOLS.PACE_SPEED_UNIT_CONVERTER.TITLE' | translate
-  }}</ng-container>
-  <ng-container tool-description>{{
-    'TOOLS.PACE_SPEED_UNIT_CONVERTER.DESCRIPTION' | translate
-  }}</ng-container>
+  <ng-container tool-title>Pace to Speed Converter</ng-container>
+  <ng-container tool-description>Convert between running pace (min/mile, min/km) and speed (mph, km/h) instantly. Perfect for treadmill training, comparing workout intensities, and understanding race paces.</ng-container>
   <ng-container tool-content>
     <div class="grid md:grid-cols-2 gap-6">
       <app-pace-pure-form-field
@@ -22,46 +18,118 @@
   </ng-container>
   <ng-container tool-summary>
     <app-fancy-result>
-      <div result-title>{{ 'TOOLS.PACE_SPEED_UNIT_CONVERTER.RESULT_TITLE' | translate }}</div>
-      <div result-subtitle>{{ 'TOOLS.PACE_SPEED_UNIT_CONVERTER.RESULT_SUBTITLE' | translate }}</div>
+      <div result-title>Pace & Speed Conversion</div>
+      <div result-subtitle>Equivalent pace and speed values</div>
       <div result-value>{{ pace.format() }} ⟷ {{ speed.format() }}</div>
     </app-fancy-result>
+  </ng-container>
+
+  <!-- Educational Content Section -->
+  <ng-container tool-education>
+    <div class="mt-8 space-y-6">
+      <!-- How to Use Section -->
+      <div class="bg-orange-50 p-6 rounded-lg">
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">How to Use the Pace/Speed Converter</h2>
+        <div class="space-y-2 text-gray-700">
+          <p><strong>1. Choose your input format:</strong> Enter either your pace (time per distance) or speed (distance per time) in the appropriate field using the format shown.</p>
+          <p><strong>2. Select your units:</strong> Choose between metric (min/km, km/h) or imperial (min/mile, mph) units based on your preference or training requirements.</p>
+          <p><strong>3. Get instant conversion:</strong> The tool automatically converts between pace and speed formats, providing both values for easy reference during training or race planning.</p>
+        </div>
+      </div>
+
+      <!-- Practical Applications Section -->
+      <div class="bg-blue-50 p-6 rounded-lg">
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">When to Use Pace vs Speed</h2>
+        <div class="space-y-3 text-gray-700">
+          <p>Understanding when to use pace versus speed helps optimize your training and racing strategies:</p>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <h4 class="font-medium text-gray-900 mb-1">Use Pace For:</h4>
+              <ul class="list-disc list-inside space-y-1 ml-4 text-sm">
+                <li><strong>Race planning:</strong> Setting target splits and pacing strategies for races</li>
+                <li><strong>Training runs:</strong> Following structured workout plans with specific pace targets</li>
+                <li><strong>Progress tracking:</strong> Monitoring improvements in your running times per distance</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-medium text-gray-900 mb-1">Use Speed For:</h4>
+              <ul class="list-disc list-inside space-y-1 ml-4 text-sm">
+                <li><strong>Treadmill training:</strong> Setting machine speed for interval workouts and tempo runs</li>
+                <li><strong>Comparison purposes:</strong> Relating running speed to cycling or other activities</li>
+                <li><strong>Scientific analysis:</strong> Calculating power output and metabolic demands</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Related Tools Section -->
+      <div class="bg-purple-50 p-6 rounded-lg">
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">Related Training & Conversion Tools</h2>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="space-y-2">
+            <a href="/tools/race/pace-calculator" class="block p-3 bg-white rounded border hover:border-blue-300 transition-colors">
+              <h3 class="font-medium text-blue-600">Pace Calculator</h3>
+              <p class="text-sm text-gray-600">Calculate running pace from distance and time</p>
+            </a>
+            <a href="/tools/training/training-paces-calculator" class="block p-3 bg-white rounded border hover:border-purple-300 transition-colors">
+              <h3 class="font-medium text-purple-600">Training Paces Calculator</h3>
+              <p class="text-sm text-gray-600">Get personalized training paces for different workout types</p>
+            </a>
+            <a href="/tools/units/distance-unit-converter" class="block p-3 bg-white rounded border hover:border-orange-300 transition-colors">
+              <h3 class="font-medium text-orange-600">Distance Unit Converter</h3>
+              <p class="text-sm text-gray-600">Convert between kilometers, miles, and other distance units</p>
+            </a>
+          </div>
+          <div class="space-y-2">
+            <a href="/tools/race/finish-time-predictor" class="block p-3 bg-white rounded border hover:border-blue-300 transition-colors">
+              <h3 class="font-medium text-blue-600">Finish Time Predictor</h3>
+              <p class="text-sm text-gray-600">Predict race finish times based on current performance</p>
+            </a>
+            <a href="/tools/personal/burned-calories-estimator" class="block p-3 bg-white rounded border hover:border-green-300 transition-colors">
+              <h3 class="font-medium text-green-600">Calories Burned Calculator</h3>
+              <p class="text-sm text-gray-600">Calculate energy expenditure for different paces and speeds</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
   </ng-container>
 
   <!-- FAQ Section -->
   <ng-container tool-faq>
     <app-faq-section>
-      <div faq-title>{{ 'TOOLS.PACE_SPEED_UNIT_CONVERTER.FAQ.TITLE' | translate }}</div>
+      <div faq-title>Frequently Asked Questions</div>
       
       <div faq-items>
         <app-faq-item>
-          <div faq-question>{{ 'TOOLS.PACE_SPEED_UNIT_CONVERTER.FAQ.Q1' | translate }}</div>
-          <div faq-answer [innerHTML]="'TOOLS.PACE_SPEED_UNIT_CONVERTER.FAQ.A1' | translate"></div>
+          <div faq-question>What's the difference between pace and speed?</div>
+          <div faq-answer>Pace is time per distance (e.g., 6:00 per mile or 3:44 per km), while speed is distance per time (e.g., 10 mph or 16 km/h). Runners typically prefer pace because it's easier to maintain consistent effort and plan race strategies. Use our <a href='/tools/race/pace-calculator' class='text-blue-600 hover:text-blue-800 underline'>pace calculator</a> to determine optimal training paces.</div>
         </app-faq-item>
 
         <app-faq-item>
-          <div faq-question>{{ 'TOOLS.PACE_SPEED_UNIT_CONVERTER.FAQ.Q2' | translate }}</div>
-          <div faq-answer [innerHTML]="'TOOLS.PACE_SPEED_UNIT_CONVERTER.FAQ.A2' | translate"></div>
+          <div faq-question>When should I use pace vs speed for training?</div>
+          <div faq-answer>Use pace for most running training as it directly relates to effort level and race planning. Speed is more useful for treadmill settings, comparing with cycling/driving speeds, or scientific analysis. Most running watches and apps display pace because it's more intuitive for pacing strategies during races and workouts.</div>
         </app-faq-item>
 
         <app-faq-item>
-          <div faq-question>{{ 'TOOLS.PACE_SPEED_UNIT_CONVERTER.FAQ.Q3' | translate }}</div>
-          <div faq-answer [innerHTML]="'TOOLS.PACE_SPEED_UNIT_CONVERTER.FAQ.A3' | translate"></div>
+          <div faq-question>How do I convert between different pace units?</div>
+          <div faq-answer>This tool automatically converts between minutes per mile and minutes per kilometer. For manual conversion: multiply min/mile by 0.621 to get min/km, or multiply min/km by 1.609 to get min/mile. Understanding both units helps when following international training plans or racing abroad.</div>
         </app-faq-item>
 
         <app-faq-item>
-          <div faq-question>{{ 'TOOLS.PACE_SPEED_UNIT_CONVERTER.FAQ.Q4' | translate }}</div>
-          <div faq-answer [innerHTML]="'TOOLS.PACE_SPEED_UNIT_CONVERTER.FAQ.A4' | translate"></div>
+          <div faq-question>What pace should I target for different types of runs?</div>
+          <div faq-answer>Easy runs: 1-2 minutes per mile slower than race pace. Tempo runs: 15-30 seconds per mile slower than 10K pace. Interval training: 5K pace or faster. Long runs: 30-90 seconds per mile slower than marathon pace. Use our <a href='/tools/race/finish-time-predictor' class='text-blue-600 hover:text-blue-800 underline'>race time predictor</a> to establish your baseline paces.</div>
         </app-faq-item>
 
         <app-faq-item>
-          <div faq-question>{{ 'TOOLS.PACE_SPEED_UNIT_CONVERTER.FAQ.Q5' | translate }}</div>
-          <div faq-answer [innerHTML]="'TOOLS.PACE_SPEED_UNIT_CONVERTER.FAQ.A5' | translate"></div>
+          <div faq-question>How does terrain affect my pace?</div>
+          <div faq-answer>Hills significantly slow pace - expect 15-30 seconds per mile slower on moderate hills, more on steep terrain. Trail running is typically 30-60 seconds per mile slower than road pace due to uneven surfaces and obstacles. Adjust your target pace accordingly and focus on effort level rather than exact pace on challenging terrain.</div>
         </app-faq-item>
 
         <app-faq-item>
-          <div faq-question>{{ 'TOOLS.PACE_SPEED_UNIT_CONVERTER.FAQ.Q6' | translate }}</div>
-          <div faq-answer [innerHTML]="'TOOLS.PACE_SPEED_UNIT_CONVERTER.FAQ.A6' | translate"></div>
+          <div faq-question>Should I focus on improving pace or maintaining it longer?</div>
+          <div faq-answer>For distance runners, maintaining pace longer (endurance) is usually more important than pure speed. Build your aerobic base first, then add speed work. For 5K and shorter, speed development becomes more important. Monitor your training load with our <a href='/tools/personal/burned-calories-estimator' class='text-blue-600 hover:text-blue-800 underline'>calories burned calculator</a> to balance intensity and volume.</div>
         </app-faq-item>
       </div>
     </app-faq-section>

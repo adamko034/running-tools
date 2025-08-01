@@ -1,13 +1,10 @@
-<app-tool-view 
-  [calculatorName]="'TOOLS.PACE_CALCULATOR.TITLE' | translate"
-  [calculatorDescription]="'TOOLS.PACE_CALCULATOR.DESCRIPTION' | translate"
-  category="race">
-  <ng-container tool-title>{{
-    'TOOLS.PACE_CALCULATOR.TITLE' | translate
-  }}</ng-container>
-  <ng-container tool-description>{{
-    'TOOLS.PACE_CALCULATOR.DESCRIPTION' | translate
-  }}</ng-container>
+<app-tool-view
+  calculatorName="Running Pace Calculator"
+  calculatorDescription="Calculate running pace, time, and distance for marathon training, 5K preparation, and race planning. Enter any two values to calculate the third."
+  category="race"
+>
+  <ng-container tool-title>Running Pace Calculator</ng-container>
+  <ng-container tool-description>Calculate running pace, time, and distance for marathon training, 5K preparation, and race planning. Enter any two values to calculate the third.</ng-container>
   <ng-container tool-content>
     <!-- Responsive Form Grid -->
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -20,11 +17,8 @@
   <ng-container tool-summary>
     <app-fancy-result>
       <div result-value>{{ summary() }}</div>
-      <div result-title>{{ 'TOOLS.PACE_CALCULATOR.SUMMARY' | translate }}</div>
-      <div result-subtitle>
-        {{ 'COMMON.DISTANCE' | translate }} • {{ 'COMMON.TIME' | translate }} •
-        {{ 'COMMON.PACE' | translate }}
-      </div>
+      <div result-title>Your Pace Summary</div>
+      <div result-subtitle>Distance • Time • Pace</div>
     </app-fancy-result>
   </ng-container>
 
@@ -33,72 +27,71 @@
     <div class="mt-8 space-y-6">
       <!-- How to Use Section -->
       <div class="bg-blue-50 p-6 rounded-lg">
-        <h2 class="text-xl font-semibold text-gray-900 mb-3">{{ 'TOOLS.PACE_CALCULATOR.HOW_TO_USE.TITLE' | translate }}</h2>
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">How to Use the Pace Calculator</h2>
         <div class="space-y-2 text-gray-700">
-          <p [innerHTML]="'TOOLS.PACE_CALCULATOR.HOW_TO_USE.STEP1' | translate"></p>
-          <p [innerHTML]="'TOOLS.PACE_CALCULATOR.HOW_TO_USE.STEP2' | translate"></p>
-          <p [innerHTML]="'TOOLS.PACE_CALCULATOR.HOW_TO_USE.STEP3' | translate"></p>
-          <p [innerHTML]="'TOOLS.PACE_CALCULATOR.HOW_TO_USE.STEP4' | translate"></p>
+          <p><strong>1. Enter any two values:</strong> Input distance, time, or pace - the calculator will automatically compute the missing value. Perfect for planning workouts or analyzing race performance.</p>
+          <p><strong>2. Choose your units:</strong> Select between metric (kilometers, min/km) or imperial (miles, min/mile) units based on your preference or training program requirements.</p>
+          <p><strong>3. Get instant results:</strong> See your calculated pace, time, or distance immediately. Use these values for training planning, race goal setting, or workout analysis.</p>
+          <p><strong>4. Apply to training:</strong> Use the calculated pace for different training types - easy runs, tempo workouts, intervals, or race pacing strategies.</p>
         </div>
       </div>
 
-      <!-- Training Paces Section -->
+      <!-- Training Pace Guidelines Section -->
       <div class="bg-green-50 p-6 rounded-lg">
-        <h2 class="text-xl font-semibold text-gray-900 mb-3">{{ 'TOOLS.PACE_CALCULATOR.TRAINING_PACES.TITLE' | translate }}</h2>
-        <div class="grid md:grid-cols-2 gap-4">
-          <div>
-            <h3 class="font-medium text-gray-900 mb-2">{{ 'TOOLS.PACE_CALCULATOR.TRAINING_PACES.EASY_RUNS.TITLE' | translate }}</h3>
-            <ul class="space-y-1 text-sm text-gray-700">
-              <li [innerHTML]="'TOOLS.PACE_CALCULATOR.TRAINING_PACES.EASY_RUNS.DESC' | translate"></li>
-              <li [innerHTML]="'TOOLS.PACE_CALCULATOR.TRAINING_PACES.EASY_RUNS.PACE' | translate"></li>
-              <li [innerHTML]="'TOOLS.PACE_CALCULATOR.TRAINING_PACES.EASY_RUNS.PURPOSE' | translate"></li>
-            </ul>
-          </div>
-          <div>
-            <h3 class="font-medium text-gray-900 mb-2">{{ 'TOOLS.PACE_CALCULATOR.TRAINING_PACES.TEMPO_RUNS.TITLE' | translate }}</h3>
-            <ul class="space-y-1 text-sm text-gray-700">
-              <li [innerHTML]="'TOOLS.PACE_CALCULATOR.TRAINING_PACES.TEMPO_RUNS.DESC' | translate"></li>
-              <li [innerHTML]="'TOOLS.PACE_CALCULATOR.TRAINING_PACES.TEMPO_RUNS.PACE' | translate"></li>
-              <li [innerHTML]="'TOOLS.PACE_CALCULATOR.TRAINING_PACES.TEMPO_RUNS.PURPOSE' | translate"></li>
-            </ul>
-          </div>
-          <div>
-            <h3 class="font-medium text-gray-900 mb-2">{{ 'TOOLS.PACE_CALCULATOR.TRAINING_PACES.INTERVALS.TITLE' | translate }}</h3>
-            <ul class="space-y-1 text-sm text-gray-700">
-              <li [innerHTML]="'TOOLS.PACE_CALCULATOR.TRAINING_PACES.INTERVALS.DESC' | translate"></li>
-              <li [innerHTML]="'TOOLS.PACE_CALCULATOR.TRAINING_PACES.INTERVALS.PACE' | translate"></li>
-              <li [innerHTML]="'TOOLS.PACE_CALCULATOR.TRAINING_PACES.INTERVALS.PURPOSE' | translate"></li>
-            </ul>
-          </div>
-          <div>
-            <h3 class="font-medium text-gray-900 mb-2">{{ 'TOOLS.PACE_CALCULATOR.TRAINING_PACES.LONG_RUNS.TITLE' | translate }}</h3>
-            <ul class="space-y-1 text-sm text-gray-700">
-              <li [innerHTML]="'TOOLS.PACE_CALCULATOR.TRAINING_PACES.LONG_RUNS.DESC' | translate"></li>
-              <li [innerHTML]="'TOOLS.PACE_CALCULATOR.TRAINING_PACES.LONG_RUNS.PACE' | translate"></li>
-              <li [innerHTML]="'TOOLS.PACE_CALCULATOR.TRAINING_PACES.LONG_RUNS.PURPOSE' | translate"></li>
-            </ul>
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">Training Pace Guidelines</h2>
+        <div class="space-y-4 text-gray-700">
+          <p>Understanding different training paces helps optimize your workouts and prevent overtraining:</p>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="space-y-3">
+              <div class="bg-white p-3 rounded border">
+                <h4 class="font-medium text-gray-900 mb-1">Easy/Recovery Runs</h4>
+                <p class="text-sm"><strong>Conversational pace</strong> - you should be able to speak in full sentences</p>
+                <p class="text-sm"><strong>Pace:</strong> 20-30% slower than 5K race pace</p>
+                <p class="text-sm"><strong>Purpose:</strong> Build aerobic base, promote recovery</p>
+              </div>
+              <div class="bg-white p-3 rounded border">
+                <h4 class="font-medium text-gray-900 mb-1">Tempo/Threshold Runs</h4>
+                <p class="text-sm"><strong>Comfortably hard pace</strong> - sustainable but challenging</p>
+                <p class="text-sm"><strong>Pace:</strong> 5-10% slower than 10K race pace</p>
+                <p class="text-sm"><strong>Purpose:</strong> Improve lactate threshold, race fitness</p>
+              </div>
+            </div>
+            <div class="space-y-3">
+              <div class="bg-white p-3 rounded border">
+                <h4 class="font-medium text-gray-900 mb-1">Interval Training</h4>
+                <p class="text-sm"><strong>Hard effort</strong> - 5K race pace or faster for short repeats</p>
+                <p class="text-sm"><strong>Pace:</strong> 3K-5K race pace for VO₂ max intervals</p>
+                <p class="text-sm"><strong>Purpose:</strong> Improve VO₂ max, speed, anaerobic capacity</p>
+              </div>
+              <div class="bg-white p-3 rounded border">
+                <h4 class="font-medium text-gray-900 mb-1">Long Runs</h4>
+                <p class="text-sm"><strong>Steady, sustainable pace</strong> - focus on time/distance</p>
+                <p class="text-sm"><strong>Pace:</strong> 10-20% slower than marathon pace</p>
+                <p class="text-sm"><strong>Purpose:</strong> Build endurance, mental toughness</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- Race Pacing Strategy Section -->
       <div class="bg-yellow-50 p-6 rounded-lg">
-        <h2 class="text-xl font-semibold text-gray-900 mb-3">{{ 'TOOLS.PACE_CALCULATOR.RACE_STRATEGY.TITLE' | translate }}</h2>
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">Race Pacing Strategies</h2>
         <div class="space-y-3 text-gray-700">
-          <p [innerHTML]="'TOOLS.PACE_CALCULATOR.RACE_STRATEGY.INTRO' | translate"></p>
+          <p>Smart pacing is crucial for race success. Here are proven strategies for different race distances:</p>
           <div class="grid md:grid-cols-2 gap-4">
             <div>
-              <h4 class="font-medium text-gray-900 mb-1">{{ 'TOOLS.PACE_CALCULATOR.RACE_STRATEGY.SHORT_RACES.TITLE' | translate }}</h4>
+              <h4 class="font-medium text-gray-900 mb-1">5K & 10K Races</h4>
               <ul class="list-disc list-inside space-y-1 ml-4 text-sm">
-                <li [innerHTML]="'TOOLS.PACE_CALCULATOR.RACE_STRATEGY.SHORT_RACES.STRATEGY1' | translate"></li>
-                <li [innerHTML]="'TOOLS.PACE_CALCULATOR.RACE_STRATEGY.SHORT_RACES.STRATEGY2' | translate"></li>
+                <li><strong>5K:</strong> Start slightly conservative, build through middle, strong finish</li>
+                <li><strong>10K:</strong> Even pacing throughout, slight negative split if possible</li>
               </ul>
             </div>
             <div>
-              <h4 class="font-medium text-gray-900 mb-1">{{ 'TOOLS.PACE_CALCULATOR.RACE_STRATEGY.LONG_RACES.TITLE' | translate }}</h4>
+              <h4 class="font-medium text-gray-900 mb-1">Half Marathon & Marathon</h4>
               <ul class="list-disc list-inside space-y-1 ml-4 text-sm">
-                <li [innerHTML]="'TOOLS.PACE_CALCULATOR.RACE_STRATEGY.LONG_RACES.STRATEGY1' | translate"></li>
-                <li [innerHTML]="'TOOLS.PACE_CALCULATOR.RACE_STRATEGY.LONG_RACES.STRATEGY2' | translate"></li>
+                <li><strong>Half Marathon:</strong> Conservative first 5K, steady middle, strong final 5K</li>
+                <li><strong>Marathon:</strong> Even pacing is critical, save energy for final 10K push</li>
               </ul>
             </div>
           </div>
@@ -107,26 +100,45 @@
 
       <!-- Related Tools Section -->
       <div class="bg-purple-50 p-6 rounded-lg">
-        <h2 class="text-xl font-semibold text-gray-900 mb-3">{{ 'TOOLS.PACE_CALCULATOR.RELATED_TOOLS.TITLE' | translate }}</h2>
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">Related Running Calculators</h2>
         <div class="grid md:grid-cols-2 gap-4">
           <div class="space-y-2">
-            <a href="/tools/race/finish-time-predictor" class="block p-3 bg-white rounded border hover:border-blue-300 transition-colors">
-              <h3 class="font-medium text-blue-600">{{ 'TOOLS.PACE_CALCULATOR.RELATED_TOOLS.FINISH_TIME.TITLE' | translate }}</h3>
-              <p class="text-sm text-gray-600">{{ 'TOOLS.PACE_CALCULATOR.RELATED_TOOLS.FINISH_TIME.DESC' | translate }}</p>
+            <a
+              href="/tools/training/training-paces-calculator"
+              class="block p-3 bg-white rounded border hover:border-purple-300 transition-colors"
+            >
+              <h3 class="font-medium text-purple-600">Training Paces Calculator</h3>
+              <p class="text-sm text-gray-600">Get personalized training paces for different workout types</p>
             </a>
-            <a href="/tools/personal/vo2max-calculator" class="block p-3 bg-white rounded border hover:border-blue-300 transition-colors">
-              <h3 class="font-medium text-blue-600">{{ 'TOOLS.PACE_CALCULATOR.RELATED_TOOLS.VO2MAX.TITLE' | translate }}</h3>
-              <p class="text-sm text-gray-600">{{ 'TOOLS.PACE_CALCULATOR.RELATED_TOOLS.VO2MAX.DESC' | translate }}</p>
+            <a
+              href="/tools/race/finish-time-predictor"
+              class="block p-3 bg-white rounded border hover:border-blue-300 transition-colors"
+            >
+              <h3 class="font-medium text-blue-600">Race Time Predictor</h3>
+              <p class="text-sm text-gray-600">Predict your finish times for different distances based on current fitness</p>
+            </a>
+            <a
+              href="/tools/personal/vo2max-calculator"
+              class="block p-3 bg-white rounded border hover:border-red-300 transition-colors"
+            >
+              <h3 class="font-medium text-red-600">VO₂ Max Calculator</h3>
+              <p class="text-sm text-gray-600">Estimate your aerobic fitness and training zones from race performance</p>
             </a>
           </div>
           <div class="space-y-2">
-            <a href="/tools/units/pace-to-speed" class="block p-3 bg-white rounded border hover:border-blue-300 transition-colors">
-              <h3 class="font-medium text-blue-600">{{ 'TOOLS.PACE_CALCULATOR.RELATED_TOOLS.PACE_SPEED.TITLE' | translate }}</h3>
-              <p class="text-sm text-gray-600">{{ 'TOOLS.PACE_CALCULATOR.RELATED_TOOLS.PACE_SPEED.DESC' | translate }}</p>
+            <a
+              href="/tools/units/pace-to-speed"
+              class="block p-3 bg-white rounded border hover:border-orange-300 transition-colors"
+            >
+              <h3 class="font-medium text-orange-600">Pace to Speed Converter</h3>
+              <p class="text-sm text-gray-600">Convert between pace and speed units for treadmill training</p>
             </a>
-            <a href="/tools/personal/burned-calories-estimator" class="block p-3 bg-white rounded border hover:border-blue-300 transition-colors">
-              <h3 class="font-medium text-blue-600">{{ 'TOOLS.PACE_CALCULATOR.RELATED_TOOLS.CALORIES.TITLE' | translate }}</h3>
-              <p class="text-sm text-gray-600">{{ 'TOOLS.PACE_CALCULATOR.RELATED_TOOLS.CALORIES.DESC' | translate }}</p>
+            <a
+              href="/tools/personal/burned-calories-estimator"
+              class="block p-3 bg-white rounded border hover:border-green-300 transition-colors"
+            >
+              <h3 class="font-medium text-green-600">Calories Burned Calculator</h3>
+              <p class="text-sm text-gray-600">Estimate energy expenditure for different paces and distances</p>
             </a>
           </div>
         </div>
@@ -137,32 +149,37 @@
   <!-- FAQ Section -->
   <ng-container tool-faq>
     <app-faq-section>
-      <div faq-title>{{ 'TOOLS.PACE_CALCULATOR.FAQ.TITLE' | translate }}</div>
-      
+      <div faq-title>Frequently Asked Questions</div>
+
       <div faq-items>
         <app-faq-item>
-          <div faq-question>{{ 'TOOLS.PACE_CALCULATOR.FAQ.Q1' | translate }}</div>
-          <div faq-answer>{{ 'TOOLS.PACE_CALCULATOR.FAQ.A1' | translate }}</div>
+          <div faq-question>What is a good running pace for beginners?</div>
+          <div faq-answer>For beginners, a good running pace is one where you can maintain a conversation while running. This typically ranges from 9-12 minutes per mile (5:30-7:30 per km). Focus on consistency and gradually building endurance rather than speed initially.</div>
         </app-faq-item>
 
         <app-faq-item>
-          <div faq-question>{{ 'TOOLS.PACE_CALCULATOR.FAQ.Q2' | translate }}</div>
-          <div faq-answer [innerHTML]="'TOOLS.PACE_CALCULATOR.FAQ.A2' | translate"></div>
+          <div faq-question>How do I calculate my target marathon pace?</div>
+          <div faq-answer>Your marathon pace should be 30-60 seconds per mile slower than your 10K pace, or about 15-30 seconds per km slower. Use recent race times with our <a href='/tools/race/finish-time-predictor' class='text-blue-600 hover:text-blue-800 underline'>Finish Time Predictor</a> to estimate your marathon pace, and practice running at this pace during long training runs.</div>
         </app-faq-item>
 
         <app-faq-item>
-          <div faq-question>{{ 'TOOLS.PACE_CALCULATOR.FAQ.Q3' | translate }}</div>
-          <div faq-answer>{{ 'TOOLS.PACE_CALCULATOR.FAQ.A3' | translate }}</div>
+          <div faq-question>What's the difference between pace and speed?</div>
+          <div faq-answer>Pace is time per distance (e.g., 6:00 per mile), while speed is distance per time (e.g., 10 mph). Runners typically use pace because it's easier to maintain a consistent effort level and plan race strategies.</div>
         </app-faq-item>
 
         <app-faq-item>
-          <div faq-question>{{ 'TOOLS.PACE_CALCULATOR.FAQ.Q4' | translate }}</div>
-          <div faq-answer>{{ 'TOOLS.PACE_CALCULATOR.FAQ.A4' | translate }}</div>
+          <div faq-question>How should I pace different race distances?</div>
+          <div faq-answer>5K: Start slightly slower than goal pace, build in middle, finish strong. 10K: Even pacing throughout. Half Marathon: Start conservatively, negative split if possible. Marathon: Even pacing is crucial, save energy for final 10K.</div>
         </app-faq-item>
 
         <app-faq-item>
-          <div faq-question>{{ 'TOOLS.PACE_CALCULATOR.FAQ.Q5' | translate }}</div>
-          <div faq-answer [innerHTML]="'TOOLS.PACE_CALCULATOR.FAQ.A5' | translate"></div>
+          <div faq-question>What factors affect my running pace?</div>
+          <div faq-answer>Weather (heat/humidity slow you down), terrain (hills and trails are slower), altitude (higher elevation reduces pace), fatigue level, hydration, and nutrition all significantly impact your running pace. Track your <a href='/tools/personal/burned-calories-estimator' class='text-blue-600 hover:text-blue-800 underline'>calories burned</a> to optimize your nutrition strategy.</div>
+        </app-faq-item>
+
+        <app-faq-item>
+          <div faq-question>How do I determine my training paces?</div>
+          <div faq-answer>Training paces vary based on your fitness level and workout type. Use our <a href='/tools/training/training-paces-calculator' class='text-purple-600 hover:underline'>Training Paces Calculator</a> to get personalized pace recommendations for easy runs, tempo runs, intervals, and long runs based on your recent race performance.</div>
         </app-faq-item>
       </div>
     </app-faq-section>

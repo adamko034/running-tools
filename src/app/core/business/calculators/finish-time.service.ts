@@ -20,7 +20,7 @@ export class FinishTimeService {
     );
 
     return {
-      translationKey: target.translationKey,
+      label: target.label,
       pace: time.toPace(target.distance),
       time,
     };
