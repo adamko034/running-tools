@@ -1,0 +1,363 @@
+<app-tool-view
+  calculatorName="Race Strategies Calculator"
+  calculatorDescription="Calculate optimal race pacing strategies for 5K, 10K, half marathon, and marathon distances. Get personalized start slow, build middle, finish strong pace recommendations based on your target time."
+  category="race"
+>
+  <ng-container tool-title>Race Strategies Calculator</ng-container>
+  <ng-container tool-description>
+    Calculate optimal race pacing strategies for any distance from 1K to ultra-marathon. 
+    Get personalized start slow, build middle, finish strong pace recommendations based on your target time.
+  </ng-container>
+
+  <ng-container tool-content>
+    <!-- Responsive Form Grid -->
+    <div class="grid md:grid-cols-2 gap-6">
+      <app-distance-store-form-field />
+      <app-time-store-form-field />
+    </div>
+  </ng-container>
+
+  <ng-container tool-summary>
+    @if (raceStrategy().length > 0) {
+      <app-fancy-result [colorScheme]="'blue-green'">
+        <div result-title>
+          Race Strategy for {{ store.distance().value }}{{ store.distance().unit }}
+        </div>
+        <div result-subtitle>
+          Target Time: {{ store.time().format() }} • Strategy Time:
+          {{ getTotalStrategyTime() }}
+        </div>
+
+        <div result-value>
+          <!-- Race Strategy Segments -->
+          <div class="space-y-4">
+            @for (segment of raceStrategy(); track segment.phase) {
+              <div
+                class="bg-white/90 backdrop-blur-sm rounded-xl p-4 border border-blue-200/50 hover:bg-white transition-all duration-200"
+              >
+                <div
+                  class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3"
+                >
+                  <!-- Phase Info -->
+                  <div class="flex-1">
+                    <h3 class="font-semibold text-gray-900 text-lg">
+                      {{ segment.phase }}
+                    </h3>
+                    <p class="text-sm text-gray-600 mt-1">
+                      {{ segment.description }}
+                    </p>
+                  </div>
+
+                  <!-- Distance and Pace -->
+                  <div class="flex items-center gap-4 text-right">
+                    <div>
+                      <div class="text-sm text-gray-500">Distance</div>
+                      <div class="font-medium text-gray-900">
+                        {{ formatDistance(segment.distance) }}
+                      </div>
+                    </div>
+                    <div>
+                      <div class="text-sm text-gray-500">Pace</div>
+                      <div class="font-bold text-blue-600 text-lg">
+                        {{ segment.pace.format() }}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            }
+          </div>
+
+          <!-- Strategy Summary -->
+          <div class="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
+            <h4 class="font-medium text-gray-900 mb-2">Strategy Summary</h4>
+            <p class="text-sm text-gray-700">
+              This pacing strategy is designed to help you achieve your target
+              time of
+              <strong>{{ store.time().format() }}</strong> for {{ store.distance().value }}{{ store.distance().unit }}. Start conservatively to save
+              energy, maintain your target effort in the middle, and finish with
+              whatever you have left in the tank.
+            </p>
+          </div>
+        </div>
+      </app-fancy-result>
+    } @else {
+      <app-fancy-result [colorScheme]="'blue-green'">
+        <div result-title>Enter Your Target Time</div>
+        <div result-subtitle>
+          Enter any distance and your target time to generate a pacing strategy
+        </div>
+        <div result-value>
+          <div class="text-gray-500 italic">Waiting for target time...</div>
+        </div>
+      </app-fancy-result>
+    }
+  </ng-container>
+
+  <!-- Educational Content Section -->
+  <ng-container tool-education>
+    <div class="mt-8 space-y-6">
+      <!-- How to Use Section -->
+      <div class="bg-blue-50 p-6 rounded-lg">
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">
+          How to Use the Race Strategies Calculator
+        </h2>
+        <div class="space-y-2 text-gray-700">
+          <p>
+            <strong>1. Enter your race distance:</strong> Input any distance from 1K to ultra-marathon. The calculator uses research-based pacing strategies that adapt to your specific distance.
+          </p>
+          <p>
+            <strong>2. Enter your target time:</strong> Input the finish time
+            you're aiming for. This should be realistic based on your current
+            fitness and recent race performances.
+          </p>
+          <p>
+            <strong>3. Review your strategy:</strong> The calculator provides a
+            three-phase pacing plan with specific pace targets for each segment
+            of your race.
+          </p>
+          <p>
+            <strong>4. Consider course conditions:</strong> The calculated paces assume ideal flat conditions. Adjust your target time by 5-15% for hilly, trail, hot, or challenging course conditions before generating your strategy.
+          </p>
+          <p>
+            <strong>5. Practice the strategy:</strong> Use these paces during
+            training runs and tune-up races to get comfortable with the rhythm
+            and effort levels.
+          </p>
+        </div>
+      </div>
+
+      <!-- Pacing Strategy Science Section -->
+      <div class="bg-green-50 p-6 rounded-lg">
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">
+          The Science Behind Race Pacing Strategies
+        </h2>
+        <div class="space-y-3 text-gray-700">
+          <p>
+            Effective race pacing strategies are based on physiological
+            principles and decades of racing experience:
+          </p>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <h4 class="font-medium text-gray-900 mb-1">
+                Energy System Management
+              </h4>
+              <ul class="list-disc list-inside space-y-1 ml-4 text-sm">
+                <li>
+                  <strong>Conservative start:</strong> Preserves glycogen stores
+                  and prevents early lactate accumulation
+                </li>
+                <li>
+                  <strong>Steady middle:</strong> Maintains target effort while
+                  managing fatigue accumulation
+                </li>
+                <li>
+                  <strong>Strategic finish:</strong> Uses remaining energy
+                  reserves for final acceleration
+                </li>
+                <li>
+                  <strong>Negative splitting:</strong> Running the second half
+                  faster than the first improves performance
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-medium text-gray-900 mb-1">
+                Distance-Specific Adaptations
+              </h4>
+              <ul class="list-disc list-inside space-y-1 ml-4 text-sm">
+                <li>
+                  <strong>5K-10K:</strong> Higher intensity tolerance allows for
+                  more aggressive finishing kicks
+                </li>
+                <li>
+                  <strong>Half Marathon:</strong> Balance between speed and
+                  endurance requires controlled pacing
+                </li>
+                <li>
+                  <strong>Marathon:</strong> Glycogen depletion risk demands
+                  very conservative early pacing
+                </li>
+                <li>
+                  <strong>Individual variation:</strong> Adjust based on your
+                  strengths and race experience
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Course Conditions Section -->
+      <div class="bg-orange-50 p-6 rounded-lg">
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">
+          Adjusting Strategy for Course Conditions
+        </h2>
+        <div class="space-y-3 text-gray-700">
+          <p>
+            <strong>Important:</strong> The calculated paces assume ideal conditions on a flat, fast course. 
+            Real race conditions require strategy adjustments based on terrain, weather, and surface:
+          </p>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <h4 class="font-medium text-gray-900 mb-1">
+                Terrain Adjustments
+              </h4>
+              <ul class="list-disc list-inside space-y-1 ml-4 text-sm">
+                <li>
+                  <strong>Hilly courses:</strong> Add 10-20 seconds per km to target paces, run hills by effort not pace
+                </li>
+                <li>
+                  <strong>Trail/off-road:</strong> Add 15-30 seconds per km depending on technical difficulty
+                </li>
+                <li>
+                  <strong>Altitude (>1500m):</strong> Add 3-5% to target times for every 300m elevation gain
+                </li>
+                <li>
+                  <strong>Downhill courses:</strong> Can run 5-10 seconds per km faster, but save legs for later
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-medium text-gray-900 mb-1">
+                Environmental Factors
+              </h4>
+              <ul class="list-disc list-inside space-y-1 ml-4 text-sm">
+                <li>
+                  <strong>Hot weather (>20°C):</strong> Add 2-5% to target times, focus on hydration strategy
+                </li>
+                <li>
+                  <strong>Humidity (>70%):</strong> Add 3-8% to target times, start more conservatively
+                </li>
+                <li>
+                  <strong>Headwinds:</strong> Add 5-15 seconds per km, use drafting when possible
+                </li>
+                <li>
+                  <strong>Rain/wet surfaces:</strong> Add 5-10 seconds per km for safety and traction
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="mt-4 p-3 bg-orange-100 rounded border border-orange-200">
+            <p class="text-sm text-orange-800">
+              <strong>Pro Tip:</strong> Study the course profile and weather forecast before race day. 
+              Adjust your target time by 5-15% for challenging conditions, then recalculate your pacing strategy.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Race Day Execution Section -->
+      <div class="bg-yellow-50 p-6 rounded-lg">
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">
+          Race Day Execution Tips
+        </h2>
+        <div class="space-y-3 text-gray-700">
+          <p>
+            Having a pacing strategy is only half the battle - executing it
+            successfully requires preparation and flexibility:
+          </p>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <h4 class="font-medium text-gray-900 mb-1">
+                Pre-Race Preparation
+              </h4>
+              <ul class="list-disc list-inside space-y-1 ml-4 text-sm">
+                <li>
+                  <strong>Practice paces:</strong> Run segments at target paces
+                  during training to develop feel
+                </li>
+                <li>
+                  <strong>Know the course:</strong> Adjust strategy for hills,
+                  turns, and weather conditions
+                </li>
+                <li>
+                  <strong>Plan nutrition:</strong> Time fuel intake with pacing
+                  segments for optimal energy
+                </li>
+                <li>
+                  <strong>Set checkpoints:</strong> Identify key mile/km markers
+                  to monitor progress
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-medium text-gray-900 mb-1">During the Race</h4>
+              <ul class="list-disc list-inside space-y-1 ml-4 text-sm">
+                <li>
+                  <strong>Start conservatively:</strong> It's easier to speed up
+                  than slow down
+                </li>
+                <li>
+                  <strong>Monitor effort:</strong> Use perceived exertion along
+                  with pace data
+                </li>
+                <li>
+                  <strong>Stay flexible:</strong> Adjust for conditions, crowds,
+                  and how you feel
+                </li>
+                <li>
+                  <strong>Execute the finish:</strong> Commit to your final
+                  surge when planned
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Related Tools Section -->
+      <div class="bg-purple-50 p-6 rounded-lg">
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">
+          Related Race Planning Tools
+        </h2>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="space-y-2">
+            <a
+              href="/tools/race/pace-calculator"
+              class="block p-3 bg-white rounded border hover:border-blue-300 transition-colors"
+            >
+              <h3 class="font-medium text-blue-600">Pace Calculator</h3>
+              <p class="text-sm text-gray-600">
+                Calculate running pace from distance and time for race planning
+              </p>
+            </a>
+            <a
+              href="/tools/race/finish-time-predictor"
+              class="block p-3 bg-white rounded border hover:border-blue-300 transition-colors"
+            >
+              <h3 class="font-medium text-blue-600">Race Time Predictor</h3>
+              <p class="text-sm text-gray-600">
+                Predict finish times for different distances based on current
+                fitness
+              </p>
+            </a>
+          </div>
+          <div class="space-y-2">
+            <a
+              href="/tools/training/training-paces-calculator"
+              class="block p-3 bg-white rounded border hover:border-purple-300 transition-colors"
+            >
+              <h3 class="font-medium text-purple-600">
+                Training Paces Calculator
+              </h3>
+              <p class="text-sm text-gray-600">
+                Get personalized training paces based on your race goals
+              </p>
+            </a>
+            <a
+              href="/tools/personal/vo2max-calculator"
+              class="block p-3 bg-white rounded border hover:border-red-300 transition-colors"
+            >
+              <h3 class="font-medium text-red-600">VO₂ Max Calculator</h3>
+              <p class="text-sm text-gray-600">
+                Estimate aerobic fitness and training zones from race
+                performance
+              </p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</app-tool-view>

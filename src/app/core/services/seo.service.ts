@@ -115,6 +115,18 @@ export class SeoService {
     });
   }
 
+  updateRaceStrategiesCalculatorMeta() {
+    this.title.setTitle('Race Strategies Calculator - Running Pace Strategy Planner | Runner Toolkit');
+    this.updateMeta({
+      description: 'Calculate optimal race pacing strategies for 5K, 10K, half marathon, and marathon. Get start slow, build middle, finish strong pace recommendations.',
+      keywords: 'race strategy, pacing strategy, running strategy, race pace calculator, marathon pacing, 5K strategy, 10K strategy, half marathon strategy',
+      'og:title': 'Race Strategies Calculator - Running Pace Strategy Planner | Runner Toolkit',
+      'og:description': 'Calculate optimal race pacing strategies for 5K, 10K, half marathon, and marathon. Get start slow, build middle, finish strong pace recommendations.',
+      'twitter:title': 'Race Strategies Calculator - Running Pace Strategy Planner | Runner Toolkit',
+      'twitter:description': 'Calculate optimal race pacing strategies for 5K, 10K, half marathon, and marathon. Get start slow, build middle, finish strong pace recommendations.'
+    });
+  }
+
   updateContactMeta() {
     this.title.setTitle('Contact Us - Runner Toolkit Support');
     this.updateMeta({

@@ -33,6 +33,13 @@ const commonRoutes: Routes = [
             './pages/tools/race/finish-time-predictor/finish-time-predictor'
           ).then(m => m.FinishTimePredictor),
       },
+      {
+        path: 'race-strategies-calculator',
+        loadComponent: () =>
+          import(
+            './pages/tools/race/race-strategies-calculator/race-strategies-calculator'
+          ).then(m => m.RaceStrategiesCalculator),
+      },
     ],
   },
   {
