@@ -1,8 +1,12 @@
-import { environment } from '../../../environments/environment.prod';
-
 export class LoggerDev {
   private static isDevelopment(): boolean {
-    return !environment.production;
+    return (
+      typeof window !== 'undefined' &&
+      (window.location.hostname === 'localhost' ||
+        window.location.hostname === '127.0.0.1' ||
+        window.location.hostname.startsWith('192.168.') ||
+        window.location.hostname.endsWith('.local'))
+    );
   }
 
   static log(message?: any, ...optionalParams: any[]): void {

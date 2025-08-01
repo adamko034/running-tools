@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { PaceStrategy } from '../business/model/enums/pace-strategy.enum';
 import { Sex } from '../business/model/enums/sex.enum';
 import { Units } from '../store/units.enum';
 
@@ -13,6 +14,7 @@ export interface Config {
   lang: string;
   sex: Sex;
   age: number;
+  paceStrategy: PaceStrategy;
 }
 
 @Injectable({
@@ -40,6 +42,7 @@ export class LocalStorageService {
         height: parsed.height,
         sex: parsed.sex,
         age: parsed.age,
+        paceStrategy: parsed.paceStrategy,
       };
     }
 

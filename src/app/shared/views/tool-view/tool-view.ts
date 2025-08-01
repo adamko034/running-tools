@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, OnDestroy, OnInit, inject } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit, inject, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { Router } from '@angular/router';
 import { AD_SLOTS } from '../../../core/config/ad-slots.config';
@@ -11,11 +11,14 @@ import { GoogleAdComponent } from '../../components/ui/google-ad/google-ad.compo
   imports: [CommonModule, GoogleAdComponent, MatIconModule],
   templateUrl: './tool-view.html',
 })
-export class ToolView implements OnInit, OnDestroy {
+export class ToolView implements OnInit, OnDestroy, AfterViewInit {
   @Input() showSummary = true;
   @Input() calculatorName?: string;
   @Input() calculatorDescription?: string;
   @Input() category?: 'race' | 'personal' | 'training' | 'units';
+
+  @ViewChild('toolContent') toolContent!: ElementRef;
+  @ViewChild('toolSummary') toolSummary!: ElementRef;
 
   // Ad slots from config
   readonly adSlots = AD_SLOTS;
@@ -117,7 +120,51 @@ export class ToolView implements OnInit, OnDestroy {
     }
   }
 
+  ngAfterViewInit(): void {
+    this.setupTabNavigation();
+  }
+
   ngOnDestroy(): void {
     this.structuredDataService.cleanup();
+  }
+
+  private setupTabNavigation(): void {
+    if (!this.toolContent?.nativeElement) return;
+
+    // Find all focusable elements in the tool content
+    const focusableElements = this.toolContent.nativeElement.querySelectorAll(
+      'input, select, textarea, button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+    );
+
+    if (focusableElements.length === 0) return;
+
+    // Get the last focusable element
+    const lastElement = focusableElements[focusableElements.length - 1];
+
+    // Add event listener for tab key on the last element
+    lastElement.addEventListener('keydown', (event: KeyboardEvent) => {
+      if (event.key === 'Tab' && !event.shiftKey) {
+        // Check if there are results to show
+        if (this.toolSummary?.nativeElement && this.showSummary) {
+          event.preventDefault();
+          this.scrollToResults();
+        }
+      }
+    });
+  }
+
+  private scrollToResults(): void {
+    setTimeout(() => {
+      if (this.toolSummary?.nativeElement) {
+        this.toolSummary.nativeElement.scrollIntoView({ 
+          behavior: 'smooth', 
+          block: 'start',
+          inline: 'nearest'
+        });
+        
+        // Focus the results section for accessibility
+        this.toolSummary.nativeElement.focus();
+      }
+    }, 100);
   }
 }

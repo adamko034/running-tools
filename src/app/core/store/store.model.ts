@@ -1,4 +1,5 @@
 import { Distance } from '../business/model/distance.model';
+import { PaceStrategy } from '../business/model/enums/pace-strategy.enum';
 import { Sex } from '../business/model/enums/sex.enum';
 import { Height } from '../business/model/height.model';
 import { Pace } from '../business/model/pace.model';
@@ -16,4 +17,5 @@ export interface Store {
   age: number;
   sex: Sex;
   lang: string;
+  paceStrategy: PaceStrategy;
 }

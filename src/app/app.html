@@ -1,7 +1,7 @@
 <!-- Top Navigation Bar -->
 <header class="top-nav-bar">
   <!-- Brand/Logo -->
-  <a routerLink="/" class="nav-brand-top">
+  <a routerLink="/" class="nav-brand-top" tabindex="-1">
     <img src="icons/icon-48x48.png" alt="Runner Toolkit" class="brand-icon" />
     <span class="brand-text">Runner Toolkit</span>
   </a>
@@ -9,27 +9,29 @@
   <!-- Main Navigation Categories -->
   <nav class="nav-categories" *ngIf="!isMobile">
     @for (navGroup of navigation$ | async; track $index) {
-      <div 
+      <div
         class="nav-category"
         [ngClass]="getCategoryClass(navGroup.title)"
         (mouseenter)="setActiveCategory(navGroup)"
         (mouseleave)="clearActiveCategory()"
       >
-        <button 
+        <button
+          tabindex="-1"
           class="category-button"
           [class.active]="activeCategory === navGroup"
         >
           {{ navGroup.title }}
           <mat-icon class="category-icon">keyboard_arrow_down</mat-icon>
         </button>
-        
+
         <!-- Dropdown Menu -->
-        <div 
+        <div
           class="category-dropdown"
           [class.show]="activeCategory === navGroup"
         >
           @for (link of navGroup.links; track $index) {
-            <a 
+            <a
+              tabindex="-1"
               [routerLink]="link.link"
               class="dropdown-link"
               routerLinkActive="dropdown-link-active"
@@ -49,9 +51,10 @@
   <!-- Settings and Mobile Menu -->
   <div class="nav-actions">
     <app-unit-store-selector *ngIf="!isMobile" />
-    
+
     <!-- Mobile menu button -->
     <button
+      tabindex="-1"
       *ngIf="isMobile"
       mat-icon-button
       (click)="drawer.toggle()"
@@ -70,7 +73,7 @@
       <ng-container *ngTemplateOutlet="mobileNav"></ng-container>
     </div>
   </mat-sidenav>
-  
+
   <mat-sidenav-content>
     <!-- Main content -->
     <main class="main-content">
@@ -97,8 +100,8 @@
 <ng-template #mobileNav>
   <!-- Fixed Header with Close Button -->
   <div class="mobile-nav-header">
-    <button 
-      mat-icon-button 
+    <button
+      mat-icon-button
       (click)="drawer.close()"
       class="close-btn"
       aria-label="Close navigation"
@@ -110,14 +113,17 @@
   <!-- Scrollable Navigation Groups -->
   <div class="mobile-nav-groups">
     @for (navGroup of navigation$ | async; track $index) {
-      <div class="mobile-nav-section" [ngClass]="getCategoryClass(navGroup.title)">
+      <div
+        class="mobile-nav-section"
+        [ngClass]="getCategoryClass(navGroup.title)"
+      >
         <!-- Category Header -->
         <div class="mobile-category-header">
           <div class="category-indicator"></div>
           <span class="category-title">{{ navGroup.title }}</span>
           <div class="category-count">{{ navGroup.links.length }}</div>
         </div>
-        
+
         <!-- Category Links -->
         <div class="mobile-nav-links">
           @for (link of navGroup.links; track $index) {

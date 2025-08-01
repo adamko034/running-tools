@@ -15,7 +15,7 @@
         <!-- Icon and Category Badge Row -->
         <div class="flex items-center justify-center gap-3 mb-6">
           <!-- Category Icon Badge -->
-          <div
+          <!-- <div
             class="w-10 h-10 rounded-full flex items-center justify-center shadow-md"
             [ngClass]="
               category
@@ -24,7 +24,7 @@
             "
           >
             <mat-icon class="text-white text-sm">{{ getToolIcon() }}</mat-icon>
-          </div>
+          </div> -->
 
           <!-- Category Badge -->
           <span
@@ -61,7 +61,7 @@
       </header>
 
       <!-- Content Section -->
-      <main class="mb-12">
+      <main class="mb-12" #toolContent>
         <div
           class="rounded-2xl p-8 shadow-sm border-2 transition-all duration-300"
           [ngClass]="
@@ -84,7 +84,7 @@
       </main>
 
       <!-- Summary Section -->
-      <section *ngIf="showSummary" class="mb-8">
+      <section *ngIf="showSummary" class="mb-8" #toolSummary tabindex="-1">
         <ng-content select="[tool-summary]"></ng-content>
       </section>
 

@@ -5,15 +5,99 @@
 >
   <ng-container tool-title>Race Strategies Calculator</ng-container>
   <ng-container tool-description>
-    Calculate optimal race pacing strategies for any distance from 1K to ultra-marathon. 
-    Get personalized start slow, build middle, finish strong pace recommendations based on your target time.
+    Calculate optimal race pacing strategies for any distance from 1K to
+    ultra-marathon. Get personalized start slow, build middle, finish strong
+    pace recommendations based on your target time.
   </ng-container>
 
   <ng-container tool-content>
-    <!-- Responsive Form Grid -->
-    <div class="grid md:grid-cols-2 gap-6">
-      <app-distance-store-form-field />
-      <app-time-store-form-field />
+    <!-- Strategy Selection - Top Section -->
+    <div class="mb-8">
+      <div class="text-center mb-4">
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">
+          Choose Your Pacing Strategy
+        </h3>
+        <p class="text-sm text-gray-600">
+          Select the approach that best fits your experience and race goals
+        </p>
+      </div>
+
+      <div class="max-w-4xl mx-auto px-4">
+        <!-- Modern Strategy Selector -->
+        <div
+          class="flex flex-col lg:flex-row lg:flex-wrap lg:items-end gap-4 sm:gap-6 p-4 sm:p-6 bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300"
+        >
+          <!-- Dropdown Section -->
+          <div class="w-full lg:flex-shrink-0 lg:w-auto">
+            <label class="block text-sm font-medium text-gray-700 mb-2"
+              >Strategy</label
+            >
+            <div class="relative">
+              <select
+                [ngModel]="selectedPaceStrategy()"
+                (change)="onStrategyChange($event)"
+                tabindex="1"
+                class="appearance-none bg-white border border-gray-300 rounded-xl px-4 py-3 pr-10 text-gray-900 font-medium focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 cursor-pointer hover:border-gray-400 w-full lg:w-[240px] h-12"
+              >
+                @for (strategy of strategies; track strategy.name) {
+                  <option [value]="strategy.key">
+                    {{ strategy.name }}
+                  </option>
+                }
+              </select>
+
+              <!-- Custom dropdown arrow -->
+              <div
+                class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none"
+              >
+                <svg
+                  class="w-5 h-5 text-gray-400"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Description Section -->
+          <div class="w-full lg:flex-1 lg:min-w-0">
+            <div
+              class="flex items-center gap-3 px-4 py-3 bg-blue-50 rounded-xl border border-blue-200 min-h-[48px]"
+            >
+              <div class="w-2 h-2 bg-blue-500 rounded-full flex-shrink-0"></div>
+              <p class="text-sm text-blue-800 font-medium leading-relaxed">
+                {{ selectedStrategy().description }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Race Details - Bottom Section -->
+    <div>
+      <div class="text-center mb-4">
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">Race Details</h3>
+        <p class="text-sm text-gray-600">
+          Enter your target distance and finish time
+        </p>
+      </div>
+
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-lg mx-auto px-4"
+      >
+        <app-distance-store-form-field />
+        <app-time-store-form-field />
+      </div>
+      
     </div>
   </ng-container>
 
@@ -21,61 +105,154 @@
     @if (raceStrategy().length > 0) {
       <app-fancy-result [colorScheme]="'blue-green'">
         <div result-title>
-          Race Strategy for {{ store.distance().value }}{{ store.distance().unit }}
+          {{ selectedStrategy().name }} Strategy for {{ distance().value
+          }}{{ distance().unit }}
         </div>
         <div result-subtitle>
-          Target Time: {{ store.time().format() }} • Strategy Time:
+          Target Time: {{ time().format() }} • Strategy Time:
           {{ getTotalStrategyTime() }}
         </div>
 
         <div result-value>
-          <!-- Race Strategy Segments -->
-          <div class="space-y-4">
-            @for (segment of raceStrategy(); track segment.phase) {
-              <div
-                class="bg-white/90 backdrop-blur-sm rounded-xl p-4 border border-blue-200/50 hover:bg-white transition-all duration-200"
-              >
-                <div
-                  class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3"
-                >
-                  <!-- Phase Info -->
-                  <div class="flex-1">
-                    <h3 class="font-semibold text-gray-900 text-lg">
-                      {{ segment.phase }}
-                    </h3>
-                    <p class="text-sm text-gray-600 mt-1">
-                      {{ segment.description }}
-                    </p>
+          <!-- Race Strategy Timeline -->
+          <div class="relative">
+            <!-- Timeline Line -->
+            <div
+              class="absolute left-8 top-6 bottom-6 w-0.5 bg-gradient-to-b from-blue-400 via-blue-500 to-green-500"
+            ></div>
+
+            <!-- Timeline Segments -->
+            <div class="space-y-6">
+              @for (
+                segment of raceStrategy();
+                track segment.phase;
+                let i = $index;
+                let isLast = $last
+              ) {
+                <div class="relative flex items-start gap-6">
+                  <!-- Timeline Node -->
+                  <div class="relative z-10 flex-shrink-0">
+                    <div
+                      class="w-4 h-4 rounded-full border-2 border-white shadow-lg"
+                      [ngClass]="getTimelineNodeClass(i)"
+                    ></div>
+                    <!-- Phase Number -->
+                    <div
+                      class="absolute -top-1 -left-1 w-6 h-6 rounded-full bg-white border-2 flex items-center justify-center text-xs font-bold"
+                      [ngClass]="getTimelineNumberClass(i)"
+                    >
+                      {{ i + 1 }}
+                    </div>
                   </div>
 
-                  <!-- Distance and Pace -->
-                  <div class="flex items-center gap-4 text-right">
-                    <div>
-                      <div class="text-sm text-gray-500">Distance</div>
-                      <div class="font-medium text-gray-900">
-                        {{ formatDistance(segment.distance) }}
+                  <!-- Content Card -->
+                  <div
+                    class="flex-1 bg-white/90 backdrop-blur-sm rounded-xl p-4 border border-blue-200/50 hover:bg-white transition-all duration-200 shadow-sm"
+                  >
+                    <div
+                      class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3"
+                    >
+                      <!-- Phase Info -->
+                      <div class="flex-1">
+                        <h3 class="font-semibold text-gray-900 text-lg mb-1">
+                          {{ segment.phase }}
+                        </h3>
+                        <p class="text-sm text-gray-600 mb-2">
+                          {{ segment.description }}
+                        </p>
+
+                        <!-- Progress Bar -->
+                        <div
+                          class="flex items-center gap-2 text-xs text-gray-500"
+                        >
+                          <span>Progress:</span>
+                          <div
+                            class="flex-1 h-1.5 bg-gray-200 rounded-full overflow-hidden max-w-32"
+                          >
+                            <div
+                              class="h-full bg-gradient-to-r from-blue-400 to-green-400 rounded-full transition-all duration-500"
+                              [style.width.%]="
+                                ((i + 1) / raceStrategy().length) * 100
+                              "
+                            ></div>
+                          </div>
+                          <span
+                            >{{
+                              Math.round(
+                                ((i + 1) / raceStrategy().length) * 100
+                              )
+                            }}%</span
+                          >
+                        </div>
                       </div>
-                    </div>
-                    <div>
-                      <div class="text-sm text-gray-500">Pace</div>
-                      <div class="font-bold text-blue-600 text-lg">
-                        {{ segment.pace.format() }}
+
+                      <!-- Metrics -->
+                      <div class="flex items-center gap-6 text-right">
+                        <div class="text-center">
+                          <div
+                            class="text-xs text-gray-500 uppercase tracking-wide"
+                          >
+                            Distance Range
+                          </div>
+                          <div class="font-semibold text-gray-900 text-lg">
+                            {{ formatDistanceRange(i) }}
+                          </div>
+                        </div>
+                        <div class="text-center">
+                          <div
+                            class="text-xs text-gray-500 uppercase tracking-wide"
+                          >
+                            Pace
+                          </div>
+                          <div
+                            class="font-bold text-lg"
+                            [ngClass]="getPaceColorClass(i)"
+                          >
+                            {{ segment.pace.format() }}
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
+              }
+            </div>
+
+            <!-- Finish Line -->
+            <div class="relative flex items-center gap-6 mt-6">
+              <div class="relative z-10 flex-shrink-0">
+                <div
+                  class="w-4 h-4 rounded-full bg-yellow-500 border-2 border-white shadow-lg"
+                ></div>
+                <div
+                  class="absolute -top-1 -left-1 w-6 h-6 rounded-full bg-white flex items-center justify-center"
+                >
+                  🏁
+                </div>
               </div>
-            }
+              <div
+                class="flex-1 bg-gradient-to-r from-yellow-50 to-green-50 rounded-xl p-4 border border-yellow-200"
+              >
+                <h3 class="font-semibold text-gray-900 text-lg">
+                  Finish Line!
+                </h3>
+                <p class="text-sm text-gray-600">
+                  Complete your {{ distance().value }}{{ distance().unit }} in
+                  {{ time().format() }}
+                </p>
+              </div>
+            </div>
           </div>
 
           <!-- Strategy Summary -->
           <div class="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
             <h4 class="font-medium text-gray-900 mb-2">Strategy Summary</h4>
-            <p class="text-sm text-gray-700">
+            <p class="text-sm text-gray-500">
               This pacing strategy is designed to help you achieve your target
               time of
-              <strong>{{ store.time().format() }}</strong> for {{ store.distance().value }}{{ store.distance().unit }}. Start conservatively to save
-              energy, maintain your target effort in the middle, and finish with
+              <strong>{{ time().format() }}</strong> for {{ distance().value
+              }}{{ distance().unit }}. Start conservatively to save energy,
+              maintain your target effort in the middle, and finish with
               whatever you have left in the tank.
             </p>
           </div>
@@ -104,7 +281,9 @@
         </h2>
         <div class="space-y-2 text-gray-700">
           <p>
-            <strong>1. Enter your race distance:</strong> Input any distance from 1K to ultra-marathon. The calculator uses research-based pacing strategies that adapt to your specific distance.
+            <strong>1. Enter your race distance:</strong> Input any distance
+            from 1K to ultra-marathon. The calculator uses research-based pacing
+            strategies that adapt to your specific distance.
           </p>
           <p>
             <strong>2. Enter your target time:</strong> Input the finish time
@@ -112,12 +291,20 @@
             fitness and recent race performances.
           </p>
           <p>
-            <strong>3. Review your strategy:</strong> The calculator provides a
-            three-phase pacing plan with specific pace targets for each segment
-            of your race.
+            <strong>3. Choose your pacing strategy:</strong> Select from
+            Negative Split (safest), Even Split (experienced), Positive Split
+            (risky), or Surge Strategy (tactical).
           </p>
           <p>
-            <strong>4. Consider course conditions:</strong> The calculated paces assume ideal flat conditions. Adjust your target time by 5-15% for hilly, trail, hot, or challenging course conditions before generating your strategy.
+            <strong>4. Review your strategy:</strong> The calculator provides a
+            detailed pacing plan with specific pace targets for each segment of
+            your race.
+          </p>
+          <p>
+            <strong>4. Consider course conditions:</strong> The calculated paces
+            assume ideal flat conditions. Adjust your target time by 5-15% for
+            hilly, trail, hot, or challenging course conditions before
+            generating your strategy.
           </p>
           <p>
             <strong>5. Practice the strategy:</strong> Use these paces during
@@ -195,8 +382,9 @@
         </h2>
         <div class="space-y-3 text-gray-700">
           <p>
-            <strong>Important:</strong> The calculated paces assume ideal conditions on a flat, fast course. 
-            Real race conditions require strategy adjustments based on terrain, weather, and surface:
+            <strong>Important:</strong> The calculated paces assume ideal
+            conditions on a flat, fast course. Real race conditions require
+            strategy adjustments based on terrain, weather, and surface:
           </p>
           <div class="grid md:grid-cols-2 gap-4">
             <div>
@@ -205,16 +393,20 @@
               </h4>
               <ul class="list-disc list-inside space-y-1 ml-4 text-sm">
                 <li>
-                  <strong>Hilly courses:</strong> Add 10-20 seconds per km to target paces, run hills by effort not pace
+                  <strong>Hilly courses:</strong> Add 10-20 seconds per km to
+                  target paces, run hills by effort not pace
                 </li>
                 <li>
-                  <strong>Trail/off-road:</strong> Add 15-30 seconds per km depending on technical difficulty
+                  <strong>Trail/off-road:</strong> Add 15-30 seconds per km
+                  depending on technical difficulty
                 </li>
                 <li>
-                  <strong>Altitude (>1500m):</strong> Add 3-5% to target times for every 300m elevation gain
+                  <strong>Altitude (>1500m):</strong> Add 3-5% to target times
+                  for every 300m elevation gain
                 </li>
                 <li>
-                  <strong>Downhill courses:</strong> Can run 5-10 seconds per km faster, but save legs for later
+                  <strong>Downhill courses:</strong> Can run 5-10 seconds per km
+                  faster, but save legs for later
                 </li>
               </ul>
             </div>
@@ -224,24 +416,29 @@
               </h4>
               <ul class="list-disc list-inside space-y-1 ml-4 text-sm">
                 <li>
-                  <strong>Hot weather (>20°C):</strong> Add 2-5% to target times, focus on hydration strategy
+                  <strong>Hot weather (>20°C):</strong> Add 2-5% to target
+                  times, focus on hydration strategy
                 </li>
                 <li>
-                  <strong>Humidity (>70%):</strong> Add 3-8% to target times, start more conservatively
+                  <strong>Humidity (>70%):</strong> Add 3-8% to target times,
+                  start more conservatively
                 </li>
                 <li>
-                  <strong>Headwinds:</strong> Add 5-15 seconds per km, use drafting when possible
+                  <strong>Headwinds:</strong> Add 5-15 seconds per km, use
+                  drafting when possible
                 </li>
                 <li>
-                  <strong>Rain/wet surfaces:</strong> Add 5-10 seconds per km for safety and traction
+                  <strong>Rain/wet surfaces:</strong> Add 5-10 seconds per km
+                  for safety and traction
                 </li>
               </ul>
             </div>
           </div>
           <div class="mt-4 p-3 bg-orange-100 rounded border border-orange-200">
             <p class="text-sm text-orange-800">
-              <strong>Pro Tip:</strong> Study the course profile and weather forecast before race day. 
-              Adjust your target time by 5-15% for challenging conditions, then recalculate your pacing strategy.
+              <strong>Pro Tip:</strong> Study the course profile and weather
+              forecast before race day. Adjust your target time by 5-15% for
+              challenging conditions, then recalculate your pacing strategy.
             </p>
           </div>
         </div>
@@ -359,5 +556,121 @@
         </div>
       </div>
     </div>
+  </ng-container>
+
+  <!-- FAQ Section -->
+  <ng-container tool-faq>
+    <app-faq-section>
+      <div faq-title>Frequently Asked Questions</div>
+
+      <div faq-items>
+        <app-faq-item>
+          <div faq-question>Which pacing strategy should I choose?</div>
+          <div faq-answer>
+            For most runners, the
+            <strong>Negative Split ⭐ (Recommended)</strong> strategy is safest
+            and most effective. It starts conservatively to save energy, builds
+            to target pace, then finishes strong. Choose
+            <strong>Even Split</strong> if you're experienced and want
+            consistent pacing, <strong>Positive Split</strong> for shorter
+            distances where you can risk going out fast, or
+            <strong>Surge Strategy</strong> for tactical races where you want to
+            break away mid-race.
+          </div>
+        </app-faq-item>
+
+        <app-faq-item>
+          <div faq-question>What do the colors mean in the timeline?</div>
+          <div faq-answer>
+            The colors indicate effort level:
+            <span class="text-green-600 font-semibold">🟢 Green</span> for
+            conservative/slower than target pace (easier effort),
+            <span class="text-orange-500 font-semibold">🟠 Orange</span> for
+            target pace (steady effort), and
+            <span class="text-red-800 font-semibold">🔴 Red</span> for
+            aggressive/faster than target pace (harder effort). This helps you
+            quickly understand the intensity required for each phase.
+          </div>
+        </app-faq-item>
+
+        <app-faq-item>
+          <div faq-question>How accurate are these pacing strategies?</div>
+          <div faq-answer>
+            The strategies are based on sports science research and analysis of
+            elite athlete pacing patterns. However, they assume ideal flat
+            course conditions. You should adjust your target time by 5-15% for
+            challenging conditions (hills, heat, wind) before generating your
+            strategy. The calculator ensures all segments mathematically add up
+            to your exact target time.
+          </div>
+        </app-faq-item>
+
+        <app-faq-item>
+          <div faq-question>Can I use this for any race distance?</div>
+          <div faq-answer>
+            Yes! The calculator works for any distance from 1K to
+            ultra-marathon. It automatically adapts the pacing strategy based on
+            distance ranges: shorter distances (≤6km) allow more aggressive
+            finishing, middle distances (6-25km) focus on steady pacing, and
+            longer distances (>25km) emphasize very conservative starts to
+            manage energy depletion.
+          </div>
+        </app-faq-item>
+
+        <app-faq-item>
+          <div faq-question>How should I practice these pacing strategies?</div>
+          <div faq-answer>
+            Practice the specific paces during training runs to develop a feel
+            for each effort level. Try running segments at your calculated paces
+            during long runs or tempo workouts. Use a GPS watch or track to
+            practice hitting the target paces, and focus on perceived effort as
+            much as exact pace numbers since race day conditions may vary.
+          </div>
+        </app-faq-item>
+
+        <app-faq-item>
+          <div faq-question>
+            What if I can't maintain the planned pace during the race?
+          </div>
+          <div faq-answer>
+            Stay flexible! If you're struggling early, slow down and focus on
+            finishing strong rather than hitting exact pace targets. If you feel
+            great, you can gradually pick up the pace, but avoid going
+            significantly faster than planned early in the race. The strategy is
+            a guide - listen to your body and adjust based on how you feel and
+            race conditions.
+          </div>
+        </app-faq-item>
+
+        <app-faq-item>
+          <div faq-question>
+            How do I adjust for hills and challenging course conditions?
+          </div>
+          <div faq-answer>
+            For hilly courses, run by effort rather than exact pace - slow down
+            on uphills and let gravity help on downhills. Add 10-20 seconds per
+            km to your target paces for hilly courses, 15-30 seconds for trails,
+            and 2-8% to your overall target time for hot/humid conditions.
+            Recalculate your strategy with the adjusted target time for more
+            realistic pace goals.
+          </div>
+        </app-faq-item>
+
+        <app-faq-item>
+          <div faq-question>
+            Should I use the same strategy for all my races?
+          </div>
+          <div faq-answer>
+            Not necessarily. Your strategy should match your goals and
+            experience level. Use <strong>Negative Split</strong> for goal races
+            where you want to minimize risk, <strong>Even Split</strong> for
+            time trials or when you know your fitness well,
+            <strong>Positive Split</strong> for shorter races or when trying to
+            break away from competitors, and <strong>Surge Strategy</strong> for
+            tactical races where positioning matters more than pure time.
+          </div>
+        </app-faq-item>
+      </div>
+    </app-faq-section>
   </ng-container>
 </app-tool-view>

@@ -12,6 +12,7 @@ import {
 import { Distance } from '../business/model/distance.model';
 import { DistanceUnit } from '../business/model/enums/distance-unit.enum';
 import { HeightUnit } from '../business/model/enums/height-unit.enum';
+import { PaceStrategy } from '../business/model/enums/pace-strategy.enum';
 import { WeightUnit } from '../business/model/enums/weight-unit.enum';
 import { Height } from '../business/model/height.model';
 import { Pace } from '../business/model/pace.model';
@@ -71,10 +72,14 @@ export class StoreService {
     return computed(() => this._store().sex);
   }
 
+  get paceStrategy(): Signal<PaceStrategy> {
+    return computed(() => this._store().paceStrategy);
+  }
+
   constructor() {
     this._store = signal<Store>(this.loadStore());
     effect(() => {
-      LoggerDev.log('store change', this._store);
+      LoggerDev.log('store change', this._store());
       this.calculatePace();
       // Only save to localStorage in browser
       if (isPlatformBrowser(this.platformId)) {
@@ -138,6 +143,11 @@ export class StoreService {
     this._store.update(current => ({ ...current, sex }));
   }
 
+  public updatePaceStrategy(strategy: PaceStrategy) {
+    LoggerDev.log('store, pace category change ', strategy);
+    this._store.update(current => ({ ...current, paceStrategy: strategy }));
+  }
+
   private calculatePace() {
     const { time, distance, pace: currentPace } = this._store();
     const newPace = Pace.calculate(time, distance);
@@ -148,8 +158,17 @@ export class StoreService {
   }
 
   private saveStore() {
-    const { distance, units, time, weight, lang, height, sex, age } =
-      this._store();
+    const {
+      distance,
+      units,
+      time,
+      weight,
+      lang,
+      height,
+      sex,
+      age,
+      paceStrategy,
+    } = this._store();
     this.localStorageService.save({
       distance: distance.value,
       units,
@@ -161,6 +180,7 @@ export class StoreService {
       sex,
       age,
       lang,
+      paceStrategy,
     });
   }
 
@@ -202,6 +222,7 @@ export class StoreService {
     const lang = initialStore.lang;
     const sex = stored.sex || initialStore.sex;
     const age = stored.age || initialStore.age;
+    const paceStrategy = stored.paceStrategy || initialStore.paceStrategy;
 
     return {
       ...initialStore,
@@ -213,6 +234,7 @@ export class StoreService {
       height,
       sex,
       age,
+      paceStrategy,
     };
   }
 
@@ -238,6 +260,7 @@ export class StoreService {
       lang: 'en',
       sex: Sex.M,
       age: 30,
+      paceStrategy: PaceStrategy.NEGATIVE,
     };
   }
 

@@ -19,6 +19,8 @@ export class NavigationService {
           'NAVIGATION.RACE.PACE_CALCULATOR_DESC',
           'NAVIGATION.RACE.FINISH_TIME_PREDICTOR',
           'NAVIGATION.RACE.FINISH_TIME_PREDICTOR_DESC',
+          'NAVIGATION.RACE.RACE_STRATEGIES_CALCULATOR',
+          'NAVIGATION.RACE.RACE_STRATEGIES_CALCULATOR_DESC',
           'NAVIGATION.PERSONAL.TITLE',
           'NAVIGATION.PERSONAL.CALORIES_BURNED_CALCULATOR',
           'NAVIGATION.PERSONAL.CALORIES_BURNED_CALCULATOR_DESC',
@@ -56,6 +58,13 @@ export class NavigationService {
               description:
                 translations['NAVIGATION.RACE.FINISH_TIME_PREDICTOR_DESC'],
               icon: 'flag',
+            },
+            {
+              text: translations['NAVIGATION.RACE.RACE_STRATEGIES_CALCULATOR'],
+              link: 'tools/race/race-strategies-calculator',
+              description:
+                translations['NAVIGATION.RACE.RACE_STRATEGIES_CALCULATOR_DESC'],
+              icon: 'timeline',
             },
           ],
         },

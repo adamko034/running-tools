@@ -9,7 +9,9 @@
       "FINISH_TIME_PREDICTOR": "Finish Time Predictor",
       "FINISH_TIME_PREDICTOR_DESC": "Predict race finish times based on current performance",
       "PACE_CALCULATOR": "Pace Calculator",
-      "PACE_CALCULATOR_DESC": "Calculate pace from distance and time"
+      "PACE_CALCULATOR_DESC": "Calculate pace from distance and time",
+      "RACE_STRATEGIES_CALCULATOR": "Race Strategies",
+      "RACE_STRATEGIES_CALCULATOR_DESC": "Generate optimal pacing strategies for any race distance"
     },
     "PERSONAL": {
       "TITLE": "Personal Tools",

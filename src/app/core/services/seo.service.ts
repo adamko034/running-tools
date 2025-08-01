@@ -116,14 +116,14 @@ export class SeoService {
   }
 
   updateRaceStrategiesCalculatorMeta() {
-    this.title.setTitle('Race Strategies Calculator - Running Pace Strategy Planner | Runner Toolkit');
+    this.title.setTitle('Race Strategies Calculator - Marathon Pacing Strategy & Race Pace Planner | Runner Toolkit');
     this.updateMeta({
-      description: 'Calculate optimal race pacing strategies for 5K, 10K, half marathon, and marathon. Get start slow, build middle, finish strong pace recommendations.',
-      keywords: 'race strategy, pacing strategy, running strategy, race pace calculator, marathon pacing, 5K strategy, 10K strategy, half marathon strategy',
-      'og:title': 'Race Strategies Calculator - Running Pace Strategy Planner | Runner Toolkit',
-      'og:description': 'Calculate optimal race pacing strategies for 5K, 10K, half marathon, and marathon. Get start slow, build middle, finish strong pace recommendations.',
-      'twitter:title': 'Race Strategies Calculator - Running Pace Strategy Planner | Runner Toolkit',
-      'twitter:description': 'Calculate optimal race pacing strategies for 5K, 10K, half marathon, and marathon. Get start slow, build middle, finish strong pace recommendations.'
+      description: 'Free race strategies calculator with optimal pacing plans for 5K, 10K, half marathon, and marathon. Choose negative split, even split, positive split, or surge strategy. Get personalized race pace recommendations with start slow, build middle, finish strong tactics.',
+      keywords: 'race strategies calculator, marathon pacing strategy, race pace calculator, running pacing strategy, negative split calculator, even split pacing, positive split strategy, surge strategy calculator, 5K pacing strategy, 10K race strategy, half marathon pacing, marathon race strategy, race day pacing, optimal race pacing, running strategy calculator, pace planning tool, race tactics calculator, marathon pace planner, running pace strategy, race pacing calculator, marathon strategy planner',
+      'og:title': 'Race Strategies Calculator - Marathon Pacing Strategy & Race Pace Planner | Runner Toolkit',
+      'og:description': 'Free race strategies calculator with optimal pacing plans for 5K, 10K, half marathon, and marathon. Choose negative split, even split, positive split, or surge strategy. Get personalized race pace recommendations.',
+      'twitter:title': 'Race Strategies Calculator - Marathon Pacing Strategy & Race Pace Planner | Runner Toolkit',
+      'twitter:description': 'Free race strategies calculator with optimal pacing plans for 5K, 10K, half marathon, and marathon. Choose negative split, even split, positive split, or surge strategy.'
     });
   }
 
