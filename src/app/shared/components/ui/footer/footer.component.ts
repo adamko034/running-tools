@@ -3,7 +3,6 @@ import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
-import { TranslateModule } from '@ngx-translate/core';
 import { environment } from '../../../../../environments/environment.prod';
 import { DataCatalog } from '../../../../core/business/catalog/data-catalog';
 import { AccentLineComponent } from '../accent-line/accent-line.component';
@@ -15,7 +14,6 @@ import { AccentLineComponent } from '../accent-line/accent-line.component';
     CommonModule,
     MatIconModule,
     MatButtonModule,
-    TranslateModule,
     RouterModule,
     AccentLineComponent,
   ],

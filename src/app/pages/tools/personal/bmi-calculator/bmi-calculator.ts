@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, effect, inject } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-import { TranslateModule } from '@ngx-translate/core';
 import { CalculatorsFacade } from '../../../../core/business/calculators-facade';
 import { BmiCategory } from '../../../../core/business/model/enums/bmi-category.enum';
 import { FatCategory } from '../../../../core/business/model/enums/fat-category.enum';
@@ -23,7 +22,6 @@ import { ToolView } from '../../../../shared/views/tool-view/tool-view';
 @Component({
   selector: 'app-bmi-calculator',
   imports: [
-    TranslateModule,
     ToolView,
     WeightStoreFormField,
     HeightStoreFormField,

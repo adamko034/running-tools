@@ -1,146 +1,93 @@
 import { Injectable } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
-import { Observable, map, startWith, switchMap } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { Navigation } from '../navigation/navigation.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class NavigationService {
-  constructor(private translateService: TranslateService) {}
-
   getNavigation(): Observable<Navigation[]> {
-    return this.translateService.onLangChange.pipe(
-      startWith({ lang: this.translateService.currentLang }),
-      switchMap(() =>
-        this.translateService.get([
-          'NAVIGATION.RACE.TITLE',
-          'NAVIGATION.RACE.PACE_CALCULATOR',
-          'NAVIGATION.RACE.PACE_CALCULATOR_DESC',
-          'NAVIGATION.RACE.FINISH_TIME_PREDICTOR',
-          'NAVIGATION.RACE.FINISH_TIME_PREDICTOR_DESC',
-          'NAVIGATION.RACE.RACE_STRATEGIES_CALCULATOR',
-          'NAVIGATION.RACE.RACE_STRATEGIES_CALCULATOR_DESC',
-          'NAVIGATION.PERSONAL.TITLE',
-          'NAVIGATION.PERSONAL.CALORIES_BURNED_CALCULATOR',
-          'NAVIGATION.PERSONAL.CALORIES_BURNED_CALCULATOR_DESC',
-          'NAVIGATION.PERSONAL.VO2MAX_CALCULATOR',
-          'NAVIGATION.PERSONAL.VO2MAX_CALCULATOR_DESC',
-          'NAVIGATION.PERSONAL.PACE_SPEED_CONVERTER',
-          'NAVIGATION.PERSONAL.PACE_SPEED_CONVERTER_DESC',
-          'NAVIGATION.PERSONAL.BMI_CALCULATOR',
-          'NAVIGATION.PERSONAL.BMI_CALCULATOR_DESC',
-          'NAVIGATION.TRAINING.TITLE',
-          'NAVIGATION.TRAINING.TRAINING_PACES_CALCULATOR',
-          'NAVIGATION.TRAINING.TRAINING_PACES_CALCULATOR_DESC',
-          'NAVIGATION.UNITS.TITLE',
-          'NAVIGATION.UNITS.DISTANCE_CONVERTER',
-          'NAVIGATION.UNITS.DISTANCE_CONVERTER_DESC',
-          'NAVIGATION.UNITS.WEIGHT_CONVERTER',
-          'NAVIGATION.UNITS.WEIGHT_CONVERTER_DESC',
-          'NAVIGATION.UNITS.PACE_SPEED_CONVERTER',
-          'NAVIGATION.UNITS.PACE_SPEED_CONVERTER_DESC',
-        ])
-      ),
-      map((translations: any) => [
-        {
-          title: translations['NAVIGATION.RACE.TITLE'],
-          links: [
-            {
-              text: translations['NAVIGATION.RACE.PACE_CALCULATOR'],
-              link: 'tools/race/pace-calculator',
-              description: translations['NAVIGATION.RACE.PACE_CALCULATOR_DESC'],
-              icon: 'speed',
-            },
-            {
-              text: translations['NAVIGATION.RACE.FINISH_TIME_PREDICTOR'],
-              link: 'tools/race/finish-time-predictor',
-              description:
-                translations['NAVIGATION.RACE.FINISH_TIME_PREDICTOR_DESC'],
-              icon: 'flag',
-            },
-            {
-              text: translations['NAVIGATION.RACE.RACE_STRATEGIES_CALCULATOR'],
-              link: 'tools/race/race-strategies-calculator',
-              description:
-                translations['NAVIGATION.RACE.RACE_STRATEGIES_CALCULATOR_DESC'],
-              icon: 'timeline',
-            },
-          ],
-        },
-        {
-          title: translations['NAVIGATION.TRAINING.TITLE'],
-          links: [
-            {
-              text: translations[
-                'NAVIGATION.TRAINING.TRAINING_PACES_CALCULATOR'
-              ],
-              link: 'tools/training/training-paces-calculator',
-              description:
-                translations[
-                  'NAVIGATION.TRAINING.TRAINING_PACES_CALCULATOR_DESC'
-                ],
-              icon: 'directions_run',
-            },
-          ],
-        },
-        {
-          title: translations['NAVIGATION.PERSONAL.TITLE'],
-          links: [
-            {
-              text: translations['NAVIGATION.PERSONAL.BMI_CALCULATOR'],
-              link: 'tools/personal/bmi-calculator',
-              description:
-                translations['NAVIGATION.PERSONAL.BMI_CALCULATOR_DESC'],
-              icon: 'monitor_weight',
-            },
-            {
-              text: translations[
-                'NAVIGATION.PERSONAL.CALORIES_BURNED_CALCULATOR'
-              ],
-              link: 'tools/personal/burned-calories-estimator',
-              description:
-                translations[
-                  'NAVIGATION.PERSONAL.CALORIES_BURNED_CALCULATOR_DESC'
-                ],
-              icon: 'local_fire_department',
-            },
-            {
-              text: translations['NAVIGATION.PERSONAL.VO2MAX_CALCULATOR'],
-              link: 'tools/personal/vo2max-calculator',
-              description:
-                translations['NAVIGATION.PERSONAL.VO2MAX_CALCULATOR_DESC'],
-              icon: 'favorite',
-            },
-          ],
-        },
-        {
-          title: translations['NAVIGATION.UNITS.TITLE'],
-          links: [
-            {
-              text: translations['NAVIGATION.UNITS.PACE_SPEED_CONVERTER'],
-              link: 'tools/units/pace-to-speed',
-              description:
-                translations['NAVIGATION.UNITS.PACE_SPEED_CONVERTER_DESC'],
-              icon: 'swap_horiz',
-            },
-            {
-              text: translations['NAVIGATION.UNITS.DISTANCE_CONVERTER'],
-              link: 'tools/units/kilometers-to-miles',
-              description:
-                translations['NAVIGATION.UNITS.DISTANCE_CONVERTER_DESC'],
-              icon: 'straighten',
-            },
-            {
-              text: translations['NAVIGATION.UNITS.WEIGHT_CONVERTER'],
-              link: 'tools/units/kilograms-to-pounds',
-              description:
-                translations['NAVIGATION.UNITS.WEIGHT_CONVERTER_DESC'],
-              icon: 'fitness_center',
-            },
-          ],
-        },
-      ])
-    );
+    return of([
+      {
+        title: 'Race Tools',
+        links: [
+          {
+            text: 'Pace Calculator',
+            link: 'tools/race/pace-calculator',
+            description: 'Calculate pace from distance and time',
+            icon: 'speed',
+          },
+          {
+            text: 'Finish Time Predictor',
+            link: 'tools/race/finish-time-predictor',
+            description: 'Predict race finish times based on current performance',
+            icon: 'flag',
+          },
+          {
+            text: 'Race Strategies',
+            link: 'tools/race/race-strategies-calculator',
+            description: 'Generate optimal pacing strategies for any race distance',
+            icon: 'timeline',
+          },
+        ],
+      },
+      {
+        title: 'Training',
+        links: [
+          {
+            text: 'My Training Paces',
+            link: 'tools/training/training-paces-calculator',
+            description: 'Get personalized training paces based on your recent run',
+            icon: 'directions_run',
+          },
+        ],
+      },
+      {
+        title: 'Personal Tools',
+        links: [
+          {
+            text: 'BMI & Body Composition',
+            link: 'tools/personal/bmi-calculator',
+            description: 'Calculate your BMI and estimate body fat using advanced methods',
+            icon: 'monitor_weight',
+          },
+          {
+            text: 'Calories Burned',
+            link: 'tools/personal/burned-calories-estimator',
+            description: 'Calculate calories burned during your runs',
+            icon: 'local_fire_department',
+          },
+          {
+            text: 'VO₂ Max',
+            link: 'tools/personal/vo2max-calculator',
+            description: 'Estimate your maximum oxygen uptake',
+            icon: 'favorite',
+          },
+        ],
+      },
+      {
+        title: 'Unit Converters',
+        links: [
+          {
+            text: 'Pace / Speed Converter',
+            link: 'tools/units/pace-to-speed',
+            description: 'Convert between pace and speed units',
+            icon: 'swap_horiz',
+          },
+          {
+            text: 'Distance Converter',
+            link: 'tools/units/kilometers-to-miles',
+            description: 'Convert between kilometers and miles',
+            icon: 'straighten',
+          },
+          {
+            text: 'Weight Converter',
+            link: 'tools/units/kilograms-to-pounds',
+            description: 'Convert between kilograms and pounds',
+            icon: 'fitness_center',
+          },
+        ],
+      },
+    ]);
   }
 }

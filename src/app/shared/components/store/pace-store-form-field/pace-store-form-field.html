@@ -1,4 +1,4 @@
-<app-form-field [horizontalLineText]="'COMMON.PACE' | translate">
+<app-form-field [horizontalLineText]="'Pace'">
   <!-- Modern Pace Input -->
   <div class="relative group w-52">
     <div
@@ -56,7 +56,7 @@
     <!-- Validation Error Message -->
     @if (!isValid() && errorMessage()) {
       <div class="mt-1 text-sm text-red-600 font-medium text-center">
-        {{ errorMessage() | translate }}
+        {{ errorMessage() }}
       </div>
     }
 

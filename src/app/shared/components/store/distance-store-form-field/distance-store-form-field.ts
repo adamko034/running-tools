@@ -5,7 +5,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
-import { TranslateModule } from '@ngx-translate/core';
 import { DataCatalog } from '../../../../core/business/catalog/data-catalog';
 import { StoreService } from '../../../../core/store/store.service';
 import { SelectOnFocus } from '../../../directives/select-on-focus';
@@ -21,9 +20,7 @@ import { FormField } from '../../ui/form-field/form-field';
     SelectOnFocus,
     MatIconModule,
     MatMenuModule,
-    TranslateModule,
     FormField,
-    TranslateModule,
   ],
   templateUrl: './distance-store-form-field.html',
 })
@@ -82,7 +79,7 @@ export class DistanceStoreFormField {
     // Handle empty input (value would be 0 from parseFloat)
     if (value === 0) {
       this.isValid.set(false);
-      this.errorMessage.set('COMMON.VALIDATION.VALUE_INVALID');
+      this.errorMessage.set('Value is invalid');
       return false;
     }
 
@@ -93,7 +90,7 @@ export class DistanceStoreFormField {
     const valid = isValidNumber && isPositive;
 
     this.isValid.set(valid);
-    this.errorMessage.set(valid ? '' : 'COMMON.VALIDATION.VALUE_INVALID');
+    this.errorMessage.set(valid ? '' : 'Value is invalid');
 
     return valid;
   }

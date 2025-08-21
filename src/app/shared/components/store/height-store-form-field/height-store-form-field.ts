@@ -3,7 +3,6 @@ import { Component, computed, effect, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { TranslateModule } from '@ngx-translate/core';
 import { HeightUnit } from '../../../../core/business/model/enums/height-unit.enum';
 import { Height } from '../../../../core/business/model/height.model';
 import { StoreService } from '../../../../core/store/store.service';
@@ -17,7 +16,6 @@ import { FormField } from '../../ui/form-field/form-field';
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
-    TranslateModule,
     SelectOnFocus,
     FormField,
   ],
@@ -122,7 +120,7 @@ export class HeightStoreFormField {
     const valid = isValidNumber && isPositive;
 
     this.isValid.set(valid);
-    this.errorMessage.set(valid ? '' : 'COMMON.VALIDATION.VALUE_INVALID');
+    this.errorMessage.set(valid ? '' : 'Value is invalid');
 
     return valid;
   }
@@ -139,7 +137,7 @@ export class HeightStoreFormField {
     const valid = isValidFeet && isValidInches && isPositive;
 
     this.isValid.set(valid);
-    this.errorMessage.set(valid ? '' : 'COMMON.VALIDATION.VALUE_INVALID');
+    this.errorMessage.set(valid ? '' : 'Value is invalid');
 
     return valid;
   }

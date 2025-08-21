@@ -4,7 +4,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { DataCatalog } from '../../core/business/catalog/data-catalog';
 import { SeoService } from '../../core/services/seo.service';
 
@@ -17,14 +16,12 @@ import { SeoService } from '../../core/services/seo.service';
     MatIconModule,
     MatCardModule,
     MatSnackBarModule,
-    TranslateModule,
   ],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
 })
 export class ContactComponent {
   private snackBar = inject(MatSnackBar);
-  private translateService = inject(TranslateService);
   private seoService = inject(SeoService);
 
   readonly email = DataCatalog.EMAIL;
@@ -41,7 +38,7 @@ export class ContactComponent {
   async copyEmail(): Promise<void> {
     try {
       await navigator.clipboard.writeText(this.email);
-      const message = this.translateService.instant('contact.email_copied');
+      const message = 'Email address copied to clipboard!';
       this.snackBar.open(message, '', {
         duration: 2000,
         horizontalPosition: 'center',
@@ -66,7 +63,7 @@ export class ContactComponent {
 
     try {
       document.execCommand('copy');
-      const message = this.translateService.instant('contact.email_copied');
+      const message = 'Email address copied to clipboard!';
       this.snackBar.open(message, '', {
         duration: 2000,
         horizontalPosition: 'center',
@@ -74,7 +71,7 @@ export class ContactComponent {
         panelClass: ['success-snackbar'],
       });
     } catch (err) {
-      const message = this.translateService.instant('contact.copy_failed');
+      const message = 'Failed to copy email. Please copy manually.';
       this.snackBar.open(message, '', {
         duration: 3000,
         horizontalPosition: 'center',

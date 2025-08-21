@@ -1,4 +1,4 @@
-<app-form-field [horizontalLineText]="'COMMON.TIME' | translate">
+<app-form-field [horizontalLineText]="'Time'">
   <!-- Modern Time Input -->
   <div class="relative group w-56">
     <div
@@ -70,7 +70,7 @@
     <!-- Validation Error Message -->
     @if (!isValid() && errorMessage()) {
       <div class="mt-1 text-sm text-red-600 font-medium text-center">
-        {{ errorMessage() | translate }}
+        {{ errorMessage() }}
       </div>
     }
 

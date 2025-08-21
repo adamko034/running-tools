@@ -33,8 +33,6 @@
     "@angular/service-worker": "^20.0.0",
     "@angular/ssr": "^20.0.1",
     "@ngneat/tailwind": "^7.0.3",
-    "@ngx-translate/core": "^16.0.4",
-    "@ngx-translate/http-loader": "^16.0.1",
     "@tailwindcss/cli": "^4.1.8",
     "@tailwindcss/postcss": "^4.1.8",
     "express": "^5.1.0",

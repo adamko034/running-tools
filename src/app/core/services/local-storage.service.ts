@@ -11,7 +11,6 @@ export interface Config {
   timeSeconds: number;
   weight: number;
   height: number;
-  lang: string;
   sex: Sex;
   age: number;
   paceStrategy: PaceStrategy;
@@ -38,7 +37,6 @@ export class LocalStorageService {
         timeMinutes: parsed.timeMinutes,
         timeSeconds: parsed.timeSeconds,
         weight: parsed.weight,
-        lang: parsed.lang,
         height: parsed.height,
         sex: parsed.sex,
         age: parsed.age,

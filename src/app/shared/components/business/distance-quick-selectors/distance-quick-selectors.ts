@@ -1,10 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-distance-quick-selectors',
-  imports: [TranslateModule, CommonModule],
+  imports: [CommonModule],
   templateUrl: './distance-quick-selectors.html',
 })
 export class DistanceQuickSelectors {

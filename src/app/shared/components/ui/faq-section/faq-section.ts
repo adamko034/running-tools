@@ -5,7 +5,6 @@ import {
   OnDestroy,
   OnInit,
 } from '@angular/core';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import {
   FAQItem,
   StructuredDataService,
@@ -16,11 +15,10 @@ import { LoggerDev } from '../../../../core/utils/logger-dev';
   selector: 'app-faq-section',
   templateUrl: './faq-section.html',
   standalone: true,
-  imports: [TranslateModule],
+  imports: [],
 })
 export class FaqSectionComponent implements OnInit, OnDestroy, AfterViewInit {
   private structuredDataService = inject(StructuredDataService);
-  private translateService = inject(TranslateService);
 
   private faqItems: FAQItem[] = [];
   private pageTitle: string = '';

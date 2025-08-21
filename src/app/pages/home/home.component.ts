@@ -4,7 +4,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
-import { TranslateModule } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
 import { AD_SLOTS } from '../../core/config/ad-slots.config';
 import { Navigation } from '../../core/navigation/navigation.model';
@@ -21,7 +20,6 @@ import { AdContainerComponent } from '../../shared/components/ui/ad-container/ad
     MatCardModule,
     MatIconModule,
     MatButtonModule,
-    TranslateModule,
     AdContainerComponent,
   ],
   templateUrl: './home.component.html',

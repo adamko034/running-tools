@@ -1,4 +1,4 @@
-<app-form-field [horizontalLineText]="'COMMON.SEX' | translate">
+<app-form-field [horizontalLineText]="'Sex'">
   <!-- Modern Sex Input -->
   <div class="relative group w-32">
     <div class="flex items-center bg-white/80 backdrop-blur-sm rounded-xl border border-slate-200/60 shadow-sm hover:shadow-md transition-all duration-200 focus-within:ring-2 focus-within:ring-slate-300/50 focus-within:border-slate-300">
@@ -28,14 +28,14 @@
       (click)="onSexChange(sexValues.F)"
       class="text-slate-700 hover:bg-slate-50"
     >
-      {{ 'COMMON.SEX_F' | translate }}
+      Female
     </button>
     <button
       mat-menu-item
       (click)="onSexChange(sexValues.M)"
       class="text-slate-700 hover:bg-slate-50"
     >
-      {{ 'COMMON.SEX_M' | translate }}
+      Male
     </button>
   </mat-menu>
 </app-form-field>

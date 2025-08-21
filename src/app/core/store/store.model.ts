@@ -16,6 +16,5 @@ export interface Store {
   height: Height;
   age: number;
   sex: Sex;
-  lang: string;
   paceStrategy: PaceStrategy;
 }

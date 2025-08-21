@@ -3,7 +3,6 @@ import { Component, computed, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { TranslateModule } from '@ngx-translate/core';
 import { Pace } from '../../../../core/business/model/pace.model';
 import { StoreService } from '../../../../core/store/store.service';
 import { SelectOnFocus } from '../../../directives/select-on-focus';
@@ -18,7 +17,6 @@ import { FormField } from '../../ui/form-field/form-field';
     MatInputModule,
     SelectOnFocus,
     FormField,
-    TranslateModule,
   ],
   templateUrl: './pace-store-form-field.html',
 })
@@ -73,7 +71,7 @@ export class PaceStoreFormField {
     const valid = isValidMinutes && isValidSeconds && isNotZero;
     
     this.isValid.set(valid);
-    this.errorMessage.set(valid ? '' : 'COMMON.VALIDATION.VALUE_INVALID');
+    this.errorMessage.set(valid ? '' : 'Value is invalid');
     
     return valid;
   }

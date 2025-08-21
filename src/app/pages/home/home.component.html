@@ -33,7 +33,7 @@
           <h1
             class="text-4xl md:text-6xl font-bold mb-2 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent"
           >
-            {{ 'APP.TITLE' | translate }}
+            Runner Toolkit
           </h1>
         </div>
       </div>
@@ -41,7 +41,7 @@
       <p
         class="text-lg md:text-xl leading-relaxed mb-6 md:mb-8 text-blue-100 max-w-3xl mx-auto"
       >
-        {{ 'APP.DESCRIPTION' | translate }}
+        Professional running tools for race planning, performance tracking, and unit conversions.
       </p>
 
       <!-- Mobile-optimized feature highlights -->
@@ -51,19 +51,19 @@
         <div class="flex items-center gap-2">
           <mat-icon class="text-lg">trending_up</mat-icon>
           <span class="text-sm md:text-base">{{
-            'HOME.HERO_TRACK_PROGRESS' | translate
+            'Track Progress'
           }}</span>
         </div>
         <div class="flex items-center gap-2">
           <mat-icon class="text-lg">psychology</mat-icon>
           <span class="text-sm md:text-base">{{
-            'HOME.HERO_TRAIN_SMART' | translate
+            'Train Smart'
           }}</span>
         </div>
         <div class="flex items-center gap-2">
           <mat-icon class="text-lg">emoji_events</mat-icon>
           <span class="text-sm md:text-base">{{
-            'HOME.HERO_ACHIEVE_GOALS' | translate
+            'Achieve Goals'
           }}</span>
         </div>
       </div>
@@ -74,9 +74,9 @@
   <section class="mb-16">
     <div class="text-center mb-8">
       <h2 class="text-3xl font-bold text-gray-900 mb-2">
-        {{ 'HOME.QUICK_START_TITLE' | translate }}
+        Quick Start
       </h2>
-      <p class="text-gray-600">{{ 'HOME.QUICK_START_SUBTITLE' | translate }}</p>
+      <p class="text-gray-600">Jump right into our most popular tools</p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
@@ -95,12 +95,12 @@
             <h3 class="font-bold text-gray-900">Pace Calculator</h3>
             <div class="flex items-center gap-1 text-sm text-blue-600">
               <mat-icon class="text-xs">trending_up</mat-icon>
-              <span>{{ 'HOME.QUICK_START_MOST_POPULAR' | translate }}</span>
+              <span>Most Popular</span>
             </div>
           </div>
         </div>
         <p class="text-gray-700 text-sm mb-4">
-          {{ 'HOME.QUICK_START_PACE_DESC' | translate }}
+          Calculate your running pace from distance and time
         </p>
         <div class="flex items-center justify-between">
           <span class="text-xs text-gray-500">Race Tools</span>
@@ -125,12 +125,12 @@
             <h3 class="font-bold text-gray-900">BMI Calculator</h3>
             <div class="flex items-center gap-1 text-sm text-green-600">
               <mat-icon class="text-xs">favorite</mat-icon>
-              <span>{{ 'HOME.QUICK_START_HEALTH_FOCUS' | translate }}</span>
+              <span>Health Focus</span>
             </div>
           </div>
         </div>
         <p class="text-gray-700 text-sm mb-4">
-          {{ 'HOME.QUICK_START_BMI_DESC' | translate }}
+          Calculate BMI and body composition analysis
         </p>
         <div class="flex items-center justify-between">
           <span class="text-xs text-gray-500">Personal Tools</span>
@@ -155,12 +155,12 @@
             <h3 class="font-bold text-gray-900">Training Paces</h3>
             <div class="flex items-center gap-1 text-sm text-purple-600">
               <mat-icon class="text-xs">psychology</mat-icon>
-              <span>{{ 'HOME.QUICK_START_SMART_TRAINING' | translate }}</span>
+              <span>Smart Training</span>
             </div>
           </div>
         </div>
         <p class="text-gray-700 text-sm mb-4">
-          {{ 'HOME.QUICK_START_TRAINING_DESC' | translate }}
+          Get personalized training paces for optimal performance
         </p>
         <div class="flex items-center justify-between">
           <span class="text-xs text-gray-500">Training</span>
@@ -177,9 +177,9 @@
   <section class="mb-16">
     <div class="text-center mb-12">
       <h2 class="text-3xl font-bold text-gray-900 mb-2">
-        {{ 'HOME.ALL_TOOLS_TITLE' | translate }}
+        All Tools
       </h2>
-      <p class="text-gray-600">{{ 'HOME.ALL_TOOLS_SUBTITLE' | translate }}</p>
+      <p class="text-gray-600">Comprehensive suite of running calculators and converters</p>
     </div>
 
     @for (category of navigation$ | async; track $index) {
@@ -262,20 +262,20 @@
     class="bg-gradient-to-br from-gray-50 to-gray-200 rounded-2xl px-8 py-12 text-center"
   >
     <h2 class="text-4xl font-bold text-gray-900 mb-8">
-      {{ 'HOME.WHY_CHOOSE' | translate }}
+      Why Choose Runner Toolkit?
     </h2>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
       <ng-container
         *ngTemplateOutlet="
           card;
-          context: { icon: 'speed', titleKey: 'HOME.FAST_ACCURATE' }
+          context: { icon: 'speed', title: 'Fast & Accurate', desc: 'Get instant, precise calculations for all your running metrics.' }
         "
       ></ng-container>
       <ng-container
         *ngTemplateOutlet="
           card;
-          context: { icon: 'phone_android', titleKey: 'HOME.MOBILE_FRIENDLY' }
+          context: { icon: 'phone_android', title: 'Mobile Friendly', desc: 'Works perfectly on all devices - phone, tablet, or desktop.' }
         "
       ></ng-container>
       <!-- <ng-container
@@ -287,7 +287,7 @@
       <ng-container
         *ngTemplateOutlet="
           card;
-          context: { icon: 'build', titleKey: 'HOME.CUSTOMIZABLE' }
+          context: { icon: 'build', title: 'Customizable', desc: 'Choose your preferred units and settings for a personalized experience.' }
         "
       ></ng-container>
     </div>
@@ -299,14 +299,14 @@
   </section>
 </div>
 
-<ng-template #card let-icon="icon" let-titleKey="titleKey">
+<ng-template #card let-icon="icon" let-title="title" let-desc="desc">
   <div class="text-center p-6">
     <mat-icon class="text-6xl text-blue-700 mb-4">{{ icon }}</mat-icon>
     <h3 class="text-xl font-semibold text-gray-900 mb-2">
-      {{ titleKey | translate }}
+      {{ title }}
     </h3>
     <p class="text-gray-700 leading-relaxed">
-      {{ titleKey + '_DESC' | translate }}
+      {{ desc }}
     </p>
   </div>
 </ng-template>

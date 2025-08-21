@@ -3,7 +3,6 @@ import { Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
-import { TranslateModule } from '@ngx-translate/core';
 import { StoreService } from '../../../../core/store/store.service';
 import { Units } from '../../../../core/store/units.enum';
 
@@ -14,7 +13,6 @@ import { Units } from '../../../../core/store/units.enum';
     MatButtonModule,
     MatMenuModule,
     MatIconModule,
-    TranslateModule,
   ],
   templateUrl: './unit-store-selector.html',
 })

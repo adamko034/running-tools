@@ -1,14 +1,13 @@
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatMenuModule } from '@angular/material/menu';
-import { TranslateModule } from '@ngx-translate/core';
 import { Sex } from '../../../../core/business/model/enums/sex.enum';
 import { StoreService } from '../../../../core/store/store.service';
 import { FormField } from '../../ui/form-field/form-field';
 
 @Component({
   selector: 'app-sex-store-form-field',
-  imports: [FormField, TranslateModule, MatMenuModule, FormsModule],
+  imports: [FormField, MatMenuModule, FormsModule],
   templateUrl: './sex-store-form-field.html',
 })
 export class SexStoreFormField {

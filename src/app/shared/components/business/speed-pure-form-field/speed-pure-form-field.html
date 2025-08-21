@@ -1,4 +1,4 @@
-<app-form-field [horizontalLineText]="'COMMON.SPEED' | translate">
+<app-form-field [horizontalLineText]="'Speed'">
   <!-- Modern Speed Input -->
   <div class="relative group w-40">
     <div
@@ -32,7 +32,7 @@
     <!-- Validation Error Message -->
     @if (!isValid() && errorMessage()) {
       <div class="mt-1 text-sm text-red-600 font-medium text-center">
-        {{ errorMessage() | translate }}
+        {{ errorMessage() }}
       </div>
     }
   </div>

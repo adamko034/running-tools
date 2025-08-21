@@ -13,19 +13,9 @@
         </h1>
 
         <!-- Icon and Category Badge Row -->
-        <div class="flex items-center justify-center gap-2 sm:gap-3 mb-4 sm:mb-6">
-          <!-- Category Icon Badge -->
-          <!-- <div
-            class="w-10 h-10 rounded-full flex items-center justify-center shadow-md"
-            [ngClass]="
-              category
-                ? getCategoryIconStyles()
-                : 'bg-gradient-to-br from-slate-500 to-slate-600'
-            "
-          >
-            <mat-icon class="text-white text-sm">{{ getToolIcon() }}</mat-icon>
-          </div> -->
-
+        <div
+          class="flex items-center justify-center gap-2 sm:gap-3 mb-4 sm:mb-6"
+        >
           <!-- Category Badge -->
           <span
             class="inline-flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium"
@@ -72,16 +62,15 @@
         >
           <ng-content select="[tool-content]"></ng-content>
         </div>
-
-        <!-- Ad after main tool content -->
-        <app-ad-container
-          [slotId1]="adSlots.TOOL_AFTER_CONTENT"
-          [slotId2]="adSlots.TOOL_AFTER_CONTENT"
-        />
       </main>
 
       <!-- Summary Section -->
-      <section *ngIf="showSummary" class="mb-6 sm:mb-8" #toolSummary tabindex="-1">
+      <section
+        *ngIf="showSummary"
+        class="mb-6 sm:mb-8"
+        #toolSummary
+        tabindex="-1"
+      >
         <ng-content select="[tool-summary]"></ng-content>
       </section>
 

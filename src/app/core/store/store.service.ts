@@ -60,10 +60,6 @@ export class StoreService {
     return computed(() => this._store().units);
   }
 
-  get lang(): Signal<string> {
-    return computed(() => this._store().lang);
-  }
-
   get age(): Signal<number> {
     return computed(() => this._store().age);
   }
@@ -158,17 +154,8 @@ export class StoreService {
   }
 
   private saveStore() {
-    const {
-      distance,
-      units,
-      time,
-      weight,
-      lang,
-      height,
-      sex,
-      age,
-      paceStrategy,
-    } = this._store();
+    const { distance, units, time, weight, height, sex, age, paceStrategy } =
+      this._store();
     this.localStorageService.save({
       distance: distance.value,
       units,
@@ -179,7 +166,6 @@ export class StoreService {
       height: height.value,
       sex,
       age,
-      lang,
       paceStrategy,
     });
   }
@@ -218,8 +204,6 @@ export class StoreService {
       this.getHeightUnit(units)
     );
 
-    //const lang = stored.lang || initialStore.lang;
-    const lang = initialStore.lang;
     const sex = stored.sex || initialStore.sex;
     const age = stored.age || initialStore.age;
     const paceStrategy = stored.paceStrategy || initialStore.paceStrategy;
@@ -230,7 +214,6 @@ export class StoreService {
       distance,
       weight,
       units,
-      lang,
       height,
       sex,
       age,
@@ -257,28 +240,11 @@ export class StoreService {
       weight,
       height,
       units: distanceUnit === DistanceUnit.KM ? Units.EU : Units.EN,
-      lang: 'en',
       sex: Sex.M,
       age: 30,
       paceStrategy: PaceStrategy.NEGATIVE,
     };
   }
-
-  // public getLanguageFromLocal(): string {
-  //   const locale = Intl.DateTimeFormat().resolvedOptions().locale;
-  //   const supportedLanguages = ['en', 'de', 'fr', 'es', 'pl', 'it'];
-  //   const languageCode = locale.split('-')[0];
-
-  //   return supportedLanguages.includes(languageCode) ? languageCode : 'en';
-  // }
-
-  // private getDistanceUnitFromLocal(): DistanceUnit {
-  //   const locale = Intl.DateTimeFormat().resolvedOptions().locale;
-  //   const milesLocales = ['en-US', 'en-GB', 'my', 'lr'];
-  //   return milesLocales.some(code => locale.startsWith(code))
-  //     ? DistanceUnit.MI
-  //     : DistanceUnit.KM;
-  // }
 
   private getDistanceUnit(units: Units): DistanceUnit {
     return units === Units.EU ? DistanceUnit.KM : DistanceUnit.MI;
