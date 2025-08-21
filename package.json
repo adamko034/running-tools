@@ -25,7 +25,6 @@
     "@angular/common": "^20.0.0",
     "@angular/compiler": "^20.0.0",
     "@angular/core": "^20.0.0",
-    "@angular/fire": "^20.0.1",
     "@angular/forms": "^20.0.0",
     "@angular/material": "^20.0.2",
     "@angular/platform-browser": "^20.0.0",
@@ -39,7 +38,6 @@
     "@tailwindcss/cli": "^4.1.8",
     "@tailwindcss/postcss": "^4.1.8",
     "express": "^5.1.0",
-    "firebase": "^11.10.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
