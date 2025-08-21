@@ -55,8 +55,8 @@ export class AdblockNoticeComponent implements OnInit {
       const now = Date.now();
       const daysSinceDismiss = (now - data.dismissedAt) / (1000 * 60 * 60 * 24);
 
-      // Show again if 7 days have passed OR 20+ usages since dismiss
-      return daysSinceDismiss >= 7 || data.usagesSinceDismiss >= 20;
+      // Show again if 14 days have passed OR 30+ usages since dismiss (less aggressive)
+      return daysSinceDismiss >= 7 || data.usagesSinceDismiss >= 30;
     } catch {
       return true; // If data is corrupted, show notice
     }

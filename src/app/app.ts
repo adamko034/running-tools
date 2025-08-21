@@ -19,6 +19,7 @@ import { LoggerDev } from './core/utils/logger-dev';
 import { UnitStoreSelector } from './shared/components/store/unit-store-selector/unit-store-selector';
 import { FooterComponent } from './shared/components/ui/footer/footer.component';
 import { TermsBannerComponent } from './shared/components/ui/terms-banner/terms-banner.component';
+import { AdblockNoticeComponent } from './shared/components/ui/adblock-notice/adblock-notice.component';
 
 @Component({
   selector: 'app-root',
@@ -31,6 +32,7 @@ import { TermsBannerComponent } from './shared/components/ui/terms-banner/terms-
     MatToolbarModule,
     FooterComponent,
     TermsBannerComponent,
+    AdblockNoticeComponent,
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss',
