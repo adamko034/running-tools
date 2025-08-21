@@ -163,6 +163,18 @@ export class SeoService {
     });
   }
 
+  updateDisclaimerMeta() {
+    this.title.setTitle('Medical & Legal Disclaimer - Runner Toolkit');
+    this.updateMeta({
+      description: 'Important medical and legal disclaimers for Runner Toolkit calculators. Not medical advice. Consult healthcare professionals before starting exercise programs.',
+      keywords: 'medical disclaimer, legal disclaimer, fitness calculator warnings, health risks, exercise safety, medical advice',
+      'og:title': 'Medical & Legal Disclaimer - Runner Toolkit',
+      'og:description': 'Important medical and legal disclaimers for Runner Toolkit calculators. Not medical advice. Consult healthcare professionals before starting exercise programs.',
+      'twitter:title': 'Medical & Legal Disclaimer - Runner Toolkit',
+      'twitter:description': 'Important medical and legal disclaimers for Runner Toolkit calculators. Not medical advice. Consult healthcare professionals before starting exercise programs.'
+    });
+  }
+
   private updateMeta(tags: { [key: string]: string }) {
     Object.keys(tags).forEach(key => {
       if (key.startsWith('og:') || key.startsWith('twitter:')) {

@@ -14,10 +14,11 @@ import { Router } from '@angular/router';
 import { AD_SLOTS } from '../../../core/config/ad-slots.config';
 import { StructuredDataService } from '../../../core/services/structured-data.service';
 import { AdContainerComponent } from '../../components/ui/ad-container/ad-container.component';
+import { MedicalDisclaimerNoticeComponent } from '../../components/ui/medical-disclaimer-notice/medical-disclaimer-notice.component';
 
 @Component({
   selector: 'app-tool-view',
-  imports: [CommonModule, MatIconModule, AdContainerComponent],
+  imports: [CommonModule, MatIconModule, AdContainerComponent, MedicalDisclaimerNoticeComponent],
   templateUrl: './tool-view.html',
 })
 export class ToolView implements OnInit, OnDestroy, AfterViewInit {

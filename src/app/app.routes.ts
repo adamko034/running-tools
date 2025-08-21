@@ -22,6 +22,11 @@ const commonRoutes: Routes = [
       import('./pages/terms/terms.component').then(m => m.TermsComponent),
   },
   {
+    path: 'disclaimer',
+    loadComponent: () =>
+      import('./pages/disclaimer/disclaimer.component').then(m => m.DisclaimerComponent),
+  },
+  {
     path: 'tools/race',
     children: [
       {
