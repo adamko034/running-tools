@@ -295,13 +295,7 @@
 
   <!-- Strategic ad placement after features section -->
   <section class="mt-12">
-    <app-google-ad
-      [adSlot]="adSlots.HOME_AFTER_FEATURES"
-      adFormat="auto"
-      [fullWidthResponsive]="true"
-      minHeight="200px"
-    >
-    </app-google-ad>
+    <app-ad-container [slotId1]="adSlots.TOOL_AFTER_CONTENT" />
   </section>
 </div>
 

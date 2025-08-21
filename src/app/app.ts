@@ -17,7 +17,6 @@ import { RouterService } from './core/services/router.service';
 import { UiService } from './core/services/ui.service';
 import { LoggerDev } from './core/utils/logger-dev';
 import { UnitStoreSelector } from './shared/components/store/unit-store-selector/unit-store-selector';
-import { CookieConsentComponent } from './shared/components/ui/cookie-consent/cookie-consent.component';
 import { FooterComponent } from './shared/components/ui/footer/footer.component';
 
 @Component({
@@ -30,7 +29,6 @@ import { FooterComponent } from './shared/components/ui/footer/footer.component'
     MatSidenavModule,
     MatToolbarModule,
     FooterComponent,
-    CookieConsentComponent,
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss',

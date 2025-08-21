@@ -1,0 +1,15 @@
+<div class="terms-banner" 
+     *ngIf="isVisible" 
+     [class.hiding]="isHiding">
+  <div class="banner-content">
+    <mat-icon class="info-icon">info</mat-icon>
+    <span class="banner-text">
+      Korzystając z kalkulatora akceptujesz nasze 
+      <a (click)="openTerms()" class="terms-link">warunki użytkowania</a> i 
+      <a (click)="openPrivacy()" class="privacy-link">politykę prywatności</a>.
+    </span>
+    <button mat-icon-button (click)="dismissBanner()" class="close-btn" aria-label="Zamknij">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+</div>

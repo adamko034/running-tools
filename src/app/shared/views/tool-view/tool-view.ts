@@ -1,14 +1,23 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, OnDestroy, OnInit, inject, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  inject,
+  Input,
+  OnDestroy,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { Router } from '@angular/router';
 import { AD_SLOTS } from '../../../core/config/ad-slots.config';
 import { StructuredDataService } from '../../../core/services/structured-data.service';
-import { GoogleAdComponent } from '../../components/ui/google-ad/google-ad.component';
+import { AdContainerComponent } from '../../components/ui/ad-container/ad-container.component';
 
 @Component({
   selector: 'app-tool-view',
-  imports: [CommonModule, GoogleAdComponent, MatIconModule],
+  imports: [CommonModule, MatIconModule, AdContainerComponent],
   templateUrl: './tool-view.html',
 })
 export class ToolView implements OnInit, OnDestroy, AfterViewInit {
@@ -27,19 +36,19 @@ export class ToolView implements OnInit, OnDestroy, AfterViewInit {
     const styleMap = {
       race: {
         bg: 'bg-race-gradient',
-        border: 'border-race'
+        border: 'border-race',
       },
       personal: {
         bg: 'bg-personal-gradient',
-        border: 'border-personal'
+        border: 'border-personal',
       },
       training: {
         bg: 'bg-training-gradient',
-        border: 'border-training'
+        border: 'border-training',
       },
       units: {
         bg: 'bg-units-gradient',
-        border: 'border-units'
+        border: 'border-units',
       },
     };
     return styleMap[this.category || 'race'];
@@ -47,30 +56,30 @@ export class ToolView implements OnInit, OnDestroy, AfterViewInit {
 
   getCategoryIconStyles(): string {
     const styleMap = {
-      'race': 'bg-race-icon',
-      'personal': 'bg-personal-icon',
-      'training': 'bg-training-icon',
-      'units': 'bg-units-icon'
+      race: 'bg-race-icon',
+      personal: 'bg-personal-icon',
+      training: 'bg-training-icon',
+      units: 'bg-units-icon',
     };
     return styleMap[this.category || 'race'];
   }
 
   getCategoryBadgeStyles(): string {
     const styleMap = {
-      'race': 'badge-race',
-      'personal': 'badge-personal',
-      'training': 'badge-training',
-      'units': 'badge-units'
+      race: 'badge-race',
+      personal: 'badge-personal',
+      training: 'badge-training',
+      units: 'badge-units',
     };
     return styleMap[this.category || 'race'];
   }
 
   getCategoryDividerStyles(): string {
     const styleMap = {
-      'race': 'divider-race',
-      'personal': 'divider-personal',
-      'training': 'divider-training',
-      'units': 'divider-units'
+      race: 'divider-race',
+      personal: 'divider-personal',
+      training: 'divider-training',
+      units: 'divider-units',
     };
     return styleMap[this.category || 'race'];
   }
@@ -156,12 +165,12 @@ export class ToolView implements OnInit, OnDestroy, AfterViewInit {
   private scrollToResults(): void {
     setTimeout(() => {
       if (this.toolSummary?.nativeElement) {
-        this.toolSummary.nativeElement.scrollIntoView({ 
-          behavior: 'smooth', 
+        this.toolSummary.nativeElement.scrollIntoView({
+          behavior: 'smooth',
           block: 'start',
-          inline: 'nearest'
+          inline: 'nearest',
         });
-        
+
         // Focus the results section for accessibility
         this.toolSummary.nativeElement.focus();
       }

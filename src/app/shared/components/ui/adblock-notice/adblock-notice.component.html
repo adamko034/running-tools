@@ -1,0 +1,39 @@
+<div class="adblock-notice" *ngIf="showNotice">
+  <mat-card class="notice-card">
+    <mat-card-header>
+      <mat-icon mat-card-avatar class="notice-icon">info</mat-icon>
+      <mat-card-title>Wspierasz naszą aplikację?</mat-card-title>
+      <mat-card-subtitle>Wykryliśmy blokadę reklam</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <p>
+        Ta aplikacja jest <strong>całkowicie darmowa</strong> i utrzymywana
+        dzięki niewielkim reklamom. Jeśli aplikacja jest dla Ciebie przydatna,
+        prosimy o:
+      </p>
+
+      <ul class="support-options">
+        <li>
+          <mat-icon>block</mat-icon>
+          <span>Wyłączenie blokady reklam dla tej strony</span>
+        </li>
+      </ul>
+
+      <p class="small-text">
+        Reklamy są niewielkie i nie zakłócają korzystania z kalkulatora. Twoje
+        wsparcie pomaga nam rozwijać aplikację! 🙏
+      </p>
+    </mat-card-content>
+
+    <mat-card-actions align="end">
+      <button
+        mat-raised-button
+        (click)="dismissNotice()"
+        class="understand-btn"
+      >
+        Rozumiem
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

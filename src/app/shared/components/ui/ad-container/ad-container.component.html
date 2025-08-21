@@ -1,0 +1,14 @@
+<!-- Double container: Desktop with both configs -->
+<div class="ad-double-container" *ngIf="showDoubleContainer">
+  <div class="ad">
+    <app-adsense-ad [slotId]="slotId1" />
+  </div>
+  <div class="ad">
+    <app-adsense-ad [slotId]="slotId2" />
+  </div>
+</div>
+
+<!-- Single container: Mobile or only first config -->
+<div class="ad" *ngIf="showSingleContainer">
+  <app-adsense-ad [slotId]="slotId1" />
+</div>
