@@ -1,12 +1,13 @@
 <div class="terms-banner" 
      *ngIf="isVisible" 
-     [class.hiding]="isHiding">
+     [class.hiding]="isHiding"
+     style="display: block !important; visibility: visible !important;">
   <div class="banner-content">
     <mat-icon class="info-icon">info</mat-icon>
     <span class="banner-text">
-      Korzystając z kalkulatora akceptujesz nasze 
-      <a (click)="openTerms()" class="terms-link">warunki użytkowania</a> i 
-      <a (click)="openPrivacy()" class="privacy-link">politykę prywatności</a>.
+      By using this website you accept our 
+      <a (click)="openTerms()" class="terms-link">terms of service</a> and 
+      <a (click)="openPrivacy()" class="privacy-link">privacy policy</a>.
     </span>
     <button mat-icon-button (click)="dismissBanner()" class="close-btn" aria-label="Zamknij">
       <mat-icon>close</mat-icon>

@@ -18,6 +18,7 @@ import { UiService } from './core/services/ui.service';
 import { LoggerDev } from './core/utils/logger-dev';
 import { UnitStoreSelector } from './shared/components/store/unit-store-selector/unit-store-selector';
 import { FooterComponent } from './shared/components/ui/footer/footer.component';
+import { TermsBannerComponent } from './shared/components/ui/terms-banner/terms-banner.component';
 
 @Component({
   selector: 'app-root',
@@ -29,6 +30,7 @@ import { FooterComponent } from './shared/components/ui/footer/footer.component'
     MatSidenavModule,
     MatToolbarModule,
     FooterComponent,
+    TermsBannerComponent,
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss',

@@ -17,6 +17,11 @@ const commonRoutes: Routes = [
       import('./pages/privacy/privacy.component').then(m => m.PrivacyComponent),
   },
   {
+    path: 'terms-of-service',
+    loadComponent: () =>
+      import('./pages/terms/terms.component').then(m => m.TermsComponent),
+  },
+  {
     path: 'tools/race',
     children: [
       {

@@ -151,6 +151,18 @@ export class SeoService {
     });
   }
 
+  updateTermsOfServiceMeta() {
+    this.title.setTitle('Terms of Service - Runner Toolkit');
+    this.updateMeta({
+      description: 'Runner Toolkit Terms of Service. Important disclaimers about calculator accuracy, health risks, and user responsibilities for running and training.',
+      keywords: 'terms of service, user agreement, calculator disclaimer, health disclaimer, running safety, training risks',
+      'og:title': 'Terms of Service - Runner Toolkit',
+      'og:description': 'Runner Toolkit Terms of Service. Important disclaimers about calculator accuracy, health risks, and user responsibilities for running and training.',
+      'twitter:title': 'Terms of Service - Runner Toolkit',
+      'twitter:description': 'Runner Toolkit Terms of Service. Important disclaimers about calculator accuracy, health risks, and user responsibilities for running and training.'
+    });
+  }
+
   private updateMeta(tags: { [key: string]: string }) {
     Object.keys(tags).forEach(key => {
       if (key.startsWith('og:') || key.startsWith('twitter:')) {
