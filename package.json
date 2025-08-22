@@ -1,6 +1,6 @@
 {
   "name": "running-tools",
-  "version": "1.0.52",
+  "version": "1.0.53",
   "scripts": {
     "ng": "ng",
     "start": "npm run set-version && ng serve",
@@ -30,7 +30,6 @@
     "@angular/platform-browser": "^20.0.0",
     "@angular/platform-server": "^20.0.0",
     "@angular/router": "^20.0.0",
-    "@angular/service-worker": "^20.0.0",
     "@angular/ssr": "^20.0.1",
     "@ngneat/tailwind": "^7.0.3",
     "@tailwindcss/cli": "^4.1.8",
