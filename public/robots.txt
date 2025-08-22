@@ -1,14 +1,7 @@
 User-agent: *
 Allow: /
 
-# High-priority race pacing and strategy pages
-Allow: /tools/race/race-strategies-calculator
-Allow: /tools/race/pace-calculator
-Allow: /tools/race/finish-time-predictor
-
-# Important running calculator pages
-Allow: /tools/training/training-paces-calculator
-Allow: /tools/personal/vo2max-calculator
-Allow: /tools/personal/bmi-calculator
+User-agent: AdsBot-Google
+Allow: /
 
 Sitemap: https://runner-toolkit.web.app/sitemap.xml

@@ -37,7 +37,6 @@ A comprehensive collection of running calculator tools designed for runners, mar
 - **Angular Material** - UI component library
 - **SCSS** - Advanced CSS preprocessing
 - **Firebase Hosting** - Fast, secure hosting
-- **PWA** - Progressive Web App capabilities
 
 ## 🏃‍♀️ Perfect For
 
